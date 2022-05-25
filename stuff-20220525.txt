@@ -306,3 +306,65 @@ remote: Counting objects: 100% (3/3), done.
 remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
 Receiving objects: 100% (3/3), done.
 davidho@dphxps17:~/repositories$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ gpg -version
+gpg: directory '/home/davidho/.gnupg' created
+gpg: keybox '/home/davidho/.gnupg/pubring.kbx' created
+gpg: sion: skipped: No public key
+gpg: [stdin]: encryption failed: No public key
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ gpg -version
+gpg: sion: skipped: No public key
+gpg: [stdin]: encryption failed: No public key
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ gpg --version
+gpg (GnuPG) 2.2.27
+libgcrypt 1.9.4
+Copyright (C) 2021 Free Software Foundation, Inc.
+License GNU GPL-3.0-or-later <https://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Home: /home/davidho/.gnupg
+Supported algorithms:
+Pubkey: RSA, ELG, DSA, ECDH, ECDSA, EDDSA
+Cipher: IDEA, 3DES, CAST5, BLOWFISH, AES, AES192, AES256, TWOFISH,
+        CAMELLIA128, CAMELLIA192, CAMELLIA256
+Hash: SHA1, RIPEMD160, SHA256, SHA384, SHA512, SHA224
+Compression: Uncompressed, ZIP, ZLIB, BZIP2
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ pwd -P
+/home/davidho/Downloads
+davidho@dphxps17:~/Downloads$ date
+Wed May 25 07:37:58 AM EDT 2022
+davidho@dphxps17:~/Downloads$ ls -latr
+total 2079784
+-rw-rw-r--  1 davidho davidho  82685224 May 24 22:33 code_1.67.2-1652812855_amd64.deb
+-rw-rw-r--  1 davidho davidho 116454561 May 24 22:33 code-1.67.2-1652812909.el7.x86_64.rpm
+-rw-rw-r--  1 davidho davidho 115658426 May 24 22:33 code-stable-x64-1652813090.tar.gz
+drwxr-x--- 22 davidho davidho      4096 May 25 07:10 ..
+-rw-rw-r--  1 davidho davidho 526118574 May 25 07:29 elasticsearch-8.2.1-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho       170 May 25 07:29 elasticsearch-8.2.1-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho       488 May 25 07:29 elasticsearch-8.2.1-linux-x86_64.tar.gz.asc
+-rw-rw-r--  1 davidho davidho 346794062 May 25 07:33 elasticsearch-7.1.1-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho       169 May 25 07:33 elasticsearch-7.1.1-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho 346825772 May 25 07:34 elasticsearch-7.1.1-amd64.deb
+-rw-rw-r--  1 davidho davidho       159 May 25 07:34 elasticsearch-7.1.1-amd64.deb.sha512
+-rw-rw-r--  1 davidho davidho 255005883 May 25 07:36 kibana-8.2.1-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho       163 May 25 07:36 kibana-8.2.1-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho       488 May 25 07:36 kibana-8.2.1-linux-x86_64.tar.gz.asc
+-rw-rw-r--  1 davidho davidho 167785446 May 25 07:37 kibana-7.1.1-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho       162 May 25 07:37 kibana-7.1.1-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho 172293244 May 25 07:37 kibana-7.1.1-amd64.deb
+-rw-rw-r--  1 davidho davidho       152 May 25 07:37 kibana-7.1.1-amd64.deb.sha512
+drwx------  3 davidho davidho      4096 May 25 07:37 firefox.tmp
+drwxr-xr-x  3 davidho davidho      4096 May 25 07:37 .
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ 
