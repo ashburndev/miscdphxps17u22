@@ -1,0 +1,296 @@
+Tue May 24 10:30:52 PM EDT 2022
+
+davidho@dphxps17:~$ cd Documents/
+davidho@dphxps17:~/Documents$ ls
+davidho@dphxps17:~/Documents$ date
+Tue May 24 10:30:28 PM EDT 2022
+davidho@dphxps17:~/Documents$ 
+davidho@dphxps17:~/Documents$ date > stuff-20220524.txt
+davidho@dphxps17:~/Documents$ 
+
+https://code.visualstudio.com/download#
+
+davidho@dphxps17:~$ tree
+Command 'tree' not found, but can be installed with:
+sudo apt install tree
+davidho@dphxps17:~$ ls -latr ~/Downloads/
+total 307440
+-rw-rw-r--  1 davidho davidho  82685224 May 24 22:33 code_1.67.2-1652812855_amd64.deb
+-rw-rw-r--  1 davidho davidho 116454561 May 24 22:33 code-1.67.2-1652812909.el7.x86_64.rpm
+-rw-rw-r--  1 davidho davidho 115658426 May 24 22:33 code-stable-x64-1652813090.tar.gz
+drwxr-xr-x  3 davidho davidho      4096 May 24 22:33 .
+drwx------  3 davidho davidho      4096 May 24 22:36 firefox.tmp
+drwxr-x--- 15 davidho davidho      4096 May 24 22:36 ..
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ sudo apt install ~/Downloads/code_1.67.2-1652812855_amd64.deb
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Note, selecting 'code' instead of '/home/davidho/Downloads/code_1.67.2-1652812855_amd64.deb'
+The following packages were automatically installed and are no longer required:
+  chromium-codecs-ffmpeg-extra gstreamer1.0-vaapi libatomic1:i386 libbsd0:i386 libdpkg-perl libdrm-amdgpu1:i386
+  libdrm-nouveau2:i386 libdrm-radeon1:i386 libdrm2:i386 libedit2:i386 libelf1:i386 libexpat1:i386 libffi8:i386
+  libfile-fcntllock-perl libglapi-mesa:i386 libglvnd0:i386 libgstreamer-plugins-bad1.0-0 libicu70:i386 libllvm13:i386
+  libmd0:i386 libnvidia-cfg1-510 libnvidia-common-510 libnvidia-compute-510:i386 libnvidia-decode-510
+  libnvidia-decode-510:i386 libnvidia-egl-wayland1 libnvidia-encode-510 libnvidia-encode-510:i386 libnvidia-extra-510
+  libnvidia-fbc1-510 libnvidia-gl-510 libnvidia-gl-510:i386 libsensors5:i386 libstdc++6:i386 libva-wayland2
+  libvulkan1:i386 libwayland-client0:i386 libx11-6:i386 libx11-xcb1:i386 libxau6:i386 libxcb-dri2-0:i386
+  libxcb-dri3-0:i386 libxcb-glx0:i386 libxcb-present0:i386 libxcb-randr0:i386 libxcb-shm0:i386 libxcb-sync1:i386
+  libxcb-xfixes0:i386 libxcb1:i386 libxdmcp6:i386 libxext6:i386 libxfixes3:i386 libxml2:i386 libxnvctrl0
+  libxshmfence1:i386 libxxf86vm1:i386 mesa-vulkan-drivers:i386 nvidia-compute-utils-510 nvidia-kernel-source-510
+  nvidia-settings nvidia-utils-510 pkg-config screen-resolution-extra xserver-xorg-video-nvidia-510
+Use 'sudo apt autoremove' to remove them.
+The following NEW packages will be installed:
+  code
+0 upgraded, 1 newly installed, 0 to remove and 2 not upgraded.
+Need to get 0 B/82.7 MB of archives.
+After this operation, 346 MB of additional disk space will be used.
+Get:1 /home/davidho/Downloads/code_1.67.2-1652812855_amd64.deb code amd64 1.67.2-1652812855 [82.7 MB]
+Selecting previously unselected package code.
+(Reading database ... 197735 files and directories currently installed.)
+Preparing to unpack .../code_1.67.2-1652812855_amd64.deb ...
+Unpacking code (1.67.2-1652812855) ...
+Setting up code (1.67.2-1652812855) ...
+Processing triggers for gnome-menus (3.36.0-1ubuntu3) ...
+Processing triggers for shared-mime-info (2.1-2) ...
+Processing triggers for mailcap (3.70+nmu1ubuntu1) ...
+Processing triggers for desktop-file-utils (0.26-1ubuntu3) ...
+N: Download is performed unsandboxed as root as file '/home/davidho/Downloads/code_1.67.2-1652812855_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)
+davidho@dphxps17:~$ 
+
+sudo apt install 
+
+davidho@dphxps17:~/Documents$ history
+    1  ls
+    2  ls -latr
+    3  cd Documents/
+    4  ls
+    5  date
+    6  date > stuff-20220524.txt
+    7  vi stuff-20220524.txt 
+    8  ls -latr
+    9  code stuff-20220524.txt 
+   10  sudo apt install tree
+   11  history
+davidho@dphxps17:~/Documents$ 
+
+https://code.visualstudio.com/docs/setup/linux
+
+https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rbenv-on-ubuntu-20-04
+
+davidho@dphxps17:~$ curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
+Installing rbenv with git...
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/davidho/.rbenv/.git/
+Updating origin
+remote: Enumerating objects: 2960, done.
+remote: Counting objects: 100% (117/117), done.
+remote: Compressing objects: 100% (65/65), done.
+remote: Total 2960 (delta 62), reused 92 (delta 52), pack-reused 2843
+Receiving objects: 100% (2960/2960), 577.19 KiB | 18.62 MiB/s, done.
+Resolving deltas: 100% (1850/1850), done.
+From https://github.com/rbenv/rbenv
+ * [new branch]      master     -> origin/master
+ * [new tag]         v0.1.0     -> v0.1.0
+ * [new tag]         v0.1.1     -> v0.1.1
+ * [new tag]         v0.1.2     -> v0.1.2
+ * [new tag]         v0.2.0     -> v0.2.0
+ * [new tag]         v0.2.1     -> v0.2.1
+ * [new tag]         v0.3.0     -> v0.3.0
+ * [new tag]         v0.4.0     -> v0.4.0
+ * [new tag]         v1.0.0     -> v1.0.0
+ * [new tag]         v1.1.0     -> v1.1.0
+ * [new tag]         v1.1.1     -> v1.1.1
+ * [new tag]         v1.1.2     -> v1.1.2
+ * [new tag]         v1.2.0     -> v1.2.0
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+Already on 'master'
+make: Entering directory '/home/davidho/.rbenv/src'
+gcc -fPIC     -c -o realpath.o realpath.c
+gcc -shared -Wl,-soname,../libexec/rbenv-realpath.dylib  -o ../libexec/rbenv-realpath.dylib realpath.o 
+make: Leaving directory '/home/davidho/.rbenv/src'
+
+Installing ruby-build with git...
+Cloning into '/home/davidho/.rbenv/plugins/ruby-build'...
+remote: Enumerating objects: 12207, done.
+remote: Counting objects: 100% (900/900), done.
+remote: Compressing objects: 100% (312/312), done.
+remote: Total 12207 (delta 609), reused 780 (delta 531), pack-reused 11307
+Receiving objects: 100% (12207/12207), 2.54 MiB | 19.29 MiB/s, done.
+Resolving deltas: 100% (8076/8076), done.
+
+All done!
+Note that this installer does NOT edit your shell configuration files:
+1. You'll want to ensure that `~/.rbenv/bin' is added to PATH.
+2. Run `rbenv init' to view instructions on how to configure rbenv for your shell.
+3. Launch a new terminal window after editing shell configuration files.
+4. (Optional) Run the doctor command to verify the installation:
+   wget -q "https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-doctor" -O- | bash
+
+davidho@dphxps17:~$ 
+
+davidho@dphxps17:~$ rbenv install -l
+2.6.10
+2.7.6
+3.0.4
+3.1.2
+jruby-9.3.4.0
+mruby-3.0.0
+rbx-5.0
+truffleruby-22.1.0
+truffleruby+graalvm-22.1.0
+
+Only latest stable releases for each Ruby implementation are shown.
+Use 'rbenv install --list-all / -L' to show all local versions.
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ history
+    1  ls
+    2  ls -latr
+    3  cd Documents/
+    4  ls
+    5  date
+    6  date > stuff-20220524.txt
+    7  vi stuff-20220524.txt 
+    8  ls -latr
+    9  code stuff-20220524.txt 
+   10  sudo apt install tree
+   11  history
+   12  cd ..
+   13  sudo apt update
+   14  sudo apt upgrade
+   15  sudo apt install git curl libssl-dev libreadline-dev zlib1g-dev autoconf bison build-essential libyaml-dev libreadline-dev libncurses5-dev libffi-dev libgdbm-dev
+   16  curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
+   17  echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+   18  echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+   19  source ~/.bashrc
+   20  type rbenv
+   21  git clone https://github.com/rbenv/ruby-build.git
+   22  cat ruby-build/install.sh
+   23  PREFIX=/usr/local sudo ./ruby-build/install.sh
+   24  rbenv install -l
+   25  history
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ rbenv install 3.0.2
+Downloading ruby-3.0.2.tar.gz...
+-> https://cache.ruby-lang.org/pub/ruby/3.0/ruby-3.0.2.tar.gz
+Installing ruby-3.0.2...
+
+BUILD FAILED (Ubuntu 22.04 using ruby-build 20220426-3-g1038c07)
+
+Inspect or clean up the working tree at /tmp/ruby-build.20220524225433.38528.2AAtu1
+Results logged to /tmp/ruby-build.20220524225433.38528.log
+
+Last 10 log lines:
+cc1: note: unrecognized command-line option ‘-Wno-parentheses-equality’ may have been intended to silence earlier diagnostics
+cc1: note: unrecognized command-line option ‘-Wno-constant-logical-operand’ may have been intended to silence earlier diagnostics
+linking shared-object socket.so
+make[2]: Leaving directory '/tmp/ruby-build.20220524225433.38528.2AAtu1/ruby-3.0.2/ext/socket'
+linking shared-object date_core.so
+make[2]: Leaving directory '/tmp/ruby-build.20220524225433.38528.2AAtu1/ruby-3.0.2/ext/date'
+linking shared-object ripper.so
+make[2]: Leaving directory '/tmp/ruby-build.20220524225433.38528.2AAtu1/ruby-3.0.2/ext/ripper'
+make[1]: Leaving directory '/tmp/ruby-build.20220524225433.38528.2AAtu1/ruby-3.0.2'
+make: *** [uncommon.mk:300: build-ext] Error 2
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ history
+    1  ls
+    2  ls -latr
+    3  cd Documents/
+    4  ls
+    5  date
+    6  date > stuff-20220524.txt
+    7  vi stuff-20220524.txt 
+    8  ls -latr
+    9  code stuff-20220524.txt 
+   10  sudo apt install tree
+   11  history
+   12  cd ..
+   13  sudo apt update
+   14  sudo apt upgrade
+   15  sudo apt install git curl libssl-dev libreadline-dev zlib1g-dev autoconf bison build-essential libyaml-dev libreadline-dev libncurses5-dev libffi-dev libgdbm-dev
+   16  curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
+   17  echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+   18  echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+   19  source ~/.bashrc
+   20  type rbenv
+   21  git clone https://github.com/rbenv/ruby-build.git
+   22  cat ruby-build/install.sh
+   23  PREFIX=/usr/local sudo ./ruby-build/install.sh
+   24  rbenv install -l
+   25  history
+   26  rbenv install 3.0.2
+   27  history
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ rbenv install 3.0.2
+Installing ruby-3.0.2...
+
+BUILD FAILED (Ubuntu 22.04 using ruby-build 20220426-3-g1038c07)
+
+Inspect or clean up the working tree at /tmp/ruby-build.20220524225742.50446.vEJuuU
+Results logged to /tmp/ruby-build.20220524225742.50446.log
+
+Last 10 log lines:
+linking shared-object zlib.so
+make[2]: Leaving directory '/tmp/ruby-build.20220524225742.50446.vEJuuU/ruby-3.0.2/ext/json/generator'
+make[2]: Leaving directory '/tmp/ruby-build.20220524225742.50446.vEJuuU/ruby-3.0.2/ext/zlib'
+make[2]: Leaving directory '/tmp/ruby-build.20220524225742.50446.vEJuuU/ruby-3.0.2/ext/socket'
+linking shared-object date_core.so
+make[2]: Leaving directory '/tmp/ruby-build.20220524225742.50446.vEJuuU/ruby-3.0.2/ext/date'
+linking shared-object ripper.so
+make[2]: Leaving directory '/tmp/ruby-build.20220524225742.50446.vEJuuU/ruby-3.0.2/ext/ripper'
+make[1]: Leaving directory '/tmp/ruby-build.20220524225742.50446.vEJuuU/ruby-3.0.2'
+make: *** [uncommon.mk:300: build-ext] Error 2
+davidho@dphxps17:~$ rbenv global 3.0.2
+rbenv: version `3.0.2' not installed
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rbenv-on-ubuntu-20-04
+
+sudo apt update
+sudo apt install git curl libssl-dev libreadline-dev zlib1g-dev autoconf bison build-essential libyaml-dev libreadline-dev libncurses5-dev libffi-dev libgdbm-dev
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+source ~/.bashrc
+type rbenv
+git clone https://github.com/rbenv/ruby-build.git
+cat ruby-build/install.sh
+PREFIX=/usr/local sudo ./ruby-build/install.sh
+rbenv install -l
+rbenv install 3.0.2
+rbenv global 3.0.2
+ruby -v
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+echo "gem: --no-document" > ~/.gemrc
+gem install bundler
+gem env home
+gem install rails -v 6.1.4.1
+
+gem search '^rails$' --all
+gem install rails -v 4.2.7
+
+rbenv rehash
+rails -v
+
+cd ~/.rbenv
+git pull
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
