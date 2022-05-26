@@ -1,0 +1,399 @@
+Thu May 26 07:36:05 AM EDT 2022
+
+davidho@dphxps17:~$ date
+Thu May 26 07:35:36 AM EDT 2022
+davidho@dphxps17:~$ date > stuff-20220526.txt
+davidho@dphxps17:~$ code   stuff-20220526.txt 
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ uname -a
+Linux dphxps17 5.15.0-33-generic #34-Ubuntu SMP Wed May 18 13:34:26 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ df
+Filesystem     1K-blocks     Used Available Use% Mounted on
+tmpfs            3259328     2488   3256840   1% /run
+/dev/nvme0n1p7 256920004 17436940 226359480   8% /
+tmpfs           16296628        0  16296628   0% /dev/shm
+tmpfs               5120        4      5116   1% /run/lock
+/dev/nvme0n1p1    149504    99306     50198  67% /boot/efi
+tmpfs            3259324     2412   3256912   1% /run/user/1000
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           3.2G  2.5M  3.2G   1% /run
+/dev/nvme0n1p7  246G   17G  216G   8% /
+tmpfs            16G     0   16G   0% /dev/shm
+tmpfs           5.0M  4.0K  5.0M   1% /run/lock
+/dev/nvme0n1p1  146M   97M   50M  67% /boot/efi
+tmpfs           3.2G  2.4M  3.2G   1% /run/user/1000
+davidho@dphxps17:~$ 
+
+sudo apt-get update
+sudo apt-get install neofetch
+sudo apt-get install tree
+sudo apt install p7zip-full p7zip-rar
+
+https://linuxhint.com/gparted_ubuntu/
+
+sudo apt update
+sudo apt install gparted
+
+
+davidho@dphxps17:~$ neofetch --off
+davidho@dphxps17 
+---------------- 
+OS: Ubuntu 22.04 LTS x86_64 
+Host: XPS 17 9710 
+Kernel: 5.15.0-33-generic 
+Uptime: 1 hour, 4 mins 
+Packages: 1889 (dpkg), 9 (snap) 
+Shell: bash 5.1.16 
+Resolution: 3840x2400 
+DE: GNOME 42.0 
+WM: Mutter 
+WM Theme: Adwaita 
+Theme: Yaru [GTK2/3] 
+Icons: Yaru [GTK2/3] 
+Terminal: gnome-terminal 
+CPU: 11th Gen Intel i7-11800H (16) @ 4.600GHz 
+
+GPU: Intel TigerLake-H GT1 [UHD Graphics] 
+GPU: NVIDIA GeForce RTX 3060 Mobile / Max-Q 
+Memory: 6811MiB / 31829MiB 
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ java -version
+Command 'java' not found, but can be installed with:
+sudo apt install openjdk-11-jre-headless  # version 11.0.15+10-0ubuntu0.22.04.1, or
+sudo apt install default-jre              # version 2:1.11-72build2
+sudo apt install openjdk-18-jre-headless  # version 18~36ea-1
+sudo apt install openjdk-8-jre-headless   # version 8u312-b07-0ubuntu1
+sudo apt install openjdk-17-jre-headless  # version 17.0.3+7-0ubuntu0.22.04.1
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ echo $JAVA_HOME
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ ls -latr ~/Downloads/
+total 2079784
+-rw-rw-r--  1 davidho davidho  82685224 May 24 22:33 code_1.67.2-1652812855_amd64.deb
+-rw-rw-r--  1 davidho davidho 116454561 May 24 22:33 code-1.67.2-1652812909.el7.x86_64.rpm
+-rw-rw-r--  1 davidho davidho 115658426 May 24 22:33 code-stable-x64-1652813090.tar.gz
+-rw-rw-r--  1 davidho davidho 526118574 May 25 07:29 elasticsearch-8.2.1-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho       170 May 25 07:29 elasticsearch-8.2.1-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho       488 May 25 07:29 elasticsearch-8.2.1-linux-x86_64.tar.gz.asc
+-rw-rw-r--  1 davidho davidho 346794062 May 25 07:33 elasticsearch-7.1.1-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho       169 May 25 07:33 elasticsearch-7.1.1-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho 346825772 May 25 07:34 elasticsearch-7.1.1-amd64.deb
+-rw-rw-r--  1 davidho davidho       159 May 25 07:34 elasticsearch-7.1.1-amd64.deb.sha512
+-rw-rw-r--  1 davidho davidho 255005883 May 25 07:36 kibana-8.2.1-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho       163 May 25 07:36 kibana-8.2.1-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho       488 May 25 07:36 kibana-8.2.1-linux-x86_64.tar.gz.asc
+-rw-rw-r--  1 davidho davidho 167785446 May 25 07:37 kibana-7.1.1-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho       162 May 25 07:37 kibana-7.1.1-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho 172293244 May 25 07:37 kibana-7.1.1-amd64.deb
+-rw-rw-r--  1 davidho davidho       152 May 25 07:37 kibana-7.1.1-amd64.deb.sha512
+drwxr-xr-x  3 davidho davidho      4096 May 25 07:37 .
+drwxr-x--- 22 davidho davidho      4096 May 26 07:36 ..
+drwx------  3 davidho davidho      4096 May 26 07:41 firefox.tmp
+davidho@dphxps17:~$ 
+
+https://www.elastic.co/blog/sha512-checksums-for-elastic-stack-artifacts
+
+shasum -a 512 -c elasticsearch-7.1.1-linux-x86_64.tar.gz.sha512
+shasum -a 512 -c kibana-7.1.1-linux-x86_64.tar.gz.sha512
+
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ shasum -a 512 -c elasticsearch-7.1.1-linux-x86_64.tar.gz.sha512
+elasticsearch-7.1.1-linux-x86_64.tar.gz: OK
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ shasum -a 512 -c kibana-7.1.1-linux-x86_64.tar.gz.sha512
+kibana-7.1.1-linux-x86_64.tar.gz: OK
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ mkdir elastic
+davidho@dphxps17:~/Downloads$ cp -p elasticsearch-7.1.1-linux-x86_64.tar.gz elastic
+davidho@dphxps17:~/Downloads$ cp -p kibana-7.1.1-linux-x86_64.tar.gz elastic
+davidho@dphxps17:~/Downloads$ cd elastic
+davidho@dphxps17:~/Downloads/elastic$ 
+davidho@dphxps17:~/Downloads/elastic$ history | tail
+  166  ls -latr
+  167  mkdir elastic
+  168  cp -p elasticsearch-7.1.1-linux-x86_64.tar.gz elastic
+  169  cp -p kibana-7.1.1-linux-x86_64.tar.gz elastic
+  170  cd elastic
+  171  ls
+  172  tar xzvf elasticsearch-7.1.1-linux-x86_64.tar.gz 
+  173  ls -latr
+  174  tar xzvf kibana-7.1.1-linux-x86_64.tar.gz 
+  175  history | tail
+davidho@dphxps17:~/Downloads/elastic$ ls -latr
+total 502540
+drwxr-xr-x  9 davidho davidho      4096 May 23  2019 elasticsearch-7.1.1
+-rw-rw-r--  1 davidho davidho 346794062 May 25 07:33 elasticsearch-7.1.1-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho 167785446 May 25 07:37 kibana-7.1.1-linux-x86_64.tar.gz
+drwxr-xr-x  4 davidho davidho      4096 May 26 07:53 ..
+drwxrwxr-x  4 davidho davidho      4096 May 26 07:54 .
+davidho@dphxps17:~/Downloads/elastic$ 
+davidho@dphxps17:~/Downloads/elastic$ 
+davidho@dphxps17:~/Downloads/elastic$ cd elasticsearch-7.1.1/
+davidho@dphxps17:~/Downloads/elastic/elasticsearch-7.1.1$ ls -latr
+total 504
+-rw-r--r--  1 davidho davidho   8478 May 23  2019 README.textile
+-rw-r--r--  1 davidho davidho  13675 May 23  2019 LICENSE.txt
+-rw-r--r--  1 davidho davidho 447478 May 23  2019 NOTICE.txt
+drwxr-xr-x  2 davidho davidho   4096 May 23  2019 plugins
+drwxr-xr-x  2 davidho davidho   4096 May 23  2019 logs
+drwxr-xr-x  3 davidho davidho   4096 May 23  2019 lib
+drwxr-xr-x  9 davidho davidho   4096 May 23  2019 .
+drwxr-xr-x  2 davidho davidho   4096 May 23  2019 config
+drwxr-xr-x  2 davidho davidho   4096 May 23  2019 bin
+drwxr-xr-x  8 davidho davidho   4096 May 23  2019 jdk
+drwxr-xr-x 29 davidho davidho   4096 May 23  2019 modules
+drwxrwxr-x  4 davidho davidho   4096 May 26 07:54 ..
+davidho@dphxps17:~/Downloads/elastic/elasticsearch-7.1.1$ 
+davidho@dphxps17:~/Downloads/elastic/elasticsearch-7.1.1$ bin/elasticsearch
+OpenJDK 64-Bit Server VM warning: Option UseConcMarkSweepGC was deprecated in version 9.0 and will likely be removed in a future release.
+[2022-05-26T07:58:08,658][INFO ][o.e.e.NodeEnvironment    ] [dphxps17] using [1] data paths, mounts [[/ (/dev/nvme0n1p7)]], net usable_space [216gb], net total_space [245gb], types [ext4]
+[2022-05-26T07:58:08,660][INFO ][o.e.e.NodeEnvironment    ] [dphxps17] heap size [989.8mb], compressed ordinary object pointers [true]
+[2022-05-26T07:58:08,662][INFO ][o.e.n.Node               ] [dphxps17] node name [dphxps17], node ID [NfFqPd9vSjusoqtclZLPbw], cluster name [elasticsearch]
+[2022-05-26T07:58:08,662][INFO ][o.e.n.Node               ] [dphxps17] version[7.1.1], pid[10050], build[default/tar/7a013de/2019-05-23T14:04:00.380842Z], OS[Linux/5.15.0-33-generic/amd64], JVM[Oracle Corporation/OpenJDK 64-Bit Server VM/12.0.1/12.0.1+12]
+[2022-05-26T07:58:08,663][INFO ][o.e.n.Node               ] [dphxps17] JVM home [/home/davidho/Downloads/elastic/elasticsearch-7.1.1/jdk]
+[2022-05-26T07:58:08,663][INFO ][o.e.n.Node               ] [dphxps17] JVM arguments [-Xms1g, -Xmx1g, -XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -Des.networkaddress.cache.ttl=60, -Des.networkaddress.cache.negative.ttl=10, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -XX:-OmitStackTraceInFastThrow, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Djava.io.tmpdir=/tmp/elasticsearch-1981233501438827574, -XX:+HeapDumpOnOutOfMemoryError, -XX:HeapDumpPath=data, -XX:ErrorFile=logs/hs_err_pid%p.log, -Xlog:gc*,gc+age=trace,safepoint:file=logs/gc.log:utctime,pid,tags:filecount=32,filesize=64m, -Djava.locale.providers=COMPAT, -Dio.netty.allocator.type=unpooled, -Des.path.home=/home/davidho/Downloads/elastic/elasticsearch-7.1.1, -Des.path.conf=/home/davidho/Downloads/elastic/elasticsearch-7.1.1/config, -Des.distribution.flavor=default, -Des.distribution.type=tar, -Des.bundled_jdk=true]
+[2022-05-26T07:58:09,312][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [aggs-matrix-stats]
+[2022-05-26T07:58:09,312][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [analysis-common]
+[2022-05-26T07:58:09,312][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [ingest-common]
+[2022-05-26T07:58:09,312][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [ingest-geoip]
+[2022-05-26T07:58:09,313][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [ingest-user-agent]
+[2022-05-26T07:58:09,313][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [lang-expression]
+[2022-05-26T07:58:09,313][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [lang-mustache]
+[2022-05-26T07:58:09,313][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [lang-painless]
+[2022-05-26T07:58:09,313][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [mapper-extras]
+[2022-05-26T07:58:09,313][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [parent-join]
+[2022-05-26T07:58:09,313][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [percolator]
+[2022-05-26T07:58:09,314][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [rank-eval]
+[2022-05-26T07:58:09,314][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [reindex]
+[2022-05-26T07:58:09,314][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [repository-url]
+[2022-05-26T07:58:09,314][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [transport-netty4]
+[2022-05-26T07:58:09,314][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-ccr]
+[2022-05-26T07:58:09,314][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-core]
+[2022-05-26T07:58:09,314][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-deprecation]
+[2022-05-26T07:58:09,314][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-graph]
+[2022-05-26T07:58:09,315][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-ilm]
+[2022-05-26T07:58:09,315][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-logstash]
+[2022-05-26T07:58:09,315][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-ml]
+[2022-05-26T07:58:09,315][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-monitoring]
+[2022-05-26T07:58:09,315][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-rollup]
+[2022-05-26T07:58:09,315][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-security]
+[2022-05-26T07:58:09,315][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-sql]
+[2022-05-26T07:58:09,315][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-watcher]
+[2022-05-26T07:58:09,316][INFO ][o.e.p.PluginsService     ] [dphxps17] no plugins loaded
+[2022-05-26T07:58:10,988][INFO ][o.e.x.s.a.s.FileRolesStore] [dphxps17] parsed [0] roles from file [/home/davidho/Downloads/elastic/elasticsearch-7.1.1/config/roles.yml]
+[2022-05-26T07:58:11,269][INFO ][o.e.x.m.p.l.CppLogMessageHandler] [dphxps17] [controller/10139] [Main.cc@109] controller (64 bit): Version 7.1.1 (Build fd619a36eb77df) Copyright (c) 2019 Elasticsearch BV
+[2022-05-26T07:58:11,426][DEBUG][o.e.a.ActionModule       ] [dphxps17] Using REST wrapper from plugin org.elasticsearch.xpack.security.Security
+[2022-05-26T07:58:11,550][INFO ][o.e.d.DiscoveryModule    ] [dphxps17] using discovery type [zen] and seed hosts providers [settings]
+[2022-05-26T07:58:11,897][INFO ][o.e.n.Node               ] [dphxps17] initialized
+[2022-05-26T07:58:11,897][INFO ][o.e.n.Node               ] [dphxps17] starting ...
+[2022-05-26T07:58:11,977][INFO ][o.e.t.TransportService   ] [dphxps17] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
+[2022-05-26T07:58:11,981][WARN ][o.e.b.BootstrapChecks    ] [dphxps17] max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
+[2022-05-26T07:58:11,982][WARN ][o.e.b.BootstrapChecks    ] [dphxps17] the default discovery settings are unsuitable for production use; at least one of [discovery.seed_hosts, discovery.seed_providers, cluster.initial_master_nodes] must be configured
+[2022-05-26T07:58:11,990][INFO ][o.e.c.c.ClusterBootstrapService] [dphxps17] no discovery configuration found, will perform best-effort cluster bootstrapping after [3s] unless existing master is discovered
+[2022-05-26T07:58:15,002][INFO ][o.e.c.c.Coordinator      ] [dphxps17] setting initial configuration to VotingConfiguration{NfFqPd9vSjusoqtclZLPbw}
+[2022-05-26T07:58:15,133][INFO ][o.e.c.s.MasterService    ] [dphxps17] elected-as-master ([1] nodes joined)[{dphxps17}{NfFqPd9vSjusoqtclZLPbw}{0NNyHt3SQvS5Tir2w6D48w}{127.0.0.1}{127.0.0.1:9300}{ml.machine_memory=33375494144, xpack.installed=true, ml.max_open_jobs=20} elect leader, _BECOME_MASTER_TASK_, _FINISH_ELECTION_], term: 1, version: 1, reason: master node changed {previous [], current [{dphxps17}{NfFqPd9vSjusoqtclZLPbw}{0NNyHt3SQvS5Tir2w6D48w}{127.0.0.1}{127.0.0.1:9300}{ml.machine_memory=33375494144, xpack.installed=true, ml.max_open_jobs=20}]}
+[2022-05-26T07:58:15,144][INFO ][o.e.c.c.CoordinationState] [dphxps17] cluster UUID set to [q9tU7PZ_SPq7UOog2adlNA]
+[2022-05-26T07:58:15,153][INFO ][o.e.c.s.ClusterApplierService] [dphxps17] master node changed {previous [], current [{dphxps17}{NfFqPd9vSjusoqtclZLPbw}{0NNyHt3SQvS5Tir2w6D48w}{127.0.0.1}{127.0.0.1:9300}{ml.machine_memory=33375494144, xpack.installed=true, ml.max_open_jobs=20}]}, term: 1, version: 1, reason: Publication{term=1, version=1}
+[2022-05-26T07:58:15,172][INFO ][o.e.h.AbstractHttpServerTransport] [dphxps17] publish_address {127.0.0.1:9200}, bound_addresses {[::1]:9200}, {127.0.0.1:9200}
+[2022-05-26T07:58:15,173][INFO ][o.e.n.Node               ] [dphxps17] started
+[2022-05-26T07:58:15,175][WARN ][o.e.x.s.a.s.m.NativeRoleMappingStore] [dphxps17] Failed to clear cache for realms [[]]
+[2022-05-26T07:58:15,208][INFO ][o.e.g.GatewayService     ] [dphxps17] recovered [0] indices into cluster_state
+[2022-05-26T07:58:15,278][INFO ][o.e.c.m.MetaDataIndexTemplateService] [dphxps17] adding template [.watch-history-9] for index patterns [.watcher-history-9*]
+[2022-05-26T07:58:15,293][INFO ][o.e.c.m.MetaDataIndexTemplateService] [dphxps17] adding template [.triggered_watches] for index patterns [.triggered_watches*]
+[2022-05-26T07:58:15,308][INFO ][o.e.c.m.MetaDataIndexTemplateService] [dphxps17] adding template [.watches] for index patterns [.watches*]
+[2022-05-26T07:58:15,331][INFO ][o.e.c.m.MetaDataIndexTemplateService] [dphxps17] adding template [.monitoring-logstash] for index patterns [.monitoring-logstash-7-*]
+[2022-05-26T07:58:15,360][INFO ][o.e.c.m.MetaDataIndexTemplateService] [dphxps17] adding template [.monitoring-es] for index patterns [.monitoring-es-7-*]
+[2022-05-26T07:58:15,382][INFO ][o.e.c.m.MetaDataIndexTemplateService] [dphxps17] adding template [.monitoring-beats] for index patterns [.monitoring-beats-7-*]
+[2022-05-26T07:58:15,399][INFO ][o.e.c.m.MetaDataIndexTemplateService] [dphxps17] adding template [.monitoring-alerts-7] for index patterns [.monitoring-alerts-7]
+[2022-05-26T07:58:15,418][INFO ][o.e.c.m.MetaDataIndexTemplateService] [dphxps17] adding template [.monitoring-kibana] for index patterns [.monitoring-kibana-7-*]
+[2022-05-26T07:58:15,432][INFO ][o.e.x.i.a.TransportPutLifecycleAction] [dphxps17] adding index lifecycle policy [watch-history-ilm-policy]
+[2022-05-26T07:58:15,501][INFO ][o.e.l.LicenseService     ] [dphxps17] license [7034b2a3-3cb1-4532-9747-eddacdab03bd] mode [basic] - valid
+
+http://localhost:9200/
+
+name	"dphxps17"
+cluster_name	"elasticsearch"
+cluster_uuid	"q9tU7PZ_SPq7UOog2adlNA"
+version	
+number	"7.1.1"
+build_flavor	"default"
+build_type	"tar"
+build_hash	"7a013de"
+build_date	"2019-05-23T14:04:00.380842Z"
+build_snapshot	false
+lucene_version	"8.0.0"
+minimum_wire_compatibility_version	"6.8.0"
+minimum_index_compatibility_version	"6.0.0-beta1"
+tagline	"You Know, for Search"
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~$ cd ~/Downloads/elastic/
+davidho@dphxps17:~/Downloads/elastic$ cd kibana-7.1.1-linux-x86_64/
+davidho@dphxps17:~/Downloads/elastic/kibana-7.1.1-linux-x86_64$ ls -latr
+total 1868
+-rw-rw-r--    1 davidho davidho    4048 May 23  2019 README.txt
+drwxrwxr-x    2 davidho davidho    4096 May 23  2019 plugins
+-rw-rw-r--    1 davidho davidho     738 May 23  2019 package.json
+-rw-rw-r--    1 davidho davidho 1797013 May 23  2019 NOTICE.txt
+-rw-rw-r--    1 davidho davidho   13675 May 23  2019 LICENSE.txt
+drwxrwxr-x    2 davidho davidho    4096 May 23  2019 data
+drwxrwxr-x    4 davidho davidho    4096 May 26 07:54 ..
+drwxrwxr-x    6 davidho davidho    4096 May 26 07:54 node
+drwxrwxr-x    2 davidho davidho    4096 May 26 07:54 config
+drwxrwxr-x    4 davidho davidho    4096 May 26 07:54 built_assets
+drwxrwxr-x    2 davidho davidho    4096 May 26 07:54 bin
+drwxrwxr-x   13 davidho davidho    4096 May 26 07:54 .
+drwxrwxr-x    2 davidho davidho    4096 May 26 07:54 webpackShims
+drwxrwxr-x    3 davidho davidho    4096 May 26 07:54 target
+drwxrwxr-x   10 davidho davidho    4096 May 26 07:54 src
+drwxrwxr-x    3 davidho davidho    4096 May 26 07:54 optimize
+drwxrwxr-x 1161 davidho davidho   36864 May 26 07:54 node_modules
+davidho@dphxps17:~/Downloads/elastic/kibana-7.1.1-linux-x86_64$ 
+davidho@dphxps17:~/Downloads/elastic/kibana-7.1.1-linux-x86_64$ bin/kibana
+  log   [12:08:32.974] [info][status][plugin:kibana@undefined] Status changed from uninitialized to green - Ready
+  log   [12:08:32.989] [info][status][plugin:elasticsearch@undefined] Status changed from uninitialized to yellow - Waiting for Elasticsearch
+  log   [12:08:32.990] [info][status][plugin:xpack_main@7.1.1] Status changed from uninitialized to yellow - Waiting for Elasticsearch
+  log   [12:08:32.993] [info][status][plugin:graph@7.1.1] Status changed from uninitialized to yellow - Waiting for Elasticsearch
+  log   [12:08:32.996] [info][status][plugin:monitoring@7.1.1] Status changed from uninitialized to green - Ready
+  log   [12:08:32.998] [info][status][plugin:spaces@7.1.1] Status changed from uninitialized to yellow - Waiting for Elasticsearch
+  log   [12:08:33.001] [warning][security] Generating a random key for xpack.security.encryptionKey. To prevent sessions from being invalidated on restart, please set xpack.security.encryptionKey in kibana.yml
+  log   [12:08:33.003] [warning][security] Session cookies will be transmitted over insecure connections. This is not recommended.
+  log   [12:08:33.006] [info][status][plugin:security@7.1.1] Status changed from uninitialized to yellow - Waiting for Elasticsearch
+  log   [12:08:33.016] [info][status][plugin:searchprofiler@7.1.1] Status changed from uninitialized to yellow - Waiting for Elasticsearch
+  log   [12:08:33.017] [info][status][plugin:ml@7.1.1] Status changed from uninitialized to yellow - Waiting for Elasticsearch
+  log   [12:08:33.031] [info][status][plugin:tilemap@7.1.1] Status changed from uninitialized to yellow - Waiting for Elasticsearch
+  log   [12:08:33.031] [info][status][plugin:watcher@7.1.1] Status changed from uninitialized to yellow - Waiting for Elasticsearch
+  log   [12:08:33.036] [info][status][plugin:grokdebugger@7.1.1] Status changed from uninitialized to yellow - Waiting for Elasticsearch
+  log   [12:08:33.041] [info][status][plugin:dashboard_mode@7.1.1] Status changed from uninitialized to green - Ready
+  log   [12:08:33.042] [info][status][plugin:logstash@7.1.1] Status changed from uninitialized to yellow - Waiting for Elasticsearch
+  log   [12:08:33.045] [info][status][plugin:beats_management@7.1.1] Status changed from uninitialized to yellow - Waiting for Elasticsearch
+  log   [12:08:33.050] [info][status][plugin:apm_oss@undefined] Status changed from uninitialized to green - Ready
+  log   [12:08:33.055] [info][status][plugin:apm@7.1.1] Status changed from uninitialized to green - Ready
+  log   [12:08:33.056] [info][status][plugin:tile_map@undefined] Status changed from uninitialized to green - Ready
+  log   [12:08:33.057] [info][status][plugin:task_manager@7.1.1] Status changed from uninitialized to green - Ready
+  log   [12:08:33.058] [info][status][plugin:maps@7.1.1] Status changed from uninitialized to yellow - Waiting for Elasticsearch
+  log   [12:08:33.060] [info][status][plugin:interpreter@undefined] Status changed from uninitialized to green - Ready
+  log   [12:08:33.063] [info][status][plugin:canvas@7.1.1] Status changed from uninitialized to green - Ready
+  log   [12:08:33.064] [info][status][plugin:license_management@7.1.1] Status changed from uninitialized to green - Ready
+  log   [12:08:33.065] [info][status][plugin:cloud@7.1.1] Status changed from uninitialized to green - Ready
+  log   [12:08:33.066] [info][status][plugin:index_management@7.1.1] Status changed from uninitialized to yellow - Waiting for Elasticsearch
+  log   [12:08:33.071] [info][status][plugin:console@undefined] Status changed from uninitialized to green - Ready
+  log   [12:08:33.072] [info][status][plugin:console_extensions@7.1.1] Status changed from uninitialized to green - Ready
+  log   [12:08:33.073] [info][status][plugin:notifications@7.1.1] Status changed from uninitialized to green - Ready
+  log   [12:08:33.076] [info][status][plugin:index_lifecycle_management@7.1.1] Status changed from uninitialized to yellow - Waiting for Elasticsearch
+  log   [12:08:33.093] [info][status][plugin:infra@7.1.1] Status changed from uninitialized to green - Ready
+  log   [12:08:33.094] [info][status][plugin:rollup@7.1.1] Status changed from uninitialized to yellow - Waiting for Elasticsearch
+  log   [12:08:33.097] [info][status][plugin:remote_clusters@7.1.1] Status changed from uninitialized to yellow - Waiting for Elasticsearch
+  log   [12:08:33.100] [info][status][plugin:cross_cluster_replication@7.1.1] Status changed from uninitialized to yellow - Waiting for Elasticsearch
+  log   [12:08:33.103] [info][status][plugin:translations@7.1.1] Status changed from uninitialized to green - Ready
+  log   [12:08:33.108] [info][status][plugin:upgrade_assistant@7.1.1] Status changed from uninitialized to green - Ready
+  log   [12:08:33.113] [info][status][plugin:uptime@7.1.1] Status changed from uninitialized to green - Ready
+  log   [12:08:33.114] [info][status][plugin:oss_telemetry@7.1.1] Status changed from uninitialized to green - Ready
+  log   [12:08:33.119] [info][status][plugin:metrics@undefined] Status changed from uninitialized to green - Ready
+  log   [12:08:33.170] [info][status][plugin:timelion@undefined] Status changed from uninitialized to green - Ready
+  log   [12:08:33.525] [info][status][plugin:elasticsearch@undefined] Status changed from yellow to green - Ready
+  log   [12:08:33.544] [info][license][xpack] Imported license information from Elasticsearch for the [data] cluster: mode: basic | status: active
+  log   [12:08:33.547] [info][status][plugin:xpack_main@7.1.1] Status changed from yellow to green - Ready
+  log   [12:08:33.547] [info][status][plugin:graph@7.1.1] Status changed from yellow to green - Ready
+  log   [12:08:33.548] [info][status][plugin:searchprofiler@7.1.1] Status changed from yellow to green - Ready
+  log   [12:08:33.548] [info][status][plugin:ml@7.1.1] Status changed from yellow to green - Ready
+  log   [12:08:33.548] [info][status][plugin:tilemap@7.1.1] Status changed from yellow to green - Ready
+  log   [12:08:33.548] [info][status][plugin:watcher@7.1.1] Status changed from yellow to green - Ready
+  log   [12:08:33.548] [info][status][plugin:grokdebugger@7.1.1] Status changed from yellow to green - Ready
+  log   [12:08:33.548] [info][status][plugin:logstash@7.1.1] Status changed from yellow to green - Ready
+  log   [12:08:33.548] [info][status][plugin:beats_management@7.1.1] Status changed from yellow to green - Ready
+  log   [12:08:33.548] [info][status][plugin:index_management@7.1.1] Status changed from yellow to green - Ready
+  log   [12:08:33.549] [info][status][plugin:index_lifecycle_management@7.1.1] Status changed from yellow to green - Ready
+  log   [12:08:33.549] [info][status][plugin:rollup@7.1.1] Status changed from yellow to green - Ready
+  log   [12:08:33.549] [info][status][plugin:remote_clusters@7.1.1] Status changed from yellow to green - Ready
+  log   [12:08:33.549] [info][status][plugin:cross_cluster_replication@7.1.1] Status changed from yellow to green - Ready
+  log   [12:08:33.549] [info][kibana-monitoring][monitoring-ui] Starting monitoring stats collection
+  log   [12:08:33.556] [info][status][plugin:security@7.1.1] Status changed from yellow to green - Ready
+  log   [12:08:33.557] [info][status][plugin:maps@7.1.1] Status changed from yellow to green - Ready
+  log   [12:08:33.578] [info][license][xpack] Imported license information from Elasticsearch for the [monitoring] cluster: mode: basic | status: active
+  log   [12:08:34.139] [warning][reporting] Generating a random key for xpack.reporting.encryptionKey. To prevent pending reports from failing on restart, please set xpack.reporting.encryptionKey in kibana.yml
+  log   [12:08:34.150] [info][status][plugin:reporting@7.1.1] Status changed from uninitialized to green - Ready
+  log   [12:08:34.165] [info][task_manager] Installing .kibana_task_manager index template version: 7010199.
+  log   [12:08:34.186] [info][task_manager] Installed .kibana_task_manager index template: version 7010199 (API version 1)
+  log   [12:08:34.433] [info][migrations] Creating index .kibana_1.
+  log   [12:08:34.497] [info][migrations] Pointing alias .kibana to .kibana_1.
+  log   [12:08:34.520] [info][migrations] Finished in 92ms.
+  log   [12:08:34.521] [info][listening] Server running at http://localhost:5601
+  log   [12:08:34.540] [info][status][plugin:spaces@7.1.1] Status changed from yellow to green - Ready
+
+http://localhost:5601
+http://localhost:5601/app/kibana#/home?_g=()
+http://localhost:5601/app/kibana#/dev_tools/console?_g=()
+
+Welcome to Console
+
+Quick intro to the UI
+
+The Console UI is split into two panes: an editor pane (left) and a response pane (right). Use the editor to type requests and submit them to Elasticsearch. The results will be displayed in the response pane on the right side.
+
+Console understands requests in a compact format, similar to cURL:
+
+While typing a request, Console will make suggestions which you can then accept by hitting Enter/Tab. These suggestions are made based on the request structure as well as your indices and types.
+
+A few quick tips, while I have your attention
+
+    Submit requests to ES using the green triangle button.
+    Use the wrench menu for other useful things.
+    You can paste requests in cURL format and they will be translated to the Console syntax.
+    You can resize the editor and output panes by dragging the separator between them.
+    Study the keyboard shortcuts under the Help button. Good stuff in there!
+
+GET /
+
+{
+  "name" : "dphxps17",
+  "cluster_name" : "elasticsearch",
+  "cluster_uuid" : "q9tU7PZ_SPq7UOog2adlNA",
+  "version" : {
+    "number" : "7.1.1",
+    "build_flavor" : "default",
+    "build_type" : "tar",
+    "build_hash" : "7a013de",
+    "build_date" : "2019-05-23T14:04:00.380842Z",
+    "build_snapshot" : false,
+    "lucene_version" : "8.0.0",
+    "minimum_wire_compatibility_version" : "6.8.0",
+    "minimum_index_compatibility_version" : "6.0.0-beta1"
+  },
+  "tagline" : "You Know, for Search"
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/Downloads/elastic/elasticsearch-7.1.1/jdk$ 
+davidho@dphxps17:~/Downloads/elastic/elasticsearch-7.1.1/jdk$ date
+Thu May 26 09:00:30 AM EDT 2022
+davidho@dphxps17:~/Downloads/elastic/elasticsearch-7.1.1/jdk$ pwd -P
+/home/davidho/Downloads/elastic/elasticsearch-7.1.1/jdk
+davidho@dphxps17:~/Downloads/elastic/elasticsearch-7.1.1/jdk$ ls -la
+total 36
+drwxr-xr-x  8 davidho davidho 4096 May 23  2019 .
+drwxr-xr-x 10 davidho davidho 4096 May 26 07:58 ..
+drwxr-xr-x  2 davidho davidho 4096 May 23  2019 bin
+drwxr-xr-x  5 davidho davidho 4096 May 23  2019 conf
+drwxr-xr-x  3 davidho davidho 4096 May 23  2019 include
+drwxr-xr-x  2 davidho davidho 4096 May 23  2019 jmods
+drwxr-xr-x 72 davidho davidho 4096 May 23  2019 legal
+drwxr-xr-x  5 davidho davidho 4096 May 23  2019 lib
+-rw-r--r--  1 davidho davidho 1190 May 23  2019 release
+davidho@dphxps17:~/Downloads/elastic/elasticsearch-7.1.1/jdk$ cat release 
+IMPLEMENTOR="Oracle Corporation"
+JAVA_VERSION="12.0.1"
+JAVA_VERSION_DATE="2019-04-16"
+MODULES="java.base java.compiler java.datatransfer java.xml java.prefs java.desktop java.instrument java.logging java.management java.security.sasl java.naming java.rmi java.management.rmi java.net.http java.scripting java.security.jgss java.transaction.xa java.sql java.sql.rowset java.xml.crypto java.se java.smartcardio jdk.accessibility jdk.internal.vm.ci jdk.management jdk.unsupported jdk.internal.vm.compiler jdk.aot jdk.internal.jvmstat jdk.attach jdk.charsets jdk.compiler jdk.crypto.ec jdk.crypto.cryptoki jdk.dynalink jdk.internal.ed jdk.editpad jdk.hotspot.agent jdk.httpserver jdk.internal.le jdk.internal.opt jdk.internal.vm.compiler.management jdk.jartool jdk.javadoc jdk.jcmd jdk.management.agent jdk.jconsole jdk.jdeps jdk.jdwp.agent jdk.jdi jdk.jfr jdk.jlink jdk.jshell jdk.jsobject jdk.jstatd jdk.localedata jdk.management.jfr jdk.naming.dns jdk.naming.rmi jdk.net jdk.pack jdk.rmic jdk.scripting.nashorn jdk.scripting.nashorn.shell jdk.sctp jdk.security.auth jdk.security.jgss jdk.unsupported.desktop jdk.xml.dom jdk.zipfs"
+OS_ARCH="x86_64"
+OS_NAME="Linux"
+SOURCE=".:hg:e831fc6bca9e"
+davidho@dphxps17:~/Downloads/elastic/elasticsearch-7.1.1/jdk$ 
+
