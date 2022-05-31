@@ -2,7 +2,6 @@ Thu May 26 07:36:05 AM EDT 2022
 
 davidho@dphxps17:~$ date
 Thu May 26 07:35:36 AM EDT 2022
-davidho@dphxps17:~$ date > stuff-20220526.txt
 davidho@dphxps17:~$ code   stuff-20220526.txt 
 davidho@dphxps17:~$ 
 davidho@dphxps17:~$ uname -a
@@ -396,4 +395,1900 @@ OS_ARCH="x86_64"
 OS_NAME="Linux"
 SOURCE=".:hg:e831fc6bca9e"
 davidho@dphxps17:~/Downloads/elastic/elasticsearch-7.1.1/jdk$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+idho@dphxps17:~/Documents$ rbenv install -l
+2.6.10
+2.7.6
+3.0.4
+3.1.2
+jruby-9.3.4.0
+mruby-3.0.0
+rbx-5.0
+truffleruby-22.1.0
+truffleruby+graalvm-22.1.0
+
+Only latest stable releases for each Ruby implementation are shown.
+Use 'rbenv install --list-all / -L' to show all local versions.
+davidho@dphxps17:~/Documents$ 
+davidho@dphxps17:~/Documents$ rbenv install 3.0.4
+Downloading ruby-3.0.4.tar.gz...
+-> https://cache.ruby-lang.org/pub/ruby/3.0/ruby-3.0.4.tar.gz
+Installing ruby-3.0.4...
+
+BUILD FAILED (Ubuntu 22.04 using ruby-build 20220426-3-g1038c07)
+
+Inspect or clean up the working tree at /tmp/ruby-build.20220526115455.4693.vf4BuJ
+Results logged to /tmp/ruby-build.20220526115455.4693.log
+
+Last 10 log lines:
+installing bundled gem cache:       /home/davidho/.rbenv/versions/3.0.4/lib/ruby/gems/3.0.0/cache
+The Ruby openssl extension was not compiled.
+ERROR: Ruby install aborted due to missing extensions
+Try running `apt-get install -y libssl-dev` to fetch missing dependencies.
+
+Configure options used:
+  --prefix=/home/davidho/.rbenv/versions/3.0.4
+  --enable-shared
+  LDFLAGS=-L/home/davidho/.rbenv/versions/3.0.4/lib 
+  CPPFLAGS=-I/home/davidho/.rbenv/versions/3.0.4/include 
+davidho@dphxps17:~/Documents$ 
+davidho@dphxps17:~/Documents$ apt-get install -y libssl-dev
+E: Could not open lock file /var/lib/dpkg/lock-frontend - open (13: Permission denied)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root?
+davidho@dphxps17:~/Documents$ sudo apt-get install -y libssl-dev
+[sudo] password for davidho: 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+libssl-dev is already the newest version (3.0.2-0ubuntu1.2).
+The following packages were automatically installed and are no longer required:
+  chromium-codecs-ffmpeg-extra gstreamer1.0-vaapi libatomic1:i386 libbsd0:i386 libdrm-amdgpu1:i386 libdrm-nouveau2:i386 libdrm-radeon1:i386
+  libdrm2:i386 libedit2:i386 libelf1:i386 libexpat1:i386 libffi8:i386 libglapi-mesa:i386 libglvnd0:i386 libgstreamer-plugins-bad1.0-0 libicu70:i386
+  libllvm13:i386 libmd0:i386 libnvidia-cfg1-510 libnvidia-common-510 libnvidia-compute-510:i386 libnvidia-decode-510 libnvidia-decode-510:i386
+  libnvidia-egl-wayland1 libnvidia-encode-510 libnvidia-encode-510:i386 libnvidia-extra-510 libnvidia-fbc1-510 libnvidia-gl-510
+  libnvidia-gl-510:i386 libsensors5:i386 libstdc++6:i386 libva-wayland2 libvulkan1:i386 libwayland-client0:i386 libx11-6:i386 libx11-xcb1:i386
+  libxau6:i386 libxcb-dri2-0:i386 libxcb-dri3-0:i386 libxcb-glx0:i386 libxcb-present0:i386 libxcb-randr0:i386 libxcb-shm0:i386 libxcb-sync1:i386
+  libxcb-xfixes0:i386 libxcb1:i386 libxdmcp6:i386 libxext6:i386 libxfixes3:i386 libxml2:i386 libxnvctrl0 libxshmfence1:i386 libxxf86vm1:i386
+  mesa-vulkan-drivers:i386 nvidia-compute-utils-510 nvidia-kernel-source-510 nvidia-settings nvidia-utils-510 pkg-config screen-resolution-extra
+  xserver-xorg-video-nvidia-510
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 17 not upgraded.
+davidho@dphxps17:~/Documents$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/Documents$ rbenv install 2.7.6
+Downloading ruby-2.7.6.tar.bz2...
+-> https://cache.ruby-lang.org/pub/ruby/2.7/ruby-2.7.6.tar.bz2
+Installing ruby-2.7.6...
+
+BUILD FAILED (Ubuntu 22.04 using ruby-build 20220426-3-g1038c07)
+
+Inspect or clean up the working tree at /tmp/ruby-build.20220526120118.17049.OeTfWw
+Results logged to /tmp/ruby-build.20220526120118.17049.log
+
+Last 10 log lines:
+	from ./tool/rbinstall.rb:846:in `block (2 levels) in install_default_gem'
+	from ./tool/rbinstall.rb:279:in `open_for_install'
+	from ./tool/rbinstall.rb:845:in `block in install_default_gem'
+	from ./tool/rbinstall.rb:835:in `each'
+	from ./tool/rbinstall.rb:835:in `install_default_gem'
+	from ./tool/rbinstall.rb:799:in `block in <main>'
+	from ./tool/rbinstall.rb:950:in `block in <main>'
+	from ./tool/rbinstall.rb:947:in `each'
+	from ./tool/rbinstall.rb:947:in `<main>'
+make: *** [uncommon.mk:373: do-install-all] Error 1
+davidho@dphxps17:~/Documents$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/Documents$ rbenv install 2.6.10
+Downloading ruby-2.6.10.tar.bz2...
+-> https://cache.ruby-lang.org/pub/ruby/2.6/ruby-2.6.10.tar.bz2
+Installing ruby-2.6.10...
+
+BUILD FAILED (Ubuntu 22.04 using ruby-build 20220426-3-g1038c07)
+
+Inspect or clean up the working tree at /tmp/ruby-build.20220526120352.28881.mRi2A1
+Results logged to /tmp/ruby-build.20220526120352.28881.log
+
+Last 10 log lines:
+cc1: note: unrecognized command-line option ‘-Wno-parentheses-equality’ may have been intended to silence earlier diagnostics
+cc1: note: unrecognized command-line option ‘-Wno-constant-logical-operand’ may have been intended to silence earlier diagnostics
+linking shared-object socket.so
+make[2]: Leaving directory '/tmp/ruby-build.20220526120352.28881.mRi2A1/ruby-2.6.10/ext/socket'
+linking shared-object nkf.so
+make[2]: Leaving directory '/tmp/ruby-build.20220526120352.28881.mRi2A1/ruby-2.6.10/ext/nkf'
+linking shared-object bigdecimal.so
+make[2]: Leaving directory '/tmp/ruby-build.20220526120352.28881.mRi2A1/ruby-2.6.10/ext/bigdecimal'
+make[1]: Leaving directory '/tmp/ruby-build.20220526120352.28881.mRi2A1/ruby-2.6.10'
+make: *** [uncommon.mk:286: build-ext] Error 2
+davidho@dphxps17:~/Documents$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://www.manning.com/books/elasticsearch-in-action
+Elasticsearch in Action 
+Radu Gheorghe, Matthew Lee Hinman, and Roy Russo
+November 2015 ISBN 9781617291623 496 pages printed in black & white 
+
+https://www.manning.com/books/elasticsearch-in-action-second-edition
+Elasticsearch in Action, Second Edition
+Madhusudhan Konda
+MEAP began July 2021 Publication in Early 2023 (estimated) 
+ISBN 9781617299858 475 pages (estimated) printed in black & white 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/Downloads/elastic$ 
+davidho@dphxps17:~/Downloads/elastic$ ls -latr
+total 502544
+-rw-rw-r--  1 davidho davidho 346794062 May 25 07:33 elasticsearch-7.1.1-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho 167785446 May 25 07:37 kibana-7.1.1-linux-x86_64.tar.gz
+drwxrwxr-x 13 davidho davidho      4096 May 26 07:54 kibana-7.1.1-linux-x86_64
+drwxr-xr-x 10 davidho davidho      4096 May 26 07:58 elasticsearch-7.1.1
+drwxr-xr-x  4 davidho davidho      4096 May 26 12:14 ..
+drwxrwxr-x  4 davidho davidho      4096 May 26 13:07 books
+drwxrwxr-x  5 davidho davidho      4096 May 26 13:07 .
+davidho@dphxps17:~/Downloads/elastic$ 
+davidho@dphxps17:~/Downloads/elastic$ cd books
+davidho@dphxps17:~/Downloads/elastic/books$ 
+davidho@dphxps17:~/Downloads/elastic/books$ ls -latr
+total 80
+drwxr-xr-x 2 davidho davidho  4096 Oct  5  2015 elasticsearch-in-action
+drwx------ 5 davidho davidho  4096 Apr  8 11:30 elasticsearch-in-action-main
+-rw-rw-r-- 1 davidho davidho 54908 May 26 12:08 elasticsearch-in-action-main.zip
+-rw-rw-r-- 1 davidho davidho  5497 May 26 12:14 Elasticsearch_SourceCode.zip
+drwxrwxr-x 5 davidho davidho  4096 May 26 13:07 ..
+drwxrwxr-x 4 davidho davidho  4096 May 26 13:07 .
+davidho@dphxps17:~/Downloads/elastic/books$ 
+davidho@dphxps17:~/Downloads/elastic/books$ cd elasticsearch-in-action
+davidho@dphxps17:~/Downloads/elastic/books/elasticsearch-in-action$ 
+davidho@dphxps17:~/Downloads/elastic/books/elasticsearch-in-action$ ls -latr
+total 32
+-rw-r--r-- 1 davidho davidho  1072 Oct  5  2015 README.md
+-rwxr-xr-x 1 davidho davidho 13276 Oct  5  2015 populate.sh
+-rw-r--r-- 1 davidho davidho  2645 Oct  5  2015 mapping.json
+drwxr-xr-x 2 davidho davidho  4096 Oct  5  2015 .
+drwxrwxr-x 4 davidho davidho  4096 May 26 13:07 ..
+davidho@dphxps17:~/Downloads/elastic/books/elasticsearch-in-action$ 
+davidho@dphxps17:~/Downloads/elastic/books/elasticsearch-in-action$ grep curl populate.sh 
+curl -s "http://localhost:9200" 2>&1 > /dev/null
+curl -s -XDELETE 'localhost:9200/get-together' > /dev/null
+curl -s -XPOST 'localhost:9200/get-together' -d@$(dirname $0)/mapping.json
+curl -s 'localhost:9200/get-together/_health?wait_for_status=yellow&timeout=10s' > /dev/null
+curl -s -XPOST 'localhost:9200/get-together/group/1' -d'{
+curl -s -XPOST 'localhost:9200/get-together/group/2' -d'{
+curl -s -XPOST 'localhost:9200/get-together/group/3' -d'{
+curl -s -XPOST 'localhost:9200/get-together/group/4' -d'{
+curl -s -XPOST 'localhost:9200/get-together/group/5' -d'{
+curl -s -XPOST 'localhost:9200/get-together/event/100?parent=1' -d'{
+curl -s -XPOST 'localhost:9200/get-together/event/101?parent=1' -d'{
+curl -s -XPOST 'localhost:9200/get-together/event/102?parent=1' -d'{
+curl -s -XPOST 'localhost:9200/get-together/event/103?parent=2' -d'{
+curl -s -XPOST 'localhost:9200/get-together/event/104?parent=2' -d'{
+curl -s -XPOST 'localhost:9200/get-together/event/105?parent=2' -d'{
+curl -s -XPOST 'localhost:9200/get-together/event/106?parent=3' -d'{
+curl -s -XPOST 'localhost:9200/get-together/event/107?parent=3' -d'{
+curl -s -XPOST 'localhost:9200/get-together/event/108?parent=3' -d'{
+curl -s -XPOST 'localhost:9200/get-together/event/109?parent=4' -d'{
+curl -s -XPOST 'localhost:9200/get-together/event/110?parent=4' -d'{
+curl -s -XPOST 'localhost:9200/get-together/event/111?parent=4' -d'{
+curl -s -XPOST 'localhost:9200/get-together/event/112?parent=5' -d'{
+curl -s -XPOST 'localhost:9200/get-together/event/113?parent=5' -d'{
+curl -s -XPOST 'localhost:9200/get-together/event/114?parent=5' -d'{
+curl -s -XPOST 'localhost:9200/get-together/_refresh'
+curl -s -XPUT 'http://localhost:9200/_template/logging_index_all' -d'{
+curl -s -XPUT 'http://localhost:9200/_template/logging_index' -d '{
+curl -s -XDELETE 'http://localhost:9200/myindex' > /dev/null
+curl -s -XPUT 'http://localhost:9200/myindex' -d'
+curl -s -XDELETE 'http://localhost:9200/november_2014_invoices' > /dev/null
+curl -s -XDELETE 'http://localhost:9200/december_2014_invoices' > /dev/null
+curl -s -XPOST 'http://localhost:9200/november_2014_invoices' -d'{}'
+curl -s -XPOST 'http://localhost:9200/december_2014_invoices' -d'
+curl -s -XPOST 'http://localhost:9200/_aliases' -d'
+curl -s -XPOST 'http://localhost:9200/_aliases' -d '
+curl -s -XPOST 'http://localhost:9200/_aliases' -d '
+davidho@dphxps17:~/Downloads/elastic/books/elasticsearch-in-action$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/Downloads/elastic$ ls -latr
+total 502544
+-rw-rw-r--  1 davidho davidho 346794062 May 25 07:33 elasticsearch-7.1.1-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho 167785446 May 25 07:37 kibana-7.1.1-linux-x86_64.tar.gz
+drwxrwxr-x 13 davidho davidho      4096 May 26 07:54 kibana-7.1.1-linux-x86_64
+drwxr-xr-x 10 davidho davidho      4096 May 26 07:58 elasticsearch-7.1.1
+drwxr-xr-x  4 davidho davidho      4096 May 26 12:14 ..
+drwxrwxr-x  4 davidho ddavidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ cat ideaIU-2022.1.1.tar.gz.sha256
+4291489cc15f62fa0c9ed338b94dba9889b23d8d8d6e00638fdcb4aab69eb0f5 *ideaIU-2022.1.1.tar.gz
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ cat ideaIC-2022.1.1.tar.gz.sha256
+d43a290a0723336944236ef6275a2dd660db424abcce6238c53cb57469b8cb41 *ideaIC-2022.1.1.tar.gz
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ cat RubyMine-2022.1.1.tar.gz.sha256
+5175abb089cde9095db3643800e2de5c7fa29156d9b6181ef53555e4815510bd *RubyMine-2022.1.1.tar.gz
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ shasum -a 256 -c ideaIU-2022.1.1.tar.gz.sha256
+ideaIU-2022.1.1.tar.gz: OK
+davidho@dphxps17:~/Downloads$ shasum -a 256 -c ideaIC-2022.1.1.tar.gz.sha256
+ideaIC-2022.1.1.tar.gz: OK
+davidho@dphxps17:~/Downloads$ shasum -a 256 -c RubyMine-2022.1.1.tar.gz.sha256
+RubyMine-2022.1.1.tar.gz: OK
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ 
+avidho      4096 May 26 13:07 books
+drwxrwxr-x  5 davidho davidho      4096 May 26 13:07 .
+davidho@dphxps17:~/Downloads/elastic$ cd books
+davidho@dphxps17:~/Downloads/elastic/books$ 
+davidho@dphxps17:~/Downloads/elastic/books$ ls -latr
+total 80
+drwxr-xr-x 2 davidho davidho  4096 Oct  5  2015 elasticsearch-in-action
+drwx------ 5 davidho davidho  4096 Apr  8 11:30 elasticsearch-in-action-main
+-rw-rw-r-- 1 davidho davidho 54908 May 26 12:08 elasticsearch-in-action-main.zip
+-rw-rw-r-- 1 davidho davidho  5497 May 26 12:14 Elasticsearch_SourceCode.zip
+drwxrwxr-x 5 davidho davidho  4096 May 26 13:07 ..
+drwxrwxr-x 4 davidho davidho  4096 May 26 13:07 .
+davidho@dphxps17:~/Downloads/elastic/books$ 
+davidho@dphxps17:~/Downloads/elastic/books$ cd elasticsearch-in-action-main/
+davidho@dphxps17:~/Downloads/elastic/books/elasticsearch-in-action-main$ 
+davidho@dphxps17:~/Downloads/elastic/books/elasticsearch-in-action-main$ ls -latr
+total 40
+-rw-rw-r-- 1 davidho davidho  1492 Apr  8 11:30 README.md
+-rw-rw-r-- 1 davidho davidho 11357 Apr  8 11:30 LICENSE
+drwx------ 2 davidho davidho  4096 Apr  8 11:30 kibana_scripts
+-rw-rw-r-- 1 davidho davidho   278 Apr  8 11:30 .gitignore
+drwx------ 2 davidho davidho  4096 Apr  8 11:30 docker
+drwx------ 2 davidho davidho  4096 Apr  8 11:30 datasets
+drwx------ 5 davidho davidho  4096 Apr  8 11:30 .
+drwxrwxr-x 4 davidho davidho  4096 May 26 13:07 ..
+davidho@dphxps17:~/Downloads/elastic/books/elasticsearch-in-action-main$ 
+davidho@dphxps17:~/Downloads/elastic/books/elasticsearch-in-action-main$ ls -latr datasets/
+total 68
+-rw-rw-r-- 1 davidho davidho 10681 Apr  8 11:30 top-movies-kibana.txt
+-rw-rw-r-- 1 davidho davidho   697 Apr  8 11:30 three-books-kibana.txt
+-rw-rw-r-- 1 davidho davidho  1260 Apr  8 11:30 covid-26march2021.txt
+-rw-rw-r-- 1 davidho davidho 29853 Apr  8 11:30 books.txt
+-rw-rw-r-- 1 davidho davidho  4934 Apr  8 11:30 books-kibana-dataset.txt
+drwx------ 5 davidho davidho  4096 Apr  8 11:30 ..
+drwx------ 2 davidho davidho  4096 Apr  8 11:30 .
+davidho@dphxps17:~/Downloads/elastic/books/elasticsearch-in-action-main$ 
+davidho@dphxps17:~/Downloads/elastic/books/elasticsearch-in-action-main$ ls -latr docker/
+total 24
+-rw-rw-r-- 1 davidho davidho    1 Apr  8 11:30 one_node_kibana.yml
+-rw-rw-r-- 1 davidho davidho   25 Apr  8 11:30 one_node_es.yml
+-rw-rw-r-- 1 davidho davidho 1088 Apr  8 11:30 elasticsearch-docker-8-1-2.yml
+-rw-rw-r-- 1 davidho davidho 1019 Apr  8 11:30 7.15.1_es_kibana.yml
+drwx------ 5 davidho davidho 4096 Apr  8 11:30 ..
+drwx------ 2 davidho davidho 4096 Apr  8 11:30 .
+davidho@dphxps17:~/Downloads/elastic/books/elasticsearch-in-action-main$ 
+davidho@dphxps17:~/Downloads/elastic/books/elasticsearch-in-action-main$ ls -latr kibana_scripts/
+total 128
+-rw-rw-r-- 1 davidho davidho 18093 Apr  8 11:30 ch9_term_level_queries.txt
+-rw-rw-r-- 1 davidho davidho 19341 Apr  8 11:30 ch8_search_basics.txt
+-rw-rw-r-- 1 davidho davidho 18276 Apr  8 11:30 ch7_text_analysis.txt
+-rw-rw-r-- 1 davidho davidho 11071 Apr  8 11:30 ch6_indexing_operations.txt
+-rw-rw-r-- 1 davidho davidho  5966 Apr  8 11:30 ch5_working_with_documents.txt
+-rw-rw-r-- 1 davidho davidho 14102 Apr  8 11:30 ch4_mapping.txt
+-rw-rw-r-- 1 davidho davidho 10700 Apr  8 11:30 ch2_getting_started.txt
+-rw-rw-r-- 1 davidho davidho    39 Apr  8 11:30 ch11_advanced_search.txt
+-rw-rw-r-- 1 davidho davidho  7151 Apr  8 11:30 ch10_full_text_queries.txt
+drwx------ 5 davidho davidho  4096 Apr  8 11:30 ..
+drwx------ 2 davidho davidho  4096 Apr  8 11:30 .
+davidho@dphxps17:~/Downloads/elastic/books/elasticsearch-in-action-main$ 
+davidho@dphxps17:~/Downloads/elastic/books/elasticsearch-in-action-main$ cd kibana_scripts/
+davidho@dphxps17:~/Downloads/elastic/books/elasticsearch-in-action-main/kibana_scripts$ 
+davidho@dphxps17:~/Downloads/elastic/books/elasticsearch-in-action-main/kibana_scripts$ grep "^GET\|^POST\|^PUT\|^DEL" ch2_getting_started.txt 
+PUT books/_doc/1
+PUT books/_doc/2
+PUT books/_doc/3
+GET books/_count
+PUT fiction/_doc/1
+GET books,fiction/_count
+GET /_count
+GET b*/_count
+GET books/_doc/1
+GET books/_source/1
+GET books/_search
+GET books/_search
+GET books/_search
+GET books/_search
+GET books/_search
+GET books/_search
+GET books/_search
+GET books/_search
+GET books/_search
+GET books/_search
+GET books/_search
+GET books/_search
+GET books/_search
+GET books/_search
+GET books/_search
+GET books/_search
+GET books/_search
+GET books/_search
+GET books/_search
+GET books/_search
+PUT books/_doc/99
+PUT books/_doc/100
+GET books/_search
+GET books/_mapping
+GET books/_search
+GET books/_search
+GET books/_search
+GET books/_search
+GET books/_search
+GET books/_search
+GET books/_search
+GET books/_search
+GET books/_search
+GET books/_search
+GET books/_search
+GET covid/_search
+GET covid/_search
+GET covid/_search
+GET covid/_search
+GET covid/_search
+GET covid/_search
+davidho@dphxps17:~/Downloads/elastic/books/elasticsearch-in-action-main/kibana_scripts$ 
+davidho@dphxps17:~/Downloads/elastic/books/elasticsearch-in-action-main/kibana_scripts$ grep "^GET\|^POST\|^PUT\|^DEL" ch8_search_basics.txt 
+PUT movies
+POST _bulk
+GET movies/_search
+GET movies/_search
+GET movies/_search
+GET movies/_search
+GET movies/_search
+GET movies/_search?q=title:Godfather
+GET movies/_search?q=title:Godfather Knight Shawshank
+GET movies/_search?q=title:Knight actors:Bale
+GET movies/_search?q=title:Godfather actors:Bale
+GET movies/_search?q=title:Godfather actors:Bale&default_operator=AND
+GET movies/_search?q=title:Knight actors:(bale AND ledger) rating:(>=9.0 AND <=9.5)&from=0&size=10&explain=true&sort=rating&default_operator=AND
+GET movies/_search?q=title:Godfather actors:(Brando OR Pacino) rating:(>=9.0 AND <=9.5)&from=0&size=10&explain=true&sort=rating&default_operator=AND
+GET movies/_search
+GET movies/_search
+GET movies/_search
+GET movies/_search
+GET movies/_search
+GET movies/_search
+GET movies/_search
+GET movies/_search
+GET movies/_search
+PUT movies/_settings
+GET movies/_search
+GET movies/_search
+GET movies/_search
+GET movies/_explain/14
+GET movies/_search
+GET movies/_search
+GET movies/_search
+GET movies/_search
+GET movies/_search
+GET movies/_search
+GET movies/_search
+GET movies/_search
+GET movies/_search
+GET movies/_search
+GET movies/_search
+GET movies/_search
+GET _search
+GET _all/_search
+GET */_search
+PUT movies_top/_doc/1
+PUT movies_new/_doc/1
+GET movies*/_search
+GET movies_new/_mapping
+GET movies*/_search
+GET movies/_search
+davidho@dphxps17:~/Downloads/elastic/books/elasticsearch-in-action-main/kibana_scripts$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+This repository contains the code examples from the book [*Elasticsearch in Action*][2].
+
+When do I need them?
+--------------------
+
+Because it's nice to have some sample data to run various searches from the book's listings. Throughout most chapters, there's an example use-case of running a get-together site, where you have people organizing themselves into groups and hosting events. Code samples provide you with some data and a script to index that data.
+
+How do I index the sample data?
+-------------------------------
+
+    # clone the repository
+    git clone https://github.com/dakrone/elasticsearch-in-action.git
+
+    # index the sample data
+    elasticsearch-in-action/populate.sh
+
+I have questions or suggestions for these samples
+-------------------------------------------------
+
+You have feedback? We'd be glad to hear it from you on the [book's forum][1]. You can also send pull requests or open issues on this repository.
+
+Happy reading and Elasticsearch-ing!
+
+  [1]: http://www.manning-sandbox.com/forum.jspa?forumID=871
+  [2]: http://manning.com/hinman
+
+davidho@dphxps17:~/Downloads/elastic$ mkdir repositories
+davidho@dphxps17:~/Downloads/elastic$ cd repositories/
+davidho@dphxps17:~/Downloads/elastic/repositories$ ls
+davidho@dphxps17:~/Downloads/elastic/repositories$ git clone https://github.com/dakrone/elasticsearch-in-action.git
+Cloning into 'elasticsearch-in-action'...
+remote: Enumerating objects: 107, done.
+remote: Total 107 (delta 0), reused 0 (delta 0), pack-reused 107
+Receiving objects: 100% (107/107), 28.38 KiB | 3.55 MiB/s, done.
+Resolving deltas: 100% (46/46), done.
+davidho@dphxps17:~/Downloads/elastic/repositories$
+davidho@dphxps17:~/Downloads/elastic/repositories$ ls -la
+total 12
+drwxrwxr-x 3 davidho davidho 4096 May 26 13:55 .
+drwxrwxr-x 6 davidho davidho 4096 May 26 13:55 ..
+drwxrwxr-x 3 davidho davidho 4096 May 26 13:55 elasticsearch-in-action
+davidho@dphxps17:~/Downloads/elastic/repositories$ 
+davidho@dphxps17:~/Downloads/elastic/repositories$ cd elasticsearch-in-action/
+davidho@dphxps17:~/Downloads/elastic/repositories/elasticsearch-in-action$ 
+davidho@dphxps17:~/Downloads/elastic/repositories/elasticsearch-in-action$ ls -la
+total 36
+drwxrwxr-x 3 davidho davidho  4096 May 26 13:55 .
+drwxrwxr-x 3 davidho davidho  4096 May 26 13:55 ..
+drwxrwxr-x 8 davidho davidho  4096 May 26 13:55 .git
+-rw-rw-r-- 1 davidho davidho  2657 May 26 13:55 mapping.json
+-rwxrwxr-x 1 davidho davidho 13229 May 26 13:55 populate.sh
+-rw-rw-r-- 1 davidho davidho  1377 May 26 13:55 README.md
+davidho@dphxps17:~/Downloads/elastic/repositories/elasticsearch-in-action$ 
+davidho@dphxps17:~/Downloads/elastic/repositories/elasticsearch-in-action$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/Downloads$ ls -latr
+total 4497968
+-rw-rw-r--  1 davidho davidho   82685224 May 24 22:33 code_1.67.2-1652812855_amd64.deb
+-rw-rw-r--  1 davidho davidho  116454561 May 24 22:33 code-1.67.2-1652812909.el7.x86_64.rpm
+-rw-rw-r--  1 davidho davidho  115658426 May 24 22:33 code-stable-x64-1652813090.tar.gz
+-rw-rw-r--  1 davidho davidho  526118574 May 25 07:29 elasticsearch-8.2.1-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        170 May 25 07:29 elasticsearch-8.2.1-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho        488 May 25 07:29 elasticsearch-8.2.1-linux-x86_64.tar.gz.asc
+-rw-rw-r--  1 davidho davidho  346794062 May 25 07:33 elasticsearch-7.1.1-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        169 May 25 07:33 elasticsearch-7.1.1-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  346825772 May 25 07:34 elasticsearch-7.1.1-amd64.deb
+-rw-rw-r--  1 davidho davidho        159 May 25 07:34 elasticsearch-7.1.1-amd64.deb.sha512
+-rw-rw-r--  1 davidho davidho  255005883 May 25 07:36 kibana-8.2.1-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        163 May 25 07:36 kibana-8.2.1-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho        488 May 25 07:36 kibana-8.2.1-linux-x86_64.tar.gz.asc
+-rw-rw-r--  1 davidho davidho  167785446 May 25 07:37 kibana-7.1.1-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        162 May 25 07:37 kibana-7.1.1-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  172293244 May 25 07:37 kibana-7.1.1-amd64.deb
+-rw-rw-r--  1 davidho davidho        152 May 25 07:37 kibana-7.1.1-amd64.deb.sha512
+drwxr-x--- 22 davidho davidho       4096 May 26 09:02 ..
+-rw-rw-r--  1 davidho davidho      54908 May 26 12:08 elasticsearch-in-action-main.zip
+-rw-rw-r--  1 davidho davidho       5497 May 26 12:14 Elasticsearch_SourceCode.zip
+drwxrwxr-x  6 davidho davidho       4096 May 26 13:55 elastic
+-rw-rw-r--  1 davidho davidho 1027422390 May 26 14:01 ideaIU-2022.1.1.tar.gz
+-rw-rw-r--  1 davidho davidho         89 May 26 14:01 ideaIU-2022.1.1.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  854242731 May 26 14:04 ideaIC-2022.1.1.tar.gz
+-rw-rw-r--  1 davidho davidho         89 May 26 14:05 ideaIC-2022.1.1.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  594454153 May 26 14:06 RubyMine-2022.1.1.tar.gz
+-rw-rw-r--  1 davidho davidho         91 May 26 14:06 RubyMine-2022.1.1.tar.gz.sha256
+drwx------  3 davidho davidho       4096 May 26 14:06 firefox.tmp
+drwxr-xr-x  4 davidho davidho       4096 May 26 14:07 .
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ cat ideaIU-2022.1.1.tar.gz.sha256
+4291489cc15f62fa0c9ed338b94dba9889b23d8d8d6e00638fdcb4aab69eb0f5 *ideaIU-2022.1.1.tar.gz
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ cat ideaIC-2022.1.1.tar.gz.sha256
+d43a290a0723336944236ef6275a2dd660db424abcce6238c53cb57469b8cb41 *ideaIC-2022.1.1.tar.gz
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ cat RubyMine-2022.1.1.tar.gz.sha256
+5175abb089cde9095db3643800e2de5c7fa29156d9b6181ef53555e4815510bd *RubyMine-2022.1.1.tar.gz
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ shasum -a 256 -c ideaIU-2022.1.1.tar.gz.sha256
+ideaIU-2022.1.1.tar.gz: OK
+davidho@dphxps17:~/Downloads$ shasum -a 256 -c ideaIC-2022.1.1.tar.gz.sha256
+ideaIC-2022.1.1.tar.gz: OK
+davidho@dphxps17:~/Downloads$ shasum -a 256 -c RubyMine-2022.1.1.tar.gz.sha256
+RubyMine-2022.1.1.tar.gz: OK
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://www.jetbrains.com/help/ruby/installation-guide.html#standalone
+https://www.jetbrains.com/help/ruby/run-for-the-first-time.html
+
+sudo tar -xzf jetbrains-toolbox-1.17.7391.tar.gz -C /opt
+
+sudo tar xzf RubyMine-*.tar.gz -C /opt/
+sudo tar -xzf RubyMine-2022.1.1.tar.gz -C /opt
+
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ sudo tar -xzf RubyMine-2022.1.1.tar.gz -C /opt
+[sudo] password for davidho: 
+davidho@dphxps17:~/Downloads$ ls -latr /opt
+total 12
+drwxr-xr-x 20 root root 4096 May 24 22:09 ..
+drwxr-xr-x  3 root root 4096 May 26 14:19 .
+drwxr-xr-x  8 root root 4096 May 26 14:19 RubyMine-2022.1.1
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr /opt/RubyMine-2022.1.1/
+total 48
+-rw-r--r--  1 root root 1820 May 11 15:51 Install-Linux-tar.txt
+-rw-r--r--  1 root root   14 May 11 15:51 build.txt
+-rw-r--r--  1 root root 2861 May 11 15:52 RMlogo.svg
+-rw-r--r--  1 root root  441 May 11 15:53 product-info.json
+drwxr-xr-x  2 root root 4096 May 26 14:19 help
+drwxr-xr-x  2 root root 4096 May 26 14:19 license
+drwxr-xr-x  4 root root 4096 May 26 14:19 lib
+drwxr-xr-x 74 root root 4096 May 26 14:19 plugins
+drwxr-xr-x  3 root root 4096 May 26 14:19 bin
+drwxr-xr-x  8 root root 4096 May 26 14:19 .
+drwxr-xr-x  7 root root 4096 May 26 14:19 jbr
+drwxr-xr-x  4 root root 4096 May 26 14:23 ..
+davidho@dphxps17:~/Downloads$ 
+
+
+https://www.jetbrains.com/help/idea/installation-guide.html#standalone
+
+sudo tar -xzf ideaIU.tar.gz -C /opt
+sudo tar -xzf ideaIU-2022.1.1.tar.gz -C /opt
+
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ sudo tar -xzf ideaIU-2022.1.1.tar.gz -C /opt
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr /opt
+total 16
+drwxr-xr-x 20 root root 4096 May 24 22:09 ..
+drwxr-xr-x  8 root root 4096 May 26 14:19 RubyMine-2022.1.1
+drwxr-xr-x  4 root root 4096 May 26 14:23 .
+drwxr-xr-x  8 root root 4096 May 26 14:23 idea-IU-221.5591.52
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr /opt/idea-IU-221.5591.52/
+total 44
+-rw-r--r--   1 root root   14 May 11 01:16 build.txt
+-rw-r--r--   1 root root 1849 May 11 01:16 Install-Linux-tar.txt
+-rw-r--r--   1 root root  434 May 11 01:20 product-info.json
+drwxr-xr-x   2 root root 4096 May 26 14:23 help
+drwxr-xr-x   4 root root 4096 May 26 14:23 ..
+drwxr-xr-x   3 root root 4096 May 26 14:23 license
+drwxr-xr-x   7 root root 4096 May 26 14:23 lib
+drwxr-xr-x 158 root root 4096 May 26 14:23 plugins
+drwxr-xr-x   3 root root 4096 May 26 14:23 bin
+drwxr-xr-x   8 root root 4096 May 26 14:23 .
+drwxr-xr-x   7 root root 4096 May 26 14:23 jbr
+davidho@dphxps17:~/Downloads$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://support.1password.com/install-linux/
+
+Debian or Ubuntu
+
+Download and install the .deb package to get 1Password for Debian or Ubuntu.
+
+Or install 1Password using your package manager:
+
+    Add the key for the 1Password apt repository:
+
+     curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo gpg --dearmor --output /usr/share/keyrings/1password-archive-keyring.gpg
+
+    Add the 1Password apt repository:
+
+     echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/1password-archive-keyring.gpg] https://downloads.1password.com/linux/debian/amd64 stable main' | sudo tee /etc/apt/sources.list.d/1password.list
+
+    Add the debsig-verify policy:
+
+     sudo mkdir -p /etc/debsig/policies/AC2D62742012EA22/
+     curl -sS https://downloads.1password.com/linux/debian/debsig/1password.pol | sudo tee /etc/debsig/policies/AC2D62742012EA22/1password.pol
+     sudo mkdir -p /usr/share/debsig/keyrings/AC2D62742012EA22
+     curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo gpg --dearmor --output /usr/share/debsig/keyrings/AC2D62742012EA22/debsig.gpg
+
+    Install 1Password:
+
+     sudo apt update && sudo apt install 1password
+
+The packages and repository are signed with the GPG key 3FEF9748469ADBE15DA7CA80AC2D62742012EA22.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://itsfoss.com/install-chrome-ubuntu/#install-chrome-terminal
+
+To install Google Chrome from the terminal, get the DEB file using the wget command:
+
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+Now you can use dpkg to install Chrome from the downloaded DEB file:
+
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+
+That’s it. Now you can find Google Chrome in the menu and start it from there.
+
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+--2022-05-26 14:41:55--  https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+Resolving dl.google.com (dl.google.com)... 172.253.122.91, 172.253.122.136, 172.253.122.190, ...
+Connecting to dl.google.com (dl.google.com)|172.253.122.91|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 84701968 (81M) [application/x-debian-package]
+Saving to: ‘google-chrome-stable_current_amd64.deb’
+
+google-chrome-stable_current_amd64.de 100%[=======================================================================>]  80.78M  87.7MB/s    in 0.9s    
+
+2022-05-26 14:41:56 (87.7 MB/s) - ‘google-chrome-stable_current_amd64.deb’ saved [84701968/84701968]
+
+davidho@dphxps17:~/Downloads$ sudo dpkg -i google-chrome-stable_current_amd64.deb
+[sudo] password for davidho: 
+Selecting previously unselected package google-chrome-stable.
+(Reading database ... 207777 files and directories currently installed.)
+Preparing to unpack google-chrome-stable_current_amd64.deb ...
+Unpacking google-chrome-stable (102.0.5005.61-1) ...
+Setting up google-chrome-stable (102.0.5005.61-1) ...
+update-alternatives: using /usr/bin/google-chrome-stable to provide /usr/bin/x-www-browser (x-www-browser) in auto mode
+update-alternatives: using /usr/bin/google-chrome-stable to provide /usr/bin/gnome-www-browser (gnome-www-browser) in auto mode
+update-alternatives: using /usr/bin/google-chrome-stable to provide /usr/bin/google-chrome (google-chrome) in auto mode
+Processing triggers for mailcap (3.70+nmu1ubuntu1) ...
+Processing triggers for gnome-menus (3.36.0-1ubuntu3) ...
+Processing triggers for desktop-file-utils (0.26-1ubuntu3) ...
+Processing triggers for man-db (2.10.2-1) ...
+davidho@dphxps17:~/Downloads$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr
+total 4658260
+-rw-rw-r--  1 davidho davidho   84701968 May 17 18:43 google-chrome-stable_current_amd64.deb
+-rw-rw-r--  1 davidho davidho   82685224 May 24 22:33 code_1.67.2-1652812855_amd64.deb
+-rw-rw-r--  1 davidho davidho  116454561 May 24 22:33 code-1.67.2-1652812909.el7.x86_64.rpm
+-rw-rw-r--  1 davidho davidho  115658426 May 24 22:33 code-stable-x64-1652813090.tar.gz
+-rw-rw-r--  1 davidho davidho  526118574 May 25 07:29 elasticsearch-8.2.1-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        170 May 25 07:29 elasticsearch-8.2.1-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho        488 May 25 07:29 elasticsearch-8.2.1-linux-x86_64.tar.gz.asc
+-rw-rw-r--  1 davidho davidho  346794062 May 25 07:33 elasticsearch-7.1.1-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        169 May 25 07:33 elasticsearch-7.1.1-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  346825772 May 25 07:34 elasticsearch-7.1.1-amd64.deb
+-rw-rw-r--  1 davidho davidho        159 May 25 07:34 elasticsearch-7.1.1-amd64.deb.sha512
+-rw-rw-r--  1 davidho davidho  255005883 May 25 07:36 kibana-8.2.1-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        163 May 25 07:36 kibana-8.2.1-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho        488 May 25 07:36 kibana-8.2.1-linux-x86_64.tar.gz.asc
+-rw-rw-r--  1 davidho davidho  167785446 May 25 07:37 kibana-7.1.1-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        162 May 25 07:37 kibana-7.1.1-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  172293244 May 25 07:37 kibana-7.1.1-amd64.deb
+-rw-rw-r--  1 davidho davidho        152 May 25 07:37 kibana-7.1.1-amd64.deb.sha512
+-rw-rw-r--  1 davidho davidho      54908 May 26 12:08 elasticsearch-in-action-main.zip
+-rw-rw-r--  1 davidho davidho       5497 May 26 12:14 Elasticsearch_SourceCode.zip
+drwxrwxr-x  6 davidho davidho       4096 May 26 13:55 elastic
+-rw-rw-r--  1 davidho davidho 1027422390 May 26 14:01 ideaIU-2022.1.1.tar.gz
+-rw-rw-r--  1 davidho davidho         89 May 26 14:01 ideaIU-2022.1.1.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  854242731 May 26 14:04 ideaIC-2022.1.1.tar.gz
+-rw-rw-r--  1 davidho davidho         89 May 26 14:05 ideaIC-2022.1.1.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  594454153 May 26 14:06 RubyMine-2022.1.1.tar.gz
+-rw-rw-r--  1 davidho davidho         91 May 26 14:06 RubyMine-2022.1.1.tar.gz.sha256
+drwxr-x--- 24 davidho davidho       4096 May 26 14:29 ..
+-rw-rw-r--  1 davidho davidho   79430486 May 26 14:36 1password-latest.deb
+drwx------  3 davidho davidho       4096 May 26 14:39 firefox.tmp
+drwxr-xr-x  4 davidho davidho       4096 May 26 14:41 .
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr /opt
+total 20
+drwxr-xr-x 20 root root 4096 May 24 22:09 ..
+drwxr-xr-x  8 root root 4096 May 26 14:19 RubyMine-2022.1.1
+drwxr-xr-x  8 root root 4096 May 26 14:23 idea-IU-221.5591.52
+drwxr-xr-x  3 root root 4096 May 26 14:42 google
+drwxr-xr-x  5 root root 4096 May 26 14:42 .
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr /opt/google/
+total 12
+drwxr-xr-x 5 root root 4096 May 26 14:42 ..
+drwxr-xr-x 3 root root 4096 May 26 14:42 .
+drwxr-xr-x 7 root root 4096 May 26 14:42 chrome
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr /opt/google/chrome/
+total 232940
+-rwxr-xr-x 1 root root     33273 May 17 18:11 xdg-settings
+-rwxr-xr-x 1 root root     37394 May 17 18:11 xdg-mime
+-rw-r--r-- 1 root root       107 May 17 18:11 vk_swiftshader_icd.json
+-rw-r--r-- 1 root root    730520 May 17 18:11 v8_context_snapshot.bin
+-rw-r--r-- 1 root root   7703797 May 17 18:11 resources.pak
+-rw-r--r-- 1 root root      4557 May 17 18:11 product_logo_64.png
+-rw-r--r-- 1 root root      3095 May 17 18:11 product_logo_48.png
+-rw-r--r-- 1 root root      7611 May 17 18:11 product_logo_32.xpm
+-rw-r--r-- 1 root root      1810 May 17 18:11 product_logo_32.png
+-rw-r--r-- 1 root root     38037 May 17 18:11 product_logo_256.png
+-rw-r--r-- 1 root root      1281 May 17 18:11 product_logo_24.png
+-rw-r--r-- 1 root root       787 May 17 18:11 product_logo_16.png
+-rw-r--r-- 1 root root     10577 May 17 18:11 product_logo_128.png
+-rw-r--r-- 1 root root   3802504 May 17 18:11 nacl_irt_x86_64.nexe
+-rwxr-xr-x 1 root root      9032 May 17 18:11 nacl_helper_bootstrap
+-rwxr-xr-x 1 root root   3035216 May 17 18:11 nacl_helper
+-rwxr-xr-x 1 root root    552664 May 17 18:11 libvulkan.so.1
+-rw-r--r-- 1 root root   4192600 May 17 18:11 libvk_swiftshader.so
+-rw-r--r-- 1 root root   2412008 May 17 18:11 liboptimization_guide_internal.so
+-rw-r--r-- 1 root root   6391368 May 17 18:11 libGLESv2.so
+-rw-r--r-- 1 root root    243784 May 17 18:11 libEGL.so
+-rw-r--r-- 1 root root  10404784 May 17 18:11 icudtl.dat
+-rwxr-xr-x 1 root root      1878 May 17 18:11 google-chrome
+-rwsr-xr-x 1 root root    212048 May 17 18:11 chrome-sandbox
+-rwxr-xr-x 1 root root   2871072 May 17 18:11 chrome-management-service
+-rwxr-xr-x 1 root root   1197576 May 17 18:11 chrome_crashpad_handler
+-rw-r--r-- 1 root root    989570 May 17 18:11 chrome_200_percent.pak
+-rw-r--r-- 1 root root    642325 May 17 18:11 chrome_100_percent.pak
+-rwxr-xr-x 1 root root 192901776 May 17 18:11 chrome
+-rw-r--r-- 1 root root       482 May 17 18:11 default-app-block
+drwxr-xr-x 3 root root      4096 May 26 14:42 ..
+drwxr-xr-x 3 root root      4096 May 26 14:42 WidevineCdm
+drwxr-xr-x 2 root root      4096 May 26 14:42 MEIPreload
+drwxr-xr-x 2 root root      4096 May 26 14:42 default_apps
+drwxr-xr-x 2 root root      4096 May 26 14:42 cron
+drwxr-xr-x 2 root root      4096 May 26 14:42 locales
+drwxr-xr-x 7 root root      4096 May 26 14:42 .
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://1password.com/
+https://1password.com/tour/
+https://1password.com/downloads/linux/     (clicked the "Download .deb" button)
+https://support.1password.com/install-linux/
+
+Debian or Ubuntu
+
+Download and install the .deb package to get 1Password for Debian or Ubuntu.
+
+Or install 1Password using your package manager:
+
+    Add the key for the 1Password apt repository:
+
+     curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo gpg --dearmor --output /usr/share/keyrings/1password-archive-keyring.gpg
+
+    Add the 1Password apt repository:
+
+     echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/1password-archive-keyring.gpg] https://downloads.1password.com/linux/debian/amd64 stable main' | sudo tee /etc/apt/sources.list.d/1password.list
+
+    Add the debsig-verify policy:
+
+     sudo mkdir -p /etc/debsig/policies/AC2D62742012EA22/
+     curl -sS https://downloads.1password.com/linux/debian/debsig/1password.pol | sudo tee /etc/debsig/policies/AC2D62742012EA22/1password.pol
+     sudo mkdir -p /usr/share/debsig/keyrings/AC2D62742012EA22
+     curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo gpg --dearmor --output /usr/share/debsig/keyrings/AC2D62742012EA22/debsig.gpg
+
+    Install 1Password:
+
+     sudo apt update && sudo apt install 1password
+
+The packages and repository are signed with the GPG key 3FEF9748469ADBE15DA7CA80AC2D62742012EA22.
+
+Other distributions (.tar.gz)
+
+Download and install the .tar.gz file to use on other distributions.
+
+    Download 1Password:
+
+     curl -sSO https://downloads.1password.com/linux/tar/stable/x86_64/1password-latest.tar.gz
+
+    Extract and move the files:
+
+     tar -xf 1password-latest.tar.gz
+     sudo mkdir -p /opt/1Password
+     sudo mv 1password-*/* /opt/1Password
+
+    Run the installation script:
+
+     sudo /opt/1Password/after-install.sh
+
+The .tar.gz file is signed with the GPG key 3FEF9748469ADBE15DA7CA80AC2D62742012EA22. Download the .sig file.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ sudo dpkg -i 1password-latest.deb
+[sudo] password for davidho: 
+Selecting previously unselected package 1password.
+(Reading database ... 207890 files and directories currently installed.)
+Preparing to unpack 1password-latest.deb ...
+Unpacking 1password (8.7.0) ...
+dpkg: dependency problems prevent configuration of 1password:
+ 1password depends on gnupg2; however:
+  Package gnupg2 is not installed.
+
+dpkg: error processing package 1password (--install):
+ dependency problems - leaving unconfigured
+Processing triggers for mailcap (3.70+nmu1ubuntu1) ...
+Processing triggers for gnome-menus (3.36.0-1ubuntu3) ...
+Processing triggers for desktop-file-utils (0.26-1ubuntu3) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Errors were encountered while processing:
+ 1password
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ sudo apt install 1password
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+1password is already the newest version (8.7.0).
+You might want to run 'apt --fix-broken install' to correct these.
+The following packages have unmet dependencies:
+ 1password : Depends: gnupg2 but it is not going to be installed
+             Recommends: libappindicator1
+E: Unmet dependencies. Try 'apt --fix-broken install' with no packages (or specify a solution).
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ sudo apt update && sudo apt install 1password
+Hit:1 http://packages.microsoft.com/repos/code stable InRelease
+Get:2 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]                    
+Hit:3 http://us.archive.ubuntu.com/ubuntu jammy InRelease                                               
+Get:4 http://us.archive.ubuntu.com/ubuntu jammy-updates InRelease [109 kB]                              
+Get:5 https://dl.google.com/linux/chrome/deb stable InRelease [1,811 B]                   
+Get:6 http://us.archive.ubuntu.com/ubuntu jammy-backports InRelease [99.8 kB]                         
+Get:7 https://dl.google.com/linux/chrome/deb stable/main amd64 Packages [1,082 B]
+Get:8 http://security.ubuntu.com/ubuntu jammy-security/main amd64 DEP-11 Metadata [11.4 kB]
+Get:9 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [214 kB]
+Get:10 http://us.archive.ubuntu.com/ubuntu jammy-updates/main Translation-en [55.0 kB]
+Get:11 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 DEP-11 Metadata [57.4 kB]
+Get:12 http://us.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 DEP-11 Metadata [87.8 kB]
+Get:13 http://us.archive.ubuntu.com/ubuntu jammy-backports/universe amd64 DEP-11 Metadata [1,196 B]
+Fetched 749 kB in 1s (1,121 kB/s)              
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+17 packages can be upgraded. Run 'apt list --upgradable' to see them.
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+1password is already the newest version (8.7.0).
+You might want to run 'apt --fix-broken install' to correct these.
+The following packages have unmet dependencies:
+ 1password : Depends: gnupg2 but it is not going to be installed
+             Recommends: libappindicator1
+E: Unmet dependencies. Try 'apt --fix-broken install' with no packages (or specify a solution).
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ sudo apt update
+Hit:1 http://us.archive.ubuntu.com/ubuntu jammy InRelease
+Hit:2 http://us.archive.ubuntu.com/ubuntu jammy-updates InRelease                                                                          
+Hit:3 http://security.ubuntu.com/ubuntu jammy-security InRelease                                                                           
+Hit:4 http://packages.microsoft.com/repos/code stable InRelease     
+Hit:5 http://us.archive.ubuntu.com/ubuntu jammy-backports InRelease 
+Hit:6 https://dl.google.com/linux/chrome/deb stable InRelease
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+17 packages can be upgraded. Run 'apt list --upgradable' to see them.
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ sudo apt upgrade
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+You might want to run 'apt --fix-broken install' to correct these.
+The following packages have unmet dependencies:
+ 1password : Depends: gnupg2 but it is not installed
+             Recommends: libappindicator1
+E: Unmet dependencies. Try 'apt --fix-broken install' with no packages (or specify a solution).
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ sudo apt --fix-broken install
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Correcting dependencies... Done
+The following packages were automatically installed and are no longer required:
+  chromium-codecs-ffmpeg-extra gstreamer1.0-vaapi libatomic1:i386 libbsd0:i386 libdrm-amdgpu1:i386 libdrm-nouveau2:i386 libdrm-radeon1:i386
+  libdrm2:i386 libedit2:i386 libelf1:i386 libexpat1:i386 libffi8:i386 libglapi-mesa:i386 libglvnd0:i386 libgstreamer-plugins-bad1.0-0 libicu70:i386
+  libllvm13:i386 libmd0:i386 libnvidia-cfg1-510 libnvidia-common-510 libnvidia-compute-510:i386 libnvidia-decode-510 libnvidia-decode-510:i386
+  libnvidia-egl-wayland1 libnvidia-encode-510 libnvidia-encode-510:i386 libnvidia-extra-510 libnvidia-fbc1-510 libnvidia-gl-510
+  libnvidia-gl-510:i386 libsensors5:i386 libstdc++6:i386 libva-wayland2 libvulkan1:i386 libwayland-client0:i386 libx11-6:i386 libx11-xcb1:i386
+  libxau6:i386 libxcb-dri2-0:i386 libxcb-dri3-0:i386 libxcb-glx0:i386 libxcb-present0:i386 libxcb-randr0:i386 libxcb-shm0:i386 libxcb-sync1:i386
+  libxcb-xfixes0:i386 libxcb1:i386 libxdmcp6:i386 libxext6:i386 libxfixes3:i386 libxml2:i386 libxnvctrl0 libxshmfence1:i386 libxxf86vm1:i386
+  mesa-vulkan-drivers:i386 nvidia-compute-utils-510 nvidia-kernel-source-510 nvidia-settings nvidia-utils-510 pkg-config screen-resolution-extra
+  xserver-xorg-video-nvidia-510
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  gnupg2
+The following NEW packages will be installed:
+  gnupg2
+0 upgraded, 1 newly installed, 0 to remove and 17 not upgraded.
+1 not fully installed or removed.
+Need to get 5,544 B of archives.
+After this operation, 52.2 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://us.archive.ubuntu.com/ubuntu jammy/universe amd64 gnupg2 all 2.2.27-3ubuntu2 [5,544 B]
+Fetched 5,544 B in 0s (89.7 kB/s) 
+Selecting previously unselected package gnupg2.
+(Reading database ... 207999 files and directories currently installed.)
+Preparing to unpack .../gnupg2_2.2.27-3ubuntu2_all.deb ...
+Unpacking gnupg2 (2.2.27-3ubuntu2) ...
+Setting up gnupg2 (2.2.27-3ubuntu2) ...
+Setting up 1password (8.7.0) ...
+Installing the debian auto-update channel
+Processing triggers for man-db (2.10.2-1) ...
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ sudo apt update && sudo apt install 1password
+Hit:1 http://us.archive.ubuntu.com/ubuntu jammy InRelease
+Get:2 https://downloads.1password.com/linux/debian/amd64 stable InRelease [4,306 B]                                                                  
+Hit:3 http://security.ubuntu.com/ubuntu jammy-security InRelease                                                                                     
+Hit:4 http://packages.microsoft.com/repos/code stable InRelease                           
+Hit:5 http://us.archive.ubuntu.com/ubuntu jammy-updates InRelease   
+Hit:6 http://us.archive.ubuntu.com/ubuntu jammy-backports InRelease
+Hit:7 https://dl.google.com/linux/chrome/deb stable InRelease
+Get:8 https://downloads.1password.com/linux/debian/amd64 stable/main amd64 Packages [927 B]
+Fetched 5,233 B in 0s (11.1 kB/s)
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+17 packages can be upgraded. Run 'apt list --upgradable' to see them.
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+1password is already the newest version (8.7.0).
+The following packages were automatically installed and are no longer required:
+  chromium-codecs-ffmpeg-extra gstreamer1.0-vaapi libatomic1:i386 libbsd0:i386 libdrm-amdgpu1:i386 libdrm-nouveau2:i386 libdrm-radeon1:i386
+  libdrm2:i386 libedit2:i386 libelf1:i386 libexpat1:i386 libffi8:i386 libglapi-mesa:i386 libglvnd0:i386 libgstreamer-plugins-bad1.0-0 libicu70:i386
+  libllvm13:i386 libmd0:i386 libnvidia-cfg1-510 libnvidia-common-510 libnvidia-compute-510:i386 libnvidia-decode-510 libnvidia-decode-510:i386
+  libnvidia-egl-wayland1 libnvidia-encode-510 libnvidia-encode-510:i386 libnvidia-extra-510 libnvidia-fbc1-510 libnvidia-gl-510
+  libnvidia-gl-510:i386 libsensors5:i386 libstdc++6:i386 libva-wayland2 libvulkan1:i386 libwayland-client0:i386 libx11-6:i386 libx11-xcb1:i386
+  libxau6:i386 libxcb-dri2-0:i386 libxcb-dri3-0:i386 libxcb-glx0:i386 libxcb-present0:i386 libxcb-randr0:i386 libxcb-shm0:i386 libxcb-sync1:i386
+  libxcb-xfixes0:i386 libxcb1:i386 libxdmcp6:i386 libxext6:i386 libxfixes3:i386 libxml2:i386 libxnvctrl0 libxshmfence1:i386 libxxf86vm1:i386
+  mesa-vulkan-drivers:i386 nvidia-compute-utils-510 nvidia-kernel-source-510 nvidia-settings nvidia-utils-510 pkg-config screen-resolution-extra
+  xserver-xorg-video-nvidia-510
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 17 not upgraded.
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ 
+
+
+A3-7ZV264-7YATZN-F5H9L-GV7CD-PRAEZ-Y2STE
+A3-7ZV264-7YATZN-F5H9L-GV7CD-PRAEZ-Y2STE
+david.holberton@gmail.com
+$msp2001CKI
+
+https://support.1password.com/cs/getting-started-browser/
+https://chrome.google.com/webstore/detail/1password-%E2%80%93-password-mana/aeblfdkhhhdcdjpifhhbdiojplfjncoa
+https://addons.mozilla.org/en-US/firefox/addon/1password-x-password-manager/
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://phoenixnap.com/kb/install-ruby-ubuntu
+
+Install Ruby via Ubuntu Repository
+
+Using the built-in apt package manager offers the fastest and easiest way to install Ruby on Ubuntu:
+
+Note: Learn more about using the apt package manager and the difference between apt and apt-get.
+
+1. Update the system repositories with:
+
+sudo apt update
+
+2. Use the following command to install Ruby:
+
+sudo apt install ruby-full
+
+3. When prompted, type Y and press Enter to confirm the installation.
+
+Confirming the Ruby installation using the official repository
+4. Once the installation is complete, verify it by checking the current version of Ruby:
+
+ruby --version
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Install Ruby Using Rbenv
+
+Rbenv is a command line tool that lets you switch between installed versions of Ruby. It can also install new versions of Ruby using the ruby-build plugin.
+
+Step 1: Download Updates and Dependencies
+1. Start by updating the system repositories:
+
+sudo apt update
+
+2. Download and install the libraries and compilers Ruby needs to run:
+
+sudo apt install git curl autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev
+
+3. Type Y and press Enter to confirm the installation.
+
+Step 2: Install Rbenv
+1. Download and run the shell script used to install Rbenv:
+
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
+
+2.  You need to add $HOME/.rbenv/bin to your PATH environment variable to start using Rbenv.
+
+Note: Learn how to set environment variables in Linux.
+
+Use the following commands if you are using the Bash shell:
+
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+source ~/.bashrc
+
+For the Zsh shell, use:
+
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
+echo 'eval "$(rbenv init -)"' >> ~/.zshrc
+source ~/.zshrc
+
+3. Verify the installation by checking the version of Rbenv:
+
+rbenv -v
+
+Verifying the Rbenv installation
+Step 3: Install Ruby
+1. List all of the versions of Ruby available for installation through Rbenv with:
+
+rbenv install -l
+
+Listing all versions of Ruby available through Rbenv
+2. Select a version of Ruby and install it using:
+
+rbenv install [version number]
+
+In this example, we are installing Ruby 3.0.2:
+
+rbenv install 3.0.2
+
+Installing Ruby using Rbenv
+Note: Installing Ruby using Rbenv might take some time. If you want the command output to list each step of the installation process, enable the verbose output by adding the --verbose flag: rbenv install --verbose [version number].
+
+3. Set the newly installed version of Ruby as the global version:
+
+rbenv global [version number]
+
+For this example:
+
+rbenv global 3.0.2
+
+4. Verify the installation by checking the current version of Ruby:
+
+ruby --version
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rbenv-on-ubuntu-20-04
+
+How To Install Ruby on Rails with rbenv on Ubuntu 20.04
+Published on September 29, 2021
+
+Introduction
+Ruby on Rails is one of the most popular application stacks for developers looking to create sites and web apps. The Ruby programming language, combined with the Rails development framework, allows you to build and deploy scalable apps quickly.
+
+You can install Ruby and Rails with the command line tool rbenv. Using rbenv provides you with a solid environment for developing your Ruby on Rails applications and allows you to switch between Ruby versions, keeping your entire team on the same version. rbenv also provides support for specifying application-specific versions of Ruby, allows you to change the global Ruby for each user, and the option to use an environment variable to override the Ruby version.
+
+In this tutorial, we will guide you through the Ruby and Rails installation processes with rbenv and gem. First, you’ll install the appropriate packages to install rbenv and then Ruby. After, you’ll install the ruby-build plugin so that you can install available versions of Ruby. Last, you’ll use gem to install Rails and can then use Ruby on Rails to begin your web development. We will also provide steps on how to check if your rbenv version is up-to-date, and how to uninstall Ruby versions and rbenv.
+
+Prerequisites
+To follow this tutorial, you need:
+
+One Ubuntu 20.04 server set up by following the Ubuntu 20.04 initial server setup guide, including a sudo non-root user and a firewall.
+Node.js installed using the official PPA, as explained in option 2 of How To Install Node.js on Ubuntu 20.04. A few Rails features, such as the Asset Pipeline, depend on a JavaScript Runtime. Node.js provides this functionality.
+Step 1 – Install rbenv and Dependencies
+Ruby relies on several packages that you can install through your package manager. Once those are installed, you can install rbenv and use it to install Ruby.
+
+First, update your package list:
+
+sudo apt update
+Next, install the dependencies required to install Ruby:
+
+sudo apt install git curl libssl-dev libreadline-dev zlib1g-dev autoconf bison build-essential libyaml-dev libreadline-dev libncurses5-dev libffi-dev libgdbm-dev
+After installing the dependencies, you can install rbenv itself. Use curl to transfer information from the rbenv repository on GitHub into the directory ~/.rbenv:
+
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
+Next, add ~/.rbenv/bin to your $PATH so that you can use the rbenv command line utility. Do this by altering your ~/.bashrc file so that it affects future login sessions:
+
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+Then, add the command eval "$(rbenv init -)" to your ~/.bashrc file so rbenv loads automatically:
+
+echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+Next, apply the changes you made to your ~/.bashrc file to your current shell session:
+
+source ~/.bashrc
+Verify that rbenv is set up properly by running the type command, which will display more information about the rbenv command:
+
+type rbenv
+Your terminal window will display the following:
+
+Output
+rbenv is a function
+rbenv ()
+{
+    local command;
+    command="${1:-}";
+    if [ "$#" -gt 0 ]; then
+        shift;
+    fi;
+    case "$command" in
+        rehash | shell)
+            eval "$(rbenv "sh-$command" "$@")"
+        ;;
+        *)
+            command rbenv "$command" "$@"
+        ;;
+    esac
+}
+Next, install the ruby-build plugin. This plugin adds the rbenv install command, which makes the installation process of new versions of Ruby less complex. To install ruby-build, first clone the ruby-build GitHub repository:
+
+git clone https://github.com/rbenv/ruby-build.git
+After running this command, you’ll have a directory named ruby-build in your working directory. Within the ruby-build directory is a script named install.sh which you’ll use to actually install ruby-build.
+
+Before running this script, take a moment to review its contents. Rather than opening the file with a text editor, you can print its contents to your terminal’s output with the following command:
+
+cat ruby-build/install.sh
+Output
+#!/bin/sh
+# Usage: PREFIX=/usr/local ./install.sh
+#
+# Installs ruby-build under $PREFIX.
+
+set -e
+
+cd "$(dirname "$0")"
+
+if [ -z "${PREFIX}" ]; then
+  PREFIX="/usr/local"
+fi
+
+BIN_PATH="${PREFIX}/bin"
+SHARE_PATH="${PREFIX}/share/ruby-build"
+
+mkdir -p "$BIN_PATH" "$SHARE_PATH"
+
+install -p bin/* "$BIN_PATH"
+install -p -m 0644 share/ruby-build/* "$SHARE_PATH"
+Notice the second line of this file that reads # Usage: PREFIX=/usr/local ./install.sh. This commented-out line explains that in order to execute this script and install ruby-build, you must precede the script with PREFIX=/usr/local. This will create a temporary environment variable that will affect how the script is run. Essentially, this will cause the string $PREFIX to be replaced with /usr/local any time it appears in the script and will ultimately cause all the necessary ruby-build files to be installed within the /usr/local directory. This environment variable is only temporary and will cease to exist once the script terminates.
+
+Create this temporary environment variable and run the script with the following command. Note that this command includes sudo before calling the script. This is necessary since you must have advanced privileges to install files to the /usr/local directory:
+
+PREFIX=/usr/local sudo ./ruby-build/install.sh
+At this point, you have both rbenv and ruby-build installed. Let’s install Ruby next.
+
+Step 2 – Installing Ruby with ruby-build
+With the ruby-build plugin now installed, you can install whatever versions of Ruby that you may need with a single command. First, list all the available versions of Ruby:
+
+rbenv install -l
+The output of that command will be a list of versions that you can choose to install:
+
+Output
+2.6.8
+2.7.4
+3.0.2
+jruby-9.2.19.0
+mruby-3.0.0
+rbx-5.0
+truffleruby-21.2.0.1
+truffleruby+graalvm-21.2.0
+
+Only latest stable releases for each Ruby implementation are shown.
+Use 'rbenv install --list-all / -L' to show all local versions.
+Now let’s install Ruby 3.0.2:
+
+rbenv install 3.0.2
+Installing Ruby can be a lengthy process, so be prepared for the installation to take some time to complete.
+
+Once it’s done installing, set it as your default version of Ruby with the global sub-command:
+
+rbenv global 3.0.2
+Verify that Ruby was properly installed by checking its version number:
+
+ruby -v
+If you installed version 3.0.2 of Ruby, this command will return output like this:
+
+Output
+ruby 3.0.2p107 (2021-07-07 revision 0db68f0233) [x86_64-linux]
+
+To install and use a different version of Ruby, run the rbenv commands with a different version number, as in rbenv install 2.3.0 followed by rbenv global 2.3.0.
+
+You now have at least one version of Ruby installed and have set your default Ruby version. Next, you will set up gems and Rails.
+
+Step 3 – Working with Gems
+Gems are the way Ruby libraries are distributed. You use the gem command to manage these gems, and use this command to install Rails.
+
+When you install a gem, the installation process generates local documentation. This can add a significant amount of time to each gem’s installation process, so turn off local documentation generation by creating a file called ~/.gemrc which contains a configuration setting to turn off this feature:
+
+echo "gem: --no-document" > ~/.gemrc
+Bundler is a tool that manages gem dependencies for projects. Install the Bundler gem next, as Rails depends on it:
+
+gem install bundler
+You’ll receive the following output:
+
+Output
+Fetching bundler-2.2.27.gem
+Successfully installed bundler-2.2.27
+1 gem installed
+You can use the gem env command (the subcommand env is short for environment) to learn more about the environment and configuration of gems. You can confirm where gems are being installed by using the home argument, like this:
+
+gem env home
+You’ll receive an output similar to this:
+
+Output
+/home/sammy/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0
+Once you have gems set up, you can install Rails.
+
+Step 4 – Installing Rails
+To install Rails, use the gem install command along with the -v flag to specify the version. For this tutorial, you’ll use version 6.1.4.1:
+
+gem install rails -v 6.1.4.1
+The gem command installs the gem you specify, as well as any of its dependencies. Rails is a complex web development framework and has many dependencies, so the process will take some time to complete. Eventually, you’ll receive a message stating that Rails is installed, along with its dependencies:
+
+Output
+...
+Successfully installed rails-6.1.4.1
+37 gems installed
+Note: If you would like to install a different version of Rails, you can list the valid versions of Rails by doing a search, which will output a list of possible versions. You can then install a specific version, such as 4.2.7:
+
+gem search '^rails$' --all
+gem install rails -v 4.2.7
+If you would like to install the latest version of Rails, run the command without a version specified:
+
+gem install rails
+rbenv works by creating a directory of shims, which point to the files used by the Ruby version that’s currently enabled. Through the rehash sub-command, rbenv maintains shims in that directory to match every Ruby command across every installed version of Ruby on your server. Whenever you install a new version of Ruby or a gem that provides commands as Rails does, you should run the following:
+
+rbenv rehash
+Verify that Rails has been installed properly by printing its version, with the following command:
+
+rails -v
+If it’s installed properly, this command will return the version of Rails that was installed:
+
+Output
+Rails 6.1.4.1
+At this point, you can begin testing your Ruby on Rails installation and start to develop web applications. Now let’s review how to keep the rbenv up-to-date.
+
+Step 5 – Updating rbenv
+Since you installed rbenv manually using Git, you can upgrade your installation to the most recent version at any time by using the git pull command in the ~/.rbenv directory:
+
+cd ~/.rbenv
+git pull
+This will ensure that you are using the most up-to-date version of rbenv available.
+
+Step 6 – Uninstalling Ruby versions
+As you download additional versions of Ruby, you may accumulate more versions than you would like in your ~/.rbenv/versions directory. Use the ruby-build plugin’s uninstall subcommand to remove these previous versions.
+
+The following command will uninstall Ruby version 3.0.2:
+
+rbenv uninstall 3.0.2
+With the rbenv uninstall command you can clean up old versions of Ruby so that you do not have more installed than you are currently using.
+
+Step 7 – Uninstalling rbenv
+If you’ve decided you no longer want to use rbenv, you can remove it from your system.
+
+To do this, first open your ~/.bashrc file in your editor. In this example, we will use nano:
+
+nano ~/.bashrc
+Find and remove the following two lines from the file:
+
+~/.bashrc
+...
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+After removing these lines, save the file and exit the editor. If you used nano, you can exit by pressing CTRL + X then Y and ENTER.
+
+Then remove rbenv and all installed Ruby versions with the following command:
+
+ rm -rf `rbenv root`
+Log out and back in to apply the changes to your shell.
+
+Conclusion
+In this tutorial, you installed rbenv and gem to install the entire Ruby on Rails framework. From here, you can begin creating your web development application projects. If you want to learn more about making those environments more robust you can check out our series on How To Code In Ruby.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ gem install rails -v 7.0.3
+Fetching actionpack-7.0.3.gem
+Fetching activesupport-7.0.3.gem
+Fetching actionview-7.0.3.gem
+Fetching railties-7.0.3.gem
+Fetching activemodel-7.0.3.gem
+Fetching activerecord-7.0.3.gem
+Fetching activejob-7.0.3.gem
+Fetching activestorage-7.0.3.gem
+Fetching rails-7.0.3.gem
+Fetching actiontext-7.0.3.gem
+Fetching actionmailer-7.0.3.gem
+Fetching actionmailbox-7.0.3.gem
+Fetching actioncable-7.0.3.gem
+Successfully installed activesupport-7.0.3
+Successfully installed actionview-7.0.3
+Successfully installed actionpack-7.0.3
+Successfully installed railties-7.0.3
+Successfully installed activemodel-7.0.3
+Successfully installed activerecord-7.0.3
+Successfully installed activejob-7.0.3
+Successfully installed activestorage-7.0.3
+Successfully installed actiontext-7.0.3
+Successfully installed actionmailer-7.0.3
+Successfully installed actionmailbox-7.0.3
+Successfully installed actioncable-7.0.3
+Successfully installed rails-7.0.3
+13 gems installed
+davidho@dphxps17:~$ gem install rails -v 5.2.8
+Fetching tzinfo-1.2.9.gem
+Fetching activesupport-5.2.8.gem
+Fetching thread_safe-0.3.6.gem
+Fetching actionpack-5.2.8.gem
+Fetching actionview-5.2.8.gem
+Fetching railties-5.2.8.gem
+Fetching arel-9.0.0.gem
+Fetching activemodel-5.2.8.gem
+Fetching rails-5.2.8.gem
+Fetching activerecord-5.2.8.gem
+Fetching activestorage-5.2.8.gem
+Fetching activejob-5.2.8.gem
+Fetching actionmailer-5.2.8.gem
+Fetching actioncable-5.2.8.gem
+Successfully installed thread_safe-0.3.6
+Successfully installed tzinfo-1.2.9
+Successfully installed activesupport-5.2.8
+Successfully installed actionview-5.2.8
+Successfully installed actionpack-5.2.8
+Successfully installed railties-5.2.8
+Successfully installed arel-9.0.0
+Successfully installed activemodel-5.2.8
+Successfully installed activerecord-5.2.8
+Successfully installed activestorage-5.2.8
+Successfully installed activejob-5.2.8
+Successfully installed actionmailer-5.2.8
+Successfully installed actioncable-5.2.8
+Successfully installed rails-5.2.8
+14 gems installed
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+
+  242  sudo apt install git curl autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev
+  243  cd
+  244  rails -v
+  245  gem search '^rails$' --all
+  246  gem install rails -v 7.0.3
+  247  gem install rails -v 5.2.8
+  248  history
+
+https://www.ruby-lang.org/en/downloads/releases/
+https://rubygems.org/gems/rails/versions
+https://guides.rubygems.org/rubygems-basics/
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ rails -v
+Rails 7.0.3
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ gem search ^rails
+
+*** REMOTE GEMS ***
+
+rails (7.0.3)
+rails-3-settings (0.1.1)
+rails-acm (0.1.0)
+rails-action-args (0.1.1)
+rails-action-authorization (1.1.2)
+rails-action_throttling (0.1.2)
+rails-active_action (3.0.8)
+rails-acu (4.1.0)
+... lines omitted for brevity ...
+railswiki (0.1.2)
+railswithfirephp (0.0.3)
+railsworks (0.2.2)
+railsy_backbone (0.0.5)
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+To use sqlite3,
+
+    Unpack the precompiled Binaries for Windows in C:\WINDOWS\system32 folder.
+
+    Then on your cmd, do a "gem install sqlite3".
+
+[That should fix it. To test:]
+
+    Create a rails app. "rails new test"
+
+    cd into the directory and "rails g scaffold post title:string body:text"
+
+    "rails db:migrate"
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-sqlite-on-ubuntu-20-04
+
+sudo apt update
+sudo apt install sqlite3
+sqlite3 --version
+apt-get install libsqlite3-dev
+
+  250  gem search ^rails
+  251  gem install sqlite3
+  252  sudo apt update
+  253  sudo apt upgrade
+  254  sudo apt install sqlite3
+  255  gem install sqlite3
+  256  apt-get install libsqlite3-dev
+  257  sudo apt-get install libsqlite3-dev
+  258  gem install sqlite3
+  259  history
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+  260  cd
+  261  mkdir temp
+  262  cd temp
+  263  rails new test
+  264  rails new myrailsone
+  265  cd myrailsone/
+  266  rails g scaffold post title:string body:text
+  267  rails db:migrate"
+  268  rails db:migrate
+  269  history
+
+davidho@dphxps17:~/temp/myrailsone$ rails s
+=> Booting Puma
+=> Rails 7.0.3 application starting in development 
+=> Run `bin/rails server --help` for more startup options
+Puma starting in single mode...
+* Puma version: 5.6.4 (ruby 3.1.2-p20) ("Birdie's Version")
+*  Min threads: 5
+*  Max threads: 5
+*  Environment: development
+*          PID: 71915
+* Listening on http://127.0.0.1:3000
+* Listening on http://[::1]:3000
+Use Ctrl-C to stop
+
+http://127.0.0.1:3000/   ... works Finished
+
+https://rubyonrails.org/
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04
+
+sudo apt update
+sudo apt install mysql-server
+sudo systemctl start mysql.service
+
+sudo mysql_secure_installation
+
+sudo mysql
+sudo mysql -u root -p
+CREATE USER 'username'@'host' IDENTIFIED WITH authentication_plugin BY 'password';
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://www.ionos.com/digitalguide/server/know-how/use-mysql-with-ruby-on-rails/
+
+sudo apt-get update
+sudo apt-get install mysql-client libmysqlclient-dev
+gem install mysql2
+rails new [application name] -d mysql
+
+https://www.digitalocean.com/community/tutorials/how-to-use-mysql-with-your-ruby-on-rails-application-on-ubuntu-14-04
+
+sudo apt-get update
+sudo apt-get install mysql-server mysql-client libmysqlclient-dev
+sudo mysql_install_db
+sudo mysql_secure_installation
+
+gem install mysql2
+cd ~
+rails new appname -d mysql
+cd appname
+vi config/database.yml
+rake db:create
+rails server
+
+https://linuxhint.com/installing_mysql_workbench_ubuntu/
+
+systemctl is-active mysql
+sudo mysql_secure_installation
+sudo mysql
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Password123#@!';
+FLUSH PRIVILEGES;
+
+How to Install MySQL Workbench on Ubuntu 22.04
+
+Till this point, we have fulfilled all of the prerequisites, and now our Ubuntu 22.04 system is all ready for the installation of “MySQL Workbench”. To do so, execute the following command in the terminal:
+
+$ sudo snap install mysql-workbench-community
+
+https://dev.mysql.com/doc/workbench/en/wb-installing-linux.html
+
+https://phoenixnap.com/kb/mysql-workbench-ubuntu
+
+sudo apt update && sudo apt upgrade
+sudo apt install mysql-workbench
+
+https://dev.mysql.com/downloads/repo/apt/
+
+cd Downloads
+sudo apt install ./mysql-apt-config_0.8.22-1_all.deb
+
+davidho@dphxps17:~$ ls -latr ~/Downloads/
+total 4658280
+-rw-rw-r--  1 davidho davidho   84701968 May 17 18:43 google-chrome-stable_current_amd64.deb
+-rw-rw-r--  1 davidho davidho   82685224 May 24 22:33 code_1.67.2-1652812855_amd64.deb
+-rw-rw-r--  1 davidho davidho  116454561 May 24 22:33 code-1.67.2-1652812909.el7.x86_64.rpm
+-rw-rw-r--  1 davidho davidho  115658426 May 24 22:33 code-stable-x64-1652813090.tar.gz
+-rw-rw-r--  1 davidho davidho  526118574 May 25 07:29 elasticsearch-8.2.1-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        170 May 25 07:29 elasticsearch-8.2.1-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho        488 May 25 07:29 elasticsearch-8.2.1-linux-x86_64.tar.gz.asc
+-rw-rw-r--  1 davidho davidho  346794062 May 25 07:33 elasticsearch-7.1.1-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        169 May 25 07:33 elasticsearch-7.1.1-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  346825772 May 25 07:34 elasticsearch-7.1.1-amd64.deb
+-rw-rw-r--  1 davidho davidho        159 May 25 07:34 elasticsearch-7.1.1-amd64.deb.sha512
+-rw-rw-r--  1 davidho davidho  255005883 May 25 07:36 kibana-8.2.1-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        163 May 25 07:36 kibana-8.2.1-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho        488 May 25 07:36 kibana-8.2.1-linux-x86_64.tar.gz.asc
+-rw-rw-r--  1 davidho davidho  167785446 May 25 07:37 kibana-7.1.1-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        162 May 25 07:37 kibana-7.1.1-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  172293244 May 25 07:37 kibana-7.1.1-amd64.deb
+-rw-rw-r--  1 davidho davidho        152 May 25 07:37 kibana-7.1.1-amd64.deb.sha512
+-rw-rw-r--  1 davidho davidho      54908 May 26 12:08 elasticsearch-in-action-main.zip
+-rw-rw-r--  1 davidho davidho       5497 May 26 12:14 Elasticsearch_SourceCode.zip
+drwxrwxr-x  6 davidho davidho       4096 May 26 13:55 elastic
+-rw-rw-r--  1 davidho davidho 1027422390 May 26 14:01 ideaIU-2022.1.1.tar.gz
+-rw-rw-r--  1 davidho davidho         89 May 26 14:01 ideaIU-2022.1.1.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  854242731 May 26 14:04 ideaIC-2022.1.1.tar.gz
+-rw-rw-r--  1 davidho davidho         89 May 26 14:05 ideaIC-2022.1.1.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  594454153 May 26 14:06 RubyMine-2022.1.1.tar.gz
+-rw-rw-r--  1 davidho davidho         91 May 26 14:06 RubyMine-2022.1.1.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho   79430486 May 26 14:36 1password-latest.deb
+drwxr-x--- 29 davidho davidho       4096 May 26 17:04 ..
+-rw-rw-r--  1 davidho davidho      18012 May 26 17:31 mysql-apt-config_0.8.22-1_all.deb
+drwx------  3 davidho davidho       4096 May 26 17:31 firefox.tmp
+drwxr-xr-x  4 davidho davidho       4096 May 26 17:31 .
+davidho@dphxps17:~$ 
+
+
+
+davidho@dphxps17:~$ sudo apt install mysql-workbench
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+E: Unable to locate package mysql-workbench
+davidho@dphxps17:~$ 
+
+
+ │ The detected system (ubuntu jammy) is not supported by MySQL. If you believe the platform is compatible with one of the supported   │ 
+    │ systems, one of the corresponding repositories may be selected.                                                                     │ 
+    │                                                                                                                                     │ 
+    │ Add repository to unsupported system?                                                                                               │ 
+    │                                                                                                                                     │ 
+    │                                                           debian buster                                                             │ 
+    │                                                          ubuntu bionic                                                              │ 
+    │                                                          ubuntu focal                                                               │ 
+    │                                                          ubuntu hirsute                                                             │ 
+    │                                                          ubuntu impish                                                              │ 
+    │                                                          debian bullseye                                                            │ 
+    │                                                          abort                                                                      │ 
+    │                                                                                                                                     │ 
+    │                                                                                                                                     │ 
+    │                                                               <Ok>   
+
+
+  272  cd
+  273  cd Downloads/
+  274  ls -latr
+  275  sudo apt-get install mysql-server mysql-client libmysqlclient-dev
+  276  mysql -u root
+  277  sudo mysql -u root
+  278  cd
+  279  sudo apt update
+  280  sudo apt upgrade
+  281  y
+  282  sudo apt install mysql-workbench
+  283  cd ~/Downloads/
+  284  sudo apt install ./mysql-apt-config_0.8.22-1_all.deb
+  285  history
+
+https://linuxhint.com/installing_mysql_workbench_ubuntu/
+
+sudo apt-get install mysql-server
+systemctl is-active mysql
+sudo mysql_secure_installation
+sudo snap install mysql-workbench-community
+
+davidho@dphxps17:~/Downloads$ sudo snap install mysql-workbench-community
+mysql-workbench-community 8.0.25 from Tonin Bolzan (tonybolzan) installed
+davidho@dphxps17:~/Downloads$ 
+
+https://linuxhint.com/installing_mysql_workbench_ubuntu/
+
+https://askubuntu.com/questions/1403648/how-to-install-mysql-workbench-community-on-ubuntu-22-04
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rvm-on-ubuntu-20-04
+
+curl -sSL https://deb.nodesource.com/setup_17.x -o nodejs.sh
+nano nodejs.sh
+cat nodejs.sh | sudo -E bash -
+sudo apt update
+sudo apt install nodejs
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://tecadmin.net/how-to-install-nvm-on-ubuntu-22-04/
+
+sudo apt install curl 
+curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
+source ~/.profile 
+
+Install the latest version of node.js. Here node is the alias for the latest version.
+
+nvm install node 
+
+To install a specific version of node:
+
+nvm install 16.14.0  
+
+Working with NVM
+
+You can use the following command to list installed versions of the node for the current user.
+
+nvm ls 
+
+List available node.js versions for the installation.
+
+nvm ls-remote 
+
+You can also select a different version for the current session. The selected version will be the currently active version for the current shell only.
+
+nvm use 16.14.0 
+
+To find the default Node version set for the current user, type:
+
+nvm run default --version 
+
+You can run a Node script with the desired version of node.js using the below command:
+
+nvm exec 16.14.0 server.js 
+
+davidho@dphxps17:~/Downloads$ nvm install node 
+Downloading and installing node v18.2.0...
+Downloading https://nodejs.org/dist/v18.2.0/node-v18.2.0-linux-x64.tar.xz...
+######################################################################################################################################## 100.0%
+Computing checksum with sha256sum
+Checksums matched!
+Now using node v18.2.0 (npm v8.9.0)
+Creating default alias: default -> node (-> v18.2.0)
+davidho@dphxps17:~/Downloads$ nvm use 18.2.0
+Now using node v18.2.0 (npm v8.9.0)
+davidho@dphxps17:~/Downloads$ nvm run default --version 
+Running node v18.2.0 (npm v8.9.0)
+v18.2.0
+davidho@dphxps17:~/Downloads$ 
+
+  285  history
+  286  sudo snap install mysql-workbench-community
+  287  sudo apt install curl 
+  288  curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
+  289  source ~/.profile 
+  290  nvm ls-remote 
+  291  nvm install node 
+  292  nvm use 18.2.0
+  293  nvm run default --version 
+  294  history
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://linuxize.com/post/how-to-install-yarn-on-ubuntu-20-04/
+
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://linuxhint.com/install_yarn_ubuntu/
+
+Installing Yarn on Ubuntu
+
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+
+sudo apt update
+sudo apt install yarn
+sudo apt install --no-install-recommends yarn
+yarn --version
+
+The output will look something like this:
+
+1.22.4
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ nvm --version
+0.39.1
+davidho@dphxps17:~/Downloads$ node --version
+v18.2.0
+davidho@dphxps17:~/Downloads$ yarn --version
+Command 'yarn' not found, but can be installed with:
+sudo apt install cmdtest
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+[sudo] password for davidho: 
+Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
+OK
+davidho@dphxps17:~/Downloads$ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+deb https://dl.yarnpkg.com/debian/ stable main
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ sudo apt update
+Get:1 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]
+Hit:2 http://us.archive.ubuntu.com/ubuntu jammy InRelease                                                                                     
+Hit:3 http://packages.microsoft.com/repos/code stable InRelease                                                                               
+Get:4 http://us.archive.ubuntu.com/ubuntu jammy-updates InRelease [109 kB]                                                                    
+Hit:5 https://downloads.1password.com/linux/debian/amd64 stable InRelease                                                                     
+Hit:6 https://dl.google.com/linux/chrome/deb stable InRelease                                                                                 
+Get:7 https://dl.yarnpkg.com/debian stable InRelease [17.1 kB]                                                                        
+Get:8 http://us.archive.ubuntu.com/ubuntu jammy-backports InRelease [99.8 kB]                                               
+Ign:9 http://repo.mysql.com/apt/ubuntu jammy InRelease    
+Get:10 https://dl.yarnpkg.com/debian stable/main all Packages [10.9 kB]
+Get:11 http://security.ubuntu.com/ubuntu jammy-security/main amd64 DEP-11 Metadata [11.4 kB]
+Get:12 https://dl.yarnpkg.com/debian stable/main i386 Packages [10.9 kB]                 
+Get:13 https://dl.yarnpkg.com/debian stable/main amd64 Packages [10.9 kB]                  
+Get:14 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 DEP-11 Metadata [57.3 kB]
+Get:15 http://us.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 DEP-11 Metadata [87.8 kB]
+Get:16 http://us.archive.ubuntu.com/ubuntu jammy-backports/universe amd64 DEP-11 Metadata [1,192 B]
+Err:17 http://repo.mysql.com/apt/ubuntu jammy Release   
+  404  Not Found [IP: 23.200.204.228 80]
+Reading package lists... Done
+W: https://dl.yarnpkg.com/debian/dists/stable/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
+E: The repository 'http://repo.mysql.com/apt/ubuntu jammy Release' does not have a Release file.
+N: Updating from such a repository can't be done securely, and is therefore disabled by default.
+N: See apt-secure(8) manpage for repository creation and user configuration details.
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ sudo apt install yarn
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  chromium-codecs-ffmpeg-extra gstreamer1.0-vaapi libatomic1:i386 libbsd0:i386 libdrm-amdgpu1:i386 libdrm-nouveau2:i386 libdrm-radeon1:i386
+  libdrm2:i386 libedit2:i386 libelf1:i386 libexpat1:i386 libffi8:i386 libglapi-mesa:i386 libglvnd0:i386 libgstreamer-plugins-bad1.0-0
+  libicu70:i386 libllvm13:i386 libmd0:i386 libnvidia-cfg1-510 libnvidia-common-510 libnvidia-compute-510:i386 libnvidia-decode-510
+  libnvidia-decode-510:i386 libnvidia-egl-wayland1 libnvidia-encode-510 libnvidia-encode-510:i386 libnvidia-extra-510 libnvidia-fbc1-510
+  libnvidia-gl-510 libnvidia-gl-510:i386 libsensors5:i386 libstdc++6:i386 libva-wayland2 libvulkan1:i386 libwayland-client0:i386
+  libx11-6:i386 libx11-xcb1:i386 libxau6:i386 libxcb-dri2-0:i386 libxcb-dri3-0:i386 libxcb-glx0:i386 libxcb-present0:i386 libxcb-randr0:i386
+  libxcb-shm0:i386 libxcb-sync1:i386 libxcb-xfixes0:i386 libxcb1:i386 libxdmcp6:i386 libxext6:i386 libxfixes3:i386 libxml2:i386 libxnvctrl0
+  libxshmfence1:i386 libxxf86vm1:i386 mesa-vulkan-drivers:i386 nvidia-compute-utils-510 nvidia-kernel-source-510 nvidia-settings
+  nvidia-utils-510 pkg-config screen-resolution-extra xserver-xorg-video-nvidia-510
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  javascript-common libc-ares2 libjs-highlight.js libnode72 nodejs nodejs-doc
+Suggested packages:
+  apache2 | lighttpd | httpd npm
+The following NEW packages will be installed:
+  javascript-common libc-ares2 libjs-highlight.js libnode72 nodejs nodejs-doc yarn
+0 upgraded, 7 newly installed, 0 to remove and 2 not upgraded.
+Need to get 14.6 MB of archives.
+After this operation, 59.4 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 javascript-common all 11+nmu1 [5,936 B]
+Get:2 http://us.archive.ubuntu.com/ubuntu jammy/universe amd64 libjs-highlight.js all 9.18.5+dfsg1-1 [367 kB]
+Get:3 https://dl.yarnpkg.com/debian stable/main amd64 yarn all 1.22.19-1 [893 kB]
+Get:4 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 libc-ares2 amd64 1.18.1-1build1 [44.9 kB]
+Get:5 http://us.archive.ubuntu.com/ubuntu jammy/universe amd64 libnode72 amd64 12.22.9~dfsg-1ubuntu3 [10.8 MB]
+Get:6 http://us.archive.ubuntu.com/ubuntu jammy/universe amd64 nodejs-doc all 12.22.9~dfsg-1ubuntu3 [2,409 kB]
+Get:7 http://us.archive.ubuntu.com/ubuntu jammy/universe amd64 nodejs amd64 12.22.9~dfsg-1ubuntu3 [122 kB]
+Fetched 14.6 MB in 0s (30.4 MB/s)
+Selecting previously unselected package javascript-common.
+(Reading database ... 208498 files and directories currently installed.)
+Preparing to unpack .../0-javascript-common_11+nmu1_all.deb ...
+Unpacking javascript-common (11+nmu1) ...
+Selecting previously unselected package libjs-highlight.js.
+Preparing to unpack .../1-libjs-highlight.js_9.18.5+dfsg1-1_all.deb ...
+Unpacking libjs-highlight.js (9.18.5+dfsg1-1) ...
+Selecting previously unselected package libc-ares2:amd64.
+Preparing to unpack .../2-libc-ares2_1.18.1-1build1_amd64.deb ...
+Unpacking libc-ares2:amd64 (1.18.1-1build1) ...
+Selecting previously unselected package libnode72:amd64.
+Preparing to unpack .../3-libnode72_12.22.9~dfsg-1ubuntu3_amd64.deb ...
+Unpacking libnode72:amd64 (12.22.9~dfsg-1ubuntu3) ...
+Selecting previously unselected package nodejs-doc.
+Preparing to unpack .../4-nodejs-doc_12.22.9~dfsg-1ubuntu3_all.deb ...
+Unpacking nodejs-doc (12.22.9~dfsg-1ubuntu3) ...
+Selecting previously unselected package yarn.
+Preparing to unpack .../5-yarn_1.22.19-1_all.deb ...
+Unpacking yarn (1.22.19-1) ...
+Selecting previously unselected package nodejs.
+Preparing to unpack .../6-nodejs_12.22.9~dfsg-1ubuntu3_amd64.deb ...
+Unpacking nodejs (12.22.9~dfsg-1ubuntu3) ...
+Setting up javascript-common (11+nmu1) ...
+Setting up libc-ares2:amd64 (1.18.1-1build1) ...
+Setting up libnode72:amd64 (12.22.9~dfsg-1ubuntu3) ...
+Setting up libjs-highlight.js (9.18.5+dfsg1-1) ...
+Setting up yarn (1.22.19-1) ...
+Setting up nodejs (12.22.9~dfsg-1ubuntu3) ...
+update-alternatives: using /usr/bin/nodejs to provide /usr/bin/js (js) in auto mode
+Setting up nodejs-doc (12.22.9~dfsg-1ubuntu3) ...
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for libc-bin (2.35-0ubuntu3) ...
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ yarn --version
+1.22.19
+davidho@dphxps17:~/Downloads$ 
+
+  272  cd
+  273  cd Downloads/
+  274  ls -latr
+  275  sudo apt-get install mysql-server mysql-client libmysqlclient-dev
+  276  mysql -u root
+  277  sudo mysql -u root
+  278  cd
+  279  sudo apt update
+  280  sudo apt upgrade
+  281  y
+  282  sudo apt install mysql-workbench
+  283  cd ~/Downloads/
+  284  sudo apt install ./mysql-apt-config_0.8.22-1_all.deb
+  285  history
+  286  sudo snap install mysql-workbench-community
+  287  sudo apt install curl 
+  288  curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
+  289  source ~/.profile 
+  290  nvm ls-remote 
+  291  nvm install node 
+  292  nvm use 18.2.0
+  293  nvm run default --version 
+  294  history
+  295  nvm --version
+  296  node --version
+  297  yarn --version
+  298  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+  299  echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+  300  sudo apt update
+  301  sudo apt install yarn
+  302  yarn --version
+  303  history
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://www.hostinger.com/tutorials/mysql/how-create-mysql-user-and-grant-permissions-command-line
+
+CREATE USER 'new_user'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON * . * TO 'new_user'@'localhost';
+FLUSH PRIVILEGES;
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ ruby --version
+ruby 3.1.2p20 (2022-04-12 revision 4491bb740a) [x86_64-linux]
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ rails --version
+Rails 7.0.3
+davidho@dphxps17:~$ nvm --version
+0.39.1
+davidho@dphxps17:~$ node --version
+v18.2.0
+davidho@dphxps17:~$ yarn --version
+1.22.19
+davidho@dphxps17:~$ nvm ls
+->      v18.2.0
+         system
+default -> node (-> v18.2.0)
+iojs -> N/A (default)
+unstable -> N/A (default)
+node -> stable (-> v18.2.0) (default)
+stable -> 18.2 (-> v18.2.0) (default)
+lts/* -> lts/gallium (-> N/A)
+lts/argon -> v4.9.1 (-> N/A)
+lts/boron -> v6.17.1 (-> N/A)
+lts/carbon -> v8.17.0 (-> N/A)
+lts/dubnium -> v10.24.1 (-> N/A)
+lts/erbium -> v12.22.12 (-> N/A)
+lts/fermium -> v14.19.3 (-> N/A)
+lts/gallium -> v16.15.0 (-> N/A)
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ ls -latr ~/.rbenv/versions/
+total 12
+drwxrwxr-x  6 davidho davidho 4096 May 25 06:35 3.1.2
+drwxrwxr-x 14 davidho davidho 4096 May 25 06:47 ..
+drwxrwxr-x  3 davidho davidho 4096 May 26 12:04 .
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ gem list --local | grep -i rails
+importmap-rails (1.1.0)
+rails (7.0.3, 6.1.4.1, 5.2.8)
+rails-dom-testing (2.0.3)
+rails-html-sanitizer (1.4.2)
+sprockets-rails (3.4.2)
+stimulus-rails (1.0.4)
+turbo-rails (1.1.1)
+davidho@dphxps17:~$ 
 
