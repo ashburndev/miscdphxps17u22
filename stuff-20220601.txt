@@ -1,0 +1,657 @@
+Wed Jun  1 11:27:45 AM EDT 2022
+
+davidho@dphxps17:~$ date
+Wed Jun  1 11:27:26 AM EDT 2022
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date > stuff-20220601.txt
+davidho@dphxps17:~$ code   stuff-20220601.txt
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://www.elastic.co/
+https://www.elastic.co/elastic-stack?elektra=home&storm=stack
+https://www.elastic.co/downloads/elasticsearch
+https://www.elastic.co/downloads/kibana
+
+https://phoenixnap.com/kb/mysql-workbench-ubuntu
+
+sudo apt update && sudo apt upgrade
+sudo apt install mysql-workbench
+
+https://dev.mysql.com/downloads/repo/apt/
+
+sudo apt install ./mysql-apt-config_0.8.22-1_all.deb
+sudo apt update
+sudo apt install mysql-workbench-community
+mysql-workbench
+sudo apt remove mysql-workbench
+
+davidho@dphxps17:~/railsprojects/wire2$ mysql-workbench
+mysql-workbench: command not found
+davidho@dphxps17:~/railsprojects/wire2$ 
+
+snap connect mysql-workbench-community:password-manager-service 
+snap connect mysql-workbench-community:ssh-keys
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+neofetch --off
+uname -a
+ruby --version
+rails --version
+rbenv --version
+nvm --version
+node --version
+npm --version
+yarn --version
+mysql --version
+tree -d -L 3 ~
+df 
+df -h
+sudo parted -l
+sudo lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL
+sudo fdisk -l
+sudo lsblk --output-all --json
+
+systemctl status mysql.service
+systemctl 
+systemctl list-units --type=service
+systemctl --type=service
+systemctl list-units --type=service --state=active
+systemctl --type=service --state=active
+systemctl list-units --type=service --state=running 
+systemctl --type=service --state=running
+netstat -ltup | grep zabbix_agentd
+ss -ltup | grep zabbix_agentd
+sudo service --status-all
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ neofetch --off
+uname -a
+ruby --version
+rails --version
+rbenv --version
+nvm --version
+node --version
+npm --version
+yarn --version
+mysql --version
+tree -d -L 3 ~
+davidho@dphxps17 
+---------------- 
+OS: Ubuntu 22.04 LTS x86_64 
+Host: XPS 17 9710 
+Kernel: 5.15.0-33-generic 
+Uptime: 1 hour, 45 mins 
+Packages: 1930 (dpkg), 10 (snap) 
+Shell: bash 5.1.16 
+Resolution: 3840x2400 
+DE: GNOME 42.0 
+WM: Mutter 
+WM Theme: Adwaita 
+Theme: Yaru [GTK2/3] 
+Icons: Yaru [GTK2/3] 
+Terminal: gnome-terminal 
+CPU: 11th Gen Intel i7-11800H (16) @ 4.600GHz 
+GPU: Intel TigerLake-H GT1 [UHD Graphics] 
+GPU: NVIDIA GeForce RTX 3060 Mobile / Max-Q 
+Memory: 5129MiB / 31829MiB 
+
+Linux dphxps17 5.15.0-33-generic #34-Ubuntu SMP Wed May 18 13:34:26 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+ruby 3.1.2p20 (2022-04-12 revision 4491bb740a) [x86_64-linux]
+Rails 7.0.3
+rbenv 1.2.0-14-gc6cc0a1
+0.39.1
+v18.2.0
+8.9.0
+1.22.19
+mysql  Ver 8.0.29-0ubuntu0.22.04.2 for Linux on x86_64 ((Ubuntu))
+/home/davidho
+├── Desktop
+├── Documents
+├── Downloads
+│   ├── elastic
+│   │   ├── books
+│   │   ├── elasticsearch-7.1.1
+│   │   ├── kibana-7.1.1-linux-x86_64
+│   │   └── repositories
+│   └── firefox.tmp
+├── Music
+├── Pictures
+├── Public
+├── railsprojects
+│   ├── depot
+│   │   ├── app
+│   │   ├── bin
+│   │   ├── config
+│   │   ├── db
+│   │   ├── lib
+│   │   ├── log
+│   │   ├── public
+│   │   ├── storage
+│   │   ├── test
+│   │   ├── tmp
+│   │   └── vendor
+│   ├── depot2
+│   │   ├── app
+│   │   ├── bin
+│   │   ├── config
+│   │   ├── db
+│   │   ├── lib
+│   │   ├── log
+│   │   ├── public
+│   │   ├── storage
+│   │   ├── test
+│   │   ├── tmp
+│   │   └── vendor
+│   └── myrailsone
+│       ├── app
+│       ├── bin
+│       ├── config
+│       ├── db
+│       ├── lib
+│       ├── log
+│       ├── public
+│       ├── storage
+│       ├── test
+│       ├── tmp
+│       └── vendor
+├── repositories
+│   └── miscdphxps17u22
+├── ruby-build
+│   ├── bin
+│   ├── script
+│   ├── share
+│   │   └── ruby-build
+│   └── test
+│       ├── fixtures
+│       ├── stubs
+│       └── tmp
+├── RubymineProjects
+│   └── myrubymineone
+├── rubyprojects
+├── snap
+│   ├── firefox
+│   │   ├── 1232
+│   │   ├── 1406
+│   │   ├── common
+│   │   └── current -> 1406
+│   └── snapd-desktop-integration
+│       ├── 10
+│       ├── common
+│       └── current -> 10
+├── Templates
+└── Videos
+
+75 directories
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ df
+Filesystem     1K-blocks     Used Available Use% Mounted on
+tmpfs            3259328     2504   3256824   1% /run
+/dev/nvme0n1p7 256920004 29958628 213837792  13% /
+tmpfs           16296628    21484  16275144   1% /dev/shm
+tmpfs               5120        4      5116   1% /run/lock
+/dev/nvme0n1p1    149504    99306     50198  67% /boot/efi
+tmpfs            3259324     2424   3256900   1% /run/user/1000
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           3.2G  2.5M  3.2G   1% /run
+/dev/nvme0n1p7  246G   29G  204G  13% /
+tmpfs            16G   21M   16G   1% /dev/shm
+tmpfs           5.0M  4.0K  5.0M   1% /run/lock
+/dev/nvme0n1p1  146M   97M   50M  67% /boot/efi
+tmpfs           3.2G  2.4M  3.2G   1% /run/user/1000
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ sudo parted -l
+[sudo] password for davidho: 
+Model: Micron 2300 NVMe 1024GB (nvme)
+Disk /dev/nvme0n1: 1024GB
+Sector size (logical/physical): 512B/512B
+Partition Table: gpt
+Disk Flags: 
+
+Number  Start   End     Size    File system  Name                          Flags
+ 1      1049kB  158MB   157MB   fat32        EFI system partition          boot, esp
+ 2      158MB   293MB   134MB                Microsoft reserved partition  msftres
+ 3      293MB   736GB   736GB   ntfs         Basic data partition          msftdata
+ 7      736GB   1004GB  268GB   ext4
+ 4      1004GB  1005GB  1038MB  ntfs                                       hidden, diag
+ 5      1005GB  1023GB  17.4GB  ntfs                                       hidden, diag
+ 6      1023GB  1024GB  1469MB  ntfs                                       hidden, diag
+
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ sudo lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL
+NAME        FSTYPE     SIZE MOUNTPOINT                         LABEL
+loop0       squashfs     4K /snap/bare/5                       
+loop1       squashfs  61.9M /snap/core20/1434                  
+loop2       squashfs  61.9M /snap/core20/1494                  
+loop3       squashfs 155.6M /snap/firefox/1232                 
+loop4       squashfs 248.8M /snap/gnome-3-38-2004/99           
+loop5       squashfs  81.3M /snap/gtk-common-themes/1534       
+loop6       squashfs 124.7M /snap/mysql-workbench-community/9  
+loop7       squashfs  45.9M /snap/snap-store/575               
+loop8       squashfs  45.9M /snap/snap-store/582               
+loop9       squashfs  43.6M /snap/snapd/15177                  
+loop10      squashfs  44.7M /snap/snapd/15904                  
+loop11      squashfs   284K /snap/snapd-desktop-integration/10 
+loop12      squashfs 162.2M /snap/firefox/1406                 
+nvme0n1              953.9G                                    
+├─nvme0n1p1 vfat       150M /boot/efi                          ESP
+├─nvme0n1p2            128M                                    
+├─nvme0n1p3 ntfs       685G                                    OS
+├─nvme0n1p4 ntfs       990M                                    WINRETOOLS
+├─nvme0n1p5 ntfs      16.2G                                    Image
+├─nvme0n1p6 ntfs       1.4G                                    DELLSUPPORT
+└─nvme0n1p7 ext4       250G /                                  
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ sudo fdisk -l
+Disk /dev/loop0: 4 KiB, 4096 bytes, 8 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop1: 61.9 MiB, 64909312 bytes, 126776 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop2: 61.92 MiB, 64925696 bytes, 126808 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop3: 155.63 MiB, 163188736 bytes, 318728 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop4: 248.76 MiB, 260841472 bytes, 509456 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop5: 81.26 MiB, 85209088 bytes, 166424 sectorscrea
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop6: 124.71 MiB, 130772992 bytes, 255416 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop7: 45.86 MiB, 48087040 bytes, 93920 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/nvme0n1: 953.87 GiB, 1024209543168 bytes, 2000409264 sectors
+Disk model: Micron 2300 NVMe 1024GB                 
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: 77306281-0DF8-41E4-9605-F15BAA597F24
+
+Device              Start        End    Sectors  Size Type
+/dev/nvme0n1p1       2048     309247     307200  150M EFI System
+/dev/nvme0n1p2     309248     571391     262144  128M Microsoft reserved
+/dev/nvme0n1p3     571392 1437196287 1436624896  685G Microsoft basic data
+/dev/nvme0n1p4 1961484288 1963511807    2027520  990M Windows recovery environment
+/dev/nvme0n1p5 1963511808 1997506559   33994752 16.2G Windows recovery environment
+/dev/nvme0n1p6 1997508608 2000377855    2869248  1.4G Windows recovery environment
+/dev/nvme0n1p7 1437196288 1961484287  524288000  250G Linux filesystem
+
+Partition table entries are not in disk order.
+
+
+Disk /dev/loop8: 45.86 MiB, 48091136 bytes, 93928 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop9: 43.63 MiB, 45748224 bytes, 89352 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop10: 44.7 MiB, 46870528 bytes, 91544 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop11: 284 KiB, 290816 bytes, 568 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop12: 162.22 MiB, 170102784 bytes, 332232 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ systemctl status mysql.service
+● mysql.service - MySQL Community Server
+     Loaded: loaded (/lib/systemd/system/mysql.service; enabled; vendor preset: enabled)
+     Active: active (running) since Wed 2022-06-01 11:20:04 EDT; 1h 31min ago
+   Main PID: 847 (mysqld)
+     Status: "Server is operational"
+      Tasks: 37 (limit: 38114)
+     Memory: 418.3M
+        CPU: 13.651s
+     CGroup: /system.slice/mysql.service
+             └─847 /usr/sbin/mysqld
+
+Jun 01 11:20:03 dphxps17 systemd[1]: Starting MySQL Community Server...
+Jun 01 11:20:04 dphxps17 systemd[1]: Started MySQL Community Server.
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.29-0ubuntu0.22.04.2 (Ubuntu)
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| depot2_development |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> use depot2_development;
+Database changed
+mysql> show tables;
++------------------------------+
+| Tables_in_depot2_development |
++------------------------------+
+| ar_internal_metadata         |
+| products                     |
+| schema_migrations            |
++------------------------------+
+3 rows in set (0.01 sec)
+
+mysql> desc products;
++-------------+---------------+------+-----+---------+----------------+
+| Field       | Type          | Null | Key | Default | Extra          |
++-------------+---------------+------+-----+---------+----------------+
+| id          | bigint        | NO   | PRI | NULL    | auto_increment |
+| title       | varchar(255)  | YES  |     | NULL    |                |
+| description | text          | YES  |     | NULL    |                |
+| image_url   | varchar(255)  | YES  |     | NULL    |                |
+| price       | decimal(10,0) | YES  |     | NULL    |                |
+| created_at  | datetime(6)   | NO   |     | NULL    |                |
+| updated_at  | datetime(6)   | NO   |     | NULL    |                |
++-------------+---------------+------+-----+---------+----------------+
+7 rows in set (0.00 sec)
+
+mysql> 
+mysql> use mysql;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> 
+mysql> select host, user from user;
++-----------+------------------+
+| host      | user             |
++-----------+------------------+
+| localhost | debian-sys-maint |
+| localhost | mysql.infoschema |
+| localhost | mysql.session    |
+| localhost | mysql.sys        |
+| localhost | railsuser        |
+| localhost | root             |
++-----------+------------------+
+6 rows in set (0.00 sec)
+
+mysql> 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+rails generate model Micropost user:references
+
+rails new appname -d mysql
+cd appname
+vi config/database.yml
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+rails new wire2 --css tailwind -d mysql
+cd wire2
+code .
+
+bin/rails generate model Document title:string{4000} summary:string{4000} doc_num:string{100} image_caption:string{1000} type:string{20} has_attachments:boolean worldwide:boolean
+
+bin/rails generate model User first_name:string last_name:string email:string organization:string dn:string{500}
+
+bin/rails generate model Binary data:binary searchable:boolean document:references
+
+bin/rails generate model Comment body:text classification:string{255} classification_xml:string{4000} document:references user:references
+
+bin/rails generate model NonStateActor name:string{4000}
+
+bin/rails generate model DocumentNonStateActor document:references non_state_actor:references
+
+bin/rails db:migrate
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+DROP DATABASE IF EXISTS wire2_development;
+CREATE DATABASE wire2_development;
+CREATE USER 'railsuser'@'localhost' IDENTIFIED BY 'railsuserpw';
+GRANT ALL PRIVILEGES ON wire2_development.* TO 'railsuser'@'localhost' WITH GRANT OPTION;
+
+show databases;
+use wire2_development;
+show tables;
+desc documents;
+desc users;
+desc comments;
+desc non_state_actors;
+desc document_non_state_actors;
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+mysql> DROP DATABASE IF EXISTS wire2_development;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> CREATE DATABASE wire2_development;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> GRANT ALL PRIVILEGES ON wire2_development.* TO 'railsuser'@'localhost' WITH GRANT OPTION;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/railsprojects/wire2$ bin/rails db:migrate
+== 20220601192518 CreateDocuments: migrating ==================================
+-- create_table(:documents)
+   -> 0.0117s
+== 20220601192518 CreateDocuments: migrated (0.0118s) =========================
+
+== 20220601192519 CreateUsers: migrating ======================================
+-- create_table(:users)
+   -> 0.0102s
+== 20220601192519 CreateUsers: migrated (0.0103s) =============================
+
+== 20220601192520 CreateBinaries: migrating ===================================
+-- create_table(:binaries)
+   -> 0.0160s
+== 20220601192520 CreateBinaries: migrated (0.0160s) ==========================
+
+== 20220601192521 CreateComments: migrating ===================================
+-- create_table(:comments)
+   -> 0.0164s
+== 20220601192521 CreateComments: migrated (0.0164s) ==========================
+
+== 20220601192522 CreateNonStateActors: migrating =============================
+-- create_table(:non_state_actors)
+   -> 0.0104s
+== 20220601192522 CreateNonStateActors: migrated (0.0104s) ====================
+
+== 20220601192543 CreateDocumentNonStateActors: migrating =====================
+-- create_table(:document_non_state_actors)
+   -> 0.0151s
+== 20220601192543 CreateDocumentNonStateActors: migrated (0.0152s) ============
+
+davidho@dphxps17:~/railsprojects/wire2$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+mysql> show tables;
+Empty set (0.01 sec)
+
+mysql> show tables;
++-----------------------------+
+| Tables_in_wire2_development |
++-----------------------------+
+| ar_internal_metadata        |
+| binaries                    |
+| comments                    |
+| document_non_state_actors   |
+| documents                   |
+| non_state_actors            |
+| schema_migrations           |
+| users                       |
++-----------------------------+
+8 rows in set (0.00 sec)
+
+mysql> 
+mysql> desc documents;
++-----------------+---------------+------+-----+---------+----------------+
+| Field           | Type          | Null | Key | Default | Extra          |
++-----------------+---------------+------+-----+---------+----------------+
+| id              | bigint        | NO   | PRI | NULL    | auto_increment |
+| title           | varchar(4000) | YES  |     | NULL    |                |
+| summary         | varchar(4000) | YES  |     | NULL    |                |
+| doc_num         | varchar(100)  | YES  |     | NULL    |                |
+| image_caption   | varchar(1000) | YES  |     | NULL    |                |
+| type            | varchar(20)   | YES  |     | NULL    |                |
+| has_attachments | tinyint(1)    | YES  |     | NULL    |                |
+| worldwide       | tinyint(1)    | YES  |     | NULL    |                |
+| created_at      | datetime(6)   | NO   |     | NULL    |                |
+| updated_at      | datetime(6)   | NO   |     | NULL    |                |
++-----------------+---------------+------+-----+---------+----------------+
+10 rows in set (0.00 sec)
+
+mysql> desc users;
++--------------+--------------+------+-----+---------+----------------+
+| Field        | Type         | Null | Key | Default | Extra          |
++--------------+--------------+------+-----+---------+----------------+
+| id           | bigint       | NO   | PRI | NULL    | auto_increment |
+| first_name   | varchar(255) | YES  |     | NULL    |                |
+| last_name    | varchar(255) | YES  |     | NULL    |                |
+| email        | varchar(255) | YES  |     | NULL    |                |
+| organization | varchar(255) | YES  |     | NULL    |                |
+| dn           | varchar(500) | YES  |     | NULL    |                |
+| created_at   | datetime(6)  | NO   |     | NULL    |                |
+| updated_at   | datetime(6)  | NO   |     | NULL    |                |
++--------------+--------------+------+-----+---------+----------------+
+8 rows in set (0.00 sec)
+
+mysql> desc comments;
++--------------------+---------------+------+-----+---------+----------------+
+| Field              | Type          | Null | Key | Default | Extra          |
++--------------------+---------------+------+-----+---------+----------------+
+| id                 | bigint        | NO   | PRI | NULL    | auto_increment |
+| body               | text          | YES  |     | NULL    |                |
+| classification     | varchar(255)  | YES  |     | NULL    |                |
+| classification_xml | varchar(4000) | YES  |     | NULL    |                |
+| document_id        | bigint        | NO   | MUL | NULL    |                |
+| user_id            | bigint        | NO   | MUL | NULL    |                |
+| created_at         | datetime(6)   | NO   |     | NULL    |                |
+| updated_at         | datetime(6)   | NO   |     | NULL    |                |
++--------------------+---------------+------+-----+---------+----------------+
+8 rows in set (0.00 sec)
+
+mysql> desc non_state_actors;
++------------+---------------+------+-----+---------+----------------+
+| Field      | Type          | Null | Key | Default | Extra          |
++------------+---------------+------+-----+---------+----------------+
+| id         | bigint        | NO   | PRI | NULL    | auto_increment |
+| name       | varchar(4000) | YES  |     | NULL    |                |
+| created_at | datetime(6)   | NO   |     | NULL    |                |
+| updated_at | datetime(6)   | NO   |     | NULL    |                |
++------------+---------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+mysql> desc document_non_state_actors;
++--------------------+-------------+------+-----+---------+----------------+
+| Field              | Type        | Null | Key | Default | Extra          |
++--------------------+-------------+------+-----+---------+----------------+
+| id                 | bigint      | NO   | PRI | NULL    | auto_increment |
+| document_id        | bigint      | NO   | MUL | NULL    |                |
+| non_state_actor_id | bigint      | NO   | MUL | NULL    |                |
+| created_at         | datetime(6) | NO   |     | NULL    |                |
+| updated_at         | datetime(6) | NO   |     | NULL    |                |
++--------------------+-------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> 
+mysql> select host, user, db from db;
++-----------+---------------+--------------------+
+| host      | user          | db                 |
++-----------+---------------+--------------------+
+| localhost | mysql.session | performance_schema |
+| localhost | mysql.sys     | sys                |
+| localhost | railsuser     | depot2_development |
+| localhost | railsuser     | wire2_development  |
++-----------+---------------+--------------------+
+4 rows in set (0.01 sec)
+
+mysql> 
+mysql> select host, user from user;
++-----------+------------------+
+| host      | user             |
++-----------+------------------+
+| localhost | debian-sys-maint |
+| localhost | mysql.infoschema |
+| localhost | mysql.session    |
+| localhost | mysql.sys        |
+| localhost | railsuser        |
+| localhost | root             |
++-----------+------------------+
+6 rows in set (0.01 sec)
+
+mysql> 
+
+snap connect mysql-workbench-community:password-manager-service 
+snap connect mysql-workbench-community:ssh-keys

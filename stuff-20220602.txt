@@ -1,0 +1,245 @@
+Thu Jun  2 05:59:20 AM EDT 2022
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date
+Thu Jun  2 05:59:02 AM EDT 2022
+davidho@dphxps17:~$ date > stuff-20220602.txt
+davidho@dphxps17:~$ code   stuff-20220602.txt 
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ mysqldump -u root -p wire2_development > wire2-development-mysqldump-20220602.sql
+Enter password: 
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ pwd
+/home/davidho
+davidho@dphxps17:~$ ls -latr | tail
+drwxr-xr-x  4 davidho davidho  4096 Jun  1 11:41 Downloads
+-rw-------  1 davidho davidho    20 Jun  1 14:38 .lesshst
+drwxrwxr-x  6 davidho davidho  4096 Jun  1 15:23 railsprojects
+drwx------  5 davidho davidho  4096 Jun  1 20:56 snap
+-rw-rw-r--  1 davidho davidho 24414 Jun  1 22:00 stuff-20220601.txt
+-rw-rw-r--  1 davidho davidho  8745 Jun  1 22:58 wire2-erd.mwb
+-rw-------  1 davidho davidho 15023 Jun  2 05:49 .bash_history
+-rw-rw-r--  1 davidho davidho  8783 Jun  2 05:58 wire2-development-mysqldump-20220602.sql
+drwxr-x--- 32 davidho davidho  4096 Jun  2 05:59 .
+-rw-rw-r--  1 davidho davidho   386 Jun  2 06:00 stuff-20220602.txt
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+rails new wire3 --css tailwind -d mysql
+cd wire3
+code .
+
+bin/rails generate model Document title:string{4000} summary:string{4000} doc_num:string{100} image_caption:string{1000} type:string{20} has_attachments:boolean worldwide:boolean
+
+bin/rails generate model User first_name:string last_name:string email:string organization:string dn:string{500}
+
+bin/rails generate model Binary data:binary searchable:boolean document:references
+
+bin/rails generate model Comment body:text classification:string{255} classification_xml:string{4000} document:references user:references
+
+bin/rails generate model NonStateActor name:string{4000}
+
+bin/rails generate model DocumentNonStateActor document:references non_state_actor:references
+
+bin/rails generate model DocumentCountry code:string{5} document:references
+
+bin/rails generate model DocumentTopic code:string{5} document:references
+
+bin/rails generate model CarrierWaveFile data:binary identifier:string original_filename:string content_type:string extension:string size:bigint 
+
+bin/rails generate model DigestedData data:binary md5:string
+
+bin/rails generate model FiledropNgUploadedFileBinaries data:binary part:bigint
+
+bin/rails generate model PdfBooks data:binary state:string{30} user:references
+
+bin/rails generate model VisualMediaTypes name:string value:string
+
+bin/rails generate model Attachments file_name:string title:string visible:boolean position:bigint file_size:bigint caption:string{1000} type:string document:references binary:references
+
+bin/rails db:migrate
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+DROP DATABASE IF EXISTS wire3_development;
+CREATE DATABASE wire3_development;
+CREATE USER 'railsuser'@'localhost' IDENTIFIED BY 'railsuserpw';
+GRANT ALL PRIVILEGES ON wire3_development.* TO 'railsuser'@'localhost' WITH GRANT OPTION;
+
+show databases;
+use wire2_development;
+show tables;
+desc documents;
+desc users;
+desc comments;
+desc non_state_actors;
+desc document_non_state_actors;
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/railsprojects/wire3$ bin/rails db:migrate
+== 20220602104453 CreateDocuments: migrating ==================================
+-- create_table(:documents)
+   -> 0.0107s
+== 20220602104453 CreateDocuments: migrated (0.0107s) =========================
+
+== 20220602104454 CreateUsers: migrating ======================================
+-- create_table(:users)
+   -> 0.0121s
+== 20220602104454 CreateUsers: migrated (0.0121s) =============================
+
+== 20220602104455 CreateBinaries: migrating ===================================
+-- create_table(:binaries)
+   -> 0.0180s
+== 20220602104455 CreateBinaries: migrated (0.0180s) ==========================
+
+== 20220602104456 CreateComments: migrating ===================================
+-- create_table(:comments)
+   -> 0.0154s
+== 20220602104456 CreateComments: migrated (0.0154s) ==========================
+
+== 20220602104457 CreateNonStateActors: migrating =============================
+-- create_table(:non_state_actors)
+   -> 0.0112s
+== 20220602104457 CreateNonStateActors: migrated (0.0112s) ====================
+
+== 20220602104458 CreateDocumentNonStateActors: migrating =====================
+-- create_table(:document_non_state_actors)
+   -> 0.0167s
+== 20220602104458 CreateDocumentNonStateActors: migrated (0.0168s) ============
+
+== 20220602104515 CreateDocumentCountries: migrating ==========================
+-- create_table(:document_countries)
+   -> 0.0155s
+== 20220602104515 CreateDocumentCountries: migrated (0.0155s) =================
+
+== 20220602104526 CreateDocumentTopics: migrating =============================
+-- create_table(:document_topics)
+   -> 0.0147s
+== 20220602104526 CreateDocumentTopics: migrated (0.0147s) ====================
+
+== 20220602104541 CreateCarrierWaveFiles: migrating ===========================
+-- create_table(:carrier_wave_files)
+   -> 0.0113s
+== 20220602104541 CreateCarrierWaveFiles: migrated (0.0113s) ==================
+
+== 20220602104557 CreateDigestedData: migrating ===============================
+-- create_table(:digested_data)
+   -> 0.0099s
+== 20220602104557 CreateDigestedData: migrated (0.0099s) ======================
+
+== 20220602104608 CreateFiledropNgUploadedFileBinaries: migrating =============
+-- create_table(:filedrop_ng_uploaded_file_binaries)
+   -> 0.0090s
+== 20220602104608 CreateFiledropNgUploadedFileBinaries: migrated (0.0090s) ====
+
+== 20220602104621 CreatePdfBooks: migrating ===================================
+-- create_table(:pdf_books)
+   -> 0.0136s
+== 20220602104621 CreatePdfBooks: migrated (0.0136s) ==========================
+
+== 20220602104635 CreateVisualMediaTypes: migrating ===========================
+-- create_table(:visual_media_types)
+   -> 0.0137s
+== 20220602104635 CreateVisualMediaTypes: migrated (0.0137s) ==================
+
+== 20220602104651 CreateAttachments: migrating ================================
+-- create_table(:attachments)
+   -> 0.0171s
+== 20220602104651 CreateAttachments: migrated (0.0171s) =======================
+
+davidho@dphxps17:~/railsprojects/wire3$ 
+
+mysqldump -u root -p wire2_development > wire2-development-mysqldump-20220602.sql
+mysqldump -u root -p wire3_development > wire3-development-mysqldump-20220602.sql
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| depot2_development |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| wire2_development  |
+| wire3_development  |
++--------------------+
+7 rows in set (0.00 sec)
+
+mysql> 
+mysql> use wire3_development;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++------------------------------------+
+| Tables_in_wire3_development        |
++------------------------------------+
+| ar_internal_metadata               |
+| attachments                        |
+| binaries                           |
+| carrier_wave_files                 |
+| comments                           |
+| digested_data                      |
+| document_countries                 |
+| document_non_state_actors          |
+| document_topics                    |
+| documents                          |
+| filedrop_ng_uploaded_file_binaries |
+| non_state_actors                   |
+| pdf_books                          |
+| schema_migrations                  |
+| users                              |
+| visual_media_types                 |
++------------------------------------+
+16 rows in set (0.00 sec)
+
+mysql> 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/railsprojects/wire3$ mysqldump -u root -p wire3_development > wire3-development-mysqldump-20220602.sql
+Enter password: 
+davidho@dphxps17:~/railsprojects/wire3$ 
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date
+Thu Jun  2 07:26:16 AM EDT 2022
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ pwd
+/home/davidho
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ ls -latr | tail -25
+drwxrwxr-x  4 davidho davidho   4096 May 31 03:48 .npm
+-rw-------  1 davidho davidho     50 May 31 04:12 .irb_history
+-rw-------  1 davidho davidho    556 May 31 04:38 .mysql_history
+drwxr-xr-x  4 davidho davidho   4096 Jun  1 11:41 Downloads
+-rw-------  1 davidho davidho     20 Jun  1 14:38 .lesshst
+drwx------  5 davidho davidho   4096 Jun  1 20:56 snap
+-rw-rw-r--  1 davidho davidho   8745 Jun  1 22:58 wire2-erd.mwb.bak
+-rw-------  1 davidho davidho  15023 Jun  2 05:49 .bash_history
+-rw-rw-r--  1 davidho davidho   8783 Jun  2 05:58 wire2-development-mysqldump-20220602.sql
+drwxrwxr-x  7 davidho davidho   4096 Jun  2 06:42 railsprojects
+-rw-rw-r--  1 davidho davidho  16424 Jun  2 06:49 wire3-development-mysqldump-20220602.sql
+-rw-rw-r--  1 davidho davidho   8660 Jun  2 07:09 wire2-erd.mwb
+-rw-rw-r--  1 davidho davidho  78140 Jun  2 07:10 wire2-erd.png
+-rw-rw-r--  1 davidho davidho 151994 Jun  2 07:10 wire2-erd.svg
+-rw-rw-r--  1 davidho davidho  27113 Jun  2 07:10 wire2-erd.pdf
+-rw-rw-r--  1 davidho davidho 181095 Jun  2 07:10 wire2-erd.ps
+-rw-rw-r--  1 davidho davidho  13005 Jun  2 07:15 wire3-erd.mwb
+-rw-rw-r--  1 davidho davidho 176862 Jun  2 07:16 wire3-erd.png
+-rw-rw-r--  1 davidho davidho 261140 Jun  2 07:16 wire3-erd.svg
+-rw-rw-r--  1 davidho davidho  32368 Jun  2 07:16 wire3-erd.pdf
+-rw-rw-r--  1 davidho davidho 341100 Jun  2 07:16 wire3-erd.ps
+drwx------ 17 davidho davidho   4096 Jun  2 07:17 .cache
+drwx------ 25 davidho davidho   4096 Jun  2 07:17 .config
+drwxr-xr-x  2 davidho davidho   4096 Jun  2 07:25 Documents
+drwxr-x--- 32 davidho davidho   4096 Jun  2 07:25 .
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+
