@@ -1,0 +1,327 @@
+Sat Jun  4 04:15:44 PM EDT 2022
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date
+Sat Jun  4 04:15:26 PM EDT 2022
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date > stuff-20220604.txt
+davidho@dphxps17:~$ code   stuff-20220604.txt 
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ cat /etc/debian_version 
+bookworm/sid
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ cat /etc/lsb-release 
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=22.04
+DISTRIB_CODENAME=jammy
+DISTRIB_DESCRIPTION="Ubuntu 22.04 LTS"
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ cat /etc/os-release 
+PRETTY_NAME="Ubuntu 22.04 LTS"
+NAME="Ubuntu"
+VERSION_ID="22.04"
+VERSION="22.04 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=jammy
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+    TINYBLOB: Only supports up to 255 bytes.
+    BLOB: Can handle up to 65,535 bytes of data.
+    MEDIUMBLOB: The maximum length supported is 16,777,215 bytes.
+    LONGBLOB: Stores up to 4,294,967,295 bytes of data.
+
+      Type | Maximum length
+-----------+-------------------------------------
+  TINYTEXT |           255 (2 8−1) bytes
+      TEXT |        65,535 (216−1) bytes = 64 KiB
+MEDIUMTEXT |    16,777,215 (224−1) bytes = 16 MiB
+  LONGTEXT | 4,294,967,295 (232−1) bytes =  4 GiB
+
+
+cd ~/railsprojects
+rails new wire4 --css tailwind -d mysql
+cd wire4
+vi ./config/database.yml
+
+bin/rails generate model Document title:string{4000} summary:string{4000} doc_num:string{100} image_caption:string{1000} type:string{20} has_attachments:boolean worldwide:boolean
+
+bin/rails generate model User first_name:string last_name:string email:string organization:string dn:string{500}
+
+bin/rails generate model Binary data:binary{4294967295} searchable:boolean document:references
+
+bin/rails generate model Comment body:text classification:string{255} classification_xml:string{4000} document:references user:references
+
+bin/rails generate model NonStateActor name:string{4000}
+
+bin/rails generate model DocumentNonStateActor document:references non_state_actor:references
+
+bin/rails generate model DocumentCountry code:string{5} document:references
+
+bin/rails generate model DocumentTopic code:string{5} document:references
+
+bin/rails generate model CarrierWaveFile data:binary identifier:string original_filename:string content_type:string extension:string size:bigint 
+
+bin/rails generate model DigestedData data:binary{4294967295} md5:string
+
+bin/rails generate model FiledropNgUploadedFileBinary data:binary{4294967295} part:bigint
+
+bin/rails generate model PdfBook data:binary{4294967295} state:string{30} user:references
+
+bin/rails generate model VisualMediaType name:string value:string
+
+bin/rails generate model Attachment file_name:string title:string visible:boolean position:bigint file_size:bigint caption:string{1000} type:string document:references binary:references
+
+bin/rails generate model Author foo:string bar:string baz:string
+
+bin/rails generate model DocumentAuthor document:references author:references
+
+bin/rails generate model Export type:string{15} name:string state:string{15} log:text document_ids_csv:text{16777215} chunks:integer expired_at:datetime source:string progress:integer total:integer context:text attempts:integer user:references
+
+bin/rails generate model ExportChunk chunk:integer data:binary{4294967295} size:integer volume:integer export:references
+
+bin/rails db:migrate
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ cd ~/railsprojects/wire4
+davidho@dphxps17:~/railsprojects/wire3$ bin/rails console
+Loading development environment (Rails 7.0.3)
+irb(main):001:0> 
+
+Australian Kiwifruit Growers Association
+New Zealand Kiwifruit Growers Incorporated
+International Cricket Council
+Major Leage Baseball
+National Hockey League
+National Football League
+National Basketball Association
+Boy Scouts of America
+International Brotherhood of Teamsters
+
+# should create a seed file for this NonStateActor information
+NonStateActor.create(:name => "Australian Kiwifruit Growers Association")
+NonStateActor.create(:name => "New Zealand Kiwifruit Growers Incorporated")
+NonStateActor.create(:name => "International Cricket Council")
+NonStateActor.create(:name => "Major Leage Baseball")
+NonStateActor.create(:name => "National Football League")
+NonStateActor.create(:name => "National Hockey League")
+NonStateActor.create(:name => "National Basketball Association")
+NonStateActor.create(:name => "Boy Scouts of America")
+NonStateActor.create(:name => "International Brotherhood of Teamsters")
+
+nsa1 = NonStateActor.find(1)  # Australian Kiwifruit Growers Association
+nsa2 = NonStateActor.find(2)  # New Zealand Kiwifruit Growers Incorporated
+nsa3 = NonStateActor.find(3)  # International Cricket Council
+nsa4 = NonStateActor.find(4)  # Major Leage Baseball
+nsa5 = NonStateActor.find(5)  # National Football League
+nsa6 = NonStateActor.find(6)  # National Hockey League
+nsa7 = NonStateActor.find(7)  # National Basketball Association
+nsa8 = NonStateActor.find(8)  # Boy Scouts of America
+nsa9 = NonStateActor.find(9)  # International Brotherhood of Teamsters
+
+wiredoc1 = Document.new
+wiredoc1.title = "Favorite animal, fruit, and sport"
+wiredoc1.summary = """Favorite animal is wallaby.
+Favorite fruit is kiwi.
+Favorite sport is cricket."""
+wiredoc1.new_record?
+wiredoc1.save
+wiredoc1.new_record?
+DocumentCountry.create(:code => "AUS", :document => wiredoc1)
+DocumentCountry.create(:code => "NZL", :document => wiredoc1)
+DocumentTopic.create(:code => "JAVA", :document => wiredoc1)
+DocumentTopic.create(:code => "RUBY", :document => wiredoc1)
+DocumentNonStateActor.create(:non_state_actor => nsa1, :document => wiredoc1)
+DocumentNonStateActor.create(:non_state_actor => nsa2, :document => wiredoc1)
+DocumentNonStateActor.create(:non_state_actor => nsa3, :document => wiredoc1)
+
+wiredoc2 = Document.new
+wiredoc2.title = "Australia favorite animal, fruit, and sport"
+wiredoc2.summary = """Favorite animal is kangaroo.
+Favorite fruit is quandong.
+Favorite sport is rugby."""
+wiredoc2.save
+DocumentCountry.create(:code => "AUS", :document => wiredoc2)
+DocumentTopic.create(:code => "JAVA", :document => wiredoc2)
+DocumentNonStateActor.create(:non_state_actor => nsa1, :document => wiredoc2)
+
+wiredoc3 = Document.new
+wiredoc3.title = "New Zealand favorite animal, fruit, and sport"
+wiredoc3.summary = """Favorite animal is wombat.
+Favorite fruit is feijoas.
+Favorite sport is netball."""
+wiredoc3.save
+DocumentCountry.create(:code => "NZL", :document => wiredoc3)
+DocumentTopic.create(:code => "RUBY", :document => wiredoc3)
+DocumentNonStateActor.create(:non_state_actor => nsa2, :document => wiredoc3)
+
+wiredoc1.to_json
+wiredoc2.to_json
+wiredoc3.to_json
+nsa1.to_json
+nsa2.to_json
+nsa3.to_json
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+DROP DATABASE IF EXISTS wire4_development;
+CREATE DATABASE wire4_development;
+CREATE USER 'railsuser'@'localhost' IDENTIFIED BY 'railsuserpw';
+GRANT ALL PRIVILEGES ON wire4_development.* TO 'railsuser'@'localhost' WITH GRANT OPTION;
+
+show databases;
+use wire4_development;
+show tables;
+desc documents;
+desc users;
+desc comments;
+desc non_state_actors;
+desc document_non_state_actors;
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 31
+Server version: 8.0.29-0ubuntu0.22.04.2 (Ubuntu)
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| depot2_development |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| wire2_development  |
+| wire3_development  |
+| wire4_development  |
++--------------------+
+8 rows in set (0.00 sec)
+
+mysql> use wire4_development;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++------------------------------------+
+| Tables_in_wire4_development        |
++------------------------------------+
+| ar_internal_metadata               |
+| attachments                        |
+| authors                            |
+| binaries                           |
+| carrier_wave_files                 |
+| comments                           |
+| digested_data                      |
+| document_authors                   |
+| document_countries                 |
+| document_non_state_actors          |
+| document_topics                    |
+| documents                          |
+| export_chunks                      |
+| exports                            |
+| filedrop_ng_uploaded_file_binaries |
+| non_state_actors                   |
+| pdf_books                          |
+| schema_migrations                  |
+| users                              |
+| visual_media_types                 |
++------------------------------------+
+20 rows in set (0.00 sec)
+
+mysql> 
+mysql> select * from non_state_actors;
++----+--------------------------------------------+----------------------------+----------------------------+
+| id | name                                       | created_at                 | updated_at                 |
++----+--------------------------------------------+----------------------------+----------------------------+
+|  1 | Australian Kiwifruit Growers Association   | 2022-06-03 18:19:18.325937 | 2022-06-03 18:19:18.325937 |
+|  2 | New Zealand Kiwifruit Growers Incorporated | 2022-06-03 18:19:18.349884 | 2022-06-03 18:19:18.349884 |
+|  3 | International Cricket Council              | 2022-06-03 18:19:18.386762 | 2022-06-03 18:19:18.386762 |
+|  4 | Major Leage Baseball                       | 2022-06-03 18:19:18.414297 | 2022-06-03 18:19:18.414297 |
+|  5 | National Hockey League                     | 2022-06-03 18:19:18.447771 | 2022-06-03 18:19:18.447771 |
+|  6 | National Basketball Association            | 2022-06-03 18:19:18.478333 | 2022-06-03 18:19:18.478333 |
+|  7 | Boy Scouts of America                      | 2022-06-03 18:19:18.512121 | 2022-06-03 18:19:18.512121 |
+|  8 | International Brotherhood of Teamsters     | 2022-06-03 18:19:18.516316 | 2022-06-03 18:19:18.516316 |
++----+--------------------------------------------+----------------------------+----------------------------+
+8 rows in set (0.00 sec)
+
+mysql> 
+mysql> select * from document_non_state_actors;
++----+-------------+--------------------+----------------------------+----------------------------+
+| id | document_id | non_state_actor_id | created_at                 | updated_at                 |
++----+-------------+--------------------+----------------------------+----------------------------+
+|  1 |           1 |                  1 | 2022-06-03 18:19:41.721556 | 2022-06-03 18:19:41.721556 |
+|  2 |           1 |                  2 | 2022-06-03 18:19:41.760577 | 2022-06-03 18:19:41.760577 |
+|  3 |           1 |                  3 | 2022-06-03 18:19:41.765534 | 2022-06-03 18:19:41.765534 |
+|  4 |           2 |                  1 | 2022-06-03 18:53:31.906449 | 2022-06-03 18:53:31.906449 |
+|  5 |           3 |                  2 | 2022-06-03 18:53:56.332039 | 2022-06-03 18:53:56.332039 |
++----+-------------+--------------------+----------------------------+----------------------------+
+5 rows in set (0.00 sec)
+
+mysql> 
+mysql> select * from document_countries;
++----+------+-------------+----------------------------+----------------------------+
+| id | code | document_id | created_at                 | updated_at                 |
++----+------+-------------+----------------------------+----------------------------+
+|  1 | AUS  |           1 | 2022-06-03 18:18:58.081545 | 2022-06-03 18:18:58.081545 |
+|  2 | NZL  |           1 | 2022-06-03 18:18:58.111410 | 2022-06-03 18:18:58.111410 |
+|  3 | AUS  |           2 | 2022-06-03 18:53:31.873576 | 2022-06-03 18:53:31.873576 |
+|  4 | NZL  |           3 | 2022-06-03 18:53:56.300825 | 2022-06-03 18:53:56.300825 |
++----+------+-------------+----------------------------+----------------------------+
+4 rows in set (0.00 sec)
+
+mysql> select * from document_topics;
++----+------+-------------+----------------------------+----------------------------+
+| id | code | document_id | created_at                 | updated_at                 |
++----+------+-------------+----------------------------+----------------------------+
+|  1 | JAVA |           1 | 2022-06-03 18:18:58.145847 | 2022-06-03 18:18:58.145847 |
+|  2 | RUBY |           1 | 2022-06-03 18:18:58.149418 | 2022-06-03 18:18:58.149418 |
+|  3 | JAVA |           2 | 2022-06-03 18:53:31.903013 | 2022-06-03 18:53:31.903013 |
+|  4 | RUBY |           3 | 2022-06-03 18:53:56.327799 | 2022-06-03 18:53:56.327799 |
++----+------+-------------+----------------------------+----------------------------+
+4 rows in set (0.00 sec)
+
+mysql> 
+mysql> desc documents;
++-----------------+---------------+------+-----+---------+----------------+
+| Field           | Type          | Null | Key | Default | Extra          |
++-----------------+---------------+------+-----+---------+----------------+
+| id              | bigint        | NO   | PRI | NULL    | auto_increment |
+| title           | varchar(4000) | YES  |     | NULL    |                |
+| summary         | varchar(4000) | YES  |     | NULL    |                |
+| doc_num         | varchar(100)  | YES  |     | NULL    |                |
+| image_caption   | varchar(1000) | YES  |     | NULL    |                |
+| type            | varchar(20)   | YES  |     | NULL    |                |
+| has_attachments | tinyint(1)    | YES  |     | NULL    |                |
+| worldwide       | tinyint(1)    | YES  |     | NULL    |                |
+| created_at      | datetime(6)   | NO   |     | NULL    |                |
+| updated_at      | datetime(6)   | NO   |     | NULL    |                |
++-----------------+---------------+------+-----+---------+----------------+
+10 rows in set (0.00 sec)
+
+mysql> 
+mysql> 
+
+

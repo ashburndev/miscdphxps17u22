@@ -1,0 +1,854 @@
+Mon Jun  6 03:32:16 AM EDT 2022
+
+davidho@dphxps17:~$ date
+Mon Jun  6 03:31:50 AM EDT 2022
+davidho@dphxps17:~$ date > stuff-20220606.txt
+davidho@dphxps17:~$ code   stuff-20220606.txt
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ cd Downloads/
+davidho@dphxps17:~/Downloads$ ls -latr
+total 5421120
+-rw-rw-r--  1 davidho davidho   84701968 May 17 18:43 google-chrome-stable_current_amd64.deb
+-rw-rw-r--  1 davidho davidho   82685224 May 24 22:33 code_1.67.2-1652812855_amd64.deb
+-rw-rw-r--  1 davidho davidho  116454561 May 24 22:33 code-1.67.2-1652812909.el7.x86_64.rpm
+-rw-rw-r--  1 davidho davidho  115658426 May 24 22:33 code-stable-x64-1652813090.tar.gz
+-rw-rw-r--  1 davidho davidho  526118574 May 25 07:29 elasticsearch-8.2.1-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        170 May 25 07:29 elasticsearch-8.2.1-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho        488 May 25 07:29 elasticsearch-8.2.1-linux-x86_64.tar.gz.asc
+-rw-rw-r--  1 davidho davidho  346794062 May 25 07:33 elasticsearch-7.1.1-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        169 May 25 07:33 elasticsearch-7.1.1-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  346825772 May 25 07:34 elasticsearch-7.1.1-amd64.deb
+-rw-rw-r--  1 davidho davidho        159 May 25 07:34 elasticsearch-7.1.1-amd64.deb.sha512
+-rw-rw-r--  1 davidho davidho  255005883 May 25 07:36 kibana-8.2.1-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        163 May 25 07:36 kibana-8.2.1-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho        488 May 25 07:36 kibana-8.2.1-linux-x86_64.tar.gz.asc
+-rw-rw-r--  1 davidho davidho  167785446 May 25 07:37 kibana-7.1.1-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        162 May 25 07:37 kibana-7.1.1-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  172293244 May 25 07:37 kibana-7.1.1-amd64.deb
+-rw-rw-r--  1 davidho davidho        152 May 25 07:37 kibana-7.1.1-amd64.deb.sha512
+-rw-rw-r--  1 davidho davidho      54908 May 26 12:08 elasticsearch-in-action-main.zip
+-rw-rw-r--  1 davidho davidho       5497 May 26 12:14 Elasticsearch_SourceCode.zip
+drwxrwxr-x  6 davidho davidho       4096 May 26 13:55 elastic
+-rw-rw-r--  1 davidho davidho 1027422390 May 26 14:01 ideaIU-2022.1.1.tar.gz
+-rw-rw-r--  1 davidho davidho         89 May 26 14:01 ideaIU-2022.1.1.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  854242731 May 26 14:04 ideaIC-2022.1.1.tar.gz
+-rw-rw-r--  1 davidho davidho         89 May 26 14:05 ideaIC-2022.1.1.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  594454153 May 26 14:06 RubyMine-2022.1.1.tar.gz
+-rw-rw-r--  1 davidho davidho         91 May 26 14:06 RubyMine-2022.1.1.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho   79430486 May 26 14:36 1password-latest.deb
+-rw-rw-r--  1 davidho davidho      18012 May 26 17:31 mysql-apt-config_0.8.22-1_all.deb
+drwx------  2 davidho davidho       4096 May 31 04:53 firefox.tmp
+-rw-rw-r--  1 davidho davidho  526116807 Jun  1 11:40 elasticsearch-8.2.2-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        170 Jun  1 11:40 elasticsearch-8.2.2-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho        488 Jun  1 11:40 elasticsearch-8.2.2-linux-x86_64.tar.gz.asc
+-rw-rw-r--  1 davidho davidho  255005085 Jun  1 11:41 kibana-8.2.2-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        163 Jun  1 11:41 kibana-8.2.2-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho        488 Jun  1 11:41 kibana-8.2.2-linux-x86_64.tar.gz.asc
+drwxr-xr-x  4 davidho davidho       4096 Jun  1 11:41 .
+drwxr-x--- 32 davidho davidho       4096 Jun  6 03:32 ..
+davidho@dphxps17:~/Downloads$ 
+
+davidho@dphxps17:~/Downloads/elastic$ 
+davidho@dphxps17:~/Downloads/elastic$ ls -latr
+total 1265388
+-rw-rw-r--  1 davidho davidho 346794062 May 25 07:33 elasticsearch-7.1.1-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho 167785446 May 25 07:37 kibana-7.1.1-linux-x86_64.tar.gz
+drwxrwxr-x 13 davidho davidho      4096 May 26 07:54 kibana-7.1.1-linux-x86_64
+drwxr-xr-x 10 davidho davidho      4096 May 26 07:58 elasticsearch-7.1.1
+drwxrwxr-x  4 davidho davidho      4096 May 26 13:07 books
+drwxrwxr-x  3 davidho davidho      4096 May 26 13:55 repositories
+-rw-rw-r--  1 davidho davidho 526116807 Jun  1 11:40 elasticsearch-8.2.2-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho       170 Jun  1 11:40 elasticsearch-8.2.2-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho       488 Jun  1 11:40 elasticsearch-8.2.2-linux-x86_64.tar.gz.asc
+-rw-rw-r--  1 davidho davidho 255005085 Jun  1 11:41 kibana-8.2.2-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho       163 Jun  1 11:41 kibana-8.2.2-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho       488 Jun  1 11:41 kibana-8.2.2-linux-x86_64.tar.gz.asc
+drwxr-xr-x  4 davidho davidho      4096 Jun  1 11:41 ..
+drwxrwxr-x  6 davidho davidho      4096 Jun  6 03:34 .
+davidho@dphxps17:~/Downloads/elastic$ 
+
+davidho@dphxps17:~/Downloads/elastic$ 
+davidho@dphxps17:~/Downloads/elastic$ tar xzf elasticsearch-8.2.2-linux-x86_64.tar.gz
+davidho@dphxps17:~/Downloads/elastic$ tar xzf kibana-8.2.2-linux-x86_64.tar.gz
+davidho@dphxps17:~/Downloads/elastic$ ls -latr
+total 1265400
+-rw-rw-r--  1 davidho davidho 346794062 May 25 07:33 elasticsearch-7.1.1-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho 167785446 May 25 07:37 kibana-7.1.1-linux-x86_64.tar.gz
+drwxr-xr-x  9 davidho davidho      4096 May 25 11:53 elasticsearch-8.2.2
+drwxrwxr-x 13 davidho davidho      4096 May 26 07:54 kibana-7.1.1-linux-x86_64
+drwxr-xr-x 10 davidho davidho      4096 May 26 07:58 elasticsearch-7.1.1
+drwxrwxr-x  4 davidho davidho      4096 May 26 13:07 books
+drwxrwxr-x  3 davidho davidho      4096 May 26 13:55 repositories
+-rw-rw-r--  1 davidho davidho 526116807 Jun  1 11:40 elasticsearch-8.2.2-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho       170 Jun  1 11:40 elasticsearch-8.2.2-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho       488 Jun  1 11:40 elasticsearch-8.2.2-linux-x86_64.tar.gz.asc
+-rw-rw-r--  1 davidho davidho 255005085 Jun  1 11:41 kibana-8.2.2-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho       163 Jun  1 11:41 kibana-8.2.2-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho       488 Jun  1 11:41 kibana-8.2.2-linux-x86_64.tar.gz.asc
+drwxr-xr-x  4 davidho davidho      4096 Jun  1 11:41 ..
+drwxrwxr-x  8 davidho davidho      4096 Jun  6 03:38 .
+drwxrwxr-x 11 davidho davidho      4096 Jun  6 03:38 kibana-8.2.2
+davidho@dphxps17:~/Downloads/elastic$ 
+davidho@dphxps17:~/Downloads/elastic$ rm *.gz
+davidho@dphxps17:~/Downloads/elastic$ rm *.asc
+davidho@dphxps17:~/Downloads/elastic$ rm *.sha512
+davidho@dphxps17:~/Downloads/elastic$ ls -latr
+total 32
+drwxr-xr-x  9 davidho davidho 4096 May 25 11:53 elasticsearch-8.2.2
+drwxrwxr-x 13 davidho davidho 4096 May 26 07:54 kibana-7.1.1-linux-x86_64
+drwxr-xr-x 10 davidho davidho 4096 May 26 07:58 elasticsearch-7.1.1
+drwxrwxr-x  4 davidho davidho 4096 May 26 13:07 books
+drwxrwxr-x  3 davidho davidho 4096 May 26 13:55 repositories
+drwxr-xr-x  4 davidho davidho 4096 Jun  1 11:41 ..
+drwxrwxr-x 11 davidho davidho 4096 Jun  6 03:38 kibana-8.2.2
+drwxrwxr-x  8 davidho davidho 4096 Jun  6 03:39 .
+davidho@dphxps17:~/Downloads/elastic$ 
+
+davidho@dphxps17:~/Downloads/elastic$ 
+davidho@dphxps17:~/Downloads/elastic$ cd elasticsearch-8.2.2
+davidho@dphxps17:~/Downloads/elastic/elasticsearch-8.2.2$ 
+davidho@dphxps17:~/Downloads/elastic/elasticsearch-8.2.2$ ls -latr bin
+total 2960
+-rwxr-xr-x 1 davidho davidho     118 May 25 11:46 elasticsearch-shard
+-rwxr-xr-x 1 davidho davidho     265 May 25 11:46 elasticsearch-plugin
+-rwxr-xr-x 1 davidho davidho     126 May 25 11:46 elasticsearch-node
+-rwxr-xr-x 1 davidho davidho     181 May 25 11:46 elasticsearch-keystore
+-rwxr-xr-x 1 davidho davidho     168 May 25 11:46 elasticsearch-geoip
+-rwxr-xr-x 1 davidho davidho    2595 May 25 11:46 elasticsearch-env-from-file
+-rwxr-xr-x 1 davidho davidho    5894 May 25 11:46 elasticsearch-env
+-rwxr-xr-x 1 davidho davidho     996 May 25 11:46 elasticsearch-cli
+-rwxr-xr-x 1 davidho davidho    5398 May 25 11:46 elasticsearch
+-rwxr-xr-x 1 davidho davidho     356 May 25 11:49 x-pack-env
+-rwxr-xr-x 1 davidho davidho     436 May 25 11:49 elasticsearch-syskeygen
+-rwxr-xr-x 1 davidho davidho     363 May 25 11:49 x-pack-watcher-env
+-rwxr-xr-x 1 davidho davidho     364 May 25 11:49 x-pack-security-env
+-rwxr-xr-x 1 davidho davidho     436 May 25 11:49 elasticsearch-users
+-rwxr-xr-x 1 davidho davidho 2915354 May 25 11:49 elasticsearch-sql-cli-8.2.2.jar
+-rwxr-xr-x 1 davidho davidho     483 May 25 11:49 elasticsearch-sql-cli
+-rwxr-xr-x 1 davidho davidho     448 May 25 11:49 elasticsearch-setup-passwords
+-rwxr-xr-x 1 davidho davidho     439 May 25 11:49 elasticsearch-service-tokens
+-rwxr-xr-x 1 davidho davidho     441 May 25 11:49 elasticsearch-saml-metadata
+-rwxr-xr-x 1 davidho davidho     448 May 25 11:49 elasticsearch-reset-password
+-rwxr-xr-x 1 davidho davidho     509 May 25 11:49 elasticsearch-reconfigure-node
+-rwxr-xr-x 1 davidho davidho     443 May 25 11:49 elasticsearch-croneval
+-rwxr-xr-x 1 davidho davidho     452 May 25 11:49 elasticsearch-create-enrollment-token
+-rwxr-xr-x 1 davidho davidho     493 May 25 11:49 elasticsearch-certutil
+-rwxr-xr-x 1 davidho davidho     501 May 25 11:49 elasticsearch-certgen
+drwxr-xr-x 9 davidho davidho    4096 May 25 11:53 ..
+drwxr-xr-x 2 davidho davidho    4096 May 25 11:53 .
+davidho@dphxps17:~/Downloads/elastic/elasticsearch-8.2.2$ 
+davidho@dphxps17:~/Downloads/elastic/elasticsearch-8.2.2$ bin/elasticsearch
+[2022-06-06T03:42:45,625][INFO ][o.e.n.Node               ] [dphxps17] version[8.2.2], pid[3679], build[default/tar/9876968ef3c745186b94fdabd4483e01499224ef/2022-05-25T15:47:06.259735307Z], OS[Linux/5.15.0-33-generic/amd64], JVM[Oracle Corporation/OpenJDK 64-Bit Server VM/18.0.1.1/18.0.1.1+2-6]
+[2022-06-06T03:42:45,628][INFO ][o.e.n.Node               ] [dphxps17] JVM home [/home/davidho/Downloads/elastic/elasticsearch-8.2.2/jdk], using bundled JDK [true]
+[2022-06-06T03:42:45,628][INFO ][o.e.n.Node               ] [dphxps17] JVM arguments [-Xshare:auto, -Des.networkaddress.cache.ttl=60, -Des.networkaddress.cache.negative.ttl=10, -Djava.security.manager=allow, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -XX:-OmitStackTraceInFastThrow, -XX:+ShowCodeDetailsInExceptionMessages, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Dlog4j2.formatMsgNoLookups=true, -Djava.locale.providers=SPI,COMPAT, --add-opens=java.base/java.io=ALL-UNNAMED, -XX:+UseG1GC, -Djava.io.tmpdir=/tmp/elasticsearch-12211493691398641511, -XX:+HeapDumpOnOutOfMemoryError, -XX:+ExitOnOutOfMemoryError, -XX:HeapDumpPath=data, -XX:ErrorFile=logs/hs_err_pid%p.log, -Xlog:gc*,gc+age=trace,safepoint:file=logs/gc.log:utctime,pid,tags:filecount=32,filesize=64m, -Xms15914m, -Xmx15914m, -XX:MaxDirectMemorySize=8346664960, -XX:InitiatingHeapOccupancyPercent=30, -XX:G1ReservePercent=25, -Des.path.home=/home/davidho/Downloads/elastic/elasticsearch-8.2.2, -Des.path.conf=/home/davidho/Downloads/elastic/elasticsearch-8.2.2/config, -Des.distribution.flavor=default, -Des.distribution.type=tar, -Des.bundled_jdk=true]
+[2022-06-06T03:42:46,976][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [aggs-matrix-stats]
+[2022-06-06T03:42:46,976][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [analysis-common]
+[2022-06-06T03:42:46,976][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [constant-keyword]
+[2022-06-06T03:42:46,977][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [data-streams]
+[2022-06-06T03:42:46,977][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [frozen-indices]
+[2022-06-06T03:42:46,977][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [ingest-common]
+[2022-06-06T03:42:46,977][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [ingest-geoip]
+[2022-06-06T03:42:46,977][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [ingest-user-agent]
+[2022-06-06T03:42:46,977][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [kibana]
+[2022-06-06T03:42:46,977][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [lang-expression]
+[2022-06-06T03:42:46,978][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [lang-mustache]
+[2022-06-06T03:42:46,978][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [lang-painless]
+[2022-06-06T03:42:46,978][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [legacy-geo]
+[2022-06-06T03:42:46,978][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [mapper-extras]
+[2022-06-06T03:42:46,978][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [mapper-version]
+[2022-06-06T03:42:46,978][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [parent-join]
+[2022-06-06T03:42:46,979][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [percolator]
+[2022-06-06T03:42:46,979][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [rank-eval]
+[2022-06-06T03:42:46,979][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [reindex]
+[2022-06-06T03:42:46,979][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [repositories-metering-api]
+[2022-06-06T03:42:46,979][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [repository-azure]
+[2022-06-06T03:42:46,979][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [repository-encrypted]
+[2022-06-06T03:42:46,979][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [repository-gcs]
+[2022-06-06T03:42:46,980][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [repository-s3]
+[2022-06-06T03:42:46,980][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [repository-url]
+[2022-06-06T03:42:46,980][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [runtime-fields-common]
+[2022-06-06T03:42:46,980][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [search-business-rules]
+[2022-06-06T03:42:46,980][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [searchable-snapshots]
+[2022-06-06T03:42:46,980][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [snapshot-based-recoveries]
+[2022-06-06T03:42:46,981][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [snapshot-repo-test-kit]
+[2022-06-06T03:42:46,981][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [spatial]
+[2022-06-06T03:42:46,981][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [transform]
+[2022-06-06T03:42:46,981][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [transport-netty4]
+[2022-06-06T03:42:46,981][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [unsigned-long]
+[2022-06-06T03:42:46,981][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [vector-tile]
+[2022-06-06T03:42:46,982][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [vectors]
+[2022-06-06T03:42:46,982][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [wildcard]
+[2022-06-06T03:42:46,982][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-aggregate-metric]
+[2022-06-06T03:42:46,982][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-analytics]
+[2022-06-06T03:42:46,982][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-async]
+[2022-06-06T03:42:46,982][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-async-search]
+[2022-06-06T03:42:46,983][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-autoscaling]
+[2022-06-06T03:42:46,983][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-ccr]
+[2022-06-06T03:42:46,983][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-core]
+[2022-06-06T03:42:46,983][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-deprecation]
+[2022-06-06T03:42:46,983][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-enrich]
+[2022-06-06T03:42:46,983][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-eql]
+[2022-06-06T03:42:46,983][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-fleet]
+[2022-06-06T03:42:46,983][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-graph]
+[2022-06-06T03:42:46,984][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-identity-provider]
+[2022-06-06T03:42:46,984][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-ilm]
+[2022-06-06T03:42:46,984][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-logstash]
+[2022-06-06T03:42:46,984][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-ml]
+[2022-06-06T03:42:46,984][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-monitoring]
+[2022-06-06T03:42:46,984][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-ql]
+[2022-06-06T03:42:46,984][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-rollup]
+[2022-06-06T03:42:46,984][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-security]
+[2022-06-06T03:42:46,984][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-shutdown]
+[2022-06-06T03:42:46,984][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-sql]
+[2022-06-06T03:42:46,985][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-stack]
+[2022-06-06T03:42:46,985][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-text-structure]
+[2022-06-06T03:42:46,985][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-voting-only-node]
+[2022-06-06T03:42:46,985][INFO ][o.e.p.PluginsService     ] [dphxps17] loaded module [x-pack-watcher]
+[2022-06-06T03:42:46,985][INFO ][o.e.p.PluginsService     ] [dphxps17] no plugins loaded
+[2022-06-06T03:42:47,016][INFO ][o.e.e.NodeEnvironment    ] [dphxps17] using [1] data paths, mounts [[/ (/dev/nvme0n1p7)]], net usable_space [202.3gb], net total_space [245gb], types [ext4]
+[2022-06-06T03:42:47,016][INFO ][o.e.e.NodeEnvironment    ] [dphxps17] heap size [15.5gb], compressed ordinary object pointers [true]
+[2022-06-06T03:42:47,032][INFO ][o.e.n.Node               ] [dphxps17] node name [dphxps17], node ID [b3LLZUHSRSuonhHa27kEJw], cluster name [elasticsearch], roles [ingest, data_frozen, ml, data_hot, transform, data_content, data_warm, master, remote_cluster_client, data, data_cold]
+[2022-06-06T03:42:49,628][INFO ][o.e.x.m.p.l.CppLogMessageHandler] [dphxps17] [controller/4003] [Main.cc@123] controller (64 bit): Version 8.2.2 (Build c38744b41cbab2) Copyright (c) 2022 Elasticsearch BV
+[2022-06-06T03:42:49,713][INFO ][o.e.x.s.Security         ] [dphxps17] Security is enabled
+[2022-06-06T03:42:49,893][INFO ][o.e.x.s.a.Realms         ] [dphxps17] license mode is [trial], currently licensed security realms are [reserved/reserved,file/default_file,native/default_native]
+[2022-06-06T03:42:49,898][INFO ][o.e.x.s.a.s.FileRolesStore] [dphxps17] parsed [0] roles from file [/home/davidho/Downloads/elastic/elasticsearch-8.2.2/config/roles.yml]
+
+[2022-06-06T03:42:50,611][INFO ][o.e.t.n.NettyAllocator   ] [dphxps17] creating NettyAllocator with the following configs: [name=elasticsearch_configured, chunk_size=1mb, suggested_max_allocation_size=1mb, factors={es.unsafe.use_netty_default_chunk_and_page_size=false, g1gc_enabled=true, g1gc_region_size=8mb}]
+[2022-06-06T03:42:50,629][INFO ][o.e.i.r.RecoverySettings ] [dphxps17] using rate limit [40mb] with [default=40mb, read=0b, write=0b, max=0b]
+[2022-06-06T03:42:50,652][INFO ][o.e.d.DiscoveryModule    ] [dphxps17] using discovery type [multi-node] and seed hosts providers [settings]
+[2022-06-06T03:42:51,291][INFO ][o.e.n.Node               ] [dphxps17] initialized
+[2022-06-06T03:42:51,292][INFO ][o.e.n.Node               ] [dphxps17] starting ...
+[2022-06-06T03:42:51,307][INFO ][o.e.x.s.c.f.PersistentCache] [dphxps17] persistent cache index loaded
+[2022-06-06T03:42:51,307][INFO ][o.e.x.d.l.DeprecationIndexingComponent] [dphxps17] deprecation component started
+[2022-06-06T03:42:51,366][INFO ][o.e.t.TransportService   ] [dphxps17] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
+[2022-06-06T03:42:51,424][WARN ][o.e.b.BootstrapChecks    ] [dphxps17] max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
+[2022-06-06T03:42:51,429][INFO ][o.e.c.c.Coordinator      ] [dphxps17] setting initial configuration to VotingConfiguration{b3LLZUHSRSuonhHa27kEJw}
+[2022-06-06T03:42:51,526][INFO ][o.e.c.s.MasterService    ] [dphxps17] elected-as-master ([1] nodes joined)[_FINISH_ELECTION_, {dphxps17}{b3LLZUHSRSuonhHa27kEJw}{8ZhFI7LfR3eyA_uAL38lWg}{127.0.0.1}{127.0.0.1:9300}{cdfhilmrstw} completing election], term: 1, version: 1, delta: master node changed {previous [], current [{dphxps17}{b3LLZUHSRSuonhHa27kEJw}{8ZhFI7LfR3eyA_uAL38lWg}{127.0.0.1}{127.0.0.1:9300}{cdfhilmrstw}]}
+[2022-06-06T03:42:51,546][INFO ][o.e.c.c.CoordinationState] [dphxps17] cluster UUID set to [xXOIRk9RQ5ipvQWlhh-bTQ]
+[2022-06-06T03:42:51,560][INFO ][o.e.c.s.ClusterApplierService] [dphxps17] master node changed {previous [], current [{dphxps17}{b3LLZUHSRSuonhHa27kEJw}{8ZhFI7LfR3eyA_uAL38lWg}{127.0.0.1}{127.0.0.1:9300}{cdfhilmrstw}]}, term: 1, version: 1, reason: Publication{term=1, version=1}
+[2022-06-06T03:42:51,583][INFO ][o.e.h.AbstractHttpServerTransport] [dphxps17] publish_address {192.168.86.247:9200}, bound_addresses {[::]:9200}
+[2022-06-06T03:42:51,584][INFO ][o.e.n.Node               ] [dphxps17] started
+[2022-06-06T03:42:51,619][INFO ][o.e.g.GatewayService     ] [dphxps17] recovered [0] indices into cluster_state
+[2022-06-06T03:42:51,751][INFO ][o.e.c.m.MetadataIndexTemplateService] [dphxps17] adding index template [.ml-stats] for index patterns [.ml-stats-*]
+[2022-06-06T03:42:51,794][INFO ][o.e.c.m.MetadataIndexTemplateService] [dphxps17] adding index template [.monitoring-kibana-mb] for index patterns [.monitoring-kibana-8-*]
+[2022-06-06T03:42:51,841][INFO ][o.e.c.m.MetadataIndexTemplateService] [dphxps17] adding index template [.monitoring-beats-mb] for index patterns [.monitoring-beats-8-*]
+[2022-06-06T03:42:51,883][INFO ][o.e.c.m.MetadataIndexTemplateService] [dphxps17] adding index template [.ml-anomalies-] for index patterns [.ml-anomalies-*]
+[2022-06-06T03:42:51,924][INFO ][o.e.c.m.MetadataIndexTemplateService] [dphxps17] adding index template [.monitoring-es-mb] for index patterns [.monitoring-es-8-*]
+[2022-06-06T03:42:51,954][INFO ][o.e.c.m.MetadataIndexTemplateService] [dphxps17] adding index template [.monitoring-ent-search-mb] for index patterns [.monitoring-ent-search-8-*]
+[2022-06-06T03:42:51,982][INFO ][o.e.c.m.MetadataIndexTemplateService] [dphxps17] adding index template [.monitoring-logstash-mb] for index patterns [.monitoring-logstash-8-*]
+[2022-06-06T03:42:52,006][INFO ][o.e.c.m.MetadataIndexTemplateService] [dphxps17] adding index template [.ml-notifications-000002] for index patterns [.ml-notifications-000002]
+[2022-06-06T03:42:52,023][INFO ][o.e.c.m.MetadataIndexTemplateService] [dphxps17] adding index template [.ml-state] for index patterns [.ml-state*]
+[2022-06-06T03:42:52,042][INFO ][o.e.c.m.MetadataIndexTemplateService] [dphxps17] adding template [.monitoring-alerts-7] for index patterns [.monitoring-alerts-7]
+[2022-06-06T03:42:52,064][INFO ][o.e.c.m.MetadataIndexTemplateService] [dphxps17] adding template [.monitoring-beats] for index patterns [.monitoring-beats-7-*]
+[2022-06-06T03:42:52,085][INFO ][o.e.c.m.MetadataIndexTemplateService] [dphxps17] adding template [.monitoring-es] for index patterns [.monitoring-es-7-*]
+[2022-06-06T03:42:52,105][INFO ][o.e.c.m.MetadataIndexTemplateService] [dphxps17] adding template [.monitoring-kibana] for index patterns [.monitoring-kibana-7-*]
+[2022-06-06T03:42:52,129][INFO ][o.e.c.m.MetadataIndexTemplateService] [dphxps17] adding component template [data-streams-mappings]
+[2022-06-06T03:42:52,153][INFO ][o.e.c.m.MetadataIndexTemplateService] [dphxps17] adding component template [synthetics-mappings]
+[2022-06-06T03:42:52,173][INFO ][o.e.c.m.MetadataIndexTemplateService] [dphxps17] adding component template [metrics-settings]
+[2022-06-06T03:42:52,191][INFO ][o.e.c.m.MetadataIndexTemplateService] [dphxps17] adding component template [synthetics-settings]
+[2022-06-06T03:42:52,208][INFO ][o.e.c.m.MetadataIndexTemplateService] [dphxps17] adding component template [logs-settings]
+[2022-06-06T03:42:52,227][INFO ][o.e.c.m.MetadataIndexTemplateService] [dphxps17] adding template [.monitoring-logstash] for index patterns [.monitoring-logstash-7-*]
+[2022-06-06T03:42:52,250][INFO ][o.e.c.m.MetadataIndexTemplateService] [dphxps17] adding component template [logs-mappings]
+[2022-06-06T03:42:52,270][INFO ][o.e.c.m.MetadataIndexTemplateService] [dphxps17] adding component template [metrics-mappings]
+[2022-06-06T03:42:52,303][INFO ][o.e.c.m.MetadataIndexTemplateService] [dphxps17] adding index template [.watch-history-16] for index patterns [.watcher-history-16*]
+[2022-06-06T03:42:52,324][INFO ][o.e.c.m.MetadataIndexTemplateService] [dphxps17] adding index template [ilm-history] for index patterns [ilm-history-5*]
+[2022-06-06T03:42:52,344][INFO ][o.e.c.m.MetadataIndexTemplateService] [dphxps17] adding index template [.slm-history] for index patterns [.slm-history-5*]
+[2022-06-06T03:42:52,362][INFO ][o.e.c.m.MetadataIndexTemplateService] [dphxps17] adding component template [.deprecation-indexing-mappings]
+[2022-06-06T03:42:52,378][INFO ][o.e.c.m.MetadataIndexTemplateService] [dphxps17] adding component template [.deprecation-indexing-settings]
+[2022-06-06T03:42:52,398][INFO ][o.e.c.m.MetadataIndexTemplateService] [dphxps17] adding index template [synthetics] for index patterns [synthetics-*-*]
+[2022-06-06T03:42:52,420][INFO ][o.e.c.m.MetadataIndexTemplateService] [dphxps17] adding index template [logs] for index patterns [logs-*-*]
+[2022-06-06T03:42:52,439][INFO ][o.e.c.m.MetadataIndexTemplateService] [dphxps17] adding index template [metrics] for index patterns [metrics-*-*]
+[2022-06-06T03:42:52,459][INFO ][o.e.c.m.MetadataIndexTemplateService] [dphxps17] adding index template [.deprecation-indexing-template] for index patterns [.logs-deprecation.*]
+[2022-06-06T03:42:52,478][INFO ][o.e.x.i.a.TransportPutLifecycleAction] [dphxps17] adding index lifecycle policy [30-days-default]
+[2022-06-06T03:42:52,505][INFO ][o.e.x.i.a.TransportPutLifecycleAction] [dphxps17] adding index lifecycle policy [90-days-default]
+[2022-06-06T03:42:52,520][INFO ][o.e.x.i.a.TransportPutLifecycleAction] [dphxps17] adding index lifecycle policy [180-days-default]
+[2022-06-06T03:42:52,533][INFO ][o.e.x.i.a.TransportPutLifecycleAction] [dphxps17] adding index lifecycle policy [7-days-default]
+[2022-06-06T03:42:52,546][INFO ][o.e.x.i.a.TransportPutLifecycleAction] [dphxps17] adding index lifecycle policy [365-days-default]
+[2022-06-06T03:42:52,562][INFO ][o.e.x.i.a.TransportPutLifecycleAction] [dphxps17] adding index lifecycle policy [ml-size-based-ilm-policy]
+[2022-06-06T03:42:52,576][INFO ][o.e.x.i.a.TransportPutLifecycleAction] [dphxps17] adding index lifecycle policy [metrics]
+[2022-06-06T03:42:52,589][INFO ][o.e.x.i.a.TransportPutLifecycleAction] [dphxps17] adding index lifecycle policy [synthetics]
+[2022-06-06T03:42:52,602][INFO ][o.e.x.i.a.TransportPutLifecycleAction] [dphxps17] adding index lifecycle policy [logs]
+[2022-06-06T03:42:52,616][INFO ][o.e.x.i.a.TransportPutLifecycleAction] [dphxps17] adding index lifecycle policy [.monitoring-8-ilm-policy]
+[2022-06-06T03:42:52,628][INFO ][o.e.x.i.a.TransportPutLifecycleAction] [dphxps17] adding index lifecycle policy [watch-history-ilm-policy-16]
+[2022-06-06T03:42:52,642][INFO ][o.e.x.i.a.TransportPutLifecycleAction] [dphxps17] adding index lifecycle policy [ilm-history-ilm-policy]
+[2022-06-06T03:42:52,655][INFO ][o.e.x.i.a.TransportPutLifecycleAction] [dphxps17] adding index lifecycle policy [slm-history-ilm-policy]
+[2022-06-06T03:42:52,670][INFO ][o.e.x.i.a.TransportPutLifecycleAction] [dphxps17] adding index lifecycle policy [.deprecation-indexing-ilm-policy]
+[2022-06-06T03:42:52,684][INFO ][o.e.x.i.a.TransportPutLifecycleAction] [dphxps17] adding index lifecycle policy [.fleet-actions-results-ilm-policy]
+[2022-06-06T03:42:52,765][INFO ][o.e.l.LicenseService     ] [dphxps17] license [60219ed4-53e0-4eb0-80fa-ba2a8aca137c] mode [basic] - valid
+[2022-06-06T03:42:52,765][INFO ][o.e.x.s.a.Realms         ] [dphxps17] license mode is [basic], currently licensed security realms are [reserved/reserved,file/default_file,native/default_native]
+[2022-06-06T03:42:53,192][INFO ][o.e.c.m.MetadataCreateIndexService] [dphxps17] [.geoip_databases] creating index, cause [auto(bulk api)], templates [], shards [1]/[0]
+[2022-06-06T03:42:53,292][INFO ][o.e.c.r.a.AllocationService] [dphxps17] current.health="GREEN" message="Cluster health status changed from [YELLOW] to [GREEN] (reason: [shards started [[.geoip_databases][0]]])." previous.health="YELLOW" reason="shards started [[.geoip_databases][0]]"
+[2022-06-06T03:42:53,542][INFO ][o.e.i.g.DatabaseNodeService] [dphxps17] retrieve geoip database [GeoLite2-ASN.mmdb] from [.geoip_databases] to [/tmp/elasticsearch-12211493691398641511/geoip-databases/b3LLZUHSRSuonhHa27kEJw/GeoLite2-ASN.mmdb.tmp.gz]
+[2022-06-06T03:42:53,544][INFO ][o.e.i.g.GeoIpDownloader  ] [dphxps17] successfully downloaded geoip database [GeoLite2-ASN.mmdb]
+[2022-06-06T03:42:53,661][INFO ][o.e.i.g.DatabaseNodeService] [dphxps17] successfully loaded geoip database file [GeoLite2-ASN.mmdb]
+[2022-06-06T03:42:54,402][INFO ][o.e.i.g.DatabaseNodeService] [dphxps17] retrieve geoip database [GeoLite2-City.mmdb] from [.geoip_databases] to [/tmp/elasticsearch-12211493691398641511/geoip-databases/b3LLZUHSRSuonhHa27kEJw/GeoLite2-City.mmdb.tmp.gz]
+[2022-06-06T03:42:54,404][INFO ][o.e.i.g.GeoIpDownloader  ] [dphxps17] successfully downloaded geoip database [GeoLite2-City.mmdb]
+[2022-06-06T03:42:54,569][INFO ][o.e.i.g.DatabaseNodeService] [dphxps17] retrieve geoip database [GeoLite2-Country.mmdb] from [.geoip_databases] to [/tmp/elasticsearch-12211493691398641511/geoip-databases/b3LLZUHSRSuonhHa27kEJw/GeoLite2-Country.mmdb.tmp.gz]
+[2022-06-06T03:42:54,571][INFO ][o.e.i.g.GeoIpDownloader  ] [dphxps17] successfully downloaded geoip database [GeoLite2-Country.mmdb]
+[2022-06-06T03:42:54,616][INFO ][o.e.i.g.DatabaseNodeService] [dphxps17] successfully loaded geoip database file [GeoLite2-Country.mmdb]
+[2022-06-06T03:42:54,900][INFO ][o.e.i.g.DatabaseNodeService] [dphxps17] successfully loaded geoip database file [GeoLite2-City.mmdb]
+[2022-06-06T03:43:00,641][INFO ][o.e.x.s.InitialNodeSecurityAutoConfiguration] [dphxps17] HTTPS has been configured with automatically generated certificates, and the CA's hex-encoded SHA-256 fingerprint is [ae6641a394209d0ac88b0b9ec4fb67225d36bafa6dd62b6dc88c9c6a39155f7c]
+[2022-06-06T03:43:00,643][INFO ][o.e.x.s.s.SecurityIndexManager] [dphxps17] security index does not exist, creating [.security-7] with alias [.security]
+[2022-06-06T03:43:00,650][INFO ][o.e.x.s.e.InternalEnrollmentTokenGenerator] [dphxps17] Will not generate node enrollment token because node is only bound on localhost for transport and cannot connect to nodes from other hosts
+[2022-06-06T03:43:00,677][INFO ][o.e.c.m.MetadataCreateIndexService] [dphxps17] [.security-7] creating index, cause [api], templates [], shards [1]/[0]
+[2022-06-06T03:43:00,703][INFO ][o.e.x.s.s.SecurityIndexManager] [dphxps17] security index does not exist, creating [.security-7] with alias [.security]
+[2022-06-06T03:43:00,721][INFO ][o.e.c.r.a.AllocationService] [dphxps17] current.health="GREEN" message="Cluster health status changed from [YELLOW] to [GREEN] (reason: [shards started [[.security-7][0]]])." previous.health="YELLOW" reason="shards started [[.security-7][0]]"
+
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ Elasticsearch security features have been automatically configured!
+✅ Authentication is enabled and cluster connections are encrypted.
+
+ℹ️  Password for the elastic user (reset with `bin/elasticsearch-reset-password -u elastic`):
+  fn8*-BZRBp6Ztt0Rj+Rr
+
+ℹ️  HTTP CA certificate SHA-256 fingerprint:
+  ae6641a394209d0ac88b0b9ec4fb67225d36bafa6dd62b6dc88c9c6a39155f7c
+
+ℹ️  Configure Kibana to use this cluster:
+• Run Kibana and click the configuration link in the terminal when Kibana starts.
+• Copy the following enrollment token and paste it into Kibana in your browser (valid for the next 30 minutes):
+  eyJ2ZXIiOiI4LjIuMiIsImFkciI6WyIxOTIuMTY4Ljg2LjI0Nzo5MjAwIl0sImZnciI6ImFlNjY0MWEzOTQyMDlkMGFjODhiMGI5ZWM0ZmI2NzIyNWQzNmJhZmE2ZGQ2MmI2ZGM4OGM5YzZhMzkxNTVmN2MiLCJrZXkiOiJhX0wzTjRFQm1SQ2N1WUZ4a2lZNDpYNk5ZanlfbVM2YWp5TGV4eERQU1dRIn0=
+
+ℹ️  Configure other nodes to join this cluster:
+• On this node:
+  ⁃ Create an enrollment token with `bin/elasticsearch-create-enrollment-token -s node`.
+  ⁃ Uncomment the transport.host setting at the end of config/elasticsearch.yml.
+  ⁃ Restart Elasticsearch.
+• On other nodes:
+  ⁃ Start Elasticsearch with `bin/elasticsearch --enrollment-token <token>`, using the enrollment token that you generated.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+[2022-06-06T03:45:24,980][WARN ][o.e.h.AbstractHttpServerTransport] [dphxps17] caught exception while handling client http traffic, closing connection Netty4HttpChannel{localAddress=/127.0.0.1:9200, remoteAddress=/127.0.0.1:41800}
+io.netty.handler.codec.DecoderException: javax.net.ssl.SSLHandshakeException: Received fatal alert: unknown_ca
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:480) ~[netty-codec-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:279) ~[netty-codec-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379) [netty-transport-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365) [netty-transport-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357) [netty-transport-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410) [netty-transport-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379) [netty-transport-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365) [netty-transport-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919) [netty-transport-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166) [netty-transport-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:722) [netty-transport-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:623) [netty-transport-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:586) [netty-transport-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496) [netty-transport-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986) [netty-common-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) [netty-common-4.1.74.Final.jar:4.1.74.Final]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+Caused by: javax.net.ssl.SSLHandshakeException: Received fatal alert: unknown_ca
+	at sun.security.ssl.Alert.createSSLException(Alert.java:131) ~[?:?]
+	at sun.security.ssl.Alert.createSSLException(Alert.java:117) ~[?:?]
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:358) ~[?:?]
+	at sun.security.ssl.Alert$AlertConsumer.consume(Alert.java:293) ~[?:?]
+	at sun.security.ssl.TransportContext.dispatch(TransportContext.java:204) ~[?:?]
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:172) ~[?:?]
+	at sun.security.ssl.SSLEngineImpl.decode(SSLEngineImpl.java:736) ~[?:?]
+	at sun.security.ssl.SSLEngineImpl.readRecord(SSLEngineImpl.java:691) ~[?:?]
+	at sun.security.ssl.SSLEngineImpl.unwrap(SSLEngineImpl.java:506) ~[?:?]
+	at sun.security.ssl.SSLEngineImpl.unwrap(SSLEngineImpl.java:482) ~[?:?]
+	at javax.net.ssl.SSLEngine.unwrap(SSLEngine.java:679) ~[?:?]
+	at io.netty.handler.ssl.SslHandler$SslEngineType$3.unwrap(SslHandler.java:295) ~[netty-handler-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1342) ~[netty-handler-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.handler.ssl.SslHandler.decodeJdkCompatible(SslHandler.java:1235) ~[netty-handler-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:1284) ~[netty-handler-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:510) ~[netty-codec-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:449) ~[netty-codec-4.1.74.Final.jar:4.1.74.Final]
+	... 16 more
+[2022-06-06T03:45:25,016][WARN ][o.e.h.AbstractHttpServerTransport] [dphxps17] caught exception while handling client http traffic, closing connection Netty4HttpChannel{localAddress=/127.0.0.1:9200, remoteAddress=/127.0.0.1:41804}
+io.netty.handler.codec.DecoderException: javax.net.ssl.SSLHandshakeException: Received fatal alert: unknown_ca
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:480) ~[netty-codec-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:279) ~[netty-codec-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379) [netty-transport-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365) [netty-transport-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357) [netty-transport-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410) [netty-transport-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379) [netty-transport-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365) [netty-transport-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919) [netty-transport-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166) [netty-transport-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:722) [netty-transport-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:623) [netty-transport-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:586) [netty-transport-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496) [netty-transport-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986) [netty-common-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) [netty-common-4.1.74.Final.jar:4.1.74.Final]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+Caused by: javax.net.ssl.SSLHandshakeException: Received fatal alert: unknown_ca
+	at sun.security.ssl.Alert.createSSLException(Alert.java:131) ~[?:?]
+	at sun.security.ssl.Alert.createSSLException(Alert.java:117) ~[?:?]
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:358) ~[?:?]
+	at sun.security.ssl.Alert$AlertConsumer.consume(Alert.java:293) ~[?:?]
+	at sun.security.ssl.TransportContext.dispatch(TransportContext.java:204) ~[?:?]
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:172) ~[?:?]
+	at sun.security.ssl.SSLEngineImpl.decode(SSLEngineImpl.java:736) ~[?:?]
+	at sun.security.ssl.SSLEngineImpl.readRecord(SSLEngineImpl.java:691) ~[?:?]
+	at sun.security.ssl.SSLEngineImpl.unwrap(SSLEngineImpl.java:506) ~[?:?]
+	at sun.security.ssl.SSLEngineImpl.unwrap(SSLEngineImpl.java:482) ~[?:?]
+	at javax.net.ssl.SSLEngine.unwrap(SSLEngine.java:679) ~[?:?]
+	at io.netty.handler.ssl.SslHandler$SslEngineType$3.unwrap(SslHandler.java:295) ~[netty-handler-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1342) ~[netty-handler-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.handler.ssl.SslHandler.decodeJdkCompatible(SslHandler.java:1235) ~[netty-handler-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:1284) ~[netty-handler-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:510) ~[netty-codec-4.1.74.Final.jar:4.1.74.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:449) ~[netty-codec-4.1.74.Final.jar:4.1.74.Final]
+	... 16 more
+
+
+https://localhost:9200/
+
+name	"dphxps17"
+cluster_name	"elasticsearch"
+cluster_uuid	"xXOIRk9RQ5ipvQWlhh-bTQ"
+version	
+number	"8.2.2"
+build_flavor	"default"
+build_type	"tar"
+build_hash	"9876968ef3c745186b94fdabd4483e01499224ef"
+build_date	"2022-05-25T15:47:06.259735307Z"
+build_snapshot	false
+lucene_version	"9.1.0"
+minimum_wire_compatibility_version	"7.17.0"
+minimum_index_compatibility_version	"7.0.0"
+tagline	"You Know, for Search"
+
+davidho@dphxps17:~/Downloads/elastic/kibana-8.2.2$ 
+davidho@dphxps17:~/Downloads/elastic/kibana-8.2.2$ ls -latr
+total 1180
+drwxr-xr-x   3 davidho davidho    4096 May 25 07:17 x-pack
+drwxr-xr-x  11 davidho davidho    4096 May 25 07:17 src
+-rw-r--r--   1 davidho davidho    3966 May 25 07:17 README.txt
+drwxr-xr-x   2 davidho davidho    4096 May 25 07:17 plugins
+-rw-r--r--   1 davidho davidho     738 May 25 07:17 package.json
+-rw-r--r--   1 davidho davidho 1126120 May 25 07:17 NOTICE.txt
+drwxr-xr-x 685 davidho davidho   20480 May 25 07:17 node_modules
+drwxr-xr-x   2 davidho davidho    4096 May 25 07:17 logs
+-rw-r--r--   1 davidho davidho    3860 May 25 07:17 LICENSE.txt
+-rw-r--r--   1 davidho davidho    4506 May 25 07:17 .i18nrc.json
+drwxr-xr-x   2 davidho davidho    4096 May 25 07:17 data
+drwxr-xr-x   2 davidho davidho    4096 May 25 07:17 config
+drwxr-xr-x   6 davidho davidho    4096 May 25 07:17 node
+drwxr-xr-x   2 davidho davidho    4096 May 25 07:17 bin
+drwxrwxr-x  11 davidho davidho    4096 Jun  6 03:38 .
+drwxrwxr-x   8 davidho davidho    4096 Jun  6 03:39 ..
+davidho@dphxps17:~/Downloads/elastic/kibana-8.2.2$ 
+davidho@dphxps17:~/Downloads/elastic/kibana-8.2.2$ ls -latr bin
+total 32
+-rwxr-xr-x  1 davidho davidho  785 May 25 07:17 kibana-verification-code
+-rwxr-xr-x  1 davidho davidho  773 May 25 07:17 kibana-setup
+-rwxr-xr-x  1 davidho davidho  813 May 25 07:17 kibana-plugin
+-rwxr-xr-x  1 davidho davidho  776 May 25 07:17 kibana-keystore
+-rwxr-xr-x  1 davidho davidho  783 May 25 07:17 kibana-encryption-keys
+-rwxr-xr-x  1 davidho davidho  835 May 25 07:17 kibana
+drwxr-xr-x  2 davidho davidho 4096 May 25 07:17 .
+drwxrwxr-x 11 davidho davidho 4096 Jun  6 03:38 ..
+davidho@dphxps17:~/Downloads/elastic/kibana-8.2.2$ bin/kibana
+[2022-06-06T03:51:04.897-04:00][INFO ][plugins-service] Plugin "cloudSecurityPosture" is disabled.
+[2022-06-06T03:51:04.908-04:00][INFO ][plugins-service] Plugin "metricsEntities" is disabled.
+[2022-06-06T03:51:04.939-04:00][INFO ][http.server.Preboot] http server running at http://localhost:5601
+[2022-06-06T03:51:04.960-04:00][INFO ][plugins-system.preboot] Setting up [1] plugins: [interactiveSetup]
+[2022-06-06T03:51:04.961-04:00][INFO ][preboot] "interactiveSetup" plugin is holding setup: Validating Elasticsearch connection configuration…
+[2022-06-06T03:51:04.981-04:00][INFO ][root] Holding setup until preboot stage is completed.
+
+
+i Kibana has not been configured.
+
+Go to http://localhost:5601/?code=171267 to get started.
+
+
+http://localhost:5601/?code=171267
+http://localhost:5601/app/management/kibana/settings
+
+Usage Data
+
+Changes to this setting apply to all of Kibana and are saved automatically.
+Provide usage data
+
+Enabling data usage collection helps us manage and improve our products and services. See our Privacy Statement
+(opens in a new tab or window) for more details.
+
+http://localhost:5601/app/dev_tools#/console
+
+GET /
+
+{
+  "name" : "dphxps17",
+  "cluster_name" : "elasticsearch",
+  "cluster_uuid" : "xXOIRk9RQ5ipvQWlhh-bTQ",
+  "version" : {
+    "number" : "8.2.2",
+    "build_flavor" : "default",
+    "build_type" : "tar",
+    "build_hash" : "9876968ef3c745186b94fdabd4483e01499224ef",
+    "build_date" : "2022-05-25T15:47:06.259735307Z",
+    "build_snapshot" : false,
+    "lucene_version" : "9.1.0",
+    "minimum_wire_compatibility_version" : "7.17.0",
+    "minimum_index_compatibility_version" : "7.0.0"
+  },
+  "tagline" : "You Know, for Search"
+}
+
+PUT books/_doc/1
+{
+  "title":"Effective Java",
+  "author":"Joshua Bloch",
+  "release_date":"2001-06-01",
+  "amazon_rating":4.7,
+  "best_seller":true,
+  "prices": {
+    "usd":9.95,
+    "gbp":7.95,
+    "eur":8.95
+  }
+}
+
+{
+  "_index" : "books",
+  "_id" : "1",
+  "_version" : 1,
+  "result" : "created",
+  "_shards" : {
+    "total" : 2,
+    "successful" : 1,
+    "failed" : 0
+  },
+  "_seq_no" : 0,
+  "_primary_term" : 1
+}
+
+PUT wireindex/_doc/1
+{
+	"title":"Favorite animal, fruit, and sport",
+	"summary":"Favorite animal is wallaby.\\nFavorite fruit is kiwi.\\nFavorite sport is cricket.",
+	"publication_date":"2022-06-06",
+	"countries": ["AUS", "NZL"],
+	"topics": ["JAVA", "RUBY"],
+	"non_state_actors": [
+		"Australian Kiwifruit Growers Association",
+		"New Zealand Kiwifruit Growers Incorporated",
+		"International Cricket Council"
+	]
+}
+
+{
+  "_index" : "wireindex",
+  "_id" : "1",
+  "_version" : 1,
+  "result" : "created",
+  "_shards" : {
+    "total" : 2,
+    "successful" : 1,
+    "failed" : 0
+  },
+  "_seq_no" : 0,
+  "_primary_term" : 1
+}
+
+GET wireindex/_doc/1
+
+{
+  "_index" : "wireindex",
+  "_id" : "1",
+  "_version" : 1,
+  "_seq_no" : 0,
+  "_primary_term" : 1,
+  "found" : true,
+  "_source" : {
+    "title" : "Favorite animal, fruit, and sport",
+    "summary" : """Favorite animal is wallaby.\nFavorite fruit is kiwi.\nFavorite sport is cricket.""",
+    "publication_date" : "2022-06-06",
+    "countries" : [
+      "AUS",
+      "NZL"
+    ],
+    "topics" : [
+      "JAVA",
+      "RUBY"
+    ],
+    "non_state_actors" : [
+      "Australian Kiwifruit Growers Association",
+      "New Zealand Kiwifruit Growers Incorporated",
+      "International Cricket Council"
+    ]
+  }
+}
+
+GET wireindex/_mapping
+
+{
+  "wireindex" : {
+    "mappings" : {
+      "properties" : {
+        "countries" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "non_state_actors" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "publication_date" : {
+          "type" : "date"
+        },
+        "summary" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "title" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "topics" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+GET _cat
+
+=^.^=
+/_cat/allocation
+/_cat/shards
+/_cat/shards/{index}
+/_cat/master
+/_cat/nodes
+/_cat/tasks
+/_cat/indices
+/_cat/indices/{index}
+/_cat/segments
+/_cat/segments/{index}
+/_cat/count
+/_cat/count/{index}
+/_cat/recovery
+/_cat/recovery/{index}
+/_cat/health
+/_cat/pending_tasks
+/_cat/aliases
+/_cat/aliases/{alias}
+/_cat/thread_pool
+/_cat/thread_pool/{thread_pools}
+/_cat/plugins
+/_cat/fielddata
+/_cat/fielddata/{fields}
+/_cat/nodeattrs
+/_cat/repositories
+/_cat/snapshots/{repository}
+/_cat/templates
+/_cat/component_templates/_cat/ml/anomaly_detectors
+/_cat/ml/anomaly_detectors/{job_id}
+/_cat/ml/trained_models
+/_cat/ml/trained_models/{model_id}
+/_cat/ml/datafeeds
+/_cat/ml/datafeeds/{datafeed_id}
+/_cat/ml/data_frame/analytics
+/_cat/ml/data_frame/analytics/{id}
+/_cat/transforms
+/_cat/transforms/{transform_id}
+
+PUT movies/_doc/1
+{"title": "Inception","synopsis": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.","actors": ["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Elliot Page", "Ken Watanabe"] ,"director":" Christopher Nolan ","rating":"8.8","certificate":"PG-13","genre": ["Action", "Adventure", "Sci-Fi"] }
+
+{
+  "_index" : "movies",
+  "_id" : "1",
+  "_version" : 1,
+  "result" : "created",
+  "_shards" : {
+    "total" : 2,
+    "successful" : 1,
+    "failed" : 0
+  },
+  "_seq_no" : 0,
+  "_primary_term" : 1
+}
+
+GET movies/_doc/1
+
+{
+  "_index" : "movies",
+  "_id" : "1",
+  "_version" : 1,
+  "_seq_no" : 0,
+  "_primary_term" : 1,
+  "found" : true,
+  "_source" : {
+    "title" : "Inception",
+    "synopsis" : "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
+    "actors" : [
+      "Leonardo DiCaprio",
+      "Joseph Gordon-Levitt",
+      "Elliot Page",
+      "Ken Watanabe"
+    ],
+    "director" : " Christopher Nolan ",
+    "rating" : "8.8",
+    "certificate" : "PG-13",
+    "genre" : [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ]
+  }
+}
+
+GET movies/_mapping
+
+{
+  "movies" : {
+    "mappings" : {
+      "properties" : {
+        "actors" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "certificate" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "director" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "genre" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "rating" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "synopsis" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "title" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+GET books/_mapping
+
+{
+  "books" : {
+    "mappings" : {
+      "properties" : {
+        "amazon_rating" : {
+          "type" : "float"
+        },
+        "author" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "best_seller" : {
+          "type" : "boolean"
+        },
+        "prices" : {
+          "properties" : {
+            "eur" : {
+              "type" : "float"
+            },
+            "gbp" : {
+              "type" : "float"
+            },
+            "usd" : {
+              "type" : "float"
+            }
+          }
+        },
+        "release_date" : {
+          "type" : "date"
+        },
+        "title" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+

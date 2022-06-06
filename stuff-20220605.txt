@@ -1,0 +1,442 @@
+Sun Jun  5 02:03:54 PM EDT 2022
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date
+Sun Jun  5 02:03:36 PM EDT 2022
+davidho@dphxps17:~$ date > stuff-20220605.txt
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ code stuff-20220605.txt
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+DROP DATABASE IF EXISTS wire4_development;
+CREATE DATABASE wire4_development;
+CREATE USER 'railsuser'@'localhost' IDENTIFIED BY 'railsuserpw';
+GRANT ALL PRIVILEGES ON wire4_development.* TO 'railsuser'@'localhost' WITH GRANT OPTION;
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+cd ~/railsprojects
+rm -r wire4
+rails new wire4 --css tailwind -d mysql
+cd wire4
+vi ./config/database.yml
+
+bin/rails generate model Document title:string{4000} summary:string{4000} doc_num:string{100} image_caption:string{1000} type:string{20} has_attachments:boolean worldwide:boolean
+
+bin/rails generate model User first_name:string last_name:string email:string organization:string dn:string{500}
+
+bin/rails generate model Binary data:binary{4294967295} searchable:boolean document:references
+
+bin/rails generate model Comment body:text classification:string{255} classification_xml:string{4000} document:references user:references
+
+bin/rails generate model NonStateActor name:string{4000}
+
+bin/rails generate model DocumentNonStateActor document:references non_state_actor:references
+
+bin/rails generate model DocumentCountry code:string{5} document:references
+
+bin/rails generate model DocumentTopic code:string{5} document:references
+
+bin/rails generate model CarrierWaveFile data:binary identifier:string original_filename:string content_type:string extension:string size:bigint 
+
+bin/rails generate model DigestedData data:binary{4294967295} md5:string
+
+bin/rails generate model FiledropNgUploadedFileBinary data:binary{4294967295} part:bigint
+
+bin/rails generate model PdfBook data:binary{4294967295} state:string{30} user:references
+
+bin/rails generate model VisualMediaType name:string value:string
+
+bin/rails generate model Attachment file_name:string title:string visible:boolean position:bigint file_size:bigint caption:string{1000} type:string document:references binary:references
+
+bin/rails generate model Author foo:string bar:string baz:string
+
+bin/rails generate model DocumentAuthor document:references author:references
+
+bin/rails generate model Export type:string{15} name:string state:string{15} log:text document_ids_csv:text{16777215} chunks:integer expired_at:datetime source:string progress:integer total:integer context:text attempts:integer user:references
+
+bin/rails generate model ExportChunk chunk:integer data:binary{4294967295} size:integer volume:integer export:references
+
+bin/rails db:migrate
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+      invoke  active_record
+      create    db/migrate/20220605183428_create_documents.rb
+      create    app/models/document.rb
+      invoke    test_unit
+      create      test/models/document_test.rb
+      create      test/fixtures/documents.yml
+      invoke  active_record
+      create    db/migrate/20220605183429_create_users.rb
+      create    app/models/user.rb
+      invoke    test_unit
+      create      test/models/user_test.rb
+      create      test/fixtures/users.yml
+      invoke  active_record
+      create    db/migrate/20220605183430_create_binaries.rb
+      create    app/models/binary.rb
+      invoke    test_unit
+      create      test/models/binary_test.rb
+      create      test/fixtures/binaries.yml
+      invoke  active_record
+      create    db/migrate/20220605183431_create_comments.rb
+      create    app/models/comment.rb
+      invoke    test_unit
+      create      test/models/comment_test.rb
+      create      test/fixtures/comments.yml
+      invoke  active_record
+      create    db/migrate/20220605183432_create_non_state_actors.rb
+      create    app/models/non_state_actor.rb
+      invoke    test_unit
+      create      test/models/non_state_actor_test.rb
+      create      test/fixtures/non_state_actors.yml
+      invoke  active_record
+      create    db/migrate/20220605183433_create_document_non_state_actors.rb
+      create    app/models/document_non_state_actor.rb
+      invoke    test_unit
+      create      test/models/document_non_state_actor_test.rb
+      create      test/fixtures/document_non_state_actors.yml
+      invoke  active_record
+      create    db/migrate/20220605183434_create_document_countries.rb
+      create    app/models/document_country.rb
+      invoke    test_unit
+      create      test/models/document_country_test.rb
+      create      test/fixtures/document_countries.yml
+      invoke  active_record
+      create    db/migrate/20220605183435_create_document_topics.rb
+      create    app/models/document_topic.rb
+      invoke    test_unit
+      create      test/models/document_topic_test.rb
+      create      test/fixtures/document_topics.yml
+      invoke  active_record
+      create    db/migrate/20220605183436_create_carrier_wave_files.rb
+      create    app/models/carrier_wave_file.rb
+      invoke    test_unit
+      create      test/models/carrier_wave_file_test.rb
+      create      test/fixtures/carrier_wave_files.yml
+[WARNING] The model name 'DigestedData' was recognized as a plural, using the singular 'DigestedDatum' instead. Override with --force-plural or setup custom inflection rules for this noun before running the generator.
+      invoke  active_record
+      create    db/migrate/20220605183437_create_digested_data.rb
+      create    app/models/digested_datum.rb
+      invoke    test_unit
+      create      test/models/digested_datum_test.rb
+      create      test/fixtures/digested_data.yml
+      invoke  active_record
+      create    db/migrate/20220605183438_create_filedrop_ng_uploaded_file_binaries.rb
+      create    app/models/filedrop_ng_uploaded_file_binary.rb
+      invoke    test_unit
+      create      test/models/filedrop_ng_uploaded_file_binary_test.rb
+      create      test/fixtures/filedrop_ng_uploaded_file_binaries.yml
+      invoke  active_record
+      create    db/migrate/20220605183439_create_pdf_books.rb
+      create    app/models/pdf_book.rb
+      invoke    test_unit
+      create      test/models/pdf_book_test.rb
+      create      test/fixtures/pdf_books.yml
+      invoke  active_record
+      create    db/migrate/20220605183440_create_visual_media_types.rb
+      create    app/models/visual_media_type.rb
+      invoke    test_unit
+      create      test/models/visual_media_type_test.rb
+      create      test/fixtures/visual_media_types.yml
+      invoke  active_record
+      create    db/migrate/20220605183441_create_attachments.rb
+      create    app/models/attachment.rb
+      invoke    test_unit
+      create      test/models/attachment_test.rb
+      create      test/fixtures/attachments.yml
+      invoke  active_record
+      create    db/migrate/20220605183442_create_authors.rb
+      create    app/models/author.rb
+      invoke    test_unit
+      create      test/models/author_test.rb
+      create      test/fixtures/authors.yml
+      invoke  active_record
+      create    db/migrate/20220605183443_create_document_authors.rb
+      create    app/models/document_author.rb
+      invoke    test_unit
+      create      test/models/document_author_test.rb
+      create      test/fixtures/document_authors.yml
+      invoke  active_record
+      create    db/migrate/20220605183444_create_exports.rb
+      create    app/models/export.rb
+      invoke    test_unit
+      create      test/models/export_test.rb
+      create      test/fixtures/exports.yml
+      invoke  active_record
+      create    db/migrate/20220605183445_create_export_chunks.rb
+      create    app/models/export_chunk.rb
+      invoke    test_unit
+      create      test/models/export_chunk_test.rb
+      create      test/fixtures/export_chunks.yml
+davidho@dphxps17:~/railsprojects/wire4$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+show databases;
+use wire4_development;
+show tables;
+
+desc documents;
+desc users;
+desc comments;
+desc non_state_actors;
+desc document_non_state_actors;
+
+mysql> 
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| depot2_development |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| wire2_development  |
+| wire3_development  |
+| wire4_development  |
++--------------------+
+8 rows in set (0.00 sec)
+
+mysql> use wire4_development;
+Database changed
+mysql> show tables;
+Empty set (0.01 sec)
+
+mysql> 
+mysql> 
+mysql> show tables;
++------------------------------------+
+| Tables_in_wire4_development        |
++------------------------------------+
+| ar_internal_metadata               |
+| attachments                        |
+| authors                            |
+| binaries                           |
+| carrier_wave_files                 |
+| comments                           |
+| digested_data                      |
+| document_authors                   |
+| document_countries                 |
+| document_non_state_actors          |
+| document_topics                    |
+| documents                          |
+| export_chunks                      |
+| exports                            |
+| filedrop_ng_uploaded_file_binaries |
+| non_state_actors                   |
+| pdf_books                          |
+| schema_migrations                  |
+| users                              |
+| visual_media_types                 |
++------------------------------------+
+20 rows in set (0.00 sec)
+
+mysql> 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+cd ~/railsprojects/wire4
+bin/rails console
+
+# should create a seed file for this NonStateActor information
+NonStateActor.create(:name => "Australian Kiwifruit Growers Association")
+NonStateActor.create(:name => "New Zealand Kiwifruit Growers Incorporated")
+NonStateActor.create(:name => "International Cricket Council")
+NonStateActor.create(:name => "Major Leage Baseball")
+NonStateActor.create(:name => "National Football League")
+NonStateActor.create(:name => "National Hockey League")
+NonStateActor.create(:name => "National Basketball Association")
+NonStateActor.create(:name => "Boy Scouts of America")
+NonStateActor.create(:name => "International Brotherhood of Teamsters")
+
+nsa1 = NonStateActor.find(1)  # Australian Kiwifruit Growers Association
+nsa2 = NonStateActor.find(2)  # New Zealand Kiwifruit Growers Incorporated
+nsa3 = NonStateActor.find(3)  # International Cricket Council
+nsa4 = NonStateActor.find(4)  # Major Leage Baseball
+nsa5 = NonStateActor.find(5)  # National Football League
+nsa6 = NonStateActor.find(6)  # National Hockey League
+nsa7 = NonStateActor.find(7)  # National Basketball Association
+nsa8 = NonStateActor.find(8)  # Boy Scouts of America
+nsa9 = NonStateActor.find(9)  # International Brotherhood of Teamsters
+
+wiredoc1 = Document.new
+wiredoc1.title = "Favorite animal, fruit, and sport"
+wiredoc1.summary = """Favorite animal is wallaby.
+Favorite fruit is kiwi.
+Favorite sport is cricket."""
+wiredoc1.new_record?
+wiredoc1.save
+wiredoc1.new_record?
+DocumentCountry.create(:code => "AUS", :document => wiredoc1)
+DocumentCountry.create(:code => "NZL", :document => wiredoc1)
+DocumentTopic.create(:code => "JAVA", :document => wiredoc1)
+DocumentTopic.create(:code => "RUBY", :document => wiredoc1)
+DocumentNonStateActor.create(:non_state_actor => nsa1, :document => wiredoc1)
+DocumentNonStateActor.create(:non_state_actor => nsa2, :document => wiredoc1)
+DocumentNonStateActor.create(:non_state_actor => nsa3, :document => wiredoc1)
+
+wiredoc2 = Document.new
+wiredoc2.title = "Australia favorite animal, fruit, and sport"
+wiredoc2.summary = """Favorite animal is kangaroo.
+Favorite fruit is quandong.
+Favorite sport is rugby."""
+wiredoc2.save
+DocumentCountry.create(:code => "AUS", :document => wiredoc2)
+DocumentTopic.create(:code => "JAVA", :document => wiredoc2)
+DocumentNonStateActor.create(:non_state_actor => nsa1, :document => wiredoc2)
+
+wiredoc3 = Document.new
+wiredoc3.title = "New Zealand favorite animal, fruit, and sport"
+wiredoc3.summary = """Favorite animal is wombat.
+Favorite fruit is feijoas.
+Favorite sport is netball."""
+wiredoc3.save
+DocumentCountry.create(:code => "NZL", :document => wiredoc3)
+DocumentTopic.create(:code => "RUBY", :document => wiredoc3)
+DocumentNonStateActor.create(:non_state_actor => nsa2, :document => wiredoc3)
+
+wiredoc1.to_json
+wiredoc2.to_json
+wiredoc3.to_json
+nsa1.to_json
+nsa2.to_json
+nsa3.to_json
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/railsprojects/wire4$ bin/rails console
+Loading development environment (Rails 7.0.3)
+irb(main):001:0> 
+
+irb(main):071:0> 
+irb(main):072:0> wiredoc1.to_json
+=> "{\"id\":1,\"title\":\"Favorite animal, fruit, and sport\",\"summary\":\"Favorite animal is wallaby.\\nFavorite fruit is kiwi.\\nFavorite sport is cricket.\",\"doc_num\":null,\"image_caption\":null,\"has_attachments\":null,\"worldwide\":null,\"created_at\":\"2022-06-05T18:52:17.868Z\",\"updated_at\":\"2022-06-05T18:52:17.868Z\"}"
+irb(main):073:0> wiredoc2.to_json
+=> "{\"id\":2,\"title\":\"Australia favorite animal, fruit, and sport\",\"summary\":\"Favorite animal is kangaroo.\\nFavorite fruit is quandong.\\nFavorite sport is rugby.\",\"doc_num\":null,\"image_caption\":null,\"has_attachments\":null,\"worldwide\":null,\"created_at\":\"2022-06-05T18:52:18.326Z\",\"updated_at\":\"2022-06-05T18:52:18.326Z\"}"
+irb(main):074:0> wiredoc3.to_json
+=> "{\"id\":3,\"title\":\"New Zealand favorite animal, fruit, and sport\",\"summary\":\"Favorite animal is wombat.\\nFavorite fruit is feijoas.\\nFavorite sport is netball.\",\"doc_num\":null,\"image_caption\":null,\"has_attachments\":null,\"worldwide\":null,\"created_at\":\"2022-06-05T18:52:18.587Z\",\"updated_at\":\"2022-06-05T18:52:18.587Z\"}"
+irb(main):075:0> nsa1.to_json
+=> "{\"id\":1,\"name\":\"Australian Kiwifruit Growers Association\",\"created_at\":\"2022-06-05T18:52:17.072Z\",\"updated_at\":\"2022-06-05T18:52:17.072Z\"}"
+irb(main):076:0> nsa2.to_json
+=> "{\"id\":2,\"name\":\"New Zealand Kiwifruit Growers Incorporated\",\"created_at\":\"2022-06-05T18:52:17.127Z\",\"updated_at\":\"2022-06-05T18:52:17.127Z\"}"
+irb(main):077:0> nsa3.to_json
+=> "{\"id\":3,\"name\":\"International Cricket Council\",\"created_at\":\"2022-06-05T18:52:17.155Z\",\"updated_at\":\"2022-06-05T18:52:17.155Z\"}"
+irb(main):079:0> 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ mysqldump -u root -p wire4_development > ~/wire4-development-mysqldump-20220605.sql
+Enter password: 
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date
+Sun Jun  5 02:57:00 PM EDT 2022
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+mysql> 
+mysql> select id, title, summary from documents;
++----+-----------------------------------------------+-----------------------------------------------------------------------------------+
+| id | title                                         | summary                                                                           |
++----+-----------------------------------------------+-----------------------------------------------------------------------------------+
+|  1 | Favorite animal, fruit, and sport             | Favorite animal is wallaby.
+Favorite fruit is kiwi.
+Favorite sport is cricket.    |
+|  2 | Australia favorite animal, fruit, and sport   | Favorite animal is kangaroo.
+Favorite fruit is quandong.
+Favorite sport is rugby. |
+|  3 | New Zealand favorite animal, fruit, and sport | Favorite animal is wombat.
+Favorite fruit is feijoas.
+Favorite sport is netball.  |
++----+-----------------------------------------------+-----------------------------------------------------------------------------------+
+3 rows in set (0.01 sec)
+
+mysql> 
+mysql> select * from document_countries;
++----+------+-------------+----------------------------+----------------------------+
+| id | code | document_id | created_at                 | updated_at                 |
++----+------+-------------+----------------------------+----------------------------+
+|  1 | AUS  |           1 | 2022-06-05 18:52:17.954443 | 2022-06-05 18:52:17.954443 |
+|  2 | NZL  |           1 | 2022-06-05 18:52:18.008264 | 2022-06-05 18:52:18.008264 |
+|  3 | AUS  |           2 | 2022-06-05 18:52:18.365389 | 2022-06-05 18:52:18.365389 |
+|  4 | NZL  |           3 | 2022-06-05 18:52:18.627840 | 2022-06-05 18:52:18.627840 |
++----+------+-------------+----------------------------+----------------------------+
+4 rows in set (0.00 sec)
+
+mysql> 
+mysql> select * from document_topics;
++----+------+-------------+----------------------------+----------------------------+
+| id | code | document_id | created_at                 | updated_at                 |
++----+------+-------------+----------------------------+----------------------------+
+|  1 | JAVA |           1 | 2022-06-05 18:52:18.044148 | 2022-06-05 18:52:18.044148 |
+|  2 | RUBY |           1 | 2022-06-05 18:52:18.066313 | 2022-06-05 18:52:18.066313 |
+|  3 | JAVA |           2 | 2022-06-05 18:52:18.396158 | 2022-06-05 18:52:18.396158 |
+|  4 | RUBY |           3 | 2022-06-05 18:52:18.654701 | 2022-06-05 18:52:18.654701 |
++----+------+-------------+----------------------------+----------------------------+
+4 rows in set (0.00 sec)
+
+mysql> select * from non_state_actors;
++----+--------------------------------------------+----------------------------+----------------------------+
+| id | name                                       | created_at                 | updated_at                 |
++----+--------------------------------------------+----------------------------+----------------------------+
+|  1 | Australian Kiwifruit Growers Association   | 2022-06-05 18:52:17.072332 | 2022-06-05 18:52:17.072332 |
+|  2 | New Zealand Kiwifruit Growers Incorporated | 2022-06-05 18:52:17.127322 | 2022-06-05 18:52:17.127322 |
+|  3 | International Cricket Council              | 2022-06-05 18:52:17.155627 | 2022-06-05 18:52:17.155627 |
+|  4 | Major Leage Baseball                       | 2022-06-05 18:52:17.182018 | 2022-06-05 18:52:17.182018 |
+|  5 | National Football League                   | 2022-06-05 18:52:17.217698 | 2022-06-05 18:52:17.217698 |
+|  6 | National Hockey League                     | 2022-06-05 18:52:17.249762 | 2022-06-05 18:52:17.249762 |
+|  7 | National Basketball Association            | 2022-06-05 18:52:17.280217 | 2022-06-05 18:52:17.280217 |
+|  8 | Boy Scouts of America                      | 2022-06-05 18:52:17.314150 | 2022-06-05 18:52:17.314150 |
+|  9 | International Brotherhood of Teamsters     | 2022-06-05 18:52:17.341446 | 2022-06-05 18:52:17.341446 |
++----+--------------------------------------------+----------------------------+----------------------------+
+9 rows in set (0.00 sec)
+
+mysql> 
+mysql> select id, name from non_state_actors;
++----+--------------------------------------------+
+| id | name                                       |
++----+--------------------------------------------+
+|  1 | Australian Kiwifruit Growers Association   |
+|  2 | New Zealand Kiwifruit Growers Incorporated |
+|  3 | International Cricket Council              |
+|  4 | Major Leage Baseball                       |
+|  5 | National Football League                   |
+|  6 | National Hockey League                     |
+|  7 | National Basketball Association            |
+|  8 | Boy Scouts of America                      |
+|  9 | International Brotherhood of Teamsters     |
++----+--------------------------------------------+
+9 rows in set (0.01 sec)
+
+mysql> 
+mysql> select * from document_non_state_actors;
++----+-------------+--------------------+----------------------------+----------------------------+
+| id | document_id | non_state_actor_id | created_at                 | updated_at                 |
++----+-------------+--------------------+----------------------------+----------------------------+
+|  1 |           1 |                  1 | 2022-06-05 18:52:18.107751 | 2022-06-05 18:52:18.107751 |
+|  2 |           1 |                  2 | 2022-06-05 18:52:18.136049 | 2022-06-05 18:52:18.136049 |
+|  3 |           1 |                  3 | 2022-06-05 18:52:18.160775 | 2022-06-05 18:52:18.160775 |
+|  4 |           2 |                  1 | 2022-06-05 18:52:18.423382 | 2022-06-05 18:52:18.423382 |
+|  5 |           3 |                  2 | 2022-06-05 18:52:18.685328 | 2022-06-05 18:52:18.685328 |
++----+-------------+--------------------+----------------------------+----------------------------+
+5 rows in set (0.00 sec)
+
+mysql> 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+
+
+
+
+
+
+
+
+
+

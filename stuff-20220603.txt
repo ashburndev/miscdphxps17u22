@@ -1,0 +1,997 @@
+Fri Jun  3 09:06:13 AM EDT 2022
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date
+Fri Jun  3 09:06:01 AM EDT 2022
+davidho@dphxps17:~$ date > stuff-20220603.txt
+davidho@dphxps17:~$ code   stuff-20220603.txt
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Is there a document.body field ? If so, what is the type ?
+Can I specify largeblob for data in the rails generate mode command ?
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+DROP DATABASE IF EXISTS wire4_development;
+CREATE DATABASE wire4_development;
+CREATE USER 'railsuser'@'localhost' IDENTIFIED BY 'railsuserpw';
+GRANT ALL PRIVILEGES ON wire4_development.* TO 'railsuser'@'localhost' WITH GRANT OPTION;
+
+show databases;
+use wire4_development;
+show tables;
+desc documents;
+desc users;
+desc comments;
+desc non_state_actors;
+desc document_non_state_actors;
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://stackoverflow.com/questions/4384284/ruby-on-rails-generates-model-fieldtype-what-are-the-options-for-fieldtype
+
+:primary_key, :string, :text, :integer, :float, :decimal, :datetime, :timestamp,
+:time, :date, :binary, :boolean, :references
+
+https://gist.github.com/cdesch/2f8de645cad1d83aa251c0a20b0f7097
+
+:primary_key, :string, :text, :integer, :float, :decimal, :datetime, :timestamp,
+:time, :date, :binary, :boolean
+
+rails generate scaffold Post name:string title:string content:text slug:string:uniq
+
+If you use rails
+
+rails generate model Assemblies_parts assembly:references part:references
+
+you will have two indexes, but what you want is
+
+add_index :assemblies_parts, [:assembly_id, :part_id], :unique => true
+
+For Rails 5 use create_join_table instead.
+
+
+Adding Modifiers (Reference)
+
+Modifiers are inserted through curly braces and they allow you to include things such as null and limit.
+
+Add an age to a Friend with a limit
+
+rails g model friend age:integer{2}  
+
+Add a price to a product with 2 decimals
+
+rails g model product 'price:decimal{10,2}'  	
+
+Would result in a migration with a scale of 2 and percision of 10
+
+class CreateProducts < ActiveRecord::Migration
+  def change
+    create_table :products do |t|
+      ...
+      t.decimal :price, precision: 10, scale: 2
+      ...
+      t.timestamps null: false
+    end
+  end
+end
+
+Create a new model with a reference to another model (Reference)
+
+rails g model Supplier name:string
+rails g model Product name:string:index sku:string{10}:uniq count:integer description:text supplier:references popularity:float 'price:decimal{10,2}' available:boolean availableSince:datetime image:binary	
+
+
+https://railsguides.net/advanced-rails-model-generators/
+
+Sometimes you have to automatically add index for columns in your migration. It’s not a problem:
+
+$ rails g model user email:index location_id:integer:index
+
+Or uniq index:
+
+$ rails g model user pseudo:string:uniq
+
+Set limit for field of integer, string, text and binary fields:
+
+$ rails generate model user pseudo:string{30}
+
+Special syntax to generate decimal field with scale and precision:
+
+$ rails generate model product 'price:decimal{10,2}'
+
+    Pay attention that you have to wrap parameter price:decimal{10,2} to quotes. It’s vital and you may have incorrect behavior of generator if you don’t do it. Full explanation of this case is here.
+
+You can combine any single curly brace option with the index options:
+
+$ rails generate model user username:string{30}:uniq
+
+And the last useful feature of generators - it’s options to generate reference columns (fields which are used in rails as foreign keys):
+
+$ rails generate model photo album:references
+
+https://guides.rubyonrails.org/v3.2/migrations.html
+
+    :binary
+    :boolean
+    :date
+    :datetime
+    :decimal
+    :float
+    :integer
+    :primary_key
+    :string
+    :text
+    :time
+    :timestamp
+
+https://stackoverflow.com/questions/10873886/syntax-to-specify-limit-while-generating-a-model
+
+rails generate model MyModel some_id:integer{20} some_name:string{255}
+some_text:text some_int:integer{1} some_deci:decimal{10,2}
+
+https://www.ruby-forum.com/t/setting-binary-limit-option-on-mysql-column/110261
+
+https://www.ruby-forum.com/t/setting-binary-limit-option-on-mysql-column/110261
+
+I use the limit option, and although it does not appear in my schema
+file, it does change the size of the binary column. I haven’t tested
+to see if it creates an upper bound, but it does change the BLOB type.
+
+The four BLOB types are TINYBLOB, BLOB, MEDIUMBLOB, and LONGBLOB.
+
+For example, a :limit=>256.kilobyte creates a MEDIUMBLOB instead of a
+BLOB (default).
+
+If you want an upper bound on length, maybe create a validation in
+your model?
+
+https://api.rubyonrails.org/classes/ActiveRecord/Validations/ClassMethods.html#M000942
+
+https://www.xyzpub.com/en/ruby-on-rails/4.0/activerecord_datenbank_anlegen.html
+
+https://dzone.com/articles/how-to-work-with-blob-in-mysql-database-hosted-on
+
+MySQL supports 4 types of BLOB data types, which only differ in the maximum length of data they can store. Here is a summary of the different types:
+
+    TINYBLOB: Only supports up to 255 bytes.
+    BLOB: Can handle up to 65,535 bytes of data.
+    MEDIUMBLOB: The maximum length supported is 16,777,215 bytes.
+    LONGBLOB: Stores up to 4,294,967,295 bytes of data.
+
+https://dev.mysql.com/doc/refman/8.0/en/blob.html
+
+https://blog.karatos.in/a?ID=01700-3b263c9b-c05e-4f71-ba35-f3cc9b188e7d
+
+MySQL's four BLOB types 
+
+Type Size (unit: byte) 
+
+TinyBlob max 255 Blob max 65K 
+MediumBlob max 16M 
+LongBlob max 4G 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+cd ~/railsprojects
+rails new wire4 --css tailwind -d mysql
+cd wire4
+code .
+
+bin/rails generate model Document title:string{4000} summary:string{4000} doc_num:string{100} image_caption:string{1000} type:string{20} has_attachments:boolean worldwide:boolean
+
+bin/rails generate model User first_name:string last_name:string email:string organization:string dn:string{500}
+
+bin/rails generate model Binary data:binary{4294967295} searchable:boolean document:references
+
+bin/rails generate model Comment body:text classification:string{255} classification_xml:string{4000} document:references user:references
+
+bin/rails generate model NonStateActor name:string{4000}
+
+bin/rails generate model DocumentNonStateActor document:references non_state_actor:references
+
+bin/rails generate model DocumentCountry code:string{5} document:references
+
+bin/rails generate model DocumentTopic code:string{5} document:references
+
+bin/rails generate model CarrierWaveFile data:binary identifier:string original_filename:string content_type:string extension:string size:bigint 
+
+bin/rails generate model DigestedData data:binary{4294967295} md5:string
+
+bin/rails generate model FiledropNgUploadedFileBinary data:binary{4294967295} part:bigint
+
+bin/rails generate model PdfBook data:binary{4294967295} state:string{30} user:references
+
+bin/rails generate model VisualMediaType name:string value:string
+
+bin/rails generate model Attachment file_name:string title:string visible:boolean position:bigint file_size:bigint caption:string{1000} type:string document:references binary:references
+
+bin/rails generate model Author foo:string bar:string baz:string
+
+bin/rails generate model DocumentAuthor document:references author:references
+
+bin/rails generate model Export type:string{15} name:string state:string{15} log:text document_ids_csv:text{16777215} chunks:integer expired_at:datetime source:string progress:integer total:integer context:text attempts:integer user:references
+
+bin/rails generate model ExportChunk chunk:integer data:binary{4294967295} size:integer volume:integer export:references
+
+bin/rails db:migrate
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+mysql> 
+mysql> show tables;
++------------------------------------+
+| Tables_in_wire4_development        |
++------------------------------------+
+| ar_internal_metadata               |
+| attachments                        |
+| authors                            |
+| binaries                           |
+| carrier_wave_files                 |
+| comments                           |
+| digested_data                      |
+| document_authors                   |
+| document_countries                 |
+| document_non_state_actors          |
+| document_topics                    |
+| documents                          |
+| export_chunks                      |
+| exports                            |
+| filedrop_ng_uploaded_file_binaries |
+| non_state_actors                   |
+| pdf_books                          |
+| schema_migrations                  |
+| users                              |
+| visual_media_types                 |
++------------------------------------+
+20 rows in set (0.00 sec)
+
+mysql> 
+mysql> desc binaries;
++-------------+-------------+------+-----+---------+----------------+
+| Field       | Type        | Null | Key | Default | Extra          |
++-------------+-------------+------+-----+---------+----------------+
+| id          | bigint      | NO   | PRI | NULL    | auto_increment |
+| data        | longblob    | YES  |     | NULL    |                |
+| searchable  | tinyint(1)  | YES  |     | NULL    |                |
+| document_id | bigint      | NO   | MUL | NULL    |                |
+| created_at  | datetime(6) | NO   |     | NULL    |                |
+| updated_at  | datetime(6) | NO   |     | NULL    |                |
++-------------+-------------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
+
+mysql> desc carrier_wave_files;
++-------------------+--------------+------+-----+---------+----------------+
+| Field             | Type         | Null | Key | Default | Extra          |
++-------------------+--------------+------+-----+---------+----------------+
+| id                | bigint       | NO   | PRI | NULL    | auto_increment |
+| data              | blob         | YES  |     | NULL    |                |
+| identifier        | varchar(255) | YES  |     | NULL    |                |
+| original_filename | varchar(255) | YES  |     | NULL    |                |
+| content_type      | varchar(255) | YES  |     | NULL    |                |
+| extension         | varchar(255) | YES  |     | NULL    |                |
+| size              | bigint       | YES  |     | NULL    |                |
+| created_at        | datetime(6)  | NO   |     | NULL    |                |
+| updated_at        | datetime(6)  | NO   |     | NULL    |                |
++-------------------+--------------+------+-----+---------+----------------+
+9 rows in set (0.00 sec)
+
+mysql> desc digested_data;
++------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| id         | bigint       | NO   | PRI | NULL    | auto_increment |
+| data       | longblob     | YES  |     | NULL    |                |
+| md5        | varchar(255) | YES  |     | NULL    |                |
+| created_at | datetime(6)  | NO   |     | NULL    |                |
+| updated_at | datetime(6)  | NO   |     | NULL    |                |
++------------+--------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> desc export_chunks;
++------------+-------------+------+-----+---------+----------------+
+| Field      | Type        | Null | Key | Default | Extra          |
++------------+-------------+------+-----+---------+----------------+
+| id         | bigint      | NO   | PRI | NULL    | auto_increment |
+| chunk      | int         | YES  |     | NULL    |                |
+| data       | longblob    | YES  |     | NULL    |                |
+| size       | int         | YES  |     | NULL    |                |
+| volume     | int         | YES  |     | NULL    |                |
+| export_id  | bigint      | NO   | MUL | NULL    |                |
+| created_at | datetime(6) | NO   |     | NULL    |                |
+| updated_at | datetime(6) | NO   |     | NULL    |                |
++------------+-------------+------+-----+---------+----------------+
+8 rows in set (0.00 sec)
+
+mysql> desc filedrop_ng_uploaded_file_binaries
+    -> ;
++------------+-------------+------+-----+---------+----------------+
+| Field      | Type        | Null | Key | Default | Extra          |
++------------+-------------+------+-----+---------+----------------+
+| id         | bigint      | NO   | PRI | NULL    | auto_increment |
+| data       | longblob    | YES  |     | NULL    |                |
+| part       | bigint      | YES  |     | NULL    |                |
+| created_at | datetime(6) | NO   |     | NULL    |                |
+| updated_at | datetime(6) | NO   |     | NULL    |                |
++------------+-------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> desc pdf_books;
++------------+-------------+------+-----+---------+----------------+
+| Field      | Type        | Null | Key | Default | Extra          |
++------------+-------------+------+-----+---------+----------------+
+| id         | bigint      | NO   | PRI | NULL    | auto_increment |
+| data       | longblob    | YES  |     | NULL    |                |
+| state      | varchar(30) | YES  |     | NULL    |                |
+| user_id    | bigint      | NO   | MUL | NULL    |                |
+| created_at | datetime(6) | NO   |     | NULL    |                |
+| updated_at | datetime(6) | NO   |     | NULL    |                |
++------------+-------------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
+
+mysql> 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ cd ~/railsprojects/wire4
+davidho@dphxps17:~/railsprojects/wire3$ bin/rails console
+Loading development environment (Rails 7.0.3)
+irb(main):001:0> 
+
+Australian Kiwifruit Growers Association
+New Zealand Kiwifruit Growers Incorporated
+International Cricket Council
+Major Leage Baseball
+National Hockey League
+National Basketball Association
+Boy Scouts of America
+International Brotherhood of Teamsters
+
+# should create a seed file for this NonStateActor information
+NonStateActor.create(:name => "Australian Kiwifruit Growers Association")
+NonStateActor.create(:name => "New Zealand Kiwifruit Growers Incorporated")
+NonStateActor.create(:name => "International Cricket Council")
+NonStateActor.create(:name => "Major Leage Baseball")
+NonStateActor.create(:name => "National Hockey League")
+NonStateActor.create(:name => "National Basketball Association")
+NonStateActor.create(:name => "Boy Scouts of America")
+NonStateActor.create(:name => "International Brotherhood of Teamsters")
+
+nsa1 = NonStateActor.find(1)  # Australian Kiwifruit Growers Association
+nsa2 = NonStateActor.find(2)  # New Zealand Kiwifruit Growers Incorporated
+nsa3 = NonStateActor.find(3)  # International Cricket Council
+nsa4 = NonStateActor.find(4)  # Major Leage Baseball
+nsa5 = NonStateActor.find(5)  # National Hockey League
+nsa6 = NonStateActor.find(6)  # National Basketball Association
+nsa7 = NonStateActor.find(7)  # Boy Scouts of America
+nsa8 = NonStateActor.find(8)  # International Brotherhood of Teamsters
+
+wiredoc1 = Document.new
+wiredoc1.title = "Favorite animal, fruit, and sport"
+wiredoc1.summary = """Favorite animal is wallaby.
+Favorite fruit is kiwi.
+Favorite sport is cricket."""
+wiredoc1.new_record?
+wiredoc1.save
+wiredoc1.new_record?
+DocumentCountry.create(:code => "AUS", :document => wiredoc1)
+DocumentCountry.create(:code => "NZL", :document => wiredoc1)
+DocumentTopic.create(:code => "JAVA", :document => wiredoc1)
+DocumentTopic.create(:code => "RUBY", :document => wiredoc1)
+DocumentNonStateActor.create(:non_state_actor => nsa1, :document => wiredoc1)
+DocumentNonStateActor.create(:non_state_actor => nsa2, :document => wiredoc1)
+DocumentNonStateActor.create(:non_state_actor => nsa3, :document => wiredoc1)
+
+wiredoc2 = Document.new
+wiredoc2.title = "Australia favorite animal, fruit, and sport"
+wiredoc2.summary = """Favorite animal is kangaroo.
+Favorite fruit is quandong.
+Favorite sport is rugby."""
+wiredoc2.save
+DocumentCountry.create(:code => "AUS", :document => wiredoc2)
+DocumentTopic.create(:code => "JAVA", :document => wiredoc2)
+DocumentNonStateActor.create(:non_state_actor => nsa1, :document => wiredoc2)
+
+wiredoc3 = Document.new
+wiredoc3.title = "New Zealand favorite animal, fruit, and sport"
+wiredoc3.summary = """Favorite animal is wombat.
+Favorite fruit is feijoas.
+Favorite sport is netball."""
+wiredoc3.save
+DocumentCountry.create(:code => "NZL", :document => wiredoc3)
+DocumentTopic.create(:code => "RUBY", :document => wiredoc3)
+DocumentNonStateActor.create(:non_state_actor => nsa2, :document => wiredoc3)
+
+wiredoc1.to_json
+wiredoc2.to_json
+wiredoc3.to_json
+nsa1.to_json
+nsa2.to_json
+nsa3.to_json
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ cd railsprojects/wire3
+davidho@dphxps17:~/railsprojects/wire3$ bin/rails console
+Loading development environment (Rails 7.0.3)
+irb(main):001:0> d = Document.new
+=> 
+#<Document:0x00007f3e4b106e00                                           
+...                                                                     
+irb(main):002:0> d.save
+  TRANSACTION (0.3ms)  BEGIN
+  Document Create (8.6ms)  INSERT INTO `documents` (`title`, `summary`, `doc_num`, `image_caption`, `type`, `has_attachments`, `worldwide`, `created_at`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-03 13:11:21.749078', '2022-06-03 13:11:21.749078')                                                             
+  TRANSACTION (2.3ms)  COMMIT                                           
+=> true                                                                 
+irb(main):003:0> d.title = "Favorite animal, fruit, and sport"
+=> "Favorite animal, fruit, and sport"
+irb(main):004:0" d.summary = """Favorite animal is wombat.
+irb(main):005:0" Favorite fruit is kiwi.
+irb(main):006:0" Favorite sport is cricket."""
+=> "Favorite animal is wombat.\nFavorite fruit is kiwi.\nFavorite sport is cricket."
+irb(main):007:0> puts d
+#<Document:0x00007f3e4b106e00>
+=> nil                                                                                       
+irb(main):009:0> y d
+--- !ruby/object:Document
+concise_attributes:                              
+- !ruby/object:ActiveModel::Attribute::FromDatabase
+  name: id                                       
+- !ruby/object:ActiveModel::Attribute::FromDatabase
+  name: doc_num
+- !ruby/object:ActiveModel::Attribute::FromDatabase
+  name: image_caption
+- !ruby/object:ActiveModel::Attribute::FromDatabase
+  name: type
+- !ruby/object:ActiveModel::Attribute::FromDatabase
+  name: has_attachments
+- !ruby/object:ActiveModel::Attribute::FromDatabase
+  name: worldwide
+- !ruby/object:ActiveModel::Attribute::FromDatabase
+  name: created_at
+  value_before_type_cast: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2022-06-03 13:11:21.749078000 Z
+    zone: &2 !ruby/object:ActiveSupport::TimeZone
+      name: Etc/UTC
+    time: 2022-06-03 13:11:21.749078000 Z
+- !ruby/object:ActiveModel::Attribute::FromDatabase
+  name: updated_at
+  value_before_type_cast: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2022-06-03 13:11:21.749078000 Z
+    zone: *2
+    time: 2022-06-03 13:11:21.749078000 Z
+new_record: false
+active_record_yaml_version: 2
+=> nil
+irb(main):010:0> d.save
+  TRANSACTION (0.3ms)  BEGIN
+  Document Update (0.7ms)  UPDATE `documents` SET `documents`.`title` = 'Favorite animal, fruit, and sport', `documents`.`summary` = 'Favorite animal is wombat.\nFavorite fruit is kiwi.\nFavorite sport is cricket.', `documents`.`updated_at` = '2022-06-03 13:15:35.74
+  TRANSACTION (2.8ms)  COMMIT                                
+irb(main):011:0> 
+  name: type
+- !ruby/object:ActiveModel::Attribute::FromDatabase
+  name: has_attachments
+- !ruby/object:ActiveModel::Attribute::FromDatabase
+  name: worldwide
+- !ruby/object:ActiveModel::Attribute::FromDatabase
+  name: created_at
+  value_before_type_cast: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2022-06-03 13:11:21.749078000 Z
+    zone: &1 !ruby/object:ActiveSupport::TimeZone
+      name: Etc/UTC
+    time: 2022-06-03 13:11:21.749078000 Z
+- !ruby/object:ActiveModel::Attribute::FromDatabase
+  name: updated_at
+  value_before_type_cast: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2022-06-03 13:15:35.740107000 Z
+  DocumentCountry Create (1.2ms)  INSERT INTO `document_countries` (`code`, `document_id`, `created_at`, `updated_at`) VALUES ('AUS', 1, '2022-06-03 13:25:55.682513', '2022-06-03 13:25:55.682513')
+  TRANSACTION (5.9ms)  COMMIT                                 
+=> true                                                       
+irb(main):019:0> y dc
+--- !ruby/object:DocumentCountry
+concise_attributes:                                           
+- !ruby/object:ActiveModel::Attribute::FromDatabase           
+  name: id                                                    
+  value_before_type_cast: 1                                   
+- !ruby/object:ActiveModel::Attribute::FromDatabase           
+  name: code                                                  
+  value_before_type_cast: AUS                                 
+- !ruby/object:ActiveModel::Attribute::FromDatabase           
+  name: document_id                       
+  value_before_type_cast: 1               
+- !ruby/object:ActiveModel::Attribute::FromDatabase
+  name: created_at
+  value_before_type_cast: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2022-06-03 13:25:55.682513000 Z
+    zone: &1 !ruby/object:ActiveSupport::TimeZone
+      name: Etc/UTC
+    time: 2022-06-03 13:25:55.682513000 Z
+- !ruby/object:ActiveModel::Attribute::FromDatabase
+  name: updated_at
+  value_before_type_cast: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2022-06-03 13:25:55.682513000 Z
+    zone: *1
+    time: 2022-06-03 13:25:55.682513000 Z
+new_record: false
+active_record_yaml_version: 2
+=> nil
+irb(main):020:0> dc.json
+/home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activemodel-7.0.3/lib/active_model/attribute_methods.rb:458:in `method_missing': undefined method `json' for #<DocumentCountry id: 1, code: "AUS", document_id: 1, created_at: "2022-06-03 13:25:55.682513000 +0000", updated_at: "2022-06-03 13:25:55.682513000 +0000"> (NoMethodError)
+irb(main):021:0> dc2 = Document.create(:code => "NZL", :document => d)
+/home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activemodel-7.0.3/lib/active_model/attribute_assignment.rb:51:in `_assign_attribute': unknown attribute 'code' for Document. (ActiveModel::UnknownAttributeError)
+                                                              
+          raise UnknownAttributeError.new(self, k.to_s)       
+          ^^^^^                                               
+irb(main):022:0> 
+irb(main):023:0> dc2 = DocumentCountry.create(:code => "NZL", :document => d)
+  TRANSACTION (0.3ms)  BEGIN
+  DocumentCountry Create (0.5ms)  INSERT INTO `document_countries` (`code`, `document_id`, `created_at`, `updated_at`) VALUES ('NZL', 1, '2022-06-03 13:34:56.864115', '2022-06-03 13:34:56.864115')
+  TRANSACTION (5.7ms)  COMMIT                                 
+=> 
+#<DocumentCountry:0x00007f3e4936f018
+...
+irb(main):024:0> dc2.is_new?
+/home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activemodel-7.0.3/lib/active_model/attribute_methods.rb:458:in `method_missing': undefined method `is_new?' for #<DocumentCountry id: 2, code: "NZL", document_id: 1, created_at: "2022-06-03 13:34:56.864115000 +0000", updated_at: "2022-06-03 13:34:56.864115000 +0000"> (NoMethodError)
+Did you mean?  is_a?                                           
+irb(main):025:0> 
+irb(main):036:0> 
+irb(main):037:0> d.to_json
+=> "{\"id\":1,\"title\":\"Favorite animal, fruit, and sport\",\"summary\":\"Favorite animal is wombat.\\nFavorite fruit is kiwi.\\nFavorite sport is cricket.\",\"doc_num\":null,\"image_caption\":null,\"has_attachments\":null,\"worldwide\":null,\"created_at\":\"2022-06-03T13:11:21.749Z\",\"updated_at\":\"2022-06-03T13:15:35.740Z\"}"
+irb(main):038:0> 
+irb(main):039:0> dc.to_json
+=> "{\"id\":1,\"code\":\"AUS\",\"document_id\":1,\"created_at\":\"2022-06-03T13:25:55.682Z\",\"updated_at\":\"2022-06-03T13:25:55.682Z\"}"                                                          
+irb(main):040:0> 
+irb(main):041:0> dc2.to_json
+=> "{\"id\":2,\"code\":\"NZL\",\"document_id\":1,\"created_at\":\"2022-06-03T13:34:56.864Z\",\"updated_at\":\"2022-06-03T13:34:56.864Z\"}"                                                          
+irb(main):042:0> 
+irb(main):043:0> 
+
+irb(main):050:0> dt2 = DocumentTopic.create(:code => "RUBY", :document => d)
+  TRANSACTION (0.2ms)  BEGIN
+  DocumentTopic Create (0.4ms)  INSERT INTO `document_topics` (`code`, `document_id`, `created_at`, `updated_at`) VALUES ('RUBY', 1, '2022-06-03 13:57:17.077736', '2022-06-03 13:57:17.077736')
+  TRANSACTION (5.0ms)  COMMIT
+=> 
+#<DocumentTopic:0x00007f3e499f1d28
+...
+irb(main):051:0> 
+irb(main):058:0> dt.to_json
+=> "{\"id\":1,\"code\":\"JAVA\",\"document_id\":1,\"created_at\":\"2022-06-03T13:56:57.250Z\",\"updated_at\":\"2022-06-03T13:56:57.250Z\"}"                                                         
+irb(main):059:0> dt2.to_json
+=> "{\"id\":2,\"code\":\"RUBY\",\"document_id\":1,\"created_at\":\"2022-06-03T13:57:17.077Z\",\"updated_at\":\"2022-06-03T13:57:17.077Z\"}"                                                         
+irb(main):060:0> 
+irb(main):061:0> 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.0.29-0ubuntu0.22.04.2 (Ubuntu)
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| depot2_development |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| wire2_development  |
+| wire3_development  |
++--------------------+
+7 rows in set (0.00 sec)
+
+mysql> use wire3_development;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++------------------------------------+
+| Tables_in_wire3_development        |
++------------------------------------+
+| ar_internal_metadata               |
+| attachments                        |
+| binaries                           |
+| carrier_wave_files                 |
+| comments                           |
+| digested_data                      |
+| document_countries                 |
+| document_non_state_actors          |
+| document_topics                    |
+| documents                          |
+| filedrop_ng_uploaded_file_binaries |
+| non_state_actors                   |
+| pdf_books                          |
+| schema_migrations                  |
+| users                              |
+| visual_media_types                 |
++------------------------------------+
+16 rows in set (0.00 sec)
+
+mysql> select * from documents;
++----+-----------------------------------+-------------------------------------------------------------------------------+---------+---------------+------+-----------------+-----------+----------------------------+----------------------------+
+| id | title                             | summary                                                                       | doc_num | image_caption | type | has_attachments | worldwide | created_at                 | updated_at                 |
++----+-----------------------------------+-------------------------------------------------------------------------------+---------+---------------+------+-----------------+-----------+----------------------------+----------------------------+
+|  1 | Favorite animal, fruit, and sport | Favorite animal is wombat.
+Favorite fruit is kiwi.
+Favorite sport is cricket. | NULL    | NULL          | NULL |            NULL |      NULL | 2022-06-03 13:11:21.749078 | 2022-06-03 13:15:35.740107 |
++----+-----------------------------------+-------------------------------------------------------------------------------+---------+---------------+------+-----------------+-----------+----------------------------+----------------------------+
+1 row in set (0.00 sec)
+
+mysql> 
+mysql> select * from document_countries;
++----+------+-------------+----------------------------+----------------------------+
+| id | code | document_id | created_at                 | updated_at                 |
++----+------+-------------+----------------------------+----------------------------+
+|  1 | AUS  |           1 | 2022-06-03 13:25:55.682513 | 2022-06-03 13:25:55.682513 |
+|  2 | NZL  |           1 | 2022-06-03 13:34:56.864115 | 2022-06-03 13:34:56.864115 |
++----+------+-------------+----------------------------+----------------------------+
+2 rows in set (0.00 sec)
+
+mysql> select id, title, summary from documents;
++----+-----------------------------------+-------------------------------------------------------------------------------+
+| id | title                             | summary                                                                       |
++----+-----------------------------------+-------------------------------------------------------------------------------+
+|  1 | Favorite animal, fruit, and sport | Favorite animal is wombat.
+Favorite fruit is kiwi.
+Favorite sport is cricket. |
++----+-----------------------------------+-------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> 
+mysql> select id, title, summary from documents;
++----+-----------------------------------+-------------------------------------------------------------------------------+
+| id | title                             | summary                                                                       |
++----+-----------------------------------+-------------------------------------------------------------------------------+
+|  1 | Favorite animal, fruit, and sport | Favorite animal is wombat.
+Favorite fruit is kiwi.
+Favorite sport is cricket. |
++----+-----------------------------------+-------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> 
+mysql> select * from document_countries;
++----+------+-------------+----------------------------+----------------------------+
+| id | code | document_id | created_at                 | updated_at                 |
++----+------+-------------+----------------------------+----------------------------+
+|  1 | AUS  |           1 | 2022-06-03 13:25:55.682513 | 2022-06-03 13:25:55.682513 |
+|  2 | NZL  |           1 | 2022-06-03 13:34:56.864115 | 2022-06-03 13:34:56.864115 |
++----+------+-------------+----------------------------+----------------------------+
+2 rows in set (0.00 sec)
+
+mysql>
+mysql> select * from document_topics;
++----+------+-------------+----------------------------+----------------------------+
+| id | code | document_id | created_at                 | updated_at                 |
++----+------+-------------+----------------------------+----------------------------+
+|  1 | JAVA |           1 | 2022-06-03 13:56:57.250276 | 2022-06-03 13:56:57.250276 |
+|  2 | RUBY |           1 | 2022-06-03 13:57:17.077736 | 2022-06-03 13:57:17.077736 |
++----+------+-------------+----------------------------+----------------------------+
+2 rows in set (0.00 sec)
+
+mysql> 
+mysql> desc non_state_actors;
++------------+---------------+------+-----+---------+----------------+
+| Field      | Type          | Null | Key | Default | Extra          |
++------------+---------------+------+-----+---------+----------------+
+| id         | bigint        | NO   | PRI | NULL    | auto_increment |
+| name       | varchar(4000) | YES  |     | NULL    |                |
+| created_at | datetime(6)   | NO   |     | NULL    |                |
+| updated_at | datetime(6)   | NO   |     | NULL    |                |
++------------+---------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+mysql> 
+mysql> select * from non_state_actors;
++----+----------------------------------------+----------------------------+----------------------------+
+| id | name                                   | created_at                 | updated_at                 |
++----+----------------------------------------+----------------------------+----------------------------+
+|  1 | International Cricket Council          | 2022-06-03 14:30:53.192690 | 2022-06-03 14:30:53.192690 |
+|  2 | Major Leage Baseball                   | 2022-06-03 14:30:53.242946 | 2022-06-03 14:30:53.242946 |
+|  3 | National Hockey League                 | 2022-06-03 14:30:53.268185 | 2022-06-03 14:30:53.268185 |
+|  4 | National Basketball Association        | 2022-06-03 14:30:53.303814 | 2022-06-03 14:30:53.303814 |
+|  5 | Boy Scouts of America                  | 2022-06-03 14:30:53.336881 | 2022-06-03 14:30:53.336881 |
+|  6 | International Brotherhood of Teamsters | 2022-06-03 14:30:53.341269 | 2022-06-03 14:30:53.341269 |
++----+----------------------------------------+----------------------------+----------------------------+
+6 rows in set (0.00 sec)
+
+mysql> 
+mysql> select * from document_non_state_actors;
++----+-------------+--------------------+----------------------------+----------------------------+
+| id | document_id | non_state_actor_id | created_at                 | updated_at                 |
++----+-------------+--------------------+----------------------------+----------------------------+
+|  1 |           1 |                  1 | 2022-06-03 14:39:45.845831 | 2022-06-03 14:39:45.845831 |
+|  2 |           1 |                  6 | 2022-06-03 14:45:59.469007 | 2022-06-03 14:45:59.469007 |
++----+-------------+--------------------+----------------------------+----------------------------+
+2 rows in set (0.00 sec)
+
+mysql> 
+mysql> update document_non_state_actors set non_state_actor_id = 2 where id = 2;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> 
+mysql> select * from document_non_state_actors;
++----+-------------+--------------------+----------------------------+----------------------------+
+| id | document_id | non_state_actor_id | created_at                 | updated_at                 |
++----+-------------+--------------------+----------------------------+----------------------------+
+|  1 |           1 |                  1 | 2022-06-03 14:39:45.845831 | 2022-06-03 14:39:45.845831 |
+|  2 |           1 |                  2 | 2022-06-03 14:45:59.469007 | 2022-06-03 14:45:59.469007 |
+|  3 |           1 |                  3 | 2022-06-03 15:07:56.812092 | 2022-06-03 15:07:56.812092 |
++----+-------------+--------------------+----------------------------+----------------------------+
+3 rows in set (0.00 sec)
+
+mysql> 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ cd railsprojects/wire4
+davidho@dphxps17:~/railsprojects/wire4$ bin/rails console
+Loading development environment (Rails 7.0.3)
+irb(main):001:0> wiredoc1 = Document.new
+=> 
+#<Document:0x00007f5f2c6f9a68
+...
+irb(main):002:0> wiredoc1.title = "Favorite animal, fruit, and sport"
+=> "Favorite animal, fruit, and sport"
+irb(main):003:0" wiredoc1.summary = """Favorite animal is wombat.
+irb(main):004:0" Favorite fruit is kiwi.
+irb(main):005:0" Favorite sport is cricket."""
+=> "Favorite animal is wombat.\nFavorite fruit is kiwi.\nFavorite sport is cricket."
+irb(main):006:0> wiredoc1.new_record?
+=> true
+irb(main):007:0> wiredoc1.save
+  TRANSACTION (0.2ms)  BEGIN
+  Document Create (0.3ms)  INSERT INTO `documents` (`title`, `summary`, `doc_num`, `image_caption`, `type`, `has_attachments`, `worldwide`, `created_at`, `updated_at`) VALUES ('Favorite animal, fruit, and sport', 'Favorite animal is wombat.\nFavorite fruit is kiwi.\nFavorite sport is cricket.', NULL, NULL, NULL, NULL, NULL, '2022-06-03 18:17:01.234284', '2022-06-03 18:17:01.234284')                
+  TRANSACTION (5.6ms)  COMMIT                              
+=> true                                                    
+irb(main):008:0> wiredoc1.new_record?
+=> false
+irb(main):009:0> 
+irb(main):036:0> 
+irb(main):037:0> wiredoc1.to_json
+=> "{\"id\":1,\"title\":\"Favorite animal, fruit, and sport\",\"summary\":\"Favorite animal is wombat.\\nFavorite fruit is kiwi.\\nFavorite sport is cricket.\",\"doc_num\":null,\"image_caption\":null,\"has_attachments\":null,\"worldwide\":null,\"created_at\":\"2022-06-03T18:17:01.234Z\",\"updated_at\":\"2022-06-03T18:17:01.234Z\"}"
+irb(main):038:0> nsa1.to_json
+=> "{\"id\":1,\"name\":\"Australian Kiwifruit Growers Association\",\"created_at\":\"2022-06-03T18:19:18.325Z\",\"updated_at\":\"2022-06-03T18:19:18.325Z\"}"
+irb(main):039:0> nsa2.to_json
+=> "{\"id\":2,\"name\":\"New Zealand Kiwifruit Growers Incorporated\",\"created_at\":\"2022-06-03T18:19:18.349Z\",\"updated_at\":\"2022-06-03T18:19:18.349Z\"}"
+irb(main):040:0> nsa3.to_json
+=> "{\"id\":3,\"name\":\"International Cricket Council\",\"created_at\":\"2022-06-03T18:19:18.386Z\",\"updated_at\":\"2022-06-03T18:19:18.386Z\"}"
+irb(main):041:0> nsa4.to_json
+=> "{\"id\":4,\"name\":\"Major Leage Baseball\",\"created_at\":\"2022-06-03T18:19:18.414Z\",\"updated_at\":\"2022-06-03T18:19:18.414Z\"}"
+irb(main):042:0> nsa5.to_json
+=> "{\"id\":5,\"name\":\"National Hockey League\",\"created_at\":\"2022-06-03T18:19:18.447Z\",\"updated_at\":\"2022-06-03T18:19:18.447Z\"}"
+irb(main):043:0> nsa6.to_json
+=> "{\"id\":6,\"name\":\"National Basketball Association\",\"created_at\":\"2022-06-03T18:19:18.478Z\",\"updated_at\":\"2022-06-03T18:19:18.478Z\"}"
+irb(main):044:0> nsa7.to_json
+=> "{\"id\":7,\"name\":\"Boy Scouts of America\",\"created_at\":\"2022-06-03T18:19:18.512Z\",\"updated_at\":\"2022-06-03T18:19:18.512Z\"}"
+irb(main):045:0> nsa8.to_json
+=> "{\"id\":8,\"name\":\"International Brotherhood of Teamsters\",\"created_at\":\"2022-06-03T18:19:18.516Z\",\"updated_at\":\"2022-06-03T18:19:18.516Z\"}"
+irb(main):046:0> dnsa1.to_json
+=> "{\"id\":1,\"document_id\":1,\"non_state_actor_id\":1,\"created_at\":\"2022-06-03T18:19:41.721Z\",\"updated_at\":\"2022-06-03T18:19:41.721Z\"}"
+irb(main):047:0> dnsa2.to_json
+irb(main):048:0> dnsa3.to_json
+=> "{\"id\":3,\"document_id\":1,\"non_state_actor_id\":3,\"created_at\":\"2022-06-03T18:19:41.765Z\",\"updated_at\":\"2022-06-03T18:19:41.765Z\"}"
+irb(main):049:0> 
+irb(main):050:0> 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+mysql> 
+mysql> select id, title, summary from documents;
++----+-----------------------------------+-------------------------------------------------------------------------------+
+| id | title                             | summary                                                                       |
++----+-----------------------------------+-------------------------------------------------------------------------------+
+|  1 | Favorite animal, fruit, and sport | Favorite animal is wombat.
+Favorite fruit is kiwi.
+Favorite sport is cricket. |
++----+-----------------------------------+-------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select * from document_countries;
++----+------+-------------+----------------------------+----------------------------+
+| id | code | document_id | created_at                 | updated_at                 |
++----+------+-------------+----------------------------+----------------------------+
+|  1 | AUS  |           1 | 2022-06-03 18:18:58.081545 | 2022-06-03 18:18:58.081545 |
+|  2 | NZL  |           1 | 2022-06-03 18:18:58.111410 | 2022-06-03 18:18:58.111410 |
++----+------+-------------+----------------------------+----------------------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from document_topics;
++----+------+-------------+----------------------------+----------------------------+
+| id | code | document_id | created_at                 | updated_at                 |
++----+------+-------------+----------------------------+----------------------------+
+|  1 | JAVA |           1 | 2022-06-03 18:18:58.145847 | 2022-06-03 18:18:58.145847 |
+|  2 | RUBY |           1 | 2022-06-03 18:18:58.149418 | 2022-06-03 18:18:58.149418 |
++----+------+-------------+----------------------------+----------------------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from non_state_actors;
++----+--------------------------------------------+----------------------------+----------------------------+
+| id | name                                       | created_at                 | updated_at                 |
++----+--------------------------------------------+----------------------------+----------------------------+
+|  1 | Australian Kiwifruit Growers Association   | 2022-06-03 18:19:18.325937 | 2022-06-03 18:19:18.325937 |
+|  2 | New Zealand Kiwifruit Growers Incorporated | 2022-06-03 18:19:18.349884 | 2022-06-03 18:19:18.349884 |
+|  3 | International Cricket Council              | 2022-06-03 18:19:18.386762 | 2022-06-03 18:19:18.386762 |
+|  4 | Major Leage Baseball                       | 2022-06-03 18:19:18.414297 | 2022-06-03 18:19:18.414297 |
+|  5 | National Hockey League                     | 2022-06-03 18:19:18.447771 | 2022-06-03 18:19:18.447771 |
+|  6 | National Basketball Association            | 2022-06-03 18:19:18.478333 | 2022-06-03 18:19:18.478333 |
+|  7 | Boy Scouts of America                      | 2022-06-03 18:19:18.512121 | 2022-06-03 18:19:18.512121 |
+|  8 | International Brotherhood of Teamsters     | 2022-06-03 18:19:18.516316 | 2022-06-03 18:19:18.516316 |
++----+--------------------------------------------+----------------------------+----------------------------+
+8 rows in set (0.00 sec)
+
+mysql> select * from document_non_state_actors;
++----+-------------+--------------------+----------------------------+----------------------------+
+| id | document_id | non_state_actor_id | created_at                 | updated_at                 |
++----+-------------+--------------------+----------------------------+----------------------------+
+|  1 |           1 |                  1 | 2022-06-03 18:19:41.721556 | 2022-06-03 18:19:41.721556 |
+|  2 |           1 |                  2 | 2022-06-03 18:19:41.760577 | 2022-06-03 18:19:41.760577 |
+|  3 |           1 |                  3 | 2022-06-03 18:19:41.765534 | 2022-06-03 18:19:41.765534 |
++----+-------------+--------------------+----------------------------+----------------------------+
+3 rows in set (0.00 sec)
+
+mysql> 
+mysql> select id, title, summary from documents;
++----+-----------------------------------------------+-----------------------------------------------------------------------------------+
+| id | title                                         | summary                                                                           |
++----+-----------------------------------------------+-----------------------------------------------------------------------------------+
+|  1 | Favorite animal, fruit, and sport             | Favorite animal is wombat.
+Favorite fruit is kiwi.
+Favorite sport is cricket.     |
+|  2 | Australia favorite animal, fruit, and sport   | Favorite animal is kangaroo.
+Favorite fruit is quandong.
+Favorite sport is rugby. |
+|  3 | New Zealand favorite animal, fruit, and sport | Favorite animal is wombat.
+Favorite fruit is feijoas.
+Favorite sport is netball.  |
++----+-----------------------------------------------+-----------------------------------------------------------------------------------+
+3 rows in set (0.00 sec)
+
+mysql> 
+mysql> select * from document_countries;
++----+------+-------------+----------------------------+----------------------------+
+| id | code | document_id | created_at                 | updated_at                 |
++----+------+-------------+----------------------------+----------------------------+
+|  1 | AUS  |           1 | 2022-06-03 18:18:58.081545 | 2022-06-03 18:18:58.081545 |
+|  2 | NZL  |           1 | 2022-06-03 18:18:58.111410 | 2022-06-03 18:18:58.111410 |
+|  3 | AUS  |           2 | 2022-06-03 18:53:31.873576 | 2022-06-03 18:53:31.873576 |
+|  4 | NZL  |           3 | 2022-06-03 18:53:56.300825 | 2022-06-03 18:53:56.300825 |
++----+------+-------------+----------------------------+----------------------------+
+4 rows in set (0.00 sec)
+
+mysql> select * from document_topics;
++----+------+-------------+----------------------------+----------------------------+
+| id | code | document_id | created_at                 | updated_at                 |
++----+------+-------------+----------------------------+----------------------------+
+|  1 | JAVA |           1 | 2022-06-03 18:18:58.145847 | 2022-06-03 18:18:58.145847 |
+|  2 | RUBY |           1 | 2022-06-03 18:18:58.149418 | 2022-06-03 18:18:58.149418 |
+|  3 | JAVA |           2 | 2022-06-03 18:53:31.903013 | 2022-06-03 18:53:31.903013 |
+|  4 | RUBY |           3 | 2022-06-03 18:53:56.327799 | 2022-06-03 18:53:56.327799 |
++----+------+-------------+----------------------------+----------------------------+
+4 rows in set (0.00 sec)
+
+mysql> select * from non_state_actors;
++----+--------------------------------------------+----------------------------+----------------------------+
+| id | name                                       | created_at                 | updated_at                 |
++----+--------------------------------------------+----------------------------+----------------------------+
+|  1 | Australian Kiwifruit Growers Association   | 2022-06-03 18:19:18.325937 | 2022-06-03 18:19:18.325937 |
+|  2 | New Zealand Kiwifruit Growers Incorporated | 2022-06-03 18:19:18.349884 | 2022-06-03 18:19:18.349884 |
+|  3 | International Cricket Council              | 2022-06-03 18:19:18.386762 | 2022-06-03 18:19:18.386762 |
+|  4 | Major Leage Baseball                       | 2022-06-03 18:19:18.414297 | 2022-06-03 18:19:18.414297 |
+|  5 | National Hockey League                     | 2022-06-03 18:19:18.447771 | 2022-06-03 18:19:18.447771 |
+|  6 | National Basketball Association            | 2022-06-03 18:19:18.478333 | 2022-06-03 18:19:18.478333 |
+|  7 | Boy Scouts of America                      | 2022-06-03 18:19:18.512121 | 2022-06-03 18:19:18.512121 |
+|  8 | International Brotherhood of Teamsters     | 2022-06-03 18:19:18.516316 | 2022-06-03 18:19:18.516316 |
++----+--------------------------------------------+----------------------------+----------------------------+
+8 rows in set (0.00 sec)
+
+mysql> select * from document_non_state_actors;
++----+-------------+--------------------+----------------------------+----------------------------+
+| id | document_id | non_state_actor_id | created_at                 | updated_at                 |
++----+-------------+--------------------+----------------------------+----------------------------+
+|  1 |           1 |                  1 | 2022-06-03 18:19:41.721556 | 2022-06-03 18:19:41.721556 |
+|  2 |           1 |                  2 | 2022-06-03 18:19:41.760577 | 2022-06-03 18:19:41.760577 |
+|  3 |           1 |                  3 | 2022-06-03 18:19:41.765534 | 2022-06-03 18:19:41.765534 |
+|  4 |           2 |                  1 | 2022-06-03 18:53:31.906449 | 2022-06-03 18:53:31.906449 |
+|  5 |           3 |                  2 | 2022-06-03 18:53:56.332039 | 2022-06-03 18:53:56.332039 |
++----+-------------+--------------------+----------------------------+----------------------------+
+5 rows in set (0.00 sec)
+
+mysql> 
+mysql> desc exports;
++------------------+--------------+------+-----+---------+----------------+
+| Field            | Type         | Null | Key | Default | Extra          |
++------------------+--------------+------+-----+---------+----------------+
+| id               | bigint       | NO   | PRI | NULL    | auto_increment |
+| type             | varchar(15)  | YES  |     | NULL    |                |
+| name             | varchar(255) | YES  |     | NULL    |                |
+| state            | varchar(15)  | YES  |     | NULL    |                |
+| log              | text         | YES  |     | NULL    |                |
+| document_ids_csv | text         | YES  |     | NULL    |                |
+| chunks           | int          | YES  |     | NULL    |                |
+| expired_at       | datetime(6)  | YES  |     | NULL    |                |
+| source           | varchar(255) | YES  |     | NULL    |                |
+| progress         | int          | YES  |     | NULL    |                |
+| total            | int          | YES  |     | NULL    |                |
+| context          | text         | YES  |     | NULL    |                |
+| attempts         | int          | YES  |     | NULL    |                |
+| user_id          | bigint       | NO   | MUL | NULL    |                |
+| created_at       | datetime(6)  | NO   |     | NULL    |                |
+| updated_at       | datetime(6)  | NO   |     | NULL    |                |
++------------------+--------------+------+-----+---------+----------------+
+16 rows in set (0.01 sec)
+
+mysql> 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+irb(main):077:0> 
+irb(main):078:0> wiredoc1.to_json
+=> "{\"id\":1,\"title\":\"Favorite animal, fruit, and sport\",\"summary\":\"Favorite animal is wombat.\\nFavorite fruit is kiwi.\\nFavorite sport is cricket.\",\"doc_num\":null,\"image_caption\":null,\"has_attachments\":null,\"worldwide\":null,\"created_at\":\"2022-06-03T18:17:01.234Z\",\"updated_at\":\"2022-06-03T18:17:01.234Z\"}"
+irb(main):079:0> 
+irb(main):080:0> wiredoc2.to_json
+=> "{\"id\":2,\"title\":\"Australia favorite animal, fruit, and sport\",\"summary\":\"Favorite animal is kangaroo.\\nFavorite fruit is quandong.\\nFavorite sport is rugby.\",\"doc_num\":null,\"image_caption\":null,\"has_attachments\":null,\"worldwide\":null,\"created_at\":\"2022-06-03T18:53:31.834Z\",\"updated_at\":\"2022-06-03T18:53:31.834Z\"}"
+irb(main):081:0> 
+irb(main):082:0> wiredoc3.to_json
+=> "{\"id\":3,\"title\":\"New Zealand favorite animal, fruit, and sport\",\"summary\":\"Favorite animal is wombat.\\nFavorite fruit is feijoas.\\nFavorite sport is netball.\",\"doc_num\":null,\"image_caption\":null,\"has_attachments\":null,\"worldwide\":null,\"created_at\":\"2022-06-03T18:53:56.262Z\",\"updated_at\":\"2022-06-03T18:53:56.262Z\"}"
+irb(main):083:0> 
+irb(main):084:0> 
+
+https://dev.mysql.com/doc/refman/8.0/en/storage-requirements.html#data-types-storage-reqs-strings
+https://stackoverflow.com/questions/13932750/tinytext-text-mediumtext-and-longtext-maximum-storage-sizes
+
+      Type | Maximum length
+-----------+-------------------------------------
+  TINYTEXT |           255 (2 8−1) bytes
+      TEXT |        65,535 (216−1) bytes = 64 KiB
+MEDIUMTEXT |    16,777,215 (224−1) bytes = 16 MiB
+  LONGTEXT | 4,294,967,295 (232−1) bytes =  4 GiB
+
+class CreateBinaries < ActiveRecord::Migration[7.0]
+  def change
+    create_table :binaries do |t|
+      t.binary :data, limit: 4294967295
+      t.boolean :searchable
+      t.references :document, null: false, foreign_key: true
+
+      t.timestamps
+    end
+  end
+end
+
+mysql> 
+mysql> desc binaries;
++-------------+-------------+------+-----+---------+----------------+
+| Field       | Type        | Null | Key | Default | Extra          |
++-------------+-------------+------+-----+---------+----------------+
+| id          | bigint      | NO   | PRI | NULL    | auto_increment |
+| data        | longblob    | YES  |     | NULL    |                |
+| searchable  | tinyint(1)  | YES  |     | NULL    |                |
+| document_id | bigint      | NO   | MUL | NULL    |                |
+| created_at  | datetime(6) | NO   |     | NULL    |                |
+| updated_at  | datetime(6) | NO   |     | NULL    |                |
++-------------+-------------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
+
+mysql> 
+
+
