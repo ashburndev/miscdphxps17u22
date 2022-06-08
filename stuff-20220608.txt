@@ -1,0 +1,408 @@
+Wed Jun  8 05:31:12 AM EDT 2022
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date
+Wed Jun  8 05:30:49 AM EDT 2022
+davidho@dphxps17:~$ date > stuff-20220608.txt
+davidho@dphxps17:~$ code   stuff-20220608.txt 
+davidho@dphxps17:~$ 
+
+
+cd ~/Downloads/elastic/elasticsearch-8.2.2
+./bin/elasticsearch
+
+cd ~/Downloads/elastic/kibana-8.2.2
+./bin/kibana
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+[2022-06-08T05:37:04,102][INFO ][o.e.n.Node               ] [dphxps17] version[8.2.2], pid[3979], build[default/tar/9876968ef3c745186b94fdabd4483e01499224ef/2022-05-25T15:47:06.259735307Z], OS[Linux/5.15.0-33-generic/amd64], JVM[Oracle Corporation/OpenJDK 64-Bit Server VM/18.0.1.1/18.0.1.1+2-6]
+[2022-06-08T05:37:04,118][INFO ][o.e.n.Node               ] [dphxps17] JVM home [/home/davidho/Downloads/elastic/elasticsearch-8.2.2/jdk], using bundled JDK [true]
+
+https://localhost:9200/
+	
+name	"dphxps17"
+cluster_name	"elasticsearch"
+cluster_uuid	"xXOIRk9RQ5ipvQWlhh-bTQ"
+version	
+number	"8.2.2"
+build_flavor	"default"
+build_type	"tar"
+build_hash	"9876968ef3c745186b94fdabd4483e01499224ef"
+build_date	"2022-05-25T15:47:06.259735307Z"
+build_snapshot	false
+lucene_version	"9.1.0"
+minimum_wire_compatibility_version	"7.17.0"
+minimum_index_compatibility_version	"7.0.0"
+tagline	"You Know, for Search"
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+http://localhost:5601
+http://localhost:5601/app/dev_tools#/console
+
+elastic
+fn8*-BZRBp6Ztt0Rj+Rr
+
+GET /
+{
+  "name" : "dphxps17",
+  "cluster_name" : "elasticsearch",
+  "cluster_uuid" : "xXOIRk9RQ5ipvQWlhh-bTQ",
+  "version" : {
+    "number" : "8.2.2",
+    "build_flavor" : "default",
+    "build_type" : "tar",
+    "build_hash" : "9876968ef3c745186b94fdabd4483e01499224ef",
+    "build_date" : "2022-05-25T15:47:06.259735307Z",
+    "build_snapshot" : false,
+    "lucene_version" : "9.1.0",
+    "minimum_wire_compatibility_version" : "7.17.0",
+    "minimum_index_compatibility_version" : "7.0.0"
+  },
+  "tagline" : "You Know, for Search"
+}
+
+PUT testindex/_doc/1
+{
+	"title":"my title 1",
+	"summary":"my summary 1",
+    "producing_office": "Washington Times"
+}
+
+PUT testindex/_doc/3
+{
+	"title":"my title 3",
+	"summary":"my summary 3",
+    "producing_office": "New York Times"
+}
+
+PUT testindex/_doc/2
+{
+	"title":"my title 2",
+	"summary":"my summary 2",
+    "producing_office": "Washington Post"
+}
+
+GET testindex/_count
+{
+  "count" : 3,
+  "_shards" : {
+    "total" : 1,
+    "successful" : 1,
+    "skipped" : 0,
+    "failed" : 0
+  }
+}
+
+GET testindex/_mapping
+
+{
+  "testindex" : {
+    "mappings" : {
+      "properties" : {
+        "producing_office" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "summary" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "title" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+GET testindex/_search
+
+{
+  "took" : 1,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 1,
+    "successful" : 1,
+    "skipped" : 0,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : {
+      "value" : 3,
+      "relation" : "eq"
+    },
+    "max_score" : 1.0,
+    "hits" : [
+      {
+        "_index" : "testindex",
+        "_id" : "1",
+        "_score" : 1.0,
+        "_source" : {
+          "title" : "my title 1",
+          "summary" : "my summary 1",
+          "producing_office" : "Washington Times"
+        }
+      },
+      {
+        "_index" : "testindex",
+        "_id" : "3",
+        "_score" : 1.0,
+        "_source" : {
+          "title" : "my title 3",
+          "summary" : "my summary 3",
+          "producing_office" : "New York Times"
+        }
+      },
+      {
+        "_index" : "testindex",
+        "_id" : "2",
+        "_score" : 1.0,
+        "_source" : {
+          "title" : "my title 2",
+          "summary" : "my summary 2",
+          "producing_office" : "Washington Post"
+        }
+      }
+    ]
+  }
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+GET testindex/_search?q=producing_office:Washington
+
+{
+  "took" : 9,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 1,
+    "successful" : 1,
+    "skipped" : 0,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : {
+      "value" : 2,
+      "relation" : "eq"
+    },
+    "max_score" : 0.37365946,
+    "hits" : [
+      {
+        "_index" : "testindex",
+        "_id" : "1",
+        "_score" : 0.37365946,
+        "_source" : {
+          "title" : "my title 1",
+          "summary" : "my summary 1",
+          "producing_office" : "Washington Times"
+        }
+      },
+      {
+        "_index" : "testindex",
+        "_id" : "2",
+        "_score" : 0.37365946,
+        "_source" : {
+          "title" : "my title 2",
+          "summary" : "my summary 2",
+          "producing_office" : "Washington Post"
+        }
+      }
+    ]
+  }
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+GET testindex/_search?q=producing_office:'Washington Times'
+
+{
+  "took" : 6,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 1,
+    "successful" : 1,
+    "skipped" : 0,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : {
+      "value" : 3,
+      "relation" : "eq"
+    },
+    "max_score" : 0.7473189,
+    "hits" : [
+      {
+        "_index" : "testindex",
+        "_id" : "1",
+        "_score" : 0.7473189,
+        "_source" : {
+          "title" : "my title 1",
+          "summary" : "my summary 1",
+          "producing_office" : "Washington Times"
+        }
+      },
+      {
+        "_index" : "testindex",
+        "_id" : "2",
+        "_score" : 0.37365946,
+        "_source" : {
+          "title" : "my title 2",
+          "summary" : "my summary 2",
+          "producing_office" : "Washington Post"
+        }
+      },
+      {
+        "_index" : "testindex",
+        "_id" : "3",
+        "_score" : 0.31387398,
+        "_source" : {
+          "title" : "my title 3",
+          "summary" : "my summary 3",
+          "producing_office" : "New York Times"
+        }
+      }
+    ]
+  }
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+GET testindex/_search
+{
+    "query": {
+        "match": {
+            "producing_office": "Washington Times"
+        }
+    }
+}
+
+{
+  "took" : 1,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 1,
+    "successful" : 1,
+    "skipped" : 0,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : {
+      "value" : 3,
+      "relation" : "eq"
+    },
+    "max_score" : 0.7473189,
+    "hits" : [
+      {
+        "_index" : "testindex",
+        "_id" : "1",
+        "_score" : 0.7473189,
+        "_source" : {
+          "title" : "my title 1",
+          "summary" : "my summary 1",
+          "producing_office" : "Washington Times"
+        }
+      },
+      {
+        "_index" : "testindex",
+        "_id" : "2",
+        "_score" : 0.37365946,
+        "_source" : {
+          "title" : "my title 2",
+          "summary" : "my summary 2",
+          "producing_office" : "Washington Post"
+        }
+      },
+      {
+        "_index" : "testindex",
+        "_id" : "3",
+        "_score" : 0.31387398,
+        "_source" : {
+          "title" : "my title 3",
+          "summary" : "my summary 3",
+          "producing_office" : "New York Times"
+        }
+      }
+    ]
+  }
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+GET testindex/_search
+{
+    "query": {
+        "match_phrase": {
+            "producing_office": "Washington Times"
+        }
+    }
+}
+{
+  "took" : 3,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 1,
+    "successful" : 1,
+    "skipped" : 0,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : {
+      "value" : 1,
+      "relation" : "eq"
+    },
+    "max_score" : 0.7473189,
+    "hits" : [
+      {
+        "_index" : "testindex",
+        "_id" : "1",
+        "_score" : 0.7473189,
+        "_source" : {
+          "title" : "my title 1",
+          "summary" : "my summary 1",
+          "producing_office" : "Washington Times"
+        }
+      }
+    ]
+  }
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+curl -XGET "https://192.168.86.247:9200/testindex/_search?q=producing_office:'Washington Times'"
+
+curl -XGET "https://192.168.86.247:9200/testindex/_search" -H 'Content-Type: application/json' -d'
+{
+    "query": {
+        "match": {
+            "producing_office": "Washington Times"
+        }
+    }
+}'
+
+curl -XGET "https://192.168.86.247:9200/testindex/_search" -H 'Content-Type: application/json' -d'
+{
+    "query": {
+        "match_phrase": {
+            "producing_office": "Washington Times"
+        }
+    }
+}'
+
