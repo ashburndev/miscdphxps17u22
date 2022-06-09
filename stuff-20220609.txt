@@ -1,0 +1,414 @@
+Thu Jun  9 05:32:28 AM EDT 2022
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date
+Thu Jun  9 05:32:08 AM EDT 2022
+davidho@dphxps17:~$ date > stuff-20220609.txt
+davidho@dphxps17:~$ code   stuff-20220609.txt
+davidho@dphxps17:~$ 
+
+cd ~/Downloads/elastic/elasticsearch-8.2.2
+./bin/elasticsearch
+
+cd ~/Downloads/elastic/kibana-8.2.2
+./bin/kibana
+
+https://localhost:9200/
+http://localhost:5601/app/dev_tools#/console
+
+elastic
+fn8*-BZRBp6Ztt0Rj+Rr
+
+GET /
+GET testindex
+GET testindex/_count
+GET testindex/_mapping
+GET testindex/_doc/1
+GET testindex/_doc/2
+GET testindex/_doc/3
+GET testindex/_search
+
+GET testindex/_doc/1?_source=false
+GET testindex/_source/1
+
+HEAD testindex/_doc/1
+
+POST testindex/_update/1
+... json for updated document ...
+
+GET testindex/_mget
+{
+  "ids" : ["1", "2", "3"]   
+}
+
+GET testindex/_search
+{
+  "query" : {
+      "ids": {
+          "values": [1,2,3]
+      }
+  }
+}
+
+DELETE testindex/_doc/1
+
+POST testindex/_delete_by_query
+{
+  "query" : {
+      "match": {
+          "match_all": {}
+      }
+  }
+}
+
+DELETE testindex
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+GET testindex/_search
+{
+  "query" : {
+      "ids": {
+          "values": [1,2,3]
+      }
+  }
+}
+
+{
+  "took" : 1,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 1,
+    "successful" : 1,
+    "skipped" : 0,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : {
+      "value" : 3,
+      "relation" : "eq"
+    },
+    "max_score" : 1.0,
+    "hits" : [
+      {
+        "_index" : "testindex",
+        "_id" : "1",
+        "_score" : 1.0,
+        "_source" : {
+          "title" : "my title 1",
+          "summary" : "my summary 1",
+          "producing_office" : "Washington Times"
+        }
+      },
+      {
+        "_index" : "testindex",
+        "_id" : "3",
+        "_score" : 1.0,
+        "_source" : {
+          "title" : "my title 3",
+          "summary" : "my summary 3",
+          "producing_office" : "New York Times"
+        }
+      },
+      {
+        "_index" : "testindex",
+        "_id" : "2",
+        "_score" : 1.0,
+        "_source" : {
+          "title" : "my title 2",
+          "summary" : "my summary 2",
+          "producing_office" : "Washington Post"
+        }
+      }
+    ]
+  }
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+GET testindex/_mget
+{
+  "ids" : ["1", "2", "3"]   
+}
+
+{
+  "docs" : [
+    {
+      "_index" : "testindex",
+      "_id" : "1",
+      "_version" : 2,
+      "_seq_no" : 1,
+      "_primary_term" : 1,
+      "found" : true,
+      "_source" : {
+        "title" : "my title 1",
+        "summary" : "my summary 1",
+        "producing_office" : "Washington Times"
+      }
+    },
+    {
+      "_index" : "testindex",
+      "_id" : "2",
+      "_version" : 1,
+      "_seq_no" : 3,
+      "_primary_term" : 1,
+      "found" : true,
+      "_source" : {
+        "title" : "my title 2",
+        "summary" : "my summary 2",
+        "producing_office" : "Washington Post"
+      }
+    },
+    {
+      "_index" : "testindex",
+      "_id" : "3",
+      "_version" : 1,
+      "_seq_no" : 2,
+      "_primary_term" : 1,
+      "found" : true,
+      "_source" : {
+        "title" : "my title 3",
+        "summary" : "my summary 3",
+        "producing_office" : "New York Times"
+      }
+    }
+  ]
+}
+
+
+GET testindex/_count
+
+curl -XGET "https://192.168.86.247:9200/testindex/_count"
+curl -XGET "https://192.168.86.247:9200/testindex/_doc/1"
+curl -XGET "https://192.168.86.247:9200/testindex/_doc/2"
+curl -XGET "https://192.168.86.247:9200/testindex/_doc/3"
+curl -XGET "https://192.168.86.247:9200/testindex/_search"
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~$ curl -XGET "https://192.168.86.247:9200/testindex/_count"
+curl: (60) SSL certificate problem: self-signed certificate in certificate chain
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above.
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://www.mlb.com/news/jake-cronenworth-powers-padres-big-win-over-mets?game_pk=662223
+
+Padres prove they 'have a good team, too' vs. Mets
+
+Cronenworth drives in 5 of San Diego's season-high 13 runs, sealing series win
+
+SAN DIEGO -- About a month ago, the Padres wrapped up a series against the Cubs sitting eight games above .500 and looking every bit the contender they claimed they were all offseason.
+
+But ...
+
+Well, their doubters were quick to note that they hadn't played much of a schedule. In the next four weeks, that was about to change. The Padres would face a slew of contenders -- the Brewers twice, the Braves, the Phillies, the Giants and the Cardinals. And to cap it all off, they'd face the red-hot Mets, owners of the best record in the National League, in a three-game series at Petco Park.
+
+So, now that we’ve arrived at the back end, are these 2022 Padres for real? Sure looks like it.
+
+{
+    "title" : """xxx"""
+    "summary" : """yyy""",
+    "body" : """zzz"""
+}
+
+PUT testindex/_doc/1
+{
+    "title" : """Padres prove they 'have a good team, too' vs. Mets""",
+    "summary" : """SAN DIEGO -- About a month ago, the Padres wrapped up a series against the Cubs sitting eight games above .500 and looking every bit the contender they claimed they were all offseason.""",
+    "body" : """SAN DIEGO -- About a month ago, the Padres wrapped up a series against the Cubs sitting eight games above .500 and looking every bit the contender they claimed they were all offseason.
+
+But ...
+
+Well, their doubters were quick to note that they hadn't played much of a schedule. In the next four weeks, that was about to change. The Padres would face a slew of contenders -- the Brewers twice, the Braves, the Phillies, the Giants and the Cardinals. And to cap it all off, they'd face the red-hot Mets, owners of the best record in the National League, in a three-game series at Petco Park.
+
+So, now that we’ve arrived at the back end, are these 2022 Padres for real? Sure looks like it.
+"""
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+GET testindex/_doc/1
+
+{
+  "_index" : "testindex",
+  "_id" : "1",
+  "_version" : 1,
+  "_seq_no" : 0,
+  "_primary_term" : 1,
+  "_ignored" : [
+    "body.keyword"
+  ],
+  "found" : true,
+  "_source" : {
+    "title" : "Padres prove they 'have a good team, too' vs. Mets",
+    "summary" : "SAN DIEGO -- About a month ago, the Padres wrapped up a series against the Cubs sitting eight games above .500 and looking every bit the contender they claimed they were all offseason.",
+    "body" : """SAN DIEGO -- About a month ago, the Padres wrapped up a series against the Cubs sitting eight games above .500 and looking every bit the contender they claimed they were all offseason.
+
+But ...
+
+Well, their doubters were quick to note that they hadn't played much of a schedule. In the next four weeks, that was about to change. The Padres would face a slew of contenders -- the Brewers twice, the Braves, the Phillies, the Giants and the Cardinals. And to cap it all off, they'd face the red-hot Mets, owners of the best record in the National League, in a three-game series at Petco Park.
+
+So, now that we’ve arrived at the back end, are these 2022 Padres for real? Sure looks like it.
+"""
+  }
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+GET testindex/_search
+{
+  "query": {
+    "multi_match": {
+      "query": "Padres",
+      "fields": ["title", "summary", "body"]
+    }
+  }
+}
+
+{
+  "took" : 12,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 1,
+    "successful" : 1,
+    "skipped" : 0,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : {
+      "value" : 1,
+      "relation" : "eq"
+    },
+    "max_score" : 0.4567324,
+    "hits" : [
+      {
+        "_index" : "testindex",
+        "_id" : "1",
+        "_score" : 0.4567324,
+        "_ignored" : [
+          "body.keyword"
+        ],
+        "_source" : {
+          "title" : "Padres prove they 'have a good team, too' vs. Mets",
+          "summary" : "SAN DIEGO -- About a month ago, the Padres wrapped up a series against the Cubs sitting eight games above .500 and looking every bit the contender they claimed they were all offseason.",
+          "body" : """SAN DIEGO -- About a month ago, the Padres wrapped up a series against the Cubs sitting eight games above .500 and looking every bit the contender they claimed they were all offseason.
+
+But ...
+
+Well, their doubters were quick to note that they hadn't played much of a schedule. In the next four weeks, that was about to change. The Padres would face a slew of contenders -- the Brewers twice, the Braves, the Phillies, the Giants and the Cardinals. And to cap it all off, they'd face the red-hot Mets, owners of the best record in the National League, in a three-game series at Petco Park.
+
+So, now that we’ve arrived at the back end, are these 2022 Padres for real? Sure looks like it.
+"""
+        }
+      }
+    ]
+  }
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+GET testindex/_search
+{
+  "query": {
+    "multi_match": {
+      "query": "Padres",
+      "fields": ["title", "summary", "body"]
+    }
+  },
+  "highlight": {
+      "fields": ["title", "summary", "body"]
+  }
+}
+
+GET testindex/_search
+{
+  "query": {
+    "multi_match": {
+      "query": "Padres",
+      "fields": ["title", "summary", "body"]
+    }
+  },
+  "highlight": {
+      "fields": {
+        "summary": {}
+      }
+  }
+}
+
+GET testindex/_search
+{
+  "query": {
+    "multi_match": {
+      "query": "Padres",
+      "fields": ["title", "summary", "body"]
+    }
+  },
+  "highlight": {
+      "fields": {
+        "title": {},
+        "summary": {},
+        "body": {}
+      }
+  }
+}
+
+{
+  "took" : 2,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 1,
+    "successful" : 1,
+    "skipped" : 0,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : {
+      "value" : 1,
+      "relation" : "eq"
+    },
+    "max_score" : 0.4567324,
+    "hits" : [
+      {
+        "_index" : "testindex",
+        "_id" : "1",
+        "_score" : 0.4567324,
+        "_ignored" : [
+          "body.keyword"
+        ],
+        "_source" : {
+          "title" : "Padres prove they 'have a good team, too' vs. Mets",
+          "summary" : "SAN DIEGO -- About a month ago, the Padres wrapped up a series against the Cubs sitting eight games above .500 and looking every bit the contender they claimed they were all offseason.",
+          "body" : """SAN DIEGO -- About a month ago, the Padres wrapped up a series against the Cubs sitting eight games above .500 and looking every bit the contender they claimed they were all offseason.
+
+But ...
+
+Well, their doubters were quick to note that they hadn't played much of a schedule. In the next four weeks, that was about to change. The Padres would face a slew of contenders -- the Brewers twice, the Braves, the Phillies, the Giants and the Cardinals. And to cap it all off, they'd face the red-hot Mets, owners of the best record in the National League, in a three-game series at Petco Park.
+
+So, now that we’ve arrived at the back end, are these 2022 Padres for real? Sure looks like it.
+"""
+        },
+        "highlight" : {
+          "summary" : [
+            "SAN DIEGO -- About a month ago, the <em>Padres</em> wrapped up a series against the Cubs sitting eight games above"
+          ],
+          "title" : [
+            "<em>Padres</em> prove they 'have a good team, too' vs. Mets"
+          ],
+          "body" : [
+            "SAN DIEGO -- About a month ago, the <em>Padres</em> wrapped up a series against the Cubs sitting eight games above",
+            "The <em>Padres</em> would face a slew of contenders -- the Brewers twice, the Braves, the Phillies, the Giants",
+            "So, now that we’ve arrived at the back end, are these 2022 <em>Padres</em> for real? Sure looks like it."
+          ]
+        }
+      }
+    ]
+  }
+}
+
+
