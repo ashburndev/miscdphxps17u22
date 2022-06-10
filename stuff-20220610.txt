@@ -1,0 +1,554 @@
+Fri Jun 10 05:39:24 AM EDT 2022
+
+davidho@dphxps17:~$ date
+Fri Jun 10 05:39:07 AM EDT 2022
+davidho@dphxps17:~$ date > stuff-20220610.txt
+davidho@dphxps17:~$ code   stuff-20220610.txt
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ ruby --version
+ruby 3.1.2p20 (2022-04-12 revision 4491bb740a) [x86_64-linux]
+davidho@dphxps17:~$ rails --version
+Rails 7.0.3
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+
+DROP DATABASE IF EXISTS wire5_development;
+CREATE DATABASE wire5_development;
+CREATE USER 'railsuser'@'localhost' IDENTIFIED BY 'railsuserpw';
+GRANT ALL PRIVILEGES ON wire5_development.* TO 'railsuser'@'localhost' WITH GRANT OPTION;
+
+ruby --version
+rails --version
+cd ~/railsprojects
+rm -r wire5
+rails new wire5 --css tailwind -d mysql
+cd wire5
+vi ./config/database.yml
+
+bin/rails generate scaffold Article \
+title:string{4000} summary:string{4000} doc_num:string{100} \
+image_caption:string{1000} has_attachments:boolean \
+worldwide:boolean date_published:date producing_office:string \
+country:string topic:string non_state_actor:string body:text
+
+rails db:migrate
+rails db:migrate:status
+rails server
+
+http://localhost:3000/articles
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/railsprojects/wire5$ bin/rails generate scaffold Article \
+title:string{4000} summary:string{4000} doc_num:string{100} \
+image_caption:string{1000} has_attachments:boolean \
+worldwide:boolean date_published:date producing_office:string \
+country:string topic:string non_state_actor:string body:text
+      invoke  active_record
+      create    db/migrate/20220610101721_create_articles.rb
+      create    app/models/article.rb
+      invoke    test_unit
+      create      test/models/article_test.rb
+      create      test/fixtures/articles.yml
+      invoke  resource_route
+       route    resources :articles
+      invoke  scaffold_controller
+      create    app/controllers/articles_controller.rb
+      invoke    tailwindcss
+      create      app/views/articles
+      create      app/views/articles/index.html.erb
+      create      app/views/articles/edit.html.erb
+      create      app/views/articles/show.html.erb
+      create      app/views/articles/new.html.erb
+      create      app/views/articles/_form.html.erb
+      create      app/views/articles/_article.html.erb
+      invoke    resource_route
+      invoke    test_unit
+      create      test/controllers/articles_controller_test.rb
+      create      test/system/articles_test.rb
+      invoke    helper
+      create      app/helpers/articles_helper.rb
+      invoke      test_unit
+      invoke    jbuilder
+      create      app/views/articles/index.json.jbuilder
+      create      app/views/articles/show.json.jbuilder
+      create      app/views/articles/_article.json.jbuilder
+davidho@dphxps17:~/railsprojects/wire5$ 
+davidho@dphxps17:~/railsprojects/wire5$ rails db:migrate
+== 20220610101721 CreateArticles: migrating ===================================
+-- create_table(:articles)
+   -> 0.0155s
+== 20220610101721 CreateArticles: migrated (0.0155s) ==========================
+
+davidho@dphxps17:~/railsprojects/wire5$ rails db:migrate:status
+
+database: wire5_development
+
+ Status   Migration ID    Migration Name
+--------------------------------------------------
+   up     20220610101721  Create articles
+
+davidho@dphxps17:~/railsprojects/wire5$ rails server
+=> Booting Puma
+=> Rails 7.0.3 application starting in development 
+=> Run `bin/rails server --help` for more startup options
+Puma starting in single mode...
+* Puma version: 5.6.4 (ruby 3.1.2-p20) ("Birdie's Version")
+*  Min threads: 5
+*  Max threads: 5
+*  Environment: development
+*          PID: 9159
+* Listening on http://127.0.0.1:3000
+* Listening on http://[::1]:3000
+Use Ctrl-C to stop
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| depot2_development |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| wire2_development  |
+| wire3_development  |
+| wire4_development  |
+| wire5_development  |
++--------------------+
+9 rows in set (0.00 sec)
+
+mysql> use wire5_development;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++-----------------------------+
+| Tables_in_wire5_development |
++-----------------------------+
+| ar_internal_metadata        |
+| articles                    |
+| schema_migrations           |
++-----------------------------+
+3 rows in set (0.00 sec)
+
+mysql> desc articles;
++------------------+---------------+------+-----+---------+----------------+
+| Field            | Type          | Null | Key | Default | Extra          |
++------------------+---------------+------+-----+---------+----------------+
+| id               | bigint        | NO   | PRI | NULL    | auto_increment |
+| title            | varchar(4000) | YES  |     | NULL    |                |
+| summary          | varchar(4000) | YES  |     | NULL    |                |
+| doc_num          | varchar(100)  | YES  |     | NULL    |                |
+| image_caption    | varchar(1000) | YES  |     | NULL    |                |
+| has_attachments  | tinyint(1)    | YES  |     | NULL    |                |
+| worldwide        | tinyint(1)    | YES  |     | NULL    |                |
+| date_published   | date          | YES  |     | NULL    |                |
+| producing_office | varchar(255)  | YES  |     | NULL    |                |
+| country          | varchar(255)  | YES  |     | NULL    |                |
+| topic            | varchar(255)  | YES  |     | NULL    |                |
+| non_state_actor  | varchar(255)  | YES  |     | NULL    |                |
+| body             | text          | YES  |     | NULL    |                |
+| created_at       | datetime(6)   | NO   |     | NULL    |                |
+| updated_at       | datetime(6)   | NO   |     | NULL    |                |
++------------------+---------------+------+-----+---------+----------------+
+15 rows in set (0.00 sec)
+
+mysql> 
+mysql> select * from articles;
++----+-----------+-------------+------------+-------------------+-----------------+-----------+----------------+------------------+---------+----------------------+-----------------------+---------------------+----------------------------+----------------------------+
+| id | title     | summary     | doc_num    | image_caption     | has_attachments | worldwide | date_published | producing_office | country | topic                | non_state_actor       | body                | created_at                 | updated_at                 |
++----+-----------+-------------+------------+-------------------+-----------------+-----------+----------------+------------------+---------+----------------------+-----------------------+---------------------+----------------------------+----------------------------+
+|  1 | the title | the summary | the docnum | the image caption |               0 |         0 | 2022-06-10     | Washington Post  | USA     | Washington Nationals | Major League Baseball | WSH lost to MIA 4-7 | 2022-06-10 10:24:27.458610 | 2022-06-10 10:24:27.458610 |
++----+-----------+-------------+------------+-------------------+-----------------+-----------+----------------+------------------+---------+----------------------+-----------------------+---------------------+----------------------------+----------------------------+
+1 row in set (0.00 sec)
+
+mysql> 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Article was successfully created.
+Title: the title
+Summary: the summary
+Doc num: the docnum
+Image caption: the image caption
+Has attachments: false
+Worldwide: false
+Date published: 2022-06-10
+Producing office: Washington Post
+Country: USA
+Topic: Washington Nationals
+Non state actor: Major League Baseball
+Body: WSH lost to MIA 4-7
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/railsprojects/wire5$ 
+davidho@dphxps17:~/railsprojects/wire5$ rails console
+Loading development environment (Rails 7.0.3)
+irb(main):001:0> a = Article.first
+  Article Load (0.5ms)  SELECT `articles`.* FROM `articles` ORDER BY `articles`.`id` ASC LIMIT 1
+=>                                                                     
+#<Article:0x00007f02fa9146b0                                           
+...                                                                    
+irb(main):002:0>                                                             
+irb(main):003:0> puts a
+#<Article:0x00007f02fa9146b0>
+=> nil                                                                 
+irb(main):004:0> puts a.to_json
+{"id":1,"title":"the title","summary":"the summary","doc_num":"the docnum","image_caption":"the image caption","has_attachments":false,"worldwide":false,"date_published":"2022-06-10","producing_office":"Washington Post","country":"USA","topic":"Washington Nationals","non_state_actor":"Major League Baseball","body":"WSH lost to MIA 4-7","created_at":"2022-06-10T10:24:27.458Z","updated_at":"2022-06-10T10:24:27.458Z"}                                                      
+=> nil                                                            
+irb(main):005:0> puts a.as_json
+{"id"=>1, "title"=>"the title", "summary"=>"the summary", "doc_num"=>"the docnum", "image_caption"=>"the image caption", "has_attachments"=>false, "worldwide"=>false, "date_published"=>"2022-06-10", "producing_office"=>"Washington Post", "country"=>"USA", "topic"=>"Washington Nationals", "non_state_actor"=>"Major League Baseball", "body"=>"WSH lost to MIA 4-7", "created_at"=>"2022-06-10T10:24:27.458Z", "updated_at"=>"2022-06-10T10:24:27.458Z"}                         
+=> nil                                                            
+irb(main):006:0> a.as_json
+=> 
+{"id"=>1,                                                         
+ "title"=>"the title",                                            
+ "summary"=>"the summary",                                        
+ "doc_num"=>"the docnum",                                         
+ "image_caption"=>"the image caption",                            
+ "has_attachments"=>false,                                        
+ "worldwide"=>false,                                              
+ "date_published"=>"2022-06-10",                                  
+ "producing_office"=>"Washington Post",                           
+ "country"=>"USA",                                           
+ "topic"=>"Washington Nationals",                            
+ "non_state_actor"=>"Major League Baseball",                 
+ "body"=>"WSH lost to MIA 4-7",                              
+ "created_at"=>"2022-06-10T10:24:27.458Z",                   
+ "updated_at"=>"2022-06-10T10:24:27.458Z"}
+irb(main):007:0> 
+irb(main):008:0> JSON.pretty_generate(a)
+=> "\"#<Article:0x00007f02fa9146b0>\""
+irb(main):009:0> JSON.pretty_generate(a.as_json)
+=> "{\n  \"id\": 1,\n  \"title\": \"the title\",\n  \"summary\": \"the summary\",\n  \"doc_num\": \"the docnum\",\n  \"image_caption\": \"the image caption\",\n  \"has_attachments\": false,\n  \"worldwide\": false,\n  \"date_published\": \"2022-06-10\",\n  \"producing_office\": \"Washington Post\",\n  \"country\": \"USA\",\n  \"topic\": \"Washington Nationals\",\n  \"non_state_actor\": \"Major League Baseball\",\n  \"body\": \"WSH lost to MIA 4-7\",\n  \"created_at\": \"2022-06-10T10:24:27.458Z\",\n  \"updated_at\": \"2022-06-10T10:24:27.458Z\"\n}"
+irb(main):010:0> JSON.pretty_generate(a.to_json)
+=> "\"{\\\"id\\\":1,\\\"title\\\":\\\"the title\\\",\\\"summary\\\":\\\"the summary\\\",\\\"doc_num\\\":\\\"the docnum\\\",\\\"image_caption\\\":\\\"the image caption\\\",\\\"has_attachments\\\":false,\\\"worldwide\\\":false,\\\"date_published\\\":\\\"2022-06-10\\\",\\\"producing_office\\\":\\\"Washington Post\\\",\\\"country\\\":\\\"USA\\\",\\\"topic\\\":\\\"Washington Nationals\\\",\\\"non_state_actor\\\":\\\"Major League Baseball\\\",\\\"body\\\":\\\"WSH lost to MIA 4-7\\\",\\\"created_at\\\":\\\"2022-06-10T10:24:27.458Z\\\",\\\"updated_at\\\":\\\"2022-06-10T10:24:27.458Z\\\"}\""
+irb(main):011:0> obj = JSON.parse(a.to_json)
+=> 
+{"id"=>1,                                                                         
+...                                                                               
+irb(main):012:0> obj = JSON.parse(a.as_json)
+/home/davidho/.rbenv/versions/3.1.2/lib/ruby/3.1.0/json/common.rb:216:in `initialize': no implicit conversion of Hash into String (TypeError)
+irb(main):013:0> 
+irb(main):014:0> 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+cd ~/Downloads/elastic/elasticsearch-8.2.2
+./bin/elasticsearch
+
+cd ~/Downloads/elastic/kibana-8.2.2
+./bin/kibana
+
+https://localhost:9200/
+http://localhost:5601/app/dev_tools#/console
+
+elastic
+fn8*-BZRBp6Ztt0Rj+Rr
+
+DELETE testindex
+
+PUT wireindex/_doc/1
+{                                                        
+ "title"=>"the title",                                            
+ "summary"=>"the summary",                                        
+ "doc_num"=>"the docnum",                                         
+ "image_caption"=>"the image caption",                            
+ "has_attachments"=>false,                                        
+ "worldwide"=>false,                                              
+ "date_published"=>"2022-06-10",                                  
+ "producing_office"=>"Washington Post",                           
+ "country"=>"USA",                                           
+ "topic"=>"Washington Nationals",                            
+ "non_state_actor"=>"Major League Baseball",                 
+ "body"=>"WSH lost to MIA 4-7",                              
+ "created_at"=>"2022-06-10T10:24:27.458Z",                   
+ "updated_at"=>"2022-06-10T10:24:27.458Z"
+ }
+
+PUT wireindex/_doc/1
+{"title":"the title","summary":"the summary","doc_num":"the docnum","image_caption":"the image caption","has_attachments":false,"worldwide":false,"date_published":"2022-06-10","producing_office":"Washington Post","country":"USA","topic":"Washington Nationals","non_state_actor":"Major League Baseball","body":"WSH lost to MIA 4-7","created_at":"2022-06-10T10:24:27.458Z","updated_at":"2022-06-10T10:24:27.458Z"}                                                      
+
+
+GET wireindex/_doc/1
+
+{
+  "_index" : "wireindex",
+  "_id" : "1",
+  "_version" : 2,
+  "_seq_no" : 2,
+  "_primary_term" : 5,
+  "found" : true,
+  "_source" : {
+    "title" : "the title",
+    "summary" : "the summary",
+    "doc_num" : "the docnum",
+    "image_caption" : "the image caption",
+    "has_attachments" : false,
+    "worldwide" : false,
+    "date_published" : "2022-06-10",
+    "producing_office" : "Washington Post",
+    "country" : "USA",
+    "topic" : "Washington Nationals",
+    "non_state_actor" : "Major League Baseball",
+    "body" : "WSH lost to MIA 4-7",
+    "created_at" : "2022-06-10T10:24:27.458Z",
+    "updated_at" : "2022-06-10T10:24:27.458Z"
+  }
+}
+
+Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.
+
+Now we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.
+
+But, in a larger sense, we can not dedicate -- we can not consecrate -- we can not hallow -- this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us -- that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion -- that we here highly resolve that these dead shall not have died in vain -- that this nation, under God, shall have a new birth of freedom -- and that government of the people, by the people, for the people, shall not perish from the earth.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Article was successfully created.
+Title: the title 2
+Summary: the summary 2
+Doc num: the docnum 2
+Image caption: the image caption 2
+Has attachments: true
+Worldwide: true
+Date published: 2022-06-10
+Producing office: New York Times
+Country: USA
+Topic: famous speaches
+Non state actor: Toastmasters
+Body: Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal. Now we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this. But, in a larger sense, we can not dedicate -- we can not consecrate -- we can not hallow -- this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us -- that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion -- that we here highly resolve that these dead shall not have died in vain -- that this nation, under God, shall have a new birth of freedom -- and that government of the people, by the people, for the people, shall not perish from the earth.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+irb(main):014:0> a2 = Article.second
+  Article Load (0.3ms)  SELECT `articles`.* FROM `articles` ORDER BY `articles`.`id` ASC LIMIT 1 OFFSET 1
+=>                                                                                
+#<Article:0x00007f02fa87c7c0                                                      
+...                                                                               
+irb(main):015:0> a2.to_json
+=> "{\"id\":2,\"title\":\"the title 2\",\"summary\":\"the summary 2\",\"doc_num\":\"the docnum 2\",\"image_caption\":\"the image caption 2\",\"has_attachments\":true,\"worldwide\":true,\"date_published\":\"2022-06-10\",\"producing_office\":\"New York Times\",\"country\":\"USA\",\"topic\":\"famous speaches\",\"non_state_actor\":\"Toastmasters\",\"body\":\"Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.\\n\\nNow we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.\\n\\nBut, in a larger sense, we can not dedicate -- we can not consecrate -- we can not hallow -- this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us -- that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion -- that we here highly resolve that these dead shall not have died in vain -- that this nation, under God, shall have a new birth of freedom -- and that government of the people, by the people, for the people, shall not perish from the earth.\",\"created_at\":\"2022-06-10T11:07:44.072Z\",\"updated_at\":\"2022-06-10T11:07:44.072Z\"}"
+irb(main):016:0> 
+irb(main):017:0> puts a2.to_json
+{"id":2,"title":"the title 2","summary":"the summary 2","doc_num":"the docnum 2","image_caption":"the image caption 2","has_attachments":true,"worldwide":true,"date_published":"2022-06-10","producing_office":"New York Times","country":"USA","topic":"famous speaches","non_state_actor":"Toastmasters","body":"Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.\n\nNow we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.\n\nBut, in a larger sense, we can not dedicate -- we can not consecrate -- we can not hallow -- this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us -- that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion -- that we here highly resolve that these dead shall not have died in vain -- that this nation, under God, shall have a new birth of freedom -- and that government of the people, by the people, for the people, shall not perish from the earth.","created_at":"2022-06-10T11:07:44.072Z","updated_at":"2022-06-10T11:07:44.072Z"}                         
+=> nil                                                             
+irb(main):018:0> foo =  %i[ show edit update destroy ]
+=> [:show, :edit, :update, :destroy]
+irb(main):019:0> bar =  %w[ show edit update destroy ]
+=> ["show", "edit", "update", "destroy"]
+irb(main):020:0> 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+PUT wireindex/_doc/2
+{"title":"the title 2","summary":"the summary 2","doc_num":"the docnum 2","image_caption":"the image caption 2","has_attachments":true,"worldwide":true,"date_published":"2022-06-10","producing_office":"New York Times","country":"USA","topic":"famous speaches","non_state_actor":"Toastmasters","body":"Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.\n\nNow we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.\n\nBut, in a larger sense, we can not dedicate -- we can not consecrate -- we can not hallow -- this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us -- that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion -- that we here highly resolve that these dead shall not have died in vain -- that this nation, under God, shall have a new birth of freedom -- and that government of the people, by the people, for the people, shall not perish from the earth.","created_at":"2022-06-10T11:07:44.072Z","updated_at":"2022-06-10T11:07:44.072Z"}                         
+
+GET wireindex/_doc/2
+
+{
+  "_index" : "wireindex",
+  "_id" : "2",
+  "_version" : 2,
+  "_seq_no" : 3,
+  "_primary_term" : 5,
+  "found" : true,
+  "_source" : {
+    "title" : "the title 2",
+    "summary" : "the summary 2",
+    "doc_num" : "the docnum 2",
+    "image_caption" : "the image caption 2",
+    "has_attachments" : true,
+    "worldwide" : true,
+    "date_published" : "2022-06-10",
+    "producing_office" : "New York Times",
+    "country" : "USA",
+    "topic" : "famous speaches",
+    "non_state_actor" : "Toastmasters",
+    "body" : """Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.
+
+Now we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.
+
+But, in a larger sense, we can not dedicate -- we can not consecrate -- we can not hallow -- this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us -- that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion -- that we here highly resolve that these dead shall not have died in vain -- that this nation, under God, shall have a new birth of freedom -- and that government of the people, by the people, for the people, shall not perish from the earth.""",
+    "created_at" : "2022-06-10T11:07:44.072Z",
+    "updated_at" : "2022-06-10T11:07:44.072Z"
+  }
+}
+
+GET wireindex/_mapping
+
+{
+  "wireindex" : {
+    "mappings" : {
+      "properties" : {
+        "body" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "countries" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "country" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "created_at" : {
+          "type" : "date"
+        },
+        "date_published" : {
+          "type" : "date"
+        },
+        "doc_num" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "has_attachments" : {
+          "type" : "boolean"
+        },
+        "image_caption" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "media_type" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "non_state_actor" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "non_state_actors" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "producer" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "producing_office" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "product_type" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "publication_date" : {
+          "type" : "date"
+        },
+        "reporting_type" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "summary" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "title" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "topic" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "topics" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "updated_at" : {
+          "type" : "date"
+        },
+        "worldwide" : {
+          "type" : "boolean"
+        }
+      }
+    }
+  }
+}
+
