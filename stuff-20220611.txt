@@ -1,0 +1,47 @@
+Sat Jun 11 12:37:31 PM EDT 2022
+
+davidho@dphxps17:~$ date
+Sat Jun 11 12:37:19 PM EDT 2022
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date > stuff-20220611.txt
+davidho@dphxps17:~$ code   stuff-20220611.txt 
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ git config --list
+user.name=ashburndev
+user.email=ashburndev@gmail.com
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+
+at work, delete all cloned repositories and clone them again
+at work, list all branches for above repositories
+find and use my favorite git log command syntax on above repositories
+
+make list of git commands
+add to the above list the sed command to remove blank lines ... sed -i '/^$/d' myfile.txt
+
+download newest vscode (dphxps17w11 and dphxps17u22 and ... )
+learn how to use vscode remotely (over ssh)
+learn how to use vscode to access git functionality (local and remote)
+find and test useful vscode extensions (java, ruby, rails, git/github)
+rename oracle downloads on mmrxps17w11 and copy via thumb drive
+set up mmrxps17 for dual boot (windows 11 and ubuntu 22.04)
+
+configure git (everywhere) to use vscode as default git editor (and merge tool?)
+
+study ruby/rails audio course lessons, take notes
+
+recall how to access (read/write?) ios notes from windows & linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+

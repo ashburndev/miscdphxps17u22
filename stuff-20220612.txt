@@ -1,0 +1,682 @@
+Sun Jun 12 08:35:11 AM EDT 2022
+
+davidho@dphxps17:~$ date
+Sun Jun 12 08:34:52 AM EDT 2022
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date > stuff-20220612.txt
+davidho@dphxps17:~$ code   stuff-20220612.txt
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+http://web.mit.edu/gnu/doc/html/features_7.html
+Command Line Editing
+
+https://www.gnu.org/software/bash/manual/html_node/Readline-Bare-Essentials.html
+https://www.gnu.org/software/bash/manual/html_node/Readline-Movement-Commands.html
+https://www.gnu.org/software/bash/manual/html_node/Readline-Killing-Commands.html
+
+https://code.visualstudio.com/updates/v1_68
+https://code.visualstudio.com/download
+https://code.visualstudio.com/docs
+https://code.visualstudio.com/docs/?dv=linux64
+https://code.visualstudio.com/docs/getstarted/introvideos
+https://code.visualstudio.com/docs/remote/remote-overview
+https://code.visualstudio.com/docs/containers/overview
+
+https://code.visualstudio.com/docs/setup/linux
+sudo apt install ./<file>.deb
+
+https://docs.microsoft.com/en-us/visualstudio/docker/tutorials/docker-tutorial
+
+https://docs.github.com/en/get-started/getting-started-with-git/associating-text-editors-with-git
+git config --global core.editor "code --wait"
+
+https://medium.com/geekculture/configure-visual-studio-code-as-a-default-git-editor-diff-tool-or-merge-tool-291fd7088cc9
+https://www.roboleary.net/vscode/2020/09/15/vscode-git.html
+git config --global -e
+
+[core]
+  editor = code --wait
+[diff]
+  tool = vscode
+[difftool "vscode"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+  tool = vscode
+[mergetool "vscode"]
+  cmd = code --wait $MERGED
+
+
+https://www.roboleary.net/vscode/2020/09/15/vscode-git.html
+git config --global core.editor 'code --wait'
+git config --global core.editor 'code --wait --new-window'
+git config --global --unset core.editor
+
+git config --global diff.tool vscode
+git config --global difftool.vscode.cmd 'code --wait --diff $LOCAL $REMOTE'
+
+[diff]
+	tool = vscode
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+
+git config --global merge.tool vscode
+git config --global mergetool.vscode.cmd 'code --wait $MERGED'
+
+[merge]
+	tool = vscode
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ code --version
+1.67.2
+c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+x64
+davidho@dphxps17:~$ cat ~/.gitconfig
+[user]
+	name = ashburndev
+	email = ashburndev@gmail.com
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+
+davidho@dphxps17:~$ ls -latr Downloads/ | tail -5
+-rw-rw-r--  1 davidho davidho   83669628 Jun 12 08:54 code_1.68.0-1654690107_amd64.deb
+-rw-rw-r--  1 davidho davidho  117711725 Jun 12 08:54 code-1.68.0-1654690163.el7.x86_64.rpm
+-rw-rw-r--  1 davidho davidho  116923664 Jun 12 08:54 code-stable-x64-1654690355.tar.gz
+drwxr-xr-x  4 davidho davidho       4096 Jun 12 08:59 .
+drwxr-x--- 32 davidho davidho       4096 Jun 12 09:01 ..
+davidho@dphxps17:~$ 
+
+https://github.com/nvm-sh/nvm
+
+https://marketplace.visualstudio.com/items?itemName=castwide.solargraph
+https://www.rubydoc.info/gems/yard/file/docs/GettingStarted.md
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+TODO LIST
+install ms office on laptop dphxps17
+
+at work, delete all cloned repositories and clone them again
+at work, list all branches for above repositories
+find and use my favorite git log command syntax on above repositories
+
+make list of git commands
+add to the above list the sed command to remove blank lines ... sed -i '/^$/d' myfile.txt
+
+download newest vscode (dphxps17w11 and dphxps17u22 and ... ) ... deb file for linux
+learn how to use vscode remotely (over ssh)
+learn how to use vscode to access git functionality (local and remote)
+find and test useful vscode extensions (java, ruby, rails, git/github)
+rename oracle downloads on mmrxps17w11 and copy via thumb drive
+set up mmrxps17 for dual boot (windows 11 and ubuntu 22.04)
+
+configure git (everywhere) to use vscode as default git editor (and merge tool?)
+
+study ruby/rails audio course lessons, take notes
+
+recall how to access (read/write?) ios notes from windows & linux
+
+continue setting up Falls Technology laptop
+    install ruby and rails in MS Windows
+
+learn rubymine
+
+use simple ruby code and elastisearch gem to index a document and perform a search
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://rubygems.org/gems/elasticsearch/versions/5.0.4
+https://rubygems.org/gems/elasticsearch/
+https://rubygems.org/gems/elasticsearch/versions
+https://rubygems.org/gems/elasticsearch/versions/8.2.2
+    gem 'elasticsearch', '~> 8.2', '>= 8.2.2'
+    gem install elasticsearch
+
+https://www.elastic.co/guide/en/elasticsearch/client/ruby-api/current/index.html
+https://www.elastic.co/guide/en/elasticsearch/client/ruby-api/current/ruby_client.html
+
+https://www.elastic.co/guide/en/elasticsearch/client/ruby-api/current/ruby-install.html
+    gem install elasticsearch
+    gem install elasticsearch -v 8.2.2
+
+https://www.elastic.co/guide/en/elasticsearch/client/ruby-api/current/connecting.html
+
+require 'elasticsearch'
+client = Elasticsearch::Client.new(
+  cloud_id: '<CloudID>'
+  user: '<Username>',
+  password: '<Password>',
+)
+
+client = Elasticsearch::Client.new(
+  cloud_id: '<CloudID>',
+  api_key: {id: '<Id>', api_key: '<APIKey>'}
+)
+
+Verifying HTTPS with CA certificates
+The generated root CA certificate can be found in the certs directory in your Elasticsearch config location ($ES_CONF_PATH/certs/http_ca.crt). 
+
+client = Elasticsearch::Client.new(
+  host: "https://elastic:#{ELASTIC_PASSWORD}@localhost:9200",
+  transport_options: { ssl: { ca_path: CERT_DIR } }
+)
+
+Elasticsearch::Client.new(
+  host: host,
+  transport_options: transport_options,
+  api_key: credentials
+)
+
+Elasticsearch::Client.new(
+  host: host,
+  transport_options: transport_options,
+  api_key: {id: 'my_id', api_key: 'my_api_key'}
+)
+
+client = Elasticsearch::Client.new(
+  hosts:
+	  [
+  	   {
+    	   host: 'my-protected-host',
+    	   port: '443',
+    	   user: 'USERNAME',
+    	   password: 'PASSWORD',
+    	   scheme: 'https'
+  	   }
+	  ]
+)
+
+Elasticsearch::Client.new(
+  url: 'https://username:password@localhost:9200',
+  transport_options: {
+	ssl: { ca_file: '/path/to/cacert.pem' }
+  }
+)
+
+require 'elasticsearch'
+client = Elasticsearch::Client.new log: true
+client.cluster.health
+client.index(index: 'my-index', id: 1, body: { title: 'Test' })
+client.indices.refresh(index: 'my-index')
+client.search(index: 'my-index', body: { query: { match: { title: 'test' } } })
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~$ cd
+davidho@dphxps17:~$ ruby --version
+ruby 3.1.2p20 (2022-04-12 revision 4491bb740a) [x86_64-linux]
+davidho@dphxps17:~$ rails --version
+Rails 7.0.3
+davidho@dphxps17:~$ gem install elasticsearch -v 8.2.2
+Fetching faraday-multipart-1.0.4.gem
+Fetching faraday-net_http-1.0.1.gem
+Fetching multipart-post-2.2.3.gem
+Fetching multi_json-1.15.0.gem
+Fetching faraday-net_http_persistent-1.2.0.gem
+Fetching faraday-patron-1.0.0.gem
+Fetching faraday-rack-1.0.0.gem
+Fetching faraday-retry-1.0.3.gem
+Fetching elasticsearch-8.2.2.gem
+Fetching faraday-httpclient-1.0.1.gem
+Fetching faraday-excon-1.1.0.gem
+Fetching faraday-em_synchrony-1.0.0.gem
+Fetching faraday-em_http-1.0.0.gem
+Fetching faraday-1.10.0.gem
+Fetching elastic-transport-8.0.1.gem
+Fetching elasticsearch-api-8.2.2.gem
+Successfully installed multi_json-1.15.0
+Successfully installed faraday-retry-1.0.3
+Successfully installed faraday-rack-1.0.0
+Successfully installed faraday-patron-1.0.0
+Successfully installed faraday-net_http_persistent-1.2.0
+Successfully installed faraday-net_http-1.0.1
+Successfully installed multipart-post-2.2.3
+Successfully installed faraday-multipart-1.0.4
+Successfully installed faraday-httpclient-1.0.1
+Successfully installed faraday-excon-1.1.0
+Successfully installed faraday-em_synchrony-1.0.0
+Successfully installed faraday-em_http-1.0.0
+Successfully installed faraday-1.10.0
+Successfully installed elastic-transport-8.0.1
+Successfully installed elasticsearch-api-8.2.2
+Successfully installed elasticsearch-8.2.2
+16 gems installed
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ gem list --local | grep -i elast
+elastic-transport (8.0.1)
+elasticsearch (8.2.2)
+elasticsearch-api (8.2.2)
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/Downloads/elastic/elasticsearch-8.2.2/config/certs$ ls -latr
+total 32
+-rw-rw---- 1 davidho davidho  1915 Jun  6 03:42 http_ca.crt
+-rw-rw---- 1 davidho davidho  5822 Jun  6 03:42 transport.p12
+-rw-rw---- 1 davidho davidho 10013 Jun  6 03:42 http.p12
+drwxr-x--- 2 davidho davidho  4096 Jun  6 03:42 .
+drwxr-xr-x 4 davidho davidho  4096 Jun  6 03:42 ..
+davidho@dphxps17:~/Downloads/elastic/elasticsearch-8.2.2/config/certs$ 
+
+
+cd ~/Downloads/elastic/elasticsearch-8.2.2
+./bin/elasticsearch
+
+cd ~/Downloads/elastic/kibana-8.2.2
+./bin/kibana
+
+https://localhost:9200/
+http://localhost:5601/app/dev_tools#/console
+
+Password for the elastic user (reset with `bin/elasticsearch-reset-password -u elastic`):
+  fn8*-BZRBp6Ztt0Rj+Rr
+
+HTTP CA certificate SHA-256 fingerprint:
+  ae6641a394209d0ac88b0b9ec4fb67225d36bafa6dd62b6dc88c9c6a39155f7c
+
+irb
+require 'elasticsearch'
+# client = Elasticsearch::Client.new log: true
+client = Elasticsearch::Client.new(
+  hosts:
+	  [
+  	   {
+    	   host: 'localhost',
+    	   port: '443',
+    	   user: 'elastic',
+    	   password: 'fn8*-BZRBp6Ztt0Rj+Rr',
+    	   scheme: 'https'
+  	   }
+	  ]
+)
+
+irb
+require 'elasticsearch'
+client = Elasticsearch::Client.new(hosts:[{host: 'localhost',port: '9200',user: 'elastic',password: 'fn8*-BZRBp6Ztt0Rj+Rr'}])
+client.cluster.health
+client.index(index: 'my-index', id: 1, body: { title: 'Test' })
+client.indices.refresh(index: 'my-index')
+client.search(index: 'my-index', body: { query: { match: { title: 'test' } } })
+  
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+  
+davidho@dphxps17:~$ irb
+irb(main):001:0> require 'elasticsearch'
+=> true
+irb(main):002:0> client = Elasticsearch::Client.new(hosts:[{host: 'localhost',port: '9200',user: 'elastic',password: 'fn8*-BZRBp6Ztt0Rj+Rr'}])
+=> 
+#<Elasticsearch::Client:0x00007fd40ea816e8
+...
+irb(main):003:0> client.cluster.health
+The client is unable to verify that the server is Elasticsearch. Some functionality may not be compatible if the server is running an unsupported product.
+/home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/net-protocol-0.1.3/lib/net/protocol.rb:227:in `rbuf_fill': end of file reached (Faraday::ConnectionFailed)
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/net-protocol-0.1.3/lib/net/protocol.rb:193:in `readuntil'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/net-protocol-0.1.3/lib/net/protocol.rb:203:in `readline'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/3.1.0/net/http/response.rb:42:in `read_status_line'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/3.1.0/net/http/response.rb:31:in `read_new'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/3.1.0/net/http.rb:1575:in `block in transport_request'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/3.1.0/net/http.rb:1566:in `catch'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/3.1.0/net/http.rb:1566:in `transport_request'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/3.1.0/net/http.rb:1288:in `get'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/faraday-net_http-1.0.1/lib/faraday/adapter/net_http.rb:139:in `block in request_via_get_method'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/3.1.0/net/http.rb:966:in `start'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/faraday-net_http-1.0.1/lib/faraday/adapter/net_http.rb:138:in `request_via_get_method'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/faraday-net_http-1.0.1/lib/faraday/adapter/net_http.rb:129:in `request_with_wrapped_block'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/faraday-net_http-1.0.1/lib/faraday/adapter/net_http.rb:122:in `perform_request'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/faraday-net_http-1.0.1/lib/faraday/adapter/net_http.rb:66:in `block in call'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/faraday-1.10.0/lib/faraday/adapter.rb:50:in `connection'
+	... 16 levels...
+/home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/net-protocol-0.1.3/lib/net/protocol.rb:227:in `rbuf_fill': end of file reached (EOFError)
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/net-protocol-0.1.3/lib/net/protocol.rb:193:in `readuntil'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/net-protocol-0.1.3/lib/net/protocol.rb:203:in `readline'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/3.1.0/net/http/response.rb:42:in `read_status_line'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/3.1.0/net/http/response.rb:31:in `read_new'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/3.1.0/net/http.rb:1575:in `block in transport_request'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/3.1.0/net/http.rb:1566:in `catch'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/3.1.0/net/http.rb:1566:in `transport_request'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/3.1.0/net/http.rb:1539:in `request'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/3.1.0/net/http.rb:1288:in `get'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/faraday-net_http-1.0.1/lib/faraday/adapter/net_http.rb:139:in `block in request_via_get_method'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/3.1.0/net/http.rb:966:in `start'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/faraday-net_http-1.0.1/lib/faraday/adapter/net_http.rb:138:in `request_via_get_method'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/faraday-net_http-1.0.1/lib/faraday/adapter/net_http.rb:129:in `request_with_wrapped_block'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/faraday-net_http-1.0.1/lib/faraday/adapter/net_http.rb:122:in `perform_request'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/faraday-net_http-1.0.1/lib/faraday/adapter/net_http.rb:66:in `block in call'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/faraday-1.10.0/lib/faraday/adapter.rb:50:in `connection'
+	... 16 levels...
+irb(main):004:0> 
+irb(main):009:0> 
+irb(main):010:0> client.index(index: 'my-index', id: 1, body: { title: 'Test' })
+The client is unable to verify that the server is Elasticsearch. Some functionality may not be compatible if the server is running an unsupported product.
+/home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/net-protocol-0.1.3/lib/net/protocol.rb:227:in `rbuf_fill': end of file reached (Faraday::ConnectionFailed)
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/net-protocol-0.1.3/lib/net/protocol.rb:193:in `readuntil'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/net-protocol-0.1.3/lib/net/protocol.rb:203:in `readline'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/3.1.0/net/http/response.rb:42:in `read_status_line'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/3.1.0/net/http/response.rb:31:in `read_new'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/3.1.0/net/http.rb:1575:in `block in transport_request'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/3.1.0/net/http.rb:1566:in `catch'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/3.1.0/net/http.rb:1566:in `transport_request'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/3.1.0/net/http.rb:1539:in `request'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/3.1.0/net/http.rb:1288:in `get'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/faraday-net_http-1.0.1/lib/faraday/adapter/net_http.rb:139:in `block in request_via_get_method'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/3.1.0/net/http.rb:966:in `start'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/faraday-net_http-1.0.1/lib/faraday/adapter/net_http.rb:138:in `request_via_get_method'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/faraday-net_http-1.0.1/lib/faraday/adapter/net_http.rb:129:in `request_with_wrapped_block'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/faraday-net_http-1.0.1/lib/faraday/adapter/net_http.rb:122:in `perform_request'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/faraday-net_http-1.0.1/lib/faraday/adapter/net_http.rb:66:in `block in call'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/faraday-1.10.0/lib/faraday/adapter.rb:50:in `connection'
+	... 15 levels...
+/home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/net-protocol-0.1.3/lib/net/protocol.rb:227:in `rbuf_fill': end of file reached (EOFError)
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/net-protocol-0.1.3/lib/net/protocol.rb:193:in `readuntil'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/net-protocol-0.1.3/lib/net/protocol.rb:203:in `readline'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/3.1.0/net/http/response.rb:42:in `read_status_line'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/3.1.0/net/http/response.rb:31:in `read_new'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/3.1.0/net/http.rb:1575:in `block in transport_request'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/3.1.0/net/http.rb:1566:in `catch'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/3.1.0/net/http.rb:1566:in `transport_request'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/3.1.0/net/http.rb:1539:in `request'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/3.1.0/net/http.rb:1288:in `get'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/faraday-net_http-1.0.1/lib/faraday/adapter/net_http.rb:139:in `block in request_via_get_method'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/3.1.0/net/http.rb:966:in `start'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/faraday-net_http-1.0.1/lib/faraday/adapter/net_http.rb:138:in `request_via_get_method'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/faraday-net_http-1.0.1/lib/faraday/adapter/net_http.rb:129:in `request_with_wrapped_block'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/faraday-net_http-1.0.1/lib/faraday/adapter/net_http.rb:122:in `perform_request'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/faraday-net_http-1.0.1/lib/faraday/adapter/net_http.rb:66:in `block in call'
+	from /home/davidho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/faraday-1.10.0/lib/faraday/adapter.rb:50:in `connection'
+	... 15 levels...
+irb(main):011:0> 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://stackoverflow.com/questions/15144046/converting-pkcs12-certificate-into-pem-using-openssl
+
+openssl pkcs12 -in path.p12 -out newfile.crt.pem -clcerts -nokeys
+openssl pkcs12 -in path.p12 -out newfile.key.pem -nocerts -nodes
+
+cd ~/Downloads/elastic/elasticsearch-8.2.2/config/certs
+ls -latr
+openssl pkcs12 -in http.p12 -out elastic.crt.pem -clcerts -nokeys
+openssl pkcs12 -in http.p12 -out elastic.key.pem -nocerts -nodes
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ cd ~/Downloads/elastic/elasticsearch-8.2.2/config/certs
+davidho@dphxps17:~/Downloads/elastic/elasticsearch-8.2.2/config/certs$ 
+davidho@dphxps17:~/Downloads/elastic/elasticsearch-8.2.2/config/certs$ ls -latr
+total 32
+-rw-rw---- 1 davidho davidho  1915 Jun  6 03:42 http_ca.crt
+-rw-rw---- 1 davidho davidho  5822 Jun  6 03:42 transport.p12
+-rw-rw---- 1 davidho davidho 10013 Jun  6 03:42 http.p12
+drwxr-x--- 2 davidho davidho  4096 Jun  6 03:42 .
+drwxr-xr-x 4 davidho davidho  4096 Jun  6 03:42 ..
+davidho@dphxps17:~/Downloads/elastic/elasticsearch-8.2.2/config/certs$ 
+davidho@dphxps17:~/Downloads/elastic/elasticsearch-8.2.2/config/certs$ openssl pkcs12 -in http.p12 -out elastic.crt.pem -clcerts -nokeys
+Enter Import Password:
+Mac verify error: invalid password?
+davidho@dphxps17:~/Downloads/elastic/elasticsearch-8.2.2/config/certs$ 
+
+
+
+https://www.sslshopper.com/article-most-common-java-keytool-keystore-commands.html
+
+
+keytool -printcert -v -file mydomain.crt
+keytool -list -v -keystore keystore.jks
+
+
+keytool -printcert -v -file http_ca.crt
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/Downloads/elastic/elasticsearch-8.2.2/config/certs$ keytool -printcert -v -file http_ca.crt
+Command 'keytool' not found, but can be installed with:
+sudo apt install openjdk-11-jre-headless  # version 11.0.15+10-0ubuntu0.22.04.1, or
+sudo apt install openjdk-18-jre-headless  # version 18~36ea-1
+sudo apt install openjdk-8-jre-headless   # version 8u312-b07-0ubuntu1
+sudo apt install openjdk-17-jre-headless  # version 17.0.3+7-0ubuntu0.22.04.1
+davidho@dphxps17:~/Downloads/elastic/elasticsearch-8.2.2/config/certs$ 
+davidho@dphxps17:~/Downloads/elastic/elasticsearch-8.2.2/config/certs$ java -version
+Command 'java' not found, but can be installed with:
+sudo apt install openjdk-11-jre-headless  # version 11.0.15+10-0ubuntu0.22.04.1, or
+sudo apt install default-jre              # version 2:1.11-72build2
+sudo apt install openjdk-18-jre-headless  # version 18~36ea-1
+sudo apt install openjdk-8-jre-headless   # version 8u312-b07-0ubuntu1
+sudo apt install openjdk-17-jre-headless  # version 17.0.3+7-0ubuntu0.22.04.1
+davidho@dphxps17:~/Downloads/elastic/elasticsearch-8.2.2/config/certs$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://grails.org/download.html
+curl -s https://get.sdkman.io | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+sdk version
+sdk install grails
+grails -version
+
+https://sdkman.io/
+
+https://sdkman.io/jdks
+sdk install java x.y.z-amzn
+sdk install java x.y.z-oracle
+sdk install java x.y.z-open
+sdk install java x.y.z-tem
+sdk install java x.y.z-zulu
+
+https://sdkman.io/sdks
+sdk install ant
+sdk install asciidoctorj
+sdk install gradle
+sdk install gradleprofiler
+sdk install grails
+sdk install groovy
+sdk install groovyserv
+sdk install jbang
+sdk install jmc
+sdk install jmeter
+sdk install maven
+sdk install micronaut
+sdk install mvnd
+sdk install schemacrawler
+sdk install springboot
+sdk install tomcat
+sdk install vertx
+sdk install visualvm
+
+https://sdkman.io/usage
+sdk install java
+sdk list
+sdk list groovy
+sdk list java
+sdk install scala 3.1.2
+sdk uninstall scala 3.1.2
+sdk use scala 3.1.2
+sdk default scala 3.1.2
+sdk current java
+sdk current
+sdk env init
+sdk env
+sdk env clear
+sdk upgrade springboot
+sdk upgrade
+
+sdk selfupdate
+sdk selfupdate force
+sdk offline enable
+sdk offline disable
+sdk update
+sdk flush
+sdk home java 17.0.3-tem
+sdk help
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+sdk install java 17.0.3.6.1-amzn 
+sdk install java 17.0.3-oracle 
+sdk install java 17.0.3-tem 
+sdk install java 17.0.3-zulu 
+sdk install java 17.0.3.fx-zulu
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ curl -s https://get.sdkman.io | bash
+
+                                -+syyyyyyys:
+                            `/yho:`       -yd.
+                         `/yh/`             +m.
+                       .oho.                 hy                          .`
+                     .sh/`                   :N`                `-/o`  `+dyyo:.
+                   .yh:`                     `M-          `-/osysoym  :hs` `-+sys:      hhyssssssssy+
+                 .sh:`                       `N:          ms/-``  yy.yh-      -hy.    `.N-````````+N.
+               `od/`                         `N-       -/oM-      ddd+`     `sd:     hNNm        -N:
+              :do`                           .M.       dMMM-     `ms.      /d+`     `NMMs       `do
+            .yy-                             :N`    ```mMMM.      -      -hy.       /MMM:       yh
+          `+d+`           `:/oo/`       `-/osyh/ossssssdNMM`           .sh:         yMMN`      /m.
+         -dh-           :ymNMMMMy  `-/shmNm-`:N/-.``   `.sN            /N-         `NMMy      .m/
+       `oNs`          -hysosmMMMMydmNmds+-.:ohm           :             sd`        :MMM/      yy
+      .hN+           /d:    -MMMmhs/-.`   .MMMh   .ss+-                 `yy`       sMMN`     :N.
+     :mN/           `N/     `o/-`         :MMMo   +MMMN-         .`      `ds       mMMh      do
+    /NN/            `N+....--:/+oooosooo+:sMMM:   hMMMM:        `my       .m+     -MMM+     :N.
+   /NMo              -+ooooo+/:-....`...:+hNMN.  `NMMMd`        .MM/       -m:    oMMN.     hs
+  -NMd`                                    :mm   -MMMm- .s/     -MMm.       /m-   mMMd     -N.
+ `mMM/                                      .-   /MMh. -dMo     -MMMy        od. .MMMs..---yh
+ +MMM.                                           sNo`.sNMM+     :MMMM/        sh`+MMMNmNm+++-
+ mMMM-                                           /--ohmMMM+     :MMMMm.       `hyymmmdddo
+ MMMMh.                  ````                  `-+yy/`yMMM/     :MMMMMy       -sm:.``..-:-.`
+ dMMMMmo-.``````..-:/osyhddddho.           `+shdh+.   hMMM:     :MmMMMM/   ./yy/` `:sys+/+sh/
+ .dMMMMMMmdddddmmNMMMNNNNNMMMMMs           sNdo-      dMMM-  `-/yd/MMMMm-:sy+.   :hs-      /N`
+  `/ymNNNNNNNmmdys+/::----/dMMm:          +m-         mMMM+ohmo/.` sMMMMdo-    .om:       `sh
+     `.-----+/.`       `.-+hh/`         `od.          NMMNmds/     `mmy:`     +mMy      `:yy.
+           /moyso+//+ossso:.           .yy`          `dy+:`         ..       :MMMN+---/oys:
+         /+m:  `.-:::-`               /d+                                    +MMMMMMMNh:`
+        +MN/                        -yh.                                     `+hddhy+.
+       /MM+                       .sh:
+      :NMo                      -sh/
+     -NMs                    `/yy:
+    .NMy                  `:sh+.
+   `mMm`               ./yds-
+  `dMMMmyo:-.````.-:oymNy:`
+  +NMMMMMMMMMMMMMMMMms:`
+    -+shmNMMMNmdy+:`
+
+
+                                                                 Now attempting installation...
+
+
+Looking for a previous installation of SDKMAN...
+Looking for unzip...
+Looking for zip...
+Looking for curl...
+Looking for sed...
+Installing SDKMAN scripts...
+Create distribution directories...
+Getting available candidates...
+Prime the config file...
+Installing script cli archive...
+* Downloading...
+######################################################################## 100.0%
+* Checking archive integrity...
+* Extracting archive...
+* Copying archive contents...
+* Cleaning up...
+
+Set version to 5.15.0 ...
+Attempt update of interactive bash profile on regular UNIX...
+Added sdkman init snippet to /home/davidho/.bashrc
+Attempt update of zsh profile...
+
+
+davidho@dphxps17:~$ sdk current
+
+Using:
+
+ant: 1.10.12
+asciidoctorj: 2.5.4
+gradle: 7.4.2
+grails: 5.1.8
+groovy: 4.0.3
+java: 17.0.3-zulu
+davidho@dphxps17:~$ sdk list java | grep installed
+               |     | 17.0.3.6.1   | amzn    | installed  | 17.0.3.6.1-amzn     
+               |     | 17.0.3       | oracle  | installed  | 17.0.3-oracle       
+               |     | 17.0.3       | tem     | installed  | 17.0.3-tem          
+               | >>> | 17.0.3       | zulu    | installed  | 17.0.3-zulu         
+               |     | 17.0.3.fx    | zulu    | installed  | 17.0.3.fx-zulu      
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ sdk home java 17.0.3-zulu
+/home/davidho/.sdkman/candidates/java/17.0.3-zulu
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ cd ~/.sdkman/candidates/
+davidho@dphxps17:~/.sdkman/candidates$ tree -d -L 2
+.
+├── ant
+│   ├── 1.10.12
+│   └── current -> 1.10.12
+├── asciidoctorj
+│   ├── 2.5.4
+│   └── current -> 2.5.4
+├── gradle
+│   ├── 7.4.2
+│   └── current -> 7.4.2
+├── grails
+│   ├── 5.1.8
+│   └── current -> 5.1.8
+├── groovy
+│   ├── 4.0.3
+│   └── current -> 4.0.3
+├── java
+│   ├── 17.0.3.6.1-amzn
+│   ├── 17.0.3.fx-zulu
+│   ├── 17.0.3-oracle
+│   ├── 17.0.3-tem
+│   ├── 17.0.3-zulu
+│   └── current -> 17.0.3-zulu
+├── jbang
+│   └── 0.95.0
+├── jmc
+│   └── 8.1.1.51-zulu
+├── jmeter
+│   └── 5.4.3
+├── maven
+│   └── 3.8.5
+├── tomcat
+│   ├── 10.0.14
+│   └── 9.0.56
+├── vertx
+│   └── 4.3.1
+└── visualvm
+    └── 2.1.3
+
+37 directories
+davidho@dphxps17:~/.sdkman/candidates$ 
+
+
+
+
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ cd ~
+davidho@dphxps17:~$ sdk current
+
+Using:
+
+ant: 1.10.12
+asciidoctorj: 2.5.4
+gradle: 7.4.2
+grails: 5.1.8
+groovy: 4.0.3
+java: 17.0.3-zulu
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ sdk list java | grep -i installed
+               |     | 17.0.3.6.1   | amzn    | installed  | 17.0.3.6.1-amzn     
+               |     | 17.0.3       | oracle  | installed  | 17.0.3-oracle       
+               |     | 17.0.3       | tem     | installed  | 17.0.3-tem          
+               | >>> | 17.0.3       | zulu    | installed  | 17.0.3-zulu         
+               |     | 17.0.3.fx    | zulu    | installed  | 17.0.3.fx-zulu      
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+
+
