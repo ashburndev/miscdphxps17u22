@@ -1,0 +1,292 @@
+Thu Jun 23 06:47:43 AM EDT 2022
+
+davidho@dphxps17:~$ date
+Thu Jun 23 06:47:28 AM EDT 2022
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date > stuff-20220623.txt
+davidho@dphxps17:~$ code   stuff-20220623.txt
+davidho@dphxps17:~$ 
+
+davidho@dphxps17:~$ irb
+irb(main):001:0> gem 'elasticsearch', '=8.2.2'
+=> true
+irb(main):002:0> require 'elasticsearch'
+=> true
+irb(main):003:0> 
+                            
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+cd ~/Downloads/elastic/elasticsearch-8.2.2
+./bin/elasticsearch
+
+cd ~/Downloads/elastic/kibana-8.2.2
+./bin/kibana
+
+elastic
+fn8*-BZRBp6Ztt0Rj+Rr
+
+https://localhost:9200/
+
+name	"dphxps17"
+cluster_name	"elasticsearch"
+cluster_uuid	"xXOIRk9RQ5ipvQWlhh-bTQ"
+version	
+number	"8.2.2"
+build_flavor	"default"
+build_type	"tar"
+build_hash	"9876968ef3c745186b94fdabd4483e01499224ef"
+build_date	"2022-05-25T15:47:06.259735307Z"
+build_snapshot	false
+lucene_version	"9.1.0"
+minimum_wire_compatibility_version	"7.17.0"
+minimum_index_compatibility_version	"7.0.0"
+tagline	"You Know, for Search"
+
+http://localhost:5601
+http://localhost:5601/app/dev_tools#/console
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+GET /
+GET _cat
+GET _cat/indices?help
+GET _cat/indices?h=mt,tm
+GET _cat/indices?v=true
+GET wireindex/_count
+GET wireindex/_doc/1
+GET wireindex/_mapping
+GET wireindex/_search
+DELETE /my-index
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+GET /
+
+{
+  "name" : "dphxps17",
+  "cluster_name" : "elasticsearch",
+  "cluster_uuid" : "xXOIRk9RQ5ipvQWlhh-bTQ",
+  "version" : {
+    "number" : "8.2.2",
+    "build_flavor" : "default",
+    "build_type" : "tar",
+    "build_hash" : "9876968ef3c745186b94fdabd4483e01499224ef",
+    "build_date" : "2022-05-25T15:47:06.259735307Z",
+    "build_snapshot" : false,
+    "lucene_version" : "9.1.0",
+    "minimum_wire_compatibility_version" : "7.17.0",
+    "minimum_index_compatibility_version" : "7.0.0"
+  },
+  "tagline" : "You Know, for Search"
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+GET _cat
+
+=^.^=
+/_cat/allocation
+/_cat/shards
+/_cat/shards/{index}
+/_cat/master
+/_cat/nodes
+/_cat/tasks
+/_cat/indices
+/_cat/indices/{index}
+/_cat/segments
+/_cat/segments/{index}
+/_cat/count
+/_cat/count/{index}
+/_cat/recovery
+/_cat/recovery/{index}
+/_cat/health
+/_cat/pending_tasks
+/_cat/aliases
+/_cat/aliases/{alias}
+/_cat/thread_pool
+/_cat/thread_pool/{thread_pools}
+/_cat/plugins
+/_cat/fielddata
+/_cat/fielddata/{fields}
+/_cat/nodeattrs
+/_cat/repositories
+/_cat/snapshots/{repository}
+/_cat/templates
+/_cat/component_templates/_cat/ml/anomaly_detectors
+/_cat/ml/anomaly_detectors/{job_id}
+/_cat/ml/trained_models
+/_cat/ml/trained_models/{model_id}
+/_cat/ml/datafeeds
+/_cat/ml/datafeeds/{datafeed_id}
+/_cat/ml/data_frame/analytics
+/_cat/ml/data_frame/analytics/{id}
+/_cat/transforms
+/_cat/transforms/{transform_id}
+
+GET _cat/indices
+
+yellow open movies    gNY9hjYlQj60FTjQc-CNtQ 1 1 1 0  9.2kb  9.2kb
+yellow open books     Z4z3fXflRPSdE0zOZT1DVA 1 1 1 0  6.3kb  6.3kb
+yellow open testindex HzrhQlJUSQuCWBKP2jgXgw 1 1 1 0  7.8kb  7.8kb
+yellow open wireindex KmyO2QAiSHG4OOfRJ-Y0oQ 1 1 2 0 24.2kb 24.2kb
+yellow open my-index  P690znpdT8GsaF2Ixt1Zjw 1 1 1 0  3.9kb  3.9kb
+
+GET _cat/indices?v=true
+
+health status index     uuid                   pri rep docs.count docs.deleted store.size pri.store.size
+yellow open   movies    gNY9hjYlQj60FTjQc-CNtQ   1   1          1            0      9.2kb          9.2kb
+yellow open   books     Z4z3fXflRPSdE0zOZT1DVA   1   1          1            0      6.3kb          6.3kb
+yellow open   testindex HzrhQlJUSQuCWBKP2jgXgw   1   1          1            0      7.8kb          7.8kb
+yellow open   wireindex KmyO2QAiSHG4OOfRJ-Y0oQ   1   1          2            0     24.2kb         24.2kb
+yellow open   my-index  P690znpdT8GsaF2Ixt1Zjw   1   1          1            0      3.9kb          3.9kb
+
+GET _cat/count
+
+1655983051 11:17:31 6
+
+GET _cat/indices/wireindex
+
+yellow open wireindex KmyO2QAiSHG4OOfRJ-Y0oQ 1 1 2 0 24.2kb 24.2kb
+
+GET wireindex/_count
+
+{
+  "count" : 2,
+  "_shards" : {
+    "total" : 1,
+    "successful" : 1,
+    "skipped" : 0,
+    "failed" : 0
+  }
+}
+
+GET my-index/_doc/1
+DELETE /my-index
+
+{
+  "acknowledged" : true
+}
+
+GET my-index/_doc/1
+
+{
+  "error" : {
+    "root_cause" : [
+      {
+        "type" : "index_not_found_exception",
+        "reason" : "no such index [my-index]",
+        "resource.type" : "index_expression",
+        "resource.id" : "my-index",
+        "index_uuid" : "_na_",
+        "index" : "my-index"
+      }
+    ],
+    "type" : "index_not_found_exception",
+    "reason" : "no such index [my-index]",
+    "resource.type" : "index_expression",
+    "resource.id" : "my-index",
+    "index_uuid" : "_na_",
+    "index" : "my-index"
+  },
+  "status" : 404
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ irb
+irb(main):001:0> gem 'elasticsearch', '=8.2.2'
+=> true
+irb(main):002:0> require 'elasticsearch'
+=> true
+irb(main):003:0> 
+irb(main):004:0* # export ELASTIC_USERNAME = "elastic"
+irb(main):005:0* # export ELASTIC_PASSWORD = "fn8*-BZRBp6Ztt0Rj+Rr"
+irb(main):008:0* 
+irb(main):009:0* # ELASTIC_USERNAME = "elastic"
+irb(main):010:0* # ELASTIC_PASSWORD = "fn8*-BZRBp6Ztt0Rj+Rr"
+irb(main):011:0* # ELASTIC_CERT_DIR = "/home/davidho/Downloads/elastic/elasticsearch-8.2.2/config/certs"
+irb(main):012:0* # ELASTIC_CERT_FINGERPRINT = "ae6641a394209d0ac88b0b9ec4fb67225d36bafa6dd62b6dc88c9c6a39155f7c"
+irb(main):013:0* 
+irb(main):014:0> elastic_host = "localhost"
+=> "443"
+irb(main):016:0> elastic_username = "elastic"
+=> "elastic"
+irb(main):017:0> elastic_password = "fn8*-BZRBp6Ztt0Rj+Rr"
+=> "fn8*-BZRBp6Ztt0Rj+Rr"
+irb(main):018:0> elastic_cert_dir = "/home/davidho/Downloads/elastic/elasticsearch-8.2.2/config/certs"
+=> "/home/davidho/Downloads/elastic/elasticsearch-8.2.2/config/certs"
+irb(main):020:0> 
+irb(main):021:0> host_string = "https://#{elastic_host}:#{elastic_password}@#{elastic_host}:#{elastic_port}"
+=> "https://localhost:fn8*-BZRBp6Ztt0Rj+Rr@localhost:443"
+irb(main):022:0> puts host_string 
+https://localhost:fn8*-BZRBp6Ztt0Rj+Rr@localhost:443
+=> nil
+irb(main):023:0> 
+irb(main):024:0* # client = Elasticsearch::Client.new log: true
+irb(main):025:0* 
+irb(main):026:1* client = Elasticsearch::Client.new(                              \
+irb(main):027:1*   host: "https://elastic:#{elastic_password}@localhost:9200",    \
+     "number_of_nodes"=>1,
+     "number_of_data_nodes"=>1,
+     "active_primary_shards"=>15,
+     "active_shards"=>15,
+     "relocating_shards"=>0,
+     "initializing_shards"=>0,
+     "unassigned_shards"=>4,
+     "delayed_unassigned_shards"=>0,
+     "number_of_pending_tasks"=>0,
+     "number_of_in_flight_fetch"=>0,
+     "task_max_waiting_in_queue_millis"=>0,
+     "active_shards_percent_as_number"=>78.94736842105263},
+   @headers={"x-elastic-product"=>"Elasticsearch", "content-type"=>"application/json", "content-length"=>"404"},
+   @status=200>>
+irb(main):033:0> 
+irb(main):034:0> client.index(index: 'my-index', id: 1, body: { title: 'Test' })
+=> 
+#<Elasticsearch::API::Response:0x00007f6f38328b98
+ @response=
+  #<Elastic::Transport::Transport::Response:0x00007f6f38328c38
+   @body={"_index"=>"my-index", "_id"=>"1", "_version"=>1, "result"=>"created", "_shards"=>{"total"=>2, "successful"=>1, "failed"=>0}, "_seq_no"=>0, "_primary_term"=>1},
+   @headers={"location"=>"/my-index/_doc/1", "x-elastic-product"=>"Elasticsearch", "content-type"=>"application/json", "content-length"=>"141"},
+   @status=201>>
+irb(main):035:0> 
+irb(main):036:0> client.indices.refresh(index: 'my-index')
+=> 
+#<Elasticsearch::API::Response:0x00007f6f38394ff0
+ @response=
+  #<Elastic::Transport::Transport::Response:0x00007f6f38395108
+   @body={"_shards"=>{"total"=>2, "successful"=>1, "failed"=>0}},
+   @headers={"x-elastic-product"=>"Elasticsearch", "content-type"=>"application/json", "content-length"=>"49"},
+   @status=200>>
+irb(main):037:0> 
+irb(main):038:0> client.search(index: 'my-index', body: { query: { match: { title: 'test' } } })
+=> 
+#<Elasticsearch::API::Response:0x00007f6f383dd700
+ @response=
+  #<Elastic::Transport::Transport::Response:0x00007f6f383dd908
+   @body=
+    {"took"=>0,
+     "timed_out"=>false,
+     "_shards"=>{"total"=>1, "successful"=>1, "skipped"=>0, "failed"=>0},
+     "hits"=>{"total"=>{"value"=>1, "relation"=>"eq"}, "max_score"=>0.2876821, "hits"=>[{"_index"=>"my-index", "_id"=>"1", "_score"=>0.2876821, "_source"=>{"title"=>"Test"}}]}},
+   @headers={"x-elastic-product"=>"Elasticsearch", "content-type"=>"application/json", "content-length"=>"242"},
+   @status=200>>
+irb(main):039:0> 
+irb(main):040:0* # In Kibana (http://localhost:5601/app/dev_tools#/console) I can confirm the above code indexed a new document
+irb(main):041:0* # GET my-index/_doc/1
+irb(main):042:0* 
+irb(main):043:0* # {
+irb(main):044:0* #   "_index" : "my-index",
+irb(main):045:0* #   "_id" : "1",
+irb(main):046:0* #   "_version" : 1,
+irb(main):047:0* #   "_seq_no" : 0,
+irb(main):048:0* #   "_primary_term" : 1,
+irb(main):049:0* #   "found" : true,
+irb(main):050:0* #   "_source" : {
+irb(main):051:0* #     "title" : "Test"
+irb(main):052:0* #   }
+irb(main):053:0* # }
+irb(main):054:0* 
+irb(main):055:0* 
+
