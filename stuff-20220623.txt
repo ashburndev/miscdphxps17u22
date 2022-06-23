@@ -194,99 +194,102 @@ GET my-index/_doc/1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date
+Thu Jun 23 09:50:02 AM EDT 2022
+davidho@dphxps17:~$ 
 davidho@dphxps17:~$ irb
-irb(main):001:0> gem 'elasticsearch', '=8.2.2'
+irb(main):001:0> 
+irb(main):002:0> gem 'elasticsearch', '=8.2.2'
 => true
-irb(main):002:0> require 'elasticsearch'
+irb(main):003:0> require 'elasticsearch'
 => true
-irb(main):003:0> 
-irb(main):004:0* # export ELASTIC_USERNAME = "elastic"
-irb(main):005:0* # export ELASTIC_PASSWORD = "fn8*-BZRBp6Ztt0Rj+Rr"
-irb(main):008:0* 
-irb(main):009:0* # ELASTIC_USERNAME = "elastic"
-irb(main):010:0* # ELASTIC_PASSWORD = "fn8*-BZRBp6Ztt0Rj+Rr"
-irb(main):011:0* # ELASTIC_CERT_DIR = "/home/davidho/Downloads/elastic/elasticsearch-8.2.2/config/certs"
-irb(main):012:0* # ELASTIC_CERT_FINGERPRINT = "ae6641a394209d0ac88b0b9ec4fb67225d36bafa6dd62b6dc88c9c6a39155f7c"
-irb(main):013:0* 
-irb(main):014:0> elastic_host = "localhost"
-=> "443"
-irb(main):016:0> elastic_username = "elastic"
+irb(main):004:0> 
+irb(main):005:0* # ELASTIC_USERNAME = "elastic"
+irb(main):006:0* # ELASTIC_PASSWORD = "fn8*-BZRBp6Ztt0Rj+Rr"
+irb(main):009:0* 
+irb(main):010:0* # export ELASTIC_USERNAME = "elastic"
+irb(main):011:0* # export ELASTIC_PASSWORD = "fn8*-BZRBp6Ztt0Rj+Rr"
+irb(main):012:0* # export ELASTIC_CERT_DIR = "/home/davidho/Downloads/elastic/elasticsearch-8.2.2/config/certs"
+irb(main):013:0* # export ELASTIC_CERT_FINGERPRINT = "ae6641a394209d0ac88b0b9ec4fb67225d36bafa6dd62b6dc88c9c6a39155f7c"
+irb(main):014:0* 
+irb(main):015:0> elastic_host = "localhost"
+=> "9200"
+irb(main):017:0> elastic_username = "elastic"
 => "elastic"
-irb(main):017:0> elastic_password = "fn8*-BZRBp6Ztt0Rj+Rr"
+irb(main):018:0> elastic_password = "fn8*-BZRBp6Ztt0Rj+Rr"
 => "fn8*-BZRBp6Ztt0Rj+Rr"
-irb(main):018:0> elastic_cert_dir = "/home/davidho/Downloads/elastic/elasticsearch-8.2.2/config/certs"
+irb(main):019:0> elastic_cert_dir = "/home/davidho/Downloads/elastic/elasticsearch-8.2.2/config/certs"
 => "/home/davidho/Downloads/elastic/elasticsearch-8.2.2/config/certs"
-irb(main):020:0> 
-irb(main):021:0> host_string = "https://#{elastic_host}:#{elastic_password}@#{elastic_host}:#{elastic_port}"
-=> "https://localhost:fn8*-BZRBp6Ztt0Rj+Rr@localhost:443"
-irb(main):022:0> puts host_string 
-https://localhost:fn8*-BZRBp6Ztt0Rj+Rr@localhost:443
+irb(main):021:0> 
+irb(main):022:0> host_string = "https://#{elastic_username}:#{elastic_password}@#{elastic_host}:#{elastic_port}"
+=> "https://elastic:fn8*-BZRBp6Ztt0Rj+Rr@localhost:9200"
+irb(main):023:0> puts host_string 
+https://elastic:fn8*-BZRBp6Ztt0Rj+Rr@localhost:9200
 => nil
-irb(main):023:0> 
-irb(main):024:0* # client = Elasticsearch::Client.new log: true
-irb(main):025:0* 
-irb(main):026:1* client = Elasticsearch::Client.new(                              \
-irb(main):027:1*   host: "https://elastic:#{elastic_password}@localhost:9200",    \
+irb(main):024:0> 
+irb(main):025:0* # client = Elasticsearch::Client.new log: true
+irb(main):026:0* 
+irb(main):027:1* client = Elasticsearch::Client.new(                                                           \
+irb(main):028:1*   host: "https://#{elastic_username}:#{elastic_password}@#{elastic_host}:#{elastic_port}",    \
      "number_of_nodes"=>1,
      "number_of_data_nodes"=>1,
-     "active_primary_shards"=>15,
-     "active_shards"=>15,
+     "active_primary_shards"=>16,
+     "active_shards"=>16,
      "relocating_shards"=>0,
      "initializing_shards"=>0,
-     "unassigned_shards"=>4,
+     "unassigned_shards"=>5,
      "delayed_unassigned_shards"=>0,
      "number_of_pending_tasks"=>0,
      "number_of_in_flight_fetch"=>0,
      "task_max_waiting_in_queue_millis"=>0,
-     "active_shards_percent_as_number"=>78.94736842105263},
+     "active_shards_percent_as_number"=>76.19047619047619},
    @headers={"x-elastic-product"=>"Elasticsearch", "content-type"=>"application/json", "content-length"=>"404"},
    @status=200>>
-irb(main):033:0> 
-irb(main):034:0> client.index(index: 'my-index', id: 1, body: { title: 'Test' })
+irb(main):034:0> 
+irb(main):035:0> client.index(index: 'my-index', id: 1, body: { title: 'Test' })
 => 
-#<Elasticsearch::API::Response:0x00007f6f38328b98
+#<Elasticsearch::API::Response:0x00007f630fe7a530
  @response=
-  #<Elastic::Transport::Transport::Response:0x00007f6f38328c38
-   @body={"_index"=>"my-index", "_id"=>"1", "_version"=>1, "result"=>"created", "_shards"=>{"total"=>2, "successful"=>1, "failed"=>0}, "_seq_no"=>0, "_primary_term"=>1},
-   @headers={"location"=>"/my-index/_doc/1", "x-elastic-product"=>"Elasticsearch", "content-type"=>"application/json", "content-length"=>"141"},
-   @status=201>>
-irb(main):035:0> 
-irb(main):036:0> client.indices.refresh(index: 'my-index')
+  #<Elastic::Transport::Transport::Response:0x00007f630fe7a5a8
+   @body={"_index"=>"my-index", "_id"=>"1", "_version"=>3, "result"=>"updated", "_shards"=>{"total"=>2, "successful"=>1, "failed"=>0}, "_seq_no"=>2, "_primary_term"=>2},
+   @headers={"x-elastic-product"=>"Elasticsearch", "content-type"=>"application/json", "content-length"=>"141"},
+   @status=200>>
+irb(main):036:0> 
+irb(main):037:0> client.indices.refresh(index: 'my-index')
 => 
-#<Elasticsearch::API::Response:0x00007f6f38394ff0
+#<Elasticsearch::API::Response:0x00007f630feee9f8
  @response=
-  #<Elastic::Transport::Transport::Response:0x00007f6f38395108
+  #<Elastic::Transport::Transport::Response:0x00007f630feeea98
    @body={"_shards"=>{"total"=>2, "successful"=>1, "failed"=>0}},
    @headers={"x-elastic-product"=>"Elasticsearch", "content-type"=>"application/json", "content-length"=>"49"},
    @status=200>>
-irb(main):037:0> 
-irb(main):038:0> client.search(index: 'my-index', body: { query: { match: { title: 'test' } } })
+irb(main):038:0> 
+irb(main):039:0> client.search(index: 'my-index', body: { query: { match: { title: 'test' } } })
 => 
-#<Elasticsearch::API::Response:0x00007f6f383dd700
+#<Elasticsearch::API::Response:0x00007f630fefbdd8
  @response=
-  #<Elastic::Transport::Transport::Response:0x00007f6f383dd908
+  #<Elastic::Transport::Transport::Response:0x00007f630fefbe50
    @body=
-    {"took"=>0,
+    {"took"=>1,
      "timed_out"=>false,
      "_shards"=>{"total"=>1, "successful"=>1, "skipped"=>0, "failed"=>0},
-     "hits"=>{"total"=>{"value"=>1, "relation"=>"eq"}, "max_score"=>0.2876821, "hits"=>[{"_index"=>"my-index", "_id"=>"1", "_score"=>0.2876821, "_source"=>{"title"=>"Test"}}]}},
-   @headers={"x-elastic-product"=>"Elasticsearch", "content-type"=>"application/json", "content-length"=>"242"},
+     "hits"=>{"total"=>{"value"=>1, "relation"=>"eq"}, "max_score"=>0.18232156, "hits"=>[{"_index"=>"my-index", "_id"=>"1", "_score"=>0.18232156, "_source"=>{"title"=>"Test"}}]}},
+   @headers={"x-elastic-product"=>"Elasticsearch", "content-type"=>"application/json", "content-length"=>"244"},
    @status=200>>
-irb(main):039:0> 
-irb(main):040:0* # In Kibana (http://localhost:5601/app/dev_tools#/console) I can confirm the above code indexed a new document
-irb(main):041:0* # GET my-index/_doc/1
-irb(main):042:0* 
-irb(main):043:0* # {
-irb(main):044:0* #   "_index" : "my-index",
-irb(main):045:0* #   "_id" : "1",
-irb(main):046:0* #   "_version" : 1,
-irb(main):047:0* #   "_seq_no" : 0,
-irb(main):048:0* #   "_primary_term" : 1,
-irb(main):049:0* #   "found" : true,
-irb(main):050:0* #   "_source" : {
-irb(main):051:0* #     "title" : "Test"
-irb(main):052:0* #   }
-irb(main):053:0* # }
-irb(main):054:0* 
+irb(main):040:0> 
+irb(main):041:0* # In Kibana (http://localhost:5601/app/dev_tools#/console) I can confirm the above code indexed a new document
+irb(main):042:0* # GET my-index/_doc/1
+irb(main):043:0* 
+irb(main):044:0* # {
+irb(main):045:0* #   "_index" : "my-index",
+irb(main):046:0* #   "_id" : "1",
+irb(main):047:0* #   "_version" : 1,
+irb(main):048:0* #   "_seq_no" : 0,
+irb(main):049:0* #   "_primary_term" : 1,
+irb(main):050:0* #   "found" : true,
+irb(main):051:0* #   "_source" : {
+irb(main):052:0* #     "title" : "Test"
+irb(main):053:0* #   }
+irb(main):054:0* # }
 irb(main):055:0* 
-
+irb(main):056:0* 

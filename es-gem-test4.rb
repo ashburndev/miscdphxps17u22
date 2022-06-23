@@ -1,31 +1,31 @@
 gem 'elasticsearch', '=8.2.2'
 require 'elasticsearch'
 
-# export ELASTIC_USERNAME = "elastic"
-# export ELASTIC_PASSWORD = "fn8*-BZRBp6Ztt0Rj+Rr"
-# export ELASTIC_CERT_DIR = "/home/davidho/Downloads/elastic/elasticsearch-8.2.2/config/certs"
-# export ELASTIC_CERT_FINGERPRINT = "ae6641a394209d0ac88b0b9ec4fb67225d36bafa6dd62b6dc88c9c6a39155f7c"
-
 # ELASTIC_USERNAME = "elastic"
 # ELASTIC_PASSWORD = "fn8*-BZRBp6Ztt0Rj+Rr"
 # ELASTIC_CERT_DIR = "/home/davidho/Downloads/elastic/elasticsearch-8.2.2/config/certs"
 # ELASTIC_CERT_FINGERPRINT = "ae6641a394209d0ac88b0b9ec4fb67225d36bafa6dd62b6dc88c9c6a39155f7c"
 
+# export ELASTIC_USERNAME = "elastic"
+# export ELASTIC_PASSWORD = "fn8*-BZRBp6Ztt0Rj+Rr"
+# export ELASTIC_CERT_DIR = "/home/davidho/Downloads/elastic/elasticsearch-8.2.2/config/certs"
+# export ELASTIC_CERT_FINGERPRINT = "ae6641a394209d0ac88b0b9ec4fb67225d36bafa6dd62b6dc88c9c6a39155f7c"
+
 elastic_host = "localhost"
-elastic_port = "443"
+elastic_port = "9200"
 elastic_username = "elastic"
 elastic_password = "fn8*-BZRBp6Ztt0Rj+Rr"
 elastic_cert_dir = "/home/davidho/Downloads/elastic/elasticsearch-8.2.2/config/certs"
 elastic_cert_fingerprint = "ae6641a394209d0ac88b0b9ec4fb67225d36bafa6dd62b6dc88c9c6a39155f7c"
 
-host_string = "https://#{elastic_host}:#{elastic_password}@#{elastic_host}:#{elastic_port}"
+host_string = "https://#{elastic_username}:#{elastic_password}@#{elastic_host}:#{elastic_port}"
 puts host_string 
 
 # client = Elasticsearch::Client.new log: true
 
-client = Elasticsearch::Client.new(                              \
-  host: "https://elastic:#{elastic_password}@localhost:9200",    \
-  transport_options: { ssl: { verify: false } },                 \
+client = Elasticsearch::Client.new(                                                           \
+  host: "https://#{elastic_username}:#{elastic_password}@#{elastic_host}:#{elastic_port}",    \
+  transport_options: { ssl: { verify: false } },                                              \
   ca_fingerprint: elastic_cert_fingerprint
 )
 
