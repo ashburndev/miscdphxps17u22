@@ -1,0 +1,32 @@
+Sun Jun 26 08:09:15 AM EDT 2022
+
+davidho@dphxps17:~$ date
+Sun Jun 26 08:09:00 AM EDT 2022
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date > stuff-20220626.txt
+davidho@dphxps17:~$ code   stuff-20220626.txt
+davidho@dphxps17:~$ 
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ mysql --version
+mysql  Ver 8.0.29-0ubuntu0.22.04.2 for Linux on x86_64 ((Ubuntu))
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ mysqladmin -p -u root version
+Enter password: 
+mysqladmin  Ver 8.0.29-0ubuntu0.22.04.2 for Linux on x86_64 ((Ubuntu))
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Server version		8.0.29-0ubuntu0.22.04.2
+Protocol version	10
+Connection		Localhost via UNIX socket
+UNIX socket		/var/run/mysqld/mysqld.sock
+Uptime:			22 hours 36 min 53 sec
+
+Threads: 2  Questions: 4573  Slow queries: 0  Opens: 746  Flush tables: 3  Open tables: 435  Queries per second avg: 0.056
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+
