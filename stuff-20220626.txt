@@ -30,3 +30,62 @@ Threads: 2  Questions: 4573  Slow queries: 0  Opens: 746  Flush tables: 3  Open 
 davidho@dphxps17:~$ 
 davidho@dphxps17:~$ 
 
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ git config --global --list
+user.name=ashburndev
+user.email=ashburndev@gmail.com
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ cd ~/repositories/miscdphxps17u22/
+davidho@dphxps17:~/repositories/miscdphxps17u22$ 
+davidho@dphxps17:~/repositories/miscdphxps17u22$ git config --list
+user.name=ashburndev
+user.email=ashburndev@gmail.com
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+remote.origin.url=git@github.com:ashburndev/miscdphxps17u22.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.main.remote=origin
+branch.main.merge=refs/heads/main
+davidho@dphxps17:~/repositories/miscdphxps17u22$ 
+davidho@dphxps17:~/repositories/miscdphxps17u22$ cd ~/railsprojects/wire6
+davidho@dphxps17:~/railsprojects/wire6$ 
+davidho@dphxps17:~/railsprojects/wire6$ git config --list
+user.name=ashburndev
+user.email=ashburndev@gmail.com
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+remote.origin.url=git@github.com:ashburndev/wire6.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.main.remote=origin
+branch.main.merge=refs/heads/main
+davidho@dphxps17:~/railsprojects/wire6$ 
+davidho@dphxps17:~/railsprojects/wire6$ 
+
+git log --pretty=format:"%h - %an, %ar : %s" -10
+git log --pretty=format:"%h - %an, %ad : %s" -10
+
+davidho@dphxps17:~/repositories/miscdphxps17u22$ 
+davidho@dphxps17:~/repositories/miscdphxps17u22$ git log --pretty=format:"%h - %an, %ad : %s"
+a3d86fb - fallsdave, Sun Jun 26 08:16:56 2022 -0400 : add stuff-20220626.txt
+c382eba - fallsdave, Sun Jun 26 08:01:57 2022 -0400 : changes to wire-table-names.rb
+8b0378c - ashburndev, Thu Jun 23 09:53:42 2022 -0400 : correction to es-gem-test4.rb
+51cff51 - ashburndev, Thu Jun 23 09:35:30 2022 -0400 : add new es-gem-test4.rb
+f91635c - ashburndev, Tue Jun 21 06:38:16 2022 -0400 : add stuff files and elasticsearch ruby test code
+59cfed4 - ashburndev, Fri Jun 10 08:10:23 2022 -0400 : add file stuff-20220610.txt
+d523a3b - ashburndev, Thu Jun 9 08:56:05 2022 -0400 : add files wire.html and stuff-20220609.txt
+e6a4dcc - ashburndev, Wed Jun 8 07:04:12 2022 -0400 : add file stuff-20220608.txt
+5629dcd - ashburndev, Tue Jun 7 07:14:15 2022 -0400 : add stuff-20220607.txt
+e545264 - ashburndev, Mon Jun 6 05:00:57 2022 -0400 : add four stuff.txt files
+85174fa - ashburndev, Thu Jun 2 07:41:23 2022 -0400 : add two stuff*txt files
+c98eff0 - ashburndev, Tue May 31 04:51:40 2022 -0400 : add/modify stuff*.txt files
+3eed1e1 - ashburndev, Thu May 26 09:04:57 2022 -0400 : added stuff-20220526.txt
+0789529 - ashburndev, Wed May 25 07:41:49 2022 -0400 : updated stuff-20220525.txt
+ac1c73a - ashburndev, Wed May 25 07:08:52 2022 -0400 : first commit
+dc3ef67 - ashburndev, Wed May 25 06:24:50 2022 -0400 : Initial commit
+davidho@dphxps17:~/repositories/miscdphxps17u22$ 
+davidho@dphxps17:~/repositories/miscdphxps17u22$ 
+
