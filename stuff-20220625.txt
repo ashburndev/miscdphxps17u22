@@ -1,0 +1,622 @@
+Sat Jun 25 09:35:27 AM EDT 2022
+
+davidho@dphxps17:~$ date
+Sat Jun 25 09:35:04 AM EDT 2022
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date > stuff-20220625.txt
+davidho@dphxps17:~$ code   stuff-20220625.txt
+davidho@dphxps17:~$ 
+
+rbenv install -l
+ruby --version
+rails --version
+yarn --version
+nvm --version
+node --version
+npm --version
+
+2.6.10
+2.7.6
+3.0.4
+3.1.2
+jruby-9.3.4.0
+mruby-3.0.0
+rbx-5.0
+truffleruby-22.1.0
+truffleruby+graalvm-22.1.0
+
+Only latest stable releases for each Ruby implementation are shown.
+Use 'rbenv install --list-all / -L' to show all local versions.
+ruby 3.1.2p20 (2022-04-12 revision 4491bb740a) [x86_64-linux]
+Rails 7.0.3
+1.22.19
+0.39.1
+v18.2.0
+8.9.0
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ uname -a
+Linux dphxps17 5.15.0-39-generic #42-Ubuntu SMP Thu Jun 9 23:42:32 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ mysql --version
+mysql  Ver 8.0.29-0ubuntu0.22.04.2 for Linux on x86_64 ((Ubuntu))
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ cd ~/railsprojects/
+davidho@dphxps17:~/railsprojects$ ls
+depot  depot2  myrailsone  wire2  wire3  wire4  wire5
+davidho@dphxps17:~/railsprojects$ ls -latr
+total 36
+drwxrwxr-x 14 davidho davidho 4096 May 26 17:04 myrailsone
+drwxrwxr-x 14 davidho davidho 4096 May 31 03:29 depot
+drwxrwxr-x 14 davidho davidho 4096 May 31 04:13 depot2
+drwxrwxr-x 14 davidho davidho 4096 Jun  2 07:29 wire2
+drwxrwxr-x 14 davidho davidho 4096 Jun  2 07:31 wire3
+drwxrwxr-x 14 davidho davidho 4096 Jun  5 15:06 wire4
+drwxrwxr-x  9 davidho davidho 4096 Jun 10 06:15 .
+drwxrwxr-x 14 davidho davidho 4096 Jun 10 06:15 wire5
+drwxr-x--- 33 davidho davidho 4096 Jun 25 09:37 ..
+davidho@dphxps17:~/railsprojects$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+DROP DATABASE IF EXISTS wire6_development;
+CREATE DATABASE wire6_development;
+CREATE USER 'railsuser'@'localhost' IDENTIFIED BY 'railsuserpw';
+GRANT ALL PRIVILEGES ON wire6_development.* TO 'railsuser'@'localhost' WITH GRANT OPTION;
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+cd ~/railsprojects
+rm -rf wire6
+rails new wire6 --css tailwind -d mysql
+cd wire6
+vi ./config/database.yml
+
+bin/rails generate model Alert
+bin/rails generate model AnalysisType
+bin/rails generate model AutolinkExclusion
+bin/rails generate model BaseValue
+bin/rails generate model ClassificationDetail
+bin/rails generate model CommentSubscription
+bin/rails generate model Compartment
+bin/rails generate model ConceptDocument
+bin/rails generate model Concept
+bin/rails generate model ControlOrg
+bin/rails generate model DelayedJob
+bin/rails generate model DocumentComponent
+bin/rails generate model DocumentDomesticRegion
+bin/rails generate model DocumentNotif
+bin/rails generate model DocumentRevision
+bin/rails generate model DocumentView
+bin/rails generate model DocumentRegion
+bin/rails generate model Feature
+bin/rails generate model Feedback
+bin/rails generate model FiledropNgUploadedFile
+bin/rails generate model Filing
+bin/rails generate model Folder
+bin/rails generate model Guide
+bin/rails generate model Image
+bin/rails generate model IngestFix
+bin/rails generate model LeadershipDetail
+bin/rails generate model LegacySearch
+bin/rails generate model LockEvent
+bin/rails generate model MediaFile
+bin/rails generate model MergeDetail
+bin/rails generate model Navigation
+bin/rails generate model NtkRequestComment
+bin/rails generate model NtkRequest
+bin/rails generate model OsintUser
+bin/rails generate model Permission
+bin/rails generate model Portlet
+bin/rails generate model ProducingOffice
+bin/rails generate model ProductType
+bin/rails generate model RecommendedFeed
+bin/rails generate model RelatedDocument
+bin/rails generate model ReportingType
+bin/rails generate model Restriction
+bin/rails generate model Role
+bin/rails generate model Search
+bin/rails generate model Select
+bin/rails generate model Setting
+bin/rails generate model Share
+bin/rails generate model SourceCitation
+bin/rails generate model Tagging
+bin/rails generate model Tag
+bin/rails generate model TypeAhead
+bin/rails generate model VisualDisplayTarget
+bin/rails generate model Wire
+
+
+bin/rails generate model Document title:string{4000} summary:string{4000} doc_num:string{100} image_caption:string{1000} type:string{20} has_attachments:boolean worldwide:boolean
+
+bin/rails generate model User first_name:string last_name:string email:string organization:string dn:string{500}
+
+bin/rails generate model Binary data:binary{4294967295} searchable:boolean document:references
+
+bin/rails generate model Comment body:text classification:string{255} classification_xml:string{4000} document:references user:references
+
+bin/rails generate model NonStateActor name:string{4000}
+
+bin/rails generate model DocumentNonStateActor document:references non_state_actor:references
+
+bin/rails generate model DocumentCountry code:string{5} document:references
+
+bin/rails generate model DocumentTopic code:string{5} document:references
+
+bin/rails generate model CarrierWaveFile data:binary identifier:string original_filename:string content_type:string extension:string size:bigint 
+
+bin/rails generate model DigestedData data:binary{4294967295} md5:string
+
+bin/rails generate model FiledropNgUploadedFileBinary data:binary{4294967295} part:bigint
+
+bin/rails generate model PdfBook data:binary{4294967295} state:string{30} user:references
+
+bin/rails generate model VisualMediaType name:string value:string
+
+bin/rails generate model Attachment file_name:string title:string visible:boolean position:bigint file_size:bigint caption:string{1000} type:string document:references binary:references
+
+bin/rails generate model Author foo:string bar:string baz:string
+
+bin/rails generate model DocumentAuthor document:references author:references
+
+bin/rails generate model Export type:string{15} name:string state:string{15} log:text document_ids_csv:text{16777215} chunks:integer expired_at:datetime source:string progress:integer total:integer context:text attempts:integer user:references
+
+bin/rails generate model ExportChunk chunk:integer data:binary{4294967295} size:integer volume:integer export:references
+
+bin/rails generate model Session session_id:string{40} data:text
+
+bin/rails generate model OidcUser identifier:string session_id:string oidc_access_token:text oidc_access_token_expires:timestamp oidc_hash:text 
+
+bin/rails generate model AuthenticationFailure ip:string{20} session_identifier:string{40} user_identifier:string certificate:string{4000} uri:string{2000} error_messages:string{4000} user_attributes_yml:text user:references
+
+bin/rails db:migrate
+
+mysqldump -u root -p wire6_development > wire6-development-mysqldump-20220625.sql
+
+grep 'CREATE TABLE' wire6-development-mysqldump-20220625.sql | wc
+grep 'CREATE TABLE' wire6-development-mysqldump-20220625.sql
+grep 'CREATE TABLE' wire6-development-mysqldump-20220625.sql | cut -c 15-
+grep 'CREATE TABLE' wire6-development-mysqldump-20220625.sql | cut -c 15- | cut -d " " -f 1
+grep 'CREATE TABLE' wire6-development-mysqldump-20220625.sql | cut -c 15- | cut -d "\`" -f 1
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+DROP DATABASE IF EXISTS wire6_development;
+CREATE DATABASE wire6_development;
+GRANT ALL PRIVILEGES ON wire6_development.* TO 'railsuser'@'localhost' WITH GRANT OPTION;
+
+      invoke  active_record
+      create    db/migrate/20220625185747_create_carrier_wave_files.rb
+      create    app/models/carrier_wave_file.rb
+      invoke    test_unit
+      create      test/models/carrier_wave_file_test.rb
+      create      test/fixtures/carrier_wave_files.yml
+[WARNING] The model name 'DigestedData' was recognized as a plural, using the singular 'DigestedDatum' instead. Override with --force-plural or setup custom inflection rules for this noun before running the generator.
+      invoke  active_record
+      create    db/migrate/20220625185748_create_digested_data.rb
+      create    app/models/digested_datum.rb
+      invoke    test_unit
+      create      test/models/digested_datum_test.rb
+      create      test/fixtures/digested_data.yml
+      invoke  active_record
+
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ cd railsprojects/
+davidho@dphxps17:~/railsprojects$ ls -latr
+total 40
+drwxrwxr-x 14 davidho davidho 4096 May 26 17:04 myrailsone
+drwxrwxr-x 14 davidho davidho 4096 May 31 03:29 depot
+drwxrwxr-x 14 davidho davidho 4096 May 31 04:13 depot2
+drwxrwxr-x 14 davidho davidho 4096 Jun  2 07:29 wire2
+drwxrwxr-x 14 davidho davidho 4096 Jun  2 07:31 wire3
+drwxrwxr-x 14 davidho davidho 4096 Jun  5 15:06 wire4
+drwxrwxr-x 14 davidho davidho 4096 Jun 10 06:15 wire5
+drwxr-x--- 33 davidho davidho 4096 Jun 25 14:54 ..
+drwxrwxr-x 10 davidho davidho 4096 Jun 25 14:54 .
+drwxrwxr-x 14 davidho davidho 4096 Jun 25 15:00 wire6
+davidho@dphxps17:~/railsprojects$ 
+davidho@dphxps17:~/railsprojects$ cd wire6
+davidho@dphxps17:~/railsprojects/wire6$ ls -latr
+total 156
+-rw-rw-r--  1 davidho davidho     6 Jun 25 14:54 .ruby-version
+-rw-rw-r--  1 davidho davidho   374 Jun 25 14:54 README.md
+-rw-rw-r--  1 davidho davidho   227 Jun 25 14:54 Rakefile
+-rw-rw-r--  1 davidho davidho   246 Jun 25 14:54 .gitattributes
+-rw-rw-r--  1 davidho davidho  2356 Jun 25 14:54 Gemfile
+-rw-rw-r--  1 davidho davidho   160 Jun 25 14:54 config.ru
+drwxrwxr-x 10 davidho davidho  4096 Jun 25 14:54 ..
+drwxrwxr-x 10 davidho davidho  4096 Jun 25 14:54 test
+drwxrwxr-x  2 davidho davidho  4096 Jun 25 14:54 storage
+drwxrwxr-x  2 davidho davidho  4096 Jun 25 14:54 public
+drwxrwxr-x  4 davidho davidho  4096 Jun 25 14:54 lib
+-rw-rw-r--  1 davidho davidho  5593 Jun 25 14:54 Gemfile.lock
+drwxrwxr-x  2 davidho davidho  4096 Jun 25 14:55 log
+drwxrwxr-x  5 davidho davidho  4096 Jun 25 14:55 tmp
+drwxrwxr-x  3 davidho davidho  4096 Jun 25 14:55 vendor
+drwxrwxr-x 11 davidho davidho  4096 Jun 25 14:55 app
+-rw-rw-r--  1 davidho davidho    63 Jun 25 14:55 Procfile.dev
+-rw-rw-r--  1 davidho davidho   757 Jun 25 14:55 .gitignore
+drwxr-xr-x  2 davidho davidho  4096 Jun 25 14:55 bin
+drwxrwxr-x  5 davidho davidho  4096 Jun 25 14:56 config
+drwxrwxr-x  3 davidho davidho  4096 Jun 25 15:00 db
+drwxrwxr-x 14 davidho davidho  4096 Jun 25 15:00 .
+-rw-rw-r--  1 davidho davidho 61362 Jun 25 15:00 wire6-development-mysqldump-20220625.sql
+drwxrwxr-x  7 davidho davidho  4096 Jun 25 15:02 .git
+davidho@dphxps17:~/railsprojects/wire6$ 
+davidho@dphxps17:~/railsprojects/wire6$ tree -d -L 2
+.
+├── app
+│   ├── assets
+│   ├── channels
+│   ├── controllers
+│   ├── helpers
+│   ├── javascript
+│   ├── jobs
+│   ├── mailers
+│   ├── models
+│   └── views
+├── bin
+├── config
+│   ├── environments
+│   ├── initializers
+│   └── locales
+├── db
+│   └── migrate
+├── lib
+│   ├── assets
+│   └── tasks
+├── log
+├── public
+├── storage
+├── test
+│   ├── channels
+│   ├── controllers
+│   ├── fixtures
+│   ├── helpers
+│   ├── integration
+│   ├── mailers
+│   ├── models
+│   └── system
+├── tmp
+│   ├── cache
+│   ├── pids
+│   └── storage
+└── vendor
+    └── javascript
+
+38 directories
+davidho@dphxps17:~/railsprojects/wire6$ 
+davidho@dphxps17:~/railsprojects/wire6$ tree -d -L 3
+.
+├── app
+│   ├── assets
+│   │   ├── builds
+│   │   ├── config
+│   │   ├── images
+│   │   └── stylesheets
+│   ├── channels
+│   │   └── application_cable
+│   ├── controllers
+│   │   └── concerns
+│   ├── helpers
+│   ├── javascript
+│   │   └── controllers
+│   ├── jobs
+│   ├── mailers
+│   ├── models
+│   │   └── concerns
+│   └── views
+│       └── layouts
+├── bin
+├── config
+│   ├── environments
+│   ├── initializers
+│   └── locales
+├── db
+│   └── migrate
+├── lib
+│   ├── assets
+│   └── tasks
+├── log
+├── public
+├── storage
+├── test
+│   ├── channels
+│   │   └── application_cable
+│   ├── controllers
+│   ├── fixtures
+│   │   └── files
+│   ├── helpers
+│   ├── integration
+│   ├── mailers
+│   ├── models
+│   └── system
+├── tmp
+│   ├── cache
+│   │   ├── assets
+│   │   └── bootsnap
+│   ├── pids
+│   └── storage
+└── vendor
+    └── javascript
+
+51 directories
+davidho@dphxps17:~/railsprojects/wire6$ 
+davidho@dphxps17:~/railsprojects/wire6$ ls -la app/models/
+total 312
+drwxrwxr-x  3 davidho davidho 4096 Jun 25 14:57 .
+drwxrwxr-x 11 davidho davidho 4096 Jun 25 14:55 ..
+-rw-rw-r--  1 davidho davidho   36 Jun 25 14:56 alert.rb
+-rw-rw-r--  1 davidho davidho   43 Jun 25 14:56 analysis_type.rb
+-rw-rw-r--  1 davidho davidho   74 Jun 25 14:54 application_record.rb
+-rw-rw-r--  1 davidho davidho   85 Jun 25 14:57 attachment.rb
+-rw-rw-r--  1 davidho davidho   71 Jun 25 14:57 authentication_failure.rb
+-rw-rw-r--  1 davidho davidho   37 Jun 25 14:57 author.rb
+-rw-rw-r--  1 davidho davidho   48 Jun 25 14:56 autolink_exclusion.rb
+-rw-rw-r--  1 davidho davidho   40 Jun 25 14:56 base_value.rb
+-rw-rw-r--  1 davidho davidho   60 Jun 25 14:57 binary.rb
+-rw-rw-r--  1 davidho davidho   46 Jun 25 14:57 carrier_wave_file.rb
+-rw-rw-r--  1 davidho davidho   51 Jun 25 14:56 classification_detail.rb
+-rw-rw-r--  1 davidho davidho   80 Jun 25 14:57 comment.rb
+-rw-rw-r--  1 davidho davidho   50 Jun 25 14:56 comment_subscription.rb
+-rw-rw-r--  1 davidho davidho   42 Jun 25 14:56 compartment.rb
+-rw-rw-r--  1 davidho davidho   46 Jun 25 14:56 concept_document.rb
+-rw-rw-r--  1 davidho davidho   38 Jun 25 14:56 concept.rb
+drwxrwxr-x  2 davidho davidho 4096 Jun 25 14:54 concerns
+-rw-rw-r--  1 davidho davidho   41 Jun 25 14:56 control_org.rb
+-rw-rw-r--  1 davidho davidho   41 Jun 25 14:56 delayed_job.rb
+-rw-rw-r--  1 davidho davidho   44 Jun 25 14:57 digested_datum.rb
+-rw-rw-r--  1 davidho davidho   89 Jun 25 14:57 document_author.rb
+-rw-rw-r--  1 davidho davidho   48 Jun 25 14:56 document_component.rb
+-rw-rw-r--  1 davidho davidho   69 Jun 25 14:57 document_country.rb
+-rw-rw-r--  1 davidho davidho   53 Jun 25 14:56 document_domestic_region.rb
+-rw-rw-r--  1 davidho davidho  105 Jun 25 14:57 document_non_state_actor.rb
+-rw-rw-r--  1 davidho davidho   44 Jun 25 14:56 document_notif.rb
+-rw-rw-r--  1 davidho davidho   39 Jun 25 14:57 document.rb
+-rw-rw-r--  1 davidho davidho   45 Jun 25 14:57 document_region.rb
+-rw-rw-r--  1 davidho davidho   47 Jun 25 14:57 document_revision.rb
+-rw-rw-r--  1 davidho davidho   67 Jun 25 14:57 document_topic.rb
+-rw-rw-r--  1 davidho davidho   43 Jun 25 14:57 document_view.rb
+-rw-rw-r--  1 davidho davidho   63 Jun 25 14:57 export_chunk.rb
+-rw-rw-r--  1 davidho davidho   56 Jun 25 14:57 export.rb
+-rw-rw-r--  1 davidho davidho   38 Jun 25 14:57 feature.rb
+-rw-rw-r--  1 davidho davidho   39 Jun 25 14:57 feedback.rb
+-rw-rw-r--  1 davidho davidho   59 Jun 25 14:57 filedrop_ng_uploaded_file_binary.rb
+-rw-rw-r--  1 davidho davidho   53 Jun 25 14:57 filedrop_ng_uploaded_file.rb
+-rw-rw-r--  1 davidho davidho   37 Jun 25 14:57 filing.rb
+-rw-rw-r--  1 davidho davidho   37 Jun 25 14:57 folder.rb
+-rw-rw-r--  1 davidho davidho   36 Jun 25 14:57 guide.rb
+-rw-rw-r--  1 davidho davidho   36 Jun 25 14:57 image.rb
+-rw-rw-r--  1 davidho davidho   40 Jun 25 14:57 ingest_fix.rb
+-rw-rw-r--  1 davidho davidho   47 Jun 25 14:57 leadership_detail.rb
+-rw-rw-r--  1 davidho davidho   43 Jun 25 14:57 legacy_search.rb
+-rw-rw-r--  1 davidho davidho   40 Jun 25 14:57 lock_event.rb
+-rw-rw-r--  1 davidho davidho   40 Jun 25 14:57 media_file.rb
+-rw-rw-r--  1 davidho davidho   42 Jun 25 14:57 merge_detail.rb
+-rw-rw-r--  1 davidho davidho   41 Jun 25 14:57 navigation.rb
+-rw-rw-r--  1 davidho davidho   44 Jun 25 14:57 non_state_actor.rb
+-rw-rw-r--  1 davidho davidho   48 Jun 25 14:57 ntk_request_comment.rb
+-rw-rw-r--  1 davidho davidho   41 Jun 25 14:57 ntk_request.rb
+-rw-rw-r--  1 davidho davidho   39 Jun 25 14:57 oidc_user.rb
+-rw-rw-r--  1 davidho davidho   40 Jun 25 14:57 osint_user.rb
+-rw-rw-r--  1 davidho davidho   57 Jun 25 14:57 pdf_book.rb
+-rw-rw-r--  1 davidho davidho   41 Jun 25 14:57 permission.rb
+-rw-rw-r--  1 davidho davidho   38 Jun 25 14:57 portlet.rb
+-rw-rw-r--  1 davidho davidho   46 Jun 25 14:57 producing_office.rb
+-rw-rw-r--  1 davidho davidho   42 Jun 25 14:57 product_type.rb
+-rw-rw-r--  1 davidho davidho   46 Jun 25 14:57 recommended_feed.rb
+-rw-rw-r--  1 davidho davidho   46 Jun 25 14:57 related_document.rb
+-rw-rw-r--  1 davidho davidho   44 Jun 25 14:57 reporting_type.rb
+-rw-rw-r--  1 davidho davidho   42 Jun 25 14:57 restriction.rb
+-rw-rw-r--  1 davidho davidho   35 Jun 25 14:57 role.rb
+-rw-rw-r--  1 davidho davidho   37 Jun 25 14:57 search.rb
+-rw-rw-r--  1 davidho davidho   37 Jun 25 14:57 select.rb
+-rw-rw-r--  1 davidho davidho   38 Jun 25 14:57 session.rb
+-rw-rw-r--  1 davidho davidho   38 Jun 25 14:57 setting.rb
+-rw-rw-r--  1 davidho davidho   36 Jun 25 14:57 share.rb
+-rw-rw-r--  1 davidho davidho   45 Jun 25 14:57 source_citation.rb
+-rw-rw-r--  1 davidho davidho   38 Jun 25 14:57 tagging.rb
+-rw-rw-r--  1 davidho davidho   34 Jun 25 14:57 tag.rb
+-rw-rw-r--  1 davidho davidho   40 Jun 25 14:57 type_ahead.rb
+-rw-rw-r--  1 davidho davidho   35 Jun 25 14:57 user.rb
+-rw-rw-r--  1 davidho davidho   50 Jun 25 14:57 visual_display_target.rb
+-rw-rw-r--  1 davidho davidho   46 Jun 25 14:57 visual_media_type.rb
+-rw-rw-r--  1 davidho davidho   35 Jun 25 14:57 wire.rb
+davidho@dphxps17:~/railsprojects/wire6$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
+Paste the text below, substituting in your GitHub email address.
+$ ssh-keygen -t ed25519 -C "your_email@example.com"
+
+Note: If you are using a legacy system that doesn't support the Ed25519 algorithm, use:
+$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+
+ssh-keygen -t ed25519 -C "ashburndev@gmail.com"
+ssh-keygen -t rsa -b 4096 -C "ashburndev@gmail.com"
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/.ssh$ 
+davidho@dphxps17:~/.ssh$ ls -latr
+total 32
+-rw-r--r--  1 davidho davidho  102 May 25 06:16 id_ed25519.pub
+-rw-------  1 davidho davidho  411 May 25 06:16 id_ed25519
+-rw-r--r--  1 davidho davidho  746 May 25 06:17 id_rsa.pub
+-rw-------  1 davidho davidho 3389 May 25 06:17 id_rsa
+-rw-r--r--  1 davidho davidho  142 May 25 07:00 known_hosts.old
+-rw-------  1 davidho davidho  806 May 25 07:04 known_hosts
+drwxrwxr-x  2 davidho davidho 4096 May 25 07:04 .
+drwxr-x--- 33 davidho davidho 4096 Jun 25 16:28 ..
+davidho@dphxps17:~/.ssh$ 
+davidho@dphxps17:~/.ssh$ mkdir backup
+davidho@dphxps17:~/.ssh$ 
+davidho@dphxps17:~/.ssh$ mkdir backup
+davidho@dphxps17:~/.ssh$ cp -p id_* backup
+davidho@dphxps17:~/.ssh$ cp -p known_* backup
+davidho@dphxps17:~/.ssh$ rm id_*
+davidho@dphxps17:~/.ssh$ 
+davidho@dphxps17:~/.ssh$ ls -latr
+total 36
+-rw-r--r--  1 davidho davidho  142 May 25 07:00 known_hosts.old
+-rw-------  1 davidho davidho  806 May 25 07:04 known_hosts
+drwxr-x--- 33 davidho davidho 4096 Jun 25 16:28 ..
+drwxrwxr-x  2 davidho davidho 4096 Jun 25 16:30 backup
+-rw-r--r--  1 davidho davidho  117 Jun 25 16:35 id_ed25519.pub  github label: ssh-key-dphxps17u22fd (fallsdave)
+-rw-------  1 davidho davidho  432 Jun 25 16:35 id_ed25519
+-rw-r--r--  1 davidho davidho  746 Jun 25 16:35 id_rsa.pub      github label: ssh-key-dphxps17u22ad (ashburndev)
+-rw-------  1 davidho davidho 3389 Jun 25 16:35 id_rsa
+drwxrwxr-x  3 davidho davidho 4096 Jun 25 16:35 .
+davidho@dphxps17:~/.ssh$ 
+davidho@dphxps17:~/.ssh$ git config --global --list
+user.name=ashburndev
+user.email=ashburndev@gmail.com
+davidho@dphxps17:~/.ssh$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+
+3 github accounts (with three different email accounts)
+
+david.holberton@gmail.com
+
+git config --global --edit
+git config --global --add user.name "ashburndev"
+git config --global --add user.email david.holberton@gmail.com
+git config --global --list
+
+ashburndev@gmail.com   ??? what is the email password ???
+b3@v3rd@m2oo1run
+ashburndev
+ssh-key-dphxps17u22
+SHA256:x96PfkaOYTH5eyc7f/glC8c0gcCHzLVzP9Zwurd34XE Added on May 25, 2022 Last used within the last week — Read/write 
+
+git config --global --edit
+git config --global --add user.name "ashburndev"
+git config --global --add user.email ashburndev@gmail.com
+git config --global --list
+
+david.holberton@fallstechnology.com
+9aup6zycyzvbfa2
+fallsdave
+ssh-key-dphxps17u22
+SHA256:x96PfkaOYTH5eyc7f/glC8c0gcCHzLVzP9Zwurd34XE Added on May 25, 2022 Last used within the last week — Read/write 
+
+git config --global --edit
+git config --global --add user.name "fallsdave"
+git config --global --add user.email david.holberton@fallstechnology.com
+git config --global --list
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+git remote add fallstech https://github.com/fallsdave/wire6.git
+git branch -M main
+git push -u fallstech main
+
+git remote -v
+git push origin
+
+git remote rm fallstech
+git remote -v
+git remote add fallstech git@github.com:fallsdave/wire6.git
+git branch -M main
+git push -u origin main
+
+davidho@dphxps17:~/railsprojects/wire6$ git config --list
+user.name=fallsdave
+user.email=david.holberton@fallstechnology.com
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+remote.origin.url=git@github.com:ashburndev/wire6.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.main.remote=origin
+branch.main.merge=refs/heads/main
+remote.fallstech.url=git@github.com:fallsdave/wire6.git
+remote.fallstech.fetch=+refs/heads/*:refs/remotes/fallstech/*
+davidho@dphxps17:~/railsprojects/wire6$ 
+davidho@dphxps17:~/railsprojects/wire6$ git config --global --list
+user.name=fallsdave
+user.email=david.holberton@fallstechnology.com
+davidho@dphxps17:~/railsprojects/wire6$ 
+davidho@dphxps17:~/railsprojects/wire6$ git config --global --list
+user.name=fallsdave
+user.email=david.holberton@fallstechnology.com
+davidho@dphxps17:~/railsprojects/wire6$ 
+davidho@dphxps17:~/railsprojects/wire6$ git config --list
+user.name=fallsdave
+user.email=david.holberton@fallstechnology.com
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+remote.origin.url=git@github.com:ashburndev/wire6.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.main.remote=origin
+branch.main.merge=refs/heads/main
+remote.fallstech.url=git@github.com:fallsdave/wire6.git
+remote.fallstech.fetch=+refs/heads/*:refs/remotes/fallstech/*
+davidho@dphxps17:~/railsprojects/wire6$ git remote -v
+fallstech	git@github.com:fallsdave/wire6.git (fetch)
+fallstech	git@github.com:fallsdave/wire6.git (push)
+origin	git@github.com:ashburndev/wire6.git (fetch)
+origin	git@github.com:ashburndev/wire6.git (push)
+davidho@dphxps17:~/railsprojects/wire6$ git push fallstech
+ERROR: Permission to fallsdave/wire6.git denied to ashburndev.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+davidho@dphxps17:~/railsprojects/wire6$ git push origin
+Everything up-to-date
+davidho@dphxps17:~/railsprojects/wire6$ 
+
+davidho@dphxps17:~/railsprojects/wire6$ git remote show
+fallstech
+origin
+davidho@dphxps17:~/railsprojects/wire6$ git remote show origin
+* remote origin
+  Fetch URL: git@github.com:ashburndev/wire6.git
+  Push  URL: git@github.com:ashburndev/wire6.git
+  HEAD branch: main
+  Remote branch:
+    main tracked
+  Local branch configured for 'git pull':
+    main merges with remote main
+  Local ref configured for 'git push':
+    main pushes to main (up to date)
+davidho@dphxps17:~/railsprojects/wire6$ git remote show fallstech
+* remote fallstech
+  Fetch URL: git@github.com:fallsdave/wire6.git
+  Push  URL: git@github.com:fallsdave/wire6.git
+  HEAD branch: (unknown)
+davidho@dphxps17:~/railsprojects/wire6$ 
+davidho@dphxps17:~/railsprojects/wire6$ git remote -v
+fallstech	git@github.com:fallsdave/wire6.git (fetch)
+fallstech	git@github.com:fallsdave/wire6.git (push)
+origin	git@github.com:ashburndev/wire6.git (fetch)
+origin	git@github.com:ashburndev/wire6.git (push)
+davidho@dphxps17:~/railsprojects/wire6$ 
+
+davidho@dphxps17:~/railsprojects/wire6$ 
+davidho@dphxps17:~/railsprojects/wire6$ git checkout -b master
+Switched to a new branch 'master'
+davidho@dphxps17:~/railsprojects/wire6$ git push -u fallstech master
+ERROR: Permission to fallsdave/wire6.git denied to ashburndev.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+davidho@dphxps17:~/railsprojects/wire6$ 
+
+
+
+
+
+
