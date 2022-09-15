@@ -1,0 +1,372 @@
+Thu Sep 15 06:56:07 AM EDT 2022
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date
+Thu Sep 15 06:55:43 AM EDT 2022
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date > stuff-20220915.txt
+davidho@dphxps17:~$
+
+https://dev.to/ayushn21/demystifying-cookie-security-in-rails-6-1j2f
+
+https://medium.com/rubyinside/a-deep-dive-into-csrf-protection-in-rails-19fa0a42c0ef
+
+https://stackoverflow.com/questions/26388243/disable-csrf-sitewide
+
+https://blog.saeloun.com/2019/10/10/rails-6-adds-support-for-multi-environment-credentials.html
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+/home/davidho/railsprojects/csrftest1/config/environments/development.rb
+
+  # Uncomment if you wish to allow Action Cable access from any origin.
+  # config.action_cable.disable_request_forgery_protection = true
+
+/home/davidho/railsprojects/csrftest1/config/environments/test.rb
+
+  # Disable request forgery protection in test environment.
+  config.action_controller.allow_forgery_protection = false
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+3 results - 2 files
+
+config/environments/development.rb:
+  68    # Uncomment if you wish to allow Action Cable access from any origin.
+  69:   # config.action_cable.disable_request_forgery_protection = true
+  70  end
+
+config/environments/test.rb:
+  32  
+  33:   # Disable request forgery protection in test environment.
+  34:   config.action_controller.allow_forgery_protection = false
+  35  
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+cd /home/davidho/railsprojects
+rails new csrftest1
+rails new csrftest2
+cat csrftest1/config/master.key
+cat csrftest2/config/master.key
+ls -la /home/davidho/railsprojects/csrftest1/config/credentials.yml.enc
+ls -la /home/davidho/railsprojects/csrftest2/config/credentials.yml.enc
+
+cp -p /home/davidho/railsprojects/csrftest1/config/master.key ~
+cp -p /home/davidho/railsprojects/csrftest1/config/credentials.yml.enc ~
+
+rm    /home/davidho/railsprojects/csrftest1/config/master.key
+rm    /home/davidho/railsprojects/csrftest1/config/credentials.yml.enc
+
+cp -p /home/davidho/master.key          /home/davidho/railsprojects/csrftest1/config/
+cp -p /home/davidho/credentials.yml.enc /home/davidho/railsprojects/csrftest1/config/
+
+EDITOR=vi rails credentials:edit
+EDITOR='code --wait' rails credentials:edit
+
+# aws:
+#   access_key_id: 123
+#   secret_access_key: 345
+
+# Used as the base secret for all MessageVerifiers in Rails, including the one protecting cookies.
+secret_key_base: 5335884dc470c88caab16eb1d3c78c374cb4848ab817ade873112f01af03b8dd624bad358c9362680ea360717ac9a60265ffd5249c2f36b51cb5ad8fe431ec5c
+
+davidho@dphxps17:~/railsprojects/csrftest1$ 
+davidho@dphxps17:~/railsprojects/csrftest1$ EDITOR=vi rails credentials:edit
+Adding config/master.key to store the encryption key: 0c8ea9c52737c7f751a7f88dac1c0272
+
+Save this in a password manager your team can access.
+
+If you lose the key, no one, including you, can access anything encrypted with it.
+
+      create  config/master.key
+
+Couldn't decrypt config/credentials.yml.enc. Perhaps you passed the wrong key?
+davidho@dphxps17:~/railsprojects/csrftest1$ cp -p /home/davidho/master.key          /home/davidho/railsprojects/csrftest1/config/
+davidho@dphxps17:~/railsprojects/csrftest1$ EDITOR=vi rails credentials:edit
+File encrypted and saved.
+davidho@dphxps17:~/railsprojects/csrftest1$ 
+
+/tmp/54761.credentials.yml
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+http://localhost:3000/high_scores
+
+davidho@dphxps17:~$ cd ~/railsprojects/csrftest1
+davidho@dphxps17:~/railsprojects/csrftest1$ pwd -P
+/home/davidho/railsprojects/csrftest1
+
+davidho@dphxps17:~/railsprojects/csrftest1$ 
+davidho@dphxps17:~/railsprojects/csrftest1$ bin/rails about
+About your application's environment
+Rails version             7.0.4
+Ruby version              ruby 3.1.2p20 (2022-04-12 revision 4491bb740a) [x86_64-linux]
+RubyGems version          3.3.7
+Rack version              2.2.4
+Middleware                ActionDispatch::HostAuthorization, Rack::Sendfile, ActionDispatch::Static, ActionDispatch::Executor, ActionDispatch::ServerTiming, ActiveSupport::Cache::Strategy::LocalCache::Middleware, Rack::Runtime, Rack::MethodOverride, ActionDispatch::RequestId, ActionDispatch::RemoteIp, Sprockets::Rails::QuietAssets, Rails::Rack::Logger, ActionDispatch::ShowExceptions, WebConsole::Middleware, ActionDispatch::DebugExceptions, ActionDispatch::ActionableExceptions, ActionDispatch::Reloader, ActionDispatch::Callbacks, ActiveRecord::Migration::CheckPending, ActionDispatch::Cookies, ActionDispatch::Session::CookieStore, ActionDispatch::Flash, ActionDispatch::ContentSecurityPolicy::Middleware, ActionDispatch::PermissionsPolicy::Middleware, Rack::Head, Rack::ConditionalGet, Rack::ETag, Rack::TempfileReaper
+Application root          /home/davidho/railsprojects/csrftest1
+Environment               development
+Database adapter          sqlite3
+Database schema version   20220914153940
+davidho@dphxps17:~/railsprojects/csrftest1$ 
+
+davidho@dphxps17:~/railsprojects/csrftest1$ bin/rails secret
+de0e844b2f0ac88c3c6515ec13647dab1a3f495d78d5463a2034ad66c96021a5d2fe4ff93188785502d053d436649713ece0c4e97cfd3d9ab46268ad0ea58782
+davidho@dphxps17:~/railsprojects/csrftest1$ 
+davidho@dphxps17:~/railsprojects/csrftest1$ bin/rails secret
+a26b84ff87855b160420e81d6d17bb284c130c5b53c3f84a52b0a4f8a5b85519441c3d41b235ae61cd48b10eeeb995aee325377d0a16e042865ae9c0cc230d32
+davidho@dphxps17:~/railsprojects/csrftest1$ 
+davidho@dphxps17:~/railsprojects/csrftest1$ bin/rails secret
+b2871f57abbd616b3b11c35d48ca8b708ee877e1a3ffb4a75c030999267628f95dde2dbc16c7f1de958982760f43a1d43d05bfed3fd599cb8cc6820fa5b42040
+davidho@dphxps17:~/railsprojects/csrftest1$ 
+davidho@dphxps17:~/railsprojects/csrftest1$ rake stats
++----------------------+--------+--------+---------+---------+-----+-------+
+| Name                 |  Lines |    LOC | Classes | Methods | M/C | LOC/M |
++----------------------+--------+--------+---------+---------+-----+-------+
+| Controllers          |     72 |     52 |       2 |       9 |   4 |     3 |
+| Helpers              |      4 |      4 |       0 |       0 |   0 |     0 |
+| Jobs                 |      7 |      2 |       1 |       0 |   0 |     0 |
+| Models               |      5 |      5 |       2 |       0 |   0 |     0 |
+| Mailers              |      4 |      4 |       1 |       0 |   0 |     0 |
+| Channels             |      8 |      8 |       2 |       0 |   0 |     0 |
+| Views                |    112 |     91 |       0 |       0 |   0 |     0 |
+| Stylesheets          |     15 |     15 |       0 |       0 |   0 |     0 |
+| JavaScript           |     30 |     16 |       0 |       0 |   0 |     0 |
+| Libraries            |      0 |      0 |       0 |       0 |   0 |     0 |
+| Controller tests     |     48 |     38 |       1 |       7 |   7 |     3 |
+| Helper tests         |      0 |      0 |       0 |       0 |   0 |     0 |
+| Model tests          |      7 |      3 |       1 |       0 |   0 |     0 |
+| Mailer tests         |      0 |      0 |       0 |       0 |   0 |     0 |
+| Channel tests        |     11 |      3 |       1 |       0 |   0 |     0 |
+| Integration tests    |      0 |      0 |       0 |       0 |   0 |     0 |
+| System tests         |     43 |     33 |       1 |       4 |   4 |     6 |
++----------------------+--------+--------+---------+---------+-----+-------+
+| Total                |    366 |    274 |      12 |      20 |   1 |    11 |
++----------------------+--------+--------+---------+---------+-----+-------+
+  Code LOC: 197     Test LOC: 77     Code to Test Ratio: 1:0.4
+
+davidho@dphxps17:~/railsprojects/csrftest1$ 
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+http://localhost:3000/high_scores/new
+
+
+GET  http://localhost:3000/high_scores/new
+
+Response Headers
+
+HTTP/1.1 200 OK
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 0
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Link: </assets/application-e0cf9d8fcb18bf7f909d8d91a5e78499f82ac29523d475bf3a9ab265d5e2b451.css>; rel=preload; as=style; nopush,</assets/es-module-shims.min-d89e73202ec09dede55fb74115af9c5f9f2bb965433de1c2446e1faa6dac2470.js>; rel=preload; as=script; nopush
+Content-Type: text/html; charset=utf-8
+Vary: Accept
+ETag: W/"1fa5040eaba8ed7f54d3225ae00f26ca"
+Cache-Control: max-age=0, private, must-revalidate
+Set-Cookie: _csrftest1_session=rLEMg1mp%2BGJryFBxYbA%2B5FQCp%2BfnHhcFGP%2FTSWHb2ym8tR7xNc2HBOITS7qUArcF2U3m97OKhexl7uNLBjEgjGgL7nczFfKgaA8xy%2Bk3A6tj6VpolUKM9MWgrRwJrpDT51Y25Ua11H4gElkO8gU5TTMTWIc%2FdHfFCsYCSN0BTraLI2E5eDt%2BgC2HQA6YJqjqGnBVLwLrvVuGwuO8gQHNisRBCBpZWu%2F%2F8CPkcYHtLUnjsLPYV9CtR4EKcMX4JVI059tnytpNdbDCM%2FcaZNFchFZ4sI8k%2BEE9%2FWE%3D--CyQA3vuTv7gz31Md--Lte7EIyc5EbOIfiHrogv7Q%3D%3D; path=/; HttpOnly; SameSite=Lax
+X-Request-Id: 27b01288-116a-48cc-8a55-321a73ea6c65
+X-Runtime: 0.007671
+Server-Timing: start_processing.action_controller;dur=0.07, render_partial.action_view;dur=2.05, render_template.action_view;dur=2.81, render_layout.action_view;dur=4.99, process_action.action_controller;dur=5.70
+Transfer-Encoding: chunked
+
+Request Headers
+
+GET /high_scores/new HTTP/1.1
+Host: localhost:3000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:104.0) Gecko/20100101 Firefox/104.0
+Accept: text/html, application/xhtml+xml
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Referer: http://localhost:3000/high_scores
+Connection: keep-alive
+Cookie: _csrftest1_session=1mByaXor7sx1DjtfNFgawQQ3QD6%2FqR5Fim2WZR4ElYl%2FC1cJzBhDyBRHUEIKtBlbu1sCN%2FFhqdRWvvxfbpyW7bjlvshBo2ZaxuAwUeveQwfpVtttqLMw%2FpdPxDQdusFh2OeiD%2BkB1EF28AZIrzGXU2hXDLpH2PLC3Jpx%2FuA3lLnkK3mcNcL4c7Y8yLb8h8XSbitNn45L8MUuX3VHfzAjjDsxiHcaFBy3EqfkqytVePkhNwDkZcJSZMwVRhMiJp9FRtPYqdDbEk7iIRJhRuouoRcVeuJ%2BqRKxjcw%3D--flzlnpwja7Txp8lN--JpGIsIo9hAWE8AUoPXUWhA%3D%3D
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+If-None-Match: W/"1af37f971ac1d9f13e6cc78bf994594c"
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+http://localhost:3000/high_scores
+
+POST  http://localhost:3000/high_scores
+
+Response Headers
+
+HTTP/1.1 302 Found
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 0
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: text/html; charset=utf-8
+Location: http://localhost:3000/high_scores/3
+Cache-Control: no-cache
+Set-Cookie: _csrftest1_session=nyngACregfJABWnTmMDPKSMw%2B8D1SulSeDUXCJIkb%2BaM9Iw42pyb8mdTK58NCfCeMH8l4otNUMsMWCnCxW%2FEVrsaPqLyG4nvzrk86af%2B4OGK6d%2FXef53OkB0zg%2BFDS9DB6LaDNUMQ7m1fm6dBhh1P1ZKn7TqcqKUwAHR91HujMBo8%2F318umesMjRHqlc%2FbpdBiJ4Hz7pDtAvB58K%2BPwIUAQe6hsXS4DZcXj1fcWV6l5bULl205IedlfnWf9DD8g7pBpxqKprxjA6ZnGOTzIFjeySZy92oNtjM4cLbwvZLXLL%2FX0x6GTw47fk8nDbilGNfm7ImZTEphDzE9ep%2BFPVSZaE1Ob0dlrTa1XcAXhnw9hY%2F7Rs5S1jmPQAPJvKVPuU9DUozw75WFDsLtsBQYCwlzbIa1i1aRHqvYJ8ug%2Biam3eRtlGWiE%3D--5c8b3O5cIb09Oo1V--6XPlZUsG21VxnYYwgqyYPw%3D%3D; path=/; HttpOnly; SameSite=Lax
+X-Request-Id: cd6a6a24-d22e-47f3-ac58-65a7a14dc782
+X-Runtime: 0.034830
+Server-Timing: start_processing.action_controller;dur=0.07, sql.active_record;dur=29.14, redirect_to.action_controller;dur=0.85, process_action.action_controller;dur=32.38
+Transfer-Encoding: chunked
+
+Request Headers
+
+POST /high_scores HTTP/1.1
+Host: localhost:3000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:104.0) Gecko/20100101 Firefox/104.0
+Accept: text/vnd.turbo-stream.html, text/html, application/xhtml+xml
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Referer: http://localhost:3000/high_scores/new
+X-CSRF-Token: DHdp4zfD5LC8_PDlRGhNT4CrPecHiIHH6orpH-_um4r3Xa5DQvKcARtKfWN0p5vlkb4ZTN_OJed4r8e97hk5Pg
+Content-Type: application/x-www-form-urlencoded;charset=UTF-8
+Content-Length: 186
+Origin: http://localhost:3000
+Connection: keep-alive
+Cookie: _csrftest1_session=rLEMg1mp%2BGJryFBxYbA%2B5FQCp%2BfnHhcFGP%2FTSWHb2ym8tR7xNc2HBOITS7qUArcF2U3m97OKhexl7uNLBjEgjGgL7nczFfKgaA8xy%2Bk3A6tj6VpolUKM9MWgrRwJrpDT51Y25Ua11H4gElkO8gU5TTMTWIc%2FdHfFCsYCSN0BTraLI2E5eDt%2BgC2HQA6YJqjqGnBVLwLrvVuGwuO8gQHNisRBCBpZWu%2F%2F8CPkcYHtLUnjsLPYV9CtR4EKcMX4JVI059tnytpNdbDCM%2FcaZNFchFZ4sI8k%2BEE9%2FWE%3D--CyQA3vuTv7gz31Md--Lte7EIyc5EbOIfiHrogv7Q%3D%3D
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Csrftest1</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="csrf-param" content="authenticity_token" />
+    <meta name="csrf-token" content="93p36a0Mh0sIZyaeHb6GRfoFlxlLkMhYjSULss5HGGMMULBJ2D3_-q_RqxgtcVDv6xCzspPWbHgfACUQz7C61w" />
+
+    <link rel="stylesheet" href="/assets/application-e0cf9d8fcb18bf7f909d8d91a5e78499f82ac29523d475bf3a9ab265d5e2b451.css" data-turbo-track="reload" />
+    <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-37f365cbecf1fa2810a8303f4b6571676fa1f9c56c248528bc14ddb857531b95.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-e5023178542f05fc063cd1dc5865457259cc01f3fba76a28454060d33de6f429.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-b8a9738499c7a8362910cd545375417370d72a9776fb4e766df7671484e2beb7.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc59770fb1654500044afd3f5f6d7d00800e5be36746d55b94a2963a7a228aa.js",
+    "controllers/application": "/assets/controllers/application-368d98631bccbf2349e0d4f8269afb3fe9625118341966de054759d96ea86c7e.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-549135e8e7c683a538c3d6d517339ba470fcfb79d62f738a0a089ba41851a554.js",
+    "controllers": "/assets/controllers/index-2db729dddcc5b979110e98de4b6720f83f91a123172e87281d5a58410fc43806.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-37f365cbecf1fa2810a8303f4b6571676fa1f9c56c248528bc14ddb857531b95.js">
+<link rel="modulepreload" href="/assets/turbo.min-e5023178542f05fc063cd1dc5865457259cc01f3fba76a28454060d33de6f429.js">
+<link rel="modulepreload" href="/assets/stimulus.min-b8a9738499c7a8362910cd545375417370d72a9776fb4e766df7671484e2beb7.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc59770fb1654500044afd3f5f6d7d00800e5be36746d55b94a2963a7a228aa.js">
+<script src="/assets/es-module-shims.min-d89e73202ec09dede55fb74115af9c5f9f2bb965433de1c2446e1faa6dac2470.js" async="async" data-turbo-track="reload"></script>
+<script type="module">import "application"</script>
+  </head>
+
+  <body>
+    <h1>New high score</h1>
+
+<form action="/high_scores" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="VxZJWCSLJ--N_XSB11EKK4jXe9jHf8EEfA7-gdpN7h7OfYsa_59HYhg2cOw3BULj1dvzaiFIUUUOw8HfrUw0jg" autocomplete="off" />
+
+  <div>
+    <label style="display: block" for="high_score_game">Game</label>
+    <input type="text" name="high_score[game]" id="high_score_game" />
+  </div>
+
+  <div>
+    <label style="display: block" for="high_score_score">Score</label>
+    <input type="number" name="high_score[score]" id="high_score_score" />
+  </div>
+
+  <div>
+    <input type="submit" name="commit" value="Create High score" data-disable-with="Create High score" />
+  </div>
+</form>
+
+<br>
+
+<div>
+  <a href="/high_scores">Back to high scores</a>
+</div>
+
+  </body>
+</html>
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+GET  http://localhost:3000/high_scores/new
+
+HTTP/1.1 200 OK
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 0
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Link: </assets/application-e0cf9d8fcb18bf7f909d8d91a5e78499f82ac29523d475bf3a9ab265d5e2b451.css>; rel=preload; as=style; nopush,</assets/es-module-shims.min-d89e73202ec09dede55fb74115af9c5f9f2bb965433de1c2446e1faa6dac2470.js>; rel=preload; as=script; nopush
+Content-Type: text/html; charset=utf-8
+Vary: Accept
+ETag: W/"4d54b349f34def4790a2f19bab835150"
+Cache-Control: max-age=0, private, must-revalidate
+Set-Cookie: _csrftest1_session=vl8MPz4k5FcR%2FwtD92hAwxXT9eKSsJe006iymU9MKoLnPbLFHNmBmMQhUl4B%2Bls6rgHSdYcfrEyABBsQmk8LJ1Ke%2B0Pmqv0w%2FOArgPBL9Rm%2FNRVCNAPu8xMl6gEMNpLFv1yW2ujV0r%2B9O5eZjRycE0lu0nawncGBx%2F1M4cUAn7xwhgXSW%2Blhpr21TayQWPEd3McRBLN5H1%2BxlEDP2zf5j2qg5msLU6Il00oA0Vl7jSI32Bw49QR0C96caQslz92YJxV9wuC8vrv8CovOrVSkPU6iNR3WyFizRpg%3D--AEeMDPeeu2er9x%2Bj--BTEKX74oDKdbkxc6gjos8A%3D%3D; path=/; HttpOnly; SameSite=Lax
+X-Request-Id: c16c36ee-5fd5-429d-9b75-f947a6587927
+X-Runtime: 0.004783
+Server-Timing: start_processing.action_controller;dur=0.07, render_partial.action_view;dur=1.12, render_template.action_view;dur=1.24, render_layout.action_view;dur=2.58, process_action.action_controller;dur=3.13
+Transfer-Encoding: chunked
+
+GET /high_scores/new HTTP/1.1
+Host: localhost:3000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:104.0) Gecko/20100101 Firefox/104.0
+Accept: text/html, application/xhtml+xml
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Referer: http://localhost:3000/high_scores
+Connection: keep-alive
+Cookie: _csrftest1_session=tcK4w2YNyhdU0odynyfURijIIrJMV0WW7cCt6R3MxZOIlGYrGmTqSCGIQd%2B0dszt%2BP8QcbsANkEQuFfU3vOZg0ybjAi%2BlIoSYYo7cRpK020QkJcbg1Gasc96kEdJsqchSbC4bYSVKx39CAOwi7Rb038xMD%2B40qKdkkUyNsT4J1oSaMcigCiyLPjE4TXvjyZ%2F%2BdLJTq4dX2Wa5KaUXnPwGmSnf56einzYPxYnnKpZxlbfQV3B3T6xiUQWGRekzrTHkOKBTgQhI3hpBpiOBoC9D%2FdeBhWYKU4oFOA%3D--BsYyqGioIbtLas3n--1hBoHJxF6Slg6hnm007XuQ%3D%3D
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+If-None-Match: W/"1fa5040eaba8ed7f54d3225ae00f26ca"
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+POST  http://localhost:3000/high_scores
+
+HTTP/1.1 302 Found
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 0
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: text/html; charset=utf-8
+Location: http://localhost:3000/high_scores/4
+Cache-Control: no-cache
+Set-Cookie: _csrftest1_session=niX7mR1SKGSinxIsaVhTVoxJinSH5jG8VbDeREE9O2%2BGOZXavnb6oLRP2AtIS1C1ddJY4IC6GHKYW%2FdJZlam29H5l%2B4payxcdyy24n6ppvKEWICjzyt1Vx1T2RzMKaBv46w4EZwOnPQ92Lb6DxwGo3yCv%2F7OHjIWlmC%2FIgabwRVFNqoNQcGzGTFlJRogZgUcuZ20hdZQ%2BCoRSzGP4I19s5zRvQLMbqdeYFz9OrO7ioX9W6B%2FxXoahohzOYFypGCX65MLC00JIxMZwJsMJwUSa9W3GJfSfqbX6%2BQJyjy1C5x0YcUyAdF%2F2WCzaRCniMmUY3AUWMO487BYL4cIL6HSdU6aHkGsWEKBgPYm8huxe8fIat4YVN5kFwbRalht2PYt%2BhhnwZe0nJfu50Fb%2BZ5CtcYreYx%2F0MDLp39TdgRAx2tqbRhXpis%3D--tr%2BxUwvrvUZH15BN--8IwdYf28taZ410mhLmxEaQ%3D%3D; path=/; HttpOnly; SameSite=Lax
+X-Request-Id: 38c23d33-fe0a-4198-b25b-6aa7e3e21ef3
+X-Runtime: 0.039095
+Server-Timing: start_processing.action_controller;dur=0.06, sql.active_record;dur=34.86, redirect_to.action_controller;dur=0.30, process_action.action_controller;dur=36.83
+Transfer-Encoding: chunked
+
+POST /high_scores HTTP/1.1
+Host: localhost:3000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:104.0) Gecko/20100101 Firefox/104.0
+Accept: text/vnd.turbo-stream.html, text/html, application/xhtml+xml
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Referer: http://localhost:3000/high_scores/new
+X-CSRF-Token: tgZC3tfWpnKnrXvA97PPuyfUEQBa_bOyAS-l_bdIbEpNLIV-oufewwAb9kbHfBkRNsE1q4K7F5KTCotftr_O_g
+Content-Type: application/x-www-form-urlencoded;charset=UTF-8
+Content-Length: 188
+Origin: http://localhost:3000
+Connection: keep-alive
+Cookie: _csrftest1_session=K52CyZFSzBzwSvUrwJWxUKNaNDWKtGqBTWuWdmr%2F0Pq2gpQnFBCF6KX49dYyZMo%2Bt0vthTt85YluhwkR%2Bha%2FEAqsrN2wCPv%2BYSjT2P%2FZBeeJgzP0GxJ9Za%2FK%2FXAYroqwrQJidlpalaywB6%2BAfj0Kt7f4Agepuwt3HJ2aIgT2dYkCIFAget13MVBxhw2UKpcAat681QNzgqCsODAVhrS3o5xLrvKt8K2RmJg3abvqSlJLTxYdyl6fs7NtWHRxHZOBcPiXM4PHEvJPL%2B%2BNnlDKPVtCyKn6C7WfARE%3D--F8U44AHMOeFoU1dw--BsuLSbfFxX%2BIS9P99BoMWg%3D%3D
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+

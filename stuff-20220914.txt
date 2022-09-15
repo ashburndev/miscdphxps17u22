@@ -1,0 +1,514 @@
+Wed Sep 14 09:44:23 AM EDT 2022
+
+davidho@dphxps17:~$ date
+Wed Sep 14 09:44:02 AM EDT 2022
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date > stuff-20220914.txt
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:/etc$ neofetch --off
+davidho@dphxps17 
+---------------- 
+OS: Ubuntu 22.04.1 LTS x86_64 
+Host: XPS 17 9710 
+Kernel: 5.15.0-46-generic 
+Uptime: 42 mins 
+Packages: 1942 (dpkg), 10 (snap) 
+Shell: bash 5.1.16 
+Resolution: 3840x2400 
+DE: GNOME 42.2 
+WM: Mutter 
+WM Theme: Adwaita 
+Theme: Yaru [GTK2/3] 
+Icons: Yaru [GTK2/3] 
+Terminal: gnome-terminal 
+CPU: 11th Gen Intel i7-11800H (16) @ 4.600GHz 
+GPU: Intel TigerLake-H GT1 [UHD Graphics] 
+GPU: NVIDIA GeForce RTX 3060 Mobile / Max-Q 
+Memory: 4584MiB / 31827MiB 
+
+davidho@dphxps17:/etc$ 
+davidho@dphxps17:/etc$ pwd -P
+/etc
+davidho@dphxps17:/etc$ uname -a
+Linux dphxps17 5.15.0-46-generic #49-Ubuntu SMP Thu Aug 4 18:03:25 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+davidho@dphxps17:/etc$ 
+davidho@dphxps17:/etc$ ls -latr *rel*
+lrwxrwxrwx 1 root root  21 Jul 28 11:29 os-release -> ../usr/lib/os-release
+-rw-r--r-- 1 root root 104 Jul 28 11:29 lsb-release
+davidho@dphxps17:/etc$ 
+davidho@dphxps17:/etc$ ls -latr *ver*
+-rw-r--r-- 1 root root 13 Aug 22  2021 debian_version
+davidho@dphxps17:/etc$ 
+davidho@dphxps17:/etc$ cat debian_version 
+bookworm/sid
+davidho@dphxps17:/etc$ 
+davidho@dphxps17:/etc$ cat os-release 
+PRETTY_NAME="Ubuntu 22.04.1 LTS"
+NAME="Ubuntu"
+VERSION_ID="22.04"
+VERSION="22.04.1 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=jammy
+davidho@dphxps17:/etc$ 
+davidho@dphxps17:/etc$ cat lsb-release
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=22.04
+DISTRIB_CODENAME=jammy
+DISTRIB_DESCRIPTION="Ubuntu 22.04.1 LTS"
+davidho@dphxps17:/etc$ 
+davidho@dphxps17:/etc$ cat issue
+Ubuntu 22.04.1 LTS \n \l
+
+davidho@dphxps17:/etc$ lsb_release -a
+No LSB modules are available.
+Distributor ID:	Ubuntu
+Description:	Ubuntu 22.04.1 LTS
+Release:	22.04
+Codename:	jammy
+davidho@dphxps17:/etc$ 
+davidho@dphxps17:/etc$ cat /proc/version
+Linux version 5.15.0-46-generic (buildd@lcy02-amd64-115) (gcc (Ubuntu 11.2.0-19ubuntu1) 11.2.0, GNU ld (GNU Binutils for Ubuntu) 2.38) #49-Ubuntu SMP Thu Aug 4 18:03:25 UTC 2022
+davidho@dphxps17:/etc$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://www.tecmint.com/commands-to-collect-system-and-hardware-information-in-linux/
+
+sudo lshw
+sudo lshw -short
+sudo lshw -html > lshw.html
+lscpu
+lsblk
+lsblk -a
+lsusb -v
+lspci
+lspci -t
+lspci -v
+
+$ sudo apt-get install lsscsi        [on Debian derivatives]
+# yum install lsscsi                 [On RedHat based systems]
+# dnf install lsscsi                 [On Fedora 21+ Onwards]
+
+lsscsi
+lsscsi -s
+
+sudo hdparm /dev/sda1
+sudo hdparm -g /dev/sda1
+sudo fdisk -l
+sudo dmidecode -t memory
+sudo dmidecode -t system
+sudo dmidecode -t bios
+sudo dmidecode -t processor
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:/etc$ 
+davidho@dphxps17:/etc$ sudo lshw | head -30
+dphxps17                    
+    description: Notebook
+    product: XPS 17 9710 (0A5D)
+    vendor: Dell Inc.
+    serial: JHVZ9G3
+    width: 64 bits
+    capabilities: smbios-3.2.0 dmi-3.2.0 smp vsyscall32
+    configuration: boot=normal chassis=notebook family=XPS sku=0A5D uuid=4c4c4544-0048-5610-805a-cac04f394733
+  *-core
+       description: Motherboard
+       product: 0TXN0W
+       vendor: Dell Inc.
+       physical id: 0
+       version: A01
+       serial: /JHVZ9G3/CNWSC0018N0UVY/
+     *-firmware
+          description: BIOS
+          vendor: Dell Inc.
+          physical id: 0
+          version: 1.11.0
+          date: 06/09/2022
+          size: 1MiB
+          capacity: 32MiB
+          capabilities: pci pnp upgrade shadowing cdboot bootselect edd int5printscreen int9keyboard int14serial int17printer acpi usb smartbattery biosbootspecification netboot uefi
+     *-cpu
+          description: CPU
+          product: 11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz
+          vendor: Intel Corp.
+          physical id: 400
+          bus info: cpu@0
+davidho@dphxps17:/etc$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+cd /home/davidho/railsprojects
+rails new csrftest1
+rails new csrftest2
+cat csrftest1/config/master.key
+cat csrftest2/config/master.key
+ls -la /home/davidho/railsprojects/csrftest1/config/credentials.yml.enc
+ls -la /home/davidho/railsprojects/csrftest2/config/credentials.yml.enc
+
+davidho@dphxps17:~/railsprojects$ cat csrftest1/config/master.key
+a4f7f53d40ebf4950ec72ac66da6c5b0
+davidho@dphxps17:~/railsprojects$ cat csrftest2/config/master.key 
+78f0dddc28cdd2a29a6ffb7aa1323180
+davidho@dphxps17:~/railsprojects$ 
+davidho@dphxps17:~/railsprojects$ ls -la csrftest1/config/credentials.yml.enc
+-rw-rw-r-- 1 davidho davidho 464 Sep 14 10:27 csrftest1/config/credentials.yml.enc
+davidho@dphxps17:~/railsprojects$ 
+davidho@dphxps17:~/railsprojects$ ls -la csrftest2/config/credentials.yml.enc
+-rw-rw-r-- 1 davidho davidho 464 Sep 14 10:27 csrftest2/config/credentials.yml.enc
+davidho@dphxps17:~/railsprojects$ 
+
+cd /home/davidho/railsprojects/csrftest1
+EDITOR=vi rails credentials:edit
+
+ aws:
+#   access_key_id: 123
+#   secret_access_key: 345
+
+# Used as the base secret for all MessageVerifiers in Rails, including the one protecting cookies.
+secret_key_base: 5335884dc470c88caab16eb1d3c78c374cb4848ab817ade873112f01af03b8dd624bad358c9362680ea360717ac9a60265ffd5249c2f36b51cb5ad8fe431ec5c
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+http://localhost:3000/high_scores
+
+http://localhost:3000/
+http://127.0.0.1:3000/
+http://0.0.0.0:3000/
+
+    Rails version: 7.0.4
+    Ruby version: ruby 3.1.2p20 (2022-04-12 revision 4491bb740a) [x86_64-linux]
+
+https://guides.rubyonrails.org/
+https://guides.rubyonrails.org/command_line.html
+
+bin/rails server
+bin/rails generate scaffold HighScore game:string score:integer
+bin/rails db:migrate
+bin/rails console -e production
+bin/rails dbconsole --database=animals
+bin/rails about
+bin/rails assets:precompile
+bin/rails db:create
+bin/rails db:migrate RAILS_ENV=development
+
+davidho@dphxps17:~/railsprojects/csrftest1$ bin/rails server
+=> Booting Puma
+=> Rails 7.0.4 application starting in development 
+=> Run `bin/rails server --help` for more startup options
+Puma starting in single mode...
+* Puma version: 5.6.5 (ruby 3.1.2-p20) ("Birdie's Version")
+*  Min threads: 5
+*  Max threads: 5
+*  Environment: development
+*          PID: 35483
+* Listening on http://127.0.0.1:3000
+* Listening on http://[::1]:3000
+Use Ctrl-C to stop
+
+davidho@dphxps17:~/railsprojects/csrftest1$ bin/rails about
+About your application's environment
+Rails version             7.0.4
+Ruby version              ruby 3.1.2p20 (2022-04-12 revision 4491bb740a) [x86_64-linux]
+RubyGems version          3.3.7
+Rack version              2.2.4
+Middleware                ActionDispatch::HostAuthorization, Rack::Sendfile, ActionDispatch::Static, ActionDispatch::Executor, ActionDispatch::ServerTiming, ActiveSupport::Cache::Strategy::LocalCache::Middleware, Rack::Runtime, Rack::MethodOverride, ActionDispatch::RequestId, ActionDispatch::RemoteIp, Sprockets::Rails::QuietAssets, Rails::Rack::Logger, ActionDispatch::ShowExceptions, WebConsole::Middleware, ActionDispatch::DebugExceptions, ActionDispatch::ActionableExceptions, ActionDispatch::Reloader, ActionDispatch::Callbacks, ActiveRecord::Migration::CheckPending, ActionDispatch::Cookies, ActionDispatch::Session::CookieStore, ActionDispatch::Flash, ActionDispatch::ContentSecurityPolicy::Middleware, ActionDispatch::PermissionsPolicy::Middleware, Rack::Head, Rack::ConditionalGet, Rack::ETag, Rack::TempfileReaper
+Application root          /home/davidho/railsprojects/csrftest1
+Environment               development
+Database adapter          sqlite3
+Database schema version   0
+davidho@dphxps17:~/railsprojects/csrftest1$ 
+ho@dphxps17:~/railsprojects/csrftest1$ 
+davidho@dphxps17:~/railsprojects/csrftest1$ bin/rails db:create
+Database 'db/development.sqlite3' already exists
+Created database 'db/test.sqlite3'
+davidho@dphxps17:~/railsprojects/csrftest1$ bin/rails db:migrate
+davidho@dphxps17:~/railsprojects/csrftest1$ 
+davidho@dphxps17:~/railsprojects/csrftest1$ bin/rails routes
+                                  Prefix Verb   URI Pattern                                                                                       Controller#Action
+        turbo_recede_historical_location GET    /recede_historical_location(.:format)                                                             turbo/native/navigation#recede
+        turbo_resume_historical_location GET    /resume_historical_location(.:format)                                                             turbo/native/navigation#resume
+       turbo_refresh_historical_location GET    /refresh_historical_location(.:format)                                                            turbo/native/navigation#refresh
+           rails_postmark_inbound_emails POST   /rails/action_mailbox/postmark/inbound_emails(.:format)                                           action_mailbox/ingresses/postmark/inbound_emails#create
+              rails_relay_inbound_emails POST   /rails/action_mailbox/relay/inbound_emails(.:format)                                              action_mailbox/ingresses/relay/inbound_emails#create
+           rails_sendgrid_inbound_emails POST   /rails/action_mailbox/sendgrid/inbound_emails(.:format)                                           action_mailbox/ingresses/sendgrid/inbound_emails#create
+     rails_mandrill_inbound_health_check GET    /rails/action_mailbox/mandrill/inbound_emails(.:format)                                           action_mailbox/ingresses/mandrill/inbound_emails#health_check
+           rails_mandrill_inbound_emails POST   /rails/action_mailbox/mandrill/inbound_emails(.:format)                                           action_mailbox/ingresses/mandrill/inbound_emails#create
+            rails_mailgun_inbound_emails POST   /rails/action_mailbox/mailgun/inbound_emails/mime(.:format)                                       action_mailbox/ingresses/mailgun/inbound_emails#create
+          rails_conductor_inbound_emails GET    /rails/conductor/action_mailbox/inbound_emails(.:format)                                          rails/conductor/action_mailbox/inbound_emails#index
+                                         POST   /rails/conductor/action_mailbox/inbound_emails(.:format)                                          rails/conductor/action_mailbox/inbound_emails#create
+       new_rails_conductor_inbound_email GET    /rails/conductor/action_mailbox/inbound_emails/new(.:format)                                      rails/conductor/action_mailbox/inbound_emails#new
+      edit_rails_conductor_inbound_email GET    /rails/conductor/action_mailbox/inbound_emails/:id/edit(.:format)                                 rails/conductor/action_mailbox/inbound_emails#edit
+           rails_conductor_inbound_email GET    /rails/conductor/action_mailbox/inbound_emails/:id(.:format)                                      rails/conductor/action_mailbox/inbound_emails#show
+                                         PATCH  /rails/conductor/action_mailbox/inbound_emails/:id(.:format)                                      rails/conductor/action_mailbox/inbound_emails#update
+                                         PUT    /rails/conductor/action_mailbox/inbound_emails/:id(.:format)                                      rails/conductor/action_mailbox/inbound_emails#update
+                                         DELETE /rails/conductor/action_mailbox/inbound_emails/:id(.:format)                                      rails/conductor/action_mailbox/inbound_emails#destroy
+new_rails_conductor_inbound_email_source GET    /rails/conductor/action_mailbox/inbound_emails/sources/new(.:format)                              rails/conductor/action_mailbox/inbound_emails/sources#new
+   rails_conductor_inbound_email_sources POST   /rails/conductor/action_mailbox/inbound_emails/sources(.:format)                                  rails/conductor/action_mailbox/inbound_emails/sources#create
+   rails_conductor_inbound_email_reroute POST   /rails/conductor/action_mailbox/:inbound_email_id/reroute(.:format)                               rails/conductor/action_mailbox/reroutes#create
+rails_conductor_inbound_email_incinerate POST   /rails/conductor/action_mailbox/:inbound_email_id/incinerate(.:format)                            rails/conductor/action_mailbox/incinerates#create
+                      rails_service_blob GET    /rails/active_storage/blobs/redirect/:signed_id/*filename(.:format)                               active_storage/blobs/redirect#show
+                rails_service_blob_proxy GET    /rails/active_storage/blobs/proxy/:signed_id/*filename(.:format)                                  active_storage/blobs/proxy#show
+                                         GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                                        active_storage/blobs/redirect#show
+               rails_blob_representation GET    /rails/active_storage/representations/redirect/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations/redirect#show
+         rails_blob_representation_proxy GET    /rails/active_storage/representations/proxy/:signed_blob_id/:variation_key/*filename(.:format)    active_storage/representations/proxy#show
+                                         GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format)          active_storage/representations/redirect#show
+                      rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                                       active_storage/disk#show
+               update_rails_disk_service PUT    /rails/active_storage/disk/:encoded_token(.:format)                                               active_storage/disk#update
+                    rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                                    active_storage/direct_uploads#create
+davidho@dphxps17:~/railsprojects/csrftest1$ 
+davidho@dphxps17:~/railsprojects/csrftest1$ bin/rails generate scaffold HighScore game:string score:integer
+      invoke  active_record
+      create    db/migrate/20220914153940_create_high_scores.rb
+      create    app/models/high_score.rb
+      invoke    test_unit
+      create      test/models/high_score_test.rb
+      create      test/fixtures/high_scores.yml
+      invoke  resource_route
+       route    resources :high_scores
+      invoke  scaffold_controller
+      create    app/controllers/high_scores_controller.rb
+      invoke    erb
+      create      app/views/high_scores
+      create      app/views/high_scores/index.html.erb
+      create      app/views/high_scores/edit.html.erb
+      create      app/views/high_scores/show.html.erb
+      create      app/views/high_scores/new.html.erb
+      create      app/views/high_scores/_form.html.erb
+      create      app/views/high_scores/_high_score.html.erb
+      invoke    resource_route
+      invoke    test_unit
+      create      test/controllers/high_scores_controller_test.rb
+      create      test/system/high_scores_test.rb
+      invoke    helper
+      create      app/helpers/high_scores_helper.rb
+      invoke      test_unit
+      invoke    jbuilder
+      create      app/views/high_scores/index.json.jbuilder
+      create      app/views/high_scores/show.json.jbuilder
+      create      app/views/high_scores/_high_score.json.jbuilder
+davidho@dphxps17:~/railsprojects/csrftest1$ 
+davidho@dphxps17:~/railsprojects/csrftest1$ bin/rails routes
+                                  Prefix Verb   URI Pattern                                                                                       Controller#Action
+                             high_scores GET    /high_scores(.:format)                                                                            high_scores#index
+                                         POST   /high_scores(.:format)                                                                            high_scores#create
+                          new_high_score GET    /high_scores/new(.:format)                                                                        high_scores#new
+                         edit_high_score GET    /high_scores/:id/edit(.:format)                                                                   high_scores#edit
+                              high_score GET    /high_scores/:id(.:format)                                                                        high_scores#show
+                                         PATCH  /high_scores/:id(.:format)                                                                        high_scores#update
+                                         PUT    /high_scores/:id(.:format)                                                                        high_scores#update
+                                         DELETE /high_scores/:id(.:format)                                                                        high_scores#destroy
+        turbo_recede_historical_location GET    /recede_historical_location(.:format)                                                             turbo/native/navigation#recede
+        turbo_resume_historical_location GET    /resume_historical_location(.:format)                                                             turbo/native/navigation#resume
+       turbo_refresh_historical_location GET    /refresh_historical_location(.:format)                                                            turbo/native/navigation#refresh
+           rails_postmark_inbound_emails POST   /rails/action_mailbox/postmark/inbound_emails(.:format)                                           action_mailbox/ingresses/postmark/inbound_emails#create
+              rails_relay_inbound_emails POST   /rails/action_mailbox/relay/inbound_emails(.:format)                                              action_mailbox/ingresses/relay/inbound_emails#create
+           rails_sendgrid_inbound_emails POST   /rails/action_mailbox/sendgrid/inbound_emails(.:format)                                           action_mailbox/ingresses/sendgrid/inbound_emails#create
+     rails_mandrill_inbound_health_check GET    /rails/action_mailbox/mandrill/inbound_emails(.:format)                                           action_mailbox/ingresses/mandrill/inbound_emails#health_check
+           rails_mandrill_inbound_emails POST   /rails/action_mailbox/mandrill/inbound_emails(.:format)                                           action_mailbox/ingresses/mandrill/inbound_emails#create
+            rails_mailgun_inbound_emails POST   /rails/action_mailbox/mailgun/inbound_emails/mime(.:format)                                       action_mailbox/ingresses/mailgun/inbound_emails#create
+          rails_conductor_inbound_emails GET    /rails/conductor/action_mailbox/inbound_emails(.:format)                                          rails/conductor/action_mailbox/inbound_emails#index
+                                         POST   /rails/conductor/action_mailbox/inbound_emails(.:format)                                          rails/conductor/action_mailbox/inbound_emails#create
+       new_rails_conductor_inbound_email GET    /rails/conductor/action_mailbox/inbound_emails/new(.:format)                                      rails/conductor/action_mailbox/inbound_emails#new
+      edit_rails_conductor_inbound_email GET    /rails/conductor/action_mailbox/inbound_emails/:id/edit(.:format)                                 rails/conductor/action_mailbox/inbound_emails#edit
+           rails_conductor_inbound_email GET    /rails/conductor/action_mailbox/inbound_emails/:id(.:format)                                      rails/conductor/action_mailbox/inbound_emails#show
+                                         PATCH  /rails/conductor/action_mailbox/inbound_emails/:id(.:format)                                      rails/conductor/action_mailbox/inbound_emails#update
+                                         PUT    /rails/conductor/action_mailbox/inbound_emails/:id(.:format)                                      rails/conductor/action_mailbox/inbound_emails#update
+                                         DELETE /rails/conductor/action_mailbox/inbound_emails/:id(.:format)                                      rails/conductor/action_mailbox/inbound_emails#destroy
+new_rails_conductor_inbound_email_source GET    /rails/conductor/action_mailbox/inbound_emails/sources/new(.:format)                              rails/conductor/action_mailbox/inbound_emails/sources#new
+   rails_conductor_inbound_email_sources POST   /rails/conductor/action_mailbox/inbound_emails/sources(.:format)                                  rails/conductor/action_mailbox/inbound_emails/sources#create
+   rails_conductor_inbound_email_reroute POST   /rails/conductor/action_mailbox/:inbound_email_id/reroute(.:format)                               rails/conductor/action_mailbox/reroutes#create
+rails_conductor_inbound_email_incinerate POST   /rails/conductor/action_mailbox/:inbound_email_id/incinerate(.:format)                            rails/conductor/action_mailbox/incinerates#create
+                      rails_service_blob GET    /rails/active_storage/blobs/redirect/:signed_id/*filename(.:format)                               active_storage/blobs/redirect#show
+                rails_service_blob_proxy GET    /rails/active_storage/blobs/proxy/:signed_id/*filename(.:format)                                  active_storage/blobs/proxy#show
+                                         GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                                        active_storage/blobs/redirect#show
+               rails_blob_representation GET    /rails/active_storage/representations/redirect/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations/redirect#show
+         rails_blob_representation_proxy GET    /rails/active_storage/representations/proxy/:signed_blob_id/:variation_key/*filename(.:format)    active_storage/representations/proxy#show
+                                         GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format)          active_storage/representations/redirect#show
+                      rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                                       active_storage/disk#show
+               update_rails_disk_service PUT    /rails/active_storage/disk/:encoded_token(.:format)                                               active_storage/disk#update
+                    rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                                    active_storage/direct_uploads#create
+davidho@dphxps17:~/railsprojects/csrftest1$ 
+davidho@dphxps17:~/railsprojects/csrftest1$ 
+davidho@dphxps17:~/railsprojects/csrftest1$ bin/rake -T
+rake about                              # List versions of all Rails frameworks and the environment
+rake action_mailbox:ingress:exim        # Relay an inbound email from Exim to Action Mailbox (URL and INGRESS_PASSWORD required)
+rake action_mailbox:ingress:postfix     # Relay an inbound email from Postfix to Action Mailbox (URL and INGRESS_PASSWORD required)
+rake action_mailbox:ingress:qmail       # Relay an inbound email from Qmail to Action Mailbox (URL and INGRESS_PASSWORD required)
+rake action_mailbox:install             # Installs Action Mailbox and its dependencies
+rake action_mailbox:install:migrations  # Copy migrations from action_mailbox to application
+rake action_text:install                # Copy over the migration, stylesheet, and JavaScript files
+rake action_text:install:migrations     # Copy migrations from action_text to application
+rake active_storage:install             # Copy over the migration needed to the application
+rake app:template                       # Applies the template supplied by LOCATION=(/path/to/template) or URL
+rake app:update                         # Update configs and some other initially generated files (or use just update:configs or update:bin)
+rake assets:clean[keep]                 # Remove old compiled assets
+rake assets:clobber                     # Remove compiled assets
+rake assets:environment                 # Load asset compile environment
+rake assets:precompile                  # Compile all the assets named in config.assets.precompile
+rake cache_digests:dependencies         # Lookup first-level dependencies for TEMPLATE (like messages/show or comments/_comment.html)
+rake cache_digests:nested_dependencies  # Lookup nested dependencies for TEMPLATE (like messages/show or comments/_comment.html)
+rake db:create                          # Creates the database from DATABASE_URL or config/database.yml for the current RAILS_ENV (use db:create:all to create all databases in the config). Without RAILS_ENV...
+rake db:drop                            # Drops the database from DATABASE_URL or config/database.yml for the current RAILS_ENV (use db:drop:all to drop all databases in the config). Without RAILS_ENV or wh...
+rake db:encryption:init                 # Generate a set of keys for configuring Active Record encryption in a given environment
+rake db:environment:set                 # Set the environment value for the database
+rake db:fixtures:load                   # Loads fixtures into the current environment's database
+rake db:migrate                         # Migrate the database (options: VERSION=x, VERBOSE=false, SCOPE=blog)
+rake db:migrate:down                    # Runs the "down" for a given migration VERSION
+rake db:migrate:redo                    # Rolls back the database one migration and re-migrates up (options: STEP=x, VERSION=x)
+rake db:migrate:status                  # Display status of migrations
+rake db:migrate:up                      # Runs the "up" for a given migration VERSION
+rake db:prepare                         # Runs setup if database does not exist, or runs migrations if it does
+rake db:reset                           # Drops and recreates all databases from their schema for the current environment and loads the seeds
+rake db:rollback                        # Rolls the schema back to the previous version (specify steps w/ STEP=n)
+rake db:schema:cache:clear              # Clears a db/schema_cache.yml file
+rake db:schema:cache:dump               # Creates a db/schema_cache.yml file
+rake db:schema:dump                     # Creates a database schema file (either db/schema.rb or db/structure.sql, depending on `ENV['SCHEMA_FORMAT']` or `config.active_record.schema_format`)
+rake db:schema:load                     # Loads a database schema file (either db/schema.rb or db/structure.sql, depending on `ENV['SCHEMA_FORMAT']` or `config.active_record.schema_format`) into the database
+rake db:seed                            # Loads the seed data from db/seeds.rb
+rake db:seed:replant                    # Truncates tables of each database for current environment and loads the seeds
+rake db:setup                           # Creates all databases, loads all schemas, and initializes with the seed data (use db:reset to also drop all databases first)
+rake db:version                         # Retrieves the current schema version number
+rake importmap:install                  # Setup Importmap for the app
+rake log:clear                          # Truncates all/specified *.log files in log/ to zero bytes (specify which logs with LOGS=test,development)
+rake middleware                         # Prints out your Rack middleware stack
+rake restart                            # Restart app by touching tmp/restart.txt
+rake secret                             # Generate a cryptographically secure secret key (this is typically used to generate a secret for cookie sessions)
+rake stats                              # Report code statistics (KLOCs, etc) from the application or engine
+rake stimulus:install                   # Install Stimulus into the app
+rake stimulus:install:importmap         # Install Stimulus on an app running importmap-rails
+rake stimulus:install:node              # Install Stimulus on an app running node
+rake test                               # Runs all tests in test folder except system ones
+rake test:all                           # Runs all tests, including system tests
+rake test:db                            # Run tests quickly, but also reset db
+rake test:system                        # Run system tests only
+rake time:zones[country_or_offset]      # List all time zones, list by two-letter country code (`bin/rails time:zones[US]`), or list by UTC offset (`bin/rails time:zones[-8]`)
+rake tmp:clear                          # Clear cache, socket and screenshot files from tmp/ (narrow w/ tmp:cache:clear, tmp:sockets:clear, tmp:screenshots:clear)
+rake tmp:create                         # Creates tmp directories for cache, sockets, and pids
+rake turbo:install                      # Install Turbo into the app
+rake turbo:install:importmap            # Install Turbo into the app with asset pipeline
+rake turbo:install:node                 # Install Turbo into the app with webpacker
+rake turbo:install:redis                # Switch on Redis and use it in development
+rake yarn:install                       # Install all JavaScript dependencies as specified via Yarn
+rake zeitwerk:check                     # Checks project structure for Zeitwerk compatibility
+davidho@dphxps17:~/railsprojects/csrftest1$ 
+davidho@dphxps17:~/railsprojects/csrftest1$ bin/rake -P
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+view-source:http://localhost:3000/high_scores/new
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Csrftest1</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="csrf-param" content="authenticity_token" />
+    <meta name="csrf-token" content="toqacU8HFFKFNnfRmBP5CFPbGk-NVyUe2G_q4ohlhPVNoF3ROjZs4yKA-leo3C-iQs4-5FURgT5KSsRAiZImQQ" />
+
+    <link rel="stylesheet" href="/assets/application-e0cf9d8fcb18bf7f909d8d91a5e78499f82ac29523d475bf3a9ab265d5e2b451.css" data-turbo-track="reload" />
+    <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-37f365cbecf1fa2810a8303f4b6571676fa1f9c56c248528bc14ddb857531b95.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-e5023178542f05fc063cd1dc5865457259cc01f3fba76a28454060d33de6f429.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-b8a9738499c7a8362910cd545375417370d72a9776fb4e766df7671484e2beb7.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc59770fb1654500044afd3f5f6d7d00800e5be36746d55b94a2963a7a228aa.js",
+    "controllers/application": "/assets/controllers/application-368d98631bccbf2349e0d4f8269afb3fe9625118341966de054759d96ea86c7e.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-549135e8e7c683a538c3d6d517339ba470fcfb79d62f738a0a089ba41851a554.js",
+    "controllers": "/assets/controllers/index-2db729dddcc5b979110e98de4b6720f83f91a123172e87281d5a58410fc43806.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-37f365cbecf1fa2810a8303f4b6571676fa1f9c56c248528bc14ddb857531b95.js">
+<link rel="modulepreload" href="/assets/turbo.min-e5023178542f05fc063cd1dc5865457259cc01f3fba76a28454060d33de6f429.js">
+<link rel="modulepreload" href="/assets/stimulus.min-b8a9738499c7a8362910cd545375417370d72a9776fb4e766df7671484e2beb7.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc59770fb1654500044afd3f5f6d7d00800e5be36746d55b94a2963a7a228aa.js">
+<script src="/assets/es-module-shims.min-d89e73202ec09dede55fb74115af9c5f9f2bb965433de1c2446e1faa6dac2470.js" async="async" data-turbo-track="reload"></script>
+<script type="module">import "application"</script>
+  </head>
+
+  <body>
+    <h1>New high score</h1>
+
+<form action="/high_scores" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="4wNbtLsPzxfY2CIw8Assq-Gm1lSjHIUPrTSEjfUtldN6aJn2YBuvmk0TJl0QX2RjvKpe5kUrFU7f-bvTgixPQw" autocomplete="off" />
+
+  <div>
+    <label style="display: block" for="high_score_game">Game</label>
+    <input type="text" name="high_score[game]" id="high_score_game" />
+  </div>
+
+  <div>
+    <label style="display: block" for="high_score_score">Score</label>
+    <input type="number" name="high_score[score]" id="high_score_score" />
+  </div>
+
+  <div>
+    <input type="submit" name="commit" value="Create High score" data-disable-with="Create High score" />
+  </div>
+</form>
+
+<br>
+
+<div>
+  <a href="/high_scores">Back to high scores</a>
+</div>
+
+  </body>
+</html>
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+POST  http://localhost:3000/high_scores
+
+POST /high_scores HTTP/1.1
+Host: localhost:3000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:104.0) Gecko/20100101 Firefox/104.0
+Accept: text/vnd.turbo-stream.html, text/html, application/xhtml+xml
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Referer: http://localhost:3000/high_scores/new
+X-CSRF-Token: VFC8j8xS8NCDlD4i5su3TL2bmHXBXQuQduhj7gbjVvivensvuWOIYSQis6TWBGHmrI683hkbr7DkzU1MBxT0TA
+Content-Type: application/x-www-form-urlencoded;charset=UTF-8
+Content-Length: 182
+Origin: http://localhost:3000
+Connection: keep-alive
+Cookie: _csrftest1_session=3w7CGf4FxzS%2Bka6icZq5q0MW79ZBH3rEzOn7rsryYzd48g%2FJi%2FrXnnvgZzkhl7hnGQ25bfs2wFaeP6hxx7CUj2Y%2B%2B6f7FLM906a2mS%2FmA0nuAPhkZ2H9wxj6djyI53MGSHy61HAnBDfnzSV9K%2FkcaP7i1Vw2B5QtTJQP7h97wCh5TSwj6u4ZwYN7HtGfmQfUO12pB4xXkAb3spa0jKc6hWY7EUJlHUVB83rj0nrCZdYVgf%2B8eBZD63XGBGUVwRl93XnXHpdr8D3LVYcxqUvOSmE4r8MvrF64PhQ%3D--0gn4P%2Bjk8SemQROp--R%2F9ACflWh6uImoOVA11z8Q%3D%3D
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+
+HTTP/1.1 302 Found
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 0
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: text/html; charset=utf-8
+Location: http://localhost:3000/high_scores/1
+Cache-Control: no-cache
+Set-Cookie: _csrftest1_session=tDeLjWZTS5dVMBYPS178RZzuGleWpDD%2F%2BwrSKH9alw%2F7HfJW15Jw9jZFbHe%2BHTzx%2FBY0dz33DDK1wyu79w1BDshWkYs1LZvTNhZYSc%2BBf%2B1RIjSleGMEmKHxpa7o2ge6Cive0y7Z%2B47rDeeez1V5lGGb5GcAfgrsDYR%2BRJZ0Sb1%2BwYzWFj196MagLN9Tlj5sCIgpGMlNaYUiUgALKy3XIt6fWOWpypxydcOSsi6yfv%2FxrogYzWcRYHcWa6hx6c%2FR9lW2vtBDOMaDr%2BhR36Ov4OdCdPpBod8%2FySdy9iALBhc2LWNnvT%2FXAlX7nz0ncruHt8DUrrw0f87LUtJtObeem6gOqf3D5z2rwxhq0f%2BRLH7MyD2%2FUDFFokYYQBnu4q5B5EFzVcWgFoEOWPJdRhhNBKHSoAJheAXjPTNYUjVVhrC4daZ4GIM%3D--gL6P9MPcueK7wzqP--PtWGHkkJtClMSdHIuj40ZA%3D%3D; path=/; HttpOnly; SameSite=Lax
+X-Request-Id: 8d8c61a3-95df-41b7-a440-c4d4da03e255
+X-Runtime: 0.032486
+Server-Timing: start_processing.action_controller;dur=0.07, sql.active_record;dur=3.72, redirect_to.action_controller;dur=0.12, process_action.action_controller;dur=6.41
+Transfer-Encoding: chunked
+
+
+
+cp -p /home/davidho/railsprojects/csrftest1/config/master.key ~
+cp -p /home/davidho/railsprojects/csrftest1/config/credentials.yml.enc ~
+
+rm    /home/davidho/railsprojects/csrftest1/config/master.key
+rm    /home/davidho/railsprojects/csrftest1/config/credentials.yml.enc 
+
+
+
+
