@@ -1,0 +1,149 @@
+Thu Sep 22 06:57:01 AM EDT 2022
+
+davidho@dphxps17:~$ date
+Thu Sep 22 06:56:35 AM EDT 2022
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date > stuff-20220922.txt
+davidho@dphxps17:~$ code   stuff-20220922.txt
+davidho@dphxps17:~$ 
+
+davidho@dphxps17:~$ date
+Thu Sep 22 06:55:45 AM EDT 2022
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ neofetch --off
+davidho@dphxps17 
+---------------- 
+OS: Ubuntu 22.04.1 LTS x86_64 
+Host: XPS 17 9710 
+Kernel: 5.15.0-47-generic 
+Uptime: 1 min 
+Packages: 1942 (dpkg), 10 (snap) 
+Shell: bash 5.1.16 
+Resolution: 3840x2400 
+DE: GNOME 42.2 
+WM: Mutter 
+WM Theme: Adwaita 
+Theme: Yaru [GTK2/3] 
+Icons: Yaru [GTK2/3] 
+Terminal: gnome-terminal 
+CPU: 11th Gen Intel i7-11800H (16) @ 4.600GHz 
+
+GPU: Intel TigerLake-H GT1 [UHD Graphics] 
+GPU: NVIDIA GeForce RTX 3060 Mobile / Max-Q 
+Memory: 1884MiB / 31827MiB 
+
+                         
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://docs.oracle.com/en/java/javase/18/install/overview-jdk-installation.html
+
+https://www.oracle.com/java/technologies/javase/jdk18-archive-downloads.html
+Java SE Development Kit 18.0.2.1
+
+https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html
+Java SE Development Kit 17.0.4.1
+
+https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html
+Java SE Development Kit 11.0.16
+
+https://www.oracle.com/java/technologies/javase/javase8u211-later-archive-downloads.html
+Java SE Development Kit 8u333
+
+https://www.jetbrains.com/idea/download/#section=linux
+    Version: 2022.2.2
+    Build: 222.4167.29
+    13 September 2022
+
+https://www.jetbrains.com/ruby/download/#section=linux
+    Version: 2022.2.2
+    Build: 222.4167.28
+    18 September 2022
+
+https://www.jetbrains.com/pycharm/download/#section=linux
+    Version: 2022.2.2
+    Build: 222.4167.33
+    14 September 2022
+
+https://www.eclipse.org/downloads/packages/
+Eclipse IDE 2022-09 R Packages
+
+https://code.visualstudio.com/download
+Version 1.71 is now available! Read about the new features and fixes from August.
+
+https://spring.io/tools
+Spring Tools 4 for Eclipse
+The all-new Spring Tool Suite 4. 
+
+https://marketplace.visualstudio.com/items?itemName=Pivotal.vscode-boot-dev-pack
+Spring Boot Extension Pack
+Installation
+Launch VS Code Quick Open (Ctrl+P), paste the following command, and press enter.
+ext install Pivotal.vscode-boot-dev-pack
+
+https://netbeans.apache.org/download/index.html
+Apache NetBeans is released four times a year. For details, see full release schedule.
+Apache NetBeans 15
+Latest version of the IDE, released on August 31, 2022.
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ date
+Thu Sep 22 08:09:15 AM EDT 2022
+davidho@dphxps17:~/Downloads$ pwd -P
+/home/davidho/Downloads
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr | tail -45
+-rw-rw-r--  1 davidho davidho   83669628 Jun 12 08:54 code_1.68.0-1654690107_amd64.deb
+-rw-rw-r--  1 davidho davidho  117711725 Jun 12 08:54 code-1.68.0-1654690163.el7.x86_64.rpm
+-rw-rw-r--  1 davidho davidho  116923664 Jun 12 08:54 code-stable-x64-1654690355.tar.gz
+drwxr-x--- 34 davidho davidho       4096 Sep 22 06:57 ..
+-rw-rw-r--  1 davidho davidho  182299048 Sep 22 07:33 jdk-18.0.2.1_linux-x64_bin.tar.gz
+-rw-rw-r--  1 davidho davidho         64 Sep 22 07:33 jdk-18.0.2.1_linux-x64_bin.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  156432076 Sep 22 07:34 jdk-18.0.2.1_linux-x64_bin.deb
+-rw-rw-r--  1 davidho davidho         64 Sep 22 07:34 jdk-18.0.2.1_linux-x64_bin.deb.sha256
+-rw-rw-r--  1 davidho davidho  163317268 Sep 22 07:34 jdk-18.0.2.1_linux-x64_bin.rpm
+-rw-rw-r--  1 davidho davidho         64 Sep 22 07:34 jdk-18.0.2.1_linux-x64_bin.rpm.sha256
+-rw-rw-r--  1 davidho davidho  181244275 Sep 22 07:36 jdk-17.0.4.1_linux-x64_bin.tar.gz
+-rw-rw-r--  1 davidho davidho         64 Sep 22 07:36 jdk-17.0.4.1_linux-x64_bin.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  155639466 Sep 22 07:37 jdk-17.0.4.1_linux-x64_bin.deb
+-rw-rw-r--  1 davidho davidho         64 Sep 22 07:37 jdk-17.0.4.1_linux-x64_bin.deb.sha256
+-rw-rw-r--  1 davidho davidho  162804836 Sep 22 07:37 jdk-17.0.4.1_linux-x64_bin.rpm
+-rw-rw-r--  1 davidho davidho         64 Sep 22 07:38 jdk-17.0.4.1_linux-x64_bin.rpm.sha256
+-rw-rw-r--  1 davidho davidho  145144564 Sep 22 07:41 jdk-11.0.16_linux-x64_bin.deb
+-rw-rw-r--  1 davidho davidho  151626416 Sep 22 07:43 jdk-11.0.16_linux-x64_bin.rpm
+-rw-rw-r--  1 davidho davidho  168905265 Sep 22 07:47 jdk-11.0.16_linux-x64_bin.tar.gz
+-rw-rw-r--  1 davidho davidho       7627 Sep 22 07:47 11-0-16-checksum.html
+-rw-rw-r--  1 davidho davidho  148003421 Sep 22 07:49 jdk-8u333-linux-x64.tar.gz
+-rw-rw-r--  1 davidho davidho  116216180 Sep 22 07:50 jdk-8u333-linux-x64.rpm
+-rw-rw-r--  1 davidho davidho      11236 Sep 22 07:50 8u333checksum.html
+-rw-rw-r--  1 davidho davidho 1038875090 Sep 22 07:52 ideaIU-2022.2.2.tar.gz
+-rw-rw-r--  1 davidho davidho         89 Sep 22 07:52 ideaIU-2022.2.2.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  862373757 Sep 22 07:53 ideaIC-2022.2.2.tar.gz
+-rw-rw-r--  1 davidho davidho         89 Sep 22 07:53 ideaIC-2022.2.2.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  697011515 Sep 22 07:56 pycharm-professional-2022.2.2.tar.gz
+-rw-rw-r--  1 davidho davidho        103 Sep 22 07:56 pycharm-professional-2022.2.2.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  535765721 Sep 22 07:56 pycharm-community-2022.2.2.tar.gz
+-rw-rw-r--  1 davidho davidho        100 Sep 22 07:56 pycharm-community-2022.2.2.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  611475816 Sep 22 07:58 RubyMine-2022.2.2.tar.gz
+-rw-rw-r--  1 davidho davidho         91 Sep 22 07:58 RubyMine-2022.2.2.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  530568735 Sep 22 07:59 eclipse-jee-2022-09-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        176 Sep 22 08:02 eclipse-jee-2022-09-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  310380717 Sep 22 08:02 eclipse-java-2022-09-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        177 Sep 22 08:04 eclipse-java-2022-09-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho   85312604 Sep 22 08:06 code_1.71.2-1663191218_amd64.deb
+-rw-rw-r--  1 davidho davidho  120747845 Sep 22 08:06 code-1.71.2-1663191299.el7.x86_64.rpm
+-rw-rw-r--  1 davidho davidho  120012826 Sep 22 08:06 code-stable-x64-1663191492.tar.gz
+-rw-rw-r--  1 davidho davidho  607778592 Sep 22 08:14 spring-tool-suite-4-4.16.0.RELEASE-e4.25.0-linux.gtk.x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho  455835265 Sep 22 08:21 netbeans-15-bin.zip
+-rw-rw-r--  1 davidho davidho        152 Sep 22 08:21 netbeans-15-bin.zip.sha512
+-rw-rw-r--  1 davidho davidho        858 Sep 22 08:22 Apache-NetBeans-15-bin-windows-x64.exe.asc
+drwxr-xr-x  4 davidho davidho       4096 Sep 22 08:22 .
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ 
+
+
+
