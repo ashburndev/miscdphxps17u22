@@ -1,0 +1,234 @@
+Wed Oct 19 07:15:32 AM EDT 2022
+
+davidho@dphxps17:~$ date
+Wed Oct 19 07:15:15 AM EDT 2022
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date > stuff-20221019.txt
+davidho@dphxps17:~$ code   stuff-20221019.txt
+davidho@dphxps17:~$ 
+
+davidho@dphxps17:~$ cat /etc/debian_version 
+bookworm/sid
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ cat /etc/lsb-release 
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=22.04
+DISTRIB_CODENAME=jammy
+DISTRIB_DESCRIPTION="Ubuntu 22.04.1 LTS"
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ cat /etc/os-release 
+PRETTY_NAME="Ubuntu 22.04.1 LTS"
+NAME="Ubuntu"
+VERSION_ID="22.04"
+VERSION="22.04.1 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=jammy
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ neofetch --off
+davidho@dphxps17 
+---------------- 
+OS: Ubuntu 22.04.1 LTS x86_64 
+Host: XPS 17 9710 
+Kernel: 5.15.0-50-generic 
+Uptime: 5 mins 
+^C
+davidho@dphxps17:~$ ^C
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ ls -latr /home/davidho/Downloads > /home/davidho/downloads-dphxps17u22-20221019.txt
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ ls -latr ~ | tail
+drwxr-xr-x  5 davidho davidho  12288 Oct 16 21:01 Downloads
+drwxrwxr-x  3 davidho davidho   4096 Oct 16 21:11 .eclipse
+drwx------ 27 davidho davidho   4096 Oct 16 21:11 .config
+drwx------ 22 davidho davidho   4096 Oct 16 21:11 .cache
+drwxrwxr-x  2 davidho davidho   4096 Oct 16 21:11 .swt
+drwxrwxr-x  2 davidho davidho   4096 Oct 16 21:23 .idea
+-rw-------  1 davidho davidho  47675 Oct 19 07:22 .bash_history
+drwxr-xr-x  3 davidho davidho   4096 Oct 19 07:25 Documents
+drwxr-x--- 39 davidho davidho   4096 Oct 19 07:34 .
+-rw-rw-r--  1 davidho davidho   8970 Oct 19 07:34 downloads-dphxps17u22-20221019.txt
+davidho@dphxps17:~$ 
+
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr | grep -i spring
+-rw-rw-r--  1 davidho davidho  607778592 Sep 22 08:14 spring-tool-suite-4-4.16.0.RELEASE-e4.25.0-linux.gtk.x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho  607778592 Oct 16 20:53 spring-tool-suite-4-4.16.0.RELEASE-e4.25.0-linux.gtk.x86_64(1).tar.gz
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr | grep -i eclipse
+-rw-rw-r--  1 davidho davidho  530568735 Sep 22 07:59 eclipse-jee-2022-09-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        176 Sep 22 08:02 eclipse-jee-2022-09-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  310380717 Sep 22 08:02 eclipse-java-2022-09-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        177 Sep 22 08:04 eclipse-java-2022-09-R-linux-gtk-x86_64.tar.gz.sha512
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ sha512sum eclipse-jee-2022-09-R-linux-gtk-x86_64.tar.gz.sha512
+b7fc923ec8b4f8e6fe122568d4850ef5a9ba004f686dafe0a1d67139d86e0eac5f282215bddb86aff941214682bc07b095f043d1953941df2cb6dabc4c06bb33  eclipse-jee-2022-09-R-linux-gtk-x86_64.tar.gz.sha512
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ sha512sum eclipse-java-2022-09-R-linux-gtk-x86_64.tar.gz.sha512
+eb6b0368e8b4bbbe8b0a81a6500c0193abaa9e1d3ecc46f8bfb570e25997c3110cccd26d455824bd6998a6520f485870fa416529540c5e1d594b92c1475b4a25  eclipse-java-2022-09-R-linux-gtk-x86_64.tar.gz.sha512
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ 
+
+
+davidho@dphxps17:~/Downloads$ sudo tar xzf eclipse-jee-2022-09-R-linux-gtk-x86_64.tar.gz -C /opt
+davidho@dphxps17:~/Downloads$ ls -latr /opt
+total 56
+drwxr-xr-x 20 root       root       4096 May 24 22:09 ..
+drwxr-xr-x  8 root       root       4096 May 26 14:19 RubyMine-2022.1.1
+drwxr-xr-x  8 root       root       4096 May 26 14:23 idea-IU-221.5591.52
+drwxr-xr-x  3 root       root       4096 May 26 14:42 google
+drwxr-xr-x  5 root       root       4096 Aug 21 19:39 1Password
+drwxr-xr-x  8 1001330000 1001330000 4096 Sep  8 15:54 eclipse
+drwxr-xr-x  8 root       root       4096 Sep 13 08:36 idea-IU-222.4167.29
+drwxr-xr-x  9        502 root       4096 Sep 15 07:57 sts-4.16.0.RELEASE
+drwxr-xr-x  8 root       root       4096 Oct  5 01:01 RubyMine-2022.2.3
+drwxr-xr-x  8 root       root       4096 Oct  5 01:01 idea-IU-222.4345.14
+drwxr-xr-x  7 root       root       4096 Oct  5 01:01 idea-IC-222.4345.14
+drwxr-xr-x  8 root       root       4096 Oct 10 10:05 pycharm-community-2022.2.3
+drwxr-xr-x  9 root       root       4096 Oct 10 10:05 pycharm-2022.2.3
+drwxr-xr-x 14 root       root       4096 Oct 19 07:45 .
+davidho@dphxps17:~/Downloads$ mv /opt/eclipse /opt/eclipse-jee-2022-09-R-linux-gtk-x86_64
+mv: cannot move '/opt/eclipse' to '/opt/eclipse-jee-2022-09-R-linux-gtk-x86_64': Permission denied
+davidho@dphxps17:~/Downloads$ sudo !!
+sudo mv /opt/eclipse /opt/eclipse-jee-2022-09-R-linux-gtk-x86_64
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr /opt
+total 56
+drwxr-xr-x 20 root       root       4096 May 24 22:09 ..
+drwxr-xr-x  8 root       root       4096 May 26 14:19 RubyMine-2022.1.1
+drwxr-xr-x  8 root       root       4096 May 26 14:23 idea-IU-221.5591.52
+drwxr-xr-x  3 root       root       4096 May 26 14:42 google
+drwxr-xr-x  5 root       root       4096 Aug 21 19:39 1Password
+drwxr-xr-x  8 1001330000 1001330000 4096 Sep  8 15:54 eclipse-jee-2022-09-R-linux-gtk-x86_64
+drwxr-xr-x  8 root       root       4096 Sep 13 08:36 idea-IU-222.4167.29
+drwxr-xr-x  9        502 root       4096 Sep 15 07:57 sts-4.16.0.RELEASE
+drwxr-xr-x  8 root       root       4096 Oct  5 01:01 RubyMine-2022.2.3
+drwxr-xr-x  8 root       root       4096 Oct  5 01:01 idea-IU-222.4345.14
+drwxr-xr-x  7 root       root       4096 Oct  5 01:01 idea-IC-222.4345.14
+drwxr-xr-x  8 root       root       4096 Oct 10 10:05 pycharm-community-2022.2.3
+drwxr-xr-x  9 root       root       4096 Oct 10 10:05 pycharm-2022.2.3
+drwxr-xr-x 14 root       root       4096 Oct 19 07:46 .
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr | grep -i eclipse
+-rw-rw-r--  1 davidho davidho  530568735 Sep 22 07:59 eclipse-jee-2022-09-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        176 Sep 22 08:02 eclipse-jee-2022-09-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  310380717 Sep 22 08:02 eclipse-java-2022-09-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        177 Sep 22 08:04 eclipse-java-2022-09-R-linux-gtk-x86_64.tar.gz.sha512
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ sudo tar xzf eclipse-java-2022-09-R-linux-gtk-x86_64.tar.gz -C /opt
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ sudo mv /opt/eclipse /opt/eclipse-java-2022-09-R-linux-gtk-x86_64
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ cd /opt
+davidho@dphxps17:/opt$ ls -latr
+total 60
+drwxr-xr-x 20 root       root       4096 May 24 22:09 ..
+drwxr-xr-x  8 root       root       4096 May 26 14:19 RubyMine-2022.1.1
+drwxr-xr-x  8 root       root       4096 May 26 14:23 idea-IU-221.5591.52
+drwxr-xr-x  3 root       root       4096 May 26 14:42 google
+drwxr-xr-x  5 root       root       4096 Aug 21 19:39 1Password
+drwxr-xr-x  8 1001330000 1001330000 4096 Sep  8 15:44 eclipse-java-2022-09-R-linux-gtk-x86_64
+drwxr-xr-x  8 1001330000 1001330000 4096 Sep  8 15:54 eclipse-jee-2022-09-R-linux-gtk-x86_64
+drwxr-xr-x  8 root       root       4096 Sep 13 08:36 idea-IU-222.4167.29
+drwxr-xr-x  9        502 root       4096 Sep 15 07:57 sts-4.16.0.RELEASE
+drwxr-xr-x  8 root       root       4096 Oct  5 01:01 RubyMine-2022.2.3
+drwxr-xr-x  8 root       root       4096 Oct  5 01:01 idea-IU-222.4345.14
+drwxr-xr-x  7 root       root       4096 Oct  5 01:01 idea-IC-222.4345.14
+drwxr-xr-x  8 root       root       4096 Oct 10 10:05 pycharm-community-2022.2.3
+drwxr-xr-x  9 root       root       4096 Oct 10 10:05 pycharm-2022.2.3
+drwxr-xr-x 15 root       root       4096 Oct 19 07:49 .
+davidho@dphxps17:/opt$ sudo chown root:root eclipse-java-2022-09-R-linux-gtk-x86_64
+davidho@dphxps17:/opt$ sudo chown root:root eclipse-jee-2022-09-R-linux-gtk-x86_64
+davidho@dphxps17:/opt$ 
+davidho@dphxps17:/opt$ sudo chown -R root:root eclipse-jee-2022-09-R-linux-gtk-x86_64/
+davidho@dphxps17:/opt$ sudo chown -R root:root eclipse-java-2022-09-R-linux-gtk-x86_64/
+davidho@dphxps17:/opt$ 
+
+davidho@dphxps17:~$ pwd -P
+/home/davidho
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ find . -name "*javac*" -print
+./Downloads/sts-4.16.0.RELEASE/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.linux.x86_64_17.0.4.v20220903-1038/jre/bin/javac
+./Downloads/sts-4.16.0.RELEASE/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.linux.x86_64_17.0.4.v20220903-1038/jre/man/man1/javac.1
+./Downloads/elastic/elasticsearch-8.2.2/jdk/bin/javac
+./Downloads/elastic/elasticsearch-7.1.1/jdk/bin/javac
+./.sdkman/candidates/groovy/4.0.3/doc/html/gapi/org/codehaus/groovy/tools/javac
+./.sdkman/candidates/groovy/4.0.3/doc/html/api/org/codehaus/groovy/tools/javac
+./.sdkman/candidates/groovy/4.0.3/src/src/main/java/org/codehaus/groovy/tools/javac
+./.sdkman/candidates/ant/1.10.12/manual/javacprops.html
+./.sdkman/candidates/ant/1.10.12/manual/Tasks/javac.html
+./.sdkman/candidates/ant/1.10.12/manual/Tasks/javacc.html
+./.sdkman/candidates/ant/1.10.12/manual/api/org/apache/tools/ant/taskdefs/optional/javacc
+./.sdkman/candidates/java/17.0.3.fx-zulu/bin/javac
+./.sdkman/candidates/java/17.0.3.fx-zulu/man/man1/javac.1
+./.sdkman/candidates/java/17.0.3-zulu/bin/javac
+./.sdkman/candidates/java/17.0.3-zulu/man/man1/javac.1
+./.sdkman/candidates/java/17.0.3-tem/bin/javac
+./.sdkman/candidates/java/17.0.3-tem/man/man1/javac.1
+./.sdkman/candidates/java/17.0.3-oracle/bin/javac
+./.sdkman/candidates/java/17.0.3-oracle/man/man1/javac.1
+./.sdkman/candidates/java/17.0.3.6.1-amzn/bin/javac
+./.sdkman/candidates/java/17.0.3.6.1-amzn/man/man1/javac.1
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ java --version
+openjdk 17.0.3 2022-04-19 LTS
+OpenJDK Runtime Environment Zulu17.34+19-CA (build 17.0.3+7-LTS)
+OpenJDK 64-Bit Server VM Zulu17.34+19-CA (build 17.0.3+7-LTS, mixed mode, sharing)
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ javac --version
+javac 17.0.3
+davidho@dphxps17:~$ ls -latr /opt
+total 60
+drwxr-xr-x 20 root root 4096 May 24 22:09 ..
+drwxr-xr-x  8 root root 4096 May 26 14:19 RubyMine-2022.1.1
+drwxr-xr-x  8 root root 4096 May 26 14:23 idea-IU-221.5591.52
+drwxr-xr-x  3 root root 4096 May 26 14:42 google
+drwxr-xr-x  5 root root 4096 Aug 21 19:39 1Password
+drwxr-xr-x  8 root root 4096 Sep  8 15:44 eclipse-java-2022-09-R-linux-gtk-x86_64
+drwxr-xr-x  8 root root 4096 Sep  8 15:54 eclipse-jee-2022-09-R-linux-gtk-x86_64
+drwxr-xr-x  8 root root 4096 Sep 13 08:36 idea-IU-222.4167.29
+drwxr-xr-x  9  502 root 4096 Sep 15 07:57 sts-4.16.0.RELEASE
+drwxr-xr-x  8 root root 4096 Oct  5 01:01 RubyMine-2022.2.3
+drwxr-xr-x  8 root root 4096 Oct  5 01:01 idea-IU-222.4345.14
+drwxr-xr-x  7 root root 4096 Oct  5 01:01 idea-IC-222.4345.14
+drwxr-xr-x  8 root root 4096 Oct 10 10:05 pycharm-community-2022.2.3
+drwxr-xr-x  9 root root 4096 Oct 10 10:05 pycharm-2022.2.3
+drwxr-xr-x 15 root root 4096 Oct 19 07:49 .
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ find /opt -name "*javac*" -print
+/opt/pycharm-community-2022.2.3/jbr/bin/javac
+/opt/sts-4.16.0.RELEASE/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.linux.x86_64_17.0.4.v20220903-1038/jre/bin/javac
+/opt/sts-4.16.0.RELEASE/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.linux.x86_64_17.0.4.v20220903-1038/jre/man/man1/javac.1
+/opt/pycharm-2022.2.3/jbr/bin/javac
+/opt/eclipse-jee-2022-09-R-linux-gtk-x86_64/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.linux.x86_64_17.0.4.v20220903-1038/jre/bin/javac
+/opt/eclipse-jee-2022-09-R-linux-gtk-x86_64/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.linux.x86_64_17.0.4.v20220903-1038/jre/man/man1/javac.1
+/opt/RubyMine-2022.1.1/jbr/bin/javac
+/opt/idea-IU-222.4167.29/plugins/java/lib/rt/jps-javac-rt-rpc.jar
+/opt/idea-IU-222.4167.29/plugins/java/lib/javac2.jar
+/opt/idea-IU-222.4167.29/plugins/java/lib/jps-javac-extension.jar
+/opt/idea-IU-222.4167.29/jbr/bin/javac
+/opt/eclipse-java-2022-09-R-linux-gtk-x86_64/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.linux.x86_64_17.0.4.v20220903-1038/jre/bin/javac
+/opt/eclipse-java-2022-09-R-linux-gtk-x86_64/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.linux.x86_64_17.0.4.v20220903-1038/jre/man/man1/javac.1
+/opt/idea-IU-221.5591.52/plugins/java/lib/rt/jps-javac-rt-rpc.jar
+/opt/idea-IU-221.5591.52/plugins/java/lib/javac2.jar
+/opt/idea-IU-221.5591.52/plugins/java/lib/jps-javac-extension.jar
+/opt/idea-IU-221.5591.52/jbr/bin/javac
+/opt/idea-IC-222.4345.14/plugins/java/lib/rt/jps-javac-rt-rpc.jar
+/opt/idea-IC-222.4345.14/plugins/java/lib/javac2.jar
+/opt/idea-IC-222.4345.14/plugins/java/lib/jps-javac-extension.jar
+/opt/idea-IC-222.4345.14/jbr/bin/javac
+/opt/idea-IU-222.4345.14/plugins/java/lib/rt/jps-javac-rt-rpc.jar
+/opt/idea-IU-222.4345.14/plugins/java/lib/javac2.jar
+/opt/idea-IU-222.4345.14/plugins/java/lib/jps-javac-extension.jar
+/opt/idea-IU-222.4345.14/jbr/bin/javac
+/opt/RubyMine-2022.2.3/jbr/bin/javac
+davidho@dphxps17:~$ 
+
+
+
+

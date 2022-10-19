@@ -1,0 +1,212 @@
+Sun Oct 16 10:07:42 AM EDT 2022
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date
+Sun Oct 16 10:07:16 AM EDT 2022
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date > stuff-20221016.txt
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ code stuff-20221016.txt 
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+system time dual book
+
+https://itsfoss.com/wrong-time-dual-boot/
+Wrong Time Displayed in Windows-Linux Dual Boot Setup? Here’s How to Fix it
+
+timedatectl set-local-rtc 1
+
+https://www.howtogeek.com/323390/how-to-fix-windows-and-linux-showing-different-times-when-dual-booting/
+How to Fix Windows and Linux Showing Different Times When Dual Booting
+
+timedatectl set-local-rtc 1 --adjust-system-clock
+timedatectl
+timedatectl set-local-rtc 0 --adjust-system-clock
+
+davidho@dphxps17:~$ timedatectl
+               Local time: Sun 2022-10-16 10:16:29 EDT
+           Universal time: Sun 2022-10-16 14:16:29 UTC
+                 RTC time: Sun 2022-10-16 14:16:29
+                Time zone: America/New_York (EDT, -0400)
+System clock synchronized: yes
+              NTP service: active
+          RTC in local TZ: no
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ timedatectl set-local-rtc 1 --adjust-system-clock
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ timedatectl
+               Local time: Sun 2022-10-16 10:19:08 EDT
+           Universal time: Sun 2022-10-16 14:19:08 UTC
+                 RTC time: Sun 2022-10-16 14:19:08
+                Time zone: America/New_York (EDT, -0400)
+System clock synchronized: yes
+              NTP service: active
+          RTC in local TZ: yes
+
+Warning: The system is configured to read the RTC time in the local time zone.
+         This mode cannot be fully supported. It will create various problems
+         with time zone changes and daylight saving time adjustments. The RTC
+         time is never updated, it relies on external facilities to maintain it.
+         If at all possible, use RTC in UTC by calling
+         'timedatectl set-local-rtc 0'.
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Sun Oct 16 06:16:48 PM EDT 2022
+
+https://www.jetbrains.com/idea/download/#section=linux
+    Version: 2022.2.3
+    Build: 222.4345.14
+    4 October 2022
+https://www.jetbrains.com/pycharm/download/#section=linux
+    Version: 2022.2.3
+    Build: 222.4345.23
+    10 October 2022
+https://www.jetbrains.com/ruby/download/#section=linux
+    Version: 2022.2.3
+    Build: 222.4345.14
+    6 October 2022
+
+https://code.visualstudio.com/download
+    Version 1.72 is now available! Read about the new features and fixes from September.
+
+https://www.eclipse.org/downloads/
+https://www.eclipse.org/downloads/packages/
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://www.jetbrains.com/help/idea/installation-guide.html#3ede5989
+
+sudo tar -xzf jetbrains-toolbox-1.17.7391.tar.gz -C /opt
+sudo tar -xzf ideaIU.tar.gz -C /opt
+Execute the idea.sh script from the extracted directory to run IntelliJ IDEA.
+To create a desktop entry, do one of the following:
+    On the Welcome screen, click Configure | Create Desktop Entry
+    From the main menu, click Tools | Create Desktop Entry
+
+https://www.jetbrains.com/help/pycharm/installation-guide.html
+
+sudo tar -xzf jetbrains-toolbox-1.17.7391.tar.gz -C /opt
+sudo tar -xzf jetbrains-toolbox-1.17.7391.tar.gz -C /opt
+cd /opt/pycharm-*/bin
+sh pycharm.sh
+
+https://www.jetbrains.com/help/ruby/installation-guide.html
+
+sudo tar -xzf jetbrains-toolbox-1.17.7391.tar.gz -C /opt
+sudo tar xzf RubyMine-*.tar.gz -C /opt/
+Execute the rubymine.sh script from the extracted directory to run RubyMine.
+To create a desktop entry, do one of the following:
+    On the Welcome screen, click Configure | Create Desktop Entry
+    From the main menu, click Tools | Create Desktop Entry
+
+-rw-rw-r--  1 davidho davidho 1038929710 Oct 16 18:22 ideaIU-2022.2.3.tar.gz
+-rw-rw-r--  1 davidho davidho         89 Oct 16 18:22 ideaIU-2022.2.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  862407745 Oct 16 18:23 ideaIC-2022.2.3.tar.gz
+-rw-rw-r--  1 davidho davidho         89 Oct 16 18:23 ideaIC-2022.2.3.tar.gz.sha256
+drwxr-x--- 34 davidho davidho       4096 Oct 16 18:48 ..
+-rw-rw-r--  1 davidho davidho  696937833 Oct 16 18:58 pycharm-professional-2022.2.3.tar.gz
+-rw-rw-r--  1 davidho davidho        103 Oct 16 18:59 pycharm-professional-2022.2.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  535902788 Oct 16 18:59 pycharm-community-2022.2.3.tar.gz
+-rw-rw-r--  1 davidho davidho        100 Oct 16 19:00 pycharm-community-2022.2.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  611463423 Oct 16 19:02 RubyMine-2022.2.3.tar.gz
+-rw-rw-r--  1 davidho davidho         91 Oct 16 19:03 RubyMine-2022.2.3.tar.gz.sha256
+
+davidho@dphxps17:~/Downloads$ sha256sum ideaIU-2022.2.3.tar.gz.sha256
+be3b2a2d08e46df3ca46e578d02094bbb25157b8617acc7e6c72692adde400b3  ideaIU-2022.2.3.tar.gz.sha256
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ sha256sum ideaIC-2022.2.3.tar.gz.sha256
+121d4eae55efed1c5df425d3cbb48aef76e87075e2bcf31107a3e8662963610c  ideaIC-2022.2.3.tar.gz.sha256
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ sha256sum pycharm-professional-2022.2.3.tar.gz.sha256
+b0cf13f7ba7eeb0f3de1ed0c44c0427a4872be4f7bffe235e371edce33f635ad  pycharm-professional-2022.2.3.tar.gz.sha256
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ sha256sum pycharm-community-2022.2.3.tar.gz.sha256
+c4558179326cd6aae23fbc33df0a187e3eaeeddd228443c7d4ddd4bd1abc6e00  pycharm-community-2022.2.3.tar.gz.sha256
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ sha256sum RubyMine-2022.2.3.tar.gz.sha256
+6e7f5e2f4c90b01cbcf5cceb700561a9435dcaf296db51b8cd0089e72eda27dc  RubyMine-2022.2.3.tar.gz.sha256
+davidho@dphxps17:~/Downloads$ 
+
+sha256sum ideaIU-2022.2.3.tar.gz.sha256
+sha256sum ideaIC-2022.2.3.tar.gz.sha256
+sha256sum pycharm-professional-2022.2.3.tar.gz.sha256
+sha256sum pycharm-community-2022.2.3.tar.gz.sha256
+sha256sum RubyMine-2022.2.3.tar.gz.sha256
+
+sudo tar -xzf ideaIU-2022.2.3.tar.gz -C /opt
+sudo tar -xzf ideaIC-2022.2.3.tar.gz -C /opt
+sudo tar -xzf pycharm-professional-2022.2.3.tar.gz -C /opt
+sudo tar -xzf pycharm-community-2022.2.3.tar.gz -C /opt
+sudo tar -xzf RubyMine-2022.2.3.tar.gz -C /opt
+
+davidho@dphxps17:~/Downloads$ ls -latr /opt
+total 48
+drwxr-xr-x 20 root root 4096 May 24 22:09 ..
+drwxr-xr-x  8 root root 4096 May 26 14:19 RubyMine-2022.1.1
+drwxr-xr-x  8 root root 4096 May 26 14:23 idea-IU-221.5591.52
+drwxr-xr-x  3 root root 4096 May 26 14:42 google
+drwxr-xr-x  5 root root 4096 Aug 21 19:39 1Password
+drwxr-xr-x  8 root root 4096 Sep 13 08:36 idea-IU-222.4167.29
+drwxr-xr-x  8 root root 4096 Oct  5 01:01 RubyMine-2022.2.3
+drwxr-xr-x  8 root root 4096 Oct  5 01:01 idea-IU-222.4345.14
+drwxr-xr-x  7 root root 4096 Oct  5 01:01 idea-IC-222.4345.14
+drwxr-xr-x  8 root root 4096 Oct 10 10:05 pycharm-community-2022.2.3
+drwxr-xr-x  9 root root 4096 Oct 10 10:05 pycharm-2022.2.3
+drwxr-xr-x 12 root root 4096 Oct 16 19:19 .
+davidho@dphxps17:~/Downloads$ 
+
+cd /opt/idea-IU-222.4345.14/bin
+./idea.sh
+
+davidho@dphxps17:/opt/idea-IU-222.4345.14/bin$ ./idea.sh
+CompileCommand: exclude com/intellij/openapi/vfs/impl/FilePartNodeRoot.trieDescend bool exclude = true
+
+davidho@dphxps17:/opt/pycharm-2022.2.3/bin$ ./pycharm.sh
+CompileCommand: exclude com/intellij/openapi/vfs/impl/FilePartNodeRoot.trieDescend bool exclude = true
+
+davidho@dphxps17:/opt/RubyMine-2022.2.3/bin$ ./rubymine.sh
+CompileCommand: exclude com/intellij/openapi/vfs/impl/FilePartNodeRoot.trieDescend bool exclude = true
+davidho@dphxps17:/opt/RubyMine-2022.2.3/bin$ 
+
+/usr/local/bin/idea
+/usr/local/bin/charm
+/usr/local/bin/mine
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ ls -latr /usr/local/bin
+total 84
+drwxr-xr-x 10 root root  4096 Apr 19 06:02 ..
+-rwxr-xr-x  1 root root 39102 May 24 22:51 ruby-build
+-rwxr-xr-x  1 root root  1634 May 24 22:51 rbenv-uninstall
+-rwxr-xr-x  1 root root  6649 May 24 22:51 rbenv-install
+-rwxr-xr-x  1 root root  4202 Oct 16 20:15 idea
+-rwxr-xr-x  1 root root  4192 Oct 16 20:17 charm
+-rwxr-xr-x  1 root root  4196 Oct 16 20:18 mine
+drwxr-xr-x  2 root root  4096 Oct 16 20:18 .
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+
+https://www.geeksforgeeks.org/how-to-download-and-install-spring-tool-suite-spring-tools-4-for-eclipse-ide/
+
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr /opt
+total 52
+drwxr-xr-x 20 root root 4096 May 24 22:09 ..
+drwxr-xr-x  8 root root 4096 May 26 14:19 RubyMine-2022.1.1
+drwxr-xr-x  8 root root 4096 May 26 14:23 idea-IU-221.5591.52
+drwxr-xr-x  3 root root 4096 May 26 14:42 google
+drwxr-xr-x  5 root root 4096 Aug 21 19:39 1Password
+drwxr-xr-x  8 root root 4096 Sep 13 08:36 idea-IU-222.4167.29
+drwxr-xr-x  9  502 root 4096 Sep 15 07:57 sts-4.16.0.RELEASE
+drwxr-xr-x  8 root root 4096 Oct  5 01:01 RubyMine-2022.2.3
+drwxr-xr-x  8 root root 4096 Oct  5 01:01 idea-IU-222.4345.14
+drwxr-xr-x  7 root root 4096 Oct  5 01:01 idea-IC-222.4345.14
+drwxr-xr-x  8 root root 4096 Oct 10 10:05 pycharm-community-2022.2.3
+drwxr-xr-x  9 root root 4096 Oct 10 10:05 pycharm-2022.2.3
+drwxr-xr-x 13 root root 4096 Oct 16 21:16 .
+davidho@dphxps17:~/Downloads$ 
+
