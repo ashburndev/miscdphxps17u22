@@ -1,0 +1,270 @@
+Thu Oct 20 06:51:20 PM EDT 2022
+
+o@dphxps17:~$ date
+Thu Oct 20 06:50:54 PM EDT 2022
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date > stuff-20221020.txt
+davidho@dphxps17:~$ code   stuff-20221020.txt
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ java -version
+openjdk version "17.0.3" 2022-04-19 LTS
+OpenJDK Runtime Environment Zulu17.34+19-CA (build 17.0.3+7-LTS)
+OpenJDK 64-Bit Server VM Zulu17.34+19-CA (build 17.0.3+7-LTS, mixed mode, sharing)
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ javac -version
+javac 17.0.3
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ whereis javac
+javac: /home/davidho/.sdkman/candidates/java/17.0.3-zulu/bin/javac
+davidho@dphxps17:~$ 
+
+https://code.visualstudio.com/docs/java/extensions
+https://projects.eclipse.org/projects/technology.m2e
+https://github.com/eclipse/buildship
+https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack
+https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-maven
+https://marketplace.visualstudio.com/items?itemName=redhat.java
+https://code.visualstudio.com/docs/languages/java
+
+Install a Java Development Kit (JDK)#
+A Java Development Kit (JDK) is a software development environment used for developing Java applications. In order to run Java within Visual Studio Code, you need to install a JDK. The Extension Pack for Java supports Java version 1.5 or above.
+We recommend you to consider installing the JDK from one of these sources:
+    Amazon Corretto
+    Azul Zulu
+    Eclipse Adoptium's Temurin
+    Microsoft Build of OpenJDK
+    Oracle Java SE
+    Red Hat build of OpenJDK
+    SapMachine
+Note: If you have multiple JDKs installed and need to use a specific JDK version for your projects, see Configure Runtime for Projects. To enable Java preview features, see How can I use VS Code with new Java versions.
+
+https://aws.amazon.com/corretto/?filtered-posts.sort-by=item.additionalFields.createdDate&filtered-posts.sort-order=desc
+https://www.azul.com/downloads/?package=jdk
+https://adoptium.net/
+https://www.microsoft.com/openjdk
+https://www.oracle.com/java/technologies/downloads/
+https://developers.redhat.com/products/openjdk/download
+https://sap.github.io/SapMachine/
+
+https://developers.redhat.com/products/openjdk/download
+https://www.azul.com/downloads/?package=jdk
+https://adoptium.net/temurin/releases/
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://www.oracle.com/java/technologies/downloads/
+Java SE Development Kit 19.0.1 downloads
+Java SE Development Kit 17.0.5 downloads
+Java SE Development Kit 11.0.17
+Java SE Development Kit 8u351
+
+-rw-rw-r--  1 davidho davidho  189905998 Oct 20 19:25  jdk-19_linux-x64_bin.tar.gz
+-rw-rw-r--  1 davidho davidho         64 Oct 20 19:25  jdk-19_linux-x64_bin.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  162283762 Oct 20 19:26  jdk-19_linux-x64_bin.deb
+-rw-rw-r--  1 davidho davidho         64 Oct 20 19:26  jdk-19_linux-x64_bin.deb.sha256
+-rw-rw-r--  1 davidho davidho  169483428 Oct 20 19:26  jdk-19_linux-x64_bin.rpm
+-rw-rw-r--  1 davidho davidho         64 Oct 20 19:26  jdk-19_linux-x64_bin.rpm.sha256
+-rw-rw-r--  1 davidho davidho  181563408 Oct 20 19:28  jdk-17_linux-x64_bin.tar.gz
+-rw-rw-r--  1 davidho davidho         64 Oct 20 19:28  jdk-17_linux-x64_bin.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  155996900 Oct 20 19:28  jdk-17_linux-x64_bin.deb
+-rw-rw-r--  1 davidho davidho         64 Oct 20 19:28  jdk-17_linux-x64_bin.deb.sha256
+-rw-rw-r--  1 davidho davidho  163101336 Oct 20 19:29  jdk-17_linux-x64_bin.rpm
+-rw-rw-r--  1 davidho davidho         64 Oct 20 19:29  jdk-17_linux-x64_bin.rpm.sha256
+-rw-rw-r--  1 davidho davidho  145561908 Oct 20 19:36  jdk-11.0.17_linux-x64_bin.deb
+-rw-rw-r--  1 davidho davidho  152071004 Oct 20 19:37  jdk-11.0.17_linux-x64_bin.rpm
+-rw-rw-r--  1 davidho davidho  169251172 Oct 20 19:37  jdk-11.0.17_linux-x64_bin.tar.gz
+-rw-rw-r--  1 davidho davidho       7494 Oct 20 19:38  11-0-17-checksum.html
+-rw-rw-r--  1 davidho davidho  117557932 Oct 20 19:41  jdk-8u351-linux-x64.rpm
+-rw-rw-r--  1 davidho davidho  149697219 Oct 20 19:41  jdk-8u351-linux-x64.tar.gz
+-rw-rw-r--  1 davidho davidho      12168 Oct 20 19:41  8u351checksum.html
+-rw-rw-r--  1 davidho davidho  125170344 Oct 20 19:42  jdk-8u351-docs-all.zip
+-rw-rw-r--  1 davidho davidho   10476456 Oct 20 19:42  javafx-8u351-apidocs.zip
+
+mv jdk-19_linux-x64_bin.tar.gz        jdk-19.0.1_linux-x64_bin.tar.gz 
+mv jdk-19_linux-x64_bin.tar.gz.sha256 jdk-19.0.1_linux-x64_bin.tar.gz.sha256
+mv jdk-19_linux-x64_bin.deb           jdk-19.0.1_linux-x64_bin.deb
+mv jdk-19_linux-x64_bin.deb.sha256    jdk-19.0.1_linux-x64_bin.deb.sha256 
+mv jdk-19_linux-x64_bin.rpm           jdk-19.0.1_linux-x64_bin.rpm 
+mv jdk-19_linux-x64_bin.rpm.sha256    jdk-19.0.1_linux-x64_bin.rpm.sha256
+mv jdk-17_linux-x64_bin.tar.gz        jdk-17.0.5_linux-x64_bin.tar.gz 
+mv jdk-17_linux-x64_bin.tar.gz.sha256 jdk-17.0.5_linux-x64_bin.tar.gz.sha256 
+mv jdk-17_linux-x64_bin.deb           jdk-17.0.5_linux-x64_bin.deb
+mv jdk-17_linux-x64_bin.deb.sha256    jdk-17.0.5_linux-x64_bin.deb.sha256
+mv jdk-17_linux-x64_bin.rpm           jdk-17.0.5_linux-x64_bin.rpm 
+mv jdk-17_linux-x64_bin.rpm.sha256    jdk-17.0.5_linux-x64_bin.rpm.sha256 
+
+-rw-rw-r--  1 davidho davidho  189905998 Oct 20 19:25  jdk-19.0.1_linux-x64_bin.tar.gz
+-rw-rw-r--  1 davidho davidho         64 Oct 20 19:25  jdk-19.0.1_linux-x64_bin.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  162283762 Oct 20 19:26  jdk-19.0.1_linux-x64_bin.deb
+-rw-rw-r--  1 davidho davidho         64 Oct 20 19:26  jdk-19.0.1_linux-x64_bin.deb.sha256
+-rw-rw-r--  1 davidho davidho  169483428 Oct 20 19:26  jdk-19.0.1_linux-x64_bin.rpm
+-rw-rw-r--  1 davidho davidho         64 Oct 20 19:26  jdk-19.0.1_linux-x64_bin.rpm.sha256
+-rw-rw-r--  1 davidho davidho  181563408 Oct 20 19:28  jdk-17.0.5_linux-x64_bin.tar.gz
+-rw-rw-r--  1 davidho davidho         64 Oct 20 19:28  jdk-17.0.5_linux-x64_bin.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  155996900 Oct 20 19:28  jdk-17.0.5_linux-x64_bin.deb
+-rw-rw-r--  1 davidho davidho         64 Oct 20 19:28  jdk-17.0.5_linux-x64_bin.deb.sha256
+-rw-rw-r--  1 davidho davidho  163101336 Oct 20 19:29  jdk-17.0.5_linux-x64_bin.rpm
+-rw-rw-r--  1 davidho davidho         64 Oct 20 19:29  jdk-17.0.5_linux-x64_bin.rpm.sha256
+-rw-rw-r--  1 davidho davidho  145561908 Oct 20 19:36  jdk-11.0.17_linux-x64_bin.deb
+-rw-rw-r--  1 davidho davidho  152071004 Oct 20 19:37  jdk-11.0.17_linux-x64_bin.rpm
+-rw-rw-r--  1 davidho davidho  169251172 Oct 20 19:37  jdk-11.0.17_linux-x64_bin.tar.gz
+-rw-rw-r--  1 davidho davidho       7494 Oct 20 19:38  11-0-17-checksum.html
+-rw-rw-r--  1 davidho davidho  117557932 Oct 20 19:41  jdk-8u351-linux-x64.rpm
+-rw-rw-r--  1 davidho davidho  149697219 Oct 20 19:41  jdk-8u351-linux-x64.tar.gz
+-rw-rw-r--  1 davidho davidho      12168 Oct 20 19:41  8u351checksum.html
+-rw-rw-r--  1 davidho davidho  125170344 Oct 20 19:42  jdk-8u351-docs-all.zip
+-rw-rw-r--  1 davidho davidho   10476456 Oct 20 19:42  javafx-8u351-apidocs.zip
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+7z l jdk-19.0.1_linux-x64_bin.tar.gz
+tar tzvf jdk-19.0.1_linux-x64_bin.tar.gz
+
+shasum -a sha256 jdk-19.0.1_linux-x64_bin.tar.gz
+shasum -a 256 -c jdk-19.0.1_linux-x64_bin.tar.gz.sha256 jdk-19.0.1_linux-x64_bin.tar.gz
+
+davidho@dphxps17:~/Downloads$ shasum -a 256 jdk-19.0.1_linux-x64_bin.tar.gz
+a9f4886ff975616f82e1afaca5d9d85e79b6b9a698a2cb2ec824185e0dc4754f  jdk-19.0.1_linux-x64_bin.tar.gz
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ cat jdk-19.0.1_linux-x64_bin.tar.gz.sha256
+a9f4886ff975616f82e1afaca5d9d85e79b6b9a698a2cb2ec824185e0dc4754fdavidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ shasum -a 256 -c jdk-19.0.1_linux-x64_bin.tar.gz.sha256 jdk-19.0.1_linux-x64_bin.tar.gz
+shasum: jdk-19.0.1_linux-x64_bin.tar.gz.sha256: no properly formatted SHA checksum lines found
+shasum: jdk-19.0.1_linux-x64_bin.tar.gz: no properly formatted SHA checksum lines found
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ cat jdk-19.0.1_linux-x64_bin.tar.gz.sha256
+a9f4886ff975616f82e1afaca5d9d85e79b6b9a698a2cb2ec824185e0dc4754f
+a9f4886ff975616f82e1afaca5d9d85e79b6b9a698a2cb2ec824185e0dc4754f  jdk-19.0.1_linux-x64_bin.tar.gz
+davidho@dphxps17:~/Downloads$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/Documents$ sdk list java
+We periodically need to update the local cache. Please run:
+
+  $ sdk update
+
+
+
+ATTENTION: A new version of SDKMAN is available...
+
+The current version is 5.16.0, but you have 5.15.0.
+
+Would you like to upgrade now? (Y/n): y
+
+Updating SDKMAN...
+Installing script cli archive...
+* Downloading...
+######################################################################## 100.0%
+* Checking archive integrity...
+* Extracting archive...
+* Copying archive contents...
+* Cleaning up...
+
+Updating config file...
+
+sdkman_auto_answer=false
+sdkman_insecure_ssl=false
+sdkman_curl_connect_timeout=7
+sdkman_curl_max_time=10
+sdkman_beta_channel=false
+sdkman_debug_mode=false
+sdkman_colour_enable=true
+sdkman_auto_env=false
+sdkman_rosetta2_compatible=false
+sdkman_checksum_enable=true
+sdkman_selfupdate_feature=true
+sdkman_auto_complete=true
+sdkman_auto_update=true
+
+Creating config file backup...
+
+
+Successfully upgraded SDKMAN!
+
+Open a new terminal to start using SDKMAN 5.16.0.
+
+To join our BETA channel, simply follow the instructions on:
+
+   http://sdkman.io/install
+
+Enjoy!!!
+
+davidho@dphxps17:~/Documents$ cd
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ sdk list java
+davidho@dphxps17:~$ sdk list java | grep zulu
+ Zulu          |     | 19           | zulu    |            | 19-zulu             
+               |     | 19.fx        | zulu    |            | 19.fx-zulu          
+               |     | 19.0.1       | zulu    |            | 19.0.1-zulu         
+               |     | 17.0.5       | zulu    |            | 17.0.5-zulu         
+               |     | 17.0.4.1     | zulu    |            | 17.0.4.1-zulu       
+               |     | 17.0.4.1.fx  | zulu    |            | 17.0.4.1.fx-zulu    
+               | >>> | 17.0.3       | zulu    | local only | 17.0.3-zulu         
+               |     | 17.0.3.fx    | zulu    | local only | 17.0.3.fx-zulu      
+               |     | 11.0.17      | zulu    |            | 11.0.17-zulu        
+               |     | 11.0.16.1    | zulu    |            | 11.0.16.1-zulu      
+               |     | 11.0.16.1.fx | zulu    |            | 11.0.16.1.fx-zulu   
+               |     | 8.0.352      | zulu    |            | 8.0.352-zulu        
+               |     | 8.0.345      | zulu    |            | 8.0.345-zulu        
+               |     | 8.0.345.fx   | zulu    |            | 8.0.345.fx-zulu     
+               |     | 7.0.352      | zulu    |            | 7.0.352-zulu        
+               |     | 6.0.119      | zulu    |            | 6.0.119-zulu        
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ sdk home java 17.0.5-zulu 
+
+Stop! Candidate version is not installed.
+
+Tip: Run the following to install this version
+
+$ sdk install java 17.0.5-zulu
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ sdk install java 17.0.5-zulu
+
+Downloading: java 17.0.5-zulu
+
+In progress...
+
+######################################################################################################################################################################## 100.0%
+
+Repackaging Java 17.0.5-zulu...
+
+Done repackaging...
+
+Installing: java 17.0.5-zulu
+Done installing!
+
+Do you want java 17.0.5-zulu to be set as default? (Y/n): y
+
+Setting java 17.0.5-zulu as default.
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ java -version
+openjdk version "17.0.5" 2022-10-18 LTS
+OpenJDK Runtime Environment Zulu17.38+21-CA (build 17.0.5+8-LTS)
+OpenJDK 64-Bit Server VM Zulu17.38+21-CA (build 17.0.5+8-LTS, mixed mode, sharing)
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ whereis javac
+javac: /home/davidho/.sdkman/candidates/java/17.0.5-zulu/bin/javac
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ sdk list java | grep zulu
+ Zulu          |     | 19           | zulu    |            | 19-zulu             
+               |     | 19.fx        | zulu    |            | 19.fx-zulu          
+               |     | 19.0.1       | zulu    |            | 19.0.1-zulu         
+               | >>> | 17.0.5       | zulu    | installed  | 17.0.5-zulu         
+               |     | 17.0.4.1     | zulu    |            | 17.0.4.1-zulu       
+               |     | 17.0.4.1.fx  | zulu    |            | 17.0.4.1.fx-zulu    
+               |     | 17.0.3       | zulu    | local only | 17.0.3-zulu         
+               |     | 17.0.3.fx    | zulu    | local only | 17.0.3.fx-zulu      
+               |     | 11.0.17      | zulu    |            | 11.0.17-zulu        
+               |     | 11.0.16.1    | zulu    |            | 11.0.16.1-zulu      
+               |     | 11.0.16.1.fx | zulu    |            | 11.0.16.1.fx-zulu   
+               |     | 8.0.352      | zulu    |            | 8.0.352-zulu        
+               |     | 8.0.345      | zulu    |            | 8.0.345-zulu        
+               |     | 8.0.345.fx   | zulu    |            | 8.0.345.fx-zulu     
+               |     | 7.0.352      | zulu    |            | 7.0.352-zulu        
+               |     | 6.0.119      | zulu    |            | 6.0.119-zulu        
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+
+
