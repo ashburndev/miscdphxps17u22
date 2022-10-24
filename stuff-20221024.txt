@@ -1,0 +1,349 @@
+Mon Oct 24 06:13:54 AM EDT 2022
+
+davidho@dphxps17:~$ date
+Mon Oct 24 06:13:41 AM EDT 2022
+davidho@dphxps17:~$ date > stuff-20221024.txt
+davidho@dphxps17:~$ code   stuff-20221024.txt
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://www.jetbrains.com/help/pycharm/creating-and-running-your-first-python-project.html
+
+davidho@dphxps17:~$ cd /opt
+davidho@dphxps17:/opt$ ls -latr
+total 60
+drwxr-xr-x 20 root root 4096 May 24 22:09 ..
+drwxr-xr-x  8 root root 4096 May 26 14:19 RubyMine-2022.1.1
+drwxr-xr-x  8 root root 4096 May 26 14:23 idea-IU-221.5591.52
+drwxr-xr-x  3 root root 4096 May 26 14:42 google
+drwxr-xr-x  5 root root 4096 Aug 21 19:39 1Password
+drwxr-xr-x  8 root root 4096 Sep  8 15:44 eclipse-java-2022-09-R-linux-gtk-x86_64
+drwxr-xr-x  8 root root 4096 Sep  8 15:54 eclipse-jee-2022-09-R-linux-gtk-x86_64
+drwxr-xr-x  8 root root 4096 Sep 13 08:36 idea-IU-222.4167.29
+drwxr-xr-x  9  502 root 4096 Sep 15 07:57 sts-4.16.0.RELEASE
+drwxr-xr-x  8 root root 4096 Oct  5 01:01 RubyMine-2022.2.3
+drwxr-xr-x  8 root root 4096 Oct  5 01:01 idea-IU-222.4345.14
+drwxr-xr-x  7 root root 4096 Oct  5 01:01 idea-IC-222.4345.14
+drwxr-xr-x  8 root root 4096 Oct 10 10:05 pycharm-community-2022.2.3
+drwxr-xr-x  9 root root 4096 Oct 10 10:05 pycharm-2022.2.3
+drwxr-xr-x 15 root root 4096 Oct 19 07:49 .
+davidho@dphxps17:/opt$ 
+davidho@dphxps17:/opt$ cd pycharm-community-2022.2.3/
+davidho@dphxps17:/opt/pycharm-community-2022.2.3$ ls -latr
+total 48
+-rw-r--r--  1 root root 4594 Oct 10 10:05 product-info.json
+drwxr-xr-x 41 root root 4096 Oct 10 10:05 plugins
+drwxr-xr-x  2 root root 4096 Oct 10 10:05 license
+drwxr-xr-x  5 root root 4096 Oct 10 10:05 lib
+drwxr-xr-x  7 root root 4096 Oct 10 10:05 jbr
+-rw-r--r--  1 root root 1816 Oct 10 10:05 Install-Linux-tar.txt
+drwxr-xr-x  2 root root 4096 Oct 10 10:05 help
+-rw-r--r--  1 root root   14 Oct 10 10:05 build.txt
+drwxr-xr-x  3 root root 4096 Oct 10 10:05 bin
+drwxr-xr-x  8 root root 4096 Oct 10 10:05 .
+drwxr-xr-x 15 root root 4096 Oct 19 07:49 ..
+davidho@dphxps17:/opt/pycharm-community-2022.2.3$ 
+davidho@dphxps17:/opt/pycharm-community-2022.2.3$ cd bin
+davidho@dphxps17:/opt/pycharm-community-2022.2.3/bin$ ls -latr
+total 9884
+-rwxr-xr-x 1 root root     808 Oct 10 10:05 restart.py
+-rwxr-xr-x 1 root root 9596150 Oct 10 10:05 repair
+-rw-r--r-- 1 root root    9808 Oct 10 10:05 pycharm.svg
+-rwxr-xr-x 1 root root    9846 Oct 10 10:05 pycharm.sh
+-rw-r--r-- 1 root root    7074 Oct 10 10:05 pycharm.png
+-rw-r--r-- 1 root root     562 Oct 10 10:05 pycharm64.vmoptions
+-rwxr-xr-x 1 root root     828 Oct 10 10:05 ltedit.sh
+-rw-r--r-- 1 root root  297424 Oct 10 10:05 libdbm.so
+-rwxr-xr-x 1 root root     295 Oct 10 10:05 inspect.sh
+-rw-r--r-- 1 root root   11264 Oct 10 10:05 idea.properties
+drwxr-xr-x 2 root root    4096 Oct 10 10:05 icons
+-rwxr-xr-x 1 root root   24208 Oct 10 10:05 fsnotifier
+-rwxr-xr-x 1 root root     220 Oct 10 10:05 format.sh
+-rw-r--r-- 1 root root  120312 Oct 10 10:05 brokenPlugins.db
+drwxr-xr-x 8 root root    4096 Oct 10 10:05 ..
+drwxr-xr-x 3 root root    4096 Oct 10 10:05 .
+davidho@dphxps17:/opt/pycharm-community-2022.2.3/bin$ 
+davidho@dphxps17:/opt/pycharm-community-2022.2.3/bin$ python3 -V
+Python 3.10.4
+davidho@dphxps17:/opt/pycharm-community-2022.2.3/bin$ java -version
+openjdk version "17.0.5" 2022-10-18 LTS
+OpenJDK Runtime Environment Zulu17.38+21-CA (build 17.0.5+8-LTS)
+OpenJDK 64-Bit Server VM Zulu17.38+21-CA (build 17.0.5+8-LTS, mixed mode, sharing)
+davidho@dphxps17:/opt/pycharm-community-2022.2.3/bin$ 
+davidho@dphxps17:/opt/pycharm-community-2022.2.3/bin$ ./pycharm.sh 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ cd PycharmProjects/
+davidho@dphxps17:~/PycharmProjects$ 
+davidho@dphxps17:~/PycharmProjects$ ls -latr
+total 16
+drwxrwxr-x  4 davidho davidho 4096 Oct 16 20:11 pythonProject
+drwxrwxr-x  4 davidho davidho 4096 Oct 24 06:27 .
+drwxrwxr-x  4 davidho davidho 4096 Oct 24 06:27 MyProject
+drwxr-x--- 42 davidho davidho 4096 Oct 24 06:48 ..
+davidho@dphxps17:~/PycharmProjects$ 
+davidho@dphxps17:~/PycharmProjects$ tree -L 5
+.
+├── MyProject
+│   └── venv
+│       ├── Car.py
+│       ├── lib
+│       │   └── python3.10
+│       ├── local
+│       │   ├── bin
+│       │   │   ├── activate
+│       │   │   ├── activate.csh
+│       │   │   ├── activate.fish
+│       │   │   ├── activate.nu
+│       │   │   ├── activate.ps1
+│       │   │   ├── activate_this.py
+│       │   │   ├── deactivate.nu
+│       │   │   ├── pip
+│       │   │   ├── pip3
+│       │   │   ├── pip-3.10
+│       │   │   ├── pip3.10
+│       │   │   ├── python -> /usr/bin/python3.10
+│       │   │   ├── python3 -> python
+│       │   │   ├── python3.10 -> python
+│       │   │   ├── wheel
+│       │   │   ├── wheel3
+│       │   │   ├── wheel-3.10
+│       │   │   └── wheel3.10
+│       │   └── lib
+│       │       └── python3.10
+│       └── pyvenv.cfg
+└── pythonProject
+    └── venv
+        ├── lib
+        │   └── python3.10
+        ├── local
+        │   ├── bin
+        │   │   ├── activate
+        │   │   ├── activate.csh
+        │   │   ├── activate.fish
+        │   │   ├── activate.nu
+        │   │   ├── activate.ps1
+        │   │   ├── activate_this.py
+        │   │   ├── deactivate.nu
+        │   │   ├── pip
+        │   │   ├── pip3
+        │   │   ├── pip-3.10
+        │   │   ├── pip3.10
+        │   │   ├── python -> /usr/bin/python3.10
+        │   │   ├── python3 -> python
+        │   │   ├── python3.10 -> python
+        │   │   ├── wheel
+        │   │   ├── wheel3
+        │   │   ├── wheel-3.10
+        │   │   └── wheel3.10
+        │   └── lib
+        │       └── python3.10
+        └── pyvenv.cfg
+
+16 directories, 39 files
+davidho@dphxps17:~/PycharmProjects$ 
+davidho@dphxps17:~/PycharmProjects$ cd MyProject/
+davidho@dphxps17:~/PycharmProjects/MyProject$
+davidho@dphxps17:~/PycharmProjects/MyProject$ ls -latr
+total 16
+drwxrwxr-x 4 davidho davidho 4096 Oct 24 06:27 ..
+drwxrwxr-x 4 davidho davidho 4096 Oct 24 06:27 .
+drwxrwxr-x 4 davidho davidho 4096 Oct 24 06:37 venv
+drwxrwxr-x 3 davidho davidho 4096 Oct 24 06:40 .idea
+davidho@dphxps17:~/PycharmProjects/MyProject$ 
+davidho@dphxps17:~/PycharmProjects/MyProject$ cd venv
+davidho@dphxps17:~/PycharmProjects/MyProject/venv$ 
+davidho@dphxps17:~/PycharmProjects/MyProject/venv$ ls -latr
+total 28
+drwxrwxr-x 4 davidho davidho 4096 Oct 24 06:27 local
+drwxrwxr-x 3 davidho davidho 4096 Oct 24 06:27 lib
+-rw-rw-r-- 1 davidho davidho   40 Oct 24 06:27 .gitignore
+-rw-rw-r-- 1 davidho davidho  206 Oct 24 06:27 pyvenv.cfg
+drwxrwxr-x 4 davidho davidho 4096 Oct 24 06:27 ..
+-rw-rw-r-- 1 davidho davidho 1314 Oct 24 06:37 Car.py
+drwxrwxr-x 4 davidho davidho 4096 Oct 24 06:37 .
+davidho@dphxps17:~/PycharmProjects/MyProject/venv$ 
+davidho@dphxps17:~/PycharmProjects/MyProject/venv$ tree -L 6
+.
+├── Car.py
+├── lib
+│   └── python3.10
+├── local
+│   ├── bin
+│   │   ├── activate
+│   │   ├── activate.csh
+│   │   ├── activate.fish
+│   │   ├── activate.nu
+│   │   ├── activate.ps1
+│   │   ├── activate_this.py
+│   │   ├── deactivate.nu
+│   │   ├── pip
+│   │   ├── pip3
+│   │   ├── pip-3.10
+│   │   ├── pip3.10
+│   │   ├── python -> /usr/bin/python3.10
+│   │   ├── python3 -> python
+│   │   ├── python3.10 -> python
+│   │   ├── wheel
+│   │   ├── wheel3
+│   │   ├── wheel-3.10
+│   │   └── wheel3.10
+│   └── lib
+│       └── python3.10
+│           └── dist-packages
+│               ├── _distutils_hack
+│               │   ├── __init__.py
+│               │   └── override.py
+│               ├── distutils-precedence.pth
+│               ├── pip
+│               │   ├── __init__.py
+│               │   ├── _internal
+│               │   ├── __main__.py
+│               │   ├── py.typed
+│               │   └── _vendor
+│               ├── pip-21.3.1.dist-info
+│               │   ├── entry_points.txt
+│               │   ├── INSTALLER
+│               │   ├── LICENSE.txt
+│               │   ├── METADATA
+│               │   ├── RECORD
+│               │   ├── top_level.txt
+│               │   └── WHEEL
+│               ├── pip-21.3.1.virtualenv
+│               ├── pkg_resources
+│               │   ├── extern
+│               │   ├── __init__.py
+│               │   ├── tests
+│               │   └── _vendor
+│               ├── setuptools
+│               │   ├── archive_util.py
+│               │   ├── build_meta.py
+│               │   ├── cli-32.exe
+│               │   ├── cli-64.exe
+│               │   ├── cli-arm64.exe
+│               │   ├── cli.exe
+│               │   ├── command
+│               │   ├── config.py
+│               │   ├── depends.py
+│               │   ├── _deprecation_warning.py
+│               │   ├── dep_util.py
+│               │   ├── dist.py
+│               │   ├── _distutils
+│               │   ├── errors.py
+│               │   ├── extension.py
+│               │   ├── extern
+│               │   ├── glob.py
+│               │   ├── gui-32.exe
+│               │   ├── gui-64.exe
+│               │   ├── gui-arm64.exe
+│               │   ├── gui.exe
+│               │   ├── _imp.py
+│               │   ├── __init__.py
+│               │   ├── installer.py
+│               │   ├── launch.py
+│               │   ├── logging.py
+│               │   ├── monkey.py
+│               │   ├── msvc.py
+│               │   ├── namespaces.py
+│               │   ├── package_index.py
+│               │   ├── py34compat.py
+│               │   ├── sandbox.py
+│               │   ├── script (dev).tmpl
+│               │   ├── script.tmpl
+│               │   ├── unicode_utils.py
+│               │   ├── _vendor
+│               │   ├── version.py
+│               │   ├── wheel.py
+│               │   └── windows_support.py
+│               ├── setuptools-60.2.0.dist-info
+│               │   ├── entry_points.txt
+│               │   ├── INSTALLER
+│               │   ├── LICENSE
+│               │   ├── METADATA
+│               │   ├── RECORD
+│               │   ├── top_level.txt
+│               │   └── WHEEL
+│               ├── setuptools-60.2.0.virtualenv
+│               ├── _virtualenv.pth
+│               ├── _virtualenv.py
+│               ├── wheel
+│               │   ├── bdist_wheel.py
+│               │   ├── cli
+│               │   ├── __init__.py
+│               │   ├── macosx_libfile.py
+│               │   ├── __main__.py
+│               │   ├── metadata.py
+│               │   ├── pkginfo.py
+│               │   ├── util.py
+│               │   ├── vendored
+│               │   └── wheelfile.py
+│               ├── wheel-0.37.1.dist-info
+│               │   ├── entry_points.txt
+│               │   ├── INSTALLER
+│               │   ├── LICENSE.txt
+│               │   ├── METADATA
+│               │   ├── RECORD
+│               │   ├── top_level.txt
+│               │   └── WHEEL
+│               └── wheel-0.37.1.virtualenv
+└── pyvenv.cfg
+
+26 directories, 96 files
+davidho@dphxps17:~/PycharmProjects/MyProject/venv$ 
+davidho@dphxps17:~/PycharmProjects/MyProject/venv$ cat Car.py 
+class Car:
+
+    def __init__(self, speed=0):
+        self.speed = speed
+        self.odometer = 0
+        self.time = 0
+
+    def say_state(self):
+        print("I'm going {} kph!".format(self.speed))
+
+    def accelerate(self):
+        self.speed += 5
+
+    def brake(self):
+        if self.speed < 5:
+            self.speed = 0
+        else:
+            self.speed -= 5
+
+    def step(self):
+        self.odometer += self.speed
+        self.time += 1
+
+    def average_speed(self):
+        if self.time != 0:
+            return self.odometer / self.time
+        else:
+            pass
+
+
+if __name__ == '__main__':
+
+    my_car = Car()
+    print("I'm a car!")
+    while True:
+        action = input("What should I do? [A]ccelerate, [B]rake, "
+                 "show [O]dometer, or show average [S]peed?").upper()
+        if action not in "ABOS" or len(action) != 1:
+            print("I don't know how to do that")
+            continue
+        if action == 'A':
+            my_car.accelerate()
+        elif action == 'B':
+            my_car.brake()
+        elif action == 'O':
+            print("The car has driven {} kilometers".format(my_car.odometer))
+        elif action == 'S':
+            print("The car's average speed was {} kph".format(my_car.average_speed()))
+        my_car.step()
+        my_car.say_state()
+davidho@dphxps17:~/PycharmProjects/MyProject/venv$ 
+davidho@dphxps17:~/PycharmProjects/MyProject/venv$ 
+
