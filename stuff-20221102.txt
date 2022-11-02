@@ -1,0 +1,1063 @@
+Wed Nov  2 07:20:05 AM EDT 2022
+
+davidho@dphxps17:~$ date
+Wed Nov  2 07:19:38 AM EDT 2022
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date > stuff020221102.txt
+davidho@dphxps17:~$ code   stuff020221102.txt
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~$ nvm list
+->      v18.2.0
+         system
+default -> node (-> v18.2.0)
+iojs -> N/A (default)
+unstable -> N/A (default)
+node -> stable (-> v18.2.0) (default)
+stable -> 18.2 (-> v18.2.0) (default)
+lts/* -> lts/gallium (-> N/A)
+lts/argon -> v4.9.1 (-> N/A)
+lts/boron -> v6.17.1 (-> N/A)
+lts/carbon -> v8.17.0 (-> N/A)
+lts/dubnium -> v10.24.1 (-> N/A)
+lts/erbium -> v12.22.12 (-> N/A)
+lts/fermium -> v14.19.3 (-> N/A)
+lts/gallium -> v16.15.0 (-> N/A)
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ node -v
+v18.2.0
+davidho@dphxps17:~$ npm -v
+8.9.0
+davidho@dphxps17:~$ npx -v
+8.9.0
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://www.jetbrains.com/webstorm/learn/
+https://www.jetbrains.com/help/webstorm/installation-guide.html
+  sudo tar -xzf jetbrains-toolbox-1.17.7391.tar.gz -C /opt
+  sudo tar xzf WebStorm-*.tar.gz -C /opt/
+
+https://www.jetbrains.com/webstorm/download/#section=linux
+  Version: 2022.2.3
+  Build: 222.4345.14
+  9 October 2022
+  sudo tar xzf WebStorm-2022.2.3.tar.gz -C /opt/
+
+
+-rw-rw-r--  1 davidho davidho  570969095 Nov  2 07:24  WebStorm-2022.2.3.tar.gz
+-rw-rw-r--  1 davidho davidho         91 Nov  2 07:24  WebStorm-2022.2.3.tar.gz.sha256
+drwxr-xr-x  5 davidho davidho      12288 Nov  2 07:25  .
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ sha256sum WebStorm-2022.2.3.tar.gz.sha256
+4226d512084bcfb72a052b43d4908bf9733220244241b56ab279b0c9b9573be3  WebStorm-2022.2.3.tar.gz.sha256
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ cat WebStorm-2022.2.3.tar.gz.sha256
+1d7d464bbcb83d5af48359aeda6aa7d165038bfaa1f26fef1019761eb278fa22 *WebStorm-2022.2.3.tar.gz
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr /opt
+total 60
+drwxr-xr-x 20 root root 4096 May 24 22:09 ..
+drwxr-xr-x  8 root root 4096 May 26 14:19 RubyMine-2022.1.1
+drwxr-xr-x  8 root root 4096 May 26 14:23 idea-IU-221.5591.52
+drwxr-xr-x  3 root root 4096 May 26 14:42 google
+drwxr-xr-x  5 root root 4096 Aug 21 19:39 1Password
+drwxr-xr-x  8 root root 4096 Sep  8 15:44 eclipse-java-2022-09-R-linux-gtk-x86_64
+drwxr-xr-x  8 root root 4096 Sep  8 15:54 eclipse-jee-2022-09-R-linux-gtk-x86_64
+drwxr-xr-x  8 root root 4096 Sep 13 08:36 idea-IU-222.4167.29
+drwxr-xr-x  9  502 root 4096 Sep 15 07:57 sts-4.16.0.RELEASE
+drwxr-xr-x  8 root root 4096 Oct  5 01:01 RubyMine-2022.2.3
+drwxr-xr-x  8 root root 4096 Oct  5 01:01 idea-IU-222.4345.14
+drwxr-xr-x  7 root root 4096 Oct  5 01:01 idea-IC-222.4345.14
+drwxr-xr-x  8 root root 4096 Oct 10 10:05 pycharm-community-2022.2.3
+drwxr-xr-x  9 root root 4096 Oct 10 10:05 pycharm-2022.2.3
+drwxr-xr-x 15 root root 4096 Oct 19 07:49 .
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ sudo tar xzf WebStorm-2022.2.3.tar.gz -C /opt/
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr /opt
+total 64
+drwxr-xr-x 20 root root 4096 May 24 22:09 ..
+drwxr-xr-x  8 root root 4096 May 26 14:19 RubyMine-2022.1.1
+drwxr-xr-x  8 root root 4096 May 26 14:23 idea-IU-221.5591.52
+drwxr-xr-x  3 root root 4096 May 26 14:42 google
+drwxr-xr-x  5 root root 4096 Aug 21 19:39 1Password
+drwxr-xr-x  8 root root 4096 Sep  8 15:44 eclipse-java-2022-09-R-linux-gtk-x86_64
+drwxr-xr-x  8 root root 4096 Sep  8 15:54 eclipse-jee-2022-09-R-linux-gtk-x86_64
+drwxr-xr-x  8 root root 4096 Sep 13 08:36 idea-IU-222.4167.29
+drwxr-xr-x  9  502 root 4096 Sep 15 07:57 sts-4.16.0.RELEASE
+drwxr-xr-x  8 root root 4096 Oct  5 01:01 WebStorm-222.4345.14
+drwxr-xr-x  8 root root 4096 Oct  5 01:01 RubyMine-2022.2.3
+drwxr-xr-x  8 root root 4096 Oct  5 01:01 idea-IU-222.4345.14
+drwxr-xr-x  7 root root 4096 Oct  5 01:01 idea-IC-222.4345.14
+drwxr-xr-x  8 root root 4096 Oct 10 10:05 pycharm-community-2022.2.3
+drwxr-xr-x  9 root root 4096 Oct 10 10:05 pycharm-2022.2.3
+drwxr-xr-x 16 root root 4096 Nov  2 07:33 .
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ cd /opt/WebStorm-222.4345.14/
+davidho@dphxps17:/opt/WebStorm-222.4345.14$ 
+davidho@dphxps17:/opt/WebStorm-222.4345.14$ ls -latr
+total 52
+-rw-r--r--  1 root root 8288 Oct  5 01:01 product-info.json
+drwxr-xr-x 85 root root 4096 Oct  5 01:01 plugins
+drwxr-xr-x  2 root root 4096 Oct  5 01:01 license
+drwxr-xr-x  4 root root 4096 Oct  5 01:01 lib
+drwxr-xr-x  7 root root 4096 Oct  5 01:01 jbr
+-rw-r--r--  1 root root 1820 Oct  5 01:01 Install-Linux-tar.txt
+drwxr-xr-x  2 root root 4096 Oct  5 01:01 help
+-rw-r--r--  1 root root   14 Oct  5 01:01 build.txt
+drwxr-xr-x  3 root root 4096 Oct  5 01:01 bin
+drwxr-xr-x  8 root root 4096 Oct  5 01:01 .
+drwxr-xr-x 16 root root 4096 Nov  2 07:33 ..
+davidho@dphxps17:/opt/WebStorm-222.4345.14$ 
+davidho@dphxps17:/opt/WebStorm-222.4345.14$ cd bin
+davidho@dphxps17:/opt/WebStorm-222.4345.14/bin$ 
+davidho@dphxps17:/opt/WebStorm-222.4345.14/bin$ ls -latr
+total 9896
+-rw-r--r-- 1 root root   13041 Oct  5 01:01 webstorm.svg
+-rwxr-xr-x 1 root root    9901 Oct  5 01:01 webstorm.sh
+-rwxr-xr-x 1 root root    9948 Oct  5 01:01 webstorm.png
+-rw-r--r-- 1 root root     562 Oct  5 01:01 webstorm64.vmoptions
+-rwxr-xr-x 1 root root     808 Oct  5 01:01 restart.py
+-rwxr-xr-x 1 root root 9596150 Oct  5 01:01 repair
+-rwxr-xr-x 1 root root    1320 Oct  5 01:01 remote-dev-server.sh
+-rwxr-xr-x 1 root root     830 Oct  5 01:01 ltedit.sh
+-rw-r--r-- 1 root root  297424 Oct  5 01:01 libdbm.so
+-rwxr-xr-x 1 root root     297 Oct  5 01:01 inspect.sh
+-rw-r--r-- 1 root root   11262 Oct  5 01:01 idea.properties
+drwxr-xr-x 2 root root    4096 Oct  5 01:01 icons
+-rwxr-xr-x 1 root root   24208 Oct  5 01:01 fsnotifier
+-rwxr-xr-x 1 root root     222 Oct  5 01:01 format.sh
+-rw-r--r-- 1 root root  120203 Oct  5 01:01 brokenPlugins.db
+drwxr-xr-x 8 root root    4096 Oct  5 01:01 ..
+drwxr-xr-x 3 root root    4096 Oct  5 01:01 .
+davidho@dphxps17:/opt/WebStorm-222.4345.14/bin$ 
+davidho@dphxps17:/opt/WebStorm-222.4345.14/bin$ ./webstorm.sh
+CompileCommand: exclude com/intellij/openapi/vfs/impl/FilePartNodeRoot.trieDescend bool exclude = true
+
+/home/davidho/WebstormProjects/untitled
+/home/davidho/WebstormProjects/dphapp1
+~/.nvm/versions/node/v18.2.0/bin/node
+npx create-react-app
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+/home/davidho/.nvm/versions/node/v18.2.0/bin/npx --yes create-react-app .
+npm WARN deprecated tar@2.2.2: This version of tar is no longer supported, and will not receive security updates. Please upgrade asap.
+
+Creating a new React app in /home/davidho/WebstormProjects/dphapp1.
+
+Installing packages. This might take a couple of minutes.
+Installing react, react-dom, and react-scripts with cra-template...
+
+
+added 1393 packages in 27s
+
+212 packages are looking for funding
+  run `npm fund` for details
+
+Initialized a git repository.
+
+Installing template dependencies using npm...
+
+added 71 packages in 3s
+
+224 packages are looking for funding
+  run `npm fund` for details
+Removing template package using npm...
+
+
+removed 1 package, and audited 1464 packages in 1s
+
+224 packages are looking for funding
+  run `npm fund` for details
+
+6 high severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+Created git commit.
+
+Success! Created dphapp1 at /home/davidho/WebstormProjects/dphapp1
+Inside that directory, you can run several commands:
+
+  npm start
+    Starts the development server.
+
+  npm run build
+    Bundles the app into static files for production.
+
+  npm test
+    Starts the test runner.
+
+  npm run eject
+    Removes this tool and copies build dependencies, configuration files
+    and scripts into the app directory. If you do this, you can’t go back!
+
+We suggest that you begin by typing:
+
+  cd /home/davidho/WebstormProjects/dphapp1
+  npm start
+
+Happy hacking!
+npm notice 
+npm notice New minor version of npm available! 8.9.0 -> 8.19.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v8.19.2
+npm notice Run npm install -g npm@8.19.2 to update!
+npm notice 
+Done
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/WebstormProjects/dphapp1$ ls -latr
+total 1248
+drwxrwxr-x   3 davidho davidho    4096 Nov  2 07:42 ..
+drwxrwxr-x   2 davidho davidho    4096 Nov  2 07:43 src
+-rw-rw-r--   1 davidho davidho    3359 Nov  2 07:43 README.md
+drwxrwxr-x   2 davidho davidho    4096 Nov  2 07:43 public
+-rw-rw-r--   1 davidho davidho     310 Nov  2 07:43 .gitignore
+drwxrwxr-x   7 davidho davidho    4096 Nov  2 07:43 .
+drwxrwxr-x 815 davidho davidho   36864 Nov  2 07:43 node_modules
+-rw-rw-r--   1 davidho davidho 1196880 Nov  2 07:43 package-lock.json
+-rw-rw-r--   1 davidho davidho     810 Nov  2 07:43 package.json
+drwxrwxr-x   8 davidho davidho    4096 Nov  2 07:43 .git
+drwxrwxr-x   3 davidho davidho    4096 Nov  2 07:43 .idea
+davidho@dphxps17:~/WebstormProjects/dphapp1$ 
+davidho@dphxps17:~/WebstormProjects/dphapp1$ tree -d -L 2
+.
+├── node_modules
+│   ├── abab
+│   ├── accepts
+│   ├── acorn
+│   ├── acorn-globals
+│   ├── acorn-import-assertions
+│   ├── acorn-jsx
+│   ├── acorn-node
+│   ├── acorn-walk
+│   ├── address
+│   ├── adjust-sourcemap-loader
+│   ├── @adobe
+│   ├── agent-base
+│   ├── ajv
+│   ├── ajv-formats
+│   ├── ajv-keywords
+│   ├── @ampproject
+│   ├── ansi-escapes
+│   ├── ansi-html-community
+│   ├── ansi-regex
+│   ├── ansi-styles
+│   ├── anymatch
+│   ├── arg
+│   ├── argparse
+│   ├── aria-query
+│   ├── array-flatten
+│   ├── array-includes
+│   ├── array.prototype.flat
+│   ├── array.prototype.flatmap
+│   ├── array.prototype.reduce
+│   ├── array-union
+│   ├── asap
+│   ├── ast-types-flow
+│   ├── async
+│   ├── asynckit
+│   ├── at-least-node
+│   ├── autoprefixer
+│   ├── available-typed-arrays
+│   ├── axe-core
+│   ├── axobject-query
+│   ├── @babel
+│   ├── babel-jest
+│   ├── babel-loader
+│   ├── babel-plugin-istanbul
+│   ├── babel-plugin-jest-hoist
+│   ├── babel-plugin-macros
+│   ├── babel-plugin-named-asset-import
+│   ├── babel-plugin-polyfill-corejs2
+│   ├── babel-plugin-polyfill-corejs3
+│   ├── babel-plugin-polyfill-regenerator
+│   ├── babel-plugin-transform-react-remove-prop-types
+│   ├── babel-preset-current-node-syntax
+│   ├── babel-preset-jest
+│   ├── babel-preset-react-app
+│   ├── balanced-match
+│   ├── batch
+│   ├── @bcoe
+│   ├── bfj
+│   ├── big.js
+│   ├── binary-extensions
+│   ├── bluebird
+│   ├── body-parser
+│   ├── bonjour-service
+│   ├── boolbase
+│   ├── brace-expansion
+│   ├── braces
+│   ├── browser-process-hrtime
+│   ├── browserslist
+│   ├── bser
+│   ├── buffer-from
+│   ├── builtin-modules
+│   ├── bytes
+│   ├── call-bind
+│   ├── callsites
+│   ├── camel-case
+│   ├── camelcase
+│   ├── camelcase-css
+│   ├── caniuse-api
+│   ├── caniuse-lite
+│   ├── case-sensitive-paths-webpack-plugin
+│   ├── chalk
+│   ├── char-regex
+│   ├── check-types
+│   ├── chokidar
+│   ├── chrome-trace-event
+│   ├── ci-info
+│   ├── cjs-module-lexer
+│   ├── clean-css
+│   ├── cliui
+│   ├── co
+│   ├── coa
+│   ├── collect-v8-coverage
+│   ├── color-convert
+│   ├── colord
+│   ├── colorette
+│   ├── color-name
+│   ├── combined-stream
+│   ├── commander
+│   ├── commondir
+│   ├── common-path-prefix
+│   ├── common-tags
+│   ├── compressible
+│   ├── compression
+│   ├── concat-map
+│   ├── confusing-browser-globals
+│   ├── connect-history-api-fallback
+│   ├── content-disposition
+│   ├── content-type
+│   ├── convert-source-map
+│   ├── cookie
+│   ├── cookie-signature
+│   ├── core-js
+│   ├── core-js-compat
+│   ├── core-js-pure
+│   ├── core-util-is
+│   ├── cosmiconfig
+│   ├── cross-spawn
+│   ├── crypto-random-string
+│   ├── css-blank-pseudo
+│   ├── cssdb
+│   ├── css-declaration-sorter
+│   ├── cssesc
+│   ├── css.escape
+│   ├── css-has-pseudo
+│   ├── css-loader
+│   ├── css-minimizer-webpack-plugin
+│   ├── cssnano
+│   ├── cssnano-preset-default
+│   ├── cssnano-utils
+│   ├── csso
+│   ├── cssom
+│   ├── css-prefers-color-scheme
+│   ├── css-select
+│   ├── css-select-base-adapter
+│   ├── cssstyle
+│   ├── @csstools
+│   ├── css-tree
+│   ├── csstype
+│   ├── css-what
+│   ├── damerau-levenshtein
+│   ├── data-urls
+│   ├── debug
+│   ├── decimal.js
+│   ├── dedent
+│   ├── deep-equal
+│   ├── deep-is
+│   ├── deepmerge
+│   ├── default-gateway
+│   ├── defined
+│   ├── define-lazy-prop
+│   ├── define-properties
+│   ├── delayed-stream
+│   ├── depd
+│   ├── destroy
+│   ├── detective
+│   ├── detect-newline
+│   ├── detect-node
+│   ├── detect-port-alt
+│   ├── didyoumean
+│   ├── diff-sequences
+│   ├── dir-glob
+│   ├── dlv
+│   ├── dns-equal
+│   ├── dns-packet
+│   ├── doctrine
+│   ├── dom-accessibility-api
+│   ├── dom-converter
+│   ├── domelementtype
+│   ├── domexception
+│   ├── domhandler
+│   ├── dom-serializer
+│   ├── domutils
+│   ├── dot-case
+│   ├── dotenv
+│   ├── dotenv-expand
+│   ├── duplexer
+│   ├── ee-first
+│   ├── ejs
+│   ├── electron-to-chromium
+│   ├── emittery
+│   ├── emoji-regex
+│   ├── emojis-list
+│   ├── encodeurl
+│   ├── enhanced-resolve
+│   ├── entities
+│   ├── error-ex
+│   ├── error-stack-parser
+│   ├── es-abstract
+│   ├── es-array-method-boxes-properly
+│   ├── escalade
+│   ├── escape-html
+│   ├── escape-string-regexp
+│   ├── escodegen
+│   ├── es-get-iterator
+│   ├── @eslint
+│   ├── eslint
+│   ├── eslint-config-react-app
+│   ├── eslint-import-resolver-node
+│   ├── eslint-module-utils
+│   ├── eslint-plugin-flowtype
+│   ├── eslint-plugin-import
+│   ├── eslint-plugin-jest
+│   ├── eslint-plugin-jsx-a11y
+│   ├── eslint-plugin-react
+│   ├── eslint-plugin-react-hooks
+│   ├── eslint-plugin-testing-library
+│   ├── eslint-scope
+│   ├── eslint-utils
+│   ├── eslint-visitor-keys
+│   ├── eslint-webpack-plugin
+│   ├── es-module-lexer
+│   ├── espree
+│   ├── esprima
+│   ├── esquery
+│   ├── esrecurse
+│   ├── es-shim-unscopables
+│   ├── es-to-primitive
+│   ├── estraverse
+│   ├── estree-walker
+│   ├── esutils
+│   ├── etag
+│   ├── eventemitter3
+│   ├── events
+│   ├── execa
+│   ├── exit
+│   ├── expect
+│   ├── express
+│   ├── fast-deep-equal
+│   ├── fast-glob
+│   ├── fast-json-stable-stringify
+│   ├── fast-levenshtein
+│   ├── fastq
+│   ├── faye-websocket
+│   ├── fb-watchman
+│   ├── file-entry-cache
+│   ├── filelist
+│   ├── file-loader
+│   ├── filesize
+│   ├── fill-range
+│   ├── finalhandler
+│   ├── find-cache-dir
+│   ├── find-up
+│   ├── flat-cache
+│   ├── flatted
+│   ├── follow-redirects
+│   ├── for-each
+│   ├── fork-ts-checker-webpack-plugin
+│   ├── form-data
+│   ├── forwarded
+│   ├── fraction.js
+│   ├── fresh
+│   ├── fs-extra
+│   ├── fs-monkey
+│   ├── fs.realpath
+│   ├── function-bind
+│   ├── function.prototype.name
+│   ├── functions-have-names
+│   ├── gensync
+│   ├── get-caller-file
+│   ├── get-intrinsic
+│   ├── get-own-enumerable-property-symbols
+│   ├── get-package-type
+│   ├── get-stream
+│   ├── get-symbol-description
+│   ├── glob
+│   ├── global-modules
+│   ├── global-prefix
+│   ├── globals
+│   ├── globby
+│   ├── glob-parent
+│   ├── glob-to-regexp
+│   ├── graceful-fs
+│   ├── grapheme-splitter
+│   ├── gzip-size
+│   ├── handle-thing
+│   ├── harmony-reflect
+│   ├── has
+│   ├── has-bigints
+│   ├── has-flag
+│   ├── has-property-descriptors
+│   ├── has-symbols
+│   ├── has-tostringtag
+│   ├── he
+│   ├── hoopy
+│   ├── hpack.js
+│   ├── html-encoding-sniffer
+│   ├── html-entities
+│   ├── html-escaper
+│   ├── html-minifier-terser
+│   ├── htmlparser2
+│   ├── html-webpack-plugin
+│   ├── http-deceiver
+│   ├── http-errors
+│   ├── http-parser-js
+│   ├── http-proxy
+│   ├── http-proxy-agent
+│   ├── http-proxy-middleware
+│   ├── https-proxy-agent
+│   ├── human-signals
+│   ├── @humanwhocodes
+│   ├── iconv-lite
+│   ├── icss-utils
+│   ├── idb
+│   ├── identity-obj-proxy
+│   ├── ignore
+│   ├── immer
+│   ├── import-fresh
+│   ├── import-local
+│   ├── imurmurhash
+│   ├── indent-string
+│   ├── inflight
+│   ├── inherits
+│   ├── ini
+│   ├── internal-slot
+│   ├── ipaddr.js
+│   ├── is-arguments
+│   ├── isarray
+│   ├── is-arrayish
+│   ├── is-bigint
+│   ├── is-binary-path
+│   ├── is-boolean-object
+│   ├── is-callable
+│   ├── is-core-module
+│   ├── is-date-object
+│   ├── is-docker
+│   ├── isexe
+│   ├── is-extglob
+│   ├── is-fullwidth-code-point
+│   ├── is-generator-fn
+│   ├── is-glob
+│   ├── is-map
+│   ├── is-module
+│   ├── is-negative-zero
+│   ├── is-number
+│   ├── is-number-object
+│   ├── is-obj
+│   ├── is-path-inside
+│   ├── is-plain-obj
+│   ├── is-potential-custom-element-name
+│   ├── is-regex
+│   ├── is-regexp
+│   ├── is-root
+│   ├── is-set
+│   ├── is-shared-array-buffer
+│   ├── is-stream
+│   ├── is-string
+│   ├── is-symbol
+│   ├── @istanbuljs
+│   ├── istanbul-lib-coverage
+│   ├── istanbul-lib-instrument
+│   ├── istanbul-lib-report
+│   ├── istanbul-lib-source-maps
+│   ├── istanbul-reports
+│   ├── is-typed-array
+│   ├── is-typedarray
+│   ├── is-weakmap
+│   ├── is-weakref
+│   ├── is-weakset
+│   ├── is-wsl
+│   ├── jake
+│   ├── @jest
+│   ├── jest
+│   ├── jest-changed-files
+│   ├── jest-circus
+│   ├── jest-cli
+│   ├── jest-config
+│   ├── jest-diff
+│   ├── jest-docblock
+│   ├── jest-each
+│   ├── jest-environment-jsdom
+│   ├── jest-environment-node
+│   ├── jest-get-type
+│   ├── jest-haste-map
+│   ├── jest-jasmine2
+│   ├── jest-leak-detector
+│   ├── jest-matcher-utils
+│   ├── jest-message-util
+│   ├── jest-mock
+│   ├── jest-pnp-resolver
+│   ├── jest-regex-util
+│   ├── jest-resolve
+│   ├── jest-resolve-dependencies
+│   ├── jest-runner
+│   ├── jest-runtime
+│   ├── jest-serializer
+│   ├── jest-snapshot
+│   ├── jest-util
+│   ├── jest-validate
+│   ├── jest-watcher
+│   ├── jest-watch-typeahead
+│   ├── jest-worker
+│   ├── @jridgewell
+│   ├── jsdom
+│   ├── jsesc
+│   ├── json5
+│   ├── jsonfile
+│   ├── json-parse-even-better-errors
+│   ├── jsonpointer
+│   ├── json-schema
+│   ├── json-schema-traverse
+│   ├── json-stable-stringify-without-jsonify
+│   ├── js-sdsl
+│   ├── js-tokens
+│   ├── jsx-ast-utils
+│   ├── js-yaml
+│   ├── kind-of
+│   ├── kleur
+│   ├── klona
+│   ├── language-subtag-registry
+│   ├── language-tags
+│   ├── @leichtgewicht
+│   ├── leven
+│   ├── levn
+│   ├── lilconfig
+│   ├── lines-and-columns
+│   ├── loader-runner
+│   ├── loader-utils
+│   ├── locate-path
+│   ├── lodash
+│   ├── lodash.debounce
+│   ├── lodash.memoize
+│   ├── lodash.merge
+│   ├── lodash.sortby
+│   ├── lodash.uniq
+│   ├── loose-envify
+│   ├── lower-case
+│   ├── lru-cache
+│   ├── lz-string
+│   ├── magic-string
+│   ├── make-dir
+│   ├── makeerror
+│   ├── mdn-data
+│   ├── media-typer
+│   ├── memfs
+│   ├── merge2
+│   ├── merge-descriptors
+│   ├── merge-stream
+│   ├── methods
+│   ├── micromatch
+│   ├── mime
+│   ├── mime-db
+│   ├── mime-types
+│   ├── mimic-fn
+│   ├── mini-css-extract-plugin
+│   ├── minimalistic-assert
+│   ├── minimatch
+│   ├── minimist
+│   ├── min-indent
+│   ├── mkdirp
+│   ├── ms
+│   ├── multicast-dns
+│   ├── nanoid
+│   ├── natural-compare
+│   ├── natural-compare-lite
+│   ├── negotiator
+│   ├── neo-async
+│   ├── @nicolo-ribaudo
+│   ├── no-case
+│   ├── node-forge
+│   ├── node-int64
+│   ├── @nodelib
+│   ├── node-releases
+│   ├── normalize-path
+│   ├── normalize-range
+│   ├── normalize-url
+│   ├── npm-run-path
+│   ├── nth-check
+│   ├── nwsapi
+│   ├── object-assign
+│   ├── object.assign
+│   ├── object.entries
+│   ├── object.fromentries
+│   ├── object.getownpropertydescriptors
+│   ├── object-hash
+│   ├── object.hasown
+│   ├── object-inspect
+│   ├── object-is
+│   ├── object-keys
+│   ├── object.values
+│   ├── obuf
+│   ├── once
+│   ├── onetime
+│   ├── on-finished
+│   ├── on-headers
+│   ├── open
+│   ├── optionator
+│   ├── param-case
+│   ├── parent-module
+│   ├── parse5
+│   ├── parse-json
+│   ├── parseurl
+│   ├── pascal-case
+│   ├── path-exists
+│   ├── path-is-absolute
+│   ├── path-key
+│   ├── path-parse
+│   ├── path-to-regexp
+│   ├── path-type
+│   ├── performance-now
+│   ├── picocolors
+│   ├── picomatch
+│   ├── pify
+│   ├── pirates
+│   ├── pkg-dir
+│   ├── pkg-up
+│   ├── p-limit
+│   ├── p-locate
+│   ├── @pmmmwh
+│   ├── postcss
+│   ├── postcss-attribute-case-insensitive
+│   ├── postcss-browser-comments
+│   ├── postcss-calc
+│   ├── postcss-clamp
+│   ├── postcss-color-functional-notation
+│   ├── postcss-color-hex-alpha
+│   ├── postcss-colormin
+│   ├── postcss-color-rebeccapurple
+│   ├── postcss-convert-values
+│   ├── postcss-custom-media
+│   ├── postcss-custom-properties
+│   ├── postcss-custom-selectors
+│   ├── postcss-dir-pseudo-class
+│   ├── postcss-discard-comments
+│   ├── postcss-discard-duplicates
+│   ├── postcss-discard-empty
+│   ├── postcss-discard-overridden
+│   ├── postcss-double-position-gradients
+│   ├── postcss-env-function
+│   ├── postcss-flexbugs-fixes
+│   ├── postcss-focus-visible
+│   ├── postcss-focus-within
+│   ├── postcss-font-variant
+│   ├── postcss-gap-properties
+│   ├── postcss-image-set-function
+│   ├── postcss-import
+│   ├── postcss-initial
+│   ├── postcss-js
+│   ├── postcss-lab-function
+│   ├── postcss-load-config
+│   ├── postcss-loader
+│   ├── postcss-logical
+│   ├── postcss-media-minmax
+│   ├── postcss-merge-longhand
+│   ├── postcss-merge-rules
+│   ├── postcss-minify-font-values
+│   ├── postcss-minify-gradients
+│   ├── postcss-minify-params
+│   ├── postcss-minify-selectors
+│   ├── postcss-modules-extract-imports
+│   ├── postcss-modules-local-by-default
+│   ├── postcss-modules-scope
+│   ├── postcss-modules-values
+│   ├── postcss-nested
+│   ├── postcss-nesting
+│   ├── postcss-normalize
+│   ├── postcss-normalize-charset
+│   ├── postcss-normalize-display-values
+│   ├── postcss-normalize-positions
+│   ├── postcss-normalize-repeat-style
+│   ├── postcss-normalize-string
+│   ├── postcss-normalize-timing-functions
+│   ├── postcss-normalize-unicode
+│   ├── postcss-normalize-url
+│   ├── postcss-normalize-whitespace
+│   ├── postcss-opacity-percentage
+│   ├── postcss-ordered-values
+│   ├── postcss-overflow-shorthand
+│   ├── postcss-page-break
+│   ├── postcss-place
+│   ├── postcss-preset-env
+│   ├── postcss-pseudo-class-any-link
+│   ├── postcss-reduce-initial
+│   ├── postcss-reduce-transforms
+│   ├── postcss-replace-overflow-wrap
+│   ├── postcss-selector-not
+│   ├── postcss-selector-parser
+│   ├── postcss-svgo
+│   ├── postcss-unique-selectors
+│   ├── postcss-value-parser
+│   ├── prelude-ls
+│   ├── p-retry
+│   ├── pretty-bytes
+│   ├── pretty-error
+│   ├── pretty-format
+│   ├── process-nextick-args
+│   ├── promise
+│   ├── prompts
+│   ├── prop-types
+│   ├── proxy-addr
+│   ├── psl
+│   ├── p-try
+│   ├── punycode
+│   ├── q
+│   ├── qs
+│   ├── querystringify
+│   ├── queue-microtask
+│   ├── quick-lru
+│   ├── raf
+│   ├── randombytes
+│   ├── range-parser
+│   ├── raw-body
+│   ├── react
+│   ├── react-app-polyfill
+│   ├── react-dev-utils
+│   ├── react-dom
+│   ├── react-error-overlay
+│   ├── react-is
+│   ├── react-refresh
+│   ├── react-scripts
+│   ├── readable-stream
+│   ├── read-cache
+│   ├── readdirp
+│   ├── recursive-readdir
+│   ├── redent
+│   ├── regenerate
+│   ├── regenerate-unicode-properties
+│   ├── regenerator-runtime
+│   ├── regenerator-transform
+│   ├── regex-parser
+│   ├── regexpp
+│   ├── regexp.prototype.flags
+│   ├── regexpu-core
+│   ├── regjsgen
+│   ├── regjsparser
+│   ├── relateurl
+│   ├── renderkid
+│   ├── require-directory
+│   ├── require-from-string
+│   ├── requires-port
+│   ├── resolve
+│   ├── resolve-cwd
+│   ├── resolve.exports
+│   ├── resolve-from
+│   ├── resolve-url-loader
+│   ├── retry
+│   ├── reusify
+│   ├── rimraf
+│   ├── @rollup
+│   ├── rollup
+│   ├── rollup-plugin-terser
+│   ├── run-parallel
+│   ├── @rushstack
+│   ├── safe-buffer
+│   ├── safer-buffer
+│   ├── safe-regex-test
+│   ├── sanitize.css
+│   ├── sass-loader
+│   ├── sax
+│   ├── saxes
+│   ├── scheduler
+│   ├── schema-utils
+│   ├── select-hose
+│   ├── selfsigned
+│   ├── semver
+│   ├── send
+│   ├── serialize-javascript
+│   ├── serve-index
+│   ├── serve-static
+│   ├── setprototypeof
+│   ├── shebang-command
+│   ├── shebang-regex
+│   ├── shell-quote
+│   ├── side-channel
+│   ├── signal-exit
+│   ├── @sinclair
+│   ├── @sinonjs
+│   ├── sisteransi
+│   ├── slash
+│   ├── sockjs
+│   ├── source-list-map
+│   ├── source-map
+│   ├── sourcemap-codec
+│   ├── source-map-js
+│   ├── source-map-loader
+│   ├── source-map-support
+│   ├── spdy
+│   ├── spdy-transport
+│   ├── sprintf-js
+│   ├── stable
+│   ├── stackframe
+│   ├── stack-utils
+│   ├── statuses
+│   ├── string_decoder
+│   ├── stringify-object
+│   ├── string-length
+│   ├── string-natural-compare
+│   ├── string.prototype.matchall
+│   ├── string.prototype.trimend
+│   ├── string.prototype.trimstart
+│   ├── string-width
+│   ├── strip-ansi
+│   ├── strip-bom
+│   ├── strip-comments
+│   ├── strip-final-newline
+│   ├── strip-indent
+│   ├── strip-json-comments
+│   ├── stylehacks
+│   ├── style-loader
+│   ├── supports-color
+│   ├── supports-hyperlinks
+│   ├── supports-preserve-symlinks-flag
+│   ├── @surma
+│   ├── svgo
+│   ├── svg-parser
+│   ├── @svgr
+│   ├── symbol-tree
+│   ├── tailwindcss
+│   ├── tapable
+│   ├── temp-dir
+│   ├── tempy
+│   ├── terminal-link
+│   ├── terser
+│   ├── terser-webpack-plugin
+│   ├── test-exclude
+│   ├── @testing-library
+│   ├── text-table
+│   ├── throat
+│   ├── thunky
+│   ├── tmpl
+│   ├── to-fast-properties
+│   ├── toidentifier
+│   ├── @tootallnate
+│   ├── to-regex-range
+│   ├── tough-cookie
+│   ├── tr46
+│   ├── tryer
+│   ├── @trysound
+│   ├── tsconfig-paths
+│   ├── tslib
+│   ├── tsutils
+│   ├── type-check
+│   ├── typedarray-to-buffer
+│   ├── type-detect
+│   ├── type-fest
+│   ├── type-is
+│   ├── @types
+│   ├── typescript
+│   ├── @typescript-eslint
+│   ├── unbox-primitive
+│   ├── unicode-canonical-property-names-ecmascript
+│   ├── unicode-match-property-ecmascript
+│   ├── unicode-match-property-value-ecmascript
+│   ├── unicode-property-aliases-ecmascript
+│   ├── unique-string
+│   ├── universalify
+│   ├── unpipe
+│   ├── unquote
+│   ├── upath
+│   ├── update-browserslist-db
+│   ├── uri-js
+│   ├── url-parse
+│   ├── utila
+│   ├── util-deprecate
+│   ├── util.promisify
+│   ├── utils-merge
+│   ├── uuid
+│   ├── v8-to-istanbul
+│   ├── vary
+│   ├── w3c-hr-time
+│   ├── w3c-xmlserializer
+│   ├── walker
+│   ├── watchpack
+│   ├── wbuf
+│   ├── @webassemblyjs
+│   ├── webidl-conversions
+│   ├── webpack
+│   ├── webpack-dev-middleware
+│   ├── webpack-dev-server
+│   ├── webpack-manifest-plugin
+│   ├── webpack-sources
+│   ├── websocket-driver
+│   ├── websocket-extensions
+│   ├── web-vitals
+│   ├── whatwg-encoding
+│   ├── whatwg-fetch
+│   ├── whatwg-mimetype
+│   ├── whatwg-url
+│   ├── which
+│   ├── which-boxed-primitive
+│   ├── which-collection
+│   ├── which-typed-array
+│   ├── word-wrap
+│   ├── workbox-background-sync
+│   ├── workbox-broadcast-update
+│   ├── workbox-build
+│   ├── workbox-cacheable-response
+│   ├── workbox-core
+│   ├── workbox-expiration
+│   ├── workbox-google-analytics
+│   ├── workbox-navigation-preload
+│   ├── workbox-precaching
+│   ├── workbox-range-requests
+│   ├── workbox-recipes
+│   ├── workbox-routing
+│   ├── workbox-strategies
+│   ├── workbox-streams
+│   ├── workbox-sw
+│   ├── workbox-webpack-plugin
+│   ├── workbox-window
+│   ├── wrap-ansi
+│   ├── wrappy
+│   ├── write-file-atomic
+│   ├── ws
+│   ├── xmlchars
+│   ├── xml-name-validator
+│   ├── xtend
+│   ├── @xtuc
+│   ├── y18n
+│   ├── yallist
+│   ├── yaml
+│   ├── yargs
+│   ├── yargs-parser
+│   └── yocto-queue
+├── public
+└── src
+
+815 directories
+davidho@dphxps17:~/WebstormProjects/dphapp1$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+http://localhost:3000/
+
+logo
+Edit src/App.js and save to reload.
+
+Learn React
+
+https://reactjs.org/
+
