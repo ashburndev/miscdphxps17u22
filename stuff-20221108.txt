@@ -1,0 +1,771 @@
+Tue Nov  8 04:17:07 AM EST 2022
+
+davidho@dphxps17:~$ date
+Tue Nov  8 04:16:49 AM EST 2022
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date > stuff-20221108.txt
+davidho@dphxps17:~$ code   stuff-20221108.txt
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ echo $PATH
+/home/davidho/.sdkman/candidates/java/current/bin:/home/davidho/.sdkman/candidates/groovy/current/bin:/home/davidho/.sdkman/candidates/grails/current/bin:/home/davidho/.sdkman/candidates/gradle/current/bin:/home/davidho/.sdkman/candidates/asciidoctorj/current/bin:/home/davidho/.sdkman/candidates/ant/current/bin:/home/davidho/.nvm/versions/node/v18.2.0/bin:/home/davidho/.rbenv/shims:/home/davidho/.rbenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Version: 1.70.2
+Commit: e4503b30fc78200f846c62cf8091b76ff5547662
+Date: 2022-08-16T05:36:25.715Z
+Electron: 18.3.5
+Chromium: 100.0.4896.160
+Node.js: 16.13.2
+V8: 10.0.139.17-electron.0
+OS: Linux x64 5.15.0-52-generic
+
+https://code.visualstudio.com/download
+https://code.visualstudio.com/docs/?dv=linux64_deb
+https://code.visualstudio.com/docs/?dv=linux64_rpm
+https://code.visualstudio.com/docs/?dv=linux64
+https://code.visualstudio.com/docs/setup/linux
+  sudo apt install ./<file>.deb
+
+https://code.visualstudio.com/docs/setup/raspberry-pi
+  sudo apt update ; sudo apt upgrade code
+
+davidho@dphxps17:~$ ls -latr Downloads/ | tail
+-rw-rw-r--  1 davidho davidho   10476456 Oct 20 19:42 javafx-8u351-apidocs.zip
+-rw-rw-r--  1 davidho davidho      64423 Oct 21 07:36 sbapp1grajarj11.zip
+-rw-rw-r--  1 davidho davidho  570969095 Nov  2 07:24 WebStorm-2022.2.3.tar.gz
+-rw-rw-r--  1 davidho davidho         91 Nov  2 07:24 WebStorm-2022.2.3.tar.gz.sha256
+drwxr-x--- 43 davidho davidho       4096 Nov  8 04:18 ..
+-rw-rw-r--  1 davidho davidho   96700176 Nov  8 04:21 code_1.73.0-1667318785_amd64.deb
+-rw-rw-r--  1 davidho davidho  136288118 Nov  8 04:21 code-1.73.0-1667318873.el7.x86_64.rpm
+-rw-rw-r--  1 davidho davidho  135608145 Nov  8 04:22 code-stable-x64-1667319089.tar.gz
+-rw-rw-r--  1 davidho davidho   12996428 Nov  8 04:23 ms-python.python-2022.19.13120653.vsix
+drwxr-xr-x  5 davidho davidho      12288 Nov  8 04:23 .
+davidho@dphxps17:~$ 
+
+davidho@dphxps17:~/Downloads$ sudo tar xzf code-stable-x64-1667319089.tar.gz -C /opt/
+[sudo] password for davidho: 
+davidho@dphxps17:~/Downloads$ ls -latr /opt
+total 68
+drwxr-xr-x 20 root    root    4096 May 24 22:09 ..
+drwxr-xr-x  8 root    root    4096 May 26 14:19 RubyMine-2022.1.1
+drwxr-xr-x  8 root    root    4096 May 26 14:23 idea-IU-221.5591.52
+drwxr-xr-x  3 root    root    4096 May 26 14:42 google
+drwxr-xr-x  5 root    root    4096 Aug 21 19:39 1Password
+drwxr-xr-x  8 root    root    4096 Sep  8 15:44 eclipse-java-2022-09-R-linux-gtk-x86_64
+drwxr-xr-x  8 root    root    4096 Sep  8 15:54 eclipse-jee-2022-09-R-linux-gtk-x86_64
+drwxr-xr-x  8 root    root    4096 Sep 13 08:36 idea-IU-222.4167.29
+drwxr-xr-x  9     502 root    4096 Sep 15 07:57 sts-4.16.0.RELEASE
+drwxr-xr-x  8 root    root    4096 Oct  5 01:01 WebStorm-222.4345.14
+drwxr-xr-x  8 root    root    4096 Oct  5 01:01 RubyMine-2022.2.3
+drwxr-xr-x  8 root    root    4096 Oct  5 01:01 idea-IU-222.4345.14
+drwxr-xr-x  7 root    root    4096 Oct  5 01:01 idea-IC-222.4345.14
+drwxr-xr-x  8 root    root    4096 Oct 10 10:05 pycharm-community-2022.2.3
+drwxr-xr-x  9 root    root    4096 Oct 10 10:05 pycharm-2022.2.3
+drwxr-xr-x  5 davidho davidho 4096 Nov  1 11:44 VSCode-linux-x64
+drwxr-xr-x 17 root    root    4096 Nov  8 04:59 .
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ cd /opt
+davidho@dphxps17:/opt$ mv VSCode-linux-x64/ VSCode-linux-x64-1.73.0/
+mv: cannot move 'VSCode-linux-x64/' to 'VSCode-linux-x64-1.73.0/': Permission denied
+davidho@dphxps17:/opt$ sudo !!
+sudo mv VSCode-linux-x64/ VSCode-linux-x64-1.73.0/
+davidho@dphxps17:/opt$ 
+
+Linux .deb (64 bit)	3ca71c585930d228ef3c4e580ab4415bff5b0da2d033a40dc5f7cb92d8222470
+Linux .rpm (64 bit)	874f3979d6239993150b0efb38ef6bb95937fa418f359942df1769ed5a7464b0
+Linux .tar.gz (64 bit)	cc79e933080676afb80fd7538b93c7bf5d375351d9b5c3d9e703ab894e3697b5
+
+https://marketplace.visualstudio.com/items?itemName=ms-python.python
+https://code.visualstudio.com/docs/python/python-tutorial#_prerequisites
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ python --version
+Command 'python' not found, did you mean:
+  command 'python3' from deb python3
+  command 'python' from deb python-is-python3
+davidho@dphxps17:~$ python3 --version
+Python 3.10.6
+davidho@dphxps17:~$ whereis python
+python:
+davidho@dphxps17:~$ whereis python3
+python3: /usr/bin/python3 /usr/lib/python3 /etc/python3 /usr/share/python3 /usr/share/man/man1/python3.1.gz
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+spring boot 2.7.5, gradle project, jar packaging, java 11 language
+Group: ashburncode
+Artifact: sbapp2
+Name: sbapp2grajarj11
+
+Dependencies
+Spring Web Web
+Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+Spring Security Security
+Highly customizable authentication and access-control framework for Spring applications.
+Spring Data JPA SQL
+Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+MySQL Driver SQL
+MySQL JDBC and R2DBC driver.
+
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr *.zip
+-rw-rw-r-- 1 davidho davidho     54908 May 26 12:08 elasticsearch-in-action-main.zip
+-rw-rw-r-- 1 davidho davidho      5497 May 26 12:14 Elasticsearch_SourceCode.zip
+-rw-rw-r-- 1 davidho davidho 455835265 Sep 22 08:21 netbeans-15-bin.zip
+-rw-rw-r-- 1 davidho davidho 125170344 Oct 20 19:42 jdk-8u351-docs-all.zip
+-rw-rw-r-- 1 davidho davidho  10476456 Oct 20 19:42 javafx-8u351-apidocs.zip
+-rw-rw-r-- 1 davidho davidho     64423 Oct 21 07:36 sbapp1grajarj11.zip
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ 7z l sbapp1grajarj11.zip 
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,16 CPUs 11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz (806D1),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 64423 bytes (63 KiB)
+
+Listing archive: sbapp1grajarj11.zip
+
+--
+Path = sbapp1grajarj11.zip
+Type = zip
+Physical Size = 64423
+
+   Date      Time    Attr         Size   Compressed  Name
+------------------- ----- ------------ ------------  ------------------------
+2022-10-21 11:36:32 D....            0            2  demo
+2022-10-21 11:36:32 .....         8188         3519  demo/gradlew
+2022-10-21 11:36:32 .....         2838         1195  demo/gradlew.bat
+2022-10-21 11:36:32 .....           26           28  demo/settings.gradle
+2022-10-21 11:36:32 D....            0            2  demo/src
+2022-10-21 11:36:32 D....            0            2  demo/src/main
+2022-10-21 11:36:32 D....            0            2  demo/src/main/resources
+2022-10-21 11:36:32 .....            1            3  demo/src/main/resources/application.properties
+2022-10-21 11:36:32 D....            0            2  demo/src/main/java
+2022-10-21 11:36:32 D....            0            2  demo/src/main/java/ashburncode
+2022-10-21 11:36:32 D....            0            2  demo/src/main/java/ashburncode/demo
+2022-10-21 11:36:32 .....          327          175  demo/src/main/java/ashburncode/demo/Sbapp1grajarj11Application.java
+2022-10-21 11:36:32 D....            0            2  demo/src/test
+2022-10-21 11:36:32 D....            0            2  demo/src/test/java
+2022-10-21 11:36:32 D....            0            2  demo/src/test/java/ashburncode
+2022-10-21 11:36:32 D....            0            2  demo/src/test/java/ashburncode/demo
+2022-10-21 11:36:32 .....          217          155  demo/src/test/java/ashburncode/demo/Sbapp1grajarj11ApplicationTests.java
+2022-10-21 11:36:32 .....          444          242  demo/.gitignore
+2022-10-21 11:36:32 .....          972          444  demo/HELP.md
+2022-10-21 11:36:32 .....          677          343  demo/build.gradle
+2022-10-21 11:36:32 D....            0            2  demo/gradle
+2022-10-21 11:36:32 D....            0            2  demo/gradle/wrapper
+2022-10-21 11:36:32 .....          202          124  demo/gradle/wrapper/gradle-wrapper.properties
+2022-10-21 11:36:32 .....        60756        54679  demo/gradle/wrapper/gradle-wrapper.jar
+------------------- ----- ------------ ------------  ------------------------
+2022-10-21 11:36:32              74648        60933  11 files, 13 folders
+davidho@dphxps17:~/Downloads$ 
+
+davidho@dphxps17:~/javaprojs$ ls -latr
+total 440
+-rw-rw-r--  1 davidho davidho  64423 Oct 21 07:36 sbapp1grajarj11.zip
+-rw-rw-r--  1 davidho davidho 368801 Oct 21 08:13 sbapp1-dep.txt
+drwxr-xr-x  9 davidho davidho   4096 Oct 21 08:25 demo
+drwxr-x--- 43 davidho davidho   4096 Nov  8 05:12 ..
+drwxrwxr-x  3 davidho davidho   4096 Nov  8 05:12 .
+davidho@dphxps17:~/javaprojs$ 
+davidho@dphxps17:~/javaprojs$ ls -latr demo
+total 76
+drwxrwxr-x 5 davidho davidho 4096 Oct 21 07:54 .gradle
+-rw-r--r-- 1 davidho davidho  727 Oct 21 08:02 build.gradle
+-rw-rw-r-- 1 davidho davidho  593 Oct 21 08:17 .project
+drwxrwxr-x 2 davidho davidho 4096 Oct 21 08:17 .settings
+-rw-rw-r-- 1 davidho davidho 1079 Oct 21 08:17 .classpath
+drwxrwxr-x 4 davidho davidho 4096 Oct 21 08:17 bin
+drwxrwxr-x 7 davidho davidho 4096 Oct 21 08:17 .git
+drwxrwxr-x 5 davidho davidho 4096 Oct 21 08:25 build
+drwxr-xr-x 9 davidho davidho 4096 Oct 21 08:25 .
+drwxr-xr-x 4 davidho davidho 4096 Oct 21 11:36 src
+-rw-r--r-- 1 davidho davidho   26 Oct 21 11:36 settings.gradle
+-rw-r--r-- 1 davidho davidho  972 Oct 21 11:36 HELP.md
+-rw-r--r-- 1 davidho davidho 2838 Oct 21 11:36 gradlew.bat
+-rwxr-xr-x 1 davidho davidho 8188 Oct 21 11:36 gradlew
+drwxr-xr-x 3 davidho davidho 4096 Oct 21 11:36 gradle
+-rw-r--r-- 1 davidho davidho  444 Oct 21 11:36 .gitignore-orig
+-rw-r--r-- 1 davidho davidho  444 Oct 21 11:36 .gitignore
+drwxrwxr-x 3 davidho davidho 4096 Nov  8 05:12 ..
+davidho@dphxps17:~/javaprojs$ 
+davidho@dphxps17:~/javaprojs$ tree demo
+demo
+├── bin
+│   ├── main
+│   │   ├── application.properties
+│   │   └── ashburncode
+│   │       └── demo
+│   │           └── Sbapp1grajarj11Application.class
+│   └── test
+│       └── ashburncode
+│           └── demo
+│               └── Sbapp1grajarj11ApplicationTests.class
+├── build
+│   ├── classes
+│   │   └── java
+│   │       └── main
+│   │           └── ashburncode
+│   │               └── demo
+│   │                   └── Sbapp1grajarj11Application.class
+│   ├── generated
+│   │   └── sources
+│   │       ├── annotationProcessor
+│   │       │   └── java
+│   │       │       └── main
+│   │       └── headers
+│   │           └── java
+│   │               └── main
+│   └── tmp
+│       └── compileJava
+│           └── previous-compilation-data.bin
+├── build.gradle
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradlew
+├── gradlew.bat
+├── HELP.md
+├── settings.gradle
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── ashburncode
+    │   │       └── demo
+    │   │           └── Sbapp1grajarj11Application.java
+    │   └── resources
+    │       └── application.properties
+    └── test
+        └── java
+            └── ashburncode
+                └── demo
+                    └── Sbapp1grajarj11ApplicationTests.java
+
+35 directories, 15 files
+davidho@dphxps17:~/javaprojs$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr | tail
+-rw-rw-r--  1 davidho davidho      64423 Oct 21 07:36 sbapp1grajarj11.zip
+-rw-rw-r--  1 davidho davidho  570969095 Nov  2 07:24 WebStorm-2022.2.3.tar.gz
+-rw-rw-r--  1 davidho davidho         91 Nov  2 07:24 WebStorm-2022.2.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho   96700176 Nov  8 04:21 code_1.73.0-1667318785_amd64.deb
+-rw-rw-r--  1 davidho davidho  136288118 Nov  8 04:21 code-1.73.0-1667318873.el7.x86_64.rpm
+-rw-rw-r--  1 davidho davidho  135608145 Nov  8 04:22 code-stable-x64-1667319089.tar.gz
+-rw-rw-r--  1 davidho davidho   12996428 Nov  8 04:23 ms-python.python-2022.19.13120653.vsix
+drwxr-x--- 43 davidho davidho       4096 Nov  8 05:12 ..
+-rw-rw-r--  1 davidho davidho      64993 Nov  8 05:45 sbapp2.zip
+drwxr-xr-x  5 davidho davidho      12288 Nov  8 05:46 .
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ 7z l sbapp2.zip
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,16 CPUs 11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz (806D1),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 64993 bytes (64 KiB)
+
+Listing archive: sbapp2.zip
+
+--
+Path = sbapp2.zip
+Type = zip
+Physical Size = 64993
+
+   Date      Time    Attr         Size   Compressed  Name
+------------------- ----- ------------ ------------  ------------------------
+2022-11-08 10:26:00 D....            0            2  sbapp2
+2022-11-08 10:26:00 .....         8188         3519  sbapp2/gradlew
+2022-11-08 10:26:00 .....         2838         1195  sbapp2/gradlew.bat
+2022-11-08 10:26:00 .....           28           30  sbapp2/settings.gradle
+2022-11-08 10:26:00 D....            0            2  sbapp2/src
+2022-11-08 10:26:00 D....            0            2  sbapp2/src/main
+2022-11-08 10:26:00 D....            0            2  sbapp2/src/main/resources
+2022-11-08 10:26:00 D....            0            2  sbapp2/src/main/resources/templates
+2022-11-08 10:26:00 D....            0            2  sbapp2/src/main/resources/static
+2022-11-08 10:26:00 .....            1            3  sbapp2/src/main/resources/application.properties
+2022-11-08 10:26:00 D....            0            2  sbapp2/src/main/java
+2022-11-08 10:26:00 D....            0            2  sbapp2/src/main/java/ashburncode
+2022-11-08 10:26:00 D....            0            2  sbapp2/src/main/java/ashburncode/sbapp2
+2022-11-08 10:26:00 .....          329          176  sbapp2/src/main/java/ashburncode/sbapp2/Sbapp2grajarj11Application.java
+2022-11-08 10:26:00 D....            0            2  sbapp2/src/test
+2022-11-08 10:26:00 D....            0            2  sbapp2/src/test/java
+2022-11-08 10:26:00 D....            0            2  sbapp2/src/test/java/ashburncode
+2022-11-08 10:26:00 D....            0            2  sbapp2/src/test/java/ashburncode/sbapp2
+2022-11-08 10:26:00 .....          219          155  sbapp2/src/test/java/ashburncode/sbapp2/Sbapp2grajarj11ApplicationTests.java
+2022-11-08 10:26:00 .....          444          242  sbapp2/.gitignore
+2022-11-08 10:26:00 .....         1614          602  sbapp2/HELP.md
+2022-11-08 10:26:00 .....          705          314  sbapp2/build.gradle
+2022-11-08 10:26:00 D....            0            2  sbapp2/gradle
+2022-11-08 10:26:00 D....            0            2  sbapp2/gradle/wrapper
+2022-11-08 10:26:00 .....          202          124  sbapp2/gradle/wrapper/gradle-wrapper.properties
+2022-11-08 10:26:00 .....        60756        54679  sbapp2/gradle/wrapper/gradle-wrapper.jar
+------------------- ----- ------------ ------------  ------------------------
+2022-11-08 10:26:00              75324        61069  11 files, 15 folders
+davidho@dphxps17:~/Downloads$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/javaprojs$ ls -latr
+total 508
+-rw-rw-r--  1 davidho davidho  64423 Oct 21 07:36 sbapp1grajarj11.zip
+-rw-rw-r--  1 davidho davidho 368801 Oct 21 08:13 sbapp1-dep.txt
+drwxr-xr-x  9 davidho davidho   4096 Oct 21 08:25 demo
+drwxr-x--- 43 davidho davidho   4096 Nov  8 05:12 ..
+-rw-rw-r--  1 davidho davidho  64993 Nov  8 05:45 sbapp2.zip
+drwxrwxr-x  4 davidho davidho   4096 Nov  8 05:51 .
+drwxr-xr-x  4 davidho davidho   4096 Nov  8  2022 sbapp2
+davidho@dphxps17:~/javaprojs$ 
+davidho@dphxps17:~/javaprojs$ ls -latr sbapp2
+total 44
+drwxrwxr-x 4 davidho davidho 4096 Nov  8 05:51 ..
+drwxr-xr-x 4 davidho davidho 4096 Nov  8  2022 src
+-rw-r--r-- 1 davidho davidho   28 Nov  8  2022 settings.gradle
+-rw-r--r-- 1 davidho davidho 1614 Nov  8  2022 HELP.md
+-rw-r--r-- 1 davidho davidho 2838 Nov  8  2022 gradlew.bat
+-rwxr-xr-x 1 davidho davidho 8188 Nov  8  2022 gradlew
+drwxr-xr-x 3 davidho davidho 4096 Nov  8  2022 gradle
+-rw-r--r-- 1 davidho davidho  444 Nov  8  2022 .gitignore
+-rw-r--r-- 1 davidho davidho  705 Nov  8  2022 build.gradle
+drwxr-xr-x 4 davidho davidho 4096 Nov  8  2022 .
+davidho@dphxps17:~/javaprojs$ 
+davidho@dphxps17:~/javaprojs$ cat sbapp2/build.gradle 
+plugins {
+	id 'org.springframework.boot' version '2.7.5'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+	id 'java'
+}
+
+group = 'ashburncode'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	runtimeOnly 'com.mysql:mysql-connector-j'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+davidho@dphxps17:~/javaprojs$ cat sbapp2/.gitignore 
+HELP.md
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+davidho@dphxps17:~/javaprojs$ 
+davidho@dphxps17:~/javaprojs$ 
+
+
+davidho@dphxps17:~/javaprojs/sbapp2$ ./gradlew bootRun
+Starting a Gradle Daemon, 2 incompatible and 1 stopped Daemons could not be reused, use --status for details
+
+> Task :bootRun FAILED
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.5)
+
+2022-11-08 05:53:41.766  INFO 18865 --- [           main] a.sbapp2.Sbapp2grajarj11Application      : Starting Sbapp2grajarj11Application using Java 17.0.5 on dphxps17 with PID 18865 (/home/davidho/javaprojs/sbapp2/build/classes/java/main started by davidho in /home/davidho/javaprojs/sbapp2)
+2022-11-08 05:53:41.767  INFO 18865 --- [           main] a.sbapp2.Sbapp2grajarj11Application      : No active profile set, falling back to 1 default profile: "default"
+2022-11-08 05:53:42.018  INFO 18865 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-08 05:53:42.024  INFO 18865 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2022-11-08 05:53:42.251  INFO 18865 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-08 05:53:42.257  INFO 18865 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-08 05:53:42.257  INFO 18865 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-08 05:53:42.299  INFO 18865 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-08 05:53:42.299  INFO 18865 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 508 ms
+2022-11-08 05:53:42.332  WARN 18865 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+2022-11-08 05:53:42.334  INFO 18865 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-08 05:53:42.342  INFO 18865 --- [           main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-11-08 05:53:42.349 ERROR 18865 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+        If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+        If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':bootRun'.
+> Process 'command '/home/davidho/.sdkman/candidates/java/17.0.5-zulu/bin/java'' finished with non-zero exit value 1
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 10s
+4 actionable tasks: 4 executed
+davidho@dphxps17:~/javaprojs/sbapp2$ 
+davidho@dphxps17:~/javaprojs/sbapp2$ java --version
+openjdk 17.0.5 2022-10-18 LTS
+OpenJDK Runtime Environment Zulu17.38+21-CA (build 17.0.5+8-LTS)
+OpenJDK 64-Bit Server VM Zulu17.38+21-CA (build 17.0.5+8-LTS, mixed mode, sharing)
+davidho@dphxps17:~/javaprojs/sbapp2$ 
+davidho@dphxps17:~/javaprojs/sbapp2$ javac --version
+javac 17.0.5
+davidho@dphxps17:~/javaprojs/sbapp2$ 
+davidho@dphxps17:~/javaprojs/sbapp2$ find . -name "*.jar" -print
+./gradle/wrapper/gradle-wrapper.jar
+./build/libs/sbapp2-0.0.1-SNAPSHOT-plain.jar
+./build/libs/sbapp2-0.0.1-SNAPSHOT.jar
+davidho@dphxps17:~/javaprojs/sbapp2$ 
+davidho@dphxps17:~/javaprojs/sbapp2$ ls -latr build/libs
+total 40688
+-rw-rw-r-- 1 davidho davidho 41648914 Nov  8 07:33 sbapp2-0.0.1-SNAPSHOT.jar
+drwxrwxr-x 2 davidho davidho     4096 Nov  8 07:33 .
+-rw-rw-r-- 1 davidho davidho     1401 Nov  8 07:33 sbapp2-0.0.1-SNAPSHOT-plain.jar
+drwxrwxr-x 9 davidho davidho     4096 Nov  8 07:33 ..
+davidho@dphxps17:~/javaprojs/sbapp2$ 
+davidho@dphxps17:~/javaprojs/sbapp2$ jar tvf build/libs/sbapp2-0.0.1-SNAPSHOT
+sbapp2-0.0.1-SNAPSHOT.jar        sbapp2-0.0.1-SNAPSHOT-plain.jar  
+davidho@dphxps17:~/javaprojs/sbapp2$ jar tvf build/libs/sbapp2-0.0.1-SNAPSHOT-plain.jar 
+     0 Tue Nov 08 07:33:34 EST 2022 META-INF/
+    25 Tue Nov 08 07:33:34 EST 2022 META-INF/MANIFEST.MF
+     0 Tue Nov 08 05:53:38 EST 2022 ashburncode/
+     0 Tue Nov 08 05:53:38 EST 2022 ashburncode/sbapp2/
+   770 Tue Nov 08 05:53:38 EST 2022 ashburncode/sbapp2/Sbapp2grajarj11Application.class
+     1 Tue Nov 08 05:53:40 EST 2022 application.properties
+     0 Tue Nov 08 05:53:40 EST 2022 static/
+     0 Tue Nov 08 05:53:40 EST 2022 templates/
+davidho@dphxps17:~/javaprojs/sbapp2$ 
+davidho@dphxps17:~/javaprojs/sbapp2$ jar tvf build/libs/sbapp2-0.0.1-SNAPSHOT.jar
+     0 Tue Nov 08 07:33:32 EST 2022 META-INF/
+   342 Tue Nov 08 07:33:32 EST 2022 META-INF/MANIFEST.MF
+     0 Fri Feb 01 00:00:00 EST 1980 org/
+     0 Fri Feb 01 00:00:00 EST 1980 org/springframework/
+     0 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/
+     0 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/
+  5871 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/ClassPathIndexFile.class
+  7675 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/ExecutableArchiveLauncher.class
+  2551 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/JarLauncher.class
+  1483 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/LaunchedURLClassLoader$DefinePackageCallType.class
+  1535 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/LaunchedURLClassLoader$UseFastConnectionExceptionsEnumeration.class
+ 11154 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/LaunchedURLClassLoader.class
+  5932 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/Launcher.class
+  1536 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/MainMethodRunner.class
+   266 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/PropertiesLauncher$1.class
+  1484 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/PropertiesLauncher$ArchiveEntryFilter.class
+  8128 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/PropertiesLauncher$ClassPathArchives.class
+  1953 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/PropertiesLauncher$PrefixMatchingArchiveFilter.class
+ 18267 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/PropertiesLauncher.class
+  1728 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/WarLauncher.class
+     0 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/archive/
+   302 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/archive/Archive$Entry.class
+   511 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/archive/Archive$EntryFilter.class
+  4745 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/archive/Archive.class
+  6093 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/archive/ExplodedArchive$AbstractIterator.class
+  2180 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/archive/ExplodedArchive$ArchiveIterator.class
+  1857 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/archive/ExplodedArchive$EntryIterator.class
+  1269 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/archive/ExplodedArchive$FileEntry.class
+  2527 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/archive/ExplodedArchive$SimpleJarFileArchive.class
+  5346 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/archive/ExplodedArchive.class
+  2884 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/archive/JarFileArchive$AbstractIterator.class
+  1981 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/archive/JarFileArchive$EntryIterator.class
+  1081 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/archive/JarFileArchive$JarFileEntry.class
+  2528 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/archive/JarFileArchive$NestedArchiveIterator.class
+ 10349 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/archive/JarFileArchive.class
+     0 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/data/
+   485 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/data/RandomAccessData.class
+   282 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/data/RandomAccessDataFile$1.class
+  2772 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/data/RandomAccessDataFile$DataInputStream.class
+  3259 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/data/RandomAccessDataFile$FileAccess.class
+  4015 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/data/RandomAccessDataFile.class
+     0 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/
+  1438 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/AbstractJarFile$JarFileType.class
+   878 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/AbstractJarFile.class
+  4976 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/AsciiBytes.class
+   616 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/Bytes.class
+   295 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/CentralDirectoryEndRecord$1.class
+  3319 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/CentralDirectoryEndRecord$Zip64End.class
+  2029 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/CentralDirectoryEndRecord$Zip64Locator.class
+  5029 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/CentralDirectoryEndRecord.class
+  6889 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/CentralDirectoryFileHeader.class
+  4624 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/CentralDirectoryParser.class
+   540 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/CentralDirectoryVisitor.class
+   345 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/FileHeader.class
+ 13641 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/Handler.class
+  3885 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/JarEntry.class
+  1458 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/JarEntryCertification.class
+   299 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/JarEntryFilter.class
+  2299 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/JarFile$1.class
+  1299 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/JarFile$JarEntryEnumeration.class
+ 16660 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/JarFile.class
+  1368 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/JarFileEntries$1.class
+  2258 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/JarFileEntries$EntryIterator.class
+  1281 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/JarFileEntries$Offsets.class
+  1338 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/JarFileEntries$Zip64Offsets.class
+  1334 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/JarFileEntries$ZipOffsets.class
+ 17280 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/JarFileEntries.class
+  3512 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/JarFileWrapper.class
+   702 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/JarURLConnection$1.class
+  4302 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/JarURLConnection$JarEntryName.class
+  9399 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/JarURLConnection.class
+  3559 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/StringSequence.class
+  1813 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/ZipInflaterInputStream.class
+     0 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jarmode/
+   293 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jarmode/JarMode.class
+  2201 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jarmode/JarModeLauncher.class
+  1292 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jarmode/TestJarMode.class
+     0 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/util/
+  5174 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/util/SystemPropertyUtils.class
+     0 Tue Nov 08 07:33:32 EST 2022 BOOT-INF/
+     0 Tue Nov 08 07:33:32 EST 2022 BOOT-INF/classes/
+     0 Tue Nov 08 05:53:38 EST 2022 BOOT-INF/classes/ashburncode/
+     0 Tue Nov 08 05:53:38 EST 2022 BOOT-INF/classes/ashburncode/sbapp2/
+   770 Tue Nov 08 05:53:38 EST 2022 BOOT-INF/classes/ashburncode/sbapp2/Sbapp2grajarj11Application.class
+     1 Tue Nov 08 05:53:40 EST 2022 BOOT-INF/classes/application.properties
+     0 Tue Nov 08 07:33:32 EST 2022 BOOT-INF/lib/
+2515447 Tue Nov 08 05:53:40 EST 2022 BOOT-INF/lib/mysql-connector-j-8.0.31.jar
+ 15392 Tue Nov 08 05:53:36 EST 2022 BOOT-INF/lib/jakarta.transaction-api-1.3.3.jar
+164392 Tue Nov 08 05:53:36 EST 2022 BOOT-INF/lib/jakarta.persistence-api-2.2.3.jar
+7493426 Tue Nov 08 05:53:36 EST 2022 BOOT-INF/lib/hibernate-core-5.6.12.Final.jar
+387970 Tue Nov 08 05:53:36 EST 2022 BOOT-INF/lib/spring-data-jpa-2.7.5.jar
+ 47237 Tue Nov 08 05:53:36 EST 2022 BOOT-INF/lib/spring-aspects-5.3.23.jar
+1491448 Tue Nov 08 05:53:36 EST 2022 BOOT-INF/lib/spring-security-config-5.7.4.jar
+673948 Tue Nov 08 05:53:36 EST 2022 BOOT-INF/lib/spring-security-web-5.7.4.jar
+1028729 Tue Nov 08 05:53:36 EST 2022 BOOT-INF/lib/spring-webmvc-5.3.23.jar
+1677768 Fri Oct 21 07:45:50 EDT 2022 BOOT-INF/lib/spring-boot-autoconfigure-2.7.5.jar
+1452270 Fri Oct 21 07:45:50 EDT 2022 BOOT-INF/lib/spring-boot-2.7.5.jar
+446189 Tue Nov 08 05:53:36 EST 2022 BOOT-INF/lib/spring-security-core-5.7.4.jar
+1275110 Fri Oct 21 07:45:50 EDT 2022 BOOT-INF/lib/spring-context-5.3.23.jar
+382965 Fri Oct 21 07:45:50 EDT 2022 BOOT-INF/lib/spring-aop-5.3.23.jar
+1641065 Tue Nov 08 05:53:36 EST 2022 BOOT-INF/lib/spring-web-5.3.23.jar
+2087074 Tue Nov 08 05:53:36 EST 2022 BOOT-INF/lib/aspectjweaver-1.9.7.jar
+159222 Fri Oct 21 08:03:40 EDT 2022 BOOT-INF/lib/HikariCP-4.0.3.jar
+204145 Tue Nov 08 05:53:36 EST 2022 BOOT-INF/lib/spring-orm-5.3.23.jar
+428140 Tue Nov 08 05:53:36 EST 2022 BOOT-INF/lib/spring-jdbc-5.3.23.jar
+ 78948 Tue Nov 08 05:53:36 EST 2022 BOOT-INF/lib/hibernate-commons-annotations-5.1.2.Final.jar
+ 60782 Tue Nov 08 05:53:36 EST 2022 BOOT-INF/lib/jboss-logging-3.4.3.Final.jar
+3952540 Fri Oct 21 07:45:50 EDT 2022 BOOT-INF/lib/byte-buddy-1.12.18.jar
+445288 Tue Nov 08 05:53:36 EST 2022 BOOT-INF/lib/antlr-2.7.7.jar
+230776 Tue Nov 08 05:53:36 EST 2022 BOOT-INF/lib/jandex-2.4.2.Final.jar
+ 67815 Tue Nov 08 05:53:36 EST 2022 BOOT-INF/lib/classmate-1.5.1.jar
+1019393 Fri Oct 21 08:03:46 EDT 2022 BOOT-INF/lib/jaxb-runtime-2.3.7.jar
+1346824 Tue Nov 08 05:53:36 EST 2022 BOOT-INF/lib/spring-data-commons-2.7.5.jar
+333446 Tue Nov 08 05:53:36 EST 2022 BOOT-INF/lib/spring-tx-5.3.23.jar
+699059 Fri Oct 21 07:45:50 EDT 2022 BOOT-INF/lib/spring-beans-5.3.23.jar
+289393 Fri Oct 21 07:45:50 EDT 2022 BOOT-INF/lib/spring-expression-5.3.23.jar
+1486228 Fri Oct 21 07:45:48 EDT 2022 BOOT-INF/lib/spring-core-5.3.23.jar
+231851 Fri Oct 21 07:45:50 EDT 2022 BOOT-INF/lib/logback-classic-1.2.11.jar
+ 18010 Fri Oct 21 07:45:50 EDT 2022 BOOT-INF/lib/log4j-to-slf4j-2.17.2.jar
+  4519 Fri Oct 21 07:45:50 EDT 2022 BOOT-INF/lib/jul-to-slf4j-1.7.36.jar
+ 41125 Fri Oct 21 07:45:50 EDT 2022 BOOT-INF/lib/slf4j-api-1.7.36.jar
+ 25058 Fri Oct 21 07:45:50 EDT 2022 BOOT-INF/lib/jakarta.annotation-api-1.3.5.jar
+331605 Fri Oct 21 07:45:50 EDT 2022 BOOT-INF/lib/snakeyaml-1.30.jar
+121204 Tue Nov 08 05:53:36 EST 2022 BOOT-INF/lib/jackson-datatype-jsr310-2.13.4.jar
+  9514 Fri Oct 21 07:45:48 EDT 2022 BOOT-INF/lib/jackson-module-parameter-names-2.13.4.jar
+ 75717 Fri Oct 21 07:45:48 EDT 2022 BOOT-INF/lib/jackson-annotations-2.13.4.jar
+374895 Fri Oct 21 07:45:48 EDT 2022 BOOT-INF/lib/jackson-core-2.13.4.jar
+ 34800 Tue Nov 08 05:53:36 EST 2022 BOOT-INF/lib/jackson-datatype-jdk8-2.13.4.jar
+1531681 Fri Oct 21 07:45:48 EDT 2022 BOOT-INF/lib/jackson-databind-2.13.4.2.jar
+278680 Tue Nov 08 05:53:36 EST 2022 BOOT-INF/lib/tomcat-embed-websocket-9.0.68.jar
+3421939 Tue Nov 08 05:53:36 EST 2022 BOOT-INF/lib/tomcat-embed-core-9.0.68.jar
+256248 Tue Nov 08 05:53:36 EST 2022 BOOT-INF/lib/tomcat-embed-el-9.0.68.jar
+115638 Fri Oct 21 07:45:50 EDT 2022 BOOT-INF/lib/jakarta.xml.bind-api-2.3.3.jar
+ 72006 Fri Oct 21 08:03:46 EDT 2022 BOOT-INF/lib/txw2-2.3.7.jar
+ 29807 Fri Oct 21 08:03:46 EDT 2022 BOOT-INF/lib/istack-commons-runtime-3.0.12.jar
+ 68453 Fri Oct 21 08:03:46 EDT 2022 BOOT-INF/lib/jakarta.activation-1.2.2.jar
+ 24438 Fri Oct 21 07:45:48 EDT 2022 BOOT-INF/lib/spring-jcl-5.3.23.jar
+ 82074 Tue Nov 08 05:53:36 EST 2022 BOOT-INF/lib/spring-security-crypto-5.7.4.jar
+448764 Fri Oct 21 07:45:50 EDT 2022 BOOT-INF/lib/logback-core-1.2.11.jar
+302511 Fri Oct 21 07:45:50 EDT 2022 BOOT-INF/lib/log4j-api-2.17.2.jar
+     0 Tue Nov 08 05:53:40 EST 2022 BOOT-INF/classes/static/
+     0 Tue Nov 08 05:53:40 EST 2022 BOOT-INF/classes/templates/
+ 29511 Tue Nov 08 07:33:32 EST 2022 BOOT-INF/lib/spring-boot-jarmode-layertools-2.7.5.jar
+  2386 Tue Nov 08 07:33:32 EST 2022 BOOT-INF/classpath.idx
+   212 Tue Nov 08 07:33:32 EST 2022 BOOT-INF/layers.idx
+davidho@dphxps17:~/javaprojs/sbapp2$ 
+davidho@dphxps17:~/javaprojs/sbapp2$ jar tvf build/libs/sbapp2-0.0.1-SNAPSHOT.jar | grep -i mysql
+2515447 Tue Nov 08 05:53:40 EST 2022 BOOT-INF/lib/mysql-connector-j-8.0.31.jar
+davidho@dphxps17:~/javaprojs/sbapp2$ 
+
+gradle -q dependencies --configuration scm
+
+davidho@dphxps17:~/javaprojs/sbapp2$ ./gradlew dependencies > ../sbapp2-dep.txt
+davidho@dphxps17:~/javaprojs/sbapp2$ 
+davidho@dphxps17:~/javaprojs/sbapp2$ ls -latr ..
+total 564
+-rw-rw-r--  1 davidho davidho  64423 Oct 21 07:36 sbapp1grajarj11.zip
+-rw-rw-r--  1 davidho davidho 368801 Oct 21 08:13 sbapp1-dep.txt
+drwxr-xr-x  9 davidho davidho   4096 Oct 21 08:25 demo
+drwxr-x--- 43 davidho davidho   4096 Nov  8 05:12 ..
+-rw-rw-r--  1 davidho davidho  64993 Nov  8 05:45 sbapp2.zip
+drwxr-xr-x  6 davidho davidho   4096 Nov  8 05:53 sbapp2
+drwxrwxr-x  4 davidho davidho   4096 Nov  8 07:44 .
+-rw-rw-r--  1 davidho davidho  55362 Nov  8 07:44 sbapp2-dep.txt
+davidho@dphxps17:~/javaprojs/sbapp2$ 
+davidho@dphxps17:~/javaprojs/sbapp2$ ./gradlew dependencies | grep -i mysql
+\--- com.mysql:mysql-connector-j -> 8.0.31
+\--- com.mysql:mysql-connector-j -> 8.0.31
+\--- com.mysql:mysql-connector-j (n)
++--- com.mysql:mysql-connector-j -> 8.0.31
+davidho@dphxps17:~/javaprojs/sbapp2$ 
+
+
+davidho@dphxps17:~/javaprojs/sbapp2$ 
+davidho@dphxps17:~/javaprojs/sbapp2$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/davidho/javaprojs/sbapp2/.git/
+davidho@dphxps17:~/javaprojs/sbapp2$ 
+davidho@dphxps17:~/javaprojs/sbapp2$ ls -latr
+total 56
+drwxrwxr-x 5 davidho davidho 4096 Nov  8 05:53 .gradle
+drwxrwxr-x 9 davidho davidho 4096 Nov  8 07:33 build
+drwxrwxr-x 4 davidho davidho 4096 Nov  8 07:44 ..
+drwxr-xr-x 7 davidho davidho 4096 Nov  8 07:51 .
+drwxrwxr-x 7 davidho davidho 4096 Nov  8 07:51 .git
+drwxr-xr-x 4 davidho davidho 4096 Nov  8  2022 src
+-rw-r--r-- 1 davidho davidho   28 Nov  8  2022 settings.gradle
+-rw-r--r-- 1 davidho davidho 1614 Nov  8  2022 HELP.md
+-rw-r--r-- 1 davidho davidho 2838 Nov  8  2022 gradlew.bat
+-rwxr-xr-x 1 davidho davidho 8188 Nov  8  2022 gradlew
+drwxr-xr-x 3 davidho davidho 4096 Nov  8  2022 gradle
+-rw-r--r-- 1 davidho davidho  444 Nov  8  2022 .gitignore
+-rw-r--r-- 1 davidho davidho  705 Nov  8  2022 build.gradle
+davidho@dphxps17:~/javaprojs/sbapp2$ 
+davidho@dphxps17:~/javaprojs/sbapp2$ 
+
+git remote add origin git@github.com:ashburndev/sbapp2.git
+git branch -M main
+git push -u origin main
+
+davidho@dphxps17:~/javaprojs/sbapp2$ git add .
+davidho@dphxps17:~/javaprojs/sbapp2$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   .gitignore
+	new file:   build.gradle
+	new file:   gradle/wrapper/gradle-wrapper.jar
+	new file:   gradle/wrapper/gradle-wrapper.properties
+	new file:   gradlew
+	new file:   gradlew.bat
+	new file:   settings.gradle
+	new file:   src/main/java/ashburncode/sbapp2/Sbapp2grajarj11Application.java
+	new file:   src/main/resources/application.properties
+	new file:   src/test/java/ashburncode/sbapp2/Sbapp2grajarj11ApplicationTests.java
+
+davidho@dphxps17:~/javaprojs/sbapp2$ git commit -a -m "first commit"
+[main (root-commit) c0bd423] first commit
+ 10 files changed, 427 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 build.gradle
+ create mode 100644 gradle/wrapper/gradle-wrapper.jar
+ create mode 100644 gradle/wrapper/gradle-wrapper.properties
+ create mode 100755 gradlew
+ create mode 100644 gradlew.bat
+ create mode 100644 settings.gradle
+ create mode 100644 src/main/java/ashburncode/sbapp2/Sbapp2grajarj11Application.java
+ create mode 100644 src/main/resources/application.properties
+ create mode 100644 src/test/java/ashburncode/sbapp2/Sbapp2grajarj11ApplicationTests.java
+davidho@dphxps17:~/javaprojs/sbapp2$ 
+davidho@dphxps17:~/javaprojs/sbapp2$ git branch -vv
+* main c0bd423 first commit
+davidho@dphxps17:~/javaprojs/sbapp2$ 
+git remote add origin git@github.com:ashburndev/sbapp2.git
+git branch -M main
+git push -u origin main
+
+error: remote origin already exists.
+Enumerating objects: 24, done.
+Counting objects: 100% (24/24), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (16/16), done.
+Writing objects: 100% (24/24), 60.16 KiB | 20.05 MiB/s, done.
+Total 24 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:ashburndev/sbapp2.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+davidho@dphxps17:~/javaprojs/sbapp2$ 
+
+
