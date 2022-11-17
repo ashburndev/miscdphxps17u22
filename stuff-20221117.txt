@@ -1,0 +1,305 @@
+Thu Nov 17 05:54:08 AM EST 2022
+
+davidho@dphxps17:~$ date
+Thu Nov 17 05:53:55 AM EST 2022
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date > stuff-20221117.txt
+davidho@dphxps17:~$ code   stuff-20221117.txt
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ whereis code
+code: /usr/bin/code /usr/share/code /opt/VSCode-linux-x64-1.73.0/bin/code
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ which code
+/usr/bin/code
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ ls -latr /opt
+total 68
+drwxr-xr-x 20 root    root    4096 May 24 22:09 ..
+drwxr-xr-x  8 root    root    4096 May 26 14:19 RubyMine-2022.1.1
+drwxr-xr-x  8 root    root    4096 May 26 14:23 idea-IU-221.5591.52
+drwxr-xr-x  3 root    root    4096 May 26 14:42 google
+drwxr-xr-x  5 root    root    4096 Aug 21 19:39 1Password
+drwxr-xr-x  8 root    root    4096 Sep  8 15:44 eclipse-java-2022-09-R-linux-gtk-x86_64
+drwxr-xr-x  8 root    root    4096 Sep  8 15:54 eclipse-jee-2022-09-R-linux-gtk-x86_64
+drwxr-xr-x  8 root    root    4096 Sep 13 08:36 idea-IU-222.4167.29
+drwxr-xr-x  9     502 root    4096 Sep 15 07:57 sts-4.16.0.RELEASE
+drwxr-xr-x  8 root    root    4096 Oct  5 01:01 WebStorm-222.4345.14
+drwxr-xr-x  8 root    root    4096 Oct  5 01:01 RubyMine-2022.2.3
+drwxr-xr-x  8 root    root    4096 Oct  5 01:01 idea-IU-222.4345.14
+drwxr-xr-x  7 root    root    4096 Oct  5 01:01 idea-IC-222.4345.14
+drwxr-xr-x  8 root    root    4096 Oct 10 10:05 pycharm-community-2022.2.3
+drwxr-xr-x  9 root    root    4096 Oct 10 10:05 pycharm-2022.2.3
+drwxr-xr-x  5 davidho davidho 4096 Nov  1 11:44 VSCode-linux-x64-1.73.0
+drwxr-xr-x 17 root    root    4096 Nov  8 05:00 .
+davidho@dphxps17:~$ 
+
+davidho@dphxps17:~$ python -V
+Command 'python' not found, did you mean:
+command 'python3' from deb python3
+command 'python' from deb python-is-python3
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ python3 -V
+Python 3.10.6
+davidho@dphxps17:~$ whereis python3
+python3: /usr/bin/python3 /usr/lib/python3 /etc/python3 /usr/share/python3 /usr/share/man/man1/python3.1.gz
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+
+davidho@dphxps17:~$ whereis code
+code: /usr/bin/code /usr/share/code /opt/VSCode-linux-x64-1.73.0/bin/code
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ which code
+/opt/VSCode-linux-x64-1.73.0/bin/code
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+
+Version: 1.73.0
+Commit: 8fa188b2b301d36553cbc9ce1b0a146ccb93351f
+Date: 2022-11-01T15:44:09.336Z
+Electron: 19.0.17
+Chromium: 102.0.5005.167
+Node.js: 16.14.2
+V8: 10.2.154.15-electron.0
+OS: Linux x64 5.15.0-52-generic
+Sandboxed: No
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+fallstechdave@mmrxps17:~$ python3 --version
+Python 3.8.10
+fallstechdave@mmrxps17:~$ whereis python3
+python3: /usr/bin/python3.8 /usr/bin/python3 /usr/lib/python3.8 /usr/lib/python3 /usr/lib/python3.9 /etc/python3.8 /etc/python3 /usr/local/lib/python3.8 /usr/include/python3.8 /usr/share/python3 /usr/share/man/man1/python3.1.gz
+fallstechdave@mmrxps17:~$ 
+fallstechdave@mmrxps17:~$ python3.8 --version
+Python 3.8.10
+fallstechdave@mmrxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+sudo apt-get update
+sudo apt-get upgrade
+
+sudo apt-get install -y make build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev \
+libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl
+
+sudo apt-get install make build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
+libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+
+curl https://pyenv.run | bash
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+sudo apt-get install -y make build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev \
+libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+E: Unable to locate package python-openssl
+davidho@dphxps17:~$ 
+
+sudo apt-get install -y make build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev \
+libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~$ curl https://pyenv.run | bash
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   270  100   270    0     0   1022      0 --:--:-- --:--:-- --:--:--  1022
+Cloning into '/home/davidho/.pyenv'...
+remote: Enumerating objects: 1016, done.
+remote: Counting objects: 100% (1016/1016), done.
+remote: Compressing objects: 100% (444/444), done.
+remote: Total 1016 (delta 583), reused 725 (delta 442), pack-reused 0
+Receiving objects: 100% (1016/1016), 500.43 KiB | 19.25 MiB/s, done.
+Resolving deltas: 100% (583/583), done.
+Cloning into '/home/davidho/.pyenv/plugins/pyenv-doctor'...
+remote: Enumerating objects: 11, done.
+remote: Counting objects: 100% (11/11), done.
+remote: Compressing objects: 100% (9/9), done.
+remote: Total 11 (delta 1), reused 5 (delta 0), pack-reused 0
+Receiving objects: 100% (11/11), 38.72 KiB | 3.23 MiB/s, done.
+Resolving deltas: 100% (1/1), done.
+Cloning into '/home/davidho/.pyenv/plugins/pyenv-installer'...
+remote: Enumerating objects: 16, done.
+remote: Counting objects: 100% (16/16), done.
+remote: Compressing objects: 100% (13/13), done.
+remote: Total 16 (delta 1), reused 7 (delta 0), pack-reused 0
+Receiving objects: 100% (16/16), 5.88 KiB | 5.88 MiB/s, done.
+Resolving deltas: 100% (1/1), done.
+Cloning into '/home/davidho/.pyenv/plugins/pyenv-update'...
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 10 (delta 1), reused 6 (delta 0), pack-reused 0
+Receiving objects: 100% (10/10), done.
+Resolving deltas: 100% (1/1), done.
+Cloning into '/home/davidho/.pyenv/plugins/pyenv-virtualenv'...
+remote: Enumerating objects: 63, done.
+remote: Counting objects: 100% (63/63), done.
+remote: Compressing objects: 100% (55/55), done.
+remote: Total 63 (delta 11), reused 28 (delta 1), pack-reused 0
+Receiving objects: 100% (63/63), 38.44 KiB | 7.69 MiB/s, done.
+Resolving deltas: 100% (11/11), done.
+Cloning into '/home/davidho/.pyenv/plugins/pyenv-which-ext'...
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 10 (delta 1), reused 6 (delta 0), pack-reused 0
+Receiving objects: 100% (10/10), done.
+Resolving deltas: 100% (1/1), done.
+
+WARNING: seems you still have not added 'pyenv' to the load path.
+
+# Load pyenv automatically by appending
+# the following to 
+~/.bash_profile if it exists, otherwise ~/.profile (for login shells)
+and ~/.bashrc (for interactive shells) :
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# Restart your shell for the changes to take effect.
+
+# Load pyenv-virtualenv automatically by adding
+# the following to ~/.bashrc:
+
+eval "$(pyenv virtualenv-init -)"
+
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+added to file ~/.profile 
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+added to file ~/.bashrc 
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+pyenv --version
+pyenv global
+pyenv versions
+pyenv install --list | grep " 3\.[678]"
+pyenv install --list | tail
+pyenv install --list | head
+pyenv install --list | wc
+pyenv install -v 3.11.0
+ls ~/.pyenv/versions/
+pyenv versions
+pyenv which python
+python -v
+pyenv global 3.11.0
+pyenv versions
+python -V
+python3 -V
+
+davidho@dphxps17:~$ pyenv --version
+pyenv 2.3.6
+davidho@dphxps17:~$ python3 -V
+Python 3.10.6
+davidho@dphxps17:~$ pyenv versions
+* system (set by /home/davidho/.pyenv/version)
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ pyenv install --list | wc
+    593     594    9035
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ pyenv install -v 3.11.0
+
+Installed Python-3.11.0 to /home/davidho/.pyenv/versions/3.11.0
+
+davidho@dphxps17:~$ ls ~/.pyenv/versions/
+3.11.0
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ ls ~/.pyenv/versions/
+3.11.0
+davidho@dphxps17:~$ pyenv versions
+* system (set by /home/davidho/.pyenv/version)
+  3.11.0
+davidho@dphxps17:~$ pyenv global 3.11.0
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ pyenv versions
+  system
+* 3.11.0 (set by /home/davidho/.pyenv/version)
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ python3 -V
+Python 3.10.6
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ python -V
+Python 3.11.0
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~$ neofetch --off
+davidho@dphxps17 
+---------------- 
+OS: Ubuntu 22.04.1 LTS x86_64 
+Host: XPS 17 9710 
+Kernel: 5.15.0-53-generic 
+Uptime: 24 mins 
+Packages: 2025 (dpkg), 11 (snap) 
+Shell: bash 5.1.16 
+Resolution: 3840x2400 
+DE: GNOME 42.5 
+WM: Mutter 
+WM Theme: Adwaita 
+Theme: Yaru [GTK2/3] 
+Icons: Yaru [GTK2/3] 
+Terminal: gnome-terminal 
+CPU: 11th Gen Intel i7-11800H (16) @ 4.600GHz 
+GPU: Intel TigerLake-H GT1 [UHD Graphics] 
+GPU: NVIDIA GeForce RTX 3060 Mobile / Max-Q 
+Memory: 3889MiB / 31827MiB 
+
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~$ ls -latr ~/Downloads/ | tail -20
+-rw-rw-r--  1 davidho davidho         64 Oct 20 19:29 jdk-17.0.5_linux-x64_bin.rpm.sha256
+-rw-rw-r--  1 davidho davidho  145561908 Oct 20 19:36 jdk-11.0.17_linux-x64_bin.deb
+-rw-rw-r--  1 davidho davidho  152071004 Oct 20 19:37 jdk-11.0.17_linux-x64_bin.rpm
+-rw-rw-r--  1 davidho davidho  169251172 Oct 20 19:37 jdk-11.0.17_linux-x64_bin.tar.gz
+-rw-rw-r--  1 davidho davidho       7494 Oct 20 19:38 11-0-17-checksum.html
+-rw-rw-r--  1 davidho davidho  117557932 Oct 20 19:41 jdk-8u351-linux-x64.rpm
+-rw-rw-r--  1 davidho davidho  149697219 Oct 20 19:41 jdk-8u351-linux-x64.tar.gz
+-rw-rw-r--  1 davidho davidho      12168 Oct 20 19:41 8u351checksum.html
+-rw-rw-r--  1 davidho davidho  125170344 Oct 20 19:42 jdk-8u351-docs-all.zip
+-rw-rw-r--  1 davidho davidho   10476456 Oct 20 19:42 javafx-8u351-apidocs.zip
+-rw-rw-r--  1 davidho davidho      64423 Oct 21 07:36 sbapp1grajarj11.zip
+-rw-rw-r--  1 davidho davidho  570969095 Nov  2 07:24 WebStorm-2022.2.3.tar.gz
+-rw-rw-r--  1 davidho davidho         91 Nov  2 07:24 WebStorm-2022.2.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho   96700176 Nov  8 04:21 code_1.73.0-1667318785_amd64.deb
+-rw-rw-r--  1 davidho davidho  136288118 Nov  8 04:21 code-1.73.0-1667318873.el7.x86_64.rpm
+-rw-rw-r--  1 davidho davidho  135608145 Nov  8 04:22 code-stable-x64-1667319089.tar.gz
+-rw-rw-r--  1 davidho davidho   12996428 Nov  8 04:23 ms-python.python-2022.19.13120653.vsix
+-rw-rw-r--  1 davidho davidho      64993 Nov  8 05:45 sbapp2.zip
+drwxr-xr-x  5 davidho davidho      12288 Nov  8 05:46 .
+drwxr-x--- 44 davidho davidho       4096 Nov 17 06:59 ..
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/Documents$ 
+davidho@dphxps17:~/Documents$ date
+Thu Nov 17 07:08:25 AM EST 2022
+davidho@dphxps17:~/Documents$ python -V
+Python 3.11.0
+davidho@dphxps17:~/Documents$ python3 -V
+Python 3.11.0
+davidho@dphxps17:~/Documents$ 
+
