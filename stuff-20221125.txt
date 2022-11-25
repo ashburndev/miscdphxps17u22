@@ -1,0 +1,2030 @@
+Fri Nov 25 04:48:30 AM EST 2022
+
+davidho@dphxps17:~$ date
+Fri Nov 25 04:48:12 AM EST 2022
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date > stuff-20221125.txt
+davidho@dphxps17:~$ code   stuff-20221125.txt 
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ neofetch --off
+davidho@dphxps17 
+---------------- 
+OS: Ubuntu 22.04.1 LTS x86_64 
+Host: XPS 17 9710 
+Kernel: 5.15.0-53-generic 
+Uptime: 4 days, 20 hours, 3 mins 
+Packages: 2025 (dpkg), 4 (mine), 11 (snap) 
+Shell: bash 5.1.16 
+Resolution: 3840x2400 
+DE: GNOME 42.5 
+WM: Mutter 
+WM Theme: Adwaita 
+Theme: Yaru [GTK2/3] 
+Icons: Yaru [GTK2/3] 
+Terminal: gnome-terminal 
+CPU: 11th Gen Intel i7-11800H (16) @ 4.600GHz 
+GPU: Intel TigerLake-H GT1 [UHD Graphics] 
+GPU: NVIDIA GeForce RTX 3060 Mobile / Max-Q 
+Memory: 7894MiB / 31827MiB 
+
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ java -version
+openjdk version "17.0.5" 2022-10-18 LTS
+OpenJDK Runtime Environment Zulu17.38+21-CA (build 17.0.5+8-LTS)
+OpenJDK 64-Bit Server VM Zulu17.38+21-CA (build 17.0.5+8-LTS, mixed mode, sharing)
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ whereis java
+java: /usr/share/java /home/davidho/.sdkman/candidates/java/17.0.5-zulu/bin/java
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ which java
+/home/davidho/.sdkman/candidates/java/current/bin/java
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://start.spring.io/ ("spring initializr")
+
+
+spring boot 3.0.0, gradle project, jar packaging, java 17 language
+Group: com.ashburncode
+Artifact: sbapp3
+Name: sbapp3grajarj17
+Description: project to test dependencies in spring 3.0.0
+Package name: com.ashburncode.sbapp3
+
+... this is the order in which I added the dependencies in the "spring initializr" web app gui ...
+
+Dependencies:
+
+Spring Security Security
+Highly customizable authentication and access-control framework for Spring applications.
+
+Spring Web Web
+Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+
+Spring Data JPA SQL
+Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+
+MySQL Driver SQL
+MySQL JDBC and R2DBC driver.
+
+... but this is the order in which they appear in the generated build.gradle file ...
+
+dependencies {
+  implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+  implementation 'org.springframework.boot:spring-boot-starter-security'
+  implementation 'org.springframework.boot:spring-boot-starter-web'
+  runtimeOnly 'com.mysql:mysql-connector-j'
+  testImplementation 'org.springframework.boot:spring-boot-starter-test'
+  testImplementation 'org.springframework.security:spring-security-test'
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~$ ls -latr Downloads/ | tail
+-rw-rw-r--  1 davidho davidho  570969095 Nov  2 07:24 WebStorm-2022.2.3.tar.gz
+-rw-rw-r--  1 davidho davidho         91 Nov  2 07:24 WebStorm-2022.2.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho   96700176 Nov  8 04:21 code_1.73.0-1667318785_amd64.deb
+-rw-rw-r--  1 davidho davidho  136288118 Nov  8 04:21 code-1.73.0-1667318873.el7.x86_64.rpm
+-rw-rw-r--  1 davidho davidho  135608145 Nov  8 04:22 code-stable-x64-1667319089.tar.gz
+-rw-rw-r--  1 davidho davidho   12996428 Nov  8 04:23 ms-python.python-2022.19.13120653.vsix
+-rw-rw-r--  1 davidho davidho      64993 Nov  8 05:45 sbapp2.zip
+drwxr-x--- 44 davidho davidho       4096 Nov 25 04:55 ..
+-rw-rw-r--  1 davidho davidho      65324 Nov 25 05:17 sbapp3.zip
+drwxr-xr-x  5 davidho davidho      12288 Nov 25 05:17 .
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 7z l Downloads/sbapp3.zip 
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,16 CPUs 11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz (806D1),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 65324 bytes (64 KiB)
+
+Listing archive: Downloads/sbapp3.zip
+
+--
+Path = Downloads/sbapp3.zip
+Type = zip
+Physical Size = 65324
+
+   Date      Time    Attr         Size   Compressed  Name
+------------------- ----- ------------ ------------  ------------------------
+2022-11-25 10:17:24 D....            0            2  sbapp3
+2022-11-25 10:17:24 .....         8188         3519  sbapp3/gradlew
+2022-11-25 10:17:24 D....            0            2  sbapp3/gradle
+2022-11-25 10:17:24 D....            0            2  sbapp3/gradle/wrapper
+2022-11-25 10:17:24 .....          202          124  sbapp3/gradle/wrapper/gradle-wrapper.properties
+2022-11-25 10:17:24 .....        60756        54679  sbapp3/gradle/wrapper/gradle-wrapper.jar
+2022-11-25 10:17:24 D....            0            2  sbapp3/src
+2022-11-25 10:17:24 D....            0            2  sbapp3/src/test
+2022-11-25 10:17:24 D....            0            2  sbapp3/src/test/java
+2022-11-25 10:17:24 D....            0            2  sbapp3/src/test/java/com
+2022-11-25 10:17:24 D....            0            2  sbapp3/src/test/java/com/ashburncode
+2022-11-25 10:17:24 D....            0            2  sbapp3/src/test/java/com/ashburncode/sbapp3
+2022-11-25 10:17:24 .....          223          159  sbapp3/src/test/java/com/ashburncode/sbapp3/Sbapp3grajarj17ApplicationTests.java
+2022-11-25 10:17:24 D....            0            2  sbapp3/src/main
+2022-11-25 10:17:24 D....            0            2  sbapp3/src/main/resources
+2022-11-25 10:17:24 D....            0            2  sbapp3/src/main/resources/static
+2022-11-25 10:17:24 D....            0            2  sbapp3/src/main/resources/templates
+2022-11-25 10:17:24 .....            1            3  sbapp3/src/main/resources/application.properties
+2022-11-25 10:17:24 D....            0            2  sbapp3/src/main/java
+2022-11-25 10:17:24 D....            0            2  sbapp3/src/main/java/com
+2022-11-25 10:17:24 D....            0            2  sbapp3/src/main/java/com/ashburncode
+2022-11-25 10:17:24 D....            0            2  sbapp3/src/main/java/com/ashburncode/sbapp3
+2022-11-25 10:17:24 .....          333          180  sbapp3/src/main/java/com/ashburncode/sbapp3/Sbapp3grajarj17Application.java
+2022-11-25 10:17:24 .....           28           30  sbapp3/settings.gradle
+2022-11-25 10:17:24 .....          700          305  sbapp3/build.gradle
+2022-11-25 10:17:24 .....         2838         1195  sbapp3/gradlew.bat
+2022-11-25 10:17:24 .....          444          242  sbapp3/.gitignore
+2022-11-25 10:17:24 .....         1614          598  sbapp3/HELP.md
+------------------- ----- ------------ ------------  ------------------------
+2022-11-25 10:17:24              75327        61068  11 files, 17 folders
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/javaprojs/sbapp3$ ls -lagtr
+total 44
+drwxrwxr-x 5 davidho 4096 Nov 25 05:21 ..
+drwxr-xr-x 4 davidho 4096 Nov 25  2022 src
+-rw-r--r-- 1 davidho   28 Nov 25  2022 settings.gradle
+-rw-r--r-- 1 davidho 1614 Nov 25  2022 HELP.md
+-rw-r--r-- 1 davidho 2838 Nov 25  2022 gradlew.bat
+-rwxr-xr-x 1 davidho 8188 Nov 25  2022 gradlew
+drwxr-xr-x 3 davidho 4096 Nov 25  2022 gradle
+-rw-r--r-- 1 davidho  444 Nov 25  2022 .gitignore
+-rw-r--r-- 1 davidho  700 Nov 25  2022 build.gradle
+drwxr-xr-x 4 davidho 4096 Nov 25  2022 .
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+davidho@dphxps17:~/javaprojs/sbapp3$ find . -print
+.
+./.gitignore
+./gradle
+./gradle/wrapper
+./gradle/wrapper/gradle-wrapper.properties
+./gradle/wrapper/gradle-wrapper.jar
+./settings.gradle
+./HELP.md
+./src
+./src/test
+./src/test/java
+./src/test/java/com
+./src/test/java/com/ashburncode
+./src/test/java/com/ashburncode/sbapp3
+./src/test/java/com/ashburncode/sbapp3/Sbapp3grajarj17ApplicationTests.java
+./src/main
+./src/main/resources
+./src/main/resources/static
+./src/main/resources/application.properties
+./src/main/resources/templates
+./src/main/java
+./src/main/java/com
+./src/main/java/com/ashburncode
+./src/main/java/com/ashburncode/sbapp3
+./src/main/java/com/ashburncode/sbapp3/Sbapp3grajarj17Application.java
+./build.gradle
+./gradlew.bat
+./gradlew
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+davidho@dphxps17:~/javaprojs/sbapp3$ find . -type f -exec ls -la {} \;
+-rw-r--r-- 1 davidho davidho 444 Nov 25  2022 ./.gitignore
+-rw-r--r-- 1 davidho davidho 202 Nov 25  2022 ./gradle/wrapper/gradle-wrapper.properties
+-rw-r--r-- 1 davidho davidho 60756 Nov 25  2022 ./gradle/wrapper/gradle-wrapper.jar
+-rw-r--r-- 1 davidho davidho 28 Nov 25  2022 ./settings.gradle
+-rw-r--r-- 1 davidho davidho 1614 Nov 25  2022 ./HELP.md
+-rw-r--r-- 1 davidho davidho 223 Nov 25  2022 ./src/test/java/com/ashburncode/sbapp3/Sbapp3grajarj17ApplicationTests.java
+-rw-r--r-- 1 davidho davidho 1 Nov 25  2022 ./src/main/resources/application.properties
+-rw-r--r-- 1 davidho davidho 333 Nov 25  2022 ./src/main/java/com/ashburncode/sbapp3/Sbapp3grajarj17Application.java
+-rw-r--r-- 1 davidho davidho 700 Nov 25  2022 ./build.gradle
+-rw-r--r-- 1 davidho davidho 2838 Nov 25  2022 ./gradlew.bat
+-rwxr-xr-x 1 davidho davidho 8188 Nov 25  2022 ./gradlew
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+davidho@dphxps17:~/javaprojs/sbapp3$ cat settings.gradle 
+rootProject.name = 'sbapp3'
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+davidho@dphxps17:~/javaprojs/sbapp3$ cat build.gradle 
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.0.0'
+	id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'com.ashburncode'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	runtimeOnly 'com.mysql:mysql-connector-j'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+davidho@dphxps17:~/javaprojs/sbapp3$ cat .gitignore 
+HELP.md
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+davidho@dphxps17:~/javaprojs/sbapp3$ find . -name *.java -print -exec cat {} \;
+./src/test/java/com/ashburncode/sbapp3/Sbapp3grajarj17ApplicationTests.java
+package com.ashburncode.sbapp3;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class Sbapp3grajarj17ApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
+./src/main/java/com/ashburncode/sbapp3/Sbapp3grajarj17Application.java
+package com.ashburncode.sbapp3;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Sbapp3grajarj17Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Sbapp3grajarj17Application.class, args);
+	}
+
+}
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+davidho@dphxps17:~/javaprojs/sbapp3$ ./gradlew dependencies | head -30
+
+> Task :dependencies
+
+------------------------------------------------------------
+Root project 'sbapp3'
+------------------------------------------------------------
+
+annotationProcessor - Annotation processors and their dependencies for source set 'main'.
+No dependencies
+
+apiElements - API elements for main. (n)
+No dependencies
+
+archives - Configuration for archive artifacts. (n)
+No dependencies
+
+bootArchives - Configuration for Spring Boot archive artifacts. (n)
+No dependencies
+
+compileClasspath - Compile classpath for source set 'main'.
++--- org.springframework.boot:spring-boot-starter-data-jpa -> 3.0.0
+|    +--- org.springframework.boot:spring-boot-starter-aop:3.0.0
+|    |    +--- org.springframework.boot:spring-boot-starter:3.0.0
+|    |    |    +--- org.springframework.boot:spring-boot:3.0.0
+|    |    |    |    +--- org.springframework:spring-core:6.0.2
+|    |    |    |    |    \--- org.springframework:spring-jcl:6.0.2
+|    |    |    |    \--- org.springframework:spring-context:6.0.2
+|    |    |    |         +--- org.springframework:spring-aop:6.0.2
+|    |    |    |         |    +--- org.springframework:spring-beans:6.0.2
+|    |    |    |         |    |    \--- org.springframework:spring-core:6.0.2 (*)
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+
+./gradlew dependencies | sed -e 's/|    //g' | sed -e 's/[\\+]--- //g'
+./gradlew dependencies | sed -e 's/|    //g' | sed -e 's/[\\+]--- //g' | sed -e 's/^[ \t]*//' | sort -u
+
+./gradlew dependencies | grep -i mysql | sed -e 's/|    //g' | sed -e 's/[\\+]--- //g' | sed -e 's/^[ \t]*//' | sort -u
+./gradlew dependencies | grep -i hibernate | sed -e 's/|    //g' | sed -e 's/[\\+]--- //g' | sed -e 's/^[ \t]*//' | sort -u
+./gradlew dependencies | grep -i tomcat | sed -e 's/|    //g' | sed -e 's/[\\+]--- //g' | sed -e 's/^[ \t]*//' | sort -u
+./gradlew dependencies | grep -i spring | sed -e 's/|    //g' | sed -e 's/[\\+]--- //g' | sed -e 's/^[ \t]*//' | sort -u
+
+./gradlew dependencies | sed -e 's/|    //g' | sed -e 's/[\\+]--- //g' | sed -e 's/^[ \t]*//' | sed -e 's/([n*])//g' | sort -u
+./gradlew dependencies | grep -i mysql | sed -e 's/|    //g' | sed -e 's/[\\+]--- //g' | sed -e 's/^[ \t]*//' | sed -e 's/([n*])//g' | sort -u
+./gradlew dependencies | grep -i hibernate | sed -e 's/|    //g' | sed -e 's/[\\+]--- //g' | sed -e 's/^[ \t]*//' | sed -e 's/([n*])//g' | sort -u
+./gradlew dependencies | grep -i tomcat | sed -e 's/|    //g' | sed -e 's/[\\+]--- //g' | sed -e 's/^[ \t]*//' | sed -e 's/([n*])//g' | sort -u
+./gradlew dependencies | grep -i spring | sed -e 's/|    //g' | sed -e 's/[\\+]--- //g' | sed -e 's/^[ \t]*//' | sed -e 's/([n*])//g' | sort -u
+
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+davidho@dphxps17:~/javaprojs/sbapp3$ ./gradlew dependencies | grep -i mysql | sed -e 's/|    //g' | sed -e 's/[\\+]--- //g' | sed -e 's/^[ \t]*//' | sed -e 's/([n*])//g' | sort -u
+com.mysql:mysql-connector-j 
+com.mysql:mysql-connector-j -> 8.0.31
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+davidho@dphxps17:~/javaprojs/sbapp3$ ./gradlew dependencies | grep -i hibernate | sed -e 's/|    //g' | sed -e 's/[\\+]--- //g' | sed -e 's/^[ \t]*//' | sed -e 's/([n*])//g' | sort -u
+org.hibernate.common:hibernate-commons-annotations:6.0.2.Final
+org.hibernate.orm:hibernate-core:6.1.5.Final
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+davidho@dphxps17:~/javaprojs/sbapp3$ ./gradlew dependencies | grep -i tomcat | sed -e 's/|    //g' | sed -e 's/[\\+]--- //g' | sed -e 's/^[ \t]*//' | sed -e 's/([n*])//g' | sort -u
+org.apache.tomcat.embed:tomcat-embed-core:10.1.1
+org.apache.tomcat.embed:tomcat-embed-el:10.1.1
+org.apache.tomcat.embed:tomcat-embed-websocket:10.1.1
+org.springframework.boot:spring-boot-starter-tomcat:3.0.0
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+davidho@dphxps17:~/javaprojs/sbapp3$ ./gradlew dependencies | grep -i spring | sed -e 's/|    //g' | sed -e 's/[\\+]--- //g' | sed -e 's/^[ \t]*//' | sed -e 's/([n*])//g' | sort -u
+bootArchives - Configuration for Spring Boot archive artifacts. 
+developmentOnly - Configuration for development-only dependencies such as Spring Boot's DevTools.
+org.springframework.boot:spring-boot:3.0.0
+org.springframework.boot:spring-boot:3.0.0 
+org.springframework.boot:spring-boot-autoconfigure:3.0.0
+org.springframework.boot:spring-boot-autoconfigure:3.0.0 
+org.springframework.boot:spring-boot-starter:3.0.0
+org.springframework.boot:spring-boot-starter:3.0.0 
+org.springframework.boot:spring-boot-starter-aop:3.0.0
+org.springframework.boot:spring-boot-starter-data-jpa 
+org.springframework.boot:spring-boot-starter-data-jpa -> 3.0.0
+org.springframework.boot:spring-boot-starter-jdbc:3.0.0
+org.springframework.boot:spring-boot-starter-json:3.0.0
+org.springframework.boot:spring-boot-starter-logging:3.0.0
+org.springframework.boot:spring-boot-starter-security 
+org.springframework.boot:spring-boot-starter-security -> 3.0.0
+org.springframework.boot:spring-boot-starter-test 
+org.springframework.boot:spring-boot-starter-test -> 3.0.0
+org.springframework.boot:spring-boot-starter-tomcat:3.0.0
+org.springframework.boot:spring-boot-starter-web 
+org.springframework.boot:spring-boot-starter-web -> 3.0.0
+org.springframework.boot:spring-boot-test:3.0.0
+org.springframework.boot:spring-boot-test:3.0.0 
+org.springframework.boot:spring-boot-test-autoconfigure:3.0.0
+org.springframework.data:spring-data-commons:3.0.0
+org.springframework.data:spring-data-jpa:3.0.0
+org.springframework.security:spring-security-config:6.0.0
+org.springframework.security:spring-security-core:6.0.0
+org.springframework.security:spring-security-core:6.0.0 
+org.springframework.security:spring-security-crypto:6.0.0
+org.springframework.security:spring-security-test 
+org.springframework.security:spring-security-test -> 6.0.0
+org.springframework.security:spring-security-web:6.0.0
+org.springframework.security:spring-security-web:6.0.0 
+org.springframework:spring-aop:6.0.0 -> 6.0.2 
+org.springframework:spring-aop:6.0.2
+org.springframework:spring-aop:6.0.2 
+org.springframework:spring-aspects:6.0.2
+org.springframework:spring-beans:6.0.0 -> 6.0.2 
+org.springframework:spring-beans:6.0.2
+org.springframework:spring-beans:6.0.2 
+org.springframework:spring-context:6.0.0 -> 6.0.2 
+org.springframework:spring-context:6.0.2
+org.springframework:spring-context:6.0.2 
+org.springframework:spring-core:6.0.0 -> 6.0.2 
+org.springframework:spring-core:6.0.2
+org.springframework:spring-core:6.0.2 
+org.springframework:spring-expression:6.0.0 -> 6.0.2 
+org.springframework:spring-expression:6.0.2
+org.springframework:spring-expression:6.0.2 
+org.springframework:spring-jcl:6.0.2
+org.springframework:spring-jdbc:6.0.2
+org.springframework:spring-jdbc:6.0.2 
+org.springframework:spring-orm:6.0.0 -> 6.0.2
+org.springframework:spring-test:6.0.0 -> 6.0.2 
+org.springframework:spring-test:6.0.2
+org.springframework:spring-tx:6.0.0 -> 6.0.2 
+org.springframework:spring-tx:6.0.2
+org.springframework:spring-tx:6.0.2 
+org.springframework:spring-web:6.0.0 -> 6.0.2
+org.springframework:spring-web:6.0.2 
+org.springframework:spring-webmvc:6.0.2
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+
+davidho@dphxps17:~/javaprojs/sbapp3$ ./gradlew bootRun
+
+> Task :bootRun FAILED
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.0.0)
+
+2022-11-25T05:57:12.349-05:00  INFO 30207 --- [           main] c.a.sbapp3.Sbapp3grajarj17Application    : Starting Sbapp3grajarj17Application using Java 17.0.5 with PID 30207 (/home/davidho/javaprojs/sbapp3/build/classes/java/main started by davidho in /home/davidho/javaprojs/sbapp3)
+2022-11-25T05:57:12.351-05:00  INFO 30207 --- [           main] c.a.sbapp3.Sbapp3grajarj17Application    : No active profile set, falling back to 1 default profile: "default"
+2022-11-25T05:57:12.612-05:00  INFO 30207 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-25T05:57:12.621-05:00  INFO 30207 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2022-11-25T05:57:12.856-05:00  INFO 30207 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-25T05:57:12.862-05:00  INFO 30207 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-25T05:57:12.862-05:00  INFO 30207 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.1]
+2022-11-25T05:57:12.909-05:00  INFO 30207 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-25T05:57:12.910-05:00  INFO 30207 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 532 ms
+2022-11-25T05:57:12.940-05:00  WARN 30207 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Failed to determine a suitable driver class
+2022-11-25T05:57:12.941-05:00  INFO 30207 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-25T05:57:12.950-05:00  INFO 30207 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2022-11-25T05:57:12.957-05:00 ERROR 30207 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+        If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+        If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':bootRun'.
+> Process 'command '/home/davidho/.sdkman/candidates/java/17.0.5-zulu/bin/java'' finished with non-zero exit value 1
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 1s
+4 actionable tasks: 1 executed, 3 up-to-date
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+davidho@dphxps17:~/javaprojs/sbapp3$ ./gradlew build
+
+> Task :test FAILED
+
+Sbapp3grajarj17ApplicationTests > contextLoads() FAILED
+    java.lang.IllegalStateException at DefaultCacheAwareContextLoaderDelegate.java:141
+        Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException at ConstructorResolver.java:793
+            Caused by: org.springframework.beans.factory.BeanCreationException at ConstructorResolver.java:652
+                Caused by: org.springframework.beans.BeanInstantiationException at SimpleInstantiationStrategy.java:171
+                    Caused by: org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException at DataSourceProperties.java:182
+
+1 test completed, 1 failed
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':test'.
+> There were failing tests. See the report at: file:///home/davidho/javaprojs/sbapp3/build/reports/tests/test/index.html
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 3s
+7 actionable tasks: 4 executed, 3 up-to-date
+davidho@dphxps17:~/javaprojs/sbapp3$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/davidho/javaprojs/sbapp3/.git/
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://vladmihalcea.com/hibernate-dialect/
+https://spring.io/guides/gs/accessing-data-mysql/
+
+  git clone https://github.com/spring-guides/gs-accessing-data-mysql.git
+  cd gs-accessing-data-mysql/initial
+  touch src/main/resources/application.properties
+
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/db_example
+spring.datasource.username=springuser
+spring.datasource.password=ThePassword
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+#spring.jpa.show-sql: true
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+…or push an existing repository from the command line
+
+git remote add origin git@github.com:ashburndev/sbapp3.git
+git branch -M main
+git push -u origin main
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/javaprojs/sbapp3$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/davidho/javaprojs/sbapp3/.git/
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+davidho@dphxps17:~/javaprojs/sbapp3$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.gitignore
+	build.gradle
+	gradle/
+	gradlew
+	gradlew.bat
+	settings.gradle
+	src/
+
+nothing added to commit but untracked files present (use "git add" to track)
+davidho@dphxps17:~/javaprojs/sbapp3$ git add .
+davidho@dphxps17:~/javaprojs/sbapp3$ git commit -a -m "first commit"
+[master (root-commit) bd400c2] first commit
+ 10 files changed, 427 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 build.gradle
+ create mode 100644 gradle/wrapper/gradle-wrapper.jar
+ create mode 100644 gradle/wrapper/gradle-wrapper.properties
+ create mode 100755 gradlew
+ create mode 100644 gradlew.bat
+ create mode 100644 settings.gradle
+ create mode 100644 src/main/java/com/ashburncode/sbapp3/Sbapp3grajarj17Application.java
+ create mode 100644 src/main/resources/application.properties
+ create mode 100644 src/test/java/com/ashburncode/sbapp3/Sbapp3grajarj17ApplicationTests.java
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+davidho@dphxps17:~/javaprojs/sbapp3$ git remote add origin git@github.com:ashburndev/sbapp3.git
+davidho@dphxps17:~/javaprojs/sbapp3$ git branch -M main
+davidho@dphxps17:~/javaprojs/sbapp3$ git push -u origin main
+Enumerating objects: 26, done.
+Counting objects: 100% (26/26), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (16/16), done.
+Writing objects: 100% (26/26), 60.24 KiB | 20.08 MiB/s, done.
+Total 26 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:ashburndev/sbapp3.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/javaprojs/sbapp3$ ./gradlew build
+
+> Task :test
+
+Sbapp3grajarj17ApplicationTests > contextLoads() FAILED
+    java.lang.IllegalStateException at DefaultCacheAwareContextLoaderDelegate.java:141
+        Caused by: org.springframework.beans.factory.BeanCreationException at AbstractAutowireCapableBeanFactory.java:1751
+            Caused by: org.hibernate.service.spi.ServiceException at AbstractServiceRegistryImpl.java:267
+                Caused by: org.hibernate.HibernateException at DialectFactoryImpl.java:147
+
+1 test completed, 1 failed
+
+> Task :test FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':test'.
+> There were failing tests. See the report at: file:///home/davidho/javaprojs/sbapp3/build/reports/tests/test/index.html
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 3s
+7 actionable tasks: 5 executed, 2 up-to-date
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+
+Caused by: org.hibernate.HibernateException: Unable to determine Dialect without JDBC metadata (please set 'javax.persistence.jdbc.url', 'hibernate.connection.url', or 'hibernate.dialect')
+	at app//org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:147)
+	at app//org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:60)
+	at app//org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:244)
+	at app//org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:36)
+	at app//org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:119)
+	at app//org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:255)
+	... 123 more
+
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+davidho@dphxps17:~/javaprojs/sbapp3$ ./gradlew build
+
+> Task :test
+2022-11-25T06:48:34.723-05:00  INFO 37877 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+
+BUILD SUCCESSFUL in 3s
+7 actionable tasks: 5 executed, 2 up-to-date
+davidho@dphxps17:~/javaprojs/sbapp3$ find . -name *.jar -print
+./gradle/wrapper/gradle-wrapper.jar
+./build/libs/sbapp3-0.0.1-SNAPSHOT.jar
+./build/libs/sbapp3-0.0.1-SNAPSHOT-plain.jar
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+davidho@dphxps17:~/javaprojs/sbapp3$ ls -latr ./build/libs
+total 43924
+drwxrwxr-x 2 davidho davidho     4096 Nov 25 06:03 .
+drwxrwxr-x 9 davidho davidho     4096 Nov 25 06:03 ..
+-rw-rw-r-- 1 davidho davidho 44962367 Nov 25 06:48 sbapp3-0.0.1-SNAPSHOT.jar
+-rw-rw-r-- 1 davidho davidho     1845 Nov 25 06:48 sbapp3-0.0.1-SNAPSHOT-plain.jar
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+davidho@dphxps17:~/javaprojs/sbapp3$ jar tvf ./build/libs/sbapp3-0.0.1-SNAPSHOT.jar
+     0 Fri Nov 25 06:48:30 EST 2022 META-INF/
+   366 Fri Nov 25 06:48:30 EST 2022 META-INF/MANIFEST.MF
+     0 Fri Feb 01 00:00:00 EST 1980 org/
+     0 Fri Feb 01 00:00:00 EST 1980 org/springframework/
+     0 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/
+     0 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/
+  5667 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/ClassPathIndexFile.class
+  7806 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/ExecutableArchiveLauncher.class
+  2540 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/JarLauncher.class
+  1561 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/LaunchedURLClassLoader$DefinePackageCallType.class
+  1554 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/LaunchedURLClassLoader$UseFastConnectionExceptionsEnumeration.class
+ 10516 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/LaunchedURLClassLoader.class
+  5384 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/Launcher.class
+  1530 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/MainMethodRunner.class
+  1239 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/PropertiesLauncher$ArchiveEntryFilter.class
+  7795 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/PropertiesLauncher$ClassPathArchives.class
+  1603 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/PropertiesLauncher$PrefixMatchingArchiveFilter.class
+ 17426 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/PropertiesLauncher.class
+  1728 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/WarLauncher.class
+     0 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/archive/
+   321 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/archive/Archive$Entry.class
+   530 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/archive/Archive$EntryFilter.class
+  1471 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/archive/Archive.class
+  6095 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/archive/ExplodedArchive$AbstractIterator.class
+  2193 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/archive/ExplodedArchive$ArchiveIterator.class
+  1876 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/archive/ExplodedArchive$EntryIterator.class
+  1288 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/archive/ExplodedArchive$FileEntry.class
+  2588 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/archive/ExplodedArchive$SimpleJarFileArchive.class
+  5455 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/archive/ExplodedArchive.class
+  2900 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/archive/JarFileArchive$AbstractIterator.class
+  2000 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/archive/JarFileArchive$EntryIterator.class
+  1100 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/archive/JarFileArchive$JarFileEntry.class
+  2544 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/archive/JarFileArchive$NestedArchiveIterator.class
+ 10446 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/archive/JarFileArchive.class
+     0 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/data/
+   485 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/data/RandomAccessData.class
+  2214 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/data/RandomAccessDataFile$DataInputStream.class
+  2203 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/data/RandomAccessDataFile$FileAccess.class
+  2903 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/data/RandomAccessDataFile.class
+     0 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/
+  1516 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/AbstractJarFile$JarFileType.class
+   902 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/AbstractJarFile.class
+  4970 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/AsciiBytes.class
+   616 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/Bytes.class
+  2113 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/CentralDirectoryEndRecord$Zip64End.class
+  1683 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/CentralDirectoryEndRecord$Zip64Locator.class
+  4749 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/CentralDirectoryEndRecord.class
+  6880 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/CentralDirectoryFileHeader.class
+  4609 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/CentralDirectoryParser.class
+   540 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/CentralDirectoryVisitor.class
+   345 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/FileHeader.class
+ 13975 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/Handler.class
+  3867 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/JarEntry.class
+  1452 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/JarEntryCertification.class
+   299 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/JarEntryFilter.class
+  2205 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/JarFile$1.class
+  1318 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/JarFile$JarEntryEnumeration.class
+ 16208 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/JarFile.class
+  1417 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/JarFileEntries$1.class
+  1731 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/JarFileEntries$EntryIterator.class
+  1175 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/JarFileEntries$Offsets.class
+  1058 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/JarFileEntries$Zip64Offsets.class
+  1054 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/JarFileEntries$ZipOffsets.class
+ 16030 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/JarFileEntries.class
+  3431 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/JarFileWrapper.class
+   721 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/JarURLConnection$1.class
+  4476 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/JarURLConnection$JarEntryName.class
+  9592 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/JarURLConnection.class
+  3562 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/StringSequence.class
+  1810 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/ZipInflaterInputStream.class
+     0 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jarmode/
+   293 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jarmode/JarMode.class
+  2448 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jarmode/JarModeLauncher.class
+  1520 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jarmode/TestJarMode.class
+     0 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/util/
+  5469 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/util/SystemPropertyUtils.class
+     0 Fri Nov 25 06:48:30 EST 2022 BOOT-INF/
+     0 Fri Nov 25 06:48:30 EST 2022 BOOT-INF/classes/
+     0 Fri Nov 25 05:57:00 EST 2022 BOOT-INF/classes/com/
+     0 Fri Nov 25 05:57:00 EST 2022 BOOT-INF/classes/com/ashburncode/
+     0 Fri Nov 25 05:57:00 EST 2022 BOOT-INF/classes/com/ashburncode/sbapp3/
+   778 Fri Nov 25 05:57:00 EST 2022 BOOT-INF/classes/com/ashburncode/sbapp3/Sbapp3grajarj17Application.class
+   731 Fri Nov 25 06:48:30 EST 2022 BOOT-INF/classes/application.properties
+     0 Fri Nov 25 06:48:30 EST 2022 BOOT-INF/lib/
+2515447 Tue Nov 08 05:53:40 EST 2022 BOOT-INF/lib/mysql-connector-j-8.0.31.jar
+9736806 Fri Nov 25 05:34:36 EST 2022 BOOT-INF/lib/hibernate-core-6.1.5.Final.jar
+406918 Fri Nov 25 05:34:36 EST 2022 BOOT-INF/lib/spring-data-jpa-3.0.0.jar
+ 48049 Fri Nov 25 05:34:36 EST 2022 BOOT-INF/lib/spring-aspects-6.0.2.jar
+1584815 Fri Nov 25 05:34:36 EST 2022 BOOT-INF/lib/spring-security-config-6.0.0.jar
+759745 Fri Nov 25 05:34:36 EST 2022 BOOT-INF/lib/spring-security-web-6.0.0.jar
+1006689 Fri Nov 25 05:34:36 EST 2022 BOOT-INF/lib/spring-webmvc-6.0.2.jar
+1623827 Fri Nov 25 05:34:36 EST 2022 BOOT-INF/lib/spring-boot-autoconfigure-3.0.0.jar
+1478558 Fri Nov 25 05:34:36 EST 2022 BOOT-INF/lib/spring-boot-3.0.0.jar
+506232 Fri Nov 25 05:34:36 EST 2022 BOOT-INF/lib/spring-security-core-6.0.0.jar
+1173094 Fri Nov 25 05:34:36 EST 2022 BOOT-INF/lib/spring-context-6.0.2.jar
+395698 Fri Nov 25 05:34:36 EST 2022 BOOT-INF/lib/spring-aop-6.0.2.jar
+1733009 Fri Nov 25 05:34:36 EST 2022 BOOT-INF/lib/spring-web-6.0.2.jar
+2088354 Fri Nov 25 05:34:36 EST 2022 BOOT-INF/lib/aspectjweaver-1.9.9.1.jar
+161902 Fri Nov 25 05:34:36 EST 2022 BOOT-INF/lib/HikariCP-5.0.1.jar
+225027 Fri Nov 25 05:34:36 EST 2022 BOOT-INF/lib/spring-orm-6.0.2.jar
+428744 Fri Nov 25 05:34:36 EST 2022 BOOT-INF/lib/spring-jdbc-6.0.2.jar
+165250 Fri Nov 25 05:34:36 EST 2022 BOOT-INF/lib/jakarta.persistence-api-3.1.0.jar
+ 28607 Fri Nov 25 05:34:36 EST 2022 BOOT-INF/lib/jakarta.transaction-api-2.0.1.jar
+ 62562 Fri Nov 25 05:34:38 EST 2022 BOOT-INF/lib/jboss-logging-3.5.0.Final.jar
+ 66797 Fri Nov 25 05:34:38 EST 2022 BOOT-INF/lib/hibernate-commons-annotations-6.0.2.Final.jar
+230776 Tue Nov 08 05:53:36 EST 2022 BOOT-INF/lib/jandex-2.4.2.Final.jar
+ 67815 Tue Nov 08 05:53:36 EST 2022 BOOT-INF/lib/classmate-1.5.1.jar
+3958480 Fri Nov 25 05:34:38 EST 2022 BOOT-INF/lib/byte-buddy-1.12.19.jar
+918430 Fri Nov 25 05:34:38 EST 2022 BOOT-INF/lib/jaxb-runtime-4.0.1.jar
+140712 Fri Nov 25 05:34:38 EST 2022 BOOT-INF/lib/jaxb-core-4.0.1.jar
+127111 Fri Nov 25 05:34:38 EST 2022 BOOT-INF/lib/jakarta.xml.bind-api-4.0.0.jar
+ 10128 Fri Nov 25 05:34:38 EST 2022 BOOT-INF/lib/jakarta.inject-api-2.0.0.jar
+322137 Fri Nov 25 05:34:38 EST 2022 BOOT-INF/lib/antlr4-runtime-4.10.1.jar
+1374866 Fri Nov 25 05:34:36 EST 2022 BOOT-INF/lib/spring-data-commons-3.0.0.jar
+271071 Fri Nov 25 05:34:36 EST 2022 BOOT-INF/lib/spring-tx-6.0.2.jar
+841371 Fri Nov 25 05:34:36 EST 2022 BOOT-INF/lib/spring-beans-6.0.2.jar
+291111 Fri Nov 25 05:34:36 EST 2022 BOOT-INF/lib/spring-expression-6.0.2.jar
+1804099 Fri Nov 25 05:34:34 EST 2022 BOOT-INF/lib/spring-core-6.0.2.jar
+ 26141 Fri Nov 25 05:34:36 EST 2022 BOOT-INF/lib/jakarta.annotation-api-2.1.1.jar
+266143 Fri Nov 25 05:34:36 EST 2022 BOOT-INF/lib/logback-classic-1.4.5.jar
+ 18643 Fri Nov 25 05:34:36 EST 2022 BOOT-INF/lib/log4j-to-slf4j-2.19.0.jar
+  4716 Fri Nov 25 05:34:36 EST 2022 BOOT-INF/lib/jul-to-slf4j-2.0.4.jar
+ 61753 Fri Nov 25 05:34:36 EST 2022 BOOT-INF/lib/slf4j-api-2.0.4.jar
+331715 Fri Nov 25 05:34:36 EST 2022 BOOT-INF/lib/snakeyaml-1.33.jar
+122017 Fri Nov 25 05:34:36 EST 2022 BOOT-INF/lib/jackson-datatype-jsr310-2.14.1.jar
+  9457 Fri Nov 25 05:34:34 EST 2022 BOOT-INF/lib/jackson-module-parameter-names-2.14.1.jar
+ 76090 Fri Nov 25 05:34:34 EST 2022 BOOT-INF/lib/jackson-annotations-2.14.1.jar
+459267 Fri Nov 25 05:34:34 EST 2022 BOOT-INF/lib/jackson-core-2.14.1.jar
+ 35225 Fri Nov 25 05:34:36 EST 2022 BOOT-INF/lib/jackson-datatype-jdk8-2.14.1.jar
+1614940 Fri Nov 25 05:34:34 EST 2022 BOOT-INF/lib/jackson-databind-2.14.1.jar
+276508 Fri Nov 25 05:34:36 EST 2022 BOOT-INF/lib/tomcat-embed-websocket-10.1.1.jar
+3390106 Fri Nov 25 05:34:38 EST 2022 BOOT-INF/lib/tomcat-embed-core-10.1.1.jar
+257138 Fri Nov 25 05:34:38 EST 2022 BOOT-INF/lib/tomcat-embed-el-10.1.1.jar
+ 65732 Fri Nov 25 05:34:38 EST 2022 BOOT-INF/lib/micrometer-observation-1.10.2.jar
+ 20744 Fri Nov 25 05:34:38 EST 2022 BOOT-INF/lib/angus-activation-1.0.0.jar
+ 63473 Fri Nov 25 05:34:38 EST 2022 BOOT-INF/lib/jakarta.activation-api-2.1.0.jar
+ 23489 Fri Nov 25 05:34:34 EST 2022 BOOT-INF/lib/spring-jcl-6.0.2.jar
+ 84187 Fri Nov 25 05:34:38 EST 2022 BOOT-INF/lib/spring-security-crypto-6.0.0.jar
+ 39723 Fri Nov 25 05:34:38 EST 2022 BOOT-INF/lib/micrometer-commons-1.10.2.jar
+ 74261 Fri Nov 25 05:34:38 EST 2022 BOOT-INF/lib/txw2-4.0.1.jar
+ 26147 Fri Nov 25 05:34:38 EST 2022 BOOT-INF/lib/istack-commons-runtime-4.1.1.jar
+577488 Fri Nov 25 05:34:38 EST 2022 BOOT-INF/lib/logback-core-1.4.5.jar
+317566 Fri Nov 25 05:34:38 EST 2022 BOOT-INF/lib/log4j-api-2.19.0.jar
+     0 Fri Nov 25 05:57:02 EST 2022 BOOT-INF/classes/static/
+     0 Fri Nov 25 05:57:02 EST 2022 BOOT-INF/classes/templates/
+ 29937 Fri Nov 25 06:48:30 EST 2022 BOOT-INF/lib/spring-boot-jarmode-layertools-3.0.0.jar
+  2607 Fri Nov 25 06:48:30 EST 2022 BOOT-INF/classpath.idx
+     0 Fri Nov 25 06:48:30 EST 2022 META-INF/native-image/
+     0 Fri Nov 25 06:48:30 EST 2022 META-INF/native-image/argfile
+   212 Fri Nov 25 06:48:30 EST 2022 BOOT-INF/layers.idx
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+davidho@dphxps17:~/javaprojs/sbapp3$ date
+Fri Nov 25 06:53:14 AM EST 2022
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+davidho@dphxps17:~/javaprojs/sbapp3$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   src/main/resources/application.properties
+
+no changes added to commit (use "git add" and/or "git commit -a")
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+davidho@dphxps17:~/javaprojs/sbapp3$ git add .
+davidho@dphxps17:~/javaprojs/sbapp3$ git commit -a -m "add src/main/resources/application.properties"
+[main 0ab515f] add src/main/resources/application.properties
+ 1 file changed, 12 insertions(+)
+davidho@dphxps17:~/javaprojs/sbapp3$ git push
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 807 bytes | 807.00 KiB/s, done.
+Total 6 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:ashburndev/sbapp3.git
+   bd400c2..0ab515f  main -> main
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ node --version
+v18.2.0
+davidho@dphxps17:~$ npm --version
+8.9.0
+davidho@dphxps17:~$ npx --version
+8.9.0
+davidho@dphxps17:~$ nvm list
+->      v18.2.0
+         system
+default -> node (-> v18.2.0)
+iojs -> N/A (default)
+unstable -> N/A (default)
+node -> stable (-> v18.2.0) (default)
+stable -> 18.2 (-> v18.2.0) (default)
+lts/* -> lts/gallium (-> N/A)
+lts/argon -> v4.9.1 (-> N/A)
+lts/boron -> v6.17.1 (-> N/A)
+lts/carbon -> v8.17.0 (-> N/A)
+lts/dubnium -> v10.24.1 (-> N/A)
+lts/erbium -> v12.22.12 (-> N/A)
+lts/fermium -> v14.19.3 (-> N/A)
+lts/gallium -> v16.15.0 (-> N/A)
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ cd nodejsprojs/
+davidho@dphxps17:~/nodejsprojs$ mkdir recipe_connection
+davidho@dphxps17:~/nodejsprojs$ cd recipe_connection/
+davidho@dphxps17:~/nodejsprojs/recipe_connection$ npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help init` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (recipe_connection) recipe_connection
+version: (1.0.0) 
+description: An app to share cooking recipes
+entry point: (index.js) main.js
+test command: 
+git repository: 
+keywords: 
+author: David Holberton
+license: (ISC) 
+About to write to /home/davidho/nodejsprojs/recipe_connection/package.json:
+
+{
+  "name": "recipe_connection",
+  "version": "1.0.0",
+  "description": "An app to share cooking recipes",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David Holberton",
+  "license": "ISC"
+}
+
+
+Is this OK? (yes) yes
+npm notice 
+npm notice New major version of npm available! 8.9.0 -> 9.1.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v9.1.2
+npm notice Run npm install -g npm@9.1.2 to update!
+npm notice 
+davidho@dphxps17:~/nodejsprojs/recipe_connection$ 
+davidho@dphxps17:~/nodejsprojs/recipe_connection$ find . -print
+.
+./package.json
+davidho@dphxps17:~/nodejsprojs/recipe_connection$ cat package.json 
+{
+  "name": "recipe_connection",
+  "version": "1.0.0",
+  "description": "An app to share cooking recipes",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David Holberton",
+  "license": "ISC"
+}
+davidho@dphxps17:~/nodejsprojs/recipe_connection$ 
+davidho@dphxps17:~/nodejsprojs/recipe_connection$ ls -la
+total 12
+drwxrwxr-x 2 davidho davidho 4096 Nov 25 07:19 .
+drwxrwxr-x 3 davidho davidho 4096 Nov 25 07:17 ..
+-rw-rw-r-- 1 davidho davidho  258 Nov 25 07:19 package.json
+davidho@dphxps17:~/nodejsprojs/recipe_connection$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://nodejs.org/en/
+
+18.12.1 LTS Recommended For Most Users
+19.1.0 Current Latest Features
+
+https://reactjs.org/
+https://reactjs.org/tutorial/tutorial.html
+https://reactjs.org/docs/getting-started.html
+https://reactjs.org/docs/add-react-to-a-website.html
+https://reactjs.org/docs/create-a-new-react-app.html
+
+npx create-react-app my-app
+cd my-app
+npm start
+
+davidho@dphxps17:~/nodejsprojs$ npx create-react-app my-app
+
+Creating a new React app in /home/davidho/nodejsprojs/my-app.
+
+Installing packages. This might take a couple of minutes.
+Installing react, react-dom, and react-scripts with cra-template...
+
+
+added 1394 packages in 20s
+
+213 packages are looking for funding
+  run `npm fund` for details
+
+Initialized a git repository.
+
+Installing template dependencies using npm...
+
+added 72 packages in 3s
+
+226 packages are looking for funding
+  run `npm fund` for details
+Removing template package using npm...
+
+
+removed 1 package, and audited 1466 packages in 1s
+
+226 packages are looking for funding
+  run `npm fund` for details
+
+6 high severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+Created git commit.
+
+Success! Created my-app at /home/davidho/nodejsprojs/my-app
+Inside that directory, you can run several commands:
+
+  npm start
+    Starts the development server.
+
+  npm run build
+    Bundles the app into static files for production.
+
+  npm test
+    Starts the test runner.
+
+  npm run eject
+    Removes this tool and copies build dependencies, configuration files
+    and scripts into the app directory. If you do this, you can’t go back!
+
+We suggest that you begin by typing:
+
+  cd my-app
+  npm start
+
+Happy hacking!
+davidho@dphxps17:~/nodejsprojs$ cd my-app/
+davidho@dphxps17:~/nodejsprojs/my-app$ ls -la
+total 1244
+drwxrwxr-x   6 davidho davidho    4096 Nov 25 07:32 .
+drwxrwxr-x   4 davidho davidho    4096 Nov 25 07:31 ..
+drwxrwxr-x   8 davidho davidho    4096 Nov 25 07:32 .git
+-rw-rw-r--   1 davidho davidho     310 Nov 25 07:32 .gitignore
+drwxrwxr-x 817 davidho davidho   36864 Nov 25 07:32 node_modules
+-rw-rw-r--   1 davidho davidho     809 Nov 25 07:32 package.json
+-rw-rw-r--   1 davidho davidho 1198832 Nov 25 07:32 package-lock.json
+drwxrwxr-x   2 davidho davidho    4096 Nov 25 07:32 public
+-rw-rw-r--   1 davidho davidho    3359 Nov 25 07:32 README.md
+drwxrwxr-x   2 davidho davidho    4096 Nov 25 07:32 src
+davidho@dphxps17:~/nodejsprojs/my-app$ 
+davidho@dphxps17:~/nodejsprojs/my-app$ find . -type f -print | wc
+  36666   36666 2200288
+davidho@dphxps17:~/nodejsprojs/my-app$ 
+davidho@dphxps17:~/nodejsprojs/my-app$ cat package.json 
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
+davidho@dphxps17:~/nodejsprojs/my-app$ 
+davidho@dphxps17:~/nodejsprojs/my-app$ cat .gitignore 
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+davidho@dphxps17:~/nodejsprojs/my-app$ npm start
+
+Compiled successfully!
+
+You can now view my-app in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://192.168.86.247:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+webpack compiled successfully
+
+davidho@dphxps17:~/nodejsprojs/my-app$ 
+davidho@dphxps17:~/nodejsprojs/my-app$ tree -D -L 1
+[Nov 25 07:32]  .
+├── [Nov 25 07:37]  node_modules
+├── [Nov 25 07:32]  package.json
+├── [Nov 25 07:32]  package-lock.json
+├── [Nov 25 07:32]  public
+├── [Nov 25 07:32]  README.md
+└── [Nov 25 07:32]  src
+
+3 directories, 3 files
+davidho@dphxps17:~/nodejsprojs/my-app$ 
+davidho@dphxps17:~/nodejsprojs/my-app$ tree -D -L 2
+[Nov 25 07:32]  .
+├── [Nov 25 07:37]  node_modules
+│   ├── [Nov 25 07:32]  abab
+│   ├── [Nov 25 07:32]  accepts
+│   ├── [Nov 25 07:32]  acorn
+│   ├── [Nov 25 07:32]  acorn-globals
+│   ├── [Nov 25 07:32]  acorn-import-assertions
+│   ├── [Nov 25 07:32]  acorn-jsx
+│   ├── [Nov 25 07:32]  acorn-node
+│   ├── [Nov 25 07:32]  acorn-walk
+│   ├── [Nov 25 07:32]  address
+│   ├── [Nov 25 07:32]  adjust-sourcemap-loader
+│   ├── [Nov 25 07:32]  @adobe
+│   ├── [Nov 25 07:32]  agent-base
+│   ├── [Nov 25 07:32]  ajv
+│   ├── [Nov 25 07:32]  ajv-formats
+│   ├── [Nov 25 07:32]  ajv-keywords
+│   ├── [Nov 25 07:32]  @ampproject
+│   ├── [Nov 25 07:32]  ansi-escapes
+│   ├── [Nov 25 07:32]  ansi-html-community
+│   ├── [Nov 25 07:32]  ansi-regex
+│   ├── [Nov 25 07:32]  ansi-styles
+│   ├── [Nov 25 07:32]  anymatch
+│   ├── [Nov 25 07:32]  arg
+│   ├── [Nov 25 07:32]  argparse
+│   ├── [Nov 25 07:32]  aria-query
+│   ├── [Nov 25 07:32]  array-flatten
+│   ├── [Nov 25 07:32]  array-includes
+│   ├── [Nov 25 07:32]  array.prototype.flat
+│   ├── [Nov 25 07:32]  array.prototype.flatmap
+│   ├── [Nov 25 07:32]  array.prototype.reduce
+│   ├── [Nov 25 07:32]  array.prototype.tosorted
+│   ├── [Nov 25 07:32]  array-union
+│   ├── [Nov 25 07:32]  asap
+│   ├── [Nov 25 07:32]  ast-types-flow
+│   ├── [Nov 25 07:32]  async
+│   ├── [Nov 25 07:32]  asynckit
+│   ├── [Nov 25 07:32]  at-least-node
+│   ├── [Nov 25 07:32]  autoprefixer
+│   ├── [Nov 25 07:32]  available-typed-arrays
+│   ├── [Nov 25 07:32]  axe-core
+│   ├── [Nov 25 07:32]  axobject-query
+│   ├── [Nov 25 07:32]  @babel
+│   ├── [Nov 25 07:32]  babel-jest
+│   ├── [Nov 25 07:32]  babel-loader
+│   ├── [Nov 25 07:32]  babel-plugin-istanbul
+│   ├── [Nov 25 07:32]  babel-plugin-jest-hoist
+│   ├── [Nov 25 07:32]  babel-plugin-macros
+│   ├── [Nov 25 07:32]  babel-plugin-named-asset-import
+│   ├── [Nov 25 07:32]  babel-plugin-polyfill-corejs2
+│   ├── [Nov 25 07:32]  babel-plugin-polyfill-corejs3
+│   ├── [Nov 25 07:32]  babel-plugin-polyfill-regenerator
+│   ├── [Nov 25 07:32]  babel-plugin-transform-react-remove-prop-types
+│   ├── [Nov 25 07:32]  babel-preset-current-node-syntax
+│   ├── [Nov 25 07:32]  babel-preset-jest
+│   ├── [Nov 25 07:32]  babel-preset-react-app
+│   ├── [Nov 25 07:32]  balanced-match
+│   ├── [Nov 25 07:32]  batch
+│   ├── [Nov 25 07:32]  @bcoe
+│   ├── [Nov 25 07:32]  bfj
+│   ├── [Nov 25 07:32]  big.js
+│   ├── [Nov 25 07:32]  binary-extensions
+│   ├── [Nov 25 07:32]  bluebird
+│   ├── [Nov 25 07:32]  body-parser
+│   ├── [Nov 25 07:32]  bonjour-service
+│   ├── [Nov 25 07:32]  boolbase
+│   ├── [Nov 25 07:32]  brace-expansion
+│   ├── [Nov 25 07:32]  braces
+│   ├── [Nov 25 07:32]  browser-process-hrtime
+│   ├── [Nov 25 07:32]  browserslist
+│   ├── [Nov 25 07:32]  bser
+│   ├── [Nov 25 07:32]  buffer-from
+│   ├── [Nov 25 07:32]  builtin-modules
+│   ├── [Nov 25 07:32]  bytes
+│   ├── [Nov 25 07:32]  call-bind
+│   ├── [Nov 25 07:32]  callsites
+│   ├── [Nov 25 07:32]  camel-case
+│   ├── [Nov 25 07:32]  camelcase
+│   ├── [Nov 25 07:32]  camelcase-css
+│   ├── [Nov 25 07:32]  caniuse-api
+│   ├── [Nov 25 07:32]  caniuse-lite
+│   ├── [Nov 25 07:32]  case-sensitive-paths-webpack-plugin
+│   ├── [Nov 25 07:32]  chalk
+│   ├── [Nov 25 07:32]  char-regex
+│   ├── [Nov 25 07:32]  check-types
+│   ├── [Nov 25 07:32]  chokidar
+│   ├── [Nov 25 07:32]  chrome-trace-event
+│   ├── [Nov 25 07:32]  ci-info
+│   ├── [Nov 25 07:32]  cjs-module-lexer
+│   ├── [Nov 25 07:32]  clean-css
+│   ├── [Nov 25 07:32]  cliui
+│   ├── [Nov 25 07:32]  co
+│   ├── [Nov 25 07:32]  coa
+│   ├── [Nov 25 07:32]  collect-v8-coverage
+│   ├── [Nov 25 07:32]  color-convert
+│   ├── [Nov 25 07:32]  colord
+│   ├── [Nov 25 07:32]  colorette
+│   ├── [Nov 25 07:32]  color-name
+│   ├── [Nov 25 07:32]  combined-stream
+│   ├── [Nov 25 07:32]  commander
+│   ├── [Nov 25 07:32]  commondir
+│   ├── [Nov 25 07:32]  common-path-prefix
+│   ├── [Nov 25 07:32]  common-tags
+│   ├── [Nov 25 07:32]  compressible
+│   ├── [Nov 25 07:32]  compression
+│   ├── [Nov 25 07:32]  concat-map
+│   ├── [Nov 25 07:32]  confusing-browser-globals
+│   ├── [Nov 25 07:32]  connect-history-api-fallback
+│   ├── [Nov 25 07:32]  content-disposition
+│   ├── [Nov 25 07:32]  content-type
+│   ├── [Nov 25 07:32]  convert-source-map
+│   ├── [Nov 25 07:32]  cookie
+│   ├── [Nov 25 07:32]  cookie-signature
+│   ├── [Nov 25 07:32]  core-js
+│   ├── [Nov 25 07:32]  core-js-compat
+│   ├── [Nov 25 07:32]  core-js-pure
+│   ├── [Nov 25 07:32]  core-util-is
+│   ├── [Nov 25 07:32]  cosmiconfig
+│   ├── [Nov 25 07:32]  cross-spawn
+│   ├── [Nov 25 07:32]  crypto-random-string
+│   ├── [Nov 25 07:32]  css-blank-pseudo
+│   ├── [Nov 25 07:32]  cssdb
+│   ├── [Nov 25 07:32]  css-declaration-sorter
+│   ├── [Nov 25 07:32]  cssesc
+│   ├── [Nov 25 07:32]  css.escape
+│   ├── [Nov 25 07:32]  css-has-pseudo
+│   ├── [Nov 25 07:32]  css-loader
+│   ├── [Nov 25 07:32]  css-minimizer-webpack-plugin
+│   ├── [Nov 25 07:32]  cssnano
+│   ├── [Nov 25 07:32]  cssnano-preset-default
+│   ├── [Nov 25 07:32]  cssnano-utils
+│   ├── [Nov 25 07:32]  csso
+│   ├── [Nov 25 07:32]  cssom
+│   ├── [Nov 25 07:32]  css-prefers-color-scheme
+│   ├── [Nov 25 07:32]  css-select
+│   ├── [Nov 25 07:32]  css-select-base-adapter
+│   ├── [Nov 25 07:32]  cssstyle
+│   ├── [Nov 25 07:32]  @csstools
+│   ├── [Nov 25 07:32]  css-tree
+│   ├── [Nov 25 07:32]  csstype
+│   ├── [Nov 25 07:32]  css-what
+│   ├── [Nov 25 07:32]  damerau-levenshtein
+│   ├── [Nov 25 07:32]  data-urls
+│   ├── [Nov 25 07:32]  debug
+│   ├── [Nov 25 07:32]  decimal.js
+│   ├── [Nov 25 07:32]  dedent
+│   ├── [Nov 25 07:32]  deep-equal
+│   ├── [Nov 25 07:32]  deep-is
+│   ├── [Nov 25 07:32]  deepmerge
+│   ├── [Nov 25 07:32]  default-gateway
+│   ├── [Nov 25 07:32]  defined
+│   ├── [Nov 25 07:32]  define-lazy-prop
+│   ├── [Nov 25 07:32]  define-properties
+│   ├── [Nov 25 07:32]  delayed-stream
+│   ├── [Nov 25 07:32]  depd
+│   ├── [Nov 25 07:32]  destroy
+│   ├── [Nov 25 07:32]  detective
+│   ├── [Nov 25 07:32]  detect-newline
+│   ├── [Nov 25 07:32]  detect-node
+│   ├── [Nov 25 07:32]  detect-port-alt
+│   ├── [Nov 25 07:32]  didyoumean
+│   ├── [Nov 25 07:32]  diff-sequences
+│   ├── [Nov 25 07:32]  dir-glob
+│   ├── [Nov 25 07:32]  dlv
+│   ├── [Nov 25 07:32]  dns-equal
+│   ├── [Nov 25 07:32]  dns-packet
+│   ├── [Nov 25 07:32]  doctrine
+│   ├── [Nov 25 07:32]  dom-accessibility-api
+│   ├── [Nov 25 07:32]  dom-converter
+│   ├── [Nov 25 07:32]  domelementtype
+│   ├── [Nov 25 07:32]  domexception
+│   ├── [Nov 25 07:32]  domhandler
+│   ├── [Nov 25 07:32]  dom-serializer
+│   ├── [Nov 25 07:32]  domutils
+│   ├── [Nov 25 07:32]  dot-case
+│   ├── [Nov 25 07:32]  dotenv
+│   ├── [Nov 25 07:32]  dotenv-expand
+│   ├── [Nov 25 07:32]  duplexer
+│   ├── [Nov 25 07:32]  ee-first
+│   ├── [Nov 25 07:32]  ejs
+│   ├── [Nov 25 07:32]  electron-to-chromium
+│   ├── [Nov 25 07:32]  emittery
+│   ├── [Nov 25 07:32]  emoji-regex
+│   ├── [Nov 25 07:32]  emojis-list
+│   ├── [Nov 25 07:32]  encodeurl
+│   ├── [Nov 25 07:32]  enhanced-resolve
+│   ├── [Nov 25 07:32]  entities
+│   ├── [Nov 25 07:32]  error-ex
+│   ├── [Nov 25 07:32]  error-stack-parser
+│   ├── [Nov 25 07:32]  es-abstract
+│   ├── [Nov 25 07:32]  es-array-method-boxes-properly
+│   ├── [Nov 25 07:32]  escalade
+│   ├── [Nov 25 07:32]  escape-html
+│   ├── [Nov 25 07:32]  escape-string-regexp
+│   ├── [Nov 25 07:32]  escodegen
+│   ├── [Nov 25 07:32]  es-get-iterator
+│   ├── [Nov 25 07:32]  @eslint
+│   ├── [Nov 25 07:32]  eslint
+│   ├── [Nov 25 07:32]  eslint-config-react-app
+│   ├── [Nov 25 07:32]  eslint-import-resolver-node
+│   ├── [Nov 25 07:32]  eslint-module-utils
+│   ├── [Nov 25 07:32]  eslint-plugin-flowtype
+│   ├── [Nov 25 07:32]  eslint-plugin-import
+│   ├── [Nov 25 07:32]  eslint-plugin-jest
+│   ├── [Nov 25 07:32]  eslint-plugin-jsx-a11y
+│   ├── [Nov 25 07:32]  eslint-plugin-react
+│   ├── [Nov 25 07:32]  eslint-plugin-react-hooks
+│   ├── [Nov 25 07:32]  eslint-plugin-testing-library
+│   ├── [Nov 25 07:32]  eslint-scope
+│   ├── [Nov 25 07:32]  eslint-utils
+│   ├── [Nov 25 07:32]  eslint-visitor-keys
+│   ├── [Nov 25 07:32]  eslint-webpack-plugin
+│   ├── [Nov 25 07:32]  es-module-lexer
+│   ├── [Nov 25 07:32]  espree
+│   ├── [Nov 25 07:32]  esprima
+│   ├── [Nov 25 07:32]  esquery
+│   ├── [Nov 25 07:32]  esrecurse
+│   ├── [Nov 25 07:32]  es-shim-unscopables
+│   ├── [Nov 25 07:32]  es-to-primitive
+│   ├── [Nov 25 07:32]  estraverse
+│   ├── [Nov 25 07:32]  estree-walker
+│   ├── [Nov 25 07:32]  esutils
+│   ├── [Nov 25 07:32]  etag
+│   ├── [Nov 25 07:32]  eventemitter3
+│   ├── [Nov 25 07:32]  events
+│   ├── [Nov 25 07:32]  execa
+│   ├── [Nov 25 07:32]  exit
+│   ├── [Nov 25 07:32]  expect
+│   ├── [Nov 25 07:32]  express
+│   ├── [Nov 25 07:32]  fast-deep-equal
+│   ├── [Nov 25 07:32]  fast-glob
+│   ├── [Nov 25 07:32]  fast-json-stable-stringify
+│   ├── [Nov 25 07:32]  fast-levenshtein
+│   ├── [Nov 25 07:32]  fastq
+│   ├── [Nov 25 07:32]  faye-websocket
+│   ├── [Nov 25 07:32]  fb-watchman
+│   ├── [Nov 25 07:32]  file-entry-cache
+│   ├── [Nov 25 07:32]  filelist
+│   ├── [Nov 25 07:32]  file-loader
+│   ├── [Nov 25 07:32]  filesize
+│   ├── [Nov 25 07:32]  fill-range
+│   ├── [Nov 25 07:32]  finalhandler
+│   ├── [Nov 25 07:32]  find-cache-dir
+│   ├── [Nov 25 07:32]  find-up
+│   ├── [Nov 25 07:32]  flat-cache
+│   ├── [Nov 25 07:32]  flatted
+│   ├── [Nov 25 07:32]  follow-redirects
+│   ├── [Nov 25 07:32]  for-each
+│   ├── [Nov 25 07:32]  fork-ts-checker-webpack-plugin
+│   ├── [Nov 25 07:32]  form-data
+│   ├── [Nov 25 07:32]  forwarded
+│   ├── [Nov 25 07:32]  fraction.js
+│   ├── [Nov 25 07:32]  fresh
+│   ├── [Nov 25 07:32]  fs-extra
+│   ├── [Nov 25 07:32]  fs-monkey
+│   ├── [Nov 25 07:32]  fs.realpath
+│   ├── [Nov 25 07:32]  function-bind
+│   ├── [Nov 25 07:32]  function.prototype.name
+│   ├── [Nov 25 07:32]  functions-have-names
+│   ├── [Nov 25 07:32]  gensync
+│   ├── [Nov 25 07:32]  get-caller-file
+│   ├── [Nov 25 07:32]  get-intrinsic
+│   ├── [Nov 25 07:32]  get-own-enumerable-property-symbols
+│   ├── [Nov 25 07:32]  get-package-type
+│   ├── [Nov 25 07:32]  get-stream
+│   ├── [Nov 25 07:32]  get-symbol-description
+│   ├── [Nov 25 07:32]  glob
+│   ├── [Nov 25 07:32]  global-modules
+│   ├── [Nov 25 07:32]  global-prefix
+│   ├── [Nov 25 07:32]  globals
+│   ├── [Nov 25 07:32]  globby
+│   ├── [Nov 25 07:32]  glob-parent
+│   ├── [Nov 25 07:32]  glob-to-regexp
+│   ├── [Nov 25 07:32]  gopd
+│   ├── [Nov 25 07:32]  graceful-fs
+│   ├── [Nov 25 07:32]  grapheme-splitter
+│   ├── [Nov 25 07:32]  gzip-size
+│   ├── [Nov 25 07:32]  handle-thing
+│   ├── [Nov 25 07:32]  harmony-reflect
+│   ├── [Nov 25 07:32]  has
+│   ├── [Nov 25 07:32]  has-bigints
+│   ├── [Nov 25 07:32]  has-flag
+│   ├── [Nov 25 07:32]  has-property-descriptors
+│   ├── [Nov 25 07:32]  has-symbols
+│   ├── [Nov 25 07:32]  has-tostringtag
+│   ├── [Nov 25 07:32]  he
+│   ├── [Nov 25 07:32]  hoopy
+│   ├── [Nov 25 07:32]  hpack.js
+│   ├── [Nov 25 07:32]  html-encoding-sniffer
+│   ├── [Nov 25 07:32]  html-entities
+│   ├── [Nov 25 07:32]  html-escaper
+│   ├── [Nov 25 07:32]  html-minifier-terser
+│   ├── [Nov 25 07:32]  htmlparser2
+│   ├── [Nov 25 07:32]  html-webpack-plugin
+│   ├── [Nov 25 07:32]  http-deceiver
+│   ├── [Nov 25 07:32]  http-errors
+│   ├── [Nov 25 07:32]  http-parser-js
+│   ├── [Nov 25 07:32]  http-proxy
+│   ├── [Nov 25 07:32]  http-proxy-agent
+│   ├── [Nov 25 07:32]  http-proxy-middleware
+│   ├── [Nov 25 07:32]  https-proxy-agent
+│   ├── [Nov 25 07:32]  human-signals
+│   ├── [Nov 25 07:32]  @humanwhocodes
+│   ├── [Nov 25 07:32]  iconv-lite
+│   ├── [Nov 25 07:32]  icss-utils
+│   ├── [Nov 25 07:32]  idb
+│   ├── [Nov 25 07:32]  identity-obj-proxy
+│   ├── [Nov 25 07:32]  ignore
+│   ├── [Nov 25 07:32]  immer
+│   ├── [Nov 25 07:32]  import-fresh
+│   ├── [Nov 25 07:32]  import-local
+│   ├── [Nov 25 07:32]  imurmurhash
+│   ├── [Nov 25 07:32]  indent-string
+│   ├── [Nov 25 07:32]  inflight
+│   ├── [Nov 25 07:32]  inherits
+│   ├── [Nov 25 07:32]  ini
+│   ├── [Nov 25 07:32]  internal-slot
+│   ├── [Nov 25 07:32]  ipaddr.js
+│   ├── [Nov 25 07:32]  is-arguments
+│   ├── [Nov 25 07:32]  isarray
+│   ├── [Nov 25 07:32]  is-arrayish
+│   ├── [Nov 25 07:32]  is-bigint
+│   ├── [Nov 25 07:32]  is-binary-path
+│   ├── [Nov 25 07:32]  is-boolean-object
+│   ├── [Nov 25 07:32]  is-callable
+│   ├── [Nov 25 07:32]  is-core-module
+│   ├── [Nov 25 07:32]  is-date-object
+│   ├── [Nov 25 07:32]  is-docker
+│   ├── [Nov 25 07:32]  isexe
+│   ├── [Nov 25 07:32]  is-extglob
+│   ├── [Nov 25 07:32]  is-fullwidth-code-point
+│   ├── [Nov 25 07:32]  is-generator-fn
+│   ├── [Nov 25 07:32]  is-glob
+│   ├── [Nov 25 07:32]  is-map
+│   ├── [Nov 25 07:32]  is-module
+│   ├── [Nov 25 07:32]  is-negative-zero
+│   ├── [Nov 25 07:32]  is-number
+│   ├── [Nov 25 07:32]  is-number-object
+│   ├── [Nov 25 07:32]  is-obj
+│   ├── [Nov 25 07:32]  is-path-inside
+│   ├── [Nov 25 07:32]  is-plain-obj
+│   ├── [Nov 25 07:32]  is-potential-custom-element-name
+│   ├── [Nov 25 07:32]  is-regex
+│   ├── [Nov 25 07:32]  is-regexp
+│   ├── [Nov 25 07:32]  is-root
+│   ├── [Nov 25 07:32]  is-set
+│   ├── [Nov 25 07:32]  is-shared-array-buffer
+│   ├── [Nov 25 07:32]  is-stream
+│   ├── [Nov 25 07:32]  is-string
+│   ├── [Nov 25 07:32]  is-symbol
+│   ├── [Nov 25 07:32]  @istanbuljs
+│   ├── [Nov 25 07:32]  istanbul-lib-coverage
+│   ├── [Nov 25 07:32]  istanbul-lib-instrument
+│   ├── [Nov 25 07:32]  istanbul-lib-report
+│   ├── [Nov 25 07:32]  istanbul-lib-source-maps
+│   ├── [Nov 25 07:32]  istanbul-reports
+│   ├── [Nov 25 07:32]  is-typed-array
+│   ├── [Nov 25 07:32]  is-typedarray
+│   ├── [Nov 25 07:32]  is-weakmap
+│   ├── [Nov 25 07:32]  is-weakref
+│   ├── [Nov 25 07:32]  is-weakset
+│   ├── [Nov 25 07:32]  is-wsl
+│   ├── [Nov 25 07:32]  jake
+│   ├── [Nov 25 07:32]  @jest
+│   ├── [Nov 25 07:32]  jest
+│   ├── [Nov 25 07:32]  jest-changed-files
+│   ├── [Nov 25 07:32]  jest-circus
+│   ├── [Nov 25 07:32]  jest-cli
+│   ├── [Nov 25 07:32]  jest-config
+│   ├── [Nov 25 07:32]  jest-diff
+│   ├── [Nov 25 07:32]  jest-docblock
+│   ├── [Nov 25 07:32]  jest-each
+│   ├── [Nov 25 07:32]  jest-environment-jsdom
+│   ├── [Nov 25 07:32]  jest-environment-node
+│   ├── [Nov 25 07:32]  jest-get-type
+│   ├── [Nov 25 07:32]  jest-haste-map
+│   ├── [Nov 25 07:32]  jest-jasmine2
+│   ├── [Nov 25 07:32]  jest-leak-detector
+│   ├── [Nov 25 07:32]  jest-matcher-utils
+│   ├── [Nov 25 07:32]  jest-message-util
+│   ├── [Nov 25 07:32]  jest-mock
+│   ├── [Nov 25 07:32]  jest-pnp-resolver
+│   ├── [Nov 25 07:32]  jest-regex-util
+│   ├── [Nov 25 07:32]  jest-resolve
+│   ├── [Nov 25 07:32]  jest-resolve-dependencies
+│   ├── [Nov 25 07:32]  jest-runner
+│   ├── [Nov 25 07:32]  jest-runtime
+│   ├── [Nov 25 07:32]  jest-serializer
+│   ├── [Nov 25 07:32]  jest-snapshot
+│   ├── [Nov 25 07:32]  jest-util
+│   ├── [Nov 25 07:32]  jest-validate
+│   ├── [Nov 25 07:32]  jest-watcher
+│   ├── [Nov 25 07:32]  jest-watch-typeahead
+│   ├── [Nov 25 07:32]  jest-worker
+│   ├── [Nov 25 07:32]  @jridgewell
+│   ├── [Nov 25 07:32]  jsdom
+│   ├── [Nov 25 07:32]  jsesc
+│   ├── [Nov 25 07:32]  json5
+│   ├── [Nov 25 07:32]  jsonfile
+│   ├── [Nov 25 07:32]  json-parse-even-better-errors
+│   ├── [Nov 25 07:32]  jsonpointer
+│   ├── [Nov 25 07:32]  json-schema
+│   ├── [Nov 25 07:32]  json-schema-traverse
+│   ├── [Nov 25 07:32]  json-stable-stringify-without-jsonify
+│   ├── [Nov 25 07:32]  js-sdsl
+│   ├── [Nov 25 07:32]  js-tokens
+│   ├── [Nov 25 07:32]  jsx-ast-utils
+│   ├── [Nov 25 07:32]  js-yaml
+│   ├── [Nov 25 07:32]  kind-of
+│   ├── [Nov 25 07:32]  kleur
+│   ├── [Nov 25 07:32]  klona
+│   ├── [Nov 25 07:32]  language-subtag-registry
+│   ├── [Nov 25 07:32]  language-tags
+│   ├── [Nov 25 07:32]  @leichtgewicht
+│   ├── [Nov 25 07:32]  leven
+│   ├── [Nov 25 07:32]  levn
+│   ├── [Nov 25 07:32]  lilconfig
+│   ├── [Nov 25 07:32]  lines-and-columns
+│   ├── [Nov 25 07:32]  loader-runner
+│   ├── [Nov 25 07:32]  loader-utils
+│   ├── [Nov 25 07:32]  locate-path
+│   ├── [Nov 25 07:32]  lodash
+│   ├── [Nov 25 07:32]  lodash.debounce
+│   ├── [Nov 25 07:32]  lodash.memoize
+│   ├── [Nov 25 07:32]  lodash.merge
+│   ├── [Nov 25 07:32]  lodash.sortby
+│   ├── [Nov 25 07:32]  lodash.uniq
+│   ├── [Nov 25 07:32]  loose-envify
+│   ├── [Nov 25 07:32]  lower-case
+│   ├── [Nov 25 07:32]  lru-cache
+│   ├── [Nov 25 07:32]  lz-string
+│   ├── [Nov 25 07:32]  magic-string
+│   ├── [Nov 25 07:32]  make-dir
+│   ├── [Nov 25 07:32]  makeerror
+│   ├── [Nov 25 07:32]  mdn-data
+│   ├── [Nov 25 07:32]  media-typer
+│   ├── [Nov 25 07:32]  memfs
+│   ├── [Nov 25 07:32]  merge2
+│   ├── [Nov 25 07:32]  merge-descriptors
+│   ├── [Nov 25 07:32]  merge-stream
+│   ├── [Nov 25 07:32]  methods
+│   ├── [Nov 25 07:32]  micromatch
+│   ├── [Nov 25 07:32]  mime
+│   ├── [Nov 25 07:32]  mime-db
+│   ├── [Nov 25 07:32]  mime-types
+│   ├── [Nov 25 07:32]  mimic-fn
+│   ├── [Nov 25 07:32]  mini-css-extract-plugin
+│   ├── [Nov 25 07:32]  minimalistic-assert
+│   ├── [Nov 25 07:32]  minimatch
+│   ├── [Nov 25 07:32]  minimist
+│   ├── [Nov 25 07:32]  min-indent
+│   ├── [Nov 25 07:32]  mkdirp
+│   ├── [Nov 25 07:32]  ms
+│   ├── [Nov 25 07:32]  multicast-dns
+│   ├── [Nov 25 07:32]  nanoid
+│   ├── [Nov 25 07:32]  natural-compare
+│   ├── [Nov 25 07:32]  natural-compare-lite
+│   ├── [Nov 25 07:32]  negotiator
+│   ├── [Nov 25 07:32]  neo-async
+│   ├── [Nov 25 07:32]  @nicolo-ribaudo
+│   ├── [Nov 25 07:32]  no-case
+│   ├── [Nov 25 07:32]  node-forge
+│   ├── [Nov 25 07:32]  node-int64
+│   ├── [Nov 25 07:32]  @nodelib
+│   ├── [Nov 25 07:32]  node-releases
+│   ├── [Nov 25 07:32]  normalize-path
+│   ├── [Nov 25 07:32]  normalize-range
+│   ├── [Nov 25 07:32]  normalize-url
+│   ├── [Nov 25 07:32]  npm-run-path
+│   ├── [Nov 25 07:32]  nth-check
+│   ├── [Nov 25 07:32]  nwsapi
+│   ├── [Nov 25 07:32]  object-assign
+│   ├── [Nov 25 07:32]  object.assign
+│   ├── [Nov 25 07:32]  object.entries
+│   ├── [Nov 25 07:32]  object.fromentries
+│   ├── [Nov 25 07:32]  object.getownpropertydescriptors
+│   ├── [Nov 25 07:32]  object-hash
+│   ├── [Nov 25 07:32]  object.hasown
+│   ├── [Nov 25 07:32]  object-inspect
+│   ├── [Nov 25 07:32]  object-is
+│   ├── [Nov 25 07:32]  object-keys
+│   ├── [Nov 25 07:32]  object.values
+│   ├── [Nov 25 07:32]  obuf
+│   ├── [Nov 25 07:32]  once
+│   ├── [Nov 25 07:32]  onetime
+│   ├── [Nov 25 07:32]  on-finished
+│   ├── [Nov 25 07:32]  on-headers
+│   ├── [Nov 25 07:32]  open
+│   ├── [Nov 25 07:32]  optionator
+│   ├── [Nov 25 07:32]  param-case
+│   ├── [Nov 25 07:32]  parent-module
+│   ├── [Nov 25 07:32]  parse5
+│   ├── [Nov 25 07:32]  parse-json
+│   ├── [Nov 25 07:32]  parseurl
+│   ├── [Nov 25 07:32]  pascal-case
+│   ├── [Nov 25 07:32]  path-exists
+│   ├── [Nov 25 07:32]  path-is-absolute
+│   ├── [Nov 25 07:32]  path-key
+│   ├── [Nov 25 07:32]  path-parse
+│   ├── [Nov 25 07:32]  path-to-regexp
+│   ├── [Nov 25 07:32]  path-type
+│   ├── [Nov 25 07:32]  performance-now
+│   ├── [Nov 25 07:32]  picocolors
+│   ├── [Nov 25 07:32]  picomatch
+│   ├── [Nov 25 07:32]  pify
+│   ├── [Nov 25 07:32]  pirates
+│   ├── [Nov 25 07:32]  pkg-dir
+│   ├── [Nov 25 07:32]  pkg-up
+│   ├── [Nov 25 07:32]  p-limit
+│   ├── [Nov 25 07:32]  p-locate
+│   ├── [Nov 25 07:32]  @pmmmwh
+│   ├── [Nov 25 07:32]  postcss
+│   ├── [Nov 25 07:32]  postcss-attribute-case-insensitive
+│   ├── [Nov 25 07:32]  postcss-browser-comments
+│   ├── [Nov 25 07:32]  postcss-calc
+│   ├── [Nov 25 07:32]  postcss-clamp
+│   ├── [Nov 25 07:32]  postcss-color-functional-notation
+│   ├── [Nov 25 07:32]  postcss-color-hex-alpha
+│   ├── [Nov 25 07:32]  postcss-colormin
+│   ├── [Nov 25 07:32]  postcss-color-rebeccapurple
+│   ├── [Nov 25 07:32]  postcss-convert-values
+│   ├── [Nov 25 07:32]  postcss-custom-media
+│   ├── [Nov 25 07:32]  postcss-custom-properties
+│   ├── [Nov 25 07:32]  postcss-custom-selectors
+│   ├── [Nov 25 07:32]  postcss-dir-pseudo-class
+│   ├── [Nov 25 07:32]  postcss-discard-comments
+│   ├── [Nov 25 07:32]  postcss-discard-duplicates
+│   ├── [Nov 25 07:32]  postcss-discard-empty
+│   ├── [Nov 25 07:32]  postcss-discard-overridden
+│   ├── [Nov 25 07:32]  postcss-double-position-gradients
+│   ├── [Nov 25 07:32]  postcss-env-function
+│   ├── [Nov 25 07:32]  postcss-flexbugs-fixes
+│   ├── [Nov 25 07:32]  postcss-focus-visible
+│   ├── [Nov 25 07:32]  postcss-focus-within
+│   ├── [Nov 25 07:32]  postcss-font-variant
+│   ├── [Nov 25 07:32]  postcss-gap-properties
+│   ├── [Nov 25 07:32]  postcss-image-set-function
+│   ├── [Nov 25 07:32]  postcss-import
+│   ├── [Nov 25 07:32]  postcss-initial
+│   ├── [Nov 25 07:32]  postcss-js
+│   ├── [Nov 25 07:32]  postcss-lab-function
+│   ├── [Nov 25 07:32]  postcss-load-config
+│   ├── [Nov 25 07:32]  postcss-loader
+│   ├── [Nov 25 07:32]  postcss-logical
+│   ├── [Nov 25 07:32]  postcss-media-minmax
+│   ├── [Nov 25 07:32]  postcss-merge-longhand
+│   ├── [Nov 25 07:32]  postcss-merge-rules
+│   ├── [Nov 25 07:32]  postcss-minify-font-values
+│   ├── [Nov 25 07:32]  postcss-minify-gradients
+│   ├── [Nov 25 07:32]  postcss-minify-params
+│   ├── [Nov 25 07:32]  postcss-minify-selectors
+│   ├── [Nov 25 07:32]  postcss-modules-extract-imports
+│   ├── [Nov 25 07:32]  postcss-modules-local-by-default
+│   ├── [Nov 25 07:32]  postcss-modules-scope
+│   ├── [Nov 25 07:32]  postcss-modules-values
+│   ├── [Nov 25 07:32]  postcss-nested
+│   ├── [Nov 25 07:32]  postcss-nesting
+│   ├── [Nov 25 07:32]  postcss-normalize
+│   ├── [Nov 25 07:32]  postcss-normalize-charset
+│   ├── [Nov 25 07:32]  postcss-normalize-display-values
+│   ├── [Nov 25 07:32]  postcss-normalize-positions
+│   ├── [Nov 25 07:32]  postcss-normalize-repeat-style
+│   ├── [Nov 25 07:32]  postcss-normalize-string
+│   ├── [Nov 25 07:32]  postcss-normalize-timing-functions
+│   ├── [Nov 25 07:32]  postcss-normalize-unicode
+│   ├── [Nov 25 07:32]  postcss-normalize-url
+│   ├── [Nov 25 07:32]  postcss-normalize-whitespace
+│   ├── [Nov 25 07:32]  postcss-opacity-percentage
+│   ├── [Nov 25 07:32]  postcss-ordered-values
+│   ├── [Nov 25 07:32]  postcss-overflow-shorthand
+│   ├── [Nov 25 07:32]  postcss-page-break
+│   ├── [Nov 25 07:32]  postcss-place
+│   ├── [Nov 25 07:32]  postcss-preset-env
+│   ├── [Nov 25 07:32]  postcss-pseudo-class-any-link
+│   ├── [Nov 25 07:32]  postcss-reduce-initial
+│   ├── [Nov 25 07:32]  postcss-reduce-transforms
+│   ├── [Nov 25 07:32]  postcss-replace-overflow-wrap
+│   ├── [Nov 25 07:32]  postcss-selector-not
+│   ├── [Nov 25 07:32]  postcss-selector-parser
+│   ├── [Nov 25 07:32]  postcss-svgo
+│   ├── [Nov 25 07:32]  postcss-unique-selectors
+│   ├── [Nov 25 07:32]  postcss-value-parser
+│   ├── [Nov 25 07:32]  prelude-ls
+│   ├── [Nov 25 07:32]  p-retry
+│   ├── [Nov 25 07:32]  pretty-bytes
+│   ├── [Nov 25 07:32]  pretty-error
+│   ├── [Nov 25 07:32]  pretty-format
+│   ├── [Nov 25 07:32]  process-nextick-args
+│   ├── [Nov 25 07:32]  promise
+│   ├── [Nov 25 07:32]  prompts
+│   ├── [Nov 25 07:32]  prop-types
+│   ├── [Nov 25 07:32]  proxy-addr
+│   ├── [Nov 25 07:32]  psl
+│   ├── [Nov 25 07:32]  p-try
+│   ├── [Nov 25 07:32]  punycode
+│   ├── [Nov 25 07:32]  q
+│   ├── [Nov 25 07:32]  qs
+│   ├── [Nov 25 07:32]  querystringify
+│   ├── [Nov 25 07:32]  queue-microtask
+│   ├── [Nov 25 07:32]  quick-lru
+│   ├── [Nov 25 07:32]  raf
+│   ├── [Nov 25 07:32]  randombytes
+│   ├── [Nov 25 07:32]  range-parser
+│   ├── [Nov 25 07:32]  raw-body
+│   ├── [Nov 25 07:32]  react
+│   ├── [Nov 25 07:32]  react-app-polyfill
+│   ├── [Nov 25 07:32]  react-dev-utils
+│   ├── [Nov 25 07:32]  react-dom
+│   ├── [Nov 25 07:32]  react-error-overlay
+│   ├── [Nov 25 07:32]  react-is
+│   ├── [Nov 25 07:32]  react-refresh
+│   ├── [Nov 25 07:32]  react-scripts
+│   ├── [Nov 25 07:32]  readable-stream
+│   ├── [Nov 25 07:32]  read-cache
+│   ├── [Nov 25 07:32]  readdirp
+│   ├── [Nov 25 07:32]  recursive-readdir
+│   ├── [Nov 25 07:32]  redent
+│   ├── [Nov 25 07:32]  regenerate
+│   ├── [Nov 25 07:32]  regenerate-unicode-properties
+│   ├── [Nov 25 07:32]  regenerator-runtime
+│   ├── [Nov 25 07:32]  regenerator-transform
+│   ├── [Nov 25 07:32]  regex-parser
+│   ├── [Nov 25 07:32]  regexpp
+│   ├── [Nov 25 07:32]  regexp.prototype.flags
+│   ├── [Nov 25 07:32]  regexpu-core
+│   ├── [Nov 25 07:32]  regjsgen
+│   ├── [Nov 25 07:32]  regjsparser
+│   ├── [Nov 25 07:32]  relateurl
+│   ├── [Nov 25 07:32]  renderkid
+│   ├── [Nov 25 07:32]  require-directory
+│   ├── [Nov 25 07:32]  require-from-string
+│   ├── [Nov 25 07:32]  requires-port
+│   ├── [Nov 25 07:32]  resolve
+│   ├── [Nov 25 07:32]  resolve-cwd
+│   ├── [Nov 25 07:32]  resolve.exports
+│   ├── [Nov 25 07:32]  resolve-from
+│   ├── [Nov 25 07:32]  resolve-url-loader
+│   ├── [Nov 25 07:32]  retry
+│   ├── [Nov 25 07:32]  reusify
+│   ├── [Nov 25 07:32]  rimraf
+│   ├── [Nov 25 07:32]  @rollup
+│   ├── [Nov 25 07:32]  rollup
+│   ├── [Nov 25 07:32]  rollup-plugin-terser
+│   ├── [Nov 25 07:32]  run-parallel
+│   ├── [Nov 25 07:32]  @rushstack
+│   ├── [Nov 25 07:32]  safe-buffer
+│   ├── [Nov 25 07:32]  safer-buffer
+│   ├── [Nov 25 07:32]  safe-regex-test
+│   ├── [Nov 25 07:32]  sanitize.css
+│   ├── [Nov 25 07:32]  sass-loader
+│   ├── [Nov 25 07:32]  sax
+│   ├── [Nov 25 07:32]  saxes
+│   ├── [Nov 25 07:32]  scheduler
+│   ├── [Nov 25 07:32]  schema-utils
+│   ├── [Nov 25 07:32]  select-hose
+│   ├── [Nov 25 07:32]  selfsigned
+│   ├── [Nov 25 07:32]  semver
+│   ├── [Nov 25 07:32]  send
+│   ├── [Nov 25 07:32]  serialize-javascript
+│   ├── [Nov 25 07:32]  serve-index
+│   ├── [Nov 25 07:32]  serve-static
+│   ├── [Nov 25 07:32]  setprototypeof
+│   ├── [Nov 25 07:32]  shebang-command
+│   ├── [Nov 25 07:32]  shebang-regex
+│   ├── [Nov 25 07:32]  shell-quote
+│   ├── [Nov 25 07:32]  side-channel
+│   ├── [Nov 25 07:32]  signal-exit
+│   ├── [Nov 25 07:32]  @sinclair
+│   ├── [Nov 25 07:32]  @sinonjs
+│   ├── [Nov 25 07:32]  sisteransi
+│   ├── [Nov 25 07:32]  slash
+│   ├── [Nov 25 07:32]  sockjs
+│   ├── [Nov 25 07:32]  source-list-map
+│   ├── [Nov 25 07:32]  source-map
+│   ├── [Nov 25 07:32]  sourcemap-codec
+│   ├── [Nov 25 07:32]  source-map-js
+│   ├── [Nov 25 07:32]  source-map-loader
+│   ├── [Nov 25 07:32]  source-map-support
+│   ├── [Nov 25 07:32]  spdy
+│   ├── [Nov 25 07:32]  spdy-transport
+│   ├── [Nov 25 07:32]  sprintf-js
+│   ├── [Nov 25 07:32]  stable
+│   ├── [Nov 25 07:32]  stackframe
+│   ├── [Nov 25 07:32]  stack-utils
+│   ├── [Nov 25 07:32]  statuses
+│   ├── [Nov 25 07:32]  string_decoder
+│   ├── [Nov 25 07:32]  stringify-object
+│   ├── [Nov 25 07:32]  string-length
+│   ├── [Nov 25 07:32]  string-natural-compare
+│   ├── [Nov 25 07:32]  string.prototype.matchall
+│   ├── [Nov 25 07:32]  string.prototype.trimend
+│   ├── [Nov 25 07:32]  string.prototype.trimstart
+│   ├── [Nov 25 07:32]  string-width
+│   ├── [Nov 25 07:32]  strip-ansi
+│   ├── [Nov 25 07:32]  strip-bom
+│   ├── [Nov 25 07:32]  strip-comments
+│   ├── [Nov 25 07:32]  strip-final-newline
+│   ├── [Nov 25 07:32]  strip-indent
+│   ├── [Nov 25 07:32]  strip-json-comments
+│   ├── [Nov 25 07:32]  stylehacks
+│   ├── [Nov 25 07:32]  style-loader
+│   ├── [Nov 25 07:32]  supports-color
+│   ├── [Nov 25 07:32]  supports-hyperlinks
+│   ├── [Nov 25 07:32]  supports-preserve-symlinks-flag
+│   ├── [Nov 25 07:32]  @surma
+│   ├── [Nov 25 07:32]  svgo
+│   ├── [Nov 25 07:32]  svg-parser
+│   ├── [Nov 25 07:32]  @svgr
+│   ├── [Nov 25 07:32]  symbol-tree
+│   ├── [Nov 25 07:32]  tailwindcss
+│   ├── [Nov 25 07:32]  tapable
+│   ├── [Nov 25 07:32]  temp-dir
+│   ├── [Nov 25 07:32]  tempy
+│   ├── [Nov 25 07:32]  terminal-link
+│   ├── [Nov 25 07:32]  terser
+│   ├── [Nov 25 07:32]  terser-webpack-plugin
+│   ├── [Nov 25 07:32]  test-exclude
+│   ├── [Nov 25 07:32]  @testing-library
+│   ├── [Nov 25 07:32]  text-table
+│   ├── [Nov 25 07:32]  throat
+│   ├── [Nov 25 07:32]  thunky
+│   ├── [Nov 25 07:32]  tmpl
+│   ├── [Nov 25 07:32]  to-fast-properties
+│   ├── [Nov 25 07:32]  toidentifier
+│   ├── [Nov 25 07:32]  @tootallnate
+│   ├── [Nov 25 07:32]  to-regex-range
+│   ├── [Nov 25 07:32]  tough-cookie
+│   ├── [Nov 25 07:32]  tr46
+│   ├── [Nov 25 07:32]  tryer
+│   ├── [Nov 25 07:32]  @trysound
+│   ├── [Nov 25 07:32]  tsconfig-paths
+│   ├── [Nov 25 07:32]  tslib
+│   ├── [Nov 25 07:32]  tsutils
+│   ├── [Nov 25 07:32]  type-check
+│   ├── [Nov 25 07:32]  typedarray-to-buffer
+│   ├── [Nov 25 07:32]  type-detect
+│   ├── [Nov 25 07:32]  type-fest
+│   ├── [Nov 25 07:32]  type-is
+│   ├── [Nov 25 07:32]  @types
+│   ├── [Nov 25 07:32]  typescript
+│   ├── [Nov 25 07:32]  @typescript-eslint
+│   ├── [Nov 25 07:32]  unbox-primitive
+│   ├── [Nov 25 07:32]  unicode-canonical-property-names-ecmascript
+│   ├── [Nov 25 07:32]  unicode-match-property-ecmascript
+│   ├── [Nov 25 07:32]  unicode-match-property-value-ecmascript
+│   ├── [Nov 25 07:32]  unicode-property-aliases-ecmascript
+│   ├── [Nov 25 07:32]  unique-string
+│   ├── [Nov 25 07:32]  universalify
+│   ├── [Nov 25 07:32]  unpipe
+│   ├── [Nov 25 07:32]  unquote
+│   ├── [Nov 25 07:32]  upath
+│   ├── [Nov 25 07:32]  update-browserslist-db
+│   ├── [Nov 25 07:32]  uri-js
+│   ├── [Nov 25 07:32]  url-parse
+│   ├── [Nov 25 07:32]  utila
+│   ├── [Nov 25 07:32]  util-deprecate
+│   ├── [Nov 25 07:32]  util.promisify
+│   ├── [Nov 25 07:32]  utils-merge
+│   ├── [Nov 25 07:32]  uuid
+│   ├── [Nov 25 07:32]  v8-to-istanbul
+│   ├── [Nov 25 07:32]  vary
+│   ├── [Nov 25 07:32]  w3c-hr-time
+│   ├── [Nov 25 07:32]  w3c-xmlserializer
+│   ├── [Nov 25 07:32]  walker
+│   ├── [Nov 25 07:32]  watchpack
+│   ├── [Nov 25 07:32]  wbuf
+│   ├── [Nov 25 07:32]  @webassemblyjs
+│   ├── [Nov 25 07:32]  webidl-conversions
+│   ├── [Nov 25 07:32]  webpack
+│   ├── [Nov 25 07:32]  webpack-dev-middleware
+│   ├── [Nov 25 07:32]  webpack-dev-server
+│   ├── [Nov 25 07:32]  webpack-manifest-plugin
+│   ├── [Nov 25 07:32]  webpack-sources
+│   ├── [Nov 25 07:32]  websocket-driver
+│   ├── [Nov 25 07:32]  websocket-extensions
+│   ├── [Nov 25 07:32]  web-vitals
+│   ├── [Nov 25 07:32]  whatwg-encoding
+│   ├── [Nov 25 07:32]  whatwg-fetch
+│   ├── [Nov 25 07:32]  whatwg-mimetype
+│   ├── [Nov 25 07:32]  whatwg-url
+│   ├── [Nov 25 07:32]  which
+│   ├── [Nov 25 07:32]  which-boxed-primitive
+│   ├── [Nov 25 07:32]  which-collection
+│   ├── [Nov 25 07:32]  which-typed-array
+│   ├── [Nov 25 07:32]  word-wrap
+│   ├── [Nov 25 07:32]  workbox-background-sync
+│   ├── [Nov 25 07:32]  workbox-broadcast-update
+│   ├── [Nov 25 07:32]  workbox-build
+│   ├── [Nov 25 07:32]  workbox-cacheable-response
+│   ├── [Nov 25 07:32]  workbox-core
+│   ├── [Nov 25 07:32]  workbox-expiration
+│   ├── [Nov 25 07:32]  workbox-google-analytics
+│   ├── [Nov 25 07:32]  workbox-navigation-preload
+│   ├── [Nov 25 07:32]  workbox-precaching
+│   ├── [Nov 25 07:32]  workbox-range-requests
+│   ├── [Nov 25 07:32]  workbox-recipes
+│   ├── [Nov 25 07:32]  workbox-routing
+│   ├── [Nov 25 07:32]  workbox-strategies
+│   ├── [Nov 25 07:32]  workbox-streams
+│   ├── [Nov 25 07:32]  workbox-sw
+│   ├── [Nov 25 07:32]  workbox-webpack-plugin
+│   ├── [Nov 25 07:32]  workbox-window
+│   ├── [Nov 25 07:32]  wrap-ansi
+│   ├── [Nov 25 07:32]  wrappy
+│   ├── [Nov 25 07:32]  write-file-atomic
+│   ├── [Nov 25 07:32]  ws
+│   ├── [Nov 25 07:32]  xmlchars
+│   ├── [Nov 25 07:32]  xml-name-validator
+│   ├── [Nov 25 07:32]  xtend
+│   ├── [Nov 25 07:32]  @xtuc
+│   ├── [Nov 25 07:32]  y18n
+│   ├── [Nov 25 07:32]  yallist
+│   ├── [Nov 25 07:32]  yaml
+│   ├── [Nov 25 07:32]  yargs
+│   ├── [Nov 25 07:32]  yargs-parser
+│   └── [Nov 25 07:32]  yocto-queue
+├── [Nov 25 07:32]  package.json
+├── [Nov 25 07:32]  package-lock.json
+├── [Nov 25 07:32]  public
+│   ├── [Nov 25 07:32]  favicon.ico
+│   ├── [Nov 25 07:32]  index.html
+│   ├── [Nov 25 07:32]  logo192.png
+│   ├── [Nov 25 07:32]  logo512.png
+│   ├── [Nov 25 07:32]  manifest.json
+│   └── [Nov 25 07:32]  robots.txt
+├── [Nov 25 07:32]  README.md
+└── [Nov 25 07:32]  src
+    ├── [Nov 25 07:32]  App.css
+    ├── [Nov 25 07:32]  App.js
+    ├── [Nov 25 07:32]  App.test.js
+    ├── [Nov 25 07:32]  index.css
+    ├── [Nov 25 07:32]  index.js
+    ├── [Nov 25 07:32]  logo.svg
+    ├── [Nov 25 07:32]  reportWebVitals.js
+    └── [Nov 25 07:32]  setupTests.js
+
+817 directories, 17 files
+davidho@dphxps17:~/nodejsprojs/my-app$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+git remote add origin git@github.com:ashburndev/my-app.git
+git branch -M main
+git push -u origin main
+
+
+davidho@dphxps17:~/nodejsprojs/my-app$ 
+davidho@dphxps17:~/nodejsprojs/my-app$ git status
+On branch master
+nothing to commit, working tree clean
+davidho@dphxps17:~/nodejsprojs/my-app$ 
+davidho@dphxps17:~/nodejsprojs/my-app$ git add .
+davidho@dphxps17:~/nodejsprojs/my-app$ git status
+On branch master
+nothing to commit, working tree clean
+davidho@dphxps17:~/nodejsprojs/my-app$ ls -la
+total 1244
+drwxrwxr-x   6 davidho davidho    4096 Nov 25 07:32 .
+drwxrwxr-x   4 davidho davidho    4096 Nov 25 07:31 ..
+drwxrwxr-x   8 davidho davidho    4096 Nov 25 07:50 .git
+-rw-rw-r--   1 davidho davidho     310 Nov 25 07:32 .gitignore
+drwxrwxr-x 818 davidho davidho   36864 Nov 25 07:37 node_modules
+-rw-rw-r--   1 davidho davidho     809 Nov 25 07:32 package.json
+-rw-rw-r--   1 davidho davidho 1198832 Nov 25 07:32 package-lock.json
+drwxrwxr-x   2 davidho davidho    4096 Nov 25 07:32 public
+-rw-rw-r--   1 davidho davidho    3359 Nov 25 07:32 README.md
+drwxrwxr-x   2 davidho davidho    4096 Nov 25 07:32 src
+davidho@dphxps17:~/nodejsprojs/my-app$ 
+davidho@dphxps17:~/nodejsprojs/my-app$ git remote add origin git@github.com:ashburndev/my-app.git
+davidho@dphxps17:~/nodejsprojs/my-app$ git branch -M main
+davidho@dphxps17:~/nodejsprojs/my-app$ git push -u origin main
+Enumerating objects: 22, done.
+Counting objects: 100% (22/22), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (22/22), done.
+Writing objects: 100% (22/22), 305.55 KiB | 8.49 MiB/s, done.
+Total 22 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:ashburndev/my-app.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+davidho@dphxps17:~/nodejsprojs/my-app$ 
