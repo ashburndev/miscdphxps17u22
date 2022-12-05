@@ -1,0 +1,732 @@
+Mon Dec  5 05:02:58 AM EST 2022
+
+davidho@dphxps17:~/Documents$ date
+Mon Dec  5 05:02:43 AM EST 2022
+davidho@dphxps17:~/Documents$ date > stuff-20221205.txt
+davidho@dphxps17:~/Documents$ code   stuff-20221205.txt 
+davidho@dphxps17:~/Documents$ 
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ python --version
+Python 3.11.0
+davidho@dphxps17:~$ python3 --version
+Python 3.11.0
+davidho@dphxps17:~$ python3.11 --version
+Python 3.11.0
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://www.jetbrains.com/idea/download/#section=linux
+https://www.jetbrains.com/pycharm/download/#section=linux
+https://www.jetbrains.com/webstorm/download/download-thanks.html
+https://www.jetbrains.com/pycharm/download/#section=linux
+
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr | tail -20
+-rw-rw-r--  1 davidho davidho   12996428 Nov  8 04:23 ms-python.python-2022.19.13120653.vsix
+-rw-rw-r--  1 davidho davidho      64993 Nov  8 05:45 sbapp2.zip
+-rw-rw-r--  1 davidho davidho      65324 Nov 25 05:17 sbapp3.zip
+drwxr-x--- 45 davidho davidho       4096 Nov 25 08:11 ..
+-rw-rw-r--  1 davidho davidho 1119946465 Dec  5 05:04 ideaIU-2022.3.tar.gz
+-rw-rw-r--  1 davidho davidho         87 Dec  5 05:04 ideaIU-2022.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  947236841 Dec  5 05:05 ideaIC-2022.3.tar.gz
+-rw-rw-r--  1 davidho davidho         87 Dec  5 05:05 ideaIC-2022.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  707829681 Dec  5 05:06 pycharm-professional-2022.3.tar.gz
+-rw-rw-r--  1 davidho davidho        101 Dec  5 05:06 pycharm-professional-2022.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  562364769 Dec  5 05:06 pycharm-community-2022.3.tar.gz
+-rw-rw-r--  1 davidho davidho         98 Dec  5 05:06 pycharm-community-2022.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  576217219 Dec  5 05:07 WebStorm-2022.3.tar.gz
+-rw-rw-r--  1 davidho davidho         89 Dec  5 05:08 WebStorm-2022.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  619318969 Dec  5 05:09 RubyMine-2022.3.tar.gz
+-rw-rw-r--  1 davidho davidho         89 Dec  5 05:09 RubyMine-2022.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho   96706580 Dec  5 05:14 code_1.73.1-1667967334_amd64.deb
+-rw-rw-r--  1 davidho davidho  136288248 Dec  5 05:14 code-1.73.1-1667967421.el7.x86_64.rpm
+-rw-rw-r--  1 davidho davidho  135604445 Dec  5 05:15 code-stable-x64-1667967614.tar.gz
+drwxr-xr-x  5 davidho davidho      12288 Dec  5 05:16 .
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr /opt
+total 68
+drwxr-xr-x 20 root    root    4096 May 24  2022 ..
+drwxr-xr-x  8 root    root    4096 May 26  2022 RubyMine-2022.1.1
+drwxr-xr-x  8 root    root    4096 May 26  2022 idea-IU-221.5591.52
+drwxr-xr-x  3 root    root    4096 May 26  2022 google
+drwxr-xr-x  8 root    root    4096 Sep  8 15:44 eclipse-java-2022-09-R-linux-gtk-x86_64
+drwxr-xr-x  8 root    root    4096 Sep  8 15:54 eclipse-jee-2022-09-R-linux-gtk-x86_64
+drwxr-xr-x  8 root    root    4096 Sep 13 08:36 idea-IU-222.4167.29
+drwxr-xr-x  9     502 root    4096 Sep 15 07:57 sts-4.16.0.RELEASE
+drwxr-xr-x  8 root    root    4096 Oct  5 01:01 WebStorm-222.4345.14
+drwxr-xr-x  8 root    root    4096 Oct  5 01:01 RubyMine-2022.2.3
+drwxr-xr-x  8 root    root    4096 Oct  5 01:01 idea-IU-222.4345.14
+drwxr-xr-x  7 root    root    4096 Oct  5 01:01 idea-IC-222.4345.14
+drwxr-xr-x  8 root    root    4096 Oct 10 10:05 pycharm-community-2022.2.3
+drwxr-xr-x  9 root    root    4096 Oct 10 10:05 pycharm-2022.2.3
+drwxr-xr-x  5 davidho davidho 4096 Nov  1 11:44 VSCode-linux-x64-1.73.0
+drwxr-xr-x 17 root    root    4096 Nov  8 05:00 .
+drwxr-xr-x  4 root    root    4096 Nov 17 06:18 1Password
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ sha256sum ideaIU-2022.3.tar.gz.sha256
+f1f17ebafc3a4423f779c570b3eebd9c51667577164b9c0578709d39afb3be6c  ideaIU-2022.3.tar.gz.sha256
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ sha256sum ideaIC-2022.3.tar.gz.sha256
+188e1cda9b0c1fd3111b598c18586e6ca47702e9798b5a507604bd2dc81657f0  ideaIC-2022.3.tar.gz.sha256
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ sha256sum pycharm-professional-2022.3.tar.gz.sha256
+18bbe8b0d210aa63c832c264e75512ac8290cf760c8df3d4331c25ccb3f7f3c6  pycharm-professional-2022.3.tar.gz.sha256
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ sha256sum pycharm-community-2022.3.tar.gz.sha256
+c5a5877c1e20892b4718161010f48ac6b6e7b77f15c17d2567d36930850fbd09  pycharm-community-2022.3.tar.gz.sha256
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ sha256sum WebStorm-2022.3.tar.gz.sha256
+e3f6f172445b09d52b41916213a57f66b063658dbd7599e23094bb04ca573e7d  WebStorm-2022.3.tar.gz.sha256
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ sha256sum RubyMine-2022.3.tar.gz.sha256
+97dd8f3926bb1b6ebb2e7261348789f3b9f939587b3e58c17f4a72f9339f6bbd  RubyMine-2022.3.tar.gz.sha256
+davidho@dphxps17:~/Downloads$ 
+
+sha256sum ideaIU-2022.3.tar.gz.sha256
+sha256sum ideaIC-2022.3.tar.gz.sha256
+sha256sum pycharm-professional-2022.3.tar.gz.sha256
+sha256sum pycharm-community-2022.3.tar.gz.sha256
+sha256sum WebStorm-2022.3.tar.gz.sha256
+sha256sum RubyMine-2022.3.tar.gz.sha256
+
+sudo tar xzf ideaIU-2022.3.tar.gz -C /opt/
+sudo tar xzf pycharm-professional-2022.3.tar.gz -C /opt/
+sudo tar xzf WebStorm-2022.3.tar.gz -C /opt/
+sudo tar xzf RubyMine-2022.3.tar.gz -C /opt/
+
+sudo tar tzf code-stable-x64-1667967614.tar.gz
+sudo tar xzf code-stable-x64-1667967614.tar.gz -C /opt/
+
+davidho@dphxps17:/opt$ cd
+davidho@dphxps17:~$ cd Downloads/
+davidho@dphxps17:~/Downloads$ sudo tar xzf ideaIU-2022.3.tar.gz -C /opt/
+davidho@dphxps17:~/Downloads$ sudo tar xzf pycharm-professional-2022.3.tar.gz -C /opt/
+davidho@dphxps17:~/Downloads$ sudo tar xzf WebStorm-2022.3.tar.gz -C /opt/
+davidho@dphxps17:~/Downloads$ sudo tar xzf RubyMine-2022.3.tar.gz -C /opt/
+davidho@dphxps17:~/Downloads$ sudo tar xzf code-stable-x64-1667967614.tar.gz -C /opt/
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ cd /opt
+davidho@dphxps17:/opt$ ls -latr
+total 88
+drwxr-xr-x  8 root    root    4096 Jan 20  1970 WebStorm-223.7571.168
+drwxr-xr-x  8 root    root    4096 Jan 20  1970 RubyMine-2022.3
+drwxr-xr-x  8 root    root    4096 Jan 20  1970 idea-IU-223.7571.182
+drwxr-xr-x  9 root    root    4096 Jan 20  1970 pycharm-2022.3
+drwxr-xr-x 20 root    root    4096 May 24  2022 ..
+drwxr-xr-x  8 root    root    4096 May 26  2022 RubyMine-2022.1.1
+drwxr-xr-x  8 root    root    4096 May 26  2022 idea-IU-221.5591.52
+drwxr-xr-x  3 root    root    4096 May 26  2022 google
+drwxr-xr-x  8 root    root    4096 Sep  8 15:44 eclipse-java-2022-09-R-linux-gtk-x86_64
+drwxr-xr-x  8 root    root    4096 Sep  8 15:54 eclipse-jee-2022-09-R-linux-gtk-x86_64
+drwxr-xr-x  8 root    root    4096 Sep 13 08:36 idea-IU-222.4167.29
+drwxr-xr-x  9     502 root    4096 Sep 15 07:57 sts-4.16.0.RELEASE
+drwxr-xr-x  8 root    root    4096 Oct  5 01:01 WebStorm-222.4345.14
+drwxr-xr-x  8 root    root    4096 Oct  5 01:01 RubyMine-2022.2.3
+drwxr-xr-x  8 root    root    4096 Oct  5 01:01 idea-IU-222.4345.14
+drwxr-xr-x  7 root    root    4096 Oct  5 01:01 idea-IC-222.4345.14
+drwxr-xr-x  8 root    root    4096 Oct 10 10:05 pycharm-community-2022.2.3
+drwxr-xr-x  9 root    root    4096 Oct 10 10:05 pycharm-2022.2.3
+drwxr-xr-x  5 davidho davidho 4096 Nov  1 11:44 VSCode-linux-x64-1.73.0
+drwxr-xr-x  5 davidho davidho 4096 Nov  8 22:55 VSCode-linux-x64
+drwxr-xr-x  4 root    root    4096 Nov 17 06:18 1Password
+drwxr-xr-x 22 root    root    4096 Dec  5 05:33 .
+davidho@dphxps17:/opt$ 
+davidho@dphxps17:/opt$ mv VSCode-linux-x64 VSCode-linux-x64-1.73.1
+mv: cannot move 'VSCode-linux-x64' to 'VSCode-linux-x64-1.73.1': Permission denied
+davidho@dphxps17:/opt$ sudo !!
+sudo mv VSCode-linux-x64 VSCode-linux-x64-1.73.1
+davidho@dphxps17:/opt$ 
+davidho@dphxps17:/opt$ 
+
+davidho@dphxps17:/opt/pycharm-2022.3$ 
+davidho@dphxps17:/opt/pycharm-2022.3$ pwd -P
+/opt/pycharm-2022.3
+davidho@dphxps17:/opt/pycharm-2022.3$ ./bin/pychamr.sh
+
+davidho@dphxps17:/opt/pycharm-2022.3$ 
+davidho@dphxps17:/opt/pycharm-2022.3$ pwd -P
+/opt/pycharm-2022.3
+davidho@dphxps17:/opt/pycharm-2022.3$ ./bin/pycharm.sh 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/PycharmProjects$ 
+davidho@dphxps17:~/PycharmProjects$ date
+Mon Dec  5 06:23:42 AM EST 2022
+davidho@dphxps17:~/PycharmProjects$ pwd -P
+/home/davidho/PycharmProjects
+davidho@dphxps17:~/PycharmProjects$ ls -latr
+total 20
+drwxrwxr-x  4 davidho davidho 4096 Oct 16 20:11 pythonProject
+drwxrwxr-x  5 davidho davidho 4096 Oct 24 07:15 MyProject
+drwxr-x--- 45 davidho davidho 4096 Nov 25 08:11 ..
+drwxrwxr-x  4 davidho davidho 4096 Dec  5 06:16 dphpyapp1
+drwxrwxr-x  5 davidho davidho 4096 Dec  5 06:20 .
+davidho@dphxps17:~/PycharmProjects$ 
+davidho@dphxps17:~/PycharmProjects$ cd dphpyapp1/
+davidho@dphxps17:~/PycharmProjects/dphpyapp1$ 
+davidho@dphxps17:~/PycharmProjects/dphpyapp1$ ls -latr
+total 16
+drwxrwxr-x 4 davidho davidho 4096 Dec  5 06:16 venv
+drwxrwxr-x 4 davidho davidho 4096 Dec  5 06:16 .
+drwxrwxr-x 3 davidho davidho 4096 Dec  5 06:20 .idea
+drwxrwxr-x 5 davidho davidho 4096 Dec  5 06:20 ..
+davidho@dphxps17:~/PycharmProjects/dphpyapp1$ 
+davidho@dphxps17:~/PycharmProjects/dphpyapp1$ tree -L 6 .
+.
+└── venv
+    ├── lib
+    │   └── python3.10
+    ├── local
+    │   ├── bin
+    │   │   ├── activate
+    │   │   ├── activate.csh
+    │   │   ├── activate.fish
+    │   │   ├── activate.nu
+    │   │   ├── activate.ps1
+    │   │   ├── activate_this.py
+    │   │   ├── deactivate.nu
+    │   │   ├── pip
+    │   │   ├── pip3
+    │   │   ├── pip-3.10
+    │   │   ├── pip3.10
+    │   │   ├── python -> /usr/bin/python3.10
+    │   │   ├── python3 -> python
+    │   │   ├── python3.10 -> python
+    │   │   ├── wheel
+    │   │   ├── wheel3
+    │   │   ├── wheel-3.10
+    │   │   └── wheel3.10
+    │   └── lib
+    │       └── python3.10
+    │           └── dist-packages
+    │               ├── _distutils_hack
+    │               ├── distutils-precedence.pth
+    │               ├── pip
+    │               ├── pip-21.3.1.dist-info
+    │               ├── pip-21.3.1.virtualenv
+    │               ├── pkg_resources
+    │               ├── setuptools
+    │               ├── setuptools-60.2.0.dist-info
+    │               ├── setuptools-60.2.0.virtualenv
+    │               ├── _virtualenv.pth
+    │               ├── _virtualenv.py
+    │               ├── wheel
+    │               ├── wheel-0.37.1.dist-info
+    │               └── wheel-0.37.1.virtualenv
+    └── pyvenv.cfg
+
+16 directories, 25 files
+davidho@dphxps17:~/PycharmProjects/dphpyapp1$ tree -L 7 .
+.
+└── venv
+    ├── lib
+    │   └── python3.10
+    ├── local
+    │   ├── bin
+    │   │   ├── activate
+    │   │   ├── activate.csh
+    │   │   ├── activate.fish
+    │   │   ├── activate.nu
+    │   │   ├── activate.ps1
+    │   │   ├── activate_this.py
+    │   │   ├── deactivate.nu
+    │   │   ├── pip
+    │   │   ├── pip3
+    │   │   ├── pip-3.10
+    │   │   ├── pip3.10
+    │   │   ├── python -> /usr/bin/python3.10
+    │   │   ├── python3 -> python
+    │   │   ├── python3.10 -> python
+    │   │   ├── wheel
+    │   │   ├── wheel3
+    │   │   ├── wheel-3.10
+    │   │   └── wheel3.10
+    │   └── lib
+    │       └── python3.10
+    │           └── dist-packages
+    │               ├── _distutils_hack
+    │               │   ├── __init__.py
+    │               │   └── override.py
+    │               ├── distutils-precedence.pth
+    │               ├── pip
+    │               │   ├── __init__.py
+    │               │   ├── _internal
+    │               │   ├── __main__.py
+    │               │   ├── py.typed
+    │               │   └── _vendor
+    │               ├── pip-21.3.1.dist-info
+    │               │   ├── entry_points.txt
+    │               │   ├── INSTALLER
+    │               │   ├── LICENSE.txt
+    │               │   ├── METADATA
+    │               │   ├── RECORD
+    │               │   ├── top_level.txt
+    │               │   └── WHEEL
+    │               ├── pip-21.3.1.virtualenv
+    │               ├── pkg_resources
+    │               │   ├── extern
+    │               │   ├── __init__.py
+    │               │   ├── tests
+    │               │   └── _vendor
+    │               ├── setuptools
+    │               │   ├── archive_util.py
+    │               │   ├── build_meta.py
+    │               │   ├── cli-32.exe
+    │               │   ├── cli-64.exe
+    │               │   ├── cli-arm64.exe
+    │               │   ├── cli.exe
+    │               │   ├── command
+    │               │   ├── config.py
+    │               │   ├── depends.py
+    │               │   ├── _deprecation_warning.py
+    │               │   ├── dep_util.py
+    │               │   ├── dist.py
+    │               │   ├── _distutils
+    │               │   ├── errors.py
+    │               │   ├── extension.py
+    │               │   ├── extern
+    │               │   ├── glob.py
+    │               │   ├── gui-32.exe
+    │               │   ├── gui-64.exe
+    │               │   ├── gui-arm64.exe
+    │               │   ├── gui.exe
+    │               │   ├── _imp.py
+    │               │   ├── __init__.py
+    │               │   ├── installer.py
+    │               │   ├── launch.py
+    │               │   ├── logging.py
+    │               │   ├── monkey.py
+    │               │   ├── msvc.py
+    │               │   ├── namespaces.py
+    │               │   ├── package_index.py
+    │               │   ├── py34compat.py
+    │               │   ├── sandbox.py
+    │               │   ├── script (dev).tmpl
+    │               │   ├── script.tmpl
+    │               │   ├── unicode_utils.py
+    │               │   ├── _vendor
+    │               │   ├── version.py
+    │               │   ├── wheel.py
+    │               │   └── windows_support.py
+    │               ├── setuptools-60.2.0.dist-info
+    │               │   ├── entry_points.txt
+    │               │   ├── INSTALLER
+    │               │   ├── LICENSE
+    │               │   ├── METADATA
+    │               │   ├── RECORD
+    │               │   ├── top_level.txt
+    │               │   └── WHEEL
+    │               ├── setuptools-60.2.0.virtualenv
+    │               ├── _virtualenv.pth
+    │               ├── _virtualenv.py
+    │               ├── wheel
+    │               │   ├── bdist_wheel.py
+    │               │   ├── cli
+    │               │   ├── __init__.py
+    │               │   ├── macosx_libfile.py
+    │               │   ├── __main__.py
+    │               │   ├── metadata.py
+    │               │   ├── pkginfo.py
+    │               │   ├── util.py
+    │               │   ├── vendored
+    │               │   └── wheelfile.py
+    │               ├── wheel-0.37.1.dist-info
+    │               │   ├── entry_points.txt
+    │               │   ├── INSTALLER
+    │               │   ├── LICENSE.txt
+    │               │   ├── METADATA
+    │               │   ├── RECORD
+    │               │   ├── top_level.txt
+    │               │   └── WHEEL
+    │               └── wheel-0.37.1.virtualenv
+    └── pyvenv.cfg
+
+27 directories, 95 files
+davidho@dphxps17:~/PycharmProjects/dphpyapp1$ find . -name *.json  -print
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://dev.mysql.com/downloads/connector/python/
+https://dev.mysql.com/doc/connector-python/en/
+https://dev.mysql.com/doc/connector-python/en/connector-python-introduction.html
+https://dev.mysql.com/doc/connector-python/en/connector-python-coding.html
+
+https://marshmallow-sqlalchemy.readthedocs.io/en/latest/
+Release v0.28.1 (Changelog)
+SQLAlchemy integration with the marshmallow (de)serialization library.
+
+https://pypi.org/project/marshmallow-sqlalchemy/
+marshmallow-sqlalchemy 0.28.1
+pip install marshmallow-sqlalchemy
+
+https://www.sqlalchemy.org/
+The Python SQL Toolkit and Object Relational Mapper
+SQLAlchemy is the Python SQL toolkit and Object Relational Mapper that gives application developers the full power and flexibility of SQL.
+SQLAlchemy's overall approach to these problems is entirely different from that of most other SQL / ORM tools, rooted in a so-called complimentarity- oriented approach; instead of hiding away SQL and object relational details behind a wall of automation, all processes are fully exposed within a series of composable, transparent tools. The library takes on the job of automating redundant tasks while the developer remains in control of how the database is organized and how SQL is constructed.
+
+https://en.wikipedia.org/wiki/SQLAlchemy
+
+https://pypi.org/project/SQLAlchemy/
+SQLAlchemy 1.4.44
+pip install SQLAlchemy
+The Python SQL Toolkit and Object Relational Mapper
+
+https://marshmallow.readthedocs.io/en/latest/
+marshmallow: simplified object serialization
+Release v3.19.0. (Changelog)
+marshmallow is an ORM/ODM/framework-agnostic library for converting complex datatypes, such as objects, to and from native Python datatypes.
+
+https://pypi.org/project/marshmallow/
+marshmallow 3.19.0
+pip install marshmallow
+marshmallow is an ORM/ODM/framework-agnostic library for converting complex datatypes, such as objects, to and from native Python datatypes.
+
+https://pypi.org/project/PyMySQL/
+PyMySQL 1.0.2
+pip install PyMySQL
+This package contains a pure-Python MySQL client library, based on PEP 249.
+
+https://pypi.org/project/pymysql2/
+pymysql2 1.3.3
+pip install pymysql2
+
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/PycharmProjects/dphpyapp1$ find . -name *.json -print
+davidho@dphxps17:~/PycharmProjects/dphpyapp1$ 
+davidho@dphxps17:~/PycharmProjects/dphpyapp1$ pip install marshmallow-sqlalchemy
+Collecting marshmallow-sqlalchemy
+  Downloading marshmallow_sqlalchemy-0.28.1-py2.py3-none-any.whl (15 kB)
+Collecting marshmallow>=3.0.0
+  Downloading marshmallow-3.19.0-py3-none-any.whl (49 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 49.1/49.1 kB 3.7 MB/s eta 0:00:00
+Collecting SQLAlchemy>=1.3.0
+  Downloading SQLAlchemy-1.4.44-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 33.5 MB/s eta 0:00:00
+Collecting packaging>=21.3
+  Downloading packaging-21.3-py3-none-any.whl (40 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.8/40.8 kB 12.2 MB/s eta 0:00:00
+Collecting pyparsing!=3.0.5,>=2.0.2
+  Downloading pyparsing-3.0.9-py3-none-any.whl (98 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.3/98.3 kB 32.1 MB/s eta 0:00:00
+Collecting greenlet!=0.4.17
+  Downloading greenlet-2.0.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (545 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 545.1/545.1 kB 8.2 MB/s eta 0:00:00
+Installing collected packages: pyparsing, greenlet, SQLAlchemy, packaging, marshmallow, marshmallow-sqlalchemy
+Successfully installed SQLAlchemy-1.4.44 greenlet-2.0.1 marshmallow-3.19.0 marshmallow-sqlalchemy-0.28.1 packaging-21.3 pyparsing-3.0.9
+
+[notice] A new release of pip available: 22.3 -> 22.3.1
+[notice] To update, run: pip install --upgrade pip
+davidho@dphxps17:~/PycharmProjects/dphpyapp1$ 
+davidho@dphxps17:~/PycharmProjects/dphpyapp1$ find ~ -name "*marshmallow*" -print
+/home/davidho/.pyenv/versions/3.11.0/lib/python3.11/site-packages/marshmallow-3.19.0.dist-info
+/home/davidho/.pyenv/versions/3.11.0/lib/python3.11/site-packages/marshmallow_sqlalchemy
+/home/davidho/.pyenv/versions/3.11.0/lib/python3.11/site-packages/marshmallow
+/home/davidho/.pyenv/versions/3.11.0/lib/python3.11/site-packages/marshmallow_sqlalchemy-0.28.1.dist-info
+davidho@dphxps17:~/PycharmProjects/dphpyapp1$ 
+davidho@dphxps17:~/PycharmProjects/dphpyapp1$ ls -latr /home/davidho/.pyenv/versions/3.11.0/lib/python3.11/site-packages
+total 88
+-rw-r--r--  1 davidho davidho  119 Nov 17 06:47 README.txt
+drwxr-xr-x 39 davidho davidho 4096 Nov 17 06:47 ..
+-rw-rw-r--  1 davidho davidho  151 Nov 17 06:47 distutils-precedence.pth
+drwxr-xr-x  3 davidho davidho 4096 Nov 17 06:47 _distutils_hack
+drwxr-xr-x  5 davidho davidho 4096 Nov 17 06:47 pkg_resources
+drwxr-xr-x  8 davidho davidho 4096 Nov 17 06:47 setuptools
+drwxr-xr-x  2 davidho davidho 4096 Nov 17 06:47 setuptools-65.5.0.dist-info
+drwxr-xr-x  5 davidho davidho 4096 Nov 17 06:47 pip
+drwxr-xr-x  2 davidho davidho 4096 Nov 17 06:47 pip-22.3.dist-info
+drwxrwxr-x  4 davidho davidho 4096 Dec  5 06:52 pyparsing
+drwxrwxr-x  2 davidho davidho 4096 Dec  5 06:52 pyparsing-3.0.9.dist-info
+drwxrwxr-x  5 davidho davidho 4096 Dec  5 06:52 greenlet
+drwxrwxr-x  2 davidho davidho 4096 Dec  5 06:52 greenlet-2.0.1.dist-info
+drwxrwxr-x 15 davidho davidho 4096 Dec  5 06:52 sqlalchemy
+drwxrwxr-x  2 davidho davidho 4096 Dec  5 06:52 SQLAlchemy-1.4.44.dist-info
+drwxrwxr-x  3 davidho davidho 4096 Dec  5 06:52 packaging
+drwxrwxr-x  2 davidho davidho 4096 Dec  5 06:52 packaging-21.3.dist-info
+drwxrwxr-x  3 davidho davidho 4096 Dec  5 06:52 marshmallow
+drwxrwxr-x  2 davidho davidho 4096 Dec  5 06:52 marshmallow-3.19.0.dist-info
+drwxrwxr-x  3 davidho davidho 4096 Dec  5 06:52 marshmallow_sqlalchemy
+drwxr-xr-x 20 davidho davidho 4096 Dec  5 06:52 .
+drwxrwxr-x  2 davidho davidho 4096 Dec  5 06:52 marshmallow_sqlalchemy-0.28.1.dist-info
+davidho@dphxps17:~/PycharmProjects/dphpyapp1$ 
+
+davidho@dphxps17:~/Downloads$ ls -latr | tail -25
+-rw-rw-r--  1 davidho davidho  136288118 Nov  8 04:21 code-1.73.0-1667318873.el7.x86_64.rpm
+-rw-rw-r--  1 davidho davidho  135608145 Nov  8 04:22 code-stable-x64-1667319089.tar.gz
+-rw-rw-r--  1 davidho davidho   12996428 Nov  8 04:23 ms-python.python-2022.19.13120653.vsix
+-rw-rw-r--  1 davidho davidho      64993 Nov  8 05:45 sbapp2.zip
+-rw-rw-r--  1 davidho davidho      65324 Nov 25 05:17 sbapp3.zip
+drwxr-x--- 45 davidho davidho       4096 Nov 25 08:11 ..
+-rw-rw-r--  1 davidho davidho 1119946465 Dec  5 05:04 ideaIU-2022.3.tar.gz
+-rw-rw-r--  1 davidho davidho         87 Dec  5 05:04 ideaIU-2022.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  947236841 Dec  5 05:05 ideaIC-2022.3.tar.gz
+-rw-rw-r--  1 davidho davidho         87 Dec  5 05:05 ideaIC-2022.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  707829681 Dec  5 05:06 pycharm-professional-2022.3.tar.gz
+-rw-rw-r--  1 davidho davidho        101 Dec  5 05:06 pycharm-professional-2022.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  562364769 Dec  5 05:06 pycharm-community-2022.3.tar.gz
+-rw-rw-r--  1 davidho davidho         98 Dec  5 05:06 pycharm-community-2022.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  576217219 Dec  5 05:07 WebStorm-2022.3.tar.gz
+-rw-rw-r--  1 davidho davidho         89 Dec  5 05:08 WebStorm-2022.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  619318969 Dec  5 05:09 RubyMine-2022.3.tar.gz
+-rw-rw-r--  1 davidho davidho         89 Dec  5 05:09 RubyMine-2022.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho   96706580 Dec  5 05:14 code_1.73.1-1667967334_amd64.deb
+-rw-rw-r--  1 davidho davidho  136288248 Dec  5 05:14 code-1.73.1-1667967421.el7.x86_64.rpm
+-rw-rw-r--  1 davidho davidho  135604445 Dec  5 05:15 code-stable-x64-1667967614.tar.gz
+-rw-rw-r--  1 davidho davidho    3486832 Dec  5 06:30 mysql-connector-python-py3_8.0.31-1ubuntu22.10_amd64.deb
+-rw-rw-r--  1 davidho davidho     285382 Dec  5 06:31 mysql-connector-python-8.0.31.tar.gz
+-rw-rw-r--  1 davidho davidho     366999 Dec  5 06:31 mysql-connector-python-8.0.31.zip
+drwxr-xr-x  5 davidho davidho      12288 Dec  5 06:31 .
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ 7z l mysql-connector-python-8.0.31.zip
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,16 CPUs 11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz (806D1),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 366999 bytes (359 KiB)
+
+Listing archive: mysql-connector-python-8.0.31.zip
+
+--
+Path = mysql-connector-python-8.0.31.zip
+Type = zip
+Physical Size = 366999
+
+   Date      Time    Attr         Size   Compressed  Name
+------------------- ----- ------------ ------------  ------------------------
+2022-09-08 06:25:26 D....            0            0  mysql-connector-python-8.0.31
+2022-09-08 06:25:26 D....            0            0  mysql-connector-python-8.0.31/mysql
+2022-09-08 06:21:39 .....            0            0  mysql-connector-python-8.0.31/mysql/__init__.py
+2022-09-08 06:25:26 D....            0            0  mysql-connector-python-8.0.31/mysql/connector
+2022-09-08 06:21:39 .....         3211         1367  mysql-connector-python-8.0.31/mysql/connector/__init__.py
+2022-09-08 06:21:39 .....        56000        13273  mysql-connector-python-8.0.31/mysql/connector/abstracts.py
+2022-09-08 06:21:39 .....         2910         1305  mysql-connector-python-8.0.31/mysql/connector/authentication.py
+2022-09-08 06:21:39 .....        27492         3406  mysql-connector-python-8.0.31/mysql/connector/charsets.py
+2022-09-08 06:21:39 .....        59190        13088  mysql-connector-python-8.0.31/mysql/connector/connection.py
+2022-09-08 06:21:39 .....        31371         7371  mysql-connector-python-8.0.31/mysql/connector/connection_cext.py
+2022-09-08 06:21:39 .....        39871         9985  mysql-connector-python-8.0.31/mysql/connector/constants.py
+2022-09-08 06:21:39 .....        21996         5125  mysql-connector-python-8.0.31/mysql/connector/conversion.py
+2022-09-08 06:21:39 .....        50495        10102  mysql-connector-python-8.0.31/mysql/connector/cursor.py
+2022-09-08 06:21:39 .....        37047         7571  mysql-connector-python-8.0.31/mysql/connector/cursor_cext.py
+2022-09-08 06:21:39 .....         1826          955  mysql-connector-python-8.0.31/mysql/connector/custom_types.py
+2022-09-08 06:21:39 .....         2770         1228  mysql-connector-python-8.0.31/mysql/connector/dbapi.py
+2022-09-08 06:21:39 .....        69343        20398  mysql-connector-python-8.0.31/mysql/connector/errorcode.py
+2022-09-08 06:21:39 .....        10211         3088  mysql-connector-python-8.0.31/mysql/connector/errors.py
+2022-09-08 06:21:39 .....        21024         4918  mysql-connector-python-8.0.31/mysql/connector/network.py
+2022-09-08 06:21:39 .....        13144         3574  mysql-connector-python-8.0.31/mysql/connector/optionfiles.py
+2022-09-08 06:21:39 .....        20438         5754  mysql-connector-python-8.0.31/mysql/connector/pooling.py
+2022-09-08 06:21:39 .....        32427         6990  mysql-connector-python-8.0.31/mysql/connector/protocol.py
+2022-09-08 06:21:39 .....        18873         5261  mysql-connector-python-8.0.31/mysql/connector/utils.py
+2022-09-08 06:21:39 .....         1955         1014  mysql-connector-python-8.0.31/mysql/connector/version.py
+2022-09-08 06:25:26 D....            0            0  mysql-connector-python-8.0.31/mysql/connector/django
+2022-09-08 06:21:39 .....            0            0  mysql-connector-python-8.0.31/mysql/connector/django/__init__.py
+2022-09-08 06:21:39 .....        21833         6394  mysql-connector-python-8.0.31/mysql/connector/django/base.py
+2022-09-08 06:21:39 .....         3789         1475  mysql-connector-python-8.0.31/mysql/connector/django/client.py
+2022-09-08 06:21:39 .....         1728          867  mysql-connector-python-8.0.31/mysql/connector/django/compiler.py
+2022-09-08 06:21:39 .....         1538          823  mysql-connector-python-8.0.31/mysql/connector/django/creation.py
+2022-09-08 06:21:39 .....         2088         1013  mysql-connector-python-8.0.31/mysql/connector/django/features.py
+2022-09-08 06:21:39 .....        17334         4299  mysql-connector-python-8.0.31/mysql/connector/django/introspection.py
+2022-09-08 06:21:39 .....         3919         1482  mysql-connector-python-8.0.31/mysql/connector/django/operations.py
+2022-09-08 06:21:39 .....         2275         1095  mysql-connector-python-8.0.31/mysql/connector/django/schema.py
+2022-09-08 06:21:39 .....         1546          826  mysql-connector-python-8.0.31/mysql/connector/django/validation.py
+2022-09-08 06:25:26 D....            0            0  mysql-connector-python-8.0.31/mysql/connector/locales
+2022-09-08 06:21:39 .....         2751         1297  mysql-connector-python-8.0.31/mysql/connector/locales/__init__.py
+2022-09-08 06:25:26 D....            0            0  mysql-connector-python-8.0.31/mysql/connector/locales/eng
+2022-09-08 06:21:39 .....         1444          770  mysql-connector-python-8.0.31/mysql/connector/locales/eng/__init__.py
+2022-09-08 06:21:39 .....         7491         3082  mysql-connector-python-8.0.31/mysql/connector/locales/eng/client_error.py
+2022-09-08 06:25:26 D....            0            0  mysql-connector-python-8.0.31/mysql/connector/plugins
+2022-09-08 06:21:39 .....         3217         1387  mysql-connector-python-8.0.31/mysql/connector/plugins/__init__.py
+2022-09-08 06:21:39 .....        15125         3892  mysql-connector-python-8.0.31/mysql/connector/plugins/authentication_kerberos_client.py
+2022-09-08 06:21:39 .....        19211         5434  mysql-connector-python-8.0.31/mysql/connector/plugins/authentication_ldap_sasl_client.py
+2022-09-08 06:21:39 .....         5922         2240  mysql-connector-python-8.0.31/mysql/connector/plugins/authentication_oci_client.py
+2022-09-08 06:21:39 .....         3488         1498  mysql-connector-python-8.0.31/mysql/connector/plugins/caching_sha2_password.py
+2022-09-08 06:21:39 .....         1726          896  mysql-connector-python-8.0.31/mysql/connector/plugins/mysql_clear_password.py
+2022-09-08 06:21:39 .....         2848         1303  mysql-connector-python-8.0.31/mysql/connector/plugins/mysql_native_password.py
+2022-09-08 06:21:39 .....         1857          966  mysql-connector-python-8.0.31/mysql/connector/plugins/sha256_password.py
+2022-09-08 06:25:26 D....            0            0  mysql-connector-python-8.0.31/mysqlx
+2022-09-08 06:21:39 .....         3556         1418  mysql-connector-python-8.0.31/mysqlx/__init__.py
+2022-09-08 06:21:39 .....         5439         1584  mysql-connector-python-8.0.31/mysqlx/authentication.py
+2022-09-08 06:21:39 .....        27492         3406  mysql-connector-python-8.0.31/mysqlx/charsets.py
+2022-09-08 06:21:39 .....       118029        24927  mysql-connector-python-8.0.31/mysqlx/connection.py
+2022-09-08 06:21:39 .....        15220         3045  mysql-connector-python-8.0.31/mysqlx/constants.py
+2022-09-08 06:21:39 .....        25257         4944  mysql-connector-python-8.0.31/mysqlx/crud.py
+2022-09-08 06:21:39 .....         3819         1569  mysql-connector-python-8.0.31/mysqlx/dbdoc.py
+2022-09-08 06:21:39 .....        69343        20398  mysql-connector-python-8.0.31/mysqlx/errorcode.py
+2022-09-08 06:21:39 .....         8362         2713  mysql-connector-python-8.0.31/mysqlx/errors.py
+2022-09-08 06:21:39 .....        48049         9464  mysql-connector-python-8.0.31/mysqlx/expr.py
+2022-09-08 06:21:39 .....         7240         2638  mysql-connector-python-8.0.31/mysqlx/helpers.py
+2022-09-08 06:21:39 .....        40149         7868  mysql-connector-python-8.0.31/mysqlx/protocol.py
+2022-09-08 06:21:39 .....        30894         6597  mysql-connector-python-8.0.31/mysqlx/result.py
+2022-09-08 06:21:39 .....        45831         8244  mysql-connector-python-8.0.31/mysqlx/statement.py
+2022-09-08 06:25:26 D....            0            0  mysql-connector-python-8.0.31/mysqlx/locales
+2022-09-08 06:21:39 .....         2751         1297  mysql-connector-python-8.0.31/mysqlx/locales/__init__.py
+2022-09-08 06:25:26 D....            0            0  mysql-connector-python-8.0.31/mysqlx/locales/eng
+2022-09-08 06:21:39 .....         1444          770  mysql-connector-python-8.0.31/mysqlx/locales/eng/__init__.py
+2022-09-08 06:21:39 .....         7491         3082  mysql-connector-python-8.0.31/mysqlx/locales/eng/client_error.py
+2022-09-08 06:25:26 D....            0            0  mysql-connector-python-8.0.31/mysqlx/protobuf
+2022-09-08 06:21:39 .....        19910         4336  mysql-connector-python-8.0.31/mysqlx/protobuf/__init__.py
+2022-09-08 06:21:39 .....        10995         2376  mysql-connector-python-8.0.31/mysqlx/protobuf/mysqlx_connection_pb2.py
+2022-09-08 06:21:39 .....        50572         5949  mysql-connector-python-8.0.31/mysqlx/protobuf/mysqlx_crud_pb2.py
+2022-09-08 06:21:39 .....         9301         2237  mysql-connector-python-8.0.31/mysqlx/protobuf/mysqlx_cursor_pb2.py
+2022-09-08 06:21:39 .....        18174         3102  mysql-connector-python-8.0.31/mysqlx/protobuf/mysqlx_datatypes_pb2.py
+2022-09-08 06:21:39 .....         9219         2332  mysql-connector-python-8.0.31/mysqlx/protobuf/mysqlx_expect_pb2.py
+2022-09-08 06:21:39 .....        23037         3550  mysql-connector-python-8.0.31/mysqlx/protobuf/mysqlx_expr_pb2.py
+2022-09-08 06:21:39 .....        18483         3395  mysql-connector-python-8.0.31/mysqlx/protobuf/mysqlx_notice_pb2.py
+2022-09-08 06:21:39 .....        14782         3056  mysql-connector-python-8.0.31/mysqlx/protobuf/mysqlx_pb2.py
+2022-09-08 06:21:39 .....        12414         2597  mysql-connector-python-8.0.31/mysqlx/protobuf/mysqlx_prepare_pb2.py
+2022-09-08 06:21:39 .....        16158         2982  mysql-connector-python-8.0.31/mysqlx/protobuf/mysqlx_resultset_pb2.py
+2022-09-08 06:21:39 .....         8570         2039  mysql-connector-python-8.0.31/mysqlx/protobuf/mysqlx_session_pb2.py
+2022-09-08 06:21:39 .....         5680         1881  mysql-connector-python-8.0.31/mysqlx/protobuf/mysqlx_sql_pb2.py
+2022-09-08 06:25:26 D....            0            0  mysql-connector-python-8.0.31/mysql_connector_python-8.0.31-py3.7.egg-info
+2022-09-08 06:25:26 .....         1570          624  mysql-connector-python-8.0.31/mysql_connector_python-8.0.31-py3.7.egg-info/PKG-INFO
+2022-09-08 06:25:26 .....            1            1  mysql-connector-python-8.0.31/mysql_connector_python-8.0.31-py3.7.egg-info/dependency_links.txt
+2022-09-08 06:25:26 .....          156          121  mysql-connector-python-8.0.31/mysql_connector_python-8.0.31-py3.7.egg-info/requires.txt
+2022-09-08 06:25:26 .....           13           12  mysql-connector-python-8.0.31/mysql_connector_python-8.0.31-py3.7.egg-info/top_level.txt
+2022-09-08 06:25:26 .....         7182         1440  mysql-connector-python-8.0.31/mysql_connector_python-8.0.31-py3.7.egg-info/SOURCES.txt
+2022-09-08 06:21:39 .....          643          331  mysql-connector-python-8.0.31/README.txt
+2022-09-08 06:21:39 .....       124922        26171  mysql-connector-python-8.0.31/LICENSE.txt
+2022-09-08 06:21:39 .....         4041         1521  mysql-connector-python-8.0.31/README.rst
+2022-09-08 06:21:39 .....         6350         2330  mysql-connector-python-8.0.31/CONTRIBUTING.rst
+2022-09-08 06:25:26 .....          103           86  mysql-connector-python-8.0.31/INFO_SRC
+2022-09-08 06:25:26 .....          104           98  mysql-connector-python-8.0.31/INFO_BIN
+2022-09-08 06:25:26 D....            0            0  mysql-connector-python-8.0.31/docs
+------------------- ----- ------------ ------------  ------------------------
+2022-09-08 06:25:26            1465470       343343  83 files, 13 folders
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+pip install PyMySQL
+
+davidho@dphxps17:~/PycharmProjects/dphpyapp1$ 
+davidho@dphxps17:~/PycharmProjects/dphpyapp1$ pip install PyMySQL
+Collecting PyMySQL
+  Downloading PyMySQL-1.0.2-py3-none-any.whl (43 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 43.8/43.8 kB 1.6 MB/s eta 0:00:00
+Installing collected packages: PyMySQL
+Successfully installed PyMySQL-1.0.2
+
+[notice] A new release of pip available: 22.3 -> 22.3.1
+[notice] To update, run: pip install --upgrade pip
+davidho@dphxps17:~/PycharmProjects/dphpyapp1$ 
+davidho@dphxps17:~/PycharmProjects/dphpyapp1$ pip --version
+pip 22.3 from /home/davidho/.pyenv/versions/3.11.0/lib/python3.11/site-packages/pip (python 3.11)
+davidho@dphxps17:~/PycharmProjects/dphpyapp1$ 
+davidho@dphxps17:~/PycharmProjects/dphpyapp1$ ls -latr /home/davidho/.pyenv/versions/3.11.0/lib/python3.11/site-packages
+total 96
+-rw-r--r--  1 davidho davidho  119 Nov 17 06:47 README.txt
+drwxr-xr-x 39 davidho davidho 4096 Nov 17 06:47 ..
+-rw-rw-r--  1 davidho davidho  151 Nov 17 06:47 distutils-precedence.pth
+drwxr-xr-x  3 davidho davidho 4096 Nov 17 06:47 _distutils_hack
+drwxr-xr-x  5 davidho davidho 4096 Nov 17 06:47 pkg_resources
+drwxr-xr-x  8 davidho davidho 4096 Nov 17 06:47 setuptools
+drwxr-xr-x  2 davidho davidho 4096 Nov 17 06:47 setuptools-65.5.0.dist-info
+drwxr-xr-x  5 davidho davidho 4096 Nov 17 06:47 pip
+drwxr-xr-x  2 davidho davidho 4096 Nov 17 06:47 pip-22.3.dist-info
+drwxrwxr-x  4 davidho davidho 4096 Dec  5 06:52 pyparsing
+drwxrwxr-x  2 davidho davidho 4096 Dec  5 06:52 pyparsing-3.0.9.dist-info
+drwxrwxr-x  5 davidho davidho 4096 Dec  5 06:52 greenlet
+drwxrwxr-x  2 davidho davidho 4096 Dec  5 06:52 greenlet-2.0.1.dist-info
+drwxrwxr-x 15 davidho davidho 4096 Dec  5 06:52 sqlalchemy
+drwxrwxr-x  2 davidho davidho 4096 Dec  5 06:52 SQLAlchemy-1.4.44.dist-info
+drwxrwxr-x  3 davidho davidho 4096 Dec  5 06:52 packaging
+drwxrwxr-x  2 davidho davidho 4096 Dec  5 06:52 packaging-21.3.dist-info
+drwxrwxr-x  3 davidho davidho 4096 Dec  5 06:52 marshmallow
+drwxrwxr-x  2 davidho davidho 4096 Dec  5 06:52 marshmallow-3.19.0.dist-info
+drwxrwxr-x  3 davidho davidho 4096 Dec  5 06:52 marshmallow_sqlalchemy
+drwxrwxr-x  2 davidho davidho 4096 Dec  5 06:52 marshmallow_sqlalchemy-0.28.1.dist-info
+drwxrwxr-x  4 davidho davidho 4096 Dec  5 07:29 pymysql
+drwxr-xr-x 22 davidho davidho 4096 Dec  5 07:29 .
+drwxrwxr-x  2 davidho davidho 4096 Dec  5 07:29 PyMySQL-1.0.2.dist-info
+davidho@dphxps17:~/PycharmProjects/dphpyapp1$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~$ mysql --version
+mysql  Ver 8.0.31-0ubuntu0.22.04.1 for Linux on x86_64 ((Ubuntu))
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.31-0ubuntu0.22.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| depot2_development |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| wire2_development  |
+| wire3_development  |
+| wire4_development  |
+| wire5_development  |
+| wire6_development  |
++--------------------+
+10 rows in set (0.00 sec)
+
+mysql> 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+DROP DATABASE IF EXISTS dphpyapp1;
+CREATE DATABASE dphpyapp1;
+CREATE USER 'dphpyuser'@'localhost' IDENTIFIED BY 'dphpyuser';
+GRANT ALL PRIVILEGES ON dphpyapp1.* TO 'dphpyuser'@'localhost' WITH GRANT OPTION;
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+mysql> DROP DATABASE IF EXISTS dphpyapp1;
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+mysql> CREATE DATABASE dphpyapp1;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> CREATE USER 'dphpyuser'@'localhost' IDENTIFIED BY 'dphpyuser';
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> GRANT ALL PRIVILEGES ON dphpyapp1.* TO 'dphpyuser'@'localhost' WITH GRANT OPTION;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> 
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| depot2_development |
+| dphpyapp1          |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| wire2_development  |
+| wire3_development  |
+| wire4_development  |
+| wire5_development  |
+| wire6_development  |
++--------------------+
+11 rows in set (0.00 sec)
+
+mysql> use dphpyapp1;
+Database changed
+mysql> show tables;
+Empty set (0.01 sec)
+
+mysql> 
+
