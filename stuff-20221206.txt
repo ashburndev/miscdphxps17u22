@@ -1,0 +1,218 @@
+Tue Dec  6 07:08:00 AM EST 2022
+
+davidho@dphxps17:~$ date
+Tue Dec  6 07:07:46 AM EST 2022
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date > stuff-20221206.txt
+davidho@dphxps17:~$ code   stuff-20221206.txt 
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://pypi.org/project/PyMySQL/
+
+Installation
+Package is uploaded on PyPI.
+You can install it with pip:
+$ python3 -m pip install PyMySQL
+To use “sha256_password” or “caching_sha2_password” for authenticate, you need to install additional dependency:
+$ python3 -m pip install PyMySQL[rsa]
+To use MariaDB’s “ed25519” authentication method, you need to install additional dependency:
+$ python3 -m pip install PyMySQL[ed25519]
+
+Example
+
+CREATE TABLE `users` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `email` varchar(255) COLLATE utf8_bin NOT NULL,
+    `password` varchar(255) COLLATE utf8_bin NOT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin
+AUTO_INCREMENT=1 ;
+
+
+import pymysql.cursors
+
+# Connect to the database
+connection = pymysql.connect(host='localhost',
+                             user='user',
+                             password='passwd',
+                             database='db',
+                             cursorclass=pymysql.cursors.DictCursor)
+
+with connection:
+    with connection.cursor() as cursor:
+        # Create a new record
+        sql = "INSERT INTO `users` (`email`, `password`) VALUES (%s, %s)"
+        cursor.execute(sql, ('webmaster@python.org', 'very-secret'))
+
+    # connection is not autocommit by default. So you must commit to save
+    # your changes.
+    connection.commit()
+
+    with connection.cursor() as cursor:
+        # Read a single record
+        sql = "SELECT `id`, `password` FROM `users` WHERE `email`=%s"
+        cursor.execute(sql, ('webmaster@python.org',))
+        result = cursor.fetchone()
+        print(result)
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~$ mysql --version
+mysql  Ver 8.0.31-0ubuntu0.22.04.1 for Linux on x86_64 ((Ubuntu))
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.31-0ubuntu0.22.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| depot2_development |
+| dphpyapp1          |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| wire2_development  |
+| wire3_development  |
+| wire4_development  |
+| wire5_development  |
+| wire6_development  |
++--------------------+
+11 rows in set (0.00 sec)
+
+mysql> use dphpyapp1;
+Database changed
+mysql> show tables;
+Empty set (0.00 sec)
+
+mysql> 
+mysql> 
+mysql> CREATE TABLE `users` (
+    ->     `id` int(11) NOT NULL AUTO_INCREMENT,
+    ->     `email` varchar(255) COLLATE utf8_bin NOT NULL,
+    ->     `password` varchar(255) COLLATE utf8_bin NOT NULL,
+    ->     PRIMARY KEY (`id`)
+    -> ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin
+    -> AUTO_INCREMENT=1 ;
+Query OK, 0 rows affected, 3 warnings (0.02 sec)
+
+mysql> show tables;
++---------------------+
+| Tables_in_dphpyapp1 |
++---------------------+
+| users               |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> 
+mysql> 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:/opt/pycharm-2022.2.3$ ./bin/pycharm.sh
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+import pymysql.cursors
+
+# Connect to the database
+connection = pymysql.connect(host='localhost',
+                             user='dphpyuser',
+                             password='dphpyuser',
+                             database='dphpyapp1',
+                             cursorclass=pymysql.cursors.DictCursor)
+
+with connection:
+    with connection.cursor() as cursor:
+        # Create a new record
+        sql = "INSERT INTO `users` (`email`, `password`) VALUES (%s, %s)"
+        cursor.execute(sql, ('webmaster@python.org', 'very-secret'))
+
+    # connection is not autocommit by default. So you must commit to save
+    # your changes.
+    connection.commit()
+
+    with connection.cursor() as cursor:
+        # Read a single record
+        sql = "SELECT `id`, `password` FROM `users` WHERE `email`=%s"
+        cursor.execute(sql, ('webmaster@python.org',))
+        result = cursor.fetchone()
+        print(result)
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/PycharmProjects/dphpyapp1$ python3 dphpyapp1.py 
+Traceback (most recent call last):
+  File "/home/davidho/PycharmProjects/dphpyapp1/dphpyapp1.py", line 4, in <module>
+    connection = pymysql.connect(host='localhost',
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/davidho/.pyenv/versions/3.11.0/lib/python3.11/site-packages/pymysql/connections.py", line 353, in __init__
+    self.connect()
+  File "/home/davidho/.pyenv/versions/3.11.0/lib/python3.11/site-packages/pymysql/connections.py", line 633, in connect
+    self._request_authentication()
+  File "/home/davidho/.pyenv/versions/3.11.0/lib/python3.11/site-packages/pymysql/connections.py", line 932, in _request_authentication
+    auth_packet = _auth.caching_sha2_password_auth(self, auth_packet)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/davidho/.pyenv/versions/3.11.0/lib/python3.11/site-packages/pymysql/_auth.py", line 265, in caching_sha2_password_auth
+    data = sha2_rsa_encrypt(conn.password, conn.salt, conn.server_public_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/davidho/.pyenv/versions/3.11.0/lib/python3.11/site-packages/pymysql/_auth.py", line 143, in sha2_rsa_encrypt
+    raise RuntimeError(
+RuntimeError: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods
+davidho@dphxps17:~/PycharmProjects/dphpyapp1$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/PycharmProjects/dphpyapp1$ python3 -m pip install PyMySQL[rsa]
+Requirement already satisfied: PyMySQL[rsa] in /home/davidho/.pyenv/versions/3.11.0/lib/python3.11/site-packages (1.0.2)
+Collecting cryptography
+  Downloading cryptography-38.0.4-cp36-abi3-manylinux_2_28_x86_64.whl (4.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 47.9 MB/s eta 0:00:00
+Collecting cffi>=1.12
+  Downloading cffi-1.15.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (462 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 462.6/462.6 kB 99.0 MB/s eta 0:00:00
+Collecting pycparser
+  Downloading pycparser-2.21-py2.py3-none-any.whl (118 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 118.7/118.7 kB 49.7 MB/s eta 0:00:00
+Installing collected packages: pycparser, cffi, cryptography
+Successfully installed cffi-1.15.1 cryptography-38.0.4 pycparser-2.21
+
+[notice] A new release of pip available: 22.3 -> 22.3.1
+[notice] To update, run: pip install --upgrade pip
+davidho@dphxps17:~/PycharmProjects/dphpyapp1$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/PycharmProjects/dphpyapp1$ python3 dphpyapp1.py 
+{'id': 1, 'password': 'very-secret'}
+davidho@dphxps17:~/PycharmProjects/dphpyapp1$ 
+davidho@dphxps17:~/PycharmProjects/dphpyapp1$ date
+Tue Dec  6 07:40:23 AM EST 2022
+davidho@dphxps17:~/PycharmProjects/dphpyapp1$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+mysql> select * from users;
++----+----------------------+-------------+
+| id | email                | password    |
++----+----------------------+-------------+
+|  1 | webmaster@python.org | very-secret |
++----+----------------------+-------------+
+1 row in set (0.00 sec)
+
+mysql> 
+
