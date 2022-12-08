@@ -1,0 +1,218 @@
+Thu Dec  8 07:00:43 AM EST 2022
+
+davidho@dphxps17:~/Documents$ 
+davidho@dphxps17:~/Documents$ date
+Thu Dec  8 07:00:33 AM EST 2022
+davidho@dphxps17:~/Documents$ 
+davidho@dphxps17:~/Documents$ date > stuff-20221208.txt
+davidho@dphxps17:~/Documents$ code   stuff-20221208.txt
+davidho@dphxps17:~/Documents$ 
+
+https://www.eclipse.org/downloads/
+https://www.eclipse.org/downloads/packages/
+
+https://spring.io/tools
+https://marketplace.visualstudio.com/items?itemName=Pivotal.vscode-boot-dev-pack
+https://marketplace.visualstudio.com/items?itemName=Pivotal.vscode-spring-boot
+https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-spring-initializr
+https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-spring-boot-dashboard
+
+https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack
+
+By installing Extension Pack for Java, the following extensions are installed:
+
+    📦 Language Support for Java™ by Red Hat
+        Code Navigation
+        Auto Completion
+        Refactoring
+        Code Snippets
+    📦 Debugger for Java
+        Debugging
+    📦 Test Runner for Java
+        Run & Debug JUnit/TestNG Test Cases
+    📦 Maven for Java
+        Project Scaffolding
+        Custom Goals
+    📦 Project Manager for Java
+        Manage Java projects, referenced libraries, resource files, packages, classes, and class members
+    📦 Visual Studio IntelliCode
+        AI-assisted development
+davidho@dphxps17:~/Downloads$ 
+        Completion list ranked by AI
+
+https://marketplace.visualstudio.com/items?itemName=redhat.java
+https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debug
+https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-test
+https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-maven
+https://marketplachttps://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode
+https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode
+
+https://marketplace.visualstudio.com/items?itemName=ms-python.python
+
+davidho@dphxps17:~/Downloads$ code --version
+1.73.1
+6261075646f055b99068d3688932416f2346dd3b
+x64
+davidho@dphxps17:~/Downloads$ code --list-extensions
+ms-python.isort
+ms-python.python
+ms-python.vscode-pylance
+ms-toolsai.jupyter
+ms-toolsai.jupyter-keymap
+ms-toolsai.jupyter-renderers
+ms-toolsai.vscode-jupyter-cell-tags
+ms-toolsai.vscode-jupyter-slideshow
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ code --list-extensions --show-versions
+ms-python.isort@2022.8.0
+ms-python.python@2022.18.2
+ms-python.vscode-pylance@2022.12.20
+ms-toolsai.jupyter@2022.9.1303220346
+ms-toolsai.jupyter-keymap@1.0.0
+ms-toolsai.jupyter-renderers@1.0.12
+ms-toolsai.vscode-jupyter-cell-tags@0.1.6
+ms-toolsai.vscode-jupyter-slideshow@0.1.5
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ date
+Thu Dec  8 07:42:37 AM EST 2022
+davidho@dphxps17:~/Downloads$ pwd -P
+/home/davidho/Downloads
+davidho@dphxps17:~/Downloads$ ls -latr | tail -85
+-rw-rw-r--  1 davidho davidho  607778592 Sep 22 08:14 spring-tool-suite-4-4.16.0.RELEASE-e4.25.0-linux.gtk.x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho  455835265 Sep 22 08:21 netbeans-15-bin.zip
+-rw-rw-r--  1 davidho davidho        152 Sep 22 08:21 netbeans-15-bin.zip.sha512
+-rw-rw-r--  1 davidho davidho        858 Sep 22 08:22 Apache-NetBeans-15-bin-windows-x64.exe.asc
+-rw-rw-r--  1 davidho davidho 1038929710 Oct 16 18:22 ideaIU-2022.2.3.tar.gz
+-rw-rw-r--  1 davidho davidho         89 Oct 16 18:22 ideaIU-2022.2.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  862407745 Oct 16 18:23 ideaIC-2022.2.3.tar.gz
+-rw-rw-r--  1 davidho davidho         89 Oct 16 18:23 ideaIC-2022.2.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  696937833 Oct 16 18:58 pycharm-professional-2022.2.3.tar.gz
+-rw-rw-r--  1 davidho davidho        103 Oct 16 18:59 pycharm-professional-2022.2.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  535902788 Oct 16 18:59 pycharm-community-2022.2.3.tar.gz
+-rw-rw-r--  1 davidho davidho        100 Oct 16 19:00 pycharm-community-2022.2.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  611463423 Oct 16 19:02 RubyMine-2022.2.3.tar.gz
+-rw-rw-r--  1 davidho davidho         91 Oct 16 19:03 RubyMine-2022.2.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho   88096668 Oct 16 20:24 code_1.72.2-1665614327_amd64.deb
+-rw-rw-r--  1 davidho davidho  124509628 Oct 16 20:25 code-1.72.2-1665614416.el7.x86_64.rpm
+-rw-rw-r--  1 davidho davidho  123828026 Oct 16 20:25 code-stable-x64-1665614670.tar.gz
+-rw-rw-r--  1 davidho davidho  607778592 Oct 16 20:53 spring-tool-suite-4-4.16.0.RELEASE-e4.25.0-linux.gtk.x86_64(1).tar.gz
+-rw-rw-r--  1 davidho davidho  189905998 Oct 20 19:25 jdk-19.0.1_linux-x64_bin.tar.gz
+-rw-rw-r--  1 davidho davidho         64 Oct 20 19:25 jdk-19.0.1_linux-x64_bin.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  162283762 Oct 20 19:26 jdk-19.0.1_linux-x64_bin.deb
+-rw-rw-r--  1 davidho davidho         64 Oct 20 19:26 jdk-19.0.1_linux-x64_bin.deb.sha256
+-rw-rw-r--  1 davidho davidho  169483428 Oct 20 19:26 jdk-19.0.1_linux-x64_bin.rpm
+-rw-rw-r--  1 davidho davidho         64 Oct 20 19:26 jdk-19.0.1_linux-x64_bin.rpm.sha256
+-rw-rw-r--  1 davidho davidho  181563408 Oct 20 19:28 jdk-17.0.5_linux-x64_bin.tar.gz
+-rw-rw-r--  1 davidho davidho         64 Oct 20 19:28 jdk-17.0.5_linux-x64_bin.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  155996900 Oct 20 19:28 jdk-17.0.5_linux-x64_bin.deb
+-rw-rw-r--  1 davidho davidho         64 Oct 20 19:28 jdk-17.0.5_linux-x64_bin.deb.sha256
+-rw-rw-r--  1 davidho davidho  163101336 Oct 20 19:29 jdk-17.0.5_linux-x64_bin.rpm
+-rw-rw-r--  1 davidho davidho         64 Oct 20 19:29 jdk-17.0.5_linux-x64_bin.rpm.sha256
+-rw-rw-r--  1 davidho davidho  145561908 Oct 20 19:36 jdk-11.0.17_linux-x64_bin.deb
+-rw-rw-r--  1 davidho davidho  152071004 Oct 20 19:37 jdk-11.0.17_linux-x64_bin.rpm
+-rw-rw-r--  1 davidho davidho  169251172 Oct 20 19:37 jdk-11.0.17_linux-x64_bin.tar.gz
+-rw-rw-r--  1 davidho davidho       7494 Oct 20 19:38 11-0-17-checksum.html
+-rw-rw-r--  1 davidho davidho  117557932 Oct 20 19:41 jdk-8u351-linux-x64.rpm
+-rw-rw-r--  1 davidho davidho  149697219 Oct 20 19:41 jdk-8u351-linux-x64.tar.gz
+-rw-rw-r--  1 davidho davidho      12168 Oct 20 19:41 8u351checksum.html
+-rw-rw-r--  1 davidho davidho  125170344 Oct 20 19:42 jdk-8u351-docs-all.zip
+-rw-rw-r--  1 davidho davidho   10476456 Oct 20 19:42 javafx-8u351-apidocs.zip
+-rw-rw-r--  1 davidho davidho      64423 Oct 21 07:36 sbapp1grajarj11.zip
+-rw-rw-r--  1 davidho davidho  570969095 Nov  2 07:24 WebStorm-2022.2.3.tar.gz
+-rw-rw-r--  1 davidho davidho         91 Nov  2 07:24 WebStorm-2022.2.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho   96700176 Nov  8 04:21 code_1.73.0-1667318785_amd64.deb
+-rw-rw-r--  1 davidho davidho  136288118 Nov  8 04:21 code-1.73.0-1667318873.el7.x86_64.rpm
+-rw-rw-r--  1 davidho davidho  135608145 Nov  8 04:22 code-stable-x64-1667319089.tar.gz
+-rw-rw-r--  1 davidho davidho   12996428 Nov  8 04:23 ms-python.python-2022.19.13120653.vsix
+-rw-rw-r--  1 davidho davidho      64993 Nov  8 05:45 sbapp2.zip
+-rw-rw-r--  1 davidho davidho      65324 Nov 25 05:17 sbapp3.zip
+-rw-rw-r--  1 davidho davidho 1119946465 Dec  5 05:04 ideaIU-2022.3.tar.gz
+-rw-rw-r--  1 davidho davidho         87 Dec  5 05:04 ideaIU-2022.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  947236841 Dec  5 05:05 ideaIC-2022.3.tar.gz
+-rw-rw-r--  1 davidho davidho         87 Dec  5 05:05 ideaIC-2022.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  707829681 Dec  5 05:06 pycharm-professional-2022.3.tar.gz
+-rw-rw-r--  1 davidho davidho        101 Dec  5 05:06 pycharm-professional-2022.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  562364769 Dec  5 05:06 pycharm-community-2022.3.tar.gz
+-rw-rw-r--  1 davidho davidho         98 Dec  5 05:06 pycharm-community-2022.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  576217219 Dec  5 05:07 WebStorm-2022.3.tar.gz
+-rw-rw-r--  1 davidho davidho         89 Dec  5 05:08 WebStorm-2022.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  619318969 Dec  5 05:09 RubyMine-2022.3.tar.gz
+-rw-rw-r--  1 davidho davidho         89 Dec  5 05:09 RubyMine-2022.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho   96706580 Dec  5 05:14 code_1.73.1-1667967334_amd64.deb
+-rw-rw-r--  1 davidho davidho  136288248 Dec  5 05:14 code-1.73.1-1667967421.el7.x86_64.rpm
+-rw-rw-r--  1 davidho davidho  135604445 Dec  5 05:15 code-stable-x64-1667967614.tar.gz
+-rw-rw-r--  1 davidho davidho    3486832 Dec  5 06:30 mysql-connector-python-py3_8.0.31-1ubuntu22.10_amd64.deb
+-rw-rw-r--  1 davidho davidho     285382 Dec  5 06:31 mysql-connector-python-8.0.31.tar.gz
+-rw-rw-r--  1 davidho davidho     366999 Dec  5 06:31 mysql-connector-python-8.0.31.zip
+drwxr-x--- 45 davidho davidho       4096 Dec  6 07:43 ..
+-rw-rw-r--  1 davidho davidho  552970589 Dec  8 07:04 eclipse-jee-2022-12-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        178 Dec  8 07:08 eclipse-jee-2022-12-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  317456405 Dec  8 07:08 eclipse-java-2022-12-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        179 Dec  8 07:11 eclipse-java-2022-12-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  637138600 Dec  8 07:13 spring-tool-suite-4-4.17.0.RELEASE-e4.26.0-linux.gtk.x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho    1408494 Dec  8 07:17 Pivotal.vscode-boot-dev-pack-0.1.0.vsix
+-rw-rw-r--  1 davidho davidho   83136393 Dec  8 07:18 Pivotal.vscode-spring-boot-1.41.0.vsix
+-rw-rw-r--  1 davidho davidho     422485 Dec  8 07:19 vscjava.vscode-spring-initializr-0.11.2022090703.vsix
+-rw-rw-r--  1 davidho davidho   13688443 Dec  8 07:22 vscjava.vscode-spring-boot-dashboard-0.9.2022120800.vsix
+-rw-rw-r--  1 davidho davidho    2738036 Dec  8 07:23 vscjava.vscode-java-pack-0.25.2022112900.vsix
+-rw-rw-r--  1 davidho davidho  106420880 Dec  8 07:25 redhat.java-1.14.2022120803@linux-x64.vsix
+-rw-rw-r--  1 davidho davidho    3197070 Dec  8 07:26 vscjava.vscode-java-debug-0.47.2022112823.vsix
+-rw-rw-r--  1 davidho davidho   10635454 Dec  8 07:27 vscjava.vscode-maven-0.40.2022120603.vsix
+-rw-rw-r--  1 davidho davidho     330752 Dec  8 07:29 vscjava.vscode-java-dependency-0.21.2022111900.vsix
+-rw-rw-r--  1 davidho davidho   89146704 Dec  8 07:29 VisualStudioExptTeam.vscodeintellicode-1.2.29.vsix
+-rw-rw-r--  1 davidho davidho    2326602 Dec  8 07:33 vscjava.vscode-java-test-0.37.2022090902.vsix
+-rw-rw-r--  1 davidho davidho   15079228 Dec  8 07:34 ms-python.python-2022.21.13411007.vsix
+drwxr-xr-x  5 davidho davidho      16384 Dec  8 07:34 .
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr *.vsix
+-rw-rw-r-- 1 davidho davidho  12996428 Nov  8 04:23 ms-python.python-2022.19.13120653.vsix
+-rw-rw-r-- 1 davidho davidho   1408494 Dec  8 07:17 Pivotal.vscode-boot-dev-pack-0.1.0.vsix
+-rw-rw-r-- 1 davidho davidho  83136393 Dec  8 07:18 Pivotal.vscode-spring-boot-1.41.0.vsix
+-rw-rw-r-- 1 davidho davidho    422485 Dec  8 07:19 vscjava.vscode-spring-initializr-0.11.2022090703.vsix
+-rw-rw-r-- 1 davidho davidho  13688443 Dec  8 07:22 vscjava.vscode-spring-boot-dashboard-0.9.2022120800.vsix
+-rw-rw-r-- 1 davidho davidho   2738036 Dec  8 07:23 vscjava.vscode-java-pack-0.25.2022112900.vsix
+-rw-rw-r-- 1 davidho davidho 106420880 Dec  8 07:25 redhat.java-1.14.2022120803@linux-x64.vsix
+-rw-rw-r-- 1 davidho davidho   3197070 Dec  8 07:26 vscjava.vscode-java-debug-0.47.2022112823.vsix
+-rw-rw-r-- 1 davidho davidho  10635454 Dec  8 07:27 vscjava.vscode-maven-0.40.2022120603.vsix
+-rw-rw-r-- 1 davidho davidho    330752 Dec  8 07:29 vscjava.vscode-java-dependency-0.21.2022111900.vsix
+-rw-rw-r-- 1 davidho davidho  89146704 Dec  8 07:29 VisualStudioExptTeam.vscodeintellicode-1.2.29.vsix
+-rw-rw-r-- 1 davidho davidho   2326602 Dec  8 07:33 vscjava.vscode-java-test-0.37.2022090902.vsix
+-rw-rw-r-- 1 davidho davidho  15079228 Dec  8 07:34 ms-python.python-2022.21.13411007.vsix
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ code --version
+1.73.1
+6261075646f055b99068d3688932416f2346dd3b
+x64
+davidho@dphxps17:~/Downloads$ code --install-extension /home/davidho/Downloads/redhat.java-1.14.2022120803@linux-x64.vsix
+Installing extensions...
+(node:27315) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+(Use `code --trace-deprecation ...` to show where the warning was created)
+Extension 'redhat.java-1.14.2022120803@linux-x64.vsix' was successfully installed.
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ code --list-extensions
+ms-python.isort
+ms-python.python
+ms-python.vscode-pylance
+ms-toolsai.jupyter
+ms-toolsai.jupyter-keymap
+ms-toolsai.jupyter-renderers
+ms-toolsai.vscode-jupyter-cell-tags
+ms-toolsai.vscode-jupyter-slideshow
+redhat.java
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ code --list-extensions --show-versions
+ms-python.isort@2022.8.0
+ms-python.python@2022.18.2
+ms-python.vscode-pylance@2022.12.20
+ms-toolsai.jupyter@2022.9.1303220346
+ms-toolsai.jupyter-keymap@1.0.0
+ms-toolsai.jupyter-renderers@1.0.12
+ms-toolsai.vscode-jupyter-cell-tags@0.1.6
+ms-toolsai.vscode-jupyter-slideshow@0.1.5
+redhat.java@1.14.2022120803
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ date
+Thu Dec  8 07:55:31 AM EST 2022
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ 
+
