@@ -1,0 +1,575 @@
+Fri Dec  9 04:27:17 AM EST 2022
+
+davidho@dphxps17:~$ date
+Fri Dec  9 04:27:02 AM EST 2022
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date > stuff-20221209.txt
+davidho@dphxps17:~$ code   stuff-20221209.txt
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://code.visualstudio.com/updates/v1_74
+https://code.visualstudio.com/download
+https://code.visualstudio.com/docs/?dv=linux64_deb
+https://code.visualstudio.com/docs/?dv=linux64_rpm
+https://code.visualstudio.com/docs/?dv=linux64
+https://code.visualstudio.com/docs/?dv=linux64cli
+
+https://code.visualstudio.com/docs/getstarted/introvideos
+
+https://marketplace.visualstudio.com/items?itemName=ms-python.python
+
+https://code.visualstudio.com/docs/languages/python
+https://code.visualstudio./docs/python/python-tutorial
+
+  Virtual environment creation for macOS/Linux
+  python3 -m venv .venv
+  source .venv/bin/activate
+
+https://code.visualstudio.com/docs/python/editing
+https://code.visualstudio.com/docs/python/linting
+https://code.visualstudio.com/docs/python/debugging
+https://code.visualstudio.com/docs/python/environments
+
+  start typing the Python: Create Environment command
+
+  Note: The command will also install necessary packages outlined in a requirements/dependencies file, such as requirements.txt, pyproject.toml, or environment.yml, located in the project folder
+
+  Create a virtual environment in the terminal
+
+  To create a virtual environment, use the following command, where ".venv" is the name of the environment folder:
+
+  # macOS/Linux
+  # You may need to run sudo apt-get install python3-venv first
+  python3 -m venv .venv
+
+https://code.visualstudio.com/docs/python/testing
+https://code.visualstudio.com/docs/python/tutorial-flask
+
+  Create a project environment for the Flask tutorial
+
+  In this section, you create a virtual environment in which Flask is installed. Using a virtual environment avoids installing Flask into a global Python environment and gives you exact control over the libraries used in an application. A virtual environment also makes it easy to Create a requirements.txt file for the environment.
+
+  On your file system, create a project folder for this tutorial, such as hello_flask.
+
+  In that folder, use the following command (as appropriate to your computer) to create and activate a virtual environment named .venv based on your current interpreter:
+
+  # Linux
+  sudo apt-get install python3-venv    # If needed
+  python3 -m venv .venv
+  source .venv/bin/activate
+
+  Create a requirements.txt file for the environment
+  When you share your app code through source control or some other means, it doesn't make sense to copy all the files in a virtual environment because recipients can always recreate the environment themselves.
+  Accordingly, developers typically omit the virtual environment folder from source control and instead describe the app's dependencies using a requirements.txt file.
+  Although you can create the file by hand, you can also use the pip freeze command to generate the file based on the exact libraries installed in the activated environment:
+  With your chosen environment selected using the Python: Select Interpreter command, run the Terminal: Create New Terminal command (Ctrl+Shift+`)) to open a terminal with that environment activated.
+  In the terminal, run pip freeze > requirements.txt to create the requirements.txt file in your project folder.
+  Anyone (or any build server) that receives a copy of the project needs only to run the pip install -r requirements.txt command to reinstall the packages in the original environment. (The recipient still needs to create their own virtual environment, however.)
+  Note: pip freeze lists all the Python packages you have installed in the current environment, including packages you aren't currently using. The command also lists packages with exact version numbers, which you might want to convert to ranges for more flexibility in the future. For more information, see Requirements Files in the pip command documentation.
+  Refactor the project to support further development
+
+https://code.visualstudio.com/docs/python/settings-reference
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://docs.python.org/3/library/venv.html
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr | tail
+-rw-rw-r--  1 davidho davidho     330752 Dec  8 07:29 vscjava.vscode-java-dependency-0.21.2022111900.vsix
+-rw-rw-r--  1 davidho davidho   89146704 Dec  8 07:29 VisualStudioExptTeam.vscodeintellicode-1.2.29.vsix
+-rw-rw-r--  1 davidho davidho    2326602 Dec  8 07:33 vscjava.vscode-java-test-0.37.2022090902.vsix
+-rw-rw-r--  1 davidho davidho   15079228 Dec  8 07:34 ms-python.python-2022.21.13411007.vsix
+drwxr-x--- 45 davidho davidho       4096 Dec  9 04:29 ..
+-rw-rw-r--  1 davidho davidho   98009532 Dec  9 04:43 code_1.74.0-1670260027_amd64.deb
+-rw-rw-r--  1 davidho davidho  138902290 Dec  9 04:44 code-1.74.0-1670260117.el7.x86_64.rpm
+-rw-rw-r--  1 davidho davidho  138266029 Dec  9 04:45 code-stable-x64-1670260359.tar.gz
+-rw-rw-r--  1 davidho davidho    6031978 Dec  9 04:45 vscode_cli_alpine_x64_cli.tar.gz
+drwxr-xr-x  5 davidho davidho      16384 Dec  9 04:47 .
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr /opt
+total 88
+drwxr-xr-x  8 root    root    4096 Jan 20  1970 WebStorm-223.7571.168
+drwxr-xr-x  8 root    root    4096 Jan 20  1970 RubyMine-2022.3
+drwxr-xr-x  8 root    root    4096 Jan 20  1970 idea-IU-223.7571.182
+drwxr-xr-x  9 root    root    4096 Jan 20  1970 pycharm-2022.3
+drwxr-xr-x 20 root    root    4096 May 24  2022 ..
+drwxr-xr-x  8 root    root    4096 May 26  2022 RubyMine-2022.1.1
+drwxr-xr-x  8 root    root    4096 May 26  2022 idea-IU-221.5591.52
+drwxr-xr-x  3 root    root    4096 May 26  2022 google
+drwxr-xr-x  8 root    root    4096 Sep  8 15:44 eclipse-java-2022-09-R-linux-gtk-x86_64
+drwxr-xr-x  8 root    root    4096 Sep  8 15:54 eclipse-jee-2022-09-R-linux-gtk-x86_64
+drwxr-xr-x  8 root    root    4096 Sep 13 08:36 idea-IU-222.4167.29
+drwxr-xr-x  9     502 root    4096 Sep 15 07:57 sts-4.16.0.RELEASE
+drwxr-xr-x  8 root    root    4096 Oct  5 01:01 WebStorm-222.4345.14
+drwxr-xr-x  8 root    root    4096 Oct  5 01:01 RubyMine-2022.2.3
+drwxr-xr-x  8 root    root    4096 Oct  5 01:01 idea-IU-222.4345.14
+drwxr-xr-x  7 root    root    4096 Oct  5 01:01 idea-IC-222.4345.14
+drwxr-xr-x  8 root    root    4096 Oct 10 10:05 pycharm-community-2022.2.3
+drwxr-xr-x  9 root    root    4096 Oct 10 10:05 pycharm-2022.2.3
+drwxr-xr-x  5 davidho davidho 4096 Nov  1 11:44 VSCode-linux-x64-1.73.0
+drwxr-xr-x  5 davidho davidho 4096 Nov  8 22:55 VSCode-linux-x64-1.73.1
+drwxr-xr-x  4 root    root    4096 Nov 17 06:18 1Password
+drwxr-xr-x 22 root    root    4096 Dec  5 05:34 .
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ sudo tar xzf code-stable-x64-1670260359.tar.gz -C /opt
+[sudo] password for davidho: 
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ cd /opt
+davidho@dphxps17:/opt$ ls -latr
+total 92
+drwxr-xr-x  8 root    root    4096 Jan 20  1970 WebStorm-223.7571.168
+drwxr-xr-x  8 root    root    4096 Jan 20  1970 RubyMine-2022.3
+drwxr-xr-x  8 root    root    4096 Jan 20  1970 idea-IU-223.7571.182
+drwxr-xr-x  9 root    root    4096 Jan 20  1970 pycharm-2022.3
+drwxr-xr-x 20 root    root    4096 May 24  2022 ..
+drwxr-xr-x  8 root    root    4096 May 26  2022 RubyMine-2022.1.1
+drwxr-xr-x  8 root    root    4096 May 26  2022 idea-IU-221.5591.52
+drwxr-xr-x  3 root    root    4096 May 26  2022 google
+drwxr-xr-x  8 root    root    4096 Sep  8 15:44 eclipse-java-2022-09-R-linux-gtk-x86_64
+drwxr-xr-x  8 root    root    4096 Sep  8 15:54 eclipse-jee-2022-09-R-linux-gtk-x86_64
+drwxr-xr-x  8 root    root    4096 Sep 13 08:36 idea-IU-222.4167.29
+drwxr-xr-x  9     502 root    4096 Sep 15 07:57 sts-4.16.0.RELEASE
+drwxr-xr-x  8 root    root    4096 Oct  5 01:01 WebStorm-222.4345.14
+drwxr-xr-x  8 root    root    4096 Oct  5 01:01 RubyMine-2022.2.3
+drwxr-xr-x  8 root    root    4096 Oct  5 01:01 idea-IU-222.4345.14
+drwxr-xr-x  7 root    root    4096 Oct  5 01:01 idea-IC-222.4345.14
+drwxr-xr-x  8 root    root    4096 Oct 10 10:05 pycharm-community-2022.2.3
+drwxr-xr-x  9 root    root    4096 Oct 10 10:05 pycharm-2022.2.3
+drwxr-xr-x  5 davidho davidho 4096 Nov  1 11:44 VSCode-linux-x64-1.73.0
+drwxr-xr-x  5 davidho davidho 4096 Nov  8 22:55 VSCode-linux-x64-1.73.1
+drwxr-xr-x  4 root    root    4096 Nov 17 06:18 1Password
+drwxr-xr-x  5 davidho davidho 4096 Dec  5 11:47 VSCode-linux-x64
+drwxr-xr-x 23 root    root    4096 Dec  9 04:52 .
+davidho@dphxps17:/opt$ 
+davidho@dphxps17:/opt$ sudo mv VSCode-linux-x64 VSCode-linux-x64-1.74.0
+davidho@dphxps17:/opt$ 
+
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr | tail -25
+-rw-rw-r--  1 davidho davidho     285382 Dec  5 06:31 mysql-connector-python-8.0.31.tar.gz
+-rw-rw-r--  1 davidho davidho     366999 Dec  5 06:31 mysql-connector-python-8.0.31.zip
+-rw-rw-r--  1 davidho davidho  552970589 Dec  8 07:04 eclipse-jee-2022-12-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        178 Dec  8 07:08 eclipse-jee-2022-12-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  317456405 Dec  8 07:08 eclipse-java-2022-12-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        179 Dec  8 07:11 eclipse-java-2022-12-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  637138600 Dec  8 07:13 spring-tool-suite-4-4.17.0.RELEASE-e4.26.0-linux.gtk.x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho    1408494 Dec  8 07:17 Pivotal.vscode-boot-dev-pack-0.1.0.vsix
+-rw-rw-r--  1 davidho davidho   83136393 Dec  8 07:18 Pivotal.vscode-spring-boot-1.41.0.vsix
+-rw-rw-r--  1 davidho davidho     422485 Dec  8 07:19 vscjava.vscode-spring-initializr-0.11.2022090703.vsix
+-rw-rw-r--  1 davidho davidho   13688443 Dec  8 07:22 vscjava.vscode-spring-boot-dashboard-0.9.2022120800.vsix
+-rw-rw-r--  1 davidho davidho    2738036 Dec  8 07:23 vscjava.vscode-java-pack-0.25.2022112900.vsix
+-rw-rw-r--  1 davidho davidho  106420880 Dec  8 07:25 redhat.java-1.14.2022120803@linux-x64.vsix
+-rw-rw-r--  1 davidho davidho    3197070 Dec  8 07:26 vscjava.vscode-java-debug-0.47.2022112823.vsix
+-rw-rw-r--  1 davidho davidho   10635454 Dec  8 07:27 vscjava.vscode-maven-0.40.2022120603.vsix
+-rw-rw-r--  1 davidho davidho     330752 Dec  8 07:29 vscjava.vscode-java-dependency-0.21.2022111900.vsix
+-rw-rw-r--  1 davidho davidho   89146704 Dec  8 07:29 VisualStudioExptTeam.vscodeintellicode-1.2.29.vsix
+-rw-rw-r--  1 davidho davidho    2326602 Dec  8 07:33 vscjava.vscode-java-test-0.37.2022090902.vsix
+-rw-rw-r--  1 davidho davidho   15079228 Dec  8 07:34 ms-python.python-2022.21.13411007.vsix
+-rw-rw-r--  1 davidho davidho   98009532 Dec  9 04:43 code_1.74.0-1670260027_amd64.deb
+-rw-rw-r--  1 davidho davidho  138902290 Dec  9 04:44 code-1.74.0-1670260117.el7.x86_64.rpm
+-rw-rw-r--  1 davidho davidho  138266029 Dec  9 04:45 code-stable-x64-1670260359.tar.gz
+-rw-rw-r--  1 davidho davidho    6031978 Dec  9 04:45 vscode_cli_alpine_x64_cli.tar.gz
+drwxr-xr-x  5 davidho davidho      16384 Dec  9 04:47 .
+drwxr-x--- 45 davidho davidho       4096 Dec  9 04:58 ..
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ code --version
+1.74.0
+5235c6bb189b60b01b1f49062f4ffa42384f8c91
+x64
+davidho@dphxps17:~/Downloads$ code --list-extensions
+davidho@dphxps17:~/Downloads$ code --install-extension ms-python.python-2022.21.13411007.vsix
+Installing extensions...
+(node:16360) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+(Use `code --trace-deprecation ...` to show where the warning was created)
+Extension 'ms-python.python-2022.21.13411007.vsix' was successfully installed.
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ code --list-extensions
+ms-python.isort
+ms-python.python
+ms-python.vscode-pylance
+ms-toolsai.jupyter
+ms-toolsai.jupyter-keymap
+ms-toolsai.jupyter-renderers
+ms-toolsai.vscode-jupyter-cell-tags
+ms-toolsai.vscode-jupyter-slideshow
+davidho@dphxps17:~/Downloads$ code --list-extensions --show-versions
+ms-python.isort@2022.8.0
+ms-python.python@2022.21.13411007
+ms-python.vscode-pylance@2022.12.20
+ms-toolsai.jupyter@2022.11.1003412109
+ms-toolsai.jupyter-keymap@1.0.0
+ms-toolsai.jupyter-renderers@1.0.12
+ms-toolsai.vscode-jupyter-cell-tags@0.1.6
+ms-toolsai.vscode-jupyter-slideshow@0.1.5
+davidho@dphxps17:~/Downloads$ 
+
+davidho@dphxps17:~$ mkdir pythonprojs
+davidho@dphxps17:~$ cd pythonprojs/
+davidho@dphxps17:~/pythonprojs$ mkdir proj1
+davidho@dphxps17:~/pythonprojs$ code proj1
+davidho@dphxps17:~/pythonprojs$ 
+davidho@dphxps17:~/pythonprojs$ python -V
+Python 3.11.0
+davidho@dphxps17:~/pythonprojs$ python3 -V
+Python 3.11.0
+davidho@dphxps17:~/pythonprojs$ python3.11 -V
+Python 3.11.0
+davidho@dphxps17:~/pythonprojs$ 
+davidho@dphxps17:~/pythonprojs$ whereis python
+python: /home/davidho/.pyenv/shims/python
+davidho@dphxps17:~/pythonprojs$ 
+davidho@dphxps17:~/pythonprojs$ which python
+/home/davidho/.pyenv/shims/python
+davidho@dphxps17:~/pythonprojs$ 
+davidho@dphxps17:~/pythonprojs/proj1$ python3 -m venv .venv
+davidho@dphxps17:~/pythonprojs/proj1$ 
+davidho@dphxps17:~/pythonprojs/proj1$ ls -latr
+total 12
+drwxrwxr-x 3 davidho davidho 4096 Dec  9 05:10 ..
+drwxrwxr-x 5 davidho davidho 4096 Dec  9 05:27 .venv
+drwxrwxr-x 3 davidho davidho 4096 Dec  9 05:27 .
+davidho@dphxps17:~/pythonprojs/proj1$ 
+davidho@dphxps17:~/pythonprojs/proj1$ source .venv/bin/activate
+(.venv) davidho@dphxps17:~/pythonprojs/proj1$ 
+(.venv) davidho@dphxps17:~/pythonprojs/proj1$ du | head
+4	./.venv/include/python3.11
+8	./.venv/include
+44	./.venv/bin
+72	./.venv/lib/python3.11/site-packages/setuptools-65.5.0.dist-info
+12	./.venv/lib/python3.11/site-packages/setuptools/extern/__pycache__
+20	./.venv/lib/python3.11/site-packages/setuptools/extern
+436	./.venv/lib/python3.11/site-packages/setuptools/__pycache__
+124	./.venv/lib/python3.11/site-packages/setuptools/config/__pycache__
+244	./.venv/lib/python3.11/site-packages/setuptools/config/_validate_pyproject/__pycache__
+548	./.venv/lib/python3.11/site-packages/setuptools/config/_validate_pyproject
+(.venv) davidho@dphxps17:~/pythonprojs/proj1$ 
+(.venv) davidho@dphxps17:~/pythonprojs/proj1$ pip freeze
+(.venv) davidho@dphxps17:~/pythonprojs/proj1$ 
+(.venv) davidho@dphxps17:~/pythonprojs/proj1$ python3 -m pip install PyMySQL
+Collecting PyMySQL
+  Using cached PyMySQL-1.0.2-py3-none-any.whl (43 kB)
+Installing collected packages: PyMySQL
+Successfully installed PyMySQL-1.0.2
+
+[notice] A new release of pip available: 22.3 -> 22.3.1
+[notice] To update, run: pip install --upgrade pip
+(.venv) davidho@dphxps17:~/pythonprojs/proj1$ 
+(.venv) davidho@dphxps17:~/pythonprojs/proj1$ pip freeze
+PyMySQL==1.0.2
+(.venv) davidho@dphxps17:~/pythonprojs/proj1$ 
+(.venv) davidho@dphxps17:~/pythonprojs/proj1$ python3 -m pip install PyMySQL[rsa]
+Requirement already satisfied: PyMySQL[rsa] in ./.venv/lib/python3.11/site-packages (1.0.2)
+Collecting cryptography
+  Using cached cryptography-38.0.4-cp36-abi3-manylinux_2_28_x86_64.whl (4.2 MB)
+Collecting cffi>=1.12
+  Using cached cffi-1.15.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (462 kB)
+Collecting pycparser
+  Using cached pycparser-2.21-py2.py3-none-any.whl (118 kB)
+Installing collected packages: pycparser, cffi, cryptography
+Successfully installed cffi-1.15.1 cryptography-38.0.4 pycparser-2.21
+
+[notice] A new release of pip available: 22.3 -> 22.3.1
+[notice] To update, run: pip install --upgrade pip
+(.venv) davidho@dphxps17:~/pythonprojs/proj1$ 
+(.venv) davidho@dphxps17:~/pythonprojs/proj1$ pip freeze
+cffi==1.15.1
+cryptography==38.0.4
+pycparser==2.21
+PyMySQL==1.0.2
+(.venv) davidho@dphxps17:~/pythonprojs/proj1$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://pypi.org/project/PyMySQL/
+PyMySQL 1.0.2
+pip install PyMySQL
+
+Installation
+Package is uploaded on PyPI.
+You can install it with pip:
+$ python3 -m pip install PyMySQL
+To use “sha256_password” or “caching_sha2_password” for authenticate, you need to install additional dependency:
+$ python3 -m pip install PyMySQL[rsa]
+To use MariaDB’s “ed25519” authentication method, you need to install additional dependency:
+$ python3 -m pip install PyMySQL[ed25519]
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+import pymysql.cursors
+
+# Connect to the database
+connection = pymysql.connect(host='localhost',
+                             user='dphpyuser',
+                             password='dphpyuser',
+                             database='dphpyapp1',
+                             cursorclass=pymysql.cursors.DictCursor)
+
+with connection:
+    with connection.cursor() as cursor:
+        # Create a new record
+        sql = "INSERT INTO `users` (`email`, `password`) VALUES (%s, %s)"
+        cursor.execute(sql, ('webmaster@python.org', 'very-secret'))
+
+    # connection is not autocommit by default. So you must commit to save
+    # your changes.
+    connection.commit()
+
+    with connection.cursor() as cursor:
+        # Read a single record
+        sql = "SELECT `id`, `password` FROM `users` WHERE `email`=%s"
+        cursor.execute(sql, ('webmaster@python.org',))
+        result = cursor.fetchone()
+        print(result)
+
+pyenv shell 3.11.0
+/home/davidho/.pyenv/versions/3.11.0/bin/python /home/davidho/pythonprojs/proj1/app.py
+davidho@dphxps17:~/pythonprojs/proj1$ pyenv shell 3.11.0
+davidho@dphxps17:~/pythonprojs/proj1$ /home/davidho/.pyenv/versions/3.11.0/bin/python /home/davidho/pythonprojs/proj1/app.py
+{'id': 1, 'password': 'very-secret'}
+davidho@dphxps17:~/pythonprojs/proj1$ /home/davidho/.pyenv/versions/3.11.0/bin/python /home/davidho/pythonprojs/proj1/app.py
+{'id': 1, 'password': 'very-secret'}
+davidho@dphxps17:~/pythonprojs/proj1$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://pypi.org/project/SQLAlchemy/
+SQLAlchemy 1.4.44
+pip install SQLAlchemy
+
+https://www.sqlalchemy.org/
+https://docs.sqlalchemy.org/en/14/
+https://docs.sqlalchemy.org/en/14/orm/quickstart.html
+https://docs.sqlalchemy.org/en/14/orm/tutorial.html
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+(.venv) davidho@dphxps17:~/pythonprojs/proj2$ pip freeze
+(.venv) davidho@dphxps17:~/pythonprojs/proj2$ 
+(.venv) davidho@dphxps17:~/pythonprojs/proj2$ pip install SQLAlchemy
+Collecting SQLAlchemy
+  Using cached SQLAlchemy-1.4.44-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.6 MB)
+Collecting greenlet!=0.4.17
+  Using cached greenlet-2.0.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (545 kB)
+Installing collected packages: greenlet, SQLAlchemy
+Successfully installed SQLAlchemy-1.4.44 greenlet-2.0.1
+
+[notice] A new release of pip available: 22.3 -> 22.3.1
+[notice] To update, run: pip install --upgrade pip
+(.venv) davidho@dphxps17:~/pythonprojs/proj2$ 
+(.venv) davidho@dphxps17:~/pythonprojs/proj2$ pip freeze
+greenlet==2.0.1
+SQLAlchemy==1.4.44
+(.venv) davidho@dphxps17:~/pythonprojs/proj2$ 
+(.venv) davidho@dphxps17:~/pythonprojs/proj2$ code .
+(.venv) davidho@dphxps17:~/pythonprojs/proj2$ 
+(.venv) davidho@dphxps17:~/pythonprojs/proj2$ python3 -m pip install PyMySQL
+Collecting PyMySQL
+  Using cached PyMySQL-1.0.2-py3-none-any.whl (43 kB)
+Installing collected packages: PyMySQL
+Successfully installed PyMySQL-1.0.2
+
+[notice] A new release of pip available: 22.3 -> 22.3.1
+[notice] To update, run: pip install --upgrade pip
+(.venv) davidho@dphxps17:~/pythonprojs/proj2$ 
+(.venv) davidho@dphxps17:~/pythonprojs/proj2$ python3 -m pip install PyMySQL[rsa]
+Requirement already satisfied: PyMySQL[rsa] in ./.venv/lib/python3.11/site-packages (1.0.2)
+Collecting cryptography
+  Using cached cryptography-38.0.4-cp36-abi3-manylinux_2_28_x86_64.whl (4.2 MB)
+Collecting cffi>=1.12
+  Using cached cffi-1.15.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (462 kB)
+Collecting pycparser
+  Using cached pycparser-2.21-py2.py3-none-any.whl (118 kB)
+Installing collected packages: pycparser, cffi, cryptography
+Successfully installed cffi-1.15.1 cryptography-38.0.4 pycparser-2.21
+
+[notice] A new release of pip available: 22.3 -> 22.3.1
+[notice] To update, run: pip install --upgrade pip
+(.venv) davidho@dphxps17:~/pythonprojs/proj2$ 
+(.venv) davidho@dphxps17:~/pythonprojs/proj2$ pip freeze
+cffi==1.15.1
+cryptography==38.0.4
+greenlet==2.0.1
+pycparser==2.21
+PyMySQL==1.0.2
+SQLAlchemy==1.4.44
+(.venv) davidho@dphxps17:~/pythonprojs/proj2$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://www.tutorialspoint.com/sqlalchemy/index.htm
+https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_introduction.htm
+
+  The following are the dialects included −
+
+  Firebird
+  Microsoft SQL Server
+  MySQL
+  Oracle
+  PostgreSQL
+  SQLite
+  Sybase
+
+https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_core_expression_language.htm
+https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_core_connecting_to_database.htm
+https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_core_creating_table.htm
+https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_core_sql_expressions.htm
+https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_core_executing_expression.htm
+https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_core_selecting_rows.htm
+https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_core_using_textual_sql.htm
+https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_core_using_aliases.htm
+https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_core_using_update_expression.htm
+https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_core_using_delete_expression.htm
+https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_core_using_multiple_tables.htm
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+# from sqlalchemy import create_engine
+
+# For a MySQL database, use the below command −
+# engine = create_engine("mysql://user:pwd@localhost/college",echo = True)
+
+# To specifically mention DB-API to be used for connection, the URL string takes the form as follows −
+# dialect[+driver]://user:password@host/dbname
+
+# For example, if you are using PyMySQL driver with MySQL, use the following command −
+# mysql+pymysql://<username>:<password>@<host>/<dbname>
+
+from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String
+# engine = create_engine('sqlite:///college.db', echo = True)
+engine = create_engine("mysql+pymysql://dphpyuser:dphpyuser@localhost/dphpyapp1",echo = True)
+meta = MetaData()
+
+students = Table(
+   'students', meta, 
+   Column('id', Integer, primary_key = True), 
+   Column('name', String), 
+   Column('lastname', String),
+)
+meta.create_all(engine)
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+source /home/davidho/pythonprojs/proj2/.venv/bin/activate
+davidho@dphxps17:~/pythonprojs/proj2$ source /home/davidho/pythonprojs/proj2/.venv/bin/activate
+(.venv) davidho@dphxps17:~/pythonprojs/proj2$ /home/davidho/pythonprojs/proj2/.venv/bin/python /home/davidho/pythonprojs/proj2/app.py
+Traceback (most recent call last):
+  File "/home/davidho/pythonprojs/proj2/app.py", line 16, in <module>
+    engine = create_engine("mysql://dphpyuser:dphpyuser@localhost/dphpyapp1",echo = True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in create_engine
+  File "/home/davidho/pythonprojs/proj2/.venv/lib/python3.11/site-packages/sqlalchemy/util/deprecations.py", line 309, in warned
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/davidho/pythonprojs/proj2/.venv/lib/python3.11/site-packages/sqlalchemy/engine/create.py", line 548, in create_engine
+    dbapi = dialect_cls.dbapi(**dbapi_args)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/davidho/pythonprojs/proj2/.venv/lib/python3.11/site-packages/sqlalchemy/dialects/mysql/mysqldb.py", line 163, in dbapi
+    return __import__("MySQLdb")
+           ^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'MySQLdb'
+(.venv) davidho@dphxps17:~/pythonprojs/proj2$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+source /home/davidho/pythonprojs/proj2/.venv/bin/activate
+davidho@dphxps17:~/pythonprojs/proj2$ source /home/davidho/pythonprojs/proj2/.venv/bin/activate
+(.venv) davidho@dphxps17:~/pythonprojs/proj2$ /home/davidho/pythonprojs/proj2/.venv/bin/python /home/davidho/pythonprojs/proj2/app.py
+2022-12-09 07:01:24,001 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2022-12-09 07:01:24,001 INFO sqlalchemy.engine.Engine [raw sql] {}
+2022-12-09 07:01:24,002 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2022-12-09 07:01:24,002 INFO sqlalchemy.engine.Engine [raw sql] {}
+2022-12-09 07:01:24,002 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2022-12-09 07:01:24,002 INFO sqlalchemy.engine.Engine [raw sql] {}
+2022-12-09 07:01:24,003 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2022-12-09 07:01:24,003 INFO sqlalchemy.engine.Engine SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = %(table_schema)s AND table_name = %(table_name)s
+2022-12-09 07:01:24,004 INFO sqlalchemy.engine.Engine [generated in 0.00016s] {'table_schema': 'dphpyapp1', 'table_name': 'students'}
+2022-12-09 07:01:24,007 INFO sqlalchemy.engine.Engine ROLLBACK
+Traceback (most recent call last):
+  File "/home/davidho/pythonprojs/proj2/.venv/lib/python3.11/site-packages/sqlalchemy/sql/compiler.py", line 4444, in visit_create_table
+    processed = self.process(
+                ^^^^^^^^^^^^^
+  File "/home/davidho/pythonprojs/proj2/.venv/lib/python3.11/site-packages/sqlalchemy/sql/compiler.py", line 498, in process
+    return obj._compiler_dispatch(self, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/davidho/pythonprojs/proj2/.venv/lib/python3.11/site-packages/sqlalchemy/sql/visitors.py", line 82, in _compiler_dispatch
+    return meth(self, **kw)
+           ^^^^^^^^^^^^^^^^
+  File "/home/davidho/pythonprojs/proj2/.venv/lib/python3.11/site-packages/sqlalchemy/sql/compiler.py", line 4478, in visit_create_column
+    text = self.get_column_specification(column, first_pk=first_pk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/davidho/pythonprojs/proj2/.venv/lib/python3.11/site-packages/sqlalchemy/dialects/mysql/base.py", line 1714, in get_column_specification
+    self.dialect.type_compiler.process(
+  File "/home/davidho/pythonprojs/proj2/.venv/lib/python3.11/site-packages/sqlalchemy/sql/compiler.py", line 532, in process
+    return type_._compiler_dispatch(self, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/davidho/pythonprojs/proj2/.venv/lib/python3.11/site-packages/sqlalchemy/sql/visitors.py", line 82, in _compiler_dispatch
+    return meth(self, **kw)
+           ^^^^^^^^^^^^^^^^
+  File "/home/davidho/pythonprojs/proj2/.venv/lib/python3.11/site-packages/sqlalchemy/sql/compiler.py", line 5010, in visit_string
+    return self.visit_VARCHAR(type_, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/davidho/pythonprojs/proj2/.venv/lib/python3.11/site-packages/sqlalchemy/dialects/mysql/base.py", line 2214, in visit_VARCHAR
+    raise exc.CompileError(
+sqlalchemy.exc.CompileError: VARCHAR requires a length on dialect mysql
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/davidho/pythonprojs/proj2/app.py", line 25, in <module>
+    meta.create_all(engine)
+  File "/home/davidho/pythonprojs/proj2/.venv/lib/python3.11/site-packages/sqlalchemy/sql/schema.py", line 4930, in create_all
+    bind._run_ddl_visitor(
+  File "/home/davidho/pythonprojs/proj2/.venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 3228, in _run_ddl_visitor
+    conn._run_ddl_visitor(visitorcallable, element, **kwargs)
+  File "/home/davidho/pythonprojs/proj2/.venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2211, in _run_ddl_visitor
+    visitorcallable(self.dialect, self, **kwargs).traverse_single(element)
+  File "/home/davidho/pythonprojs/proj2/.venv/lib/python3.11/site-packages/sqlalchemy/sql/visitors.py", line 524, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/home/davidho/pythonprojs/proj2/.venv/lib/python3.11/site-packages/sqlalchemy/sql/ddl.py", line 851, in visit_metadata
+    self.traverse_single(
+  File "/home/davidho/pythonprojs/proj2/.venv/lib/python3.11/site-packages/sqlalchemy/sql/visitors.py", line 524, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/home/davidho/pythonprojs/proj2/.venv/lib/python3.11/site-packages/sqlalchemy/sql/ddl.py", line 895, in visit_table
+    self.connection.execute(
+  File "/home/davidho/pythonprojs/proj2/.venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1380, in execute
+    return meth(self, multiparams, params, _EMPTY_EXECUTION_OPTS)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/davidho/pythonprojs/proj2/.venv/lib/python3.11/site-packages/sqlalchemy/sql/ddl.py", line 80, in _execute_on_connection
+    return connection._execute_ddl(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/davidho/pythonprojs/proj2/.venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1469, in _execute_ddl
+    compiled = ddl.compile(
+               ^^^^^^^^^^^^
+  File "/home/davidho/pythonprojs/proj2/.venv/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 503, in compile
+    return self._compiler(dialect, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/davidho/pythonprojs/proj2/.venv/lib/python3.11/site-packages/sqlalchemy/sql/ddl.py", line 32, in _compiler
+    return dialect.ddl_compiler(dialect, self, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/davidho/pythonprojs/proj2/.venv/lib/python3.11/site-packages/sqlalchemy/sql/compiler.py", line 463, in __init__
+    self.string = self.process(self.statement, **compile_kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/davidho/pythonprojs/proj2/.venv/lib/python3.11/site-packages/sqlalchemy/sql/compiler.py", line 498, in process
+    return obj._compiler_dispatch(self, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/davidho/pythonprojs/proj2/.venv/lib/python3.11/site-packages/sqlalchemy/sql/visitors.py", line 82, in _compiler_dispatch
+    return meth(self, **kw)
+           ^^^^^^^^^^^^^^^^
+  File "/home/davidho/pythonprojs/proj2/.venv/lib/python3.11/site-packages/sqlalchemy/sql/compiler.py", line 4454, in visit_create_table
+    util.raise_(
+  File "/home/davidho/pythonprojs/proj2/.venv/lib/python3.11/site-packages/sqlalchemy/util/compat.py", line 210, in raise_
+    raise exception
+sqlalchemy.exc.CompileError: (in table 'students', column 'name'): VARCHAR requires a length on dialect mysql
+(.venv) davidho@dphxps17:~/pythonprojs/proj2$ 
+
+(.venv) davidho@dphxps17:~/pythonprojs/proj2$ date
+Fri Dec  9 07:12:00 AM EST 2022
+(.venv) davidho@dphxps17:~/pythonprojs/proj2$ 
+
