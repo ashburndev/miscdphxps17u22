@@ -1,0 +1,734 @@
+Wed Dec 14 07:26:11 AM EST 2022
+
+davidho@dphxps17:~$ date
+Wed Dec 14 07:25:58 AM EST 2022
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date > stuff-20221214.txt
+davidho@dphxps17:~$ code   stuff-20221214.txt
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://start.spring.io/
+
+davidho@dphxps17:~/sbootprojs$ date
+Wed Dec 14 07:29:07 AM EST 2022
+davidho@dphxps17:~/sbootprojs$ pwd -P
+/home/davidho/sbootprojs
+davidho@dphxps17:~/sbootprojs$ 
+davidho@dphxps17:~/sbootprojs$ ls -latr
+total 200
+-rw-rw-r--  1 davidho davidho 64423 Oct 21 07:36 sbapp1grajarj11.zip
+-rw-rw-r--  1 davidho davidho 64993 Nov  8 05:45 sbapp2.zip
+-rw-rw-r--  1 davidho davidho 65324 Nov 25 05:17 sbapp3.zip
+drwxr-x--- 47 davidho davidho  4096 Dec 14 07:28 ..
+drwxrwxr-x  2 davidho davidho  4096 Dec 14 07:29 .
+davidho@dphxps17:~/sbootprojs$ 
+davidho@dphxps17:~/sbootprojs$ 7z l sbapp2.zip 
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,16 CPUs 11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz (806D1),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 64993 bytes (64 KiB)
+
+Listing archive: sbapp2.zip
+
+--
+Path = sbapp2.zip
+Type = zip
+Physical Size = 64993
+
+   Date      Time    Attr         Size   Compressed  Name
+------------------- ----- ------------ ------------  ------------------------
+2022-11-08 10:26:00 D....            0            2  sbapp2
+2022-11-08 10:26:00 .....         8188         3519  sbapp2/gradlew
+2022-11-08 10:26:00 .....         2838         1195  sbapp2/gradlew.bat
+2022-11-08 10:26:00 .....           28           30  sbapp2/settings.gradle
+2022-11-08 10:26:00 D....            0            2  sbapp2/src
+2022-11-08 10:26:00 D....            0            2  sbapp2/src/main
+2022-11-08 10:26:00 D....            0            2  sbapp2/src/main/resources
+2022-11-08 10:26:00 D....            0            2  sbapp2/src/main/resources/templates
+2022-11-08 10:26:00 D....            0            2  sbapp2/src/main/resources/static
+2022-11-08 10:26:00 .....            1            3  sbapp2/src/main/resources/application.properties
+2022-11-08 10:26:00 D....            0            2  sbapp2/src/main/java
+2022-11-08 10:26:00 D....            0            2  sbapp2/src/main/java/ashburncode
+2022-11-08 10:26:00 D....            0            2  sbapp2/src/main/java/ashburncode/sbapp2
+2022-11-08 10:26:00 .....          329          176  sbapp2/src/main/java/ashburncode/sbapp2/Sbapp2grajarj11Application.java
+2022-11-08 10:26:00 D....            0            2  sbapp2/src/test
+2022-11-08 10:26:00 D....            0            2  sbapp2/src/test/java
+2022-11-08 10:26:00 D....            0            2  sbapp2/src/test/java/ashburncode
+2022-11-08 10:26:00 D....            0            2  sbapp2/src/test/java/ashburncode/sbapp2
+2022-11-08 10:26:00 .....          219          155  sbapp2/src/test/java/ashburncode/sbapp2/Sbapp2grajarj11ApplicationTests.java
+2022-11-08 10:26:00 .....          444          242  sbapp2/.gitignore
+2022-11-08 10:26:00 .....         1614          602  sbapp2/HELP.md
+2022-11-08 10:26:00 .....          705          314  sbapp2/build.gradle
+2022-11-08 10:26:00 D....            0            2  sbapp2/gradle
+2022-11-08 10:26:00 D....            0            2  sbapp2/gradle/wrapper
+2022-11-08 10:26:00 .....          202          124  sbapp2/gradle/wrapper/gradle-wrapper.properties
+2022-11-08 10:26:00 .....        60756        54679  sbapp2/gradle/wrapper/gradle-wrapper.jar
+------------------- ----- ------------ ------------  ------------------------
+2022-11-08 10:26:00              75324        61069  11 files, 15 folders
+davidho@dphxps17:~/sbootprojs$ 
+davidho@dphxps17:~/sbootprojs$ 7z l sbapp3.zip 
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,16 CPUs 11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz (806D1),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 65324 bytes (64 KiB)
+
+Listing archive: sbapp3.zip
+
+--
+Path = sbapp3.zip
+Type = zip
+Physical Size = 65324
+
+   Date      Time    Attr         Size   Compressed  Name
+------------------- ----- ------------ ------------  ------------------------
+2022-11-25 10:17:24 D....            0            2  sbapp3
+2022-11-25 10:17:24 .....         8188         3519  sbapp3/gradlew
+2022-11-25 10:17:24 D....            0            2  sbapp3/gradle
+2022-11-25 10:17:24 D....            0            2  sbapp3/gradle/wrapper
+2022-11-25 10:17:24 .....          202          124  sbapp3/gradle/wrapper/gradle-wrapper.properties
+2022-11-25 10:17:24 .....        60756        54679  sbapp3/gradle/wrapper/gradle-wrapper.jar
+2022-11-25 10:17:24 D....            0            2  sbapp3/src
+2022-11-25 10:17:24 D....            0            2  sbapp3/src/test
+2022-11-25 10:17:24 D....            0            2  sbapp3/src/test/java
+2022-11-25 10:17:24 D....            0            2  sbapp3/src/test/java/com
+2022-11-25 10:17:24 D....            0            2  sbapp3/src/test/java/com/ashburncode
+2022-11-25 10:17:24 D....            0            2  sbapp3/src/test/java/com/ashburncode/sbapp3
+2022-11-25 10:17:24 .....          223          159  sbapp3/src/test/java/com/ashburncode/sbapp3/Sbapp3grajarj17ApplicationTests.java
+2022-11-25 10:17:24 D....            0            2  sbapp3/src/main
+2022-11-25 10:17:24 D....            0            2  sbapp3/src/main/resources
+2022-11-25 10:17:24 D....            0            2  sbapp3/src/main/resources/static
+2022-11-25 10:17:24 D....            0            2  sbapp3/src/main/resources/templates
+2022-11-25 10:17:24 .....            1            3  sbapp3/src/main/resources/application.properties
+2022-11-25 10:17:24 D....            0            2  sbapp3/src/main/java
+2022-11-25 10:17:24 D....            0            2  sbapp3/src/main/java/com
+2022-11-25 10:17:24 D....            0            2  sbapp3/src/main/java/com/ashburncode
+2022-11-25 10:17:24 D....            0            2  sbapp3/src/main/java/com/ashburncode/sbapp3
+2022-11-25 10:17:24 .....          333          180  sbapp3/src/main/java/com/ashburncode/sbapp3/Sbapp3grajarj17Application.java
+2022-11-25 10:17:24 .....           28           30  sbapp3/settings.gradle
+2022-11-25 10:17:24 .....          700          305  sbapp3/build.gradle
+2022-11-25 10:17:24 .....         2838         1195  sbapp3/gradlew.bat
+2022-11-25 10:17:24 .....          444          242  sbapp3/.gitignore
+2022-11-25 10:17:24 .....         1614          598  sbapp3/HELP.md
+------------------- ----- ------------ ------------  ------------------------
+2022-11-25 10:17:24              75327        61068  11 files, 17 folders
+davidho@dphxps17:~/sbootprojs$ 
+davidho@dphxps17:~/sbootprojs$ ls -latr
+total 208
+-rw-rw-r--  1 davidho davidho 64423 Oct 21 07:36 sbapp1grajarj11.zip
+-rw-rw-r--  1 davidho davidho 64993 Nov  8 05:45 sbapp2.zip
+drwxr-xr-x  4 davidho davidho  4096 Nov  8 10:26 sbapp2
+-rw-rw-r--  1 davidho davidho 65324 Nov 25 05:17 sbapp3.zip
+drwxr-xr-x  4 davidho davidho  4096 Nov 25 10:17 sbapp3
+drwxr-x--- 47 davidho davidho  4096 Dec 14 07:28 ..
+drwxrwxr-x  4 davidho davidho  4096 Dec 14 07:33 .
+davidho@dphxps17:~/sbootprojs$ 
+davidho@dphxps17:~/sbootprojs$ sbapp2/gradlew --version
+
+------------------------------------------------------------
+Gradle 7.5.1
+------------------------------------------------------------
+
+Build time:   2022-08-05 21:17:56 UTC
+Revision:     d1daa0cbf1a0103000b71484e1dbfe096e095918
+
+Kotlin:       1.6.21
+Groovy:       3.0.10
+Ant:          Apache Ant(TM) version 1.10.11 compiled on July 10 2021
+JVM:          17.0.5 (Azul Systems, Inc. 17.0.5+8-LTS)
+OS:           Linux 5.15.0-56-generic amd64
+
+davidho@dphxps17:~/sbootprojs$ 
+davidho@dphxps17:~/sbootprojs$ sbapp3/gradlew --version
+
+------------------------------------------------------------
+Gradle 7.5.1
+------------------------------------------------------------
+
+Build time:   2022-08-05 21:17:56 UTC
+Revision:     d1daa0cbf1a0103000b71484e1dbfe096e095918
+
+Kotlin:       1.6.21
+Groovy:       3.0.10
+Ant:          Apache Ant(TM) version 1.10.11 compiled on July 10 2021
+JVM:          17.0.5 (Azul Systems, Inc. 17.0.5+8-LTS)
+OS:           Linux 5.15.0-56-generic amd64
+
+davidho@dphxps17:~/sbootprojs$ 
+davidho@dphxps17:~/sbootprojs$ ls -latr sbapp2
+total 44
+drwxr-xr-x 4 davidho davidho 4096 Nov  8 10:26 src
+-rw-r--r-- 1 davidho davidho   28 Nov  8 10:26 settings.gradle
+-rw-r--r-- 1 davidho davidho 1614 Nov  8 10:26 HELP.md
+-rw-r--r-- 1 davidho davidho 2838 Nov  8 10:26 gradlew.bat
+-rwxr-xr-x 1 davidho davidho 8188 Nov  8 10:26 gradlew
+drwxr-xr-x 3 davidho davidho 4096 Nov  8 10:26 gradle
+-rw-r--r-- 1 davidho davidho  444 Nov  8 10:26 .gitignore
+-rw-r--r-- 1 davidho davidho  705 Nov  8 10:26 build.gradle
+drwxr-xr-x 4 davidho davidho 4096 Nov  8 10:26 .
+drwxrwxr-x 4 davidho davidho 4096 Dec 14 07:33 ..
+davidho@dphxps17:~/sbootprojs$ 
+davidho@dphxps17:~/sbootprojs$ ls -latr sbapp3
+total 44
+drwxr-xr-x 4 davidho davidho 4096 Nov 25 10:17 src
+-rw-r--r-- 1 davidho davidho   28 Nov 25 10:17 settings.gradle
+-rw-r--r-- 1 davidho davidho 1614 Nov 25 10:17 HELP.md
+-rw-r--r-- 1 davidho davidho 2838 Nov 25 10:17 gradlew.bat
+-rwxr-xr-x 1 davidho davidho 8188 Nov 25 10:17 gradlew
+drwxr-xr-x 3 davidho davidho 4096 Nov 25 10:17 gradle
+-rw-r--r-- 1 davidho davidho  444 Nov 25 10:17 .gitignore
+-rw-r--r-- 1 davidho davidho  700 Nov 25 10:17 build.gradle
+drwxr-xr-x 4 davidho davidho 4096 Nov 25 10:17 .
+drwxrwxr-x 4 davidho davidho 4096 Dec 14 07:33 ..
+davidho@dphxps17:~/sbootprojs$ 
+davidho@dphxps17:~/sbootprojs$ 
+
+cd ~/sbootprojs/sbapp2
+cp -p application.properties application.properties-orig
+code .
+./gradlew bootRun
+
+cd ~/sbootprojs/sbapp2
+cp -p application.properties application.properties-orig
+code .
+./gradlew bootRun
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+spring.datasource.url=jdbc:mysql://localhost:3306/db_example
+spring.datasource.username=springuser
+spring.datasource.password=ThePassword
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+DROP DATABASE IF EXISTS sbapp2db;
+DROP DATABASE IF EXISTS sbapp3db;
+
+DROP USER 'sbuser'@'localhost';
+CREATE USER 'sbuser'@'localhost' IDENTIFIED BY 'sbuserpw';
+
+CREATE DATABASE sbapp2db;
+GRANT ALL PRIVILEGES ON sbapp2db.* TO 'sbuser'@'localhost' WITH GRANT OPTION;
+
+CREATE DATABASE sbapp3db;
+GRANT ALL PRIVILEGES ON sbapp3db.* TO 'sbuser'@'localhost' WITH GRANT OPTION;
+
+CREATE USER 'springuser'@'localhost' IDENTIFIED BY 'ThePassword';
+CREATE DATABASE db_example;
+GRANT ALL PRIVILEGES ON db_example.* TO 'springuser'@'localhost' WITH GRANT OPTION;
+
+spring.datasource.url=jdbc:mysql://localhost:3306/sbapp2db
+spring.datasource.username=sbuser
+spring.datasource.password=sbuserpw
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| depot2_development |
+| dphpyapp1          |
+| dphpyapp2          |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| wire2_development  |
+| wire3_development  |
+| wire4_development  |
+| wire5_development  |
+| wire6_development  |
++--------------------+
+12 rows in set (0.00 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| db_example         |
+| depot2_development |
+| dphpyapp1          |
+| dphpyapp2          |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sbapp2db           |
+| sbapp3db           |
+| sys                |
+| wire2_development  |
+| wire3_development  |
+| wire4_development  |
+| wire5_development  |
+| wire6_development  |
++--------------------+
+15 rows in set (0.00 sec)
+
+mysql> 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ find . -name sbapp3 -print
+./sbootprojs/sbapp3
+./sbootprojs/sbapp3/src/test/java/com/ashburncode/sbapp3
+./sbootprojs/sbapp3/src/main/java/com/ashburncode/sbapp3
+./javaprojs/sbapp3
+./javaprojs/sbapp3/build/classes/java/test/com/ashburncode/sbapp3
+./javaprojs/sbapp3/build/classes/java/main/com/ashburncode/sbapp3
+./javaprojs/sbapp3/src/test/java/com/ashburncode/sbapp3
+./javaprojs/sbapp3/src/main/java/com/ashburncode/sbapp3
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+what was the origin of the application.properties file below (where did I find it?)
+... see /home/davidho/Documents/stuff-20221125.txt ...
+
+cd ~/javaprojs/sbapp2
+find . -name application.properties -print
+find . -name application.properties -exec ls -la {} \;
+./gradlew bootRun
+
+cd ~/javaprojs/sbapp3
+find . -name application.properties -print
+find . -name application.properties -exec ls -la {} \;
+./gradlew bootRun
+
+find . -type f -exec ls -la {} \;
+find . -type f -exec ls -la {} \; | grep -v git
+
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+davidho@dphxps17:~/javaprojs/sbapp3$ cat ./src/main/resources/application.properties
+spring.jpa.hibernate.ddl-auto=update
+# spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/db_example
+spring.datasource.url=jdbc:mysql://localhost:3306/db_example
+spring.datasource.username=springuser
+spring.datasource.password=ThePassword
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+#spring.jpa.show-sql: true
+
+# Caused by: org.hibernate.HibernateException: Unable to determine Dialect without JDBC metadata (please set 'javax.persistence.jdbc.url', 'hibernate.connection.url', or 'hibernate.dialect')
+# hibernate.connection.url=jdbc:mysql://localhost:3306/db_example
+# hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+cd ~/javaprojs/sbapp3
+find . -name application.properties -print
+find . -name application.properties -exec ls -la {} \;
+./gradlew bootRun
+./build/resources/main/application.properties
+./src/main/resources/application.properties
+-rw-r--r-- 1 davidho davidho 731 Nov 25 06:48 ./build/resources/main/application.properties
+-rw-r--r-- 1 davidho davidho 731 Nov 25 06:48 ./src/main/resources/application.properties
+
+> Task :bootRun
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.0.0)
+
+2022-12-14T08:28:06.684-05:00  INFO 25443 --- [           main] c.a.sbapp3.Sbapp3grajarj17Application    : Starting Sbapp3grajarj17Application using Java 17.0.5 with PID 25443 (/home/davidho/javaprojs/sbapp3/build/classes/java/main started by davidho in /home/davidho/javaprojs/sbapp3)
+2022-12-14T08:28:06.686-05:00  INFO 25443 --- [           main] c.a.sbapp3.Sbapp3grajarj17Application    : No active profile set, falling back to 1 default profile: "default"
+2022-12-14T08:28:06.956-05:00  INFO 25443 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-14T08:28:06.966-05:00  INFO 25443 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+2022-12-14T08:28:07.203-05:00  INFO 25443 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-14T08:28:07.208-05:00  INFO 25443 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-14T08:28:07.209-05:00  INFO 25443 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.1]
+2022-12-14T08:28:07.250-05:00  INFO 25443 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-14T08:28:07.251-05:00  INFO 25443 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 541 ms
+2022-12-14T08:28:07.333-05:00  INFO 25443 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-14T08:28:07.364-05:00  INFO 25443 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.5.Final
+2022-12-14T08:28:07.451-05:00  WARN 25443 --- [           main] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2022-12-14T08:28:07.509-05:00  INFO 25443 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-14T08:28:07.681-05:00  INFO 25443 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@35fa450f
+2022-12-14T08:28:07.682-05:00  INFO 25443 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-14T08:28:07.692-05:00  INFO 25443 --- [           main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-12-14T08:28:07.692-05:00  WARN 25443 --- [           main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2022-12-14T08:28:07.828-05:00  INFO 25443 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-14T08:28:07.833-05:00  INFO 25443 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-14T08:28:07.851-05:00  WARN 25443 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-14T08:28:08.013-05:00  WARN 25443 --- [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 91206074-996e-4eb2-950f-ce7c43916351
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2022-12-14T08:28:08.062-05:00  INFO 25443 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@24e1e90a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7d95166a, org.springframework.security.web.context.SecurityContextHolderFilter@77998ea7, org.springframework.security.web.header.HeaderWriterFilter@37fca349, org.springframework.security.web.csrf.CsrfFilter@405603b6, org.springframework.security.web.authentication.logout.LogoutFilter@6ab50d1c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5a1c7619, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@bb5f9d, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@18b3db6e, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@199806aa, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@36638b59, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@774013dc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1feb586d, org.springframework.security.web.access.ExceptionTranslationFilter@71ee2fff, org.springframework.security.web.access.intercept.AuthorizationFilter@21d8da75]
+2022-12-14T08:28:08.083-05:00  INFO 25443 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-14T08:28:08.088-05:00  INFO 25443 --- [           main] c.a.sbapp3.Sbapp3grajarj17Application    : Started Sbapp3grajarj17Application in 1.588 seconds (process running for 1.75)
+
+
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+davidho@dphxps17:~/javaprojs/sbapp3$ find . -type f -exec ls -la {} \; | grep -v git
+-rw-r--r-- 1 davidho davidho 202 Nov 25 10:17 ./gradle/wrapper/gradle-wrapper.properties
+-rw-r--r-- 1 davidho davidho 60756 Nov 25 10:17 ./gradle/wrapper/gradle-wrapper.jar
+-rw-r--r-- 1 davidho davidho 28 Nov 25 10:17 ./settings.gradle
+-rw-r--r-- 1 davidho davidho 1614 Nov 25 10:17 ./HELP.md
+-rw-rw-r-- 1 davidho davidho 8 Dec 14 08:28 ./.gradle/file-system.probe
+-rw-rw-r-- 1 davidho davidho 19163 Nov 25 06:48 ./.gradle/buildOutputCleanup/outputFiles.bin
+-rw-rw-r-- 1 davidho davidho 17 Dec 14 08:32 ./.gradle/buildOutputCleanup/buildOutputCleanup.lock
+-rw-rw-r-- 1 davidho davidho 51 Nov 25 05:34 ./.gradle/buildOutputCleanup/cache.properties
+-rw-rw-r-- 1 davidho davidho 0 Dec 14 08:32 ./.gradle/vcs-1/gc.properties
+-rw-rw-r-- 1 davidho davidho 1 Dec 14 08:32 ./.gradle/7.5.1/fileChanges/last-build.bin
+-rw-rw-r-- 1 davidho davidho 17 Dec 14 08:32 ./.gradle/7.5.1/executionHistory/executionHistory.lock
+-rw-rw-r-- 1 davidho davidho 163693 Nov 25 06:48 ./.gradle/7.5.1/executionHistory/executionHistory.bin
+-rw-rw-r-- 1 davidho davidho 28697 Nov 25 05:34 ./.gradle/7.5.1/checksums/md5-checksums.bin
+-rw-rw-r-- 1 davidho davidho 40421 Nov 25 05:34 ./.gradle/7.5.1/checksums/sha1-checksums.bin
+-rw-rw-r-- 1 davidho davidho 17 Dec 14 08:32 ./.gradle/7.5.1/checksums/checksums.lock
+-rw-rw-r-- 1 davidho davidho 0 Dec 14 08:32 ./.gradle/7.5.1/dependencies-accessors/gc.properties
+-rw-rw-r-- 1 davidho davidho 17 Dec 14 08:32 ./.gradle/7.5.1/dependencies-accessors/dependencies-accessors.lock
+-rw-rw-r-- 1 davidho davidho 18701 Nov 25 06:48 ./.gradle/7.5.1/fileHashes/resourceHashesCache.bin
+-rw-rw-r-- 1 davidho davidho 17 Dec 14 08:32 ./.gradle/7.5.1/fileHashes/fileHashes.lock
+-rw-rw-r-- 1 davidho davidho 19647 Nov 25 06:48 ./.gradle/7.5.1/fileHashes/fileHashes.bin
+-rw-rw-r-- 1 davidho davidho 0 Dec 14 08:32 ./.gradle/7.5.1/gc.properties
+-rw-rw-r-- 1 davidho davidho 576 Nov 25 06:03 ./build/classes/java/test/com/ashburncode/sbapp3/Sbapp3grajarj17ApplicationTests.class
+-rw-rw-r-- 1 davidho davidho 778 Nov 25 05:57 ./build/classes/java/main/com/ashburncode/sbapp3/Sbapp3grajarj17Application.class
+-rw-r--r-- 1 davidho davidho 731 Nov 25 06:48 ./build/resources/main/application.properties
+-rw-r--r-- 1 davidho davidho 366 Nov 25 06:48 ./build/tmp/bootJar/MANIFEST.MF
+-rw-r--r-- 1 davidho davidho 25 Nov 25 06:03 ./build/tmp/jar/MANIFEST.MF
+-rw-rw-r-- 1 davidho davidho 22541 Nov 25 05:57 ./build/tmp/compileJava/previous-compilation-data.bin
+-rw-rw-r-- 1 davidho davidho 24105 Nov 25 06:03 ./build/tmp/compileTestJava/previous-compilation-data.bin
+-rw-rw-r-- 1 davidho davidho 49431 Nov 25 06:48 ./build/reports/tests/test/classes/com.ashburncode.sbapp3.Sbapp3grajarj17ApplicationTests.html
+-rw-rw-r-- 1 davidho davidho 1135 Nov 25 06:03 ./build/reports/tests/test/css/style.css
+-rw-rw-r-- 1 davidho davidho 2645 Nov 25 06:03 ./build/reports/tests/test/css/base-style.css
+-rw-rw-r-- 1 davidho davidho 2076 Nov 25 06:48 ./build/reports/tests/test/packages/com.ashburncode.sbapp3.html
+-rw-rw-r-- 1 davidho davidho 5252 Nov 25 06:03 ./build/reports/tests/test/js/report.js
+-rw-rw-r-- 1 davidho davidho 2427 Nov 25 06:48 ./build/reports/tests/test/index.html
+-rw-rw-r-- 1 davidho davidho 44962367 Nov 25 06:48 ./build/libs/sbapp3-0.0.1-SNAPSHOT.jar
+-rw-rw-r-- 1 davidho davidho 1845 Nov 25 06:48 ./build/libs/sbapp3-0.0.1-SNAPSHOT-plain.jar
+-rw-rw-r-- 1 davidho davidho 142 Nov 25 06:48 ./build/test-results/test/binary/results.bin
+-rw-rw-r-- 1 davidho davidho 36 Nov 25 06:48 ./build/test-results/test/binary/output.bin.idx
+-rw-rw-r-- 1 davidho davidho 48758 Nov 25 06:48 ./build/test-results/test/binary/output.bin
+-rw-rw-r-- 1 davidho davidho 47687 Nov 25 06:48 ./build/test-results/test/TEST-com.ashburncode.sbapp3.Sbapp3grajarj17ApplicationTests.xml
+-rw-rw-r-- 1 davidho davidho 49 Nov 25 06:48 ./build/resolvedMainClassName
+-rw-r--r-- 1 davidho davidho 223 Nov 25 10:17 ./src/test/java/com/ashburncode/sbapp3/Sbapp3grajarj17ApplicationTests.java
+-rw-r--r-- 1 davidho davidho 731 Nov 25 06:48 ./src/main/resources/application.properties
+-rw-r--r-- 1 davidho davidho 333 Nov 25 10:17 ./src/main/java/com/ashburncode/sbapp3/Sbapp3grajarj17Application.java
+-rw-r--r-- 1 davidho davidho 700 Nov 25 10:17 ./build.gradle
+-rw-r--r-- 1 davidho davidho 2838 Nov 25 10:17 ./gradlew.bat
+-rwxr-xr-x 1 davidho davidho 8188 Nov 25 10:17 ./gradlew
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+davidho@dphxps17:~/javaprojs/sbapp3$ ls -latr
+total 56
+drwxrwxr-x 5 davidho davidho 4096 Nov 25 05:21 ..
+drwxrwxr-x 5 davidho davidho 4096 Nov 25 05:56 .gradle
+drwxrwxr-x 9 davidho davidho 4096 Nov 25 06:03 build
+drwxr-xr-x 7 davidho davidho 4096 Nov 25 06:05 .
+drwxrwxr-x 8 davidho davidho 4096 Nov 25 06:57 .git
+drwxr-xr-x 4 davidho davidho 4096 Nov 25 10:17 src
+-rw-r--r-- 1 davidho davidho   28 Nov 25 10:17 settings.gradle
+-rw-r--r-- 1 davidho davidho 1614 Nov 25 10:17 HELP.md
+-rw-r--r-- 1 davidho davidho 2838 Nov 25 10:17 gradlew.bat
+-rwxr-xr-x 1 davidho davidho 8188 Nov 25 10:17 gradlew
+drwxr-xr-x 3 davidho davidho 4096 Nov 25 10:17 gradle
+-rw-r--r-- 1 davidho davidho  444 Nov 25 10:17 .gitignore
+-rw-r--r-- 1 davidho davidho  700 Nov 25 10:17 build.gradle
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+davidho@dphxps17:~/javaprojs/sbapp3$ ls -latr src
+total 16
+drwxr-xr-x 7 davidho davidho 4096 Nov 25 06:05 ..
+drwxr-xr-x 3 davidho davidho 4096 Nov 25 10:17 test
+drwxr-xr-x 4 davidho davidho 4096 Nov 25 10:17 main
+drwxr-xr-x 4 davidho davidho 4096 Nov 25 10:17 .
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+davidho@dphxps17:~/javaprojs/sbapp3$ ls -latr src/main
+total 16
+drwxr-xr-x 4 davidho davidho 4096 Nov 25 10:17 resources
+drwxr-xr-x 3 davidho davidho 4096 Nov 25 10:17 java
+drwxr-xr-x 4 davidho davidho 4096 Nov 25 10:17 ..
+drwxr-xr-x 4 davidho davidho 4096 Nov 25 10:17 .
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+davidho@dphxps17:~/javaprojs/sbapp3$ ls -latr src/main/resources/
+total 20
+-rw-r--r-- 1 davidho davidho  731 Nov 25 06:48 application.properties
+drwxr-xr-x 2 davidho davidho 4096 Nov 25 10:17 templates
+drwxr-xr-x 2 davidho davidho 4096 Nov 25 10:17 static
+drwxr-xr-x 4 davidho davidho 4096 Nov 25 10:17 ..
+drwxr-xr-x 4 davidho davidho 4096 Nov 25 10:17 .
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+davidho@dphxps17:~/javaprojs/sbapp3$ cat settings.gradle 
+rootProject.name = 'sbapp3'
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+davidho@dphxps17:~/javaprojs/sbapp3$ cat build.gradle 
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.0.0'
+	id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'com.ashburncode'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	runtimeOnly 'com.mysql:mysql-connector-j'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+davidho@dphxps17:~/javaprojs/sbapp3$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://vladmihalcea.com/hibernate-dialect/
+https://spring.io/guides/gs/accessing-data-mysql/
+
+  git clone https://github.com/spring-guides/gs-accessing-data-mysql.git
+  cd gs-accessing-data-mysql/initial
+  touch src/main/resources/application.properties
+
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/db_example
+spring.datasource.username=springuser
+spring.datasource.password=ThePassword
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+#spring.jpa.show-sql: true
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ pyenv versions
+  system
+* 3.11.0 (set by /home/davidho/.pyenv/version)
+davidho@dphxps17:~$ 
+
+
+https://pip.pypa.io/en/stable/cli/pip_freeze/
+https://pypi.org/project/PyMySQL/
+PyMySQL 1.0.2
+pip install PyMySQL
+
+python3 -m pip install PyMySQL
+python3 -m pip install PyMySQL[rsa]
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+mkdir -p /home/davidho/pythonprojs/pyproj1
+cd       /home/davidho/pythonprojs/pyproj1
+pyenv local 3.11.0
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install PyMySQL
+python3 -m pip freeze
+python3 -m pip install PyMySQL[rsa]
+python3 -m pip freeze
+python3 -m pip freeze > requirements.txt
+touch README.md
+touch app.py
+ls -latr
+cat requirements.txt
+
+find . -name "*py" -printv
+code ./.venv/lib/python3.11/site-packages/pymysql
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+mkdir -p /home/davidho/pythonprojs/pyproj2
+cd       /home/davidho/pythonprojs/pyproj2
+pyenv local 3.11.0
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install SQLAlchemy
+python3 -m pip freeze
+python3 -m pip install PyMySQL
+python3 -m pip freeze
+python3 -m pip install PyMySQL[rsa]
+python3 -m pip freeze
+python3 -m pip freeze > requirements.txt
+touch README.md
+touch app.py
+ls -latr
+cat requirements.txt
+
+find . -name "*py" -printv
+code ./.venv/lib/python3.11/site-packages/pymysql
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ cd       /home/davidho/pythonprojs/pyproj1
+davidho@dphxps17:~/pythonprojs/pyproj1$ ls -latr
+total 16
+drwxrwxr-x 5 davidho davidho 4096 Dec 13 07:30 .venv
+drwxrwxr-x 3 davidho davidho 4096 Dec 13 07:30 .
+-rw-rw-r-- 1 davidho davidho   65 Dec 13 07:30 requirements.txt
+drwxrwxr-x 7 davidho davidho 4096 Dec 13 07:35 ..
+davidho@dphxps17:~/pythonprojs/pyproj1$ 
+davidho@dphxps17:~/pythonprojs/pyproj1$ cd ..
+davidho@dphxps17:~/pythonprojs$ ls -la
+total 28
+drwxrwxr-x  7 davidho davidho 4096 Dec 13 07:35 .
+drwxr-x--- 47 davidho davidho 4096 Dec 14 08:17 ..
+drwxrwxr-x  3 davidho davidho 4096 Dec 13 07:19 a
+drwxrwxr-x  3 davidho davidho 4096 Dec  9 05:55 proj1
+drwxrwxr-x  3 davidho davidho 4096 Dec  9 06:38 proj2
+drwxrwxr-x  3 davidho davidho 4096 Dec 13 07:30 pyproj1
+drwxrwxr-x  3 davidho davidho 4096 Dec 13 07:35 pyproj2
+davidho@dphxps17:~/pythonprojs$ ls -latr pyproj1
+total 16
+drwxrwxr-x 5 davidho davidho 4096 Dec 13 07:30 .venv
+drwxrwxr-x 3 davidho davidho 4096 Dec 13 07:30 .
+-rw-rw-r-- 1 davidho davidho   65 Dec 13 07:30 requirements.txt
+drwxrwxr-x 7 davidho davidho 4096 Dec 13 07:35 ..
+davidho@dphxps17:~/pythonprojs$ ls -latr pyproj2
+total 16
+drwxrwxr-x 7 davidho davidho 4096 Dec 13 07:35 ..
+drwxrwxr-x 5 davidho davidho 4096 Dec 13 07:35 .venv
+drwxrwxr-x 3 davidho davidho 4096 Dec 13 07:35 .
+-rw-rw-r-- 1 davidho davidho  194 Dec 13 07:53 requirements.txt
+davidho@dphxps17:~/pythonprojs$ 
+davidho@dphxps17:~/pythonprojs$ rm -rf pyproj1
+davidho@dphxps17:~/pythonprojs$ rm -rf pyproj2
+davidho@dphxps17:~/pythonprojs$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~$ 
+mkdir -p /home/davidho/pythonprojs/pyproj1
+cd       /home/davidho/pythonprojs/pyproj1
+pyenv local 3.11.0
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install PyMySQL
+python3 -m pip freeze
+python3 -m pip install PyMySQL[rsa]
+python3 -m pip freeze
+python3 -m pip freeze > requirements.txt
+touch README.md
+touch app.py
+ls -latr
+cat requirements.txt
+
+Collecting PyMySQL
+  Using cached PyMySQL-1.0.2-py3-none-any.whl (43 kB)
+Installing collected packages: PyMySQL
+Successfully installed PyMySQL-1.0.2
+
+[notice] A new release of pip available: 22.3 -> 22.3.1
+[notice] To update, run: pip install --upgrade pip
+PyMySQL==1.0.2
+Requirement already satisfied: PyMySQL[rsa] in ./.venv/lib/python3.11/site-packages (1.0.2)
+Collecting cryptography
+  Using cached cryptography-38.0.4-cp36-abi3-manylinux_2_28_x86_64.whl (4.2 MB)
+Collecting cffi>=1.12
+  Using cached cffi-1.15.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (462 kB)
+Collecting pycparser
+  Using cached pycparser-2.21-py2.py3-none-any.whl (118 kB)
+Installing collected packages: pycparser, cffi, cryptography
+Successfully installed cffi-1.15.1 cryptography-38.0.4 pycparser-2.21
+
+[notice] A new release of pip available: 22.3 -> 22.3.1
+[notice] To update, run: pip install --upgrade pip
+cffi==1.15.1
+cryptography==38.0.4
+pycparser==2.21
+PyMySQL==1.0.2
+total 20
+drwxrwxr-x 6 davidho davidho 4096 Dec 14 09:27 ..
+-rw-rw-r-- 1 davidho davidho    7 Dec 14 09:27 .python-version
+drwxrwxr-x 5 davidho davidho 4096 Dec 14 09:27 .venv
+-rw-rw-r-- 1 davidho davidho   65 Dec 14 09:27 requirements.txt
+-rw-rw-r-- 1 davidho davidho    0 Dec 14 09:27 README.md
+-rw-rw-r-- 1 davidho davidho    0 Dec 14 09:27 app.py
+drwxrwxr-x 3 davidho davidho 4096 Dec 14 09:27 .
+cffi==1.15.1
+cryptography==38.0.4
+pycparser==2.21
+PyMySQL==1.0.2
+(.venv) davidho@dphxps17:~/pythonprojs/pyproj1$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+(.venv) davidho@dphxps17:~$ 
+mkdir -p /home/davidho/pythonprojs/pyproj2
+cd       /home/davidho/pythonprojs/pyproj2
+pyenv local 3.11.0
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install SQLAlchemy
+python3 -m pip freeze
+python3 -m pip install PyMySQL
+python3 -m pip freeze
+python3 -m pip install PyMySQL[rsa]
+python3 -m pip freeze
+python3 -m pip freeze > requirements.txt
+touch README.md
+touch app.py
+ls -latr
+cat requirements.txt
+
+Collecting SQLAlchemy
+  Using cached SQLAlchemy-1.4.45-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.6 MB)
+Collecting greenlet!=0.4.17
+  Using cached greenlet-2.0.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (545 kB)
+Installing collected packages: greenlet, SQLAlchemy
+Successfully installed SQLAlchemy-1.4.45 greenlet-2.0.1
+
+[notice] A new release of pip available: 22.3 -> 22.3.1
+[notice] To update, run: pip install --upgrade pip
+greenlet==2.0.1
+SQLAlchemy==1.4.45
+Collecting PyMySQL
+  Using cached PyMySQL-1.0.2-py3-none-any.whl (43 kB)
+Installing collected packages: PyMySQL
+Successfully installed PyMySQL-1.0.2
+
+[notice] A new release of pip available: 22.3 -> 22.3.1
+[notice] To update, run: pip install --upgrade pip
+greenlet==2.0.1
+PyMySQL==1.0.2
+SQLAlchemy==1.4.45
+Requirement already satisfied: PyMySQL[rsa] in ./.venv/lib/python3.11/site-packages (1.0.2)
+Collecting cryptography
+  Using cached cryptography-38.0.4-cp36-abi3-manylinux_2_28_x86_64.whl (4.2 MB)
+Collecting cffi>=1.12
+  Using cached cffi-1.15.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (462 kB)
+Collecting pycparser
+  Using cached pycparser-2.21-py2.py3-none-any.whl (118 kB)
+Installing collected packages: pycparser, cffi, cryptography
+Successfully installed cffi-1.15.1 cryptography-38.0.4 pycparser-2.21
+
+[notice] A new release of pip available: 22.3 -> 22.3.1
+[notice] To update, run: pip install --upgrade pip
+cffi==1.15.1
+cryptography==38.0.4
+greenlet==2.0.1
+pycparser==2.21
+PyMySQL==1.0.2
+SQLAlchemy==1.4.45
+total 20
+drwxrwxr-x 7 davidho davidho 4096 Dec 14 09:38 ..
+-rw-rw-r-- 1 davidho davidho    7 Dec 14 09:38 .python-version
+drwxrwxr-x 5 davidho davidho 4096 Dec 14 09:38 .venv
+-rw-rw-r-- 1 davidho davidho  100 Dec 14 09:38 requirements.txt
+-rw-rw-r-- 1 davidho davidho    0 Dec 14 09:38 README.md
+-rw-rw-r-- 1 davidho davidho    0 Dec 14 09:38 app.py
+drwxrwxr-x 3 davidho davidho 4096 Dec 14 09:38 .
+cffi==1.15.1
+cryptography==38.0.4
+greenlet==2.0.1
+pycparser==2.21
+PyMySQL==1.0.2
+SQLAlchemy==1.4.45
+(.venv) davidho@dphxps17:~/pythonprojs/pyproj2$ 
+
