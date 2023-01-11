@@ -1,0 +1,151 @@
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date
+Sun Jan  8 10:11:33 AM EST 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ touch stuff-20230108.txt
+davidho@dphxps17:~$ code  stuff-20230108.txt
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ cd mansia6ed/
+davidho@dphxps17:~/mansia6ed$ 
+davidho@dphxps17:~/mansia6ed$ ls -latr
+total 267248
+drwx------ 19 davidho davidho     4096 Jan 27  2022 spring-in-action-6-samples-main
+-rw-rw-r--  1 davidho davidho 27005451 Jan  5 17:46 Spring_in_Action_Sixth_Edition.pdf
+-rw-rw-r--  1 davidho davidho  8819478 Jan  5 17:46 Spring_in_Action_Sixth_Edition.epub
+-rw-rw-r--  1 davidho davidho  5734011 Jan  5 17:46 Spring_in_Action_Sixth_Edition.mobi
+-rw-rw-r--  1 davidho davidho 14403441 Jan  5 17:46 spring-in-action-6-samples-main.zip
+-rw-rw-r--  1 davidho davidho 17155802 Jan  5 17:47 Spring_Start_Here.pdf
+-rw-rw-r--  1 davidho davidho 15974813 Jan  5 17:47 Spring_Start_Here.epub
+-rw-rw-r--  1 davidho davidho 20368945 Jan  5 17:48 Spring_Start_Here.mobi
+-rw-rw-r--  1 davidho davidho  2447295 Jan  5 17:48 code.zip
+-rw-rw-r--  1 davidho davidho 37016251 Jan  5 17:49 Spring_Boot_in_Practice.pdf
+-rw-rw-r--  1 davidho davidho 17126416 Jan  5 17:49 Spring_Boot_in_Practice.epub
+-rw-rw-r--  1 davidho davidho  9766633 Jan  5 17:50 Spring_Boot_in_Practice.mobi
+-rw-rw-r--  1 davidho davidho 10107068 Jan  5 17:50 SBIPSourceCode.zip
+-rw-rw-r--  1 davidho davidho 11459803 Jan  5 17:51 Java_Persistence_with_Spring_Data_and_Hi_v13.pdf
+-rw-rw-r--  1 davidho davidho  9220628 Jan  5 17:51 Java_Persistence_with_Spring_Data_and_Hi_v13.epub
+-rw-rw-r--  1 davidho davidho  5842339 Jan  5 17:51 Java_Persistence_with_Spring_Data_and_Hi_v13.mobi
+-rw-rw-r--  1 davidho davidho  1183071 Jan  5 17:51 Code-selected.zip
+-rw-rw-r--  1 davidho davidho 18845424 Jan  5 17:55 Spring_Microservices_in_Action.pdf
+-rw-rw-r--  1 davidho davidho 10599716 Jan  5 17:55 Spring_Microservices_in_Action.epub
+-rw-rw-r--  1 davidho davidho 11300787 Jan  5 17:55 Spring_Microservices_in_Action.mobi
+-rw-rw-r--  1 davidho davidho  1710593 Jan  5 17:55 source-code.zip
+-rw-rw-r--  1 davidho davidho  6239570 Jan  5 17:56 Spring_Boot_in_Action.pdf
+-rw-rw-r--  1 davidho davidho  4686177 Jan  5 17:57 Spring_Boot_in_Action.epub
+-rw-rw-r--  1 davidho davidho  5605609 Jan  5 17:57 Spring_Boot_in_Action.mobi
+-rw-rw-r--  1 davidho davidho   981876 Jan  5 17:57 sbia_examples.zip
+drwxrwxr-x  3 davidho davidho     4096 Jan  5 18:18 .
+drwxr-x--- 48 davidho davidho     4096 Jan  8 10:13 ..
+davidho@dphxps17:~/mansia6ed$ 
+davidho@dphxps17:~/mansia6ed$ ls -latr *.zip
+-rw-rw-r-- 1 davidho davidho 14403441 Jan  5 17:46 spring-in-action-6-samples-main.zip
+-rw-rw-r-- 1 davidho davidho  2447295 Jan  5 17:48 code.zip
+-rw-rw-r-- 1 davidho davidho 10107068 Jan  5 17:50 SBIPSourceCode.zip
+-rw-rw-r-- 1 davidho davidho  1183071 Jan  5 17:51 Code-selected.zip
+-rw-rw-r-- 1 davidho davidho  1710593 Jan  5 17:55 source-code.zip
+-rw-rw-r-- 1 davidho davidho   981876 Jan  5 17:57 sbia_examples.zip
+davidho@dphxps17:~/mansia6ed$ 
+
+mv spring-in-action-6-samples-main.zip
+mv code.zip
+mv SBIPSourceCode.zip
+mv Code-selected.zip
+mv source-code.zip
+mv sbia_examples.zip
+
+mv spring-in-action-6-samples-main.zip Spring_in_Action_Sixth_Edition.zip
+mv code.zip                            Spring_Start_Here.zip
+mv SBIPSourceCode.zip                  Spring_Boot_in_Practice.zip
+mv Code-selected.zip                   Java_Persistence_with_Spring_Data_and_Hi_v13.zip
+mv source-code.zip                     Spring_Microservices_in_Action.zip
+mv sbia_examples.zip                   Spring_Boot_in_Action.zip
+
+davidho@dphxps17:~/mansia6ed$ ls -latr
+total 267248
+drwx------ 19 davidho davidho     4096 Jan 27  2022 spring-in-action-6-samples-main
+-rw-rw-r--  1 davidho davidho 27005451 Jan  5 17:46 Spring_in_Action_Sixth_Edition.pdf
+-rw-rw-r--  1 davidho davidho  8819478 Jan  5 17:46 Spring_in_Action_Sixth_Edition.epub
+-rw-rw-r--  1 davidho davidho  5734011 Jan  5 17:46 Spring_in_Action_Sixth_Edition.mobi
+-rw-rw-r--  1 davidho davidho 14403441 Jan  5 17:46 Spring_in_Action_Sixth_Edition.zip
+-rw-rw-r--  1 davidho davidho 17155802 Jan  5 17:47 Spring_Start_Here.pdf
+-rw-rw-r--  1 davidho davidho 15974813 Jan  5 17:47 Spring_Start_Here.epub
+-rw-rw-r--  1 davidho davidho 20368945 Jan  5 17:48 Spring_Start_Here.mobi
+-rw-rw-r--  1 davidho davidho  2447295 Jan  5 17:48 Spring_Start_Here.zip
+-rw-rw-r--  1 davidho davidho 37016251 Jan  5 17:49 Spring_Boot_in_Practice.pdf
+-rw-rw-r--  1 davidho davidho 17126416 Jan  5 17:49 Spring_Boot_in_Practice.epub
+-rw-rw-r--  1 davidho davidho  9766633 Jan  5 17:50 Spring_Boot_in_Practice.mobi
+-rw-rw-r--  1 davidho davidho 10107068 Jan  5 17:50 Spring_Boot_in_Practice.zip
+-rw-rw-r--  1 davidho davidho 11459803 Jan  5 17:51 Java_Persistence_with_Spring_Data_and_Hi_v13.pdf
+-rw-rw-r--  1 davidho davidho  9220628 Jan  5 17:51 Java_Persistence_with_Spring_Data_and_Hi_v13.epub
+-rw-rw-r--  1 davidho davidho  5842339 Jan  5 17:51 Java_Persistence_with_Spring_Data_and_Hi_v13.mobi
+-rw-rw-r--  1 davidho davidho  1183071 Jan  5 17:51 Java_Persistence_with_Spring_Data_and_Hi_v13.zip
+-rw-rw-r--  1 davidho davidho 18845424 Jan  5 17:55 Spring_Microservices_in_Action.pdf
+-rw-rw-r--  1 davidho davidho 10599716 Jan  5 17:55 Spring_Microservices_in_Action.epub
+-rw-rw-r--  1 davidho davidho 11300787 Jan  5 17:55 Spring_Microservices_in_Action.mobi
+-rw-rw-r--  1 davidho davidho  1710593 Jan  5 17:55 Spring_Microservices_in_Action.zip
+-rw-rw-r--  1 davidho davidho  6239570 Jan  5 17:56 Spring_Boot_in_Action.pdf
+-rw-rw-r--  1 davidho davidho  4686177 Jan  5 17:57 Spring_Boot_in_Action.epub
+-rw-rw-r--  1 davidho davidho  5605609 Jan  5 17:57 Spring_Boot_in_Action.mobi
+-rw-rw-r--  1 davidho davidho   981876 Jan  5 17:57 Spring_Boot_in_Action.zip
+drwxr-x--- 48 davidho davidho     4096 Jan  8 10:13 ..
+drwxrwxr-x  3 davidho davidho     4096 Jan  8 10:49 .
+davidho@dphxps17:~/mansia6ed$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+create these mysql accounts (user name and password) and corresponding database(s)
+
+-- Spring_in_Action_Sixth_Edition
+
+DROP DATABASE IF EXISTS sia6db;
+DROP USER 'sia6'@'localhost';
+CREATE USER 'sia6'@'localhost' IDENTIFIED BY 'sia6pw';
+DROP  sia6db;
+CREATE DATABASE sia6db;
+GRANT ALL PRIVILEGES ON sia6db.* TO 'sia6'@'localhost' WITH GRANT OPTION;
+
+-- Java_Persistence_with_Spring_Data
+
+DROP DATABASE IF EXISTS jpwsddb;
+DROP USER 'jpwsd'@'localhost';
+CREATE USER 'jpwsd'@'localhost' IDENTIFIED BY 'jpwsdpw';
+DROP  jpwsddb;
+CREATE DATABASE jpwsddb;
+GRANT ALL PRIVILEGES ON jpwsddb.* TO 'jpwsd'@'localhost' WITH GRANT OPTION;
+
+-- Spring_Microservices_in_Action
+
+DROP DATABASE IF EXISTS smiadb;
+DROP USER 'smia'@'localhost';
+CREATE USER 'smia'@'localhost' IDENTIFIED BY 'smiapw';
+DROP  smiadb;
+CREATE DATABASE smiadb;
+GRANT ALL PRIVILEGES ON smiadb.* TO 'smia'@'localhost' WITH GRANT OPTION;
+
+-- empty template
+
+DROP DATABASE IF EXISTS xxxxdb;
+DROP USER 'xxxx'@'localhost';
+CREATE USER 'xxxx'@'localhost' IDENTIFIED BY 'xxxxpw';
+DROP  xxxxdb;
+CREATE DATABASE xxxxdb;
+GRANT ALL PRIVILEGES ON xxxxdb.* TO 'xxxx'@'localhost' WITH GRANT OPTION;
+
+-- empty template
+
+DROP DATABASE IF EXISTS xxxxdb;
+DROP USER 'xxxx'@'localhost';
+CREATE USER 'xxxx'@'localhost' IDENTIFIED BY 'xxxxpw';
+DROP  xxxxdb;
+CREATE DATABASE xxxxdb;
+GRANT ALL PRIVILEGES ON xxxxdb.* TO 'xxxx'@'localhost' WITH GRANT OPTION;
+
+
+
+
+

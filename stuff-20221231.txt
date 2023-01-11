@@ -1,0 +1,165 @@
+Sat Dec 31 08:29:38 AM EST 2022
+
+davidho@dphxps17:~$ date
+Sat Dec 31 08:29:12 AM EST 2022
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date > stuff-20221231.txt
+davidho@dphxps17:~$ code   stuff-20221231.txt
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/Downloads$ ls -latr | tail
+drwxr-x--- 47 davidho davidho       4096 Dec 31 08:31 ..
+-rw-rw-r--  1 davidho davidho 1115457871 Dec 31 08:39 ideaIU-2022.3.1.tar.gz
+-rw-rw-r--  1 davidho davidho         89 Dec 31 08:39 ideaIU-2022.3.1.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  941758149 Dec 31 08:39 ideaIC-2022.3.1.tar.gz
+-rw-rw-r--  1 davidho davidho         89 Dec 31 08:40 ideaIC-2022.3.1.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  720880776 Dec 31 08:40 pycharm-professional-2022.3.1.tar.gz
+-rw-rw-r--  1 davidho davidho        103 Dec 31 08:40 pycharm-professional-2022.3.1.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  574512592 Dec 31 08:45 pycharm-community-2022.3.1.tar.gz
+-rw-rw-r--  1 davidho davidho        100 Dec 31 08:45 pycharm-community-2022.3.1.tar.gz.sha256
+drwxr-xr-x  5 davidho davidho      16384 Dec 31 08:45 .
+davidho@dphxps17:~/Downloads$ 
+
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ sha256sum -c ideaIU-2022.3.1.tar.gz.sha256
+ideaIU-2022.3.1.tar.gz: OK
+davidho@dphxps17:~/Downloads$ 
+
+davidho@dphxps17:~/Downloads$ find . -name "*sha256" -atime 0 -print
+./ideaIU-2022.3.1.tar.gz.sha256
+./pycharm-community-2022.3.1.tar.gz.sha256
+./elastic/kibana-8.2.2/node_modules/js-sha256
+./WebStorm-2022.3.1.tar.gz.sha256
+./datagrip-2022.3.2.tar.gz.sha256
+./pycharm-professional-2022.3.1.tar.gz.sha256
+./ideaIC-2022.3.1.tar.gz.sha256
+./RubyMine-2022.3.1.tar.gz.sha256
+davidho@dphxps17:~/Downloads$ 
+
+davidho@dphxps17:~/Downloads$ find . -name "*sha256" -atime 0 -exec sha256sum -c {} \;
+ideaIU-2022.3.1.tar.gz: OK
+pycharm-community-2022.3.1.tar.gz: OK
+sha256sum: ./elastic/kibana-8.2.2/node_modules/js-sha256: read error
+WebStorm-2022.3.1.tar.gz: OK
+datagrip-2022.3.2.tar.gz: OK
+pycharm-professional-2022.3.1.tar.gz: OK
+ideaIC-2022.3.1.tar.gz: OK
+RubyMine-2022.3.1.tar.gz: OK
+davidho@dphxps17:~/Downloads$ 
+
+davidho@dphxps17:~/Downloads$ find . -name "*sha256" -atime 0 -maxdepth 1 -print
+find: warning: you have specified the global option -maxdepth after the argument -name, but global options are not positional, i.e., -maxdepth affects tests specified before it as well as those specified after it.  Please specify global options before other arguments.
+./ideaIU-2022.3.1.tar.gz.sha256
+./pycharm-community-2022.3.1.tar.gz.sha256
+./WebStorm-2022.3.1.tar.gz.sha256
+./datagrip-2022.3.2.tar.gz.sha256
+./pycharm-professional-2022.3.1.tar.gz.sha256
+./ideaIC-2022.3.1.tar.gz.sha256
+./RubyMine-2022.3.1.tar.gz.sha256
+davidho@dphxps17:~/Downloads$ 
+
+davidho@dphxps17:~/Downloads$ find . -name "*sha256" -atime 0 -maxdepth 1 -exec sha256sum -c {} \;
+find: warning: you have specified the global option -maxdepth after the argument -name, but global options are not positional, i.e., -maxdepth affects tests specified before it as well as those specified after it.  Please specify global options before other arguments.
+ideaIU-2022.3.1.tar.gz: OK
+pycharm-community-2022.3.1.tar.gz: OK
+WebStorm-2022.3.1.tar.gz: OK
+datagrip-2022.3.2.tar.gz: OK
+pycharm-professional-2022.3.1.tar.gz: OK
+ideaIC-2022.3.1.tar.gz: OK
+RubyMine-2022.3.1.tar.gz: OK
+davidho@dphxps17:~/Downloads$ 
+
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ find . -maxdepth 1 -atime 0 -name "*sha256" -print
+./ideaIU-2022.3.1.tar.gz.sha256
+./pycharm-community-2022.3.1.tar.gz.sha256
+./WebStorm-2022.3.1.tar.gz.sha256
+./datagrip-2022.3.2.tar.gz.sha256
+./pycharm-professional-2022.3.1.tar.gz.sha256
+./ideaIC-2022.3.1.tar.gz.sha256
+./RubyMine-2022.3.1.tar.gz.sha256
+davidho@dphxps17:~/Downloads$ 
+
+davidho@dphxps17:~/Downloads$ find . -maxdepth 1 -atime 0 -name "*sha256" -exec sha256sum -c {} \;
+ideaIU-2022.3.1.tar.gz: OK
+pycharm-community-2022.3.1.tar.gz: OK
+WebStorm-2022.3.1.tar.gz: OK
+datagrip-2022.3.2.tar.gz: OK
+pycharm-professional-2022.3.1.tar.gz: OK
+ideaIC-2022.3.1.tar.gz: OK
+RubyMine-2022.3.1.tar.gz: OK
+davidho@dphxps17:~/Downloads$ 
+
+davidho@dphxps17:~/Downloads$ find . -maxdepth 1 -atime 1 -name "*sha256" -print
+
+davidho@dphxps17:~/Downloads$ find . -maxdepth 1 -atime -1 -name "*sha256" -print
+./ideaIU-2022.3.1.tar.gz.sha256
+./pycharm-community-2022.3.1.tar.gz.sha256
+./WebStorm-2022.3.1.tar.gz.sha256
+./datagrip-2022.3.2.tar.gz.sha256
+./pycharm-professional-2022.3.1.tar.gz.sha256
+./ideaIC-2022.3.1.tar.gz.sha256
+./RubyMine-2022.3.1.tar.gz.sha256
+davidho@dphxps17:~/Downloads$ 
+
+davidho@dphxps17:~/Downloads$ find . -maxdepth 1 -atime +1 -name "*sha256" -print
+./ideaIU-2022.1.1.tar.gz.sha256
+./WebStorm-2022.3.tar.gz.sha256
+./jdk-19.0.1_linux-x64_bin.rpm.sha256
+./jdk-17.0.4.1_linux-x64_bin.deb.sha256
+./RubyMine-2022.3.tar.gz.sha256
+./ideaIU-2022.3.tar.gz.sha256
+./jdk-18.0.2.1_linux-x64_bin.rpm.sha256
+./jdk-18.0.2.1_linux-x64_bin.deb.sha256
+./pycharm-professional-2022.3.tar.gz.sha256
+./ideaIU-2022.2.2.tar.gz.sha256
+./ideaIC-2022.1.1.tar.gz.sha256
+./WebStorm-2022.2.3.tar.gz.sha256
+./pycharm-community-2022.2.2.tar.gz.sha256
+./jdk-17.0.5_linux-x64_bin.deb.sha256
+./RubyMine-2022.2.2.tar.gz.sha256
+./ideaIC-2022.3.tar.gz.sha256
+./RubyMine-2022.1.1.tar.gz.sha256
+./pycharm-professional-2022.2.2.tar.gz.sha256
+./RubyMine-2022.2.3.tar.gz.sha256
+./jdk-18.0.2.1_linux-x64_bin.tar.gz.sha256
+./ideaIC-2022.2.2.tar.gz.sha256
+./jdk-19.0.1_linux-x64_bin.tar.gz.sha256
+./jdk-19.0.1_linux-x64_bin.deb.sha256
+./jdk-17.0.5_linux-x64_bin.tar.gz.sha256
+./pycharm-community-2022.2.3.tar.gz.sha256
+./jdk-17.0.5_linux-x64_bin.rpm.sha256
+./pycharm-community-2022.3.tar.gz.sha256
+./jdk-17.0.4.1_linux-x64_bin.rpm.sha256
+./pycharm-professional-2022.2.3.tar.gz.sha256
+./ideaIC-2022.2.3.tar.gz.sha256
+./ideaIU-2022.2.3.tar.gz.sha256
+./jdk-17.0.4.1_linux-x64_bin.tar.gz.sha256
+davidho@dphxps17:~/Downloads$ 
+
+davidho@dphxps17:~/Downloads$ ls -latr | tail -5
+-rw-rw-r--  1 davidho davidho        866 Dec 31 09:16 apache-netbeans_16-1_all.deb.asc
+drwxr-x--- 47 davidho davidho       4096 Dec 31 09:26 ..
+-rw-rw-r--  1 davidho davidho  186105481 Dec 31 09:40 grails-5.2.5.zip
+-rw-rw-r--  1 davidho davidho    9154897 Dec 31 09:40 grails-docs.zip
+drwxr-xr-x  5 davidho davidho      16384 Dec 31 09:40 .
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ mv grails-docs.zip grails-5.2.5.docs.zip
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr | tail -5
+-rw-rw-r--  1 davidho davidho        866 Dec 31 09:16 apache-netbeans_16-1_all.deb.asc
+drwxr-x--- 47 davidho davidho       4096 Dec 31 09:26 ..
+-rw-rw-r--  1 davidho davidho  186105481 Dec 31 09:40 grails-5.2.5.zip
+-rw-rw-r--  1 davidho davidho    9154897 Dec 31 09:40 grails-5.2.5.docs.zip
+drwxr-xr-x  5 davidho davidho      16384 Dec 31 09:41 .
+davidho@dphxps17:~/Downloads$ 
+
+
+davidho@dphxps17:~/Downloads$ cp -p grails-5.2.5.zip LocalApps
+davidho@dphxps17:~/Downloads$ cd LocalApps
+davidho@dphxps17:~/Downloads/LocalApps$ 
+
+
+

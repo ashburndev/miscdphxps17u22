@@ -1,0 +1,204 @@
+davidho@dphxps17:~$ date
+Thu Jan  5 05:36:44 PM EST 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ touch stuff-20230105.txt
+davidho@dphxps17:~$ code  stuff-20230105.txt
+
+davidho@dphxps17:~/Documents$ ls -latr ~/Downloads/ | tail -30
+-rw-rw-r--  1 davidho davidho        866 Dec 31 09:16 apache-netbeans_16-1_all.deb.asc
+-rw-rw-r--  1 davidho davidho  186105481 Dec 31 09:40 grails-5.2.5.zip
+-rw-rw-r--  1 davidho davidho    9154897 Dec 31 09:40 grails-5.2.5.docs.zip
+drwxrwxr-x  2 davidho davidho       4096 Dec 31 09:46 LocalApps
+drwxr-x--- 47 davidho davidho       4096 Jan  5 17:39 ..
+-rw-rw-r--  1 davidho davidho   27005451 Jan  5 17:46 Spring_in_Action_Sixth_Edition.pdf
+-rw-rw-r--  1 davidho davidho    8819478 Jan  5 17:46 Spring_in_Action_Sixth_Edition.epub
+-rw-rw-r--  1 davidho davidho    5734011 Jan  5 17:46 Spring_in_Action_Sixth_Edition.mobi
+-rw-rw-r--  1 davidho davidho   14403441 Jan  5 17:46 spring-in-action-6-samples-main.zip
+-rw-rw-r--  1 davidho davidho   17155802 Jan  5 17:47 Spring_Start_Here.pdf
+-rw-rw-r--  1 davidho davidho   15974813 Jan  5 17:47 Spring_Start_Here.epub
+-rw-rw-r--  1 davidho davidho   20368945 Jan  5 17:48 Spring_Start_Here.mobi
+-rw-rw-r--  1 davidho davidho    2447295 Jan  5 17:48 code.zip
+-rw-rw-r--  1 davidho davidho   37016251 Jan  5 17:49 Spring_Boot_in_Practice.pdf
+-rw-rw-r--  1 davidho davidho   17126416 Jan  5 17:49 Spring_Boot_in_Practice.epub
+-rw-rw-r--  1 davidho davidho    9766633 Jan  5 17:50 Spring_Boot_in_Practice.mobi
+-rw-rw-r--  1 davidho davidho   10107068 Jan  5 17:50 SBIPSourceCode.zip
+-rw-rw-r--  1 davidho davidho   11459803 Jan  5 17:51 Java_Persistence_with_Spring_Data_and_Hi_v13.pdf
+-rw-rw-r--  1 davidho davidho    9220628 Jan  5 17:51 Java_Persistence_with_Spring_Data_and_Hi_v13.epub
+-rw-rw-r--  1 davidho davidho    5842339 Jan  5 17:51 Java_Persistence_with_Spring_Data_and_Hi_v13.mobi
+-rw-rw-r--  1 davidho davidho    1183071 Jan  5 17:51 Code-selected.zip
+-rw-rw-r--  1 davidho davidho   18845424 Jan  5 17:55 Spring_Microservices_in_Action.pdf
+-rw-rw-r--  1 davidho davidho   10599716 Jan  5 17:55 Spring_Microservices_in_Action.epub
+-rw-rw-r--  1 davidho davidho   11300787 Jan  5 17:55 Spring_Microservices_in_Action.mobi
+-rw-rw-r--  1 davidho davidho    1710593 Jan  5 17:55 source-code.zip
+-rw-rw-r--  1 davidho davidho    6239570 Jan  5 17:56 Spring_Boot_in_Action.pdf
+-rw-rw-r--  1 davidho davidho    4686177 Jan  5 17:57 Spring_Boot_in_Action.epub
+-rw-rw-r--  1 davidho davidho    5605609 Jan  5 17:57 Spring_Boot_in_Action.mobi
+-rw-rw-r--  1 davidho davidho     981876 Jan  5 17:57 sbia_examples.zip
+drwxr-xr-x  6 davidho davidho      20480 Jan  5 17:57 .
+davidho@dphxps17:~/Documents$ 
+davidho@dphxps17:~/Downloads$ mkdir ~/mansia6ed
+davidho@dphxps17:~/Downloads$ find . -maxdepth 1 -atime 0 -print
+.
+./Spring_in_Action_Sixth_Edition.mobi
+./Spring_Boot_in_Practice.pdf
+./Spring_Start_Here.epub
+./Spring_Start_Here.pdf
+./Spring_Start_Here.mobi
+./Spring_in_Action_Sixth_Edition.epub
+./Java_Persistence_with_Spring_Data_and_Hi_v13.pdf
+./Spring_Boot_in_Action.epub
+./Code-selected.zip
+./Spring_Boot_in_Action.mobi
+./Spring_Boot_in_Practice.epub
+./Java_Persistence_with_Spring_Data_and_Hi_v13.epub
+./Spring_in_Action_Sixth_Edition.pdf
+./Spring_Microservices_in_Action.mobi
+./spring-in-action-6-samples-main.zip
+./Spring_Boot_in_Action.pdf
+./Spring_Microservices_in_Action.epub
+./code.zip
+./SBIPSourceCode.zip
+./Spring_Microservices_in_Action.pdf
+./Java_Persistence_with_Spring_Data_and_Hi_v13.mobi
+./source-code.zip
+./sbia_examples.zip
+./Spring_Boot_in_Practice.mobi
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ find . -maxdepth 1 -atime 0 -print | wc
+     25      25     763
+davidho@dphxps17:~/Downloads$ find . -maxdepth 1 -atime 0 -type f -print | wc
+     24      24     761
+davidho@dphxps17:~/Downloads$ find . -maxdepth 1 -atime 0 -type f -exec cp -p {} ~/mansia6ed/ \;
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr ~/mansia6ed/
+total 267244
+-rw-rw-r--  1 davidho davidho 27005451 Jan  5 17:46 Spring_in_Action_Sixth_Edition.pdf
+-rw-rw-r--  1 davidho davidho  8819478 Jan  5 17:46 Spring_in_Action_Sixth_Edition.epub
+-rw-rw-r--  1 davidho davidho  5734011 Jan  5 17:46 Spring_in_Action_Sixth_Edition.mobi
+-rw-rw-r--  1 davidho davidho 14403441 Jan  5 17:46 spring-in-action-6-samples-main.zip
+-rw-rw-r--  1 davidho davidho 17155802 Jan  5 17:47 Spring_Start_Here.pdf
+-rw-rw-r--  1 davidho davidho 15974813 Jan  5 17:47 Spring_Start_Here.epub
+-rw-rw-r--  1 davidho davidho 20368945 Jan  5 17:48 Spring_Start_Here.mobi
+-rw-rw-r--  1 davidho davidho  2447295 Jan  5 17:48 code.zip
+-rw-rw-r--  1 davidho davidho 37016251 Jan  5 17:49 Spring_Boot_in_Practice.pdf
+-rw-rw-r--  1 davidho davidho 17126416 Jan  5 17:49 Spring_Boot_in_Practice.epub
+-rw-rw-r--  1 davidho davidho  9766633 Jan  5 17:50 Spring_Boot_in_Practice.mobi
+-rw-rw-r--  1 davidho davidho 10107068 Jan  5 17:50 SBIPSourceCode.zip
+-rw-rw-r--  1 davidho davidho 11459803 Jan  5 17:51 Java_Persistence_with_Spring_Data_and_Hi_v13.pdf
+-rw-rw-r--  1 davidho davidho  9220628 Jan  5 17:51 Java_Persistence_with_Spring_Data_and_Hi_v13.epub
+-rw-rw-r--  1 davidho davidho  5842339 Jan  5 17:51 Java_Persistence_with_Spring_Data_and_Hi_v13.mobi
+-rw-rw-r--  1 davidho davidho  1183071 Jan  5 17:51 Code-selected.zip
+-rw-rw-r--  1 davidho davidho 18845424 Jan  5 17:55 Spring_Microservices_in_Action.pdf
+-rw-rw-r--  1 davidho davidho 10599716 Jan  5 17:55 Spring_Microservices_in_Action.epub
+-rw-rw-r--  1 davidho davidho 11300787 Jan  5 17:55 Spring_Microservices_in_Action.mobi
+-rw-rw-r--  1 davidho davidho  1710593 Jan  5 17:55 source-code.zip
+-rw-rw-r--  1 davidho davidho  6239570 Jan  5 17:56 Spring_Boot_in_Action.pdf
+-rw-rw-r--  1 davidho davidho  4686177 Jan  5 17:57 Spring_Boot_in_Action.epub
+-rw-rw-r--  1 davidho davidho  5605609 Jan  5 17:57 Spring_Boot_in_Action.mobi
+-rw-rw-r--  1 davidho davidho   981876 Jan  5 17:57 sbia_examples.zip
+drwxr-x--- 48 davidho davidho     4096 Jan  5 18:01 ..
+drwxrwxr-x  2 davidho davidho     4096 Jan  5 18:04 .
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ cd ~/mansia6ed/
+davidho@dphxps17:~/mansia6ed$ 
+davidho@dphxps17:~/mansia6ed$ 7z x spring-in-action-6-samples-main.zip
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,16 CPUs 11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz (806D1),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 14403441 bytes (14 MiB)
+
+Extracting archive: spring-in-action-6-samples-main.zip
+--            
+Path = spring-in-action-6-samples-main.zip
+Type = zip
+Physical Size = 14403441
+Comment = 33acc6497f9a98a3ba8dfe980fd00b87ce0dee5b
+
+Everything is Ok                                                        
+
+Folders: 1687
+Files: 3064
+Size:       28429487
+Compressed: 14403441
+davidho@dphxps17:~/mansia6ed$ 
+davidho@dphxps17:~/mansia6ed$ tree -d -L 3
+.
+└── spring-in-action-6-samples-main
+    ├── ch01
+    │   └── taco-cloud
+    ├── ch02
+    │   └── taco-cloud
+    ├── ch03
+    │   ├── tacos-jdbctemplate
+    │   ├── tacos-sd-jdbc
+    │   └── tacos-sd-jpa
+    ├── ch04
+    │   ├── tacos-sd-cassandra
+    │   └── tacos-sd-mongodb
+    ├── ch05
+    │   ├── taco-cloud
+    │   └── taco-cloud-sfc
+    ├── ch06
+    │   └── taco-cloud
+    ├── ch07
+    │   ├── tacocloud
+    │   ├── tacocloud-api
+    │   ├── tacocloud-data
+    │   ├── tacocloud-domain
+    │   ├── tacocloud-restclient
+    │   ├── tacocloud-security
+    │   ├── tacocloud-ui
+    │   ├── tacocloud-ui-huh
+    │   └── tacocloud-web
+    ├── ch08
+    │   ├── auth-server
+    │   ├── tacocloud
+    │   └── tacocloud-admin
+    ├── ch09
+    │   ├── tacocloud
+    │   ├── tacocloud-api
+    │   ├── tacocloud-data
+    │   ├── tacocloud-domain
+    │   ├── tacocloud-kitchen
+    │   ├── tacocloud-messaging-jms
+    │   ├── tacocloud-messaging-kafka
+    │   ├── tacocloud-messaging-rabbitmq
+    │   ├── tacocloud-restclient
+    │   ├── tacocloud-security
+    │   ├── tacocloud-ui
+    │   └── tacocloud-web
+    ├── ch10
+    │   ├── simple-flow
+    │   ├── taco-cloud
+    │   └── tacocloud
+    ├── ch11
+    │   └── reactor-fun
+    ├── ch12_13
+    │   ├── hello-reactive
+    │   ├── tacocloud-cassandra
+    │   ├── tacocloud-mongodb
+    │   └── tacocloud-r2dbc
+    ├── ch14
+    │   ├── channel
+    │   ├── fire-and-forget
+    │   ├── request-response
+    │   ├── request-response-over-websocket
+    │   └── request-stream
+    ├── ch15_16
+    │   ├── admin-server
+    │   └── tacocloud
+    └── ch17
+        ├── admin-server
+        └── tacocloud
+
+67 directories
+davidho@dphxps17:~/mansia6ed$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/mansia6ed$ date
+Sun Jan  8 10:06:48 AM EST 2023
+davidho@dphxps17:~/mansia6ed$ 
+

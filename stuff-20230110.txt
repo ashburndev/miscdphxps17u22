@@ -1,0 +1,765 @@
+davidho@dphxps17:~$ date
+Tue Jan 10 01:51:57 PM EST 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ touch stuff-20230110.txt
+davidho@dphxps17:~$ code  stuff-20230110.txt
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ uname -a
+Linux dphxps17 5.15.0-56-generic #62-Ubuntu SMP Tue Nov 22 19:54:14 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ neofetch --off
+davidho@dphxps17 
+---------------- 
+OS: Ubuntu 22.04.1 LTS x86_64 
+Host: XPS 17 9710 
+Kernel: 5.15.0-56-generic 
+Uptime: 4 days, 20 hours, 27 mins 
+Packages: 2031 (dpkg), 4 (mine), 11 (snap) 
+Shell: bash 5.1.16 
+Resolution: 3840x2400 
+DE: GNOME 42.5 
+WM: Mutter 
+WM Theme: Adwaita 
+Theme: Yaru [GTK2/3] 
+Icons: Yaru [GTK2/3] 
+Terminal: gnome-terminal 
+CPU: 11th Gen Intel i7-11800H (16) @ 4.600GHz 
+GPU: Intel TigerLake-H GT1 [UHD Graphics] 
+GPU: NVIDIA GeForce RTX 3060 Mobile / Max-Q 
+Memory: 3804MiB / 31827MiB 
+
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~$ tree -d -L 2
+.
+├── Desktop
+├── Documents
+│   └── workspace-spring-tool-suite-4-4.16.0.RELEASE
+├── Downloads
+│   ├── elastic
+│   ├── firefox.tmp
+│   ├── LocalApps
+│   └── sts-4.16.0.RELEASE
+├── eclipse-workspace
+│   └── my-jee-webprojone
+├── javaprojs
+│   ├── demo
+│   ├── sbapp2
+│   └── sbapp3
+├── mansia6ed
+│   └── spring-in-action-6-samples-main
+├── Music
+├── nodejsprojs
+│   ├── my-app
+│   └── recipe_connection
+├── Pictures
+├── Public
+├── PycharmProjects
+│   ├── dphpyapp1
+│   ├── MyProject
+│   └── pythonProject
+├── pythonprojs
+│   ├── a
+│   ├── proj1
+│   ├── proj2
+│   ├── pyproj1
+│   └── pyproj2
+├── railsprojects
+│   ├── csrftest1
+│   ├── csrftest2
+│   ├── depot
+│   ├── depot2
+│   ├── myrailsone
+│   ├── wire2
+│   ├── wire3
+│   ├── wire4
+│   ├── wire5
+│   └── wire6
+├── repositories
+│   └── miscdphxps17u22
+├── ruby-build
+│   ├── bin
+│   ├── script
+│   ├── share
+│   └── test
+├── RubymineProjects
+│   └── myrubymineone
+├── rubyprojects
+├── sbootprojs
+│   ├── sbapp2
+│   └── sbapp3
+├── snap
+│   ├── firefox
+│   ├── mysql-workbench-community
+│   ├── snapd-desktop-integration
+│   └── snap-store
+├── Templates
+├── Videos
+└── WebstormProjects
+    └── dphapp1
+
+65 directories
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/mansia6ed$ pwd -P
+/home/davidho/mansia6ed
+davidho@dphxps17:~/mansia6ed$ 
+davidho@dphxps17:~/mansia6ed$ ls -latr
+total 267248
+drwx------ 19 davidho davidho     4096 Jan 27  2022 spring-in-action-6-samples-main
+-rw-rw-r--  1 davidho davidho 27005451 Jan  5 17:46 Spring_in_Action_Sixth_Edition.pdf
+-rw-rw-r--  1 davidho davidho  8819478 Jan  5 17:46 Spring_in_Action_Sixth_Edition.epub
+-rw-rw-r--  1 davidho davidho  5734011 Jan  5 17:46 Spring_in_Action_Sixth_Edition.mobi
+-rw-rw-r--  1 davidho davidho 14403441 Jan  5 17:46 Spring_in_Action_Sixth_Edition.zip
+-rw-rw-r--  1 davidho davidho 17155802 Jan  5 17:47 Spring_Start_Here.pdf
+-rw-rw-r--  1 davidho davidho 15974813 Jan  5 17:47 Spring_Start_Here.epub
+-rw-rw-r--  1 davidho davidho 20368945 Jan  5 17:48 Spring_Start_Here.mobi
+-rw-rw-r--  1 davidho davidho  2447295 Jan  5 17:48 Spring_Start_Here.zip
+-rw-rw-r--  1 davidho davidho 37016251 Jan  5 17:49 Spring_Boot_in_Practice.pdf
+-rw-rw-r--  1 davidho davidho 17126416 Jan  5 17:49 Spring_Boot_in_Practice.epub
+-rw-rw-r--  1 davidho davidho  9766633 Jan  5 17:50 Spring_Boot_in_Practice.mobi
+-rw-rw-r--  1 davidho davidho 10107068 Jan  5 17:50 Spring_Boot_in_Practice.zip
+-rw-rw-r--  1 davidho davidho 11459803 Jan  5 17:51 Java_Persistence_with_Spring_Data_and_Hi_v13.pdf
+-rw-rw-r--  1 davidho davidho  9220628 Jan  5 17:51 Java_Persistence_with_Spring_Data_and_Hi_v13.epub
+-rw-rw-r--  1 davidho davidho  5842339 Jan  5 17:51 Java_Persistence_with_Spring_Data_and_Hi_v13.mobi
+-rw-rw-r--  1 davidho davidho  1183071 Jan  5 17:51 Java_Persistence_with_Spring_Data_and_Hi_v13.zip
+-rw-rw-r--  1 davidho davidho 18845424 Jan  5 17:55 Spring_Microservices_in_Action.pdf
+-rw-rw-r--  1 davidho davidho 10599716 Jan  5 17:55 Spring_Microservices_in_Action.epub
+-rw-rw-r--  1 davidho davidho 11300787 Jan  5 17:55 Spring_Microservices_in_Action.mobi
+-rw-rw-r--  1 davidho davidho  1710593 Jan  5 17:55 Spring_Microservices_in_Action.zip
+-rw-rw-r--  1 davidho davidho  6239570 Jan  5 17:56 Spring_Boot_in_Action.pdf
+-rw-rw-r--  1 davidho davidho  4686177 Jan  5 17:57 Spring_Boot_in_Action.epub
+-rw-rw-r--  1 davidho davidho  5605609 Jan  5 17:57 Spring_Boot_in_Action.mobi
+-rw-rw-r--  1 davidho davidho   981876 Jan  5 17:57 Spring_Boot_in_Action.zip
+drwxrwxr-x  3 davidho davidho     4096 Jan  8 10:49 .
+drwxr-x--- 48 davidho davidho     4096 Jan 10 14:02 ..
+davidho@dphxps17:~/mansia6ed$ 
+davidho@dphxps17:~/mansia6ed$ ls -latr spring-in-action-6-samples-main/
+total 112
+-rw-rw-r--  1 davidho davidho  1744 Jan 27  2022 setbootversion.js
+-rw-rw-r--  1 davidho davidho  1602 Jan 27  2022 README.md
+-rw-rw-r--  1 davidho davidho  2096 Jan 27  2022 pom.xml
+-rw-rw-r--  1 davidho davidho  6607 Jan 27  2022 mvnw.cmd
+-rwxr-xr-x  1 davidho davidho 10069 Jan 27  2022 mvnw
+drwx------  3 davidho davidho  4096 Jan 27  2022 .mvn
+-rwxr-xr-x  1 davidho davidho   502 Jan 27  2022 makezip.sh
+drwx------  3 davidho davidho  4096 Jan 27  2022 .github
+drwx------  4 davidho davidho  4096 Jan 27  2022 ch17
+drwx------  4 davidho davidho  4096 Jan 27  2022 ch15_16
+drwx------  7 davidho davidho  4096 Jan 27  2022 ch14
+drwx------  6 davidho davidho  4096 Jan 27  2022 ch12_13
+drwx------  3 davidho davidho  4096 Jan 27  2022 ch11
+drwx------  5 davidho davidho  4096 Jan 27  2022 ch10
+drwx------ 16 davidho davidho  4096 Jan 27  2022 ch09
+drwx------  5 davidho davidho  4096 Jan 27  2022 ch08
+drwx------ 14 davidho davidho  4096 Jan 27  2022 ch07
+drwx------  3 davidho davidho  4096 Jan 27  2022 ch06
+drwx------  4 davidho davidho  4096 Jan 27  2022 ch05
+drwx------  4 davidho davidho  4096 Jan 27  2022 ch04
+drwx------  5 davidho davidho  4096 Jan 27  2022 ch03
+drwx------  3 davidho davidho  4096 Jan 27  2022 ch02
+drwx------  3 davidho davidho  4096 Jan 27  2022 ch01
+drwx------ 19 davidho davidho  4096 Jan 27  2022 .
+drwxrwxr-x  3 davidho davidho  4096 Jan  8 10:49 ..
+davidho@dphxps17:~/mansia6ed$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+./gradlew bootRun
+
+./mvnw dependency:list
+./mvnw spring-boot:run
+
+    runtimeOnly 'com.mysql:mysql-connector-j'
+
+		<!-- 
+		<dependency>
+			<groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>mssql-jdbc</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		-->
+		<dependency>
+      <groupId>com.mysql</groupId>
+      <artifactId>mysql-connector-j</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+      
+davidho@dphxps17:~/.m2/repository$ 
+davidho@dphxps17:~/.m2/repository$ find . -name "*.jar" -print | grep -i mysql
+./com/mysql/mysql-connector-j/8.0.31/mysql-connector-j-8.0.31.jar
+davidho@dphxps17:~/.m2/repository$ 
+davidho@dphxps17:~/.m2/repository$ jar tvf ./com/mysql/mysql-connector-j/8.0.31/mysql-connector-j-8.0.31.jar | grep Driver
+    24 Sat Sep 03 21:54:28 EDT 2022 META-INF/services/java.sql.Driver
+   733 Sat Sep 03 21:54:26 EDT 2022 com/mysql/cj/jdbc/Driver.class
+  1175 Sat Sep 03 21:54:26 EDT 2022 com/mysql/cj/jdbc/NonRegisteringDriver$1.class
+  6736 Sat Sep 03 21:54:28 EDT 2022 com/mysql/cj/jdbc/NonRegisteringDriver.class
+   760 Sat Sep 03 21:54:26 EDT 2022 com/mysql/jdbc/Driver.class
+davidho@dphxps17:~/.m2/repository$ 
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+I am using the Spring Initializr web page (https://start.spring.io/) to crete four spring boot projects (2.7.7 and 3.0.1) and (gradle and maven).
+
+I am using my notes in /home/davidho/Documents/stuff-20221108.txt to refresh my memory for this effort.
+
+I am going to use the file /home/davidho/javaprojs/sbapp3/src/main/resources/application.properties as a starting point for each new spring boot project above
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Also, from the book "Spring in Action, 6th Ed" I downloaded the zip file with the book's source code.  Spring_in_Action_Sixth_Edition.zip
+
+Also, from the book "Spring in Action, 6th Ed" I cloned the git repository for the book.
+
+The complete code for the examples in the book is available for download from the Manning
+website at https://www.manning.com/books/spring-in-action-sixth-edition, and from
+GitHub at github.com/habuma/spring-in-action-6-samples.
+
+https://github.com/habuma/spring-in-action-6-samples
+
+https://github.com/habuma/spring-in-action-6-samples.git
+
+mkdir     ~/repositories/
+cd        ~/repositories/
+git clone git@github.com:ashburndev/miscdphxps17u22.git
+git clone git@github.com:habuma/spring-in-action-6-samples.git
+
+davidho@dphxps17:~/repositories$ git clone git@github.com:habuma/spring-in-action-6-samples.git
+Cloning into 'spring-in-action-6-samples'...
+remote: Enumerating objects: 1957, done.
+remote: Counting objects: 100% (391/391), done.
+remote: Compressing objects: 100% (97/97), done.
+remote: Total 1957 (delta 319), reused 294 (delta 294), pack-reused 1566
+Receiving objects: 100% (1957/1957), 929.25 KiB | 23.23 MiB/s, done.
+Resolving deltas: 100% (861/861), done.
+davidho@dphxps17:~/repositories$ 
+davidho@dphxps17:~/repositories$ ls -latr
+total 16
+drwxrwxr-x  3 davidho davidho 4096 Dec 14 09:50 miscdphxps17u22
+drwxr-x--- 48 davidho davidho 4096 Jan 10 14:02 ..
+drwxrwxr-x  4 davidho davidho 4096 Jan 10 17:27 .
+drwxrwxr-x 20 davidho davidho 4096 Jan 10 17:27 spring-in-action-6-samples
+davidho@dphxps17:~/repositories$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/mansia6ed$ date
+Tue Jan 10 04:12:40 PM EST 2023
+davidho@dphxps17:~/mansia6ed$ pwd -P
+/home/davidho/mansia6ed
+davidho@dphxps17:~/mansia6ed$ ls -latr
+total 267248
+drwx------ 19 davidho davidho     4096 Jan 27  2022 spring-in-action-6-samples-main
+-rw-rw-r--  1 davidho davidho 27005451 Jan  5 17:46 Spring_in_Action_Sixth_Edition.pdf
+-rw-rw-r--  1 davidho davidho  8819478 Jan  5 17:46 Spring_in_Action_Sixth_Edition.epub
+-rw-rw-r--  1 davidho davidho  5734011 Jan  5 17:46 Spring_in_Action_Sixth_Edition.mobi
+-rw-rw-r--  1 davidho davidho 14403441 Jan  5 17:46 Spring_in_Action_Sixth_Edition.zip
+-rw-rw-r--  1 davidho davidho 17155802 Jan  5 17:47 Spring_Start_Here.pdf
+-rw-rw-r--  1 davidho davidho 15974813 Jan  5 17:47 Spring_Start_Here.epub
+-rw-rw-r--  1 davidho davidho 20368945 Jan  5 17:48 Spring_Start_Here.mobi
+-rw-rw-r--  1 davidho davidho  2447295 Jan  5 17:48 Spring_Start_Here.zip
+-rw-rw-r--  1 davidho davidho 37016251 Jan  5 17:49 Spring_Boot_in_Practice.pdf
+-rw-rw-r--  1 davidho davidho 17126416 Jan  5 17:49 Spring_Boot_in_Practice.epub
+-rw-rw-r--  1 davidho davidho  9766633 Jan  5 17:50 Spring_Boot_in_Practice.mobi
+-rw-rw-r--  1 davidho davidho 10107068 Jan  5 17:50 Spring_Boot_in_Practice.zip
+-rw-rw-r--  1 davidho davidho 11459803 Jan  5 17:51 Java_Persistence_with_Spring_Data_and_Hi_v13.pdf
+-rw-rw-r--  1 davidho davidho  9220628 Jan  5 17:51 Java_Persistence_with_Spring_Data_and_Hi_v13.epub
+-rw-rw-r--  1 davidho davidho  5842339 Jan  5 17:51 Java_Persistence_with_Spring_Data_and_Hi_v13.mobi
+-rw-rw-r--  1 davidho davidho  1183071 Jan  5 17:51 Java_Persistence_with_Spring_Data_and_Hi_v13.zip
+-rw-rw-r--  1 davidho davidho 18845424 Jan  5 17:55 Spring_Microservices_in_Action.pdf
+-rw-rw-r--  1 davidho davidho 10599716 Jan  5 17:55 Spring_Microservices_in_Action.epub
+-rw-rw-r--  1 davidho davidho 11300787 Jan  5 17:55 Spring_Microservices_in_Action.mobi
+-rw-rw-r--  1 davidho davidho  1710593 Jan  5 17:55 Spring_Microservices_in_Action.zip
+-rw-rw-r--  1 davidho davidho  6239570 Jan  5 17:56 Spring_Boot_in_Action.pdf
+-rw-rw-r--  1 davidho davidho  4686177 Jan  5 17:57 Spring_Boot_in_Action.epub
+-rw-rw-r--  1 davidho davidho  5605609 Jan  5 17:57 Spring_Boot_in_Action.mobi
+-rw-rw-r--  1 davidho davidho   981876 Jan  5 17:57 Spring_Boot_in_Action.zip
+drwxrwxr-x  3 davidho davidho     4096 Jan  8 10:49 .
+drwxr-x--- 48 davidho davidho     4096 Jan 10 14:02 ..
+davidho@dphxps17:~/mansia6ed$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/sbootprojs$ pwd -P
+/home/davidho/sbootprojs
+davidho@dphxps17:~/sbootprojs$ ls -latr
+total 208
+-rw-rw-r--  1 davidho davidho 64423 Oct 21 07:36 sbapp1grajarj11.zip
+-rw-rw-r--  1 davidho davidho 64993 Nov  8 05:45 sbapp2.zip
+-rw-rw-r--  1 davidho davidho 65324 Nov 25 05:17 sbapp3.zip
+drwxr-xr-x  4 davidho davidho  4096 Nov 25 10:17 sbapp3
+drwxrwxr-x  4 davidho davidho  4096 Dec 14 07:33 .
+drwxr-xr-x  6 davidho davidho  4096 Dec 14 07:44 sbapp2
+drwxr-x--- 48 davidho davidho  4096 Jan 10 14:02 ..
+davidho@dphxps17:~/sbootprojs$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp2
+Name:          sbapp2grajarj11
+Description:   spring boot 2.7.5, gradle project, jar packaging, java 11 language
+Dependencies:
+  Spring Web Web
+  Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Security Security
+  Highly customizable authentication and access-control framework for Spring applications.
+  Spring Data JPA SQL
+  Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  MySQL Driver SQL
+  MySQL JDBC and R2DBC driver.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp277g
+Name:          sbapp277grajarj11
+Package name:  ashburncode.sbapp277g
+Description:   spring boot 2.7.7, gradle project, jar packaging, java 11 language
+Dependencies:
+  Spring Web Web
+  Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+  Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+  Exposing Spring Data repositories over REST via Spring Data REST.
+  MS SQL Server Driver SQL
+  A JDBC and R2DBC driver that provides access to Microsoft SQL Server and Azure SQL Database from any Java application.
+
+  "Rest Repositories Web" ... is this a name change for this dependency ?
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp277m
+Name:          sbapp277mvnjarj11
+Package name:  ashburncode.sbapp277m
+Description:   spring boot 2.7.7, maven project, jar packaging, java 11 language
+Dependencies:
+  Spring Web Web
+  Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+  Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+  Exposing Spring Data repositories over REST via Spring Data REST.
+  MS SQL Server Driver SQL
+  A JDBC and R2DBC driver that provides access to Microsoft SQL Server and Azure SQL Database from any Java application.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp301g
+Name:          sbapp301grajarj17
+Package name:  ashburncode.sbapp301g
+Description:   spring boot 3.0.1, gradle project, jar packaging, java 17 language
+Dependencies:
+  Spring Web Web
+  Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+  Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+  Exposing Spring Data repositories over REST via Spring Data REST.
+  MS SQL Server Driver SQL
+  A JDBC and R2DBC driver that provides access to Microsoft SQL Server and Azure SQL Database from any Java application.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp301m
+Name:          sbapp301mvnjarj17
+Package name:  ashburncode.sbapp301m
+Description:   spring boot 3.0.1, maven project, jar packaging, java 17 language
+Dependencies:
+  Spring Web Web
+  Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+  Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+  Exposing Spring Data repositories over REST via Spring Data REST.
+  MS SQL Server Driver SQL
+  A JDBC and R2DBC driver that provides access to Microsoft SQL Server and Azure SQL Database from any Java application.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         sia
+Artifact:      taco-cloud
+Name:          taco-cloud
+Package name:  tacos
+Description:   Taco Cloud Example - spring boot 2.7.7, maven project, jar packaging, java 11 language
+Dependencies:
+  Spring Web Web
+  Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+  Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+  Exposing Spring Data repositories over REST via Spring Data REST.
+  MS SQL Server Driver SQL
+  A JDBC and R2DBC driver that provides access to Microsoft SQL Server and Azure SQL Database from any Java application.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/sbootprojs$ date
+Tue Jan 10 07:37:14 PM EST 2023
+davidho@dphxps17:~/sbootprojs$ pwd -P
+/home/davidho/sbootprojs
+davidho@dphxps17:~/sbootprojs$ ls -latr
+total 548
+-rw-rw-r--  1 davidho davidho 64423 Oct 21 07:36 sbapp1grajarj11.zip
+-rw-rw-r--  1 davidho davidho 64993 Nov  8 05:45 sbapp2.zip
+-rw-rw-r--  1 davidho davidho 65324 Nov 25 05:17 sbapp3.zip
+drwxr-xr-x  4 davidho davidho  4096 Nov 25 10:17 sbapp3
+drwxr-xr-x  6 davidho davidho  4096 Dec 14 07:44 sbapp2
+drwxr-x--- 48 davidho davidho  4096 Jan 10 14:02 ..
+-rw-rw-r--  1 davidho davidho 65161 Jan 10 15:25 sbapp277g.zip
+-rw-rw-r--  1 davidho davidho 63568 Jan 10 15:28 sbapp277m.zip
+-rw-rw-r--  1 davidho davidho 65150 Jan 10 15:33 sbapp301g.zip
+-rw-rw-r--  1 davidho davidho 63570 Jan 10 15:40 sbapp301m.zip
+-rw-rw-r--  1 davidho davidho 63241 Jan 10 19:35 taco-cloud.zip
+drwxrwxr-x  9 davidho davidho  4096 Jan 10 19:37 .
+drwxr-xr-x  4 davidho davidho  4096 Jan 10  2023 sbapp277g
+drwxr-xr-x  4 davidho davidho  4096 Jan 10  2023 sbapp277m
+drwxr-xr-x  4 davidho davidho  4096 Jan 10  2023 sbapp301g
+drwxr-xr-x  4 davidho davidho  4096 Jan 10  2023 sbapp301m
+drwxr-xr-x  4 davidho davidho  4096 Jan 11  2023 taco-cloud
+davidho@dphxps17:~/sbootprojs$ 
+
+davidho@dphxps17:~/Downloads$ ls -latr | grep -i Spring
+-rw-rw-r--  1 davidho davidho  607778592 Sep 22 08:14 spring-tool-suite-4-4.16.0.RELEASE-e4.25.0-linux.gtk.x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho  607778592 Oct 16 20:53 spring-tool-suite-4-4.16.0.RELEASE-e4.25.0-linux.gtk.x86_64(1).tar.gz
+-rw-rw-r--  1 davidho davidho  637138600 Dec  8 07:13 spring-tool-suite-4-4.17.0.RELEASE-e4.26.0-linux.gtk.x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho   83136393 Dec  8 07:18 Pivotal.vscode-spring-boot-1.41.0.vsix
+-rw-rw-r--  1 davidho davidho     422485 Dec  8 07:19 vscjava.vscode-spring-initializr-0.11.2022090703.vsix
+-rw-rw-r--  1 davidho davidho   13688443 Dec  8 07:22 vscjava.vscode-spring-boot-dashboard-0.9.2022120800.vsix
+-rw-rw-r--  1 davidho davidho   27005451 Jan  5 17:46 Spring_in_Action_Sixth_Edition.pdf
+-rw-rw-r--  1 davidho davidho    8819478 Jan  5 17:46 Spring_in_Action_Sixth_Edition.epub
+-rw-rw-r--  1 davidho davidho    5734011 Jan  5 17:46 Spring_in_Action_Sixth_Edition.mobi
+-rw-rw-r--  1 davidho davidho   14403441 Jan  5 17:46 spring-in-action-6-samples-main.zip  <-- from github
+-rw-rw-r--  1 davidho davidho   17155802 Jan  5 17:47 Spring_Start_Here.pdf
+-rw-rw-r--  1 davidho davidho   15974813 Jan  5 17:47 Spring_Start_Here.epub
+-rw-rw-r--  1 davidho davidho   20368945 Jan  5 17:48 Spring_Start_Here.mobi
+-rw-rw-r--  1 davidho davidho   37016251 Jan  5 17:49 Spring_Boot_in_Practice.pdf
+-rw-rw-r--  1 davidho davidho   17126416 Jan  5 17:49 Spring_Boot_in_Practice.epub
+-rw-rw-r--  1 davidho davidho    9766633 Jan  5 17:50 Spring_Boot_in_Practice.mobi
+-rw-rw-r--  1 davidho davidho   11459803 Jan  5 17:51 Java_Persistence_with_Spring_Data_and_Hi_v13.pdf
+-rw-rw-r--  1 davidho davidho    9220628 Jan  5 17:51 Java_Persistence_with_Spring_Data_and_Hi_v13.epub
+-rw-rw-r--  1 davidho davidho    5842339 Jan  5 17:51 Java_Persistence_with_Spring_Data_and_Hi_v13.mobi
+-rw-rw-r--  1 davidho davidho   18845424 Jan  5 17:55 Spring_Microservices_in_Action.pdf
+-rw-rw-r--  1 davidho davidho   10599716 Jan  5 17:55 Spring_Microservices_in_Action.epub
+-rw-rw-r--  1 davidho davidho   11300787 Jan  5 17:55 Spring_Microservices_in_Action.mobi
+-rw-rw-r--  1 davidho davidho    6239570 Jan  5 17:56 Spring_Boot_in_Action.pdf
+-rw-rw-r--  1 davidho davidho    4686177 Jan  5 17:57 Spring_Boot_in_Action.epub
+-rw-rw-r--  1 davidho davidho    5605609 Jan  5 17:57 Spring_Boot_in_Action.mobi
+davidho@dphxps17:~/Downloads$ 
+
+davidho@dphxps17:~/mansia6ed$ date
+Tue Jan 10 05:22:10 PM EST 2023
+davidho@dphxps17:~/mansia6ed$ pwd -P
+/home/davidho/mansia6ed
+davidho@dphxps17:~/mansia6ed$ ls -latr
+total 281316
+drwx------ 19 davidho davidho     4096 Jan 27  2022 spring-in-action-6-samples-main  <-- from github
+-rw-rw-r--  1 davidho davidho 27005451 Jan  5 17:46 Spring_in_Action_Sixth_Edition.pdf
+-rw-rw-r--  1 davidho davidho  8819478 Jan  5 17:46 Spring_in_Action_Sixth_Edition.epub
+-rw-rw-r--  1 davidho davidho  5734011 Jan  5 17:46 Spring_in_Action_Sixth_Edition.mobi
+-rw-rw-r--  1 davidho davidho 14403441 Jan  5 17:46 Spring_in_Action_Sixth_Edition.zip  <-- from manning web download page
+-rw-rw-r--  1 davidho davidho 14403441 Jan  5 17:46 spring-in-action-6-samples-main.zip  <-- from github
+-rw-rw-r--  1 davidho davidho 17155802 Jan  5 17:47 Spring_Start_Here.pdf
+-rw-rw-r--  1 davidho davidho 15974813 Jan  5 17:47 Spring_Start_Here.epub
+-rw-rw-r--  1 davidho davidho 20368945 Jan  5 17:48 Spring_Start_Here.mobi
+-rw-rw-r--  1 davidho davidho  2447295 Jan  5 17:48 Spring_Start_Here.zip
+-rw-rw-r--  1 davidho davidho 37016251 Jan  5 17:49 Spring_Boot_in_Practice.pdf
+-rw-rw-r--  1 davidho davidho 17126416 Jan  5 17:49 Spring_Boot_in_Practice.epub
+-rw-rw-r--  1 davidho davidho  9766633 Jan  5 17:50 Spring_Boot_in_Practice.mobi
+-rw-rw-r--  1 davidho davidho 10107068 Jan  5 17:50 Spring_Boot_in_Practice.zip
+-rw-rw-r--  1 davidho davidho 11459803 Jan  5 17:51 Java_Persistence_with_Spring_Data_and_Hi_v13.pdf
+-rw-rw-r--  1 davidho davidho  9220628 Jan  5 17:51 Java_Persistence_with_Spring_Data_and_Hi_v13.epub
+-rw-rw-r--  1 davidho davidho  5842339 Jan  5 17:51 Java_Persistence_with_Spring_Data_and_Hi_v13.mobi
+-rw-rw-r--  1 davidho davidho  1183071 Jan  5 17:51 Java_Persistence_with_Spring_Data_and_Hi_v13.zip  <-- from manning web download page
+-rw-rw-r--  1 davidho davidho 18845424 Jan  5 17:55 Spring_Microservices_in_Action.pdf
+-rw-rw-r--  1 davidho davidho 10599716 Jan  5 17:55 Spring_Microservices_in_Action.epub
+-rw-rw-r--  1 davidho davidho 11300787 Jan  5 17:55 Spring_Microservices_in_Action.mobi
+-rw-rw-r--  1 davidho davidho  1710593 Jan  5 17:55 Spring_Microservices_in_Action.zip
+-rw-rw-r--  1 davidho davidho  6239570 Jan  5 17:56 Spring_Boot_in_Action.pdf
+-rw-rw-r--  1 davidho davidho  4686177 Jan  5 17:57 Spring_Boot_in_Action.epub
+-rw-rw-r--  1 davidho davidho  5605609 Jan  5 17:57 Spring_Boot_in_Action.mobi
+-rw-rw-r--  1 davidho davidho   981876 Jan  5 17:57 Spring_Boot_in_Action.zip
+drwxr-x--- 48 davidho davidho     4096 Jan 10 14:02 ..
+drwxrwxr-x  3 davidho davidho     4096 Jan 10 17:22 .
+davidho@dphxps17:~/mansia6ed$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+<-- from github
+
+davidho@dphxps17:~/mansia6ed$ jar tvf spring-in-action-6-samples-main.zip | head
+     0 Thu Jan 27 18:25:33 EST 2022 spring-in-action-6-samples-main/
+     0 Thu Jan 27 18:25:33 EST 2022 spring-in-action-6-samples-main/.github/
+     0 Thu Jan 27 18:25:33 EST 2022 spring-in-action-6-samples-main/.github/workflows/
+   558 Thu Jan 27 18:25:33 EST 2022 spring-in-action-6-samples-main/.github/workflows/maven.yml
+     0 Thu Jan 27 18:25:33 EST 2022 spring-in-action-6-samples-main/.mvn/
+     0 Thu Jan 27 18:25:33 EST 2022 spring-in-action-6-samples-main/.mvn/wrapper/
+  4941 Thu Jan 27 18:25:33 EST 2022 spring-in-action-6-samples-main/.mvn/wrapper/MavenWrapperDownloader.java
+ 50710 Thu Jan 27 18:25:33 EST 2022 spring-in-action-6-samples-main/.mvn/wrapper/maven-wrapper.jar
+   218 Thu Jan 27 18:25:33 EST 2022 spring-in-action-6-samples-main/.mvn/wrapper/maven-wrapper.properties
+  1602 Thu Jan 27 18:25:33 EST 2022 spring-in-action-6-samples-main/README.md
+davidho@dphxps17:~/mansia6ed$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+<-- from manning web download page
+
+davidho@dphxps17:~/mansia6ed$ jar tvf Spring_in_Action_Sixth_Edition.zip | head
+     0 Thu Jan 27 18:25:33 EST 2022 spring-in-action-6-samples-main/
+     0 Thu Jan 27 18:25:33 EST 2022 spring-in-action-6-samples-main/.github/
+     0 Thu Jan 27 18:25:33 EST 2022 spring-in-action-6-samples-main/.github/workflows/
+   558 Thu Jan 27 18:25:33 EST 2022 spring-in-action-6-samples-main/.github/workflows/maven.yml
+     0 Thu Jan 27 18:25:33 EST 2022 spring-in-action-6-samples-main/.mvn/
+     0 Thu Jan 27 18:25:33 EST 2022 spring-in-action-6-samples-main/.mvn/wrapper/
+  4941 Thu Jan 27 18:25:33 EST 2022 spring-in-action-6-samples-main/.mvn/wrapper/MavenWrapperDownloader.java
+ 50710 Thu Jan 27 18:25:33 EST 2022 spring-in-action-6-samples-main/.mvn/wrapper/maven-wrapper.jar
+   218 Thu Jan 27 18:25:33 EST 2022 spring-in-action-6-samples-main/.mvn/wrapper/maven-wrapper.properties
+  1602 Thu Jan 27 18:25:33 EST 2022 spring-in-action-6-samples-main/README.md
+davidho@dphxps17:~/mansia6ed$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/javaprojs$ date
+Tue Jan 10 07:47:51 PM EST 2023
+davidho@dphxps17:~/javaprojs$ pwd -P
+/home/davidho/javaprojs
+davidho@dphxps17:~/javaprojs$ ls -latr
+total 700
+-rw-rw-r--  1 davidho davidho  64423 Oct 21 07:36 sbapp1grajarj11.zip
+-rw-rw-r--  1 davidho davidho 368801 Oct 21 08:13 sbapp1-dep.txt
+drwxr-xr-x  9 davidho davidho   4096 Oct 21 08:25 demo
+-rw-rw-r--  1 davidho davidho  64993 Nov  8 05:45 sbapp2.zip
+-rw-rw-r--  1 davidho davidho  55362 Nov  8 07:44 sbapp2-dep.txt
+drwxr-xr-x  7 davidho davidho   4096 Nov  8 07:51 sbapp2
+-rw-rw-r--  1 davidho davidho  65324 Nov 25 05:17 sbapp3.zip
+drwxr-xr-x  7 davidho davidho   4096 Nov 25 06:05 sbapp3
+drwxr-x--- 48 davidho davidho   4096 Jan 10 14:02 ..
+-rw-rw-r--  1 davidho davidho  63241 Jan 10 19:35 taco-cloud.zip
+drwxrwxr-x  6 davidho davidho   4096 Jan 10 19:47 .
+drwxr-xr-x  4 davidho davidho   4096 Jan 11  2023 taco-cloud
+davidho@dphxps17:~/javaprojs$ 
+
+davidho@dphxps17:~/javaprojs/taco-cloud$ find . -type f -print
+./.mvn/wrapper/maven-wrapper.jar
+./.mvn/wrapper/maven-wrapper.properties
+./.gitignore
+./pom.xml
+./mvnw.cmd
+./HELP.md
+./src/test/java/taos/TacoCloudApplicationTests.java
+./src/main/resources/application.properties
+./src/main/java/taos/TacoCloudApplication.java
+./mvnw
+davidho@dphxps17:~/javaprojs/taco-cloud$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+/home/davidho/mansia6ed/spring-in-action-6-samples-main/ch06/taco-cloud/src/main/resources/application.yml
+
+spring:
+  security:
+    user:
+      name: buzz
+      password: infinity
+  datasource:
+    generate-unique-name: false
+    name: tacocloud
+
+taco:
+  orders:
+    pageSize: 10
+
+
+  discount:
+    codes:
+      abcdef: 10
+
+
+---
+spring:
+  profiles: prod
+
+  datasource:
+    url: jdbc:mysql://localhost/tacocloud
+    username: tacouser
+    password: tacopassword
+
+logging:
+  level:
+    tacos: WARN
+
+davidho@dphxps17:~/javaprojs$ find . -name "application.properties" -exec ls -la {} \;
+-rw-r--r-- 1 davidho davidho 1 Jan 10 19:54 ./taco-cloud/target/classes/application.properties
+-rw-r--r-- 1 davidho davidho 1 Jan 11  2023 ./taco-cloud/src/main/resources/application.properties
+-rw-r--r-- 1 davidho davidho 1 Nov  8 05:53 ./sbapp2/build/resources/main/application.properties
+-rw-r--r-- 1 davidho davidho 1 Nov  8 10:26 ./sbapp2/src/main/resources/application.properties
+-rw-r--r-- 1 davidho davidho 1 Oct 21 11:36 ./demo/src/main/resources/application.properties
+-rw-r--r-- 1 davidho davidho 1 Oct 21 11:36 ./demo/bin/main/application.properties
+-rw-r--r-- 1 davidho davidho 731 Nov 25 06:48 ./sbapp3/build/resources/main/application.properties
+-rw-r--r-- 1 davidho davidho 731 Nov 25 06:48 ./sbapp3/src/main/resources/application.properties
+davidho@dphxps17:~/javaprojs$ 
+davidho@dphxps17:~/javaprojs$ cat ./sbapp3/src/main/resources/application.properties
+spring.jpa.hibernate.ddl-auto=update
+# spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/db_example
+spring.datasource.url=jdbc:mysql://localhost:3306/db_example
+spring.datasource.username=springuser
+spring.datasource.password=ThePassword
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+#spring.jpa.show-sql: true
+
+# Caused by: org.hibernate.HibernateException: Unable to determine Dialect without JDBC metadata (please set 'javax.persistence.jdbc.url', 'hibernate.connection.url', or 'hibernate.dialect')
+# hibernate.connection.url=jdbc:mysql://localhost:3306/db_example
+# hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+davidho@dphxps17:~/javaprojs$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+DROP DATABASE IF EXISTS tacocloud;
+DROP USER 'tacouser'@'localhost';
+CREATE USER 'tacouser'@'localhost' IDENTIFIED BY 'tacopassword';
+CREATE DATABASE tacocloud;
+GRANT ALL PRIVILEGES ON tacocloud.* TO 'tacouser'@'localhost' WITH GRANT OPTION;
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| db_example         |
+| depot2_development |
+| dphpyapp1          |
+| dphpyapp2          |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sbapp2db           |
+| sbapp3db           |
+| sys                |
+| tacocloud          |
+| wire2_development  |
+| wire3_development  |
+| wire4_development  |
+| wire5_development  |
+| wire6_development  |
++--------------------+
+16 rows in set (0.04 sec)
+
+mysql> 
+mysql> use tacocloud
+Database changed
+mysql> show tables;
+Empty set (0.00 sec)
+
+mysql> 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/javaprojs/taco-cloud$ cat ./src/main/resources/application.properties
+spring.jpa.hibernate.ddl-auto=update
+# spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/db_example
+spring.datasource.url=jdbc:mysql://localhost:3306/tacocloud
+# spring.datasource.username=buzz
+# spring.datasource.password=infinity
+spring.datasource.username=tacouser
+spring.datasource.password=tacopassword
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+#spring.jpa.show-sql: true
+
+# Caused by: org.hibernate.HibernateException: Unable to determine Dialect without JDBC metadata (please set 'javax.persistence.jdbc.url', 'hibernate.connection.url', or 'hibernate.dialect')
+# hibernate.connection.url=jdbc:mysql://localhost:3306/db_example
+# hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+
+# spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+
+# logging.level.tacos=WARN
+davidho@dphxps17:~/javaprojs/taco-cloud$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/javaprojs/taco-cloud$ ./mvnw spring-boot:run
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------------< sia:taco-cloud >---------------------------
+[INFO] Building taco-cloud 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot-maven-plugin:3.0.1:run (default-cli) > test-compile @ taco-cloud >>>
+[INFO] 
+[INFO] --- maven-resources-plugin:3.3.0:resources (default-resources) @ taco-cloud ---
+[INFO] Copying 1 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ taco-cloud ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/davidho/javaprojs/taco-cloud/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.3.0:testResources (default-testResources) @ taco-cloud ---
+[INFO] skip non existing resourceDirectory /home/davidho/javaprojs/taco-cloud/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ taco-cloud ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/davidho/javaprojs/taco-cloud/target/test-classes
+[INFO] 
+[INFO] <<< spring-boot-maven-plugin:3.0.1:run (default-cli) < test-compile @ taco-cloud <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:3.0.1:run (default-cli) @ taco-cloud ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.0.1)
+
+2023-01-10T21:50:21.754-05:00  INFO 114356 --- [           main] taos.TacoCloudApplication                : Starting TacoCloudApplication using Java 17.0.5 with PID 114356 (/home/davidho/javaprojs/taco-cloud/target/classes started by davidho in /home/davidho/javaprojs/taco-cloud)
+2023-01-10T21:50:21.757-05:00  INFO 114356 --- [           main] taos.TacoCloudApplication                : No active profile set, falling back to 1 default profile: "default"
+2023-01-10T21:50:22.010-05:00  INFO 114356 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-10T21:50:22.018-05:00  INFO 114356 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2023-01-10T21:50:22.251-05:00  INFO 114356 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-01-10T21:50:22.256-05:00  INFO 114356 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-10T21:50:22.257-05:00  INFO 114356 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.4]
+2023-01-10T21:50:22.306-05:00  INFO 114356 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-10T21:50:22.307-05:00  INFO 114356 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 521 ms
+2023-01-10T21:50:22.384-05:00  INFO 114356 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-10T21:50:22.404-05:00  INFO 114356 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-01-10T21:50:22.476-05:00  WARN 114356 --- [           main] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-01-10T21:50:22.532-05:00  INFO 114356 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-10T21:50:22.698-05:00  INFO 114356 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@28daf506
+2023-01-10T21:50:22.699-05:00  INFO 114356 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-01-10T21:50:22.738-05:00  INFO 114356 --- [           main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-01-10T21:50:22.868-05:00  INFO 114356 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-10T21:50:22.873-05:00  INFO 114356 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-10T21:50:22.890-05:00  WARN 114356 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-10T21:50:23.175-05:00  INFO 114356 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-01-10T21:50:23.180-05:00  INFO 114356 --- [           main] taos.TacoCloudApplication                : Started TacoCloudApplication in 1.598 seconds (process running for 1.76)
+
+
