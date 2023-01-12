@@ -1,0 +1,385 @@
+davidho@dphxps17:~$ date
+Thu Jan 12 06:36:23 AM EST 2023
+davidho@dphxps17:~$ touch stuff-20230112.txt
+davidho@dphxps17:~$ code  stuff-20230112.txt
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/mansia6ed$ date
+Thu Jan 12 07:24:31 AM EST 2023
+davidho@dphxps17:~/mansia6ed$ pwd -P
+/home/davidho/mansia6ed
+davidho@dphxps17:~/mansia6ed$ ls -latr
+total 281316
+drwx------ 19 davidho davidho     4096 Jan 27  2022 spring-in-action-6-samples-main
+-rw-rw-r--  1 davidho davidho 27005451 Jan  5 17:46 Spring_in_Action_Sixth_Edition.pdf
+-rw-rw-r--  1 davidho davidho  8819478 Jan  5 17:46 Spring_in_Action_Sixth_Edition.epub
+-rw-rw-r--  1 davidho davidho  5734011 Jan  5 17:46 Spring_in_Action_Sixth_Edition.mobi
+-rw-rw-r--  1 davidho davidho 14403441 Jan  5 17:46 Spring_in_Action_Sixth_Edition.zip
+-rw-rw-r--  1 davidho davidho 14403441 Jan  5 17:46 spring-in-action-6-samples-main.zip
+-rw-rw-r--  1 davidho davidho 17155802 Jan  5 17:47 Spring_Start_Here.pdf
+-rw-rw-r--  1 davidho davidho 15974813 Jan  5 17:47 Spring_Start_Here.epub
+-rw-rw-r--  1 davidho davidho 20368945 Jan  5 17:48 Spring_Start_Here.mobi
+-rw-rw-r--  1 davidho davidho  2447295 Jan  5 17:48 Spring_Start_Here.zip
+-rw-rw-r--  1 davidho davidho 37016251 Jan  5 17:49 Spring_Boot_in_Practice.pdf
+-rw-rw-r--  1 davidho davidho 17126416 Jan  5 17:49 Spring_Boot_in_Practice.epub
+-rw-rw-r--  1 davidho davidho  9766633 Jan  5 17:50 Spring_Boot_in_Practice.mobi
+-rw-rw-r--  1 davidho davidho 10107068 Jan  5 17:50 Spring_Boot_in_Practice.zip
+-rw-rw-r--  1 davidho davidho 11459803 Jan  5 17:51 Java_Persistence_with_Spring_Data_and_Hi_v13.pdf
+-rw-rw-r--  1 davidho davidho  9220628 Jan  5 17:51 Java_Persistence_with_Spring_Data_and_Hi_v13.epub
+-rw-rw-r--  1 davidho davidho  5842339 Jan  5 17:51 Java_Persistence_with_Spring_Data_and_Hi_v13.mobi
+-rw-rw-r--  1 davidho davidho  1183071 Jan  5 17:51 Java_Persistence_with_Spring_Data_and_Hi_v13.zip
+-rw-rw-r--  1 davidho davidho 18845424 Jan  5 17:55 Spring_Microservices_in_Action.pdf
+-rw-rw-r--  1 davidho davidho 10599716 Jan  5 17:55 Spring_Microservices_in_Action.epub
+-rw-rw-r--  1 davidho davidho 11300787 Jan  5 17:55 Spring_Microservices_in_Action.mobi
+-rw-rw-r--  1 davidho davidho  1710593 Jan  5 17:55 Spring_Microservices_in_Action.zip
+-rw-rw-r--  1 davidho davidho  6239570 Jan  5 17:56 Spring_Boot_in_Action.pdf
+-rw-rw-r--  1 davidho davidho  4686177 Jan  5 17:57 Spring_Boot_in_Action.epub
+-rw-rw-r--  1 davidho davidho  5605609 Jan  5 17:57 Spring_Boot_in_Action.mobi
+-rw-rw-r--  1 davidho davidho   981876 Jan  5 17:57 Spring_Boot_in_Action.zip
+drwxrwxr-x  3 davidho davidho     4096 Jan 10 17:22 .
+drwxr-x--- 49 davidho davidho     4096 Jan 12 06:38 ..
+davidho@dphxps17:~/mansia6ed$ 
+davidho@dphxps17:~/mansia6ed$ tree -d -L 2
+.
+└── spring-in-action-6-samples-main
+    ├── ch01
+    ├── ch02
+    ├── ch03
+    ├── ch04
+    ├── ch05
+    ├── ch06
+    ├── ch07
+    ├── ch08
+    ├── ch09
+    ├── ch10
+    ├── ch11
+    ├── ch12_13
+    ├── ch14
+    ├── ch15_16
+    └── ch17
+
+16 directories
+davidho@dphxps17:~/mansia6ed$ tree -d -L 3
+.
+└── spring-in-action-6-samples-main
+    ├── ch01
+    │   └── taco-cloud
+    ├── ch02
+    │   └── taco-cloud
+    ├── ch03
+    │   ├── tacos-jdbctemplate
+    │   ├── tacos-sd-jdbc
+    │   └── tacos-sd-jpa
+    ├── ch04
+    │   ├── tacos-sd-cassandra
+    │   └── tacos-sd-mongodb
+    ├── ch05
+    │   ├── taco-cloud
+    │   └── taco-cloud-sfc
+    ├── ch06
+    │   └── taco-cloud
+    ├── ch07
+    │   ├── tacocloud
+    │   ├── tacocloud-api
+    │   ├── tacocloud-data
+    │   ├── tacocloud-domain
+    │   ├── tacocloud-restclient
+    │   ├── tacocloud-security
+    │   ├── tacocloud-ui
+    │   ├── tacocloud-ui-huh
+    │   └── tacocloud-web
+    ├── ch08
+    │   ├── auth-server
+    │   ├── tacocloud
+    │   └── tacocloud-admin
+    ├── ch09
+    │   ├── tacocloud
+    │   ├── tacocloud-api
+    │   ├── tacocloud-data
+    │   ├── tacocloud-domain
+    │   ├── tacocloud-kitchen
+    │   ├── tacocloud-messaging-jms
+    │   ├── tacocloud-messaging-kafka
+    │   ├── tacocloud-messaging-rabbitmq
+    │   ├── tacocloud-restclient
+    │   ├── tacocloud-security
+    │   ├── tacocloud-ui
+    │   └── tacocloud-web
+    ├── ch10
+    │   ├── simple-flow
+    │   ├── taco-cloud
+    │   └── tacocloud
+    ├── ch11
+    │   └── reactor-fun
+    ├── ch12_13
+    │   ├── hello-reactive
+    │   ├── tacocloud-cassandra
+    │   ├── tacocloud-mongodb
+    │   └── tacocloud-r2dbc
+    ├── ch14
+    │   ├── channel
+    │   ├── fire-and-forget
+    │   ├── request-response
+    │   ├── request-response-over-websocket
+    │   └── request-stream
+    ├── ch15_16
+    │   ├── admin-server
+    │   └── tacocloud
+    └── ch17
+        ├── admin-server
+        └── tacocloud
+
+67 directories
+davidho@dphxps17:~/mansia6ed$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~$ cd /home/davidho/mansia6ed/spring-in-action-6-samples-main/ch03/tacos-sd-jpa/src/main
+davidho@dphxps17:~/mansia6ed/spring-in-action-6-samples-main/ch03/tacos-sd-jpa/src/main$ tree
+.
+├── java
+│   └── tacos
+│       ├── data
+│       │   ├── IngredientRepository.java
+│       │   └── OrderRepository.java
+│       ├── Ingredient.java
+│       ├── TacoCloudApplication.java
+│       ├── Taco.java
+│       ├── TacoOrder.java
+│       └── web
+│           ├── DesignTacoController.java
+│           ├── IngredientByIdConverter.java
+│           ├── OrderController.java
+│           └── WebConfig.java
+└── resources
+    ├── application.yml
+    ├── static
+    │   ├── images
+    │   │   └── TacoCloud.png
+    │   └── styles.css
+    └── templates
+        ├── design.html
+        ├── home.html
+        └── orderForm.html
+
+8 directories, 16 files
+davidho@dphxps17:~/mansia6ed/spring-in-action-6-samples-main/ch03/tacos-sd-jpa/src/main$ 
+davidho@dphxps17:~/mansia6ed/spring-in-action-6-samples-main/ch03/tacos-sd-jpa/src/main$ mkdir /tmp/foo
+davidho@dphxps17:~/mansia6ed/spring-in-action-6-samples-main/ch03/tacos-sd-jpa/src/main$ cp -pr java /tmp/foo
+davidho@dphxps17:~/mansia6ed/spring-in-action-6-samples-main/ch03/tacos-sd-jpa/src/main$ cp -pr resources /tmp/foo
+davidho@dphxps17:~/mansia6ed/spring-in-action-6-samples-main/ch03/tacos-sd-jpa/src/main$ ls -latr /tmp/foo
+total 16
+drwx------  4 davidho davidho 4096 Jan 27  2022 resources
+drwx------  3 davidho davidho 4096 Jan 27  2022 java
+drwxrwxrwt 27 root    root    4096 Jan 12 07:35 ..
+drwxrwxr-x  4 davidho davidho 4096 Jan 12 07:38 .
+davidho@dphxps17:~/mansia6ed/spring-in-action-6-samples-main/ch03/tacos-sd-jpa/src/main$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+cd /home/davidho/mansia6ed/spring-in-action-6-samples-main/ch03/tacos-sd-jpa/src/main
+cp -pr java /tmp/foo
+cp -pr resources /tmp/foo
+ls -latr /tmp/foo
+
+cd /home/davidho/mansia6ed/spring-in-action-6-samples-main/ch05/taco-cloud/src/main
+cp -pr java /tmp/foo
+cp -pr resources /tmp/foo
+ls -latr /tmp/foo
+
+cd /home/davidho/mansia6ed/spring-in-action-6-samples-main/ch07/tacocloud/src/main
+cp -pr java /tmp/foo
+cp -pr resources /tmp/foo
+ls -latr /tmp/foo
+
+cd /home/davidho/mansia6ed/spring-in-action-6-samples-main/ch07/tacocloud-api/src/main
+cp -pr java /tmp/foo
+cp -pr resources /tmp/foo
+ls -latr /tmp/foo
+
+tree -d /tmp/foo
+find /tmp/foo -type f -print
+code /tmp/foo
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/mansia6ed/spring-in-action-6-samples-main/ch07/tacocloud-api/src/main$ tree -d /tmp/foo
+/tmp/foo
+├── java
+│   └── tacos
+│       ├── data
+│       │   └── service
+│       ├── security
+│       └── web
+│           └── api
+└── resources
+    ├── static
+    │   └── images
+    └── templates
+
+11 directories
+davidho@dphxps17:~/mansia6ed/spring-in-action-6-samples-main/ch07/tacocloud-api/src/main$ find /tmp/foo -type f -print
+/tmp/foo/resources/static/images/TacoCloud.png
+/tmp/foo/resources/static/styles.css
+/tmp/foo/resources/application.yml
+/tmp/foo/resources/templates/login.html
+/tmp/foo/resources/templates/registration.html
+/tmp/foo/resources/templates/home.html
+/tmp/foo/resources/templates/design.html
+/tmp/foo/resources/templates/orderForm.html
+/tmp/foo/resources/users.ldif
+/tmp/foo/java/tacos/Ingredient.java
+/tmp/foo/java/tacos/DevelopmentConfig.java
+/tmp/foo/java/tacos/security/RegistrationController.java
+/tmp/foo/java/tacos/security/UserRepositoryUserDetailsService.java
+/tmp/foo/java/tacos/security/RegistrationForm.java
+/tmp/foo/java/tacos/security/SecurityConfig.java
+/tmp/foo/java/tacos/User.java
+/tmp/foo/java/tacos/TacoOrder.java
+/tmp/foo/java/tacos/data/UserRepository.java
+/tmp/foo/java/tacos/data/IngredientRepository.java
+/tmp/foo/java/tacos/data/TacoRepository.java
+/tmp/foo/java/tacos/data/OrderRepository.java
+/tmp/foo/java/tacos/data/service/OrderAdminService.java
+/tmp/foo/java/tacos/Taco.java
+/tmp/foo/java/tacos/TacoCloudApplication.java
+/tmp/foo/java/tacos/web/DesignTacoController.java
+/tmp/foo/java/tacos/web/AdminController.java
+/tmp/foo/java/tacos/web/IngredientByIdConverter.java
+/tmp/foo/java/tacos/web/WebConfig.java
+/tmp/foo/java/tacos/web/OrderController.java
+/tmp/foo/java/tacos/web/api/SpringDataRestConfiguration.java
+/tmp/foo/java/tacos/web/api/IngredientController.java
+/tmp/foo/java/tacos/web/api/TacoController.java
+/tmp/foo/java/tacos/web/api/OrderApiController.java
+davidho@dphxps17:~/mansia6ed/spring-in-action-6-samples-main/ch07/tacocloud-api/src/main$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/javaprojs/taco-cloud$ date
+Thu Jan 12 08:04:27 AM EST 2023
+davidho@dphxps17:~/javaprojs/taco-cloud$ pwd -P
+/home/davidho/javaprojs/taco-cloud
+davidho@dphxps17:~/javaprojs/taco-cloud$ ls -latr
+total 48
+drwxrwxr-x 7 davidho davidho  4096 Jan 11 07:06 ..
+drwxrwxr-x 4 davidho davidho  4096 Jan 11 12:01 src
+-rw-rw-r-- 1 davidho davidho  2465 Jan 11 12:01 pom.xml
+-rw-rw-r-- 1 davidho davidho  6734 Jan 11 12:01 mvnw.cmd
+-rw-rw-r-- 1 davidho davidho 10284 Jan 11 12:01 mvnw
+drwxrwxr-x 3 davidho davidho  4096 Jan 11 12:01 .mvn
+-rw-rw-r-- 1 davidho davidho  2025 Jan 11 12:01 HELP.md
+-rw-rw-r-- 1 davidho davidho   395 Jan 11 12:01 .gitignore
+drwxrwxr-x 4 davidho davidho  4096 Jan 11 12:01 .
+davidho@dphxps17:~/javaprojs/taco-cloud$ 
+davidho@dphxps17:~/javaprojs/taco-cloud$ tree
+.
+├── HELP.md
+├── mvnw
+├── mvnw.cmd
+├── pom.xml
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── tacos
+    │   │       └── TacoCloudApplication.java
+    │   └── resources
+    │       ├── application.properties
+    │       ├── static
+    │       └── templates
+    └── test
+        └── java
+            └── tacos
+                └── TacoCloudApplicationTests.java
+
+10 directories, 7 files
+davidho@dphxps17:~/javaprojs/taco-cloud$ 
+davidho@dphxps17:~/javaprojs/taco-cloud$ cat pom.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.7.7</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>siA</groupId>
+	<artifactId>taco-cloud</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>taco-cloud</name>
+	<description>Taco Cloud Example - spring boot 2.7.7, maven project, jar packaging, java 11</description>
+	<properties>
+		<java.version>11</java.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-rest</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
+davidho@dphxps17:~/javaprojs/taco-cloud$ 
+davidho@dphxps17:~/javaprojs/taco-cloud$ date
+Thu Jan 12 08:09:27 AM EST 2023
+davidho@dphxps17:~/javaprojs/taco-cloud$ 
+
