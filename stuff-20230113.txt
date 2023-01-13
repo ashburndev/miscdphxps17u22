@@ -1,0 +1,1318 @@
+davidho@dphxps17:~$ date
+Fri Jan 13 04:26:06 AM EST 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ touch stuff-20230113.txt
+davidho@dphxps17:~$ code  stuff-20230113.txt
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ neofetch --off
+davidho@dphxps17 
+---------------- 
+OS: Ubuntu 22.04.1 LTS x86_64 
+Host: XPS 17 9710 
+Kernel: 5.15.0-57-generic 
+Uptime: 1 min 
+Packages: 2031 (dpkg), 4 (mine), 11 (snap) 
+Shell: bash 5.1.16 
+Resolution: 3840x2400 
+DE: GNOME 42.5 
+WM: Mutter 
+WM Theme: Adwaita 
+Theme: Yaru [GTK2/3] 
+Icons: Yaru [GTK2/3] 
+Terminal: gnome-terminal 
+CPU: 11th Gen Intel i7-11800H (16) @ 4.600GHz 
+GPU: Intel TigerLake-H GT1 [UHD Graphics] 
+GPU: NVIDIA GeForce RTX 3060 Mobile / Max-Q 
+Memory: 2703MiB / 31827MiB 
+
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+-rw-rw-r--  1 davidho davidho    5605609 Jan  5 17:57  Spring_Boot_in_Action.mobi
+-rw-rw-r--  1 davidho davidho     981876 Jan  5 17:57  sbia_examples.zip
+-rw-rw-r--  1 davidho davidho      65161 Jan 10 15:25  sbapp277g.zip
+-rw-rw-r--  1 davidho davidho      63568 Jan 10 15:28  sbapp277m.zip
+-rw-rw-r--  1 davidho davidho      65150 Jan 10 15:33  sbapp301g.zip
+-rw-rw-r--  1 davidho davidho      63570 Jan 10 15:40  sbapp301m.zip
+-rw-rw-r--  1 davidho davidho      63241 Jan 10 19:35  taco-cloud-orig.zip
+-rw-rw-r--  1 davidho davidho      63313 Jan 11 07:01  taco-cloud.zip
+drwxr-xr-x  6 davidho davidho      20480 Jan 11 07:01  .
+drwxr-x--- 49 davidho davidho       4096 Jan 13 04:29  ..
+davidho@dphxps17:~/Downloads$ mv sbapp277g.zip sbapp277g-orig.zip
+davidho@dphxps17:~/Downloads$ mv sbapp277m.zip sbapp277m-orig.zip
+davidho@dphxps17:~/Downloads$ mv sbapp301g.zip sbapp301g-orig.zip
+davidho@dphxps17:~/Downloads$ mv sbapp301m.zip sbapp301m-orig.zip
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr | tail
+-rw-rw-r--  1 davidho davidho    5605609 Jan  5 17:57 Spring_Boot_in_Action.mobi
+-rw-rw-r--  1 davidho davidho     981876 Jan  5 17:57 sbia_examples.zip
+-rw-rw-r--  1 davidho davidho      65161 Jan 10 15:25 sbapp277g-orig.zip
+-rw-rw-r--  1 davidho davidho      63568 Jan 10 15:28 sbapp277m-orig.zip
+-rw-rw-r--  1 davidho davidho      65150 Jan 10 15:33 sbapp301g-orig.zip
+-rw-rw-r--  1 davidho davidho      63570 Jan 10 15:40 sbapp301m-orig.zip
+-rw-rw-r--  1 davidho davidho      63241 Jan 10 19:35 taco-cloud-orig.zip
+-rw-rw-r--  1 davidho davidho      63313 Jan 11 07:01 taco-cloud.zip
+drwxr-x--- 49 davidho davidho       4096 Jan 13 04:29 ..
+drwxr-xr-x  6 davidho davidho      20480 Jan 13 04:31 .
+davidho@dphxps17:~/Downloads$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp277g
+Name:          sbapp277grajarj11
+Package name:  ashburncode.sbapp277g
+Description:   spring boot 2.7.7, gradle project, jar packaging, java 11
+Dependencies:
+  Spring Web WEB
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories WEB
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC and R2DBC driver.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp277m
+Name:          sbapp277mvnjarj11
+Package name:  ashburncode.sbapp277m
+Description:   spring boot 2.7.7, maven project, jar packaging, java 11
+Dependencies:
+  Spring Web WEB
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories WEB
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC and R2DBC driver.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp301g
+Name:          sbapp301grajarj17
+Package name:  ashburncode.sbapp301g
+Description:   spring boot 3.0.1, gradle project, jar packaging, java 17
+Dependencies:
+  Spring Web WEB
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories WEB
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC and R2DBC driver.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp301m
+Name:          sbapp301mvnjarj17
+Package name:  ashburncode.sbapp301m
+Description:   spring boot 3.0.1, maven project, jar packaging, java 17
+Dependencies:
+  Spring Web WEB
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories WEB
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC and R2DBC driver.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/Downloads$ ls -latr | tail -6
+-rw-rw-r--  1 davidho davidho      65173 Jan 13 04:45 sbapp277g.zip
+-rw-rw-r--  1 davidho davidho      63571 Jan 13 04:52 sbapp277m.zip
+-rw-rw-r--  1 davidho davidho      65163 Jan 13 04:54 sbapp301g.zip
+-rw-rw-r--  1 davidho davidho      63572 Jan 13 04:55 sbapp301m.zip
+drwxr-xr-x  6 davidho davidho      20480 Jan 13 04:55 .
+drwxr-x--- 49 davidho davidho       4096 Jan 13 04:59 ..
+davidho@dphxps17:~/Downloads$ 
+
+
+cp -p sbapp277g.zip /tmp
+cp -p sbapp277m.zip /tmp
+cp -p sbapp301g.zip /tmp
+cp -p sbapp301m.zip /tmp
+
+cd /tmp
+ls -latr
+
+jar xf sbapp277g.zip
+jar xf sbapp277m.zip
+jar xf sbapp301g.zip
+jar xf sbapp301m.zip
+
+cd /tmp/sbapp277g
+chmod +x gradlew
+ls -la
+tree
+find . -type f -exec ls -la {} \;
+./gradlew --version
+
+cd /tmp/sbapp301g
+chmod +x gradlew
+ls -la
+tree
+find . -type f -exec ls -la {} \;
+./gradlew --version
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ 
+cd /tmp/sbapp277g
+chmod +x gradlew
+ls -la
+tree
+find . -type f -exec ls -la {} \;
+./gradlew --version
+total 44
+drwxrwxr-x  4 davidho davidho 4096 Jan 13  2023 .
+drwxrwxrwt 32 root    root    4096 Jan 13 05:20 ..
+-rw-rw-r--  1 davidho davidho  634 Jan 13  2023 build.gradle
+-rw-rw-r--  1 davidho davidho  444 Jan 13  2023 .gitignore
+drwxrwxr-x  3 davidho davidho 4096 Jan 13  2023 gradle
+-rwxrwxr-x  1 davidho davidho 8188 Jan 13  2023 gradlew
+-rw-rw-r--  1 davidho davidho 2838 Jan 13  2023 gradlew.bat
+-rw-rw-r--  1 davidho davidho 1689 Jan 13  2023 HELP.md
+-rw-rw-r--  1 davidho davidho   31 Jan 13  2023 settings.gradle
+drwxrwxr-x  4 davidho davidho 4096 Jan 13  2023 src
+.
+├── build.gradle
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradlew
+├── gradlew.bat
+├── HELP.md
+├── settings.gradle
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── ashburncode
+    │   │       └── sbapp277g
+    │   │           └── Sbapp277grajarj11Application.java
+    │   └── resources
+    │       ├── application.properties
+    │       ├── static
+    │       └── templates
+    └── test
+        └── java
+            └── ashburncode
+                └── sbapp277g
+                    └── Sbapp277grajarj11ApplicationTests.java
+
+14 directories, 10 files
+-rw-rw-r-- 1 davidho davidho 444 Jan 13  2023 ./.gitignore
+-rw-rw-r-- 1 davidho davidho 200 Jan 13  2023 ./gradle/wrapper/gradle-wrapper.properties
+-rw-rw-r-- 1 davidho davidho 60756 Jan 13  2023 ./gradle/wrapper/gradle-wrapper.jar
+-rw-rw-r-- 1 davidho davidho 31 Jan 13  2023 ./settings.gradle
+-rw-rw-r-- 1 davidho davidho 1689 Jan 13  2023 ./HELP.md
+-rw-rw-r-- 1 davidho davidho 224 Jan 13  2023 ./src/test/java/ashburncode/sbapp277g/Sbapp277grajarj11ApplicationTests.java
+-rw-rw-r-- 1 davidho davidho 1 Jan 13  2023 ./src/main/resources/application.properties
+-rw-rw-r-- 1 davidho davidho 336 Jan 13  2023 ./src/main/java/ashburncode/sbapp277g/Sbapp277grajarj11Application.java
+-rw-rw-r-- 1 davidho davidho 634 Jan 13  2023 ./build.gradle
+-rw-rw-r-- 1 davidho davidho 2838 Jan 13  2023 ./gradlew.bat
+-rwxrwxr-x 1 davidho davidho 8188 Jan 13  2023 ./gradlew
+
+------------------------------------------------------------
+Gradle 7.6
+------------------------------------------------------------
+
+Build time:   2022-11-25 13:35:10 UTC
+Revision:     daece9dbc5b79370cc8e4fd6fe4b2cd400e150a8
+
+Kotlin:       1.7.10
+Groovy:       3.0.13
+Ant:          Apache Ant(TM) version 1.10.11 compiled on July 10 2021
+JVM:          17.0.5 (Azul Systems, Inc. 17.0.5+8-LTS)
+OS:           Linux 5.15.0-57-generic amd64
+
+davidho@dphxps17:/tmp/sbapp277g$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ 
+cd /tmp/sbapp301g
+chmod +x gradlew
+ls -la
+tree
+find . -type f -exec ls -la {} \;
+./gradlew --version
+total 44
+drwxrwxr-x  4 davidho davidho 4096 Jan 13  2023 .
+drwxrwxrwt 32 root    root    4096 Jan 13 05:31 ..
+-rw-rw-r--  1 davidho davidho  625 Jan 13  2023 build.gradle
+-rw-rw-r--  1 davidho davidho  444 Jan 13  2023 .gitignore
+drwxrwxr-x  3 davidho davidho 4096 Jan 13  2023 gradle
+-rwxrwxr-x  1 davidho davidho 8188 Jan 13  2023 gradlew
+-rw-rw-r--  1 davidho davidho 2838 Jan 13  2023 gradlew.bat
+-rw-rw-r--  1 davidho davidho 1689 Jan 13  2023 HELP.md
+-rw-rw-r--  1 davidho davidho   31 Jan 13  2023 settings.gradle
+drwxrwxr-x  4 davidho davidho 4096 Jan 13  2023 src
+.
+├── build.gradle
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradlew
+├── gradlew.bat
+├── HELP.md
+├── settings.gradle
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── ashburncode
+    │   │       └── sbapp301g
+    │   │           └── Sbapp301grajarj17Application.java
+    │   └── resources
+    │       ├── application.properties
+    │       ├── static
+    │       └── templates
+    └── test
+        └── java
+            └── ashburncode
+                └── sbapp301g
+                    └── Sbapp301grajarj17ApplicationTests.java
+
+14 directories, 10 files
+-rw-rw-r-- 1 davidho davidho 444 Jan 13  2023 ./.gitignore
+-rw-rw-r-- 1 davidho davidho 200 Jan 13  2023 ./gradle/wrapper/gradle-wrapper.properties
+-rw-rw-r-- 1 davidho davidho 60756 Jan 13  2023 ./gradle/wrapper/gradle-wrapper.jar
+-rw-rw-r-- 1 davidho davidho 31 Jan 13  2023 ./settings.gradle
+-rw-rw-r-- 1 davidho davidho 1689 Jan 13  2023 ./HELP.md
+-rw-rw-r-- 1 davidho davidho 224 Jan 13  2023 ./src/test/java/ashburncode/sbapp301g/Sbapp301grajarj17ApplicationTests.java
+-rw-rw-r-- 1 davidho davidho 1 Jan 13  2023 ./src/main/resources/application.properties
+-rw-rw-r-- 1 davidho davidho 336 Jan 13  2023 ./src/main/java/ashburncode/sbapp301g/Sbapp301grajarj17Application.java
+-rw-rw-r-- 1 davidho davidho 625 Jan 13  2023 ./build.gradle
+-rw-rw-r-- 1 davidho davidho 2838 Jan 13  2023 ./gradlew.bat
+-rwxrwxr-x 1 davidho davidho 8188 Jan 13  2023 ./gradlew
+
+------------------------------------------------------------
+Gradle 7.6
+------------------------------------------------------------
+
+Build time:   2022-11-25 13:35:10 UTC
+Revision:     daece9dbc5b79370cc8e4fd6fe4b2cd400e150a8
+
+Kotlin:       1.7.10
+Groovy:       3.0.13
+Ant:          Apache Ant(TM) version 1.10.11 compiled on July 10 2021
+JVM:          17.0.5 (Azul Systems, Inc. 17.0.5+8-LTS)
+OS:           Linux 5.15.0-57-generic amd64
+
+davidho@dphxps17:/tmp/sbapp301g$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+look for 
+@SpringBootApplication
+@Entity
+@RestController
+extends CrudRepository
+extends PagingAndSortingRepository
+extends JpaRepository
+
+davidho@dphxps17:~/mansia6ed/spring-in-action-6-samples-main$ date
+Fri Jan 13 06:03:44 AM EST 2023
+davidho@dphxps17:~/mansia6ed/spring-in-action-6-samples-main$ pwd -P
+/home/davidho/mansia6ed/spring-in-action-6-samples-main
+davidho@dphxps17:~/mansia6ed/spring-in-action-6-samples-main$ ls -latr
+total 112
+-rw-rw-r--  1 davidho davidho  1744 Jan 27  2022 setbootversion.js
+-rw-rw-r--  1 davidho davidho  1602 Jan 27  2022 README.md
+-rw-rw-r--  1 davidho davidho  2096 Jan 27  2022 pom.xml
+-rw-rw-r--  1 davidho davidho  6607 Jan 27  2022 mvnw.cmd
+-rwxr-xr-x  1 davidho davidho 10069 Jan 27  2022 mvnw
+drwx------  3 davidho davidho  4096 Jan 27  2022 .mvn
+-rwxr-xr-x  1 davidho davidho   502 Jan 27  2022 makezip.sh
+drwx------  3 davidho davidho  4096 Jan 27  2022 .github
+drwx------  4 davidho davidho  4096 Jan 27  2022 ch17
+drwx------  4 davidho davidho  4096 Jan 27  2022 ch15_16
+drwx------  7 davidho davidho  4096 Jan 27  2022 ch14
+drwx------  6 davidho davidho  4096 Jan 27  2022 ch12_13
+drwx------  3 davidho davidho  4096 Jan 27  2022 ch11
+drwx------  5 davidho davidho  4096 Jan 27  2022 ch10
+drwx------ 16 davidho davidho  4096 Jan 27  2022 ch09
+drwx------  5 davidho davidho  4096 Jan 27  2022 ch08
+drwx------ 14 davidho davidho  4096 Jan 27  2022 ch07
+drwx------  3 davidho davidho  4096 Jan 27  2022 ch06
+drwx------  4 davidho davidho  4096 Jan 27  2022 ch05
+drwx------  4 davidho davidho  4096 Jan 27  2022 ch04
+drwx------  5 davidho davidho  4096 Jan 27  2022 ch03
+drwx------  3 davidho davidho  4096 Jan 27  2022 ch02
+drwx------  3 davidho davidho  4096 Jan 27  2022 ch01
+drwx------ 19 davidho davidho  4096 Jan 27  2022 .
+drwxrwxr-x  3 davidho davidho  4096 Jan 10 17:22 ..
+davidho@dphxps17:~/mansia6ed/spring-in-action-6-samples-main$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+@Entity
+
+32 results - 32 files
+
+ch03/tacos-sd-jpa/src/main/java/tacos/Ingredient.java:
+  11  @Data
+  12: @Entity
+  13  @AllArgsConstructor
+
+ch03/tacos-sd-jpa/src/main/java/tacos/Taco.java:
+  16  @Data
+  17: @Entity
+  18  public class Taco {
+
+ch03/tacos-sd-jpa/src/main/java/tacos/TacoOrder.java:
+  21  @Data
+  22: @Entity
+  23  public class TacoOrder implements Serializable {
+
+ch05/taco-cloud/src/main/java/tacos/Ingredient.java:
+  13  @NoArgsConstructor(access=AccessLevel.PRIVATE, force=true)
+  14: @Entity
+  15  public class Ingredient {
+
+ch05/taco-cloud/src/main/java/tacos/Taco.java:
+  16  @Data
+  17: @Entity
+  18  public class Taco {
+
+ch05/taco-cloud/src/main/java/tacos/TacoOrder.java:
+  23  @Data
+  24: @Entity
+  25  @Table(name="Taco_Order")
+
+ch05/taco-cloud/src/main/java/tacos/User.java:
+  16  
+  17: @Entity
+  18  @Data
+
+ch05/taco-cloud-sfc/src/main/java/tacos/Ingredient.java:
+  13  @NoArgsConstructor(access=AccessLevel.PRIVATE, force=true)
+  14: @Entity
+  15  public class Ingredient {
+
+ch05/taco-cloud-sfc/src/main/java/tacos/Taco.java:
+  16  @Data
+  17: @Entity
+  18  public class Taco {
+
+ch05/taco-cloud-sfc/src/main/java/tacos/TacoOrder.java:
+  23  @Data
+  24: @Entity
+  25  @Table(name="Taco_Order")
+
+ch05/taco-cloud-sfc/src/main/java/tacos/User.java:
+  16  
+  17: @Entity
+  18  @Data
+
+ch06/taco-cloud/src/main/java/tacos/Ingredient.java:
+  13  @NoArgsConstructor(access=AccessLevel.PRIVATE, force=true)
+  14: @Entity
+  15  public class Ingredient {
+
+ch06/taco-cloud/src/main/java/tacos/Taco.java:
+  16  @Data
+  17: @Entity
+  18  public class Taco {
+
+ch06/taco-cloud/src/main/java/tacos/TacoOrder.java:
+  23  @Data
+  24: @Entity
+  25  @Table(name="Taco_Order")
+
+ch06/taco-cloud/src/main/java/tacos/User.java:
+  16  
+  17: @Entity
+  18  @Data
+
+ch07/tacocloud-domain/src/main/java/tacos/Ingredient.java:
+  13  @NoArgsConstructor(access=AccessLevel.PRIVATE, force=true)
+  14: @Entity
+  15  public class Ingredient {
+
+ch07/tacocloud-domain/src/main/java/tacos/Taco.java:
+  19  @Data
+  20: @Entity
+  21  @RestResource(rel="tacos", path="tacos")
+
+ch07/tacocloud-domain/src/main/java/tacos/TacoOrder.java:
+  23  @Data
+  24: @Entity
+  25  @Table(name="Taco_Order")
+
+ch07/tacocloud-domain/src/main/java/tacos/User.java:
+  19  
+  20: @Entity
+  21  @Data
+
+ch08/auth-server/src/main/java/tacos/authorization/users/User.java:
+  21  @Data
+  22: @Entity
+  23  @RequiredArgsConstructor
+
+ch08/tacocloud/tacocloud-domain/src/main/java/tacos/Ingredient.java:
+  13  @NoArgsConstructor(access=AccessLevel.PRIVATE, force=true)
+  14: @Entity
+  15  public class Ingredient {
+
+ch08/tacocloud/tacocloud-domain/src/main/java/tacos/Taco.java:
+  16  @Data
+  17: @Entity
+  18  public class Taco {
+
+ch08/tacocloud/tacocloud-domain/src/main/java/tacos/TacoOrder.java:
+  23  @Data
+  24: @Entity
+  25  @Table(name="Taco_Order")
+
+ch08/tacocloud/tacocloud-domain/src/main/java/tacos/User.java:
+  19  
+  20: @Entity
+  21  @Data
+
+ch09/tacocloud-domain/src/main/java/tacos/Ingredient.java:
+  13  @NoArgsConstructor(access=AccessLevel.PRIVATE, force=true)
+  14: @Entity
+  15  public class Ingredient {
+
+ch09/tacocloud-domain/src/main/java/tacos/Taco.java:
+  18  @Data
+  19: @Entity
+  20  @RestResource(rel="tacos", path="tacos")
+
+ch09/tacocloud-domain/src/main/java/tacos/TacoOrder.java:
+  23  @Data
+  24: @Entity
+  25  @Table(name="Taco_Order")
+
+ch09/tacocloud-domain/src/main/java/tacos/User.java:
+  19  
+  20: @Entity
+  21  @Data
+
+ch10/tacocloud/tacocloud-domain/src/main/java/tacos/Ingredient.java:
+  13  @NoArgsConstructor(access=AccessLevel.PRIVATE, force=true)
+  14: @Entity
+  15  public class Ingredient {
+
+ch10/tacocloud/tacocloud-domain/src/main/java/tacos/Taco.java:
+  18  @Data
+  19: @Entity
+  20  @RestResource(rel="tacos", path="tacos")
+
+ch10/tacocloud/tacocloud-domain/src/main/java/tacos/TacoOrder.java:
+  23  @Data
+  24: @Entity
+  25  @Table(name="Taco_Order")
+
+ch10/tacocloud/tacocloud-domain/src/main/java/tacos/User.java:
+  19  
+  20: @Entity
+  21  @Data
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+@RestController
+
+27 results - 27 files
+
+ch07/tacocloud-api/src/main/java/tacos/web/api/IngredientController.java:
+  11  
+  12: @RestController
+  13  @RequestMapping(path="/api/ingredients", produces="application/json")
+
+ch07/tacocloud-api/src/main/java/tacos/web/api/OrderApiController.java:
+  19  
+  20: @RestController
+  21  @RequestMapping(path="/api/orders",
+
+ch07/tacocloud-api/src/main/java/tacos/web/api/TacoController.java:
+  19  
+  20: @RestController
+  21  @RequestMapping(path="/api/tacos",                      // <1>
+
+ch08/tacocloud/tacocloud-api/src/main/java/tacos/web/api/IngredientController.java:
+  17  
+  18: @RestController
+  19  @RequestMapping(path="/api/ingredients", produces="application/json")
+
+ch08/tacocloud/tacocloud-api/src/main/java/tacos/web/api/OrderApiController.java:
+  19  
+  20: @RestController
+  21  @RequestMapping(path="/api/orders",
+
+ch08/tacocloud/tacocloud-api/src/main/java/tacos/web/api/TacoController.java:
+  18  
+  19: @RestController
+  20  @RequestMapping(path="/api/tacos",                      // <1>
+
+ch09/tacocloud-api/src/main/java/tacos/web/api/IngredientController.java:
+  11  
+  12: @RestController
+  13  @RequestMapping(path="/api/ingredients", produces="application/json")
+
+ch09/tacocloud-api/src/main/java/tacos/web/api/OrderApiController.java:
+  20  
+  21: @RestController
+  22  @RequestMapping(path="/api/orders",
+
+ch09/tacocloud-api/src/main/java/tacos/web/api/TacoController.java:
+  20  
+  21: @RestController
+  22  @RequestMapping(path="/api/tacos",                      // <1>
+
+ch10/tacocloud/tacocloud-api/src/main/java/tacos/web/api/IngredientController.java:
+  11  
+  12: @RestController
+  13  @RequestMapping(path="/api/ingredients", produces="application/json")
+
+ch10/tacocloud/tacocloud-api/src/main/java/tacos/web/api/OrderApiController.java:
+  20  
+  21: @RestController
+  22  @RequestMapping(path="/api/orders",
+
+ch10/tacocloud/tacocloud-api/src/main/java/tacos/web/api/TacoController.java:
+  20  
+  21: @RestController
+  22  @RequestMapping(path="/api/tacos",                      // <1>
+
+ch12_13/tacocloud-cassandra/tacocloud-api/src/main/java/tacos/web/api/IngredientController.java:
+  23  
+  24: @RestController
+  25  @RequestMapping(path="/api/ingredients", produces="application/json")
+
+ch12_13/tacocloud-cassandra/tacocloud-api/src/main/java/tacos/web/api/OrderApiController.java:
+  24  
+  25: @RestController
+  26  @RequestMapping(path="/api/orders",
+
+ch12_13/tacocloud-cassandra/tacocloud-api/src/main/java/tacos/web/api/TacoController.java:
+  19  
+  20: @RestController
+  21  @RequestMapping(path = "/api/tacos", produces = "application/json")
+
+ch12_13/tacocloud-mongodb/tacocloud-api/src/main/java/tacos/web/api/IngredientController.java:
+  23  
+  24: @RestController
+  25  @RequestMapping(path="/api/ingredients", produces="application/json")
+
+ch12_13/tacocloud-mongodb/tacocloud-api/src/main/java/tacos/web/api/OrderApiController.java:
+  22  
+  23: @RestController
+  24  @RequestMapping(path="/api/orders",
+
+ch12_13/tacocloud-mongodb/tacocloud-api/src/main/java/tacos/web/api/TacoController.java:
+  17  
+  18: @RestController
+  19  @RequestMapping(path = "/api/tacos", produces = "application/json")
+
+ch12_13/tacocloud-r2dbc/tacocloud-api/src/main/java/tacos/web/api/IngredientController.java:
+  23  
+  24: @RestController
+  25  @RequestMapping(path="/api/ingredients", produces="application/json")
+
+ch12_13/tacocloud-r2dbc/tacocloud-api/src/main/java/tacos/web/api/OrderApiController.java:
+  22  
+  23: @RestController
+  24  @RequestMapping(path="/api/orders",
+
+ch12_13/tacocloud-r2dbc/tacocloud-api/src/main/java/tacos/web/api/TacoController.java:
+  19  
+  20: @RestController
+  21  @RequestMapping(path = "/api/tacos", produces = "application/json")
+
+ch15_16/tacocloud/tacocloud-api/src/main/java/tacos/web/api/IngredientController.java:
+  23  
+  24: @RestController
+  25  @RequestMapping(path="/api/ingredients", produces="application/json")
+
+ch15_16/tacocloud/tacocloud-api/src/main/java/tacos/web/api/OrderApiController.java:
+  22  
+  23: @RestController
+  24  @RequestMapping(path="/api/orders",
+
+ch15_16/tacocloud/tacocloud-api/src/main/java/tacos/web/api/TacoController.java:
+  17  
+  18: @RestController
+  19  @RequestMapping(path = "/api/tacos", produces = "application/json")
+
+ch17/tacocloud/tacocloud-api/src/main/java/tacos/web/api/IngredientController.java:
+  23  
+  24: @RestController
+  25  @RequestMapping(path="/api/ingredients", produces="application/json")
+
+ch17/tacocloud/tacocloud-api/src/main/java/tacos/web/api/OrderApiController.java:
+  22  
+  23: @RestController
+  24  @RequestMapping(path="/api/orders",
+
+ch17/tacocloud/tacocloud-api/src/main/java/tacos/web/api/TacoController.java:
+  17  
+  18: @RestController
+  19  @RequestMapping(path = "/api/tacos", produces = "application/json")
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+extends PagingAndSortingRepository
+
+4 results - 4 files
+
+ch07/tacocloud-data/src/main/java/tacos/data/TacoRepository.java:
+  8  public interface TacoRepository 
+  9:          extends PagingAndSortingRepository<Taco, Long> {
+  10  
+
+ch08/tacocloud/tacocloud-data/src/main/java/tacos/data/TacoRepository.java:
+  8  public interface TacoRepository 
+  9:          extends PagingAndSortingRepository<Taco, Long> {
+  10  
+
+ch09/tacocloud-data/src/main/java/tacos/data/TacoRepository.java:
+  8  public interface TacoRepository 
+  9:          extends PagingAndSortingRepository<Taco, Long> {
+  10  
+
+ch10/tacocloud/tacocloud-data/src/main/java/tacos/data/TacoRepository.java:
+  8  public interface TacoRepository 
+  9:          extends PagingAndSortingRepository<Taco, Long> {
+  10  
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+@SpringBootApplication
+
+50 results - 50 files
+
+ch01/taco-cloud/src/main/java/tacos/TacoCloudApplication.java:
+  5  
+  6: @SpringBootApplication   // <1>
+  7  public class TacoCloudApplication {
+
+ch02/taco-cloud/src/main/java/tacos/TacoCloudApplication.java:
+  5  
+  6: @SpringBootApplication   // <1>
+  7  public class TacoCloudApplication {
+
+ch03/tacos-jdbctemplate/src/main/java/tacos/TacoCloudApplication.java:
+  5  
+  6: @SpringBootApplication
+  7  public class TacoCloudApplication {
+
+ch03/tacos-sd-jdbc/src/main/java/tacos/TacoCloudApplication.java:
+  10  
+  11: @SpringBootApplication
+  12  public class TacoCloudApplication {
+
+ch03/tacos-sd-jpa/src/main/java/tacos/TacoCloudApplication.java:
+  10  
+  11: @SpringBootApplication
+  12  public class TacoCloudApplication {
+
+ch04/tacos-sd-cassandra/src/main/java/tacos/TacoCloudApplication.java:
+  10  
+  11: @SpringBootApplication
+  12  public class TacoCloudApplication {
+
+ch04/tacos-sd-mongodb/src/main/java/tacos/TacoCloudApplication.java:
+  10  
+  11: @SpringBootApplication
+  12  public class TacoCloudApplication {
+
+ch05/taco-cloud/src/main/java/tacos/TacoCloudApplication.java:
+  10  
+  11: @SpringBootApplication
+  12  public class TacoCloudApplication {
+
+ch05/taco-cloud-sfc/src/main/java/tacos/TacoCloudApplication.java:
+  10  
+  11: @SpringBootApplication
+  12  public class TacoCloudApplication {
+
+ch06/taco-cloud/src/main/java/tacos/TacoCloudApplication.java:
+  5  
+  6: @SpringBootApplication
+  7  public class TacoCloudApplication {
+
+ch07/tacocloud/src/main/java/tacos/TacoCloudApplication.java:
+  14  
+  15: @SpringBootApplication
+  16  public class TacoCloudApplication {
+
+ch08/auth-server/src/main/java/tacos/authorization/AuthServerApplication.java:
+  11  
+  12: @SpringBootApplication
+  13  public class AuthServerApplication {
+
+ch08/tacocloud/tacocloud/src/main/java/tacos/TacoCloudApplication.java:
+  14  
+  15: @SpringBootApplication
+  16  public class TacoCloudApplication {
+
+ch08/tacocloud-admin/src/main/java/tacos/TacocloudAdminApplication.java:
+  5  
+  6: @SpringBootApplication
+  7  public class TacocloudAdminApplication {
+
+ch09/tacocloud/src/main/java/tacos/TacoCloudApplication.java:
+  14  
+  15: @SpringBootApplication
+  16  public class TacoCloudApplication {
+
+ch09/tacocloud-data/src/test/java/tacos/DataConfiguration.java:
+  4  
+  5: @SpringBootApplication
+  6  public class DataConfiguration {
+
+ch09/tacocloud-kitchen/src/main/java/tacos/kitchen/TacoKitchenApplication.java:
+  5  
+  6: @SpringBootApplication
+  7  public class TacoKitchenApplication {
+
+ch10/simple-flow/src/main/java/sia6/SimpleFlowApplication.java:
+  8  
+  9: @SpringBootApplication
+  10  public class SimpleFlowApplication {
+
+ch10/tacocloud/tacocloud/src/main/java/tacos/TacoCloudApplication.java:
+  14  
+  15: @SpringBootApplication
+  16  public class TacoCloudApplication {
+
+ch10/tacocloud/tacocloud-data/src/test/java/tacos/DataConfiguration.java:
+  4  
+  5: @SpringBootApplication
+  6  public class DataConfiguration {
+
+ch10/tacocloud/tacocloud-email/src/main/java/tacos/email/TacoEmailApplication.java:
+  7  
+  8: @SpringBootApplication
+  9  public class TacoEmailApplication {
+
+ch10/tacocloud/tacocloud-kitchen/src/main/java/tacos/kitchen/TacoKitchenApplication.java:
+  5  
+  6: @SpringBootApplication
+  7  public class TacoKitchenApplication {
+
+ch12_13/hello-reactive/src/main/java/hello/HelloReactiveApplication.java:
+  5  
+  6: @SpringBootApplication
+  7  public class HelloReactiveApplication {
+
+ch12_13/tacocloud-cassandra/tacocloud/src/main/java/tacos/TacoCloudApplication.java:
+  14  
+  15: @SpringBootApplication
+  16  public class TacoCloudApplication {
+
+ch12_13/tacocloud-cassandra/tacocloud-email/src/main/java/tacos/email/TacoEmailApplication.java:
+  7  
+  8: @SpringBootApplication
+  9  public class TacoEmailApplication {
+
+ch12_13/tacocloud-cassandra/tacocloud-kitchen/src/main/java/tacos/kitchen/TacoKitchenApplication.java:
+  5  
+  6: @SpringBootApplication
+  7  public class TacoKitchenApplication {
+
+ch12_13/tacocloud-mongodb/tacocloud/src/main/java/tacos/TacoCloudApplication.java:
+  14  
+  15: @SpringBootApplication
+  16  public class TacoCloudApplication {
+
+ch12_13/tacocloud-mongodb/tacocloud-email/src/main/java/tacos/email/TacoEmailApplication.java:
+  7  
+  8: @SpringBootApplication
+  9  public class TacoEmailApplication {
+
+ch12_13/tacocloud-mongodb/tacocloud-kitchen/src/main/java/tacos/kitchen/TacoKitchenApplication.java:
+  5  
+  6: @SpringBootApplication
+  7  public class TacoKitchenApplication {
+
+ch12_13/tacocloud-r2dbc/tacocloud/src/main/java/tacos/TacoCloudApplication.java:
+  14  
+  15: @SpringBootApplication
+  16  public class TacoCloudApplication {
+
+ch12_13/tacocloud-r2dbc/tacocloud-email/src/main/java/tacos/email/TacoEmailApplication.java:
+  7  
+  8: @SpringBootApplication
+  9  public class TacoEmailApplication {
+
+ch12_13/tacocloud-r2dbc/tacocloud-kitchen/src/main/java/tacos/kitchen/TacoKitchenApplication.java:
+  5  
+  6: @SpringBootApplication
+  7  public class TacoKitchenApplication {
+
+ch14/channel/client/src/main/java/rsocket/RSocketChannelClientApplication.java:
+  5  
+  6: @SpringBootApplication
+  7  public class RSocketChannelClientApplication {
+
+ch14/channel/server/src/main/java/rsocket/RSocketChannelServerApplication.java:
+  5  
+  6: @SpringBootApplication
+  7  public class RSocketChannelServerApplication {
+
+ch14/fire-and-forget/client/src/main/java/rsocket/RSocketFireAndForgetClientApplication.java:
+  5  
+  6: @SpringBootApplication
+  7  public class RSocketFireAndForgetClientApplication {
+
+ch14/fire-and-forget/server/src/main/java/rsocket/RSocketFireAndForgetServerApplication.java:
+  5  
+  6: @SpringBootApplication
+  7  public class RSocketFireAndForgetServerApplication {
+
+ch14/request-response/client/src/main/java/rsocket/RSocketReqRespClientApplication.java:
+  5  
+  6: @SpringBootApplication
+  7  public class RSocketReqRespClientApplication {
+
+ch14/request-response/server/src/main/java/rsocket/RSocketReqRespServerApplication.java:
+  5  
+  6: @SpringBootApplication
+  7  public class RSocketReqRespServerApplication {
+
+ch14/request-response-over-websocket/client/src/main/java/rsocket/RSocketReqRespClientApplication.java:
+  5  
+  6: @SpringBootApplication
+  7  public class RSocketReqRespClientApplication {
+
+ch14/request-response-over-websocket/server/src/main/java/rsocket/RSocketReqRespServerApplication.java:
+  5  
+  6: @SpringBootApplication
+  7  public class RSocketReqRespServerApplication {
+
+ch14/request-stream/client/src/main/java/rsocket/RSocketReqStreamClientApplication.java:
+  5  
+  6: @SpringBootApplication
+  7  public class RSocketReqStreamClientApplication {
+
+ch14/request-stream/server/src/main/java/rsocket/RSocketReqStreamServerApplication.java:
+  5  
+  6: @SpringBootApplication
+  7  public class RSocketReqStreamServerApplication {
+
+ch15_16/admin-server/src/main/java/tacos/admin/AdminServerApplication.java:
+  8  @EnableAdminServer
+  9: @SpringBootApplication
+  10  public class AdminServerApplication {
+
+ch15_16/tacocloud/tacocloud/src/main/java/tacos/TacoCloudApplication.java:
+  14  
+  15: @SpringBootApplication
+  16  public class TacoCloudApplication {
+
+ch15_16/tacocloud/tacocloud-email/src/main/java/tacos/email/TacoEmailApplication.java:
+  7  
+  8: @SpringBootApplication
+  9  public class TacoEmailApplication {
+
+ch15_16/tacocloud/tacocloud-kitchen/src/main/java/tacos/kitchen/TacoKitchenApplication.java:
+  5  
+  6: @SpringBootApplication
+  7  public class TacoKitchenApplication {
+
+ch17/admin-server/src/main/java/tacos/admin/AdminServerApplication.java:
+  8  @EnableAdminServer
+  9: @SpringBootApplication
+  10  public class AdminServerApplication {
+
+ch17/tacocloud/tacocloud/src/main/java/tacos/TacoCloudApplication.java:
+  14  
+  15: @SpringBootApplication
+  16  public class TacoCloudApplication {
+
+ch17/tacocloud/tacocloud-email/src/main/java/tacos/email/TacoEmailApplication.java:
+  7  
+  8: @SpringBootApplication
+  9  public class TacoEmailApplication {
+
+ch17/tacocloud/tacocloud-kitchen/src/main/java/tacos/kitchen/TacoKitchenApplication.java:
+  5  
+  6: @SpringBootApplication
+  7  public class TacoKitchenApplication {
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ curl http://localhost:8080
+{
+  "_links" : {
+    "profile" : {
+      "href" : "http://localhost:8080/profile"
+    }
+  }
+}davidho@dphxps17:~$ curl http://localhost:8080/health
+{"timestamp":"2023-01-13T11:48:07.793+00:00","status":404,"error":"Not Found","message":"No message available","path":"/health"}
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:/tmp/taco-cloud$ ls -latr
+total 56
+drwxrwxr-x  4 davidho davidho  4096 Jan 11 12:01 src
+-rw-rw-r--  1 davidho davidho  2465 Jan 11 12:01 pom.xml
+-rw-rw-r--  1 davidho davidho  6734 Jan 11 12:01 mvnw.cmd
+-rwxrwxr-x  1 davidho davidho 10284 Jan 11 12:01 mvnw
+drwxrwxr-x  3 davidho davidho  4096 Jan 11 12:01 .mvn
+-rw-rw-r--  1 davidho davidho  2025 Jan 11 12:01 HELP.md
+-rw-rw-r--  1 davidho davidho   395 Jan 11 12:01 .gitignore
+drwxrwxr-x  7 davidho davidho  4096 Jan 13 06:37 target
+drwxrwxr-x  5 davidho davidho  4096 Jan 13 07:29 .
+-rw-rw-r--  1 davidho davidho   356 Jan 13 07:29 create.sql
+drwxrwxrwt 37 root    root     4096 Jan 13 07:30 ..
+davidho@dphxps17:/tmp/taco-cloud$ 
+davidho@dphxps17:/tmp/taco-cloud$ cat create.sql 
+create table hibernate_sequence (next_val bigint) engine=InnoDB;
+insert into hibernate_sequence values ( 1 );
+create table user (id bigint not null, city varchar(255), fullname varchar(255), password varchar(255), phone_number varchar(255), state varchar(255), street varchar(255), username varchar(255), zip varchar(255), primary key (id)) engine=InnoDB;
+davidho@dphxps17:/tmp/taco-cloud$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+/tmp/taco-cloud/src/main/java/tacos/User.java
+
+package tacos;
+import java.util.Arrays;
+import java.util.Collection;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+// import org.springframework.security.core.GrantedAuthority;
+// import org.springframework.security.core.authority.SimpleGrantedAuthority;
+// import org.springframework.security.core.userdetails.UserDetails;
+
+import lombok.AccessLevel;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+
+@Entity
+@Data
+@NoArgsConstructor(access=AccessLevel.PRIVATE, force=true)
+@RequiredArgsConstructor
+public class User /* implements UserDetails */ {
+
+  private static final long serialVersionUID = 1L;
+
+  @Id
+  @GeneratedValue(strategy=GenerationType.AUTO)
+  private Long id;
+  
+  private final String username;
+  
+  private final String password;
+  private final String fullname;
+  private final String street;
+  private final String city;
+  private final String state;
+  private final String zip;
+  private final String phoneNumber;
+  
+  // @Override
+  // public Collection<? extends GrantedAuthority> getAuthorities() {
+  //   return Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"));
+  // }
+
+  // @Override
+  // public boolean isAccountNonExpired() {
+  //   return true;
+  // }
+
+  // @Override
+  // public boolean isAccountNonLocked() {
+  //   return true;
+  // }
+
+  // @Override
+  // public boolean isCredentialsNonExpired() {
+  //   return true;
+  // }
+
+  // @Override
+  // public boolean isEnabled() {
+  //   return true;
+  // }
+
+}
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+/tmp/taco-cloud/src/main/java/tacos/UserRepository
+
+package tacos;
+
+import org.springframework.data.repository.PagingAndSortingRepository;
+
+import tacos.User;
+
+public interface UserRepository 
+         extends PagingAndSortingRepository<User, Long> {
+
+}
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+/tmp/taco-cloud/src/main/resources/application.properties
+
+spring.jpa.hibernate.ddl-auto=update
+# spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/db_example
+spring.datasource.url=jdbc:mysql://localhost:3306/tacocloud
+# spring.datasource.username=buzz
+# spring.datasource.password=infinity
+spring.datasource.username=tacouser
+spring.datasource.password=tacopassword
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+#spring.jpa.show-sql: true
+
+# Caused by: org.hibernate.HibernateException: Unable to determine Dialect without JDBC metadata (please set 'javax.persistence.jdbc.url', 'hibernate.connection.url', or 'hibernate.dialect')
+# hibernate.connection.url=jdbc:mysql://localhost:3306/db_example
+# hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+
+# spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+
+# logging.level.tacos=WARN
+
+# https://docs.spring.io/spring-boot/docs/2.1.x/reference/html/howto-database-initialization.html
+# https://stackoverflow.com/questions/36966337/how-to-generate-a-ddl-creation-script-with-a-modern-spring-boot-data-jpa-and-h
+# https://springhow.com/spring-boot-database-initialization/
+# https://www.baeldung.com/spring-data-jpa-generate-db-schema
+# valid options for action are none create dropt drop-and-create 
+spring.jpa.properties.javax.persistence.schema-generation.scripts.action=create
+spring.jpa.properties.javax.persistence.schema-generation.scripts.create-target=create.sql
+spring.jpa.properties.javax.persistence.schema-generation.scripts.create-source=metadata
+
+# spring.jpa.properties.javax.persistence.schema-generation.scripts.drop-target=drop.sql
+# spring.jpa.properties.javax.persistence.schema-generation.scripts.drop-source=metadata
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| db_example         |
+| depot2_development |
+| dphpyapp1          |
+| dphpyapp2          |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sbapp2db           |
+| sbapp3db           |
+| sys                |
+| tacocloud          |
+| wire2_development  |
+| wire3_development  |
+| wire4_development  |
+| wire5_development  |
+| wire6_development  |
++--------------------+
+16 rows in set (0.00 sec)
+
+mysql> use tacocloud
+Database changed
+mysql> show tables;
+Empty set (0.00 sec)
+
+mysql> 
+mysql> create table hibernate_sequence (next_val bigint) engine=InnoDB;
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> insert into hibernate_sequence values ( 1 );
+Query OK, 1 row affected (0.00 sec)
+
+mysql> create table user (id bigint not null, city varchar(255), fullname varchar(255), password varchar(255), phone_number varchar(255), state varchar(255), street varchar(255), username varchar(255), zip varchar(255), primary key (id)) engine=InnoDB;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> desc user;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| id           | bigint       | NO   | PRI | NULL    |       |
+| city         | varchar(255) | YES  |     | NULL    |       |
+| fullname     | varchar(255) | YES  |     | NULL    |       |
+| password     | varchar(255) | YES  |     | NULL    |       |
+| phone_number | varchar(255) | YES  |     | NULL    |       |
+| state        | varchar(255) | YES  |     | NULL    |       |
+| street       | varchar(255) | YES  |     | NULL    |       |
+| username     | varchar(255) | YES  |     | NULL    |       |
+| zip          | varchar(255) | YES  |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+9 rows in set (0.01 sec)
+
+mysql> 
+
+truncate user;
+insert into user (id, fullname) values (1, "George Washington");
+insert into user (id, fullname) values (2, "John Adams");
+insert into user (id, fullname) values (3, "Thomas Jefferson");
+
+mysql> select * from user;
++----+------+-------------------+----------+--------------+-------+--------+----------+------+
+| id | city | fullname          | password | phone_number | state | street | username | zip  |
++----+------+-------------------+----------+--------------+-------+--------+----------+------+
+|  1 | NULL | George Washington | NULL     | NULL         | NULL  | NULL   | NULL     | NULL |
+|  2 | NULL | John Adams        | NULL     | NULL         | NULL  | NULL   | NULL     | NULL |
+|  3 | NULL | Thomas Jefferson  | NULL     | NULL         | NULL  | NULL   | NULL     | NULL |
++----+------+-------------------+----------+--------------+-------+--------+----------+------+
+3 rows in set (0.00 sec)
+
+mysql> 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ curl http://localhost:8080/user
+{"timestamp":"2023-01-13T12:54:44.320+00:00","status":404,"error":"Not Found","message":"No message available","path":"/user"}davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:/tmp/taco-cloud$ tree
+.
+├── create.sql
+├── HELP.md
+├── mvnw
+├── mvnw.cmd
+├── pom.xml
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── tacos
+│   │   │       ├── TacoCloudApplication.java
+│   │   │       ├── User.java
+│   │   │       └── UserRepository
+│   │   └── resources
+│   │       ├── application.properties
+│   │       ├── static
+│   │       └── templates
+│   └── test
+│       └── java
+│           └── tacos
+│               └── TacoCloudApplicationTests.java
+└── target
+    ├── classes
+    │   ├── application.properties
+    │   └── tacos
+    │       ├── TacoCloudApplication.class
+    │       └── User.class
+    ├── generated-sources
+    │   └── annotations
+    ├── generated-test-sources
+    │   └── test-annotations
+    ├── maven-status
+    │   └── maven-compiler-plugin
+    │       ├── compile
+    │       │   └── default-compile
+    │       │       ├── createdFiles.lst
+    │       │       └── inputFiles.lst
+    │       └── testCompile
+    │           └── default-testCompile
+    │               ├── createdFiles.lst
+    │               └── inputFiles.lst
+    └── test-classes
+        └── tacos
+            └── TacoCloudApplicationTests.class
+
+25 directories, 18 files
+davidho@dphxps17:/tmp/taco-cloud$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:/tmp/taco-cloud$ !2113
+./mvnw spring-boot:run
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------------< siA:taco-cloud >---------------------------
+[INFO] Building taco-cloud 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot-maven-plugin:2.7.7:run (default-cli) > test-compile @ taco-cloud >>>
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ taco-cloud ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ taco-cloud ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /tmp/taco-cloud/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ taco-cloud ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /tmp/taco-cloud/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ taco-cloud ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /tmp/taco-cloud/target/test-classes
+[INFO] 
+[INFO] <<< spring-boot-maven-plugin:2.7.7:run (default-cli) < test-compile @ taco-cloud <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.7.7:run (default-cli) @ taco-cloud ---
+[INFO] Attaching agents: []
+07:53:59.170 [Thread-0] DEBUG org.springframework.boot.devtools.restart.classloader.RestartClassLoader - Created RestartClassLoader org.springframework.boot.devtools.restart.classloader.RestartClassLoader@4f339345
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.7)
+
+2023-01-13 07:53:59.324  INFO 50532 --- [  restartedMain] tacos.TacoCloudApplication               : Starting TacoCloudApplication using Java 17.0.5 on dphxps17 with PID 50532 (/tmp/taco-cloud/target/classes started by davidho in /tmp/taco-cloud)
+2023-01-13 07:53:59.324  INFO 50532 --- [  restartedMain] tacos.TacoCloudApplication               : No active profile set, falling back to 1 default profile: "default"
+2023-01-13 07:53:59.348  INFO 50532 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-01-13 07:53:59.348  INFO 50532 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-01-13 07:53:59.582  INFO 50532 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-13 07:53:59.587  INFO 50532 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2023-01-13 07:53:59.886  INFO 50532 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-01-13 07:53:59.891  INFO 50532 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-13 07:53:59.891  INFO 50532 --- [  restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-01-13 07:53:59.920  INFO 50532 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-13 07:53:59.920  INFO 50532 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 572 ms
+2023-01-13 07:54:00.014  INFO 50532 --- [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-13 07:54:00.033  INFO 50532 --- [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-01-13 07:54:00.096  INFO 50532 --- [  restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-13 07:54:00.136  INFO 50532 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-13 07:54:00.287  INFO 50532 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-01-13 07:54:00.299  INFO 50532 --- [  restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-01-13 07:54:00.532  INFO 50532 --- [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-13 07:54:00.535  INFO 50532 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-13 07:54:00.568  WARN 50532 --- [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-13 07:54:00.829  WARN 50532 --- [  restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2023-01-13 07:54:00.939  INFO 50532 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-01-13 07:54:00.953  INFO 50532 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-01-13 07:54:00.960  INFO 50532 --- [  restartedMain] tacos.TacoCloudApplication               : Started TacoCloudApplication in 1.786 seconds (JVM running for 1.969)
+2023-01-13 07:54:44.271  INFO 50532 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-13 07:54:44.271  INFO 50532 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-13 07:54:44.272  INFO 50532 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:/tmp/taco-cloud$ date
+Fri Jan 13 08:03:50 AM EST 2023
+davidho@dphxps17:/tmp/taco-cloud$ 
+
