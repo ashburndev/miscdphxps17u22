@@ -1,0 +1,585 @@
+davidho@dphxps17:~$ date
+Mon Jan 16 08:07:59 AM EST 2023
+davidho@dphxps17:~$ touch stuff-20230116.txt
+davidho@dphxps17:~$ code  stuff-20230116.txt
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+my goals for today:
+
+1. using the newest available version of grails, create grails app equivalent to the "Spring in Action" book tacocloud Spring Boot application
+2. add code to a Spring Boot application to print (log) the request header values
+3. for the sbapp301g application, 
+  A. do jar tvf on the zip file (create using "Spring Initializr" https://start.spring.io web site)
+  B. make note of the version of gradle in the gradle wrapper
+  B. capture a list of dependencies
+  C. print the minimal set of files I will need to retype on customer-supplied development environment to test for Sprint Boot 3 dependencies
+  D. persist the sbapp301g project in github
+4. install and activate (configure?) lombok plugin in eclipse ide and spring tool suite (sts) ide
+5.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+cd ~/Downloads
+date
+pwd -P
+ls -latr | tail -6
+jar tvf sbapp301g.zip
+cd ~/sbootprojs
+cp -p ~/Downloads/sbapp*.zip .
+ls -latr
+jar xf sbapp277g.zip
+jar xf sbapp277m.zip
+jar xf sbapp301g.zip
+jar xf sbapp301m.zip
+jar tvf sbapp301g.zip
+cd sbapp301g
+ls -latr
+chmod +x ./gradlew
+./gradlew --version
+cat settings.gradle
+cat build.gradle
+cat .gitignore
+find . -type f -print
+find . -name "*.java" -print -exec cat {} \;
+find . -name "*.properties" -print -exec cat {} \;
+git --version
+git init 
+
+look for dependencies relared to mysql, hibernate, tomcat, and spring
+
+./gradlew dependencies | grep -i mysql \
+  | sed -e 's/|    //g' | sed -e 's/[\\+]--- //g' | sed -e 's/([n*])//g' \
+  | sed -e 's/^[ \t]*//' | sed -e 's/[ \t]*$//' | sort -u
+
+./gradlew dependencies | grep -i hibernate \
+  | sed -e 's/|    //g' | sed -e 's/[\\+]--- //g' | sed -e 's/([n*])//g' \
+  | sed -e 's/^[ \t]*//' | sed -e 's/[ \t]*$//' | sort -u
+
+./gradlew dependencies | grep -i tomcat \
+  | sed -e 's/|    //g' | sed -e 's/[\\+]--- //g' | sed -e 's/([n*])//g' \
+  | sed -e 's/^[ \t]*//' | sed -e 's/[ \t]*$//' | sort -u
+
+./gradlew dependencies | grep -i spring \
+  | sed -e 's/|    //g' | sed -e 's/[\\+]--- //g' | sed -e 's/([n*])//g' \
+  | sed -e 's/^[ \t]*//' | sed -e 's/[ \t]*$//' | sort -u
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ cd ~/Downloads
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ date
+Mon Jan 16 09:27:23 AM EST 2023
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ pwd -P
+/home/davidho/Downloads
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr | tail -6
+-rw-rw-r--  1 davidho davidho      65173 Jan 13 04:45 sbapp277g.zip
+-rw-rw-r--  1 davidho davidho      63571 Jan 13 04:52 sbapp277m.zip
+-rw-rw-r--  1 davidho davidho      65163 Jan 13 04:54 sbapp301g.zip
+-rw-rw-r--  1 davidho davidho      63572 Jan 13 04:55 sbapp301m.zip
+drwxr-xr-x  6 davidho davidho      20480 Jan 13 04:55 .
+drwxr-x--- 49 davidho davidho       4096 Jan 16 08:14 ..
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ jar tvf sbapp301g.zip
+     0 Fri Jan 13 09:54:08 EST 2023 sbapp301g/
+  1689 Fri Jan 13 09:54:08 EST 2023 sbapp301g/HELP.md
+  8188 Fri Jan 13 09:54:08 EST 2023 sbapp301g/gradlew
+  2838 Fri Jan 13 09:54:08 EST 2023 sbapp301g/gradlew.bat
+   625 Fri Jan 13 09:54:08 EST 2023 sbapp301g/build.gradle
+   444 Fri Jan 13 09:54:08 EST 2023 sbapp301g/.gitignore
+     0 Fri Jan 13 09:54:08 EST 2023 sbapp301g/src/
+     0 Fri Jan 13 09:54:08 EST 2023 sbapp301g/src/test/
+     0 Fri Jan 13 09:54:08 EST 2023 sbapp301g/src/test/java/
+     0 Fri Jan 13 09:54:08 EST 2023 sbapp301g/src/test/java/ashburncode/
+     0 Fri Jan 13 09:54:08 EST 2023 sbapp301g/src/test/java/ashburncode/sbapp301g/
+   224 Fri Jan 13 09:54:08 EST 2023 sbapp301g/src/test/java/ashburncode/sbapp301g/Sbapp301grajarj17ApplicationTests.java
+     0 Fri Jan 13 09:54:08 EST 2023 sbapp301g/src/main/
+     0 Fri Jan 13 09:54:08 EST 2023 sbapp301g/src/main/java/
+     0 Fri Jan 13 09:54:08 EST 2023 sbapp301g/src/main/java/ashburncode/
+     0 Fri Jan 13 09:54:08 EST 2023 sbapp301g/src/main/java/ashburncode/sbapp301g/
+   336 Fri Jan 13 09:54:08 EST 2023 sbapp301g/src/main/java/ashburncode/sbapp301g/Sbapp301grajarj17Application.java
+     0 Fri Jan 13 09:54:08 EST 2023 sbapp301g/src/main/resources/
+     0 Fri Jan 13 09:54:08 EST 2023 sbapp301g/src/main/resources/static/
+     0 Fri Jan 13 09:54:08 EST 2023 sbapp301g/src/main/resources/templates/
+     1 Fri Jan 13 09:54:08 EST 2023 sbapp301g/src/main/resources/application.properties
+    31 Fri Jan 13 09:54:08 EST 2023 sbapp301g/settings.gradle
+     0 Fri Jan 13 09:54:08 EST 2023 sbapp301g/gradle/
+     0 Fri Jan 13 09:54:08 EST 2023 sbapp301g/gradle/wrapper/
+   200 Fri Jan 13 09:54:08 EST 2023 sbapp301g/gradle/wrapper/gradle-wrapper.properties
+ 60756 Fri Jan 13 09:54:08 EST 2023 sbapp301g/gradle/wrapper/gradle-wrapper.jar
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ cd ~/sbootprojs
+davidho@dphxps17:~/sbootprojs$ 
+davidho@dphxps17:~/sbootprojs$ cp -p ~/Downloads/sbapp*.zip .
+davidho@dphxps17:~/sbootprojs$ ls -latr
+total 788
+-rw-rw-r--  1 davidho davidho 64423 Oct 21 07:36 sbapp1grajarj11.zip
+-rw-rw-r--  1 davidho davidho 64993 Nov  8 05:45 sbapp2.zip
+-rw-rw-r--  1 davidho davidho 65324 Nov 25 05:17 sbapp3.zip
+drwxr-xr-x  4 davidho davidho  4096 Nov 25 10:17 sbapp3
+drwxr-xr-x  6 davidho davidho  4096 Dec 14 07:44 sbapp2
+-rw-rw-r--  1 davidho davidho 65161 Jan 10 15:25 sbapp277g-orig.zip
+-rw-rw-r--  1 davidho davidho 63568 Jan 10 15:28 sbapp277m-orig.zip
+-rw-rw-r--  1 davidho davidho 65150 Jan 10 15:33 sbapp301g-orig.zip
+-rw-rw-r--  1 davidho davidho 63570 Jan 10 15:40 sbapp301m-orig.zip
+-rw-rw-r--  1 davidho davidho 63241 Jan 10 19:35 taco-cloud.zip
+drwxr-xr-x  4 davidho davidho  4096 Jan 11 00:35 taco-cloud
+-rw-rw-r--  1 davidho davidho 65173 Jan 13 04:45 sbapp277g.zip
+-rw-rw-r--  1 davidho davidho 63571 Jan 13 04:52 sbapp277m.zip
+-rw-rw-r--  1 davidho davidho 65163 Jan 13 04:54 sbapp301g.zip
+-rw-rw-r--  1 davidho davidho 63572 Jan 13 04:55 sbapp301m.zip
+drwxr-x--- 49 davidho davidho  4096 Jan 16 08:14 ..
+drwxrwxr-x  5 davidho davidho  4096 Jan 16 09:02 .
+davidho@dphxps17:~/sbootprojs$ 
+davidho@dphxps17:~/sbootprojs$ jar xf sbapp277g.zip
+davidho@dphxps17:~/sbootprojs$ jar xf sbapp277m.zip
+davidho@dphxps17:~/sbootprojs$ jar xf sbapp301g.zip
+davidho@dphxps17:~/sbootprojs$ jar xf sbapp301m.zip
+davidho@dphxps17:~/sbootprojs$ 
+davidho@dphxps17:~/sbootprojs$ ls -latr
+total 804
+-rw-rw-r--  1 davidho davidho 64423 Oct 21 07:36 sbapp1grajarj11.zip
+-rw-rw-r--  1 davidho davidho 64993 Nov  8 05:45 sbapp2.zip
+-rw-rw-r--  1 davidho davidho 65324 Nov 25 05:17 sbapp3.zip
+drwxr-xr-x  4 davidho davidho  4096 Nov 25 10:17 sbapp3
+drwxr-xr-x  6 davidho davidho  4096 Dec 14 07:44 sbapp2
+-rw-rw-r--  1 davidho davidho 65161 Jan 10 15:25 sbapp277g-orig.zip
+-rw-rw-r--  1 davidho davidho 63568 Jan 10 15:28 sbapp277m-orig.zip
+-rw-rw-r--  1 davidho davidho 65150 Jan 10 15:33 sbapp301g-orig.zip
+-rw-rw-r--  1 davidho davidho 63570 Jan 10 15:40 sbapp301m-orig.zip
+-rw-rw-r--  1 davidho davidho 63241 Jan 10 19:35 taco-cloud.zip
+drwxr-xr-x  4 davidho davidho  4096 Jan 11 00:35 taco-cloud
+-rw-rw-r--  1 davidho davidho 65173 Jan 13 04:45 sbapp277g.zip
+-rw-rw-r--  1 davidho davidho 63571 Jan 13 04:52 sbapp277m.zip
+-rw-rw-r--  1 davidho davidho 65163 Jan 13 04:54 sbapp301g.zip
+-rw-rw-r--  1 davidho davidho 63572 Jan 13 04:55 sbapp301m.zip
+drwxrwxr-x  4 davidho davidho  4096 Jan 13 09:45 sbapp277g
+drwxrwxr-x  4 davidho davidho  4096 Jan 13 09:52 sbapp277m
+drwxrwxr-x  4 davidho davidho  4096 Jan 13 09:54 sbapp301g
+drwxrwxr-x  4 davidho davidho  4096 Jan 13 09:55 sbapp301m
+drwxr-x--- 49 davidho davidho  4096 Jan 16 08:14 ..
+drwxrwxr-x  9 davidho davidho  4096 Jan 16 09:03 .
+davidho@dphxps17:~/sbootprojs$ 
+davidho@dphxps17:~/sbootprojs$ cd sbapp301g
+davidho@dphxps17:~/sbootprojs/sbapp301g$ 
+davidho@dphxps17:~/sbootprojs/sbapp301g$ ls -latr
+total 44
+drwxrwxr-x 4 davidho davidho 4096 Jan 13 09:54 src
+-rw-rw-r-- 1 davidho davidho   31 Jan 13 09:54 settings.gradle
+-rw-rw-r-- 1 davidho davidho 1689 Jan 13 09:54 HELP.md
+-rw-rw-r-- 1 davidho davidho 2838 Jan 13 09:54 gradlew.bat
+-rw-rw-r-- 1 davidho davidho 8188 Jan 13 09:54 gradlew
+drwxrwxr-x 3 davidho davidho 4096 Jan 13 09:54 gradle
+-rw-rw-r-- 1 davidho davidho  444 Jan 13 09:54 .gitignore
+-rw-rw-r-- 1 davidho davidho  625 Jan 13 09:54 build.gradle
+drwxrwxr-x 4 davidho davidho 4096 Jan 13 09:54 .
+drwxrwxr-x 9 davidho davidho 4096 Jan 16 09:03 ..
+davidho@dphxps17:~/sbootprojs/sbapp301g$ 
+davidho@dphxps17:~/sbootprojs/sbapp301g$ chmod +x ./gradlew
+davidho@dphxps17:~/sbootprojs/sbapp301g$ ./gradlew --version
+
+------------------------------------------------------------
+Gradle 7.6
+------------------------------------------------------------
+
+Build time:   2022-11-25 13:35:10 UTC
+Revision:     daece9dbc5b79370cc8e4fd6fe4b2cd400e150a8
+
+Kotlin:       1.7.10
+Groovy:       3.0.13
+Ant:          Apache Ant(TM) version 1.10.11 compiled on July 10 2021
+JVM:          17.0.5 (Azul Systems, Inc. 17.0.5+8-LTS)
+OS:           Linux 5.15.0-58-generic amd64
+
+davidho@dphxps17:~/sbootprojs/sbapp301g$ 
+davidho@dphxps17:~/sbootprojs/sbapp301g$ cat settings.gradle
+rootProject.name = 'sbapp301g'
+davidho@dphxps17:~/sbootprojs/sbapp301g$ 
+davidho@dphxps17:~/sbootprojs/sbapp301g$ cat build.gradle
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.0.1'
+	id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'ashburncode'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	runtimeOnly 'com.mysql:mysql-connector-j'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+davidho@dphxps17:~/sbootprojs/sbapp301g$ 
+davidho@dphxps17:~/sbootprojs/sbapp301g$ cat .gitignore
+HELP.md
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+davidho@dphxps17:~/sbootprojs/sbapp301g$ 
+davidho@dphxps17:~/sbootprojs/sbapp301g$ find . -type f -print
+./.gitignore
+./gradle/wrapper/gradle-wrapper.properties
+./gradle/wrapper/gradle-wrapper.jar
+./settings.gradle
+./HELP.md
+./src/test/java/ashburncode/sbapp301g/Sbapp301grajarj17ApplicationTests.java
+./src/main/resources/application.properties
+./src/main/java/ashburncode/sbapp301g/Sbapp301grajarj17Application.java
+./build.gradle
+./gradlew.bat
+./gradlew
+davidho@dphxps17:~/sbootprojs/sbapp301g$ 
+davidho@dphxps17:~/sbootprojs/sbapp301g$ find . -name "*.java" -print -exec cat {} \;
+./src/test/java/ashburncode/sbapp301g/Sbapp301grajarj17ApplicationTests.java
+package ashburncode.sbapp301g;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class Sbapp301grajarj17ApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
+./src/main/java/ashburncode/sbapp301g/Sbapp301grajarj17Application.java
+package ashburncode.sbapp301g;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Sbapp301grajarj17Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Sbapp301grajarj17Application.class, args);
+	}
+
+}
+davidho@dphxps17:~/sbootprojs/sbapp301g$ 
+davidho@dphxps17:~/sbootprojs/sbapp301g$ find . -name "*.properties" -print -exec cat {} \;
+./gradle/wrapper/gradle-wrapper.properties
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+distributionUrl=https\://services.gradle.org/distributions/gradle-7.6-bin.zip
+zipStoreBase=GRADLE_USER_HOME
+zipStorePath=wrapper/dists
+./src/main/resources/application.properties
+
+davidho@dphxps17:~/sbootprojs/sbapp301g$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/sbootprojs/sbapp301g$ ./gradlew dependencies | grep -i mysql \
+  | sed -e 's/|    //g' | sed -e 's/[\\+]--- //g' | sed -e 's/([n*])//g' \
+  | sed -e 's/^[ \t]*//' | sed -e 's/[ \t]*$//' | sort -u
+com.mysql:mysql-connector-j
+com.mysql:mysql-connector-j -> 8.0.31
+davidho@dphxps17:~/sbootprojs/sbapp301g$ 
+davidho@dphxps17:~/sbootprojs/sbapp301g$ ./gradlew dependencies | grep -i hibernate \
+  | sed -e 's/|    //g' | sed -e 's/[\\+]--- //g' | sed -e 's/([n*])//g' \
+  | sed -e 's/^[ \t]*//' | sed -e 's/[ \t]*$//' | sort -u
+org.hibernate.common:hibernate-commons-annotations:6.0.2.Final
+org.hibernate.orm:hibernate-core:6.1.6.Final
+davidho@dphxps17:~/sbootprojs/sbapp301g$ 
+davidho@dphxps17:~/sbootprojs/sbapp301g$ ./gradlew dependencies | grep -i tomcat \
+  | sed -e 's/|    //g' | sed -e 's/[\\+]--- //g' | sed -e 's/([n*])//g' \
+  | sed -e 's/^[ \t]*//' | sed -e 's/[ \t]*$//' | sort -u
+org.apache.tomcat.embed:tomcat-embed-core:10.1.4
+org.apache.tomcat.embed:tomcat-embed-el:10.1.4
+org.apache.tomcat.embed:tomcat-embed-websocket:10.1.4
+org.springframework.boot:spring-boot-starter-tomcat:3.0.1
+davidho@dphxps17:~/sbootprojs/sbapp301g$ 
+davidho@dphxps17:~/sbootprojs/sbapp301g$ ./gradlew dependencies | grep -i spring \
+  | sed -e 's/|    //g' | sed -e 's/[\\+]--- //g' | sed -e 's/([n*])//g' \
+  | sed -e 's/^[ \t]*//' | sed -e 's/[ \t]*$//' | sort -u
+bootArchives - Configuration for Spring Boot archive artifacts.
+developmentOnly - Configuration for development-only dependencies such as Spring Boot's DevTools.
+org.springframework.boot:spring-boot:3.0.1
+org.springframework.boot:spring-boot-autoconfigure:3.0.1
+org.springframework.boot:spring-boot-starter:3.0.1
+org.springframework.boot:spring-boot-starter-aop:3.0.1
+org.springframework.boot:spring-boot-starter-data-jpa
+org.springframework.boot:spring-boot-starter-data-jpa -> 3.0.1
+org.springframework.boot:spring-boot-starter-data-rest
+org.springframework.boot:spring-boot-starter-data-rest -> 3.0.1
+org.springframework.boot:spring-boot-starter-jdbc:3.0.1
+org.springframework.boot:spring-boot-starter-json:3.0.1
+org.springframework.boot:spring-boot-starter-logging:3.0.1
+org.springframework.boot:spring-boot-starter-test
+org.springframework.boot:spring-boot-starter-test -> 3.0.1
+org.springframework.boot:spring-boot-starter-tomcat:3.0.1
+org.springframework.boot:spring-boot-starter-web
+org.springframework.boot:spring-boot-starter-web -> 3.0.1
+org.springframework.boot:spring-boot-starter-web:3.0.1
+org.springframework.boot:spring-boot-test:3.0.1
+org.springframework.boot:spring-boot-test-autoconfigure:3.0.1
+org.springframework.data:spring-data-commons:3.0.0
+org.springframework.data:spring-data-jpa:3.0.0
+org.springframework.data:spring-data-rest-core:4.0.0
+org.springframework.data:spring-data-rest-webmvc:4.0.0
+org.springframework.hateoas:spring-hateoas:2.0.0
+org.springframework.plugin:spring-plugin-core:3.0.0
+org.springframework:spring-aop:6.0.0 -> 6.0.3
+org.springframework:spring-aop:6.0.3
+org.springframework:spring-aspects:6.0.3
+org.springframework:spring-beans:6.0.0 -> 6.0.3
+org.springframework:spring-beans:6.0.3
+org.springframework:spring-context:6.0.0 -> 6.0.3
+org.springframework:spring-context:6.0.3
+org.springframework:spring-core:6.0.0 -> 6.0.3
+org.springframework:spring-core:6.0.3
+org.springframework:spring-expression:6.0.3
+org.springframework:spring-jcl:6.0.3
+org.springframework:spring-jdbc:6.0.3
+org.springframework:spring-orm:6.0.0 -> 6.0.3
+org.springframework:spring-test:6.0.3
+org.springframework:spring-tx:6.0.0 -> 6.0.3
+org.springframework:spring-tx:6.0.3
+org.springframework:spring-web:6.0.0 -> 6.0.3
+org.springframework:spring-web:6.0.3
+org.springframework:spring-webmvc:6.0.0 -> 6.0.3
+org.springframework:spring-webmvc:6.0.3
+davidho@dphxps17:~/sbootprojs/sbapp301g$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://grails.org/download.html         version 5.2.5
+https://grails.org/documentation.html
+https://guides.grails.org/index.html
+https://docs.grails.org/latest/guide/introduction.html
+
+davidho@dphxps17:~/sbootprojs/sbapp301g$ cd ~/Downloads/
+davidho@dphxps17:~/Downloads$ ls -latr | grep -i grails
+-rw-rw-r--  1 davidho davidho  186105481 Dec 31 09:40 grails-5.2.5.zip
+-rw-rw-r--  1 davidho davidho    9154897 Dec 31 09:40 grails-5.2.5.docs.zip
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ cd LocalApps/
+davidho@dphxps17:~/Downloads/LocalApps$ 
+davidho@dphxps17:~/Downloads/LocalApps$ ls -latr
+total 181772
+-rw-rw-r-- 1 davidho davidho 186105481 Dec 31 09:40 grails-5.2.5.zip
+drwxrwxr-x 2 davidho davidho      4096 Dec 31 09:46 .
+drwxr-xr-x 6 davidho davidho     20480 Jan 13 04:55 ..
+davidho@dphxps17:~/Downloads/LocalApps$ 
+davidho@dphxps17:~/Downloads/LocalApps$ grails --version
+| Grails Version: 5.1.8
+| JVM Version: 17.0.5
+davidho@dphxps17:~/Downloads/LocalApps$ whereis grails
+grails: /home/davidho/.sdkman/candidates/grails/5.1.8/bin/grails
+davidho@dphxps17:~/Downloads/LocalApps$ 
+
+sdk install grails
+sdk install grails 6.0.0-M1
+
+grails create-app helloworld
+cd helloworld
+
+create-controller hello
+
+package helloworld
+class HelloController {
+    def index() {
+        render "Hello World!"
+    }
+}
+
+grails run-app
+
+grails-app/conf/application.yml
+
+server:
+    servlet:
+        context-path: /helloworld
+
+grails run-app -Dgrails.server.servlet.context-path=/helloworld
+grails run-app -port=9090
+grails create-service bookstore.book
+
+grails run-app
+grails run-app -port=8090
+grails run-app --debug-jvm
+grails test-app
+grails war
+grails dev war
+
+grails war
+java -Dgrails.env=prod -jar build/libs/mywar-0.1.war
+
+grails create-app helloworld
+cd helloworld
+grails create-domain-class book
+
+package helloworld
+class Book {
+}
+
+grails generate-all helloworld.Book
+
+grails test war
+grails -Dgrails.env=UAT run-app
+
+dependencies {
+    runtime 'mysql:mysql-connector-java:5.1.29'
+}
+
+A typical configuration for MySQL in application.groovy may be something like:
+
+dataSource {
+    pooled = true
+    dbCreate = "update"
+    url = "jdbc:mysql://localhost:3306/my_database"
+    driverClassName = "com.mysql.jdbc.Driver"
+    dialect = org.hibernate.dialect.MySQL5InnoDBDialect
+    username = "username"
+    password = "password"
+    type = "com.zaxxer.hikari.HikariDataSource"
+    properties {
+       jmxEnabled = true
+       initialSize = 5
+       maxActive = 50
+       minIdle = 5
+       maxIdle = 25
+       maxWait = 10000
+       maxAge = 10 * 60000
+       timeBetweenEvictionRunsMillis = 5000
+       minEvictableIdleTimeMillis = 60000
+       validationQuery = "SELECT 1"
+       validationQueryTimeout = 3
+       validationInterval = 15000
+       testOnBorrow = true
+       testWhileIdle = true
+       testOnReturn = false
+       jdbcInterceptors = "ConnectionState;StatementCache(max=200)"
+       defaultTransactionIsolation = java.sql.Connection.TRANSACTION_READ_COMMITTED
+    }
+}
+
+Example of advanced configuration using extra properties:
+
+dataSource {
+    pooled = true
+    dbCreate = "update"
+    url = "jdbc:mysql://localhost:3306/my_database"
+    driverClassName = "com.mysql.jdbc.Driver"
+    dialect = org.hibernate.dialect.MySQL5InnoDBDialect
+    username = "username"
+    password = "password"
+    type = "com.zaxxer.hikari.HikariDataSource"
+    properties {
+       // Documentation for Tomcat JDBC Pool
+       // http://tomcat.apache.org/tomcat-7.0-doc/jdbc-pool.html#Common_Attributes
+       // https://tomcat.apache.org/tomcat-7.0-doc/api/org/apache/tomcat/jdbc/pool/PoolConfiguration.html
+       jmxEnabled = true
+       initialSize = 5
+       maxActive = 50
+       minIdle = 5
+       maxIdle = 25
+       maxWait = 10000
+       maxAge = 10 * 60000
+       timeBetweenEvictionRunsMillis = 5000
+       minEvictableIdleTimeMillis = 60000
+       validationQuery = "SELECT 1"
+       validationQueryTimeout = 3
+       validationInterval = 15000
+       testOnBorrow = true
+       testWhileIdle = true
+       testOnReturn = false
+       ignoreExceptionOnPreLoad = true
+       // http://tomcat.apache.org/tomcat-7.0-doc/jdbc-pool.html#JDBC_interceptors
+       jdbcInterceptors = "ConnectionState;StatementCache(max=200)"
+       defaultTransactionIsolation = java.sql.Connection.TRANSACTION_READ_COMMITTED // safe default
+       // controls for leaked connections
+       abandonWhenPercentageFull = 100 // settings are active only when pool is full
+       removeAbandonedTimeout = 120
+       removeAbandoned = true
+       // use JMX console to change this setting at runtime
+       logAbandoned = false // causes stacktrace recording overhead, use only for debugging
+       // JDBC driver properties
+       // Mysql as example
+       dbProperties {
+           // Mysql specific driver properties
+           // http://dev.mysql.com/doc/connector-j/en/connector-j-reference-configuration-properties.html
+           // let Tomcat JDBC Pool handle reconnecting
+           autoReconnect=false
+           // truncation behaviour
+           jdbcCompliantTruncation=false
+           // mysql 0-date conversion
+           zeroDateTimeBehavior='convertToNull'
+           // Tomcat JDBC Pool's StatementCache is used instead, so disable mysql driver's cache
+           cachePrepStmts=false
+           cacheCallableStmts=false
+           // Tomcat JDBC Pool's StatementFinalizer keeps track
+           dontTrackOpenResources=true
+           // performance optimization: reduce number of SQLExceptions thrown in mysql driver code
+           holdResultsOpenOverStatementClose=true
+           // enable MySQL query cache - using server prep stmts will disable query caching
+           useServerPrepStmts=false
+           // metadata caching
+           cacheServerConfiguration=true
+           cacheResultSetMetadata=true
+           metadataCacheSize=100
+           // timeouts for TCP/IP
+           connectTimeout=15000
+           socketTimeout=120000
+           // timer tuning (disable)
+           maintainTimeStats=false
+           enableQueryTimeouts=false
+           // misc tuning
+           noDatetimeStringSync=true
+       }
+    }
+}
+
+
+
