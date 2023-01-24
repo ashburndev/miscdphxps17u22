@@ -1,0 +1,17 @@
+davidho@dphxps17:~$ date
+Sun Jan 22 10:32:57 AM EST 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ code stuff-20220122.txt
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://grails.org/
+https://grails.org/download.html
+https://grails.org/documentation.html
+https://docs.grails.org/5.2.5/guide/single.html
+https://docs.grails.org/5.2.5/
+
+
+
+

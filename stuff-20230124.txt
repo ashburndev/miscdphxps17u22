@@ -1,0 +1,566 @@
+davidho@dphxps17:~$ date
+Tue Jan 24 07:15:34 AM EST 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ code stuff-20230224.txt
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp278g
+Name:          sbapp278grajarj11
+Package name:  ashburncode.sbapp278g
+Description:   spring boot 2.7.8, gradle project, jar packaging, java 11
+Dependencies:
+  Spring Web Web
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp278m
+Name:          sbapp278mvnjarj11
+Package name:  ashburncode.sbapp278m
+Description:   spring boot 2.7.8, maven project, jar packaging, java 11
+Dependencies:
+  Spring Web Web
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp302g
+Name:          sbapp302grajarj17
+Package name:  ashburncode.sbapp302g
+Description:   spring boot 3.0.2, gradle project, jar packaging, java 17
+Dependencies:
+  Spring Web Web
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp302m
+Name:          sbapp302mvnjarj17
+Package name:  ashburncode.sbapp302m
+Description:   spring boot 3.0.2, maven project, jar packaging, java 17
+Dependencies:
+  Spring Web Web
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:/tmp$ ls -latr sbapp*.zip
+-rw-rw-r-- 1 davidho davidho 64993 Nov  8 05:45 sbapp2.zip
+-rw-rw-r-- 1 davidho davidho 65324 Nov 25 05:17 sbapp3.zip
+-rw-rw-r-- 1 davidho davidho 65173 Jan 13 04:45 sbapp277g.zip
+-rw-rw-r-- 1 davidho davidho 63571 Jan 13 04:52 sbapp277m.zip
+-rw-rw-r-- 1 davidho davidho 65163 Jan 13 04:54 sbapp301g.zip
+-rw-rw-r-- 1 davidho davidho 63572 Jan 13 04:55 sbapp301m.zip
+-rw-rw-r-- 1 davidho davidho 65174 Jan 24 07:26 sbapp278g.zip
+-rw-rw-r-- 1 davidho davidho 63573 Jan 24 07:28 sbapp278m.zip
+-rw-rw-r-- 1 davidho davidho 65164 Jan 24 07:32 sbapp302g.zip
+-rw-rw-r-- 1 davidho davidho 63572 Jan 24 07:34 sbapp302m.zip
+davidho@dphxps17:/tmp$ 
+
+find /tmp -name "sbapp*.zip" -print
+find /tmp -name "sbapp*.zip" -exec ls -la {} \;
+
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/sbtmp$ 
+davidho@dphxps17:~/sbtmp$ date
+Tue Jan 24 07:45:10 AM EST 2023
+davidho@dphxps17:~/sbtmp$ pwd -P
+/home/davidho/sbtmp
+davidho@dphxps17:~/sbtmp$ 
+davidho@dphxps17:~/sbtmp$ ls -latr
+total 648
+-rw-rw-r--  1 davidho davidho 64993 Nov  8 05:45 sbapp2.zip
+-rw-rw-r--  1 davidho davidho 65324 Nov 25 05:17 sbapp3.zip
+-rw-rw-r--  1 davidho davidho 65173 Jan 13 04:45 sbapp277g.zip
+-rw-rw-r--  1 davidho davidho 63571 Jan 13 04:52 sbapp277m.zip
+-rw-rw-r--  1 davidho davidho 65163 Jan 13 04:54 sbapp301g.zip
+-rw-rw-r--  1 davidho davidho 63572 Jan 13 04:55 sbapp301m.zip
+-rw-rw-r--  1 davidho davidho 65174 Jan 24 07:26 sbapp278g.zip
+-rw-rw-r--  1 davidho davidho 63573 Jan 24 07:28 sbapp278m.zip
+-rw-rw-r--  1 davidho davidho 65164 Jan 24 07:32 sbapp302g.zip
+-rw-rw-r--  1 davidho davidho 63572 Jan 24 07:34 sbapp302m.zip
+drwxr-x--- 50 davidho davidho  4096 Jan 24 07:44 ..
+drwxrwxr-x  2 davidho davidho  4096 Jan 24 07:45 .
+davidho@dphxps17:~/sbtmp$ 
+
+
+find . -name "sbapp*.zip" -print
+find . -name "sbapp*.zip" -exec ls -la {} \;
+
+-rw-rw-r--  1 davidho davidho 64993 Nov  8 05:45 sbapp2.zip
+-rw-rw-r--  1 davidho davidho 65324 Nov 25 05:17 sbapp3.zip
+-rw-rw-r--  1 davidho davidho 65173 Jan 13 04:45 sbapp277g.zip
+-rw-rw-r--  1 davidho davidho 63571 Jan 13 04:52 sbapp277m.zip
+-rw-rw-r--  1 davidho davidho 65163 Jan 13 04:54 sbapp301g.zip
+-rw-rw-r--  1 davidho davidho 63572 Jan 13 04:55 sbapp301m.zip
+-rw-rw-r--  1 davidho davidho 65174 Jan 24 07:26 sbapp278g.zip
+-rw-rw-r--  1 davidho davidho 63573 Jan 24 07:28 sbapp278m.zip
+-rw-rw-r--  1 davidho davidho 65164 Jan 24 07:32 sbapp302g.zip
+-rw-rw-r--  1 davidho davidho 63572 Jan 24 07:34 sbapp302m.zip
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+jar tvf sbapp2.zip
+jar tvf sbapp3.zip
+jar tvf sbapp277g.zip
+jar tvf sbapp277m.zip
+jar tvf sbapp301g.zip
+jar tvf sbapp301m.zip
+jar tvf sbapp278g.zip
+jar tvf sbapp278m.zip
+jar tvf sbapp302g.zip
+jar tvf sbapp302m.zip
+
+     0 Tue Nov 08 10:26:00 EST 2022 sbapp2/
+  8188 Tue Nov 08 10:26:00 EST 2022 sbapp2/gradlew
+  2838 Tue Nov 08 10:26:00 EST 2022 sbapp2/gradlew.bat
+    28 Tue Nov 08 10:26:00 EST 2022 sbapp2/settings.gradle
+     0 Tue Nov 08 10:26:00 EST 2022 sbapp2/src/
+     0 Tue Nov 08 10:26:00 EST 2022 sbapp2/src/main/
+     0 Tue Nov 08 10:26:00 EST 2022 sbapp2/src/main/resources/
+     0 Tue Nov 08 10:26:00 EST 2022 sbapp2/src/main/resources/templates/
+     0 Tue Nov 08 10:26:00 EST 2022 sbapp2/src/main/resources/static/
+     1 Tue Nov 08 10:26:00 EST 2022 sbapp2/src/main/resources/application.properties
+     0 Tue Nov 08 10:26:00 EST 2022 sbapp2/src/main/java/
+     0 Tue Nov 08 10:26:00 EST 2022 sbapp2/src/main/java/ashburncode/
+     0 Tue Nov 08 10:26:00 EST 2022 sbapp2/src/main/java/ashburncode/sbapp2/
+   329 Tue Nov 08 10:26:00 EST 2022 sbapp2/src/main/java/ashburncode/sbapp2/Sbapp2grajarj11Application.java
+     0 Tue Nov 08 10:26:00 EST 2022 sbapp2/src/test/
+     0 Tue Nov 08 10:26:00 EST 2022 sbapp2/src/test/java/
+     0 Tue Nov 08 10:26:00 EST 2022 sbapp2/src/test/java/ashburncode/
+     0 Tue Nov 08 10:26:00 EST 2022 sbapp2/src/test/java/ashburncode/sbapp2/
+   219 Tue Nov 08 10:26:00 EST 2022 sbapp2/src/test/java/ashburncode/sbapp2/Sbapp2grajarj11ApplicationTests.java
+   444 Tue Nov 08 10:26:00 EST 2022 sbapp2/.gitignore
+  1614 Tue Nov 08 10:26:00 EST 2022 sbapp2/HELP.md
+   705 Tue Nov 08 10:26:00 EST 2022 sbapp2/build.gradle
+     0 Tue Nov 08 10:26:00 EST 2022 sbapp2/gradle/
+     0 Tue Nov 08 10:26:00 EST 2022 sbapp2/gradle/wrapper/
+   202 Tue Nov 08 10:26:00 EST 2022 sbapp2/gradle/wrapper/gradle-wrapper.properties
+ 60756 Tue Nov 08 10:26:00 EST 2022 sbapp2/gradle/wrapper/gradle-wrapper.jar
+
+     0 Fri Nov 25 10:17:24 EST 2022 sbapp3/
+  8188 Fri Nov 25 10:17:24 EST 2022 sbapp3/gradlew
+     0 Fri Nov 25 10:17:24 EST 2022 sbapp3/gradle/
+     0 Fri Nov 25 10:17:24 EST 2022 sbapp3/gradle/wrapper/
+   202 Fri Nov 25 10:17:24 EST 2022 sbapp3/gradle/wrapper/gradle-wrapper.properties
+ 60756 Fri Nov 25 10:17:24 EST 2022 sbapp3/gradle/wrapper/gradle-wrapper.jar
+     0 Fri Nov 25 10:17:24 EST 2022 sbapp3/src/
+     0 Fri Nov 25 10:17:24 EST 2022 sbapp3/src/test/
+     0 Fri Nov 25 10:17:24 EST 2022 sbapp3/src/test/java/
+     0 Fri Nov 25 10:17:24 EST 2022 sbapp3/src/test/java/com/
+     0 Fri Nov 25 10:17:24 EST 2022 sbapp3/src/test/java/com/ashburncode/
+     0 Fri Nov 25 10:17:24 EST 2022 sbapp3/src/test/java/com/ashburncode/sbapp3/
+   223 Fri Nov 25 10:17:24 EST 2022 sbapp3/src/test/java/com/ashburncode/sbapp3/Sbapp3grajarj17ApplicationTests.java
+     0 Fri Nov 25 10:17:24 EST 2022 sbapp3/src/main/
+     0 Fri Nov 25 10:17:24 EST 2022 sbapp3/src/main/resources/
+     0 Fri Nov 25 10:17:24 EST 2022 sbapp3/src/main/resources/static/
+     0 Fri Nov 25 10:17:24 EST 2022 sbapp3/src/main/resources/templates/
+     1 Fri Nov 25 10:17:24 EST 2022 sbapp3/src/main/resources/application.properties
+     0 Fri Nov 25 10:17:24 EST 2022 sbapp3/src/main/java/
+     0 Fri Nov 25 10:17:24 EST 2022 sbapp3/src/main/java/com/
+     0 Fri Nov 25 10:17:24 EST 2022 sbapp3/src/main/java/com/ashburncode/
+     0 Fri Nov 25 10:17:24 EST 2022 sbapp3/src/main/java/com/ashburncode/sbapp3/
+   333 Fri Nov 25 10:17:24 EST 2022 sbapp3/src/main/java/com/ashburncode/sbapp3/Sbapp3grajarj17Application.java
+    28 Fri Nov 25 10:17:24 EST 2022 sbapp3/settings.gradle
+   700 Fri Nov 25 10:17:24 EST 2022 sbapp3/build.gradle
+  2838 Fri Nov 25 10:17:24 EST 2022 sbapp3/gradlew.bat
+   444 Fri Nov 25 10:17:24 EST 2022 sbapp3/.gitignore
+  1614 Fri Nov 25 10:17:24 EST 2022 sbapp3/HELP.md
+
+     0 Fri Jan 13 09:45:30 EST 2023 sbapp277g/
+  1689 Fri Jan 13 09:45:30 EST 2023 sbapp277g/HELP.md
+  8188 Fri Jan 13 09:45:30 EST 2023 sbapp277g/gradlew
+  2838 Fri Jan 13 09:45:30 EST 2023 sbapp277g/gradlew.bat
+   634 Fri Jan 13 09:45:30 EST 2023 sbapp277g/build.gradle
+   444 Fri Jan 13 09:45:30 EST 2023 sbapp277g/.gitignore
+     0 Fri Jan 13 09:45:30 EST 2023 sbapp277g/src/
+     0 Fri Jan 13 09:45:30 EST 2023 sbapp277g/src/test/
+     0 Fri Jan 13 09:45:30 EST 2023 sbapp277g/src/test/java/
+     0 Fri Jan 13 09:45:30 EST 2023 sbapp277g/src/test/java/ashburncode/
+     0 Fri Jan 13 09:45:30 EST 2023 sbapp277g/src/test/java/ashburncode/sbapp277g/
+   224 Fri Jan 13 09:45:30 EST 2023 sbapp277g/src/test/java/ashburncode/sbapp277g/Sbapp277grajarj11ApplicationTests.java
+     0 Fri Jan 13 09:45:30 EST 2023 sbapp277g/src/main/
+     0 Fri Jan 13 09:45:30 EST 2023 sbapp277g/src/main/java/
+     0 Fri Jan 13 09:45:30 EST 2023 sbapp277g/src/main/java/ashburncode/
+     0 Fri Jan 13 09:45:30 EST 2023 sbapp277g/src/main/java/ashburncode/sbapp277g/
+   336 Fri Jan 13 09:45:30 EST 2023 sbapp277g/src/main/java/ashburncode/sbapp277g/Sbapp277grajarj11Application.java
+     0 Fri Jan 13 09:45:30 EST 2023 sbapp277g/src/main/resources/
+     0 Fri Jan 13 09:45:30 EST 2023 sbapp277g/src/main/resources/static/
+     0 Fri Jan 13 09:45:30 EST 2023 sbapp277g/src/main/resources/templates/
+     1 Fri Jan 13 09:45:30 EST 2023 sbapp277g/src/main/resources/application.properties
+    31 Fri Jan 13 09:45:30 EST 2023 sbapp277g/settings.gradle
+     0 Fri Jan 13 09:45:30 EST 2023 sbapp277g/gradle/
+     0 Fri Jan 13 09:45:30 EST 2023 sbapp277g/gradle/wrapper/
+   200 Fri Jan 13 09:45:30 EST 2023 sbapp277g/gradle/wrapper/gradle-wrapper.properties
+ 60756 Fri Jan 13 09:45:30 EST 2023 sbapp277g/gradle/wrapper/gradle-wrapper.jar
+
+     0 Fri Jan 13 09:52:16 EST 2023 sbapp277m/
+  6734 Fri Jan 13 09:52:16 EST 2023 sbapp277m/mvnw.cmd
+  1544 Fri Jan 13 09:52:16 EST 2023 sbapp277m/HELP.md
+     0 Fri Jan 13 09:52:16 EST 2023 sbapp277m/.mvn/
+     0 Fri Jan 13 09:52:16 EST 2023 sbapp277m/.mvn/wrapper/
+ 58727 Fri Jan 13 09:52:16 EST 2023 sbapp277m/.mvn/wrapper/maven-wrapper.jar
+   233 Fri Jan 13 09:52:16 EST 2023 sbapp277m/.mvn/wrapper/maven-wrapper.properties
+  1678 Fri Jan 13 09:52:16 EST 2023 sbapp277m/pom.xml
+   395 Fri Jan 13 09:52:16 EST 2023 sbapp277m/.gitignore
+     0 Fri Jan 13 09:52:16 EST 2023 sbapp277m/src/
+     0 Fri Jan 13 09:52:16 EST 2023 sbapp277m/src/test/
+     0 Fri Jan 13 09:52:16 EST 2023 sbapp277m/src/test/java/
+     0 Fri Jan 13 09:52:16 EST 2023 sbapp277m/src/test/java/ashburncode/
+     0 Fri Jan 13 09:52:16 EST 2023 sbapp277m/src/test/java/ashburncode/sbapp277m/
+   224 Fri Jan 13 09:52:16 EST 2023 sbapp277m/src/test/java/ashburncode/sbapp277m/Sbapp277mvnjarj11ApplicationTests.java
+     0 Fri Jan 13 09:52:16 EST 2023 sbapp277m/src/main/
+     0 Fri Jan 13 09:52:16 EST 2023 sbapp277m/src/main/java/
+     0 Fri Jan 13 09:52:16 EST 2023 sbapp277m/src/main/java/ashburncode/
+     0 Fri Jan 13 09:52:16 EST 2023 sbapp277m/src/main/java/ashburncode/sbapp277m/
+   336 Fri Jan 13 09:52:16 EST 2023 sbapp277m/src/main/java/ashburncode/sbapp277m/Sbapp277mvnjarj11Application.java
+     0 Fri Jan 13 09:52:16 EST 2023 sbapp277m/src/main/resources/
+     0 Fri Jan 13 09:52:16 EST 2023 sbapp277m/src/main/resources/static/
+     0 Fri Jan 13 09:52:16 EST 2023 sbapp277m/src/main/resources/templates/
+     1 Fri Jan 13 09:52:16 EST 2023 sbapp277m/src/main/resources/application.properties
+ 10284 Fri Jan 13 09:52:16 EST 2023 sbapp277m/mvnw
+
+     0 Fri Jan 13 09:54:08 EST 2023 sbapp301g/
+  1689 Fri Jan 13 09:54:08 EST 2023 sbapp301g/HELP.md
+  8188 Fri Jan 13 09:54:08 EST 2023 sbapp301g/gradlew
+  2838 Fri Jan 13 09:54:08 EST 2023 sbapp301g/gradlew.bat
+   625 Fri Jan 13 09:54:08 EST 2023 sbapp301g/build.gradle
+   444 Fri Jan 13 09:54:08 EST 2023 sbapp301g/.gitignore
+     0 Fri Jan 13 09:54:08 EST 2023 sbapp301g/src/
+     0 Fri Jan 13 09:54:08 EST 2023 sbapp301g/src/test/
+     0 Fri Jan 13 09:54:08 EST 2023 sbapp301g/src/test/java/
+     0 Fri Jan 13 09:54:08 EST 2023 sbapp301g/src/test/java/ashburncode/
+     0 Fri Jan 13 09:54:08 EST 2023 sbapp301g/src/test/java/ashburncode/sbapp301g/
+   224 Fri Jan 13 09:54:08 EST 2023 sbapp301g/src/test/java/ashburncode/sbapp301g/Sbapp301grajarj17ApplicationTests.java
+     0 Fri Jan 13 09:54:08 EST 2023 sbapp301g/src/main/
+     0 Fri Jan 13 09:54:08 EST 2023 sbapp301g/src/main/java/
+     0 Fri Jan 13 09:54:08 EST 2023 sbapp301g/src/main/java/ashburncode/
+     0 Fri Jan 13 09:54:08 EST 2023 sbapp301g/src/main/java/ashburncode/sbapp301g/
+   336 Fri Jan 13 09:54:08 EST 2023 sbapp301g/src/main/java/ashburncode/sbapp301g/Sbapp301grajarj17Application.java
+     0 Fri Jan 13 09:54:08 EST 2023 sbapp301g/src/main/resources/
+     0 Fri Jan 13 09:54:08 EST 2023 sbapp301g/src/main/resources/static/
+     0 Fri Jan 13 09:54:08 EST 2023 sbapp301g/src/main/resources/templates/
+     1 Fri Jan 13 09:54:08 EST 2023 sbapp301g/src/main/resources/application.properties
+    31 Fri Jan 13 09:54:08 EST 2023 sbapp301g/settings.gradle
+     0 Fri Jan 13 09:54:08 EST 2023 sbapp301g/gradle/
+     0 Fri Jan 13 09:54:08 EST 2023 sbapp301g/gradle/wrapper/
+   200 Fri Jan 13 09:54:08 EST 2023 sbapp301g/gradle/wrapper/gradle-wrapper.properties
+ 60756 Fri Jan 13 09:54:08 EST 2023 sbapp301g/gradle/wrapper/gradle-wrapper.jar
+
+     0 Fri Jan 13 09:55:50 EST 2023 sbapp301m/
+  6734 Fri Jan 13 09:55:50 EST 2023 sbapp301m/mvnw.cmd
+  1544 Fri Jan 13 09:55:50 EST 2023 sbapp301m/HELP.md
+     0 Fri Jan 13 09:55:50 EST 2023 sbapp301m/.mvn/
+     0 Fri Jan 13 09:55:50 EST 2023 sbapp301m/.mvn/wrapper/
+ 58727 Fri Jan 13 09:55:50 EST 2023 sbapp301m/.mvn/wrapper/maven-wrapper.jar
+   233 Fri Jan 13 09:55:50 EST 2023 sbapp301m/.mvn/wrapper/maven-wrapper.properties
+  1678 Fri Jan 13 09:55:50 EST 2023 sbapp301m/pom.xml
+   395 Fri Jan 13 09:55:50 EST 2023 sbapp301m/.gitignore
+     0 Fri Jan 13 09:55:50 EST 2023 sbapp301m/src/
+     0 Fri Jan 13 09:55:50 EST 2023 sbapp301m/src/test/
+     0 Fri Jan 13 09:55:50 EST 2023 sbapp301m/src/test/java/
+     0 Fri Jan 13 09:55:50 EST 2023 sbapp301m/src/test/java/ashburncode/
+     0 Fri Jan 13 09:55:50 EST 2023 sbapp301m/src/test/java/ashburncode/sbapp301m/
+   224 Fri Jan 13 09:55:50 EST 2023 sbapp301m/src/test/java/ashburncode/sbapp301m/Sbapp301mvnjarj17ApplicationTests.java
+     0 Fri Jan 13 09:55:50 EST 2023 sbapp301m/src/main/
+     0 Fri Jan 13 09:55:50 EST 2023 sbapp301m/src/main/java/
+     0 Fri Jan 13 09:55:50 EST 2023 sbapp301m/src/main/java/ashburncode/
+     0 Fri Jan 13 09:55:50 EST 2023 sbapp301m/src/main/java/ashburncode/sbapp301m/
+   336 Fri Jan 13 09:55:50 EST 2023 sbapp301m/src/main/java/ashburncode/sbapp301m/Sbapp301mvnjarj17Application.java
+     0 Fri Jan 13 09:55:50 EST 2023 sbapp301m/src/main/resources/
+     0 Fri Jan 13 09:55:50 EST 2023 sbapp301m/src/main/resources/static/
+     0 Fri Jan 13 09:55:50 EST 2023 sbapp301m/src/main/resources/templates/
+     1 Fri Jan 13 09:55:50 EST 2023 sbapp301m/src/main/resources/application.properties
+ 10284 Fri Jan 13 09:55:50 EST 2023 sbapp301m/mvnw
+
+     0 Tue Jan 24 12:26:18 EST 2023 sbapp278g/
+  8188 Tue Jan 24 12:26:18 EST 2023 sbapp278g/gradlew
+     0 Tue Jan 24 12:26:18 EST 2023 sbapp278g/src/
+     0 Tue Jan 24 12:26:18 EST 2023 sbapp278g/src/main/
+     0 Tue Jan 24 12:26:18 EST 2023 sbapp278g/src/main/resources/
+     0 Tue Jan 24 12:26:18 EST 2023 sbapp278g/src/main/resources/templates/
+     1 Tue Jan 24 12:26:18 EST 2023 sbapp278g/src/main/resources/application.properties
+     0 Tue Jan 24 12:26:18 EST 2023 sbapp278g/src/main/resources/static/
+     0 Tue Jan 24 12:26:18 EST 2023 sbapp278g/src/main/java/
+     0 Tue Jan 24 12:26:18 EST 2023 sbapp278g/src/main/java/ashburncode/
+     0 Tue Jan 24 12:26:18 EST 2023 sbapp278g/src/main/java/ashburncode/sbapp278g/
+   336 Tue Jan 24 12:26:18 EST 2023 sbapp278g/src/main/java/ashburncode/sbapp278g/Sbapp278grajarj11Application.java
+     0 Tue Jan 24 12:26:18 EST 2023 sbapp278g/src/test/
+     0 Tue Jan 24 12:26:18 EST 2023 sbapp278g/src/test/java/
+     0 Tue Jan 24 12:26:18 EST 2023 sbapp278g/src/test/java/ashburncode/
+     0 Tue Jan 24 12:26:18 EST 2023 sbapp278g/src/test/java/ashburncode/sbapp278g/
+   224 Tue Jan 24 12:26:18 EST 2023 sbapp278g/src/test/java/ashburncode/sbapp278g/Sbapp278grajarj11ApplicationTests.java
+   444 Tue Jan 24 12:26:18 EST 2023 sbapp278g/.gitignore
+  1689 Tue Jan 24 12:26:18 EST 2023 sbapp278g/HELP.md
+  2838 Tue Jan 24 12:26:18 EST 2023 sbapp278g/gradlew.bat
+    31 Tue Jan 24 12:26:18 EST 2023 sbapp278g/settings.gradle
+     0 Tue Jan 24 12:26:18 EST 2023 sbapp278g/gradle/
+     0 Tue Jan 24 12:26:18 EST 2023 sbapp278g/gradle/wrapper/
+ 60756 Tue Jan 24 12:26:18 EST 2023 sbapp278g/gradle/wrapper/gradle-wrapper.jar
+   200 Tue Jan 24 12:26:18 EST 2023 sbapp278g/gradle/wrapper/gradle-wrapper.properties
+   634 Tue Jan 24 12:26:18 EST 2023 sbapp278g/build.gradle
+
+     0 Tue Jan 24 12:28:30 EST 2023 sbapp278m/
+     0 Tue Jan 24 12:28:30 EST 2023 sbapp278m/src/
+     0 Tue Jan 24 12:28:30 EST 2023 sbapp278m/src/main/
+     0 Tue Jan 24 12:28:30 EST 2023 sbapp278m/src/main/resources/
+     0 Tue Jan 24 12:28:30 EST 2023 sbapp278m/src/main/resources/templates/
+     1 Tue Jan 24 12:28:30 EST 2023 sbapp278m/src/main/resources/application.properties
+     0 Tue Jan 24 12:28:30 EST 2023 sbapp278m/src/main/resources/static/
+     0 Tue Jan 24 12:28:30 EST 2023 sbapp278m/src/main/java/
+     0 Tue Jan 24 12:28:30 EST 2023 sbapp278m/src/main/java/ashburncode/
+     0 Tue Jan 24 12:28:30 EST 2023 sbapp278m/src/main/java/ashburncode/sbapp278m/
+   336 Tue Jan 24 12:28:30 EST 2023 sbapp278m/src/main/java/ashburncode/sbapp278m/Sbapp278mvnjarj11Application.java
+     0 Tue Jan 24 12:28:30 EST 2023 sbapp278m/src/test/
+     0 Tue Jan 24 12:28:30 EST 2023 sbapp278m/src/test/java/
+     0 Tue Jan 24 12:28:30 EST 2023 sbapp278m/src/test/java/ashburncode/
+     0 Tue Jan 24 12:28:30 EST 2023 sbapp278m/src/test/java/ashburncode/sbapp278m/
+   224 Tue Jan 24 12:28:30 EST 2023 sbapp278m/src/test/java/ashburncode/sbapp278m/Sbapp278mvnjarj11ApplicationTests.java
+     0 Tue Jan 24 12:28:30 EST 2023 sbapp278m/.mvn/
+     0 Tue Jan 24 12:28:30 EST 2023 sbapp278m/.mvn/wrapper/
+ 58727 Tue Jan 24 12:28:30 EST 2023 sbapp278m/.mvn/wrapper/maven-wrapper.jar
+   233 Tue Jan 24 12:28:30 EST 2023 sbapp278m/.mvn/wrapper/maven-wrapper.properties
+  1678 Tue Jan 24 12:28:30 EST 2023 sbapp278m/pom.xml
+   395 Tue Jan 24 12:28:30 EST 2023 sbapp278m/.gitignore
+  1544 Tue Jan 24 12:28:30 EST 2023 sbapp278m/HELP.md
+ 10284 Tue Jan 24 12:28:30 EST 2023 sbapp278m/mvnw
+  6734 Tue Jan 24 12:28:30 EST 2023 sbapp278m/mvnw.cmd
+
+     0 Tue Jan 24 12:32:42 EST 2023 sbapp302g/
+  8188 Tue Jan 24 12:32:42 EST 2023 sbapp302g/gradlew
+     0 Tue Jan 24 12:32:42 EST 2023 sbapp302g/src/
+     0 Tue Jan 24 12:32:42 EST 2023 sbapp302g/src/main/
+     0 Tue Jan 24 12:32:42 EST 2023 sbapp302g/src/main/resources/
+     0 Tue Jan 24 12:32:42 EST 2023 sbapp302g/src/main/resources/templates/
+     1 Tue Jan 24 12:32:42 EST 2023 sbapp302g/src/main/resources/application.properties
+     0 Tue Jan 24 12:32:42 EST 2023 sbapp302g/src/main/resources/static/
+     0 Tue Jan 24 12:32:42 EST 2023 sbapp302g/src/main/java/
+     0 Tue Jan 24 12:32:42 EST 2023 sbapp302g/src/main/java/ashburncode/
+     0 Tue Jan 24 12:32:42 EST 2023 sbapp302g/src/main/java/ashburncode/sbapp302g/
+   336 Tue Jan 24 12:32:42 EST 2023 sbapp302g/src/main/java/ashburncode/sbapp302g/Sbapp302grajarj17Application.java
+     0 Tue Jan 24 12:32:42 EST 2023 sbapp302g/src/test/
+     0 Tue Jan 24 12:32:42 EST 2023 sbapp302g/src/test/java/
+     0 Tue Jan 24 12:32:42 EST 2023 sbapp302g/src/test/java/ashburncode/
+     0 Tue Jan 24 12:32:42 EST 2023 sbapp302g/src/test/java/ashburncode/sbapp302g/
+   224 Tue Jan 24 12:32:42 EST 2023 sbapp302g/src/test/java/ashburncode/sbapp302g/Sbapp302grajarj17ApplicationTests.java
+   444 Tue Jan 24 12:32:42 EST 2023 sbapp302g/.gitignore
+  1689 Tue Jan 24 12:32:42 EST 2023 sbapp302g/HELP.md
+  2838 Tue Jan 24 12:32:42 EST 2023 sbapp302g/gradlew.bat
+    31 Tue Jan 24 12:32:42 EST 2023 sbapp302g/settings.gradle
+     0 Tue Jan 24 12:32:42 EST 2023 sbapp302g/gradle/
+     0 Tue Jan 24 12:32:42 EST 2023 sbapp302g/gradle/wrapper/
+ 60756 Tue Jan 24 12:32:42 EST 2023 sbapp302g/gradle/wrapper/gradle-wrapper.jar
+   200 Tue Jan 24 12:32:42 EST 2023 sbapp302g/gradle/wrapper/gradle-wrapper.properties
+   625 Tue Jan 24 12:32:42 EST 2023 sbapp302g/build.gradle
+
+     0 Tue Jan 24 12:34:48 EST 2023 sbapp302m/
+     0 Tue Jan 24 12:34:48 EST 2023 sbapp302m/src/
+     0 Tue Jan 24 12:34:48 EST 2023 sbapp302m/src/main/
+     0 Tue Jan 24 12:34:48 EST 2023 sbapp302m/src/main/resources/
+     0 Tue Jan 24 12:34:48 EST 2023 sbapp302m/src/main/resources/templates/
+     1 Tue Jan 24 12:34:48 EST 2023 sbapp302m/src/main/resources/application.properties
+     0 Tue Jan 24 12:34:48 EST 2023 sbapp302m/src/main/resources/static/
+     0 Tue Jan 24 12:34:48 EST 2023 sbapp302m/src/main/java/
+     0 Tue Jan 24 12:34:48 EST 2023 sbapp302m/src/main/java/ashburncode/
+     0 Tue Jan 24 12:34:48 EST 2023 sbapp302m/src/main/java/ashburncode/sbapp302m/
+   336 Tue Jan 24 12:34:48 EST 2023 sbapp302m/src/main/java/ashburncode/sbapp302m/Sbapp302mvnjarj17Application.java
+     0 Tue Jan 24 12:34:48 EST 2023 sbapp302m/src/test/
+     0 Tue Jan 24 12:34:48 EST 2023 sbapp302m/src/test/java/
+     0 Tue Jan 24 12:34:48 EST 2023 sbapp302m/src/test/java/ashburncode/
+     0 Tue Jan 24 12:34:48 EST 2023 sbapp302m/src/test/java/ashburncode/sbapp302m/
+   224 Tue Jan 24 12:34:48 EST 2023 sbapp302m/src/test/java/ashburncode/sbapp302m/Sbapp302mvnjarj17ApplicationTests.java
+     0 Tue Jan 24 12:34:48 EST 2023 sbapp302m/.mvn/
+     0 Tue Jan 24 12:34:48 EST 2023 sbapp302m/.mvn/wrapper/
+ 58727 Tue Jan 24 12:34:48 EST 2023 sbapp302m/.mvn/wrapper/maven-wrapper.jar
+   233 Tue Jan 24 12:34:48 EST 2023 sbapp302m/.mvn/wrapper/maven-wrapper.properties
+  1678 Tue Jan 24 12:34:48 EST 2023 sbapp302m/pom.xml
+   395 Tue Jan 24 12:34:48 EST 2023 sbapp302m/.gitignore
+  1544 Tue Jan 24 12:34:48 EST 2023 sbapp302m/HELP.md
+ 10284 Tue Jan 24 12:34:48 EST 2023 sbapp302m/mvnw
+  6734 Tue Jan 24 12:34:48 EST 2023 sbapp302m/mvnw.cmd
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+jar xvf sbapp2.zip
+jar xvf sbapp3.zip
+jar xvf sbapp277g.zip
+jar xvf sbapp277m.zip
+jar xvf sbapp301g.zip
+jar xvf sbapp301m.zip
+jar xvf sbapp278g.zip
+jar xvf sbapp278m.zip
+jar xvf sbapp302g.zip
+jar xvf sbapp302m.zip
+
+davidho@dphxps17:~/sbtmp$ date
+Tue Jan 24 07:53:34 AM EST 2023
+davidho@dphxps17:~/sbtmp$ pwd -P
+/home/davidho/sbtmp
+davidho@dphxps17:~/sbtmp$ ls -latr
+total 688
+-rw-rw-r--  1 davidho davidho 64993 Nov  8 05:45 sbapp2.zip
+drwxrwxr-x  4 davidho davidho  4096 Nov  8 10:26 sbapp2
+-rw-rw-r--  1 davidho davidho 65324 Nov 25 05:17 sbapp3.zip
+drwxrwxr-x  4 davidho davidho  4096 Nov 25 10:17 sbapp3
+-rw-rw-r--  1 davidho davidho 65173 Jan 13 04:45 sbapp277g.zip
+-rw-rw-r--  1 davidho davidho 63571 Jan 13 04:52 sbapp277m.zip
+-rw-rw-r--  1 davidho davidho 65163 Jan 13 04:54 sbapp301g.zip
+-rw-rw-r--  1 davidho davidho 63572 Jan 13 04:55 sbapp301m.zip
+drwxrwxr-x  4 davidho davidho  4096 Jan 13 09:45 sbapp277g
+drwxrwxr-x  4 davidho davidho  4096 Jan 13 09:52 sbapp277m
+drwxrwxr-x  4 davidho davidho  4096 Jan 13 09:54 sbapp301g
+drwxrwxr-x  4 davidho davidho  4096 Jan 13 09:55 sbapp301m
+-rw-rw-r--  1 davidho davidho 65174 Jan 24 07:26 sbapp278g.zip
+-rw-rw-r--  1 davidho davidho 63573 Jan 24 07:28 sbapp278m.zip
+-rw-rw-r--  1 davidho davidho 65164 Jan 24 07:32 sbapp302g.zip
+-rw-rw-r--  1 davidho davidho 63572 Jan 24 07:34 sbapp302m.zip
+drwxr-x--- 50 davidho davidho  4096 Jan 24 07:44 ..
+drwxrwxr-x 12 davidho davidho  4096 Jan 24 07:53 .
+drwxrwxr-x  4 davidho davidho  4096 Jan 24  2023 sbapp278g
+drwxrwxr-x  4 davidho davidho  4096 Jan 24  2023 sbapp278m
+drwxrwxr-x  4 davidho davidho  4096 Jan 24  2023 sbapp302g
+drwxrwxr-x  4 davidho davidho  4096 Jan 24  2023 sbapp302m
+davidho@dphxps17:~/sbtmp$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+cd ~/sbtmp/sbapp2    ; gradle dependencies| grep -i mysql
+cd ~/sbtmp/sbapp3    ; gradle dependencies| grep -i mysql
+cd ~/sbtmp/sbapp277g ; gradle dependencies| grep -i mysql
+cd ~/sbtmp/sbapp277m ; maven ???
+cd ~/sbtmp/sbapp301g ; gradle dependencies| grep -i mysql
+cd ~/sbtmp/sbapp301m ; maven ???
+cd ~/sbtmp/sbapp278g ; gradle dependencies | grep -i mysql
+cd ~/sbtmp/sbapp278m ; maven ???
+cd ~/sbtmp/sbapp302g ; gradle dependencies | grep -i mysql
+cd ~/sbtmp/sbapp302m ; maven ???
+
+cd ~/sbtmp/sbapp2    ; gradle dependencies| grep -i mysql
+cd ~/sbtmp/sbapp3    ; gradle dependencies| grep -i mysql
+cd ~/sbtmp/sbapp277g ; gradle dependencies| grep -i mysql
+cd ~/sbtmp/sbapp301g ; gradle dependencies| grep -i mysql
+cd ~/sbtmp/sbapp278g ; gradle dependencies | grep -i mysql
+cd ~/sbtmp/sbapp302g ; gradle dependencies | grep -i mysql
+
+davidho@dphxps17:~/sbtmp/sbapp278g$ 
+
+cd ~/sbtmp/sbapp2    ; gradle dependencies| grep -i mysql
+cd ~/sbtmp/sbapp3    ; gradle dependencies| grep -i mysql
+cd ~/sbtmp/sbapp277g ; gradle dependencies| grep -i mysql
+cd ~/sbtmp/sbapp301g ; gradle dependencies| grep -i mysql
+cd ~/sbtmp/sbapp278g ; gradle dependencies | grep -i mysql
+cd ~/sbtmp/sbapp302g ; gradle dependencies | grep -i mysql
+\--- com.mysql:mysql-connector-j -> 8.0.31
+\--- com.mysql:mysql-connector-j -> 8.0.31
+\--- com.mysql:mysql-connector-j (n)
++--- com.mysql:mysql-connector-j -> 8.0.31
+\--- com.mysql:mysql-connector-j -> 8.0.31
+\--- com.mysql:mysql-connector-j -> 8.0.31
+\--- com.mysql:mysql-connector-j (n)
++--- com.mysql:mysql-connector-j -> 8.0.31
+\--- com.mysql:mysql-connector-j -> 8.0.31
+\--- com.mysql:mysql-connector-j -> 8.0.31
+\--- com.mysql:mysql-connector-j (n)
++--- com.mysql:mysql-connector-j -> 8.0.31
+\--- com.mysql:mysql-connector-j -> 8.0.31
+\--- com.mysql:mysql-connector-j -> 8.0.31
+\--- com.mysql:mysql-connector-j (n)
++--- com.mysql:mysql-connector-j -> 8.0.31
+\--- com.mysql:mysql-connector-j -> 8.0.32
+\--- com.mysql:mysql-connector-j -> 8.0.32
+\--- com.mysql:mysql-connector-j (n)
++--- com.mysql:mysql-connector-j -> 8.0.32
+\--- com.mysql:mysql-connector-j -> 8.0.32
+\--- com.mysql:mysql-connector-j -> 8.0.32
++--- com.mysql:mysql-connector-j -> 8.0.32
+davidho@dphxps17:~/sbtmp/sbapp302g$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+cd ~/sbtmp/sbapp2    ; git init
+cd ~/sbtmp/sbapp3    ; git init
+cd ~/sbtmp/sbapp277g ; git init
+cd ~/sbtmp/sbapp277m ; git init
+cd ~/sbtmp/sbapp301g ; git init
+cd ~/sbtmp/sbapp301m ; git init
+cd ~/sbtmp/sbapp278g ; git init
+cd ~/sbtmp/sbapp278m ; git init
+cd ~/sbtmp/sbapp302g ; git init
+cd ~/sbtmp/sbapp302m ; git init
+
+cd ~/sbtmp/sbapp2    ; git add .
+cd ~/sbtmp/sbapp3    ; git add .
+cd ~/sbtmp/sbapp277g ; git add .
+cd ~/sbtmp/sbapp277m ; git add .
+cd ~/sbtmp/sbapp301g ; git add .
+cd ~/sbtmp/sbapp301m ; git add .
+cd ~/sbtmp/sbapp278g ; git add .
+cd ~/sbtmp/sbapp278m ; git add .
+cd ~/sbtmp/sbapp302g ; git add .
+cd ~/sbtmp/sbapp302m ; git add .
+
+cd ~/sbtmp/sbapp2    ; git commit -a -m "first commit"
+cd ~/sbtmp/sbapp3    ; git commit -a -m "first commit"
+cd ~/sbtmp/sbapp277g ; git commit -a -m "first commit"
+cd ~/sbtmp/sbapp277m ; git commit -a -m "first commit"
+cd ~/sbtmp/sbapp301g ; git commit -a -m "first commit"
+cd ~/sbtmp/sbapp301m ; git commit -a -m "first commit"
+cd ~/sbtmp/sbapp278g ; git commit -a -m "first commit"
+cd ~/sbtmp/sbapp278m ; git commit -a -m "first commit"
+cd ~/sbtmp/sbapp302g ; git commit -a -m "first commit"
+cd ~/sbtmp/sbapp302m ; git commit -a -m "first commit"
+
+cd ~/sbtmp/sbapp277g
+git remote add origin git@github.com:ashburndev/sbapp277g.git
+git branch -M main
+git push -u origin main
+
+cd ~/sbtmp/sbapp278g
+git remote add origin git@github.com:ashburndev/sbapp278g.git
+git branch -M main
+git push -u origin main
+
