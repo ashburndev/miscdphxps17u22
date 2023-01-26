@@ -1,0 +1,1464 @@
+davidho@dphxps17:~$ date
+Thu Jan 26 05:16:48 AM EST 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ code stuff-20230126.txt
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://reactjs.org/docs/create-a-new-react-app.html
+https://reactjs.org/docs/create-a-new-react-app.html#create-react-app
+
+npx create-react-app my-app
+cd my-app
+npm start
+
+find node_modules/ -print | wc
+find node_modules/ -type f -print | wc
+find node_modules/ -type d -print | wc
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://nodejs.org/en/
+
+Download for Linux (x64)
+18.13.0 LTS      Recommended For Most Users
+19.5.0 Current   Latest Features
+
+nvm list
+node -v
+npm -v
+npx -v
+npm bin -g
+whereis npm
+nvm ls-remote
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ node -v
+v18.2.0
+davidho@dphxps17:~$ npm -v
+8.9.0
+davidho@dphxps17:~$ npx -v
+8.9.0
+davidho@dphxps17:~$ whereis npm
+npm: /home/davidho/.nvm/versions/node/v18.2.0/bin/npm
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ nvm ls-remote | tail -15
+        v18.8.0
+        v18.9.0
+        v18.9.1
+       v18.10.0
+       v18.11.0
+       v18.12.0   (LTS: Hydrogen)
+       v18.12.1   (LTS: Hydrogen)
+       v18.13.0   (Latest LTS: Hydrogen)
+        v19.0.0
+        v19.0.1
+        v19.1.0
+        v19.2.0
+        v19.3.0
+        v19.4.0
+        v19.5.0
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ cd /home/davidho/.nvm/versions/node/v18.2.0
+davidho@dphxps17:~/.nvm/versions/node/v18.2.0$ ls -latr
+total 228
+drwxr-xr-x 5 davidho davidho  4096 May 17  2022 share
+drwxr-xr-x 3 davidho davidho  4096 May 17  2022 lib
+drwxr-xr-x 3 davidho davidho  4096 May 17  2022 include
+drwxr-xr-x 2 davidho davidho  4096 May 17  2022 bin
+-rw-r--r-- 1 davidho davidho 34008 May 17  2022 README.md
+-rw-r--r-- 1 davidho davidho 95386 May 17  2022 LICENSE
+-rw-r--r-- 1 davidho davidho 72501 May 17  2022 CHANGELOG.md
+drwxrwxr-x 3 davidho davidho  4096 May 26  2022 ..
+drwxrwxr-x 6 davidho davidho  4096 May 26  2022 .
+davidho@dphxps17:~/.nvm/versions/node/v18.2.0$ 
+davidho@dphxps17:~/.nvm/versions/node/v18.2.0$ ls -latr share
+total 20
+drwxr-xr-x 3 davidho davidho 4096 May 17  2022 systemtap
+drwxr-xr-x 3 davidho davidho 4096 May 17  2022 man
+drwxr-xr-x 3 davidho davidho 4096 May 17  2022 doc
+drwxr-xr-x 5 davidho davidho 4096 May 17  2022 .
+drwxrwxr-x 6 davidho davidho 4096 May 26  2022 ..
+davidho@dphxps17:~/.nvm/versions/node/v18.2.0$ ls -latr lib
+total 12
+drwxr-xr-x 3 davidho davidho 4096 May 17  2022 .
+drwxr-xr-x 4 davidho davidho 4096 May 17  2022 node_modules
+drwxrwxr-x 6 davidho davidho 4096 May 26  2022 ..
+davidho@dphxps17:~/.nvm/versions/node/v18.2.0$ ls -latr include
+total 12
+drwxr-xr-x 3 davidho davidho 4096 May 17  2022 .
+drwxr-xr-x 6 davidho davidho 4096 May 17  2022 node
+drwxrwxr-x 6 davidho davidho 4096 May 26  2022 ..
+davidho@dphxps17:~/.nvm/versions/node/v18.2.0$ ls -latr bin
+total 84012
+-rwxr-xr-x 1 davidho davidho 86012744 May 17  2022 node
+lrwxrwxrwx 1 davidho davidho       38 May 17  2022 npx -> ../lib/node_modules/npm/bin/npx-cli.js
+lrwxrwxrwx 1 davidho davidho       38 May 17  2022 npm -> ../lib/node_modules/npm/bin/npm-cli.js
+lrwxrwxrwx 1 davidho davidho       45 May 17  2022 corepack -> ../lib/node_modules/corepack/dist/corepack.js
+drwxr-xr-x 2 davidho davidho     4096 May 17  2022 .
+drwxrwxr-x 6 davidho davidho     4096 May 26  2022 ..
+davidho@dphxps17:~/.nvm/versions/node/v18.2.0$ 
+davidho@dphxps17:~/.nvm/versions/node/v18.2.0$ ls -latr lib/node_modules/npm/node_modules/
+total 720
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 @tootallnate
+drwxr-xr-x  17 davidho davidho 4096 May 17  2022 @npmcli
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 @isaacs
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 @gar
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 @colors
+drwxr-xr-x   7 davidho davidho 4096 May 17  2022 ..
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 yallist
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 write-file-atomic
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 wrappy
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 wide-align
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 which
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 wcwidth
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 walk-up-path
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 validate-npm-package-name
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 validate-npm-package-license
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 util-deprecate
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 unique-slug
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 unique-filename
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 treeverse
+drwxr-xr-x   5 davidho davidho 4096 May 17  2022 tiny-relative-date
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 text-table
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 tar
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 supports-color
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 strip-ansi
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 string-width
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 string_decoder
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 ssri
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 spdx-license-ids
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 spdx-expression-parse
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 spdx-exceptions
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 spdx-correct
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 socks-proxy-agent
+drwxr-xr-x   5 davidho davidho 4096 May 17  2022 socks
+drwxr-xr-x   5 davidho davidho 4096 May 17  2022 smart-buffer
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 signal-exit
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 set-blocking
+drwxr-xr-x   8 davidho davidho 4096 May 17  2022 semver
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 safer-buffer
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 safe-buffer
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 rimraf
+drwxr-xr-x   4 davidho davidho 4096 May 17  2022 retry
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 read-package-json-fast
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 read-package-json
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 readdir-scoped-modules
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 read-cmd-shim
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 readable-stream
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 read
+drwxr-xr-x   6 davidho davidho 4096 May 17  2022 qrcode-terminal
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 promzard
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 promise-retry
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 promise-inflight
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 promise-call-limit
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 promise-all-reject-late
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 proc-log
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 p-map
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 path-is-absolute
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 parse-conflict-json
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 pacote
+drwxr-xr-x   4 davidho davidho 4096 May 17  2022 opener
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 once
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 npm-user-validate
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 npm-registry-fetch
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 npm-profile
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 npm-pick-manifest
+drwxr-xr-x   4 davidho davidho 4096 May 17  2022 npm-packlist
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 npm-package-arg
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 npm-normalize-package-bin
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 npmlog
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 npm-install-checks
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 npm-bundled
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 npm-audit-report
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 normalize-package-data
+drwxr-xr-x   4 davidho davidho 4096 May 17  2022 nopt
+drwxr-xr-x   9 davidho davidho 4096 May 17  2022 node-gyp
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 negotiator
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 mute-stream
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 ms
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 mkdirp-infer-owner
+drwxr-xr-x   4 davidho davidho 4096 May 17  2022 mkdirp
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 minizlib
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 minipass-sized
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 minipass-pipeline
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 minipass-json-stream
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 minipass-flush
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 minipass-fetch
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 minipass-collect
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 minipass
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 minimatch
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 make-fetch-happen
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 lru-cache
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 libnpmversion
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 libnpmteam
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 libnpmsearch
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 libnpmpublish
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 libnpmpack
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 libnpmorg
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 libnpmhook
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 libnpmfund
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 libnpmexec
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 libnpmdiff
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 libnpmaccess
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 just-diff-apply
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 just-diff
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 json-stringify-nice
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 json-parse-even-better-errors
+drwxr-xr-x   4 davidho davidho 4096 May 17  2022 jsonparse
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 is-lambda
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 is-fullwidth-code-point
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 isexe
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 is-core-module
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 is-cidr
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 ip-regex
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 ip
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 init-package-json
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 ini
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 inherits
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 inflight
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 infer-owner
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 indent-string
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 imurmurhash
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 ignore-walk
+drwxr-xr-x   4 davidho davidho 4096 May 17  2022 iconv-lite
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 humanize-ms
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 https-proxy-agent
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 http-proxy-agent
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 http-cache-semantics
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 hosted-git-info
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 has-unicode
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 has-flag
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 has
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 graceful-fs
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 glob
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 gauge
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 function-bind
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 fs.realpath
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 fs-minipass
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 fastest-levenshtein
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 err-code
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 env-paths
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 encoding
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 emoji-regex
+drwxr-xr-x   4 davidho davidho 4096 May 17  2022 diff
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 dezalgo
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 depd
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 delegates
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 defaults
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 debuglog
+drwxr-xr-x   4 davidho davidho 4096 May 17  2022 debug
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 console-control-strings
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 concat-map
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 common-ancestor-path
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 columnify
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 color-support
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 color-name
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 color-convert
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 cmd-shim
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 clone
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 cli-table3
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 cli-columns
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 clean-stack
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 cidr-regex
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 chownr
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 chalk
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 cacache
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 builtins
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 brace-expansion
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 bin-links
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 binary-extensions
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 balanced-match
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 asap
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 are-we-there-yet
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 archy
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 aproba
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 ansi-styles
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 ansi-regex
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 aggregate-error
+drwxr-xr-x   3 davidho davidho 4096 May 17  2022 agentkeepalive
+drwxr-xr-x   4 davidho davidho 4096 May 17  2022 agent-base
+drwxr-xr-x   2 davidho davidho 4096 May 17  2022 abbrev
+drwxr-xr-x 180 davidho davidho 4096 May 17  2022 .
+davidho@dphxps17:~/.nvm/versions/node/v18.2.0$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ mkdir ~/jsproj
+davidho@dphxps17:~$ cd ~/jsproj
+davidho@dphxps17:~/jsproj$ npx create-react-app dphreact1
+
+Creating a new React app in /home/davidho/jsproj/dphreact1.
+
+Installing packages. This might take a couple of minutes.
+Installing react, react-dom, and react-scripts with cra-template...
+
+
+added 1416 packages in 18s
+
+231 packages are looking for funding
+  run `npm fund` for details
+
+Initialized a git repository.
+
+Installing template dependencies using npm...
+
+added 55 packages in 2s
+
+231 packages are looking for funding
+  run `npm fund` for details
+Removing template package using npm...
+
+
+removed 1 package, and audited 1471 packages in 1s
+
+231 packages are looking for funding
+  run `npm fund` for details
+
+6 high severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+Created git commit.
+
+Success! Created dphreact1 at /home/davidho/jsproj/dphreact1
+Inside that directory, you can run several commands:
+
+  npm start
+    Starts the development server.
+
+  npm run build
+    Bundles the app into static files for production.
+
+  npm test
+    Starts the test runner.
+
+  npm run eject
+    Removes this tool and copies build dependencies, configuration files
+    and scripts into the app directory. If you do this, you can’t go back!
+
+We suggest that you begin by typing:
+
+  cd dphreact1
+  npm start
+
+Happy hacking!
+npm notice 
+npm notice New major version of npm available! 8.9.0 -> 9.4.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v9.4.0
+npm notice Run npm install -g npm@9.4.0 to update!
+npm notice 
+davidho@dphxps17:~/jsproj$ 
+davidho@dphxps17:~/jsproj$ cd dphreact1/
+davidho@dphxps17:~/jsproj/dphreact1$ 
+davidho@dphxps17:~/jsproj/dphreact1$ ls -latr
+total 1252
+drwxrwxr-x   3 davidho davidho    4096 Jan 26 05:39 ..
+-rw-rw-r--   1 davidho davidho    3359 Jan 26 05:39 README.md
+-rw-rw-r--   1 davidho davidho     310 Jan 26 05:39 .gitignore
+drwxrwxr-x   2 davidho davidho    4096 Jan 26 05:39 src
+drwxrwxr-x   2 davidho davidho    4096 Jan 26 05:39 public
+drwxrwxr-x   6 davidho davidho    4096 Jan 26 05:39 .
+drwxrwxr-x 823 davidho davidho   36864 Jan 26 05:39 node_modules
+-rw-rw-r--   1 davidho davidho 1204941 Jan 26 05:39 package-lock.json
+-rw-rw-r--   1 davidho davidho     812 Jan 26 05:39 package.json
+drwxrwxr-x   8 davidho davidho    4096 Jan 26 05:39 .git
+davidho@dphxps17:~/jsproj/dphreact1$ 
+davidho@dphxps17:~/jsproj/dphreact1$ ls -latr src
+total 40
+-rw-rw-r-- 1 davidho davidho  241 Jan 26 05:39 setupTests.js
+-rw-rw-r-- 1 davidho davidho  362 Jan 26 05:39 reportWebVitals.js
+-rw-rw-r-- 1 davidho davidho 2632 Jan 26 05:39 logo.svg
+-rw-rw-r-- 1 davidho davidho  535 Jan 26 05:39 index.js
+-rw-rw-r-- 1 davidho davidho  366 Jan 26 05:39 index.css
+-rw-rw-r-- 1 davidho davidho  246 Jan 26 05:39 App.test.js
+-rw-rw-r-- 1 davidho davidho  528 Jan 26 05:39 App.js
+-rw-rw-r-- 1 davidho davidho  564 Jan 26 05:39 App.css
+drwxrwxr-x 2 davidho davidho 4096 Jan 26 05:39 .
+drwxrwxr-x 6 davidho davidho 4096 Jan 26 05:39 ..
+davidho@dphxps17:~/jsproj/dphreact1$ 
+davidho@dphxps17:~/jsproj/dphreact1$ cat src/App.js 
+import logo from './logo.svg';
+import './App.css';
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
+}
+
+export default App;
+davidho@dphxps17:~/jsproj/dphreact1$ 
+davidho@dphxps17:~/jsproj/dphreact1$ cat package.json
+{
+  "name": "dphreact1",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
+davidho@dphxps17:~/jsproj/dphreact1$ 
+davidho@dphxps17:~/jsproj/dphreact1$ cat .gitignore 
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+davidho@dphxps17:~/jsproj/dphreact1$ 
+davidho@dphxps17:~/jsproj/dphreact1$ find node_modules/ -print | wc
+  41192   41192 2304621
+davidho@dphxps17:~/jsproj/dphreact1$ find node_modules/ -type f -print | wc
+  36295   36295 2089451
+davidho@dphxps17:~/jsproj/dphreact1$ 
+davidho@dphxps17:~/jsproj/dphreact1$ find node_modules/ -type d -print | wc
+   4826    4826  212574
+davidho@dphxps17:~/jsproj/dphreact1$ ls -latr node_modules/
+total 4004
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 @xtuc
+drwxrwxr-x  17 davidho davidho   4096 Jan 26 05:39 @webassemblyjs
+drwxrwxr-x  11 davidho davidho   4096 Jan 26 05:39 @typescript-eslint
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 @trysound
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 @tootallnate
+drwxrwxr-x  16 davidho davidho   4096 Jan 26 05:39 @svgr
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 @surma
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 @sinonjs
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 @sinclair
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 @rushstack
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 @pmmmwh
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 @nodelib
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 @leichtgewicht
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 @istanbuljs
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 @humanwhocodes
+drwxrwxr-x  18 davidho davidho   4096 Jan 26 05:39 @csstools
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 @bcoe
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 @ampproject
+drwxrwxr-x   6 davidho davidho   4096 Jan 26 05:39 @rollup
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 @nicolo-ribaudo
+drwxrwxr-x   8 davidho davidho   4096 Jan 26 05:39 @jridgewell
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 @eslint
+drwxrwxr-x 121 davidho davidho  12288 Jan 26 05:39 @babel
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 ast-types-flow
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 xml-name-validator
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 whatwg-mimetype
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 whatwg-encoding
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 wbuf
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 w3c-xmlserializer
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 spdy-transport
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 source-list-map
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 sax
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 is-regexp
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 dom-converter
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 dlv
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 boolbase
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 data-urls
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 fb-watchman
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 dedent
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 natural-compare-lite
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 natural-compare
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 svg-parser
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 esutils
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 babel-plugin-named-asset-import
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 wrap-ansi
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 tr46
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 stringify-object
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 require-from-string
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 process-nextick-args
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 minimalistic-assert
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 lodash.sortby
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 is-obj
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 at-least-node
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 obuf
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 escape-html
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 ee-first
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 destroy
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 unicode-property-aliases-ecmascript
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 unicode-match-property-ecmascript
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 unicode-canonical-property-names-ecmascript
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 regjsgen
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 recursive-readdir
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 read-cache
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 querystringify
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 pify
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 path-parse
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 is-number
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 ini
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 has-flag
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 global-prefix
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 buffer-from
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 object-assign
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 normalize-range
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 global-modules
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 to-regex-range
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 lodash.uniq
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 lodash.memoize
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 is-potential-custom-element-name
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 fill-range
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 fast-levenshtein
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 error-ex
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 combined-stream
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 caniuse-api
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 brace-expansion
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 balanced-match
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 wrappy
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 strip-final-newline
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 stack-utils
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 path-is-absolute
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 parent-module
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 once
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 merge-stream
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 merge2
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 jest-resolve-dependencies
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 jest-get-type
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 jest-environment-node
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 jest-environment-jsdom
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 is-extglob
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 inflight
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 acorn-globals
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 universalify
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 string-natural-compare
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 shebang-command
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 run-parallel
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 normalize-path
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 is-glob
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 isarray
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 imurmurhash
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 glob-parent
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 dir-glob
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 confusing-browser-globals
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 parse-json
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 ms
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 micromatch
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 lodash.debounce
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 jest-regex-util
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 find-cache-dir
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 escape-string-regexp
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 bluebird
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 babel-preset-jest
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 ansi-styles
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 to-fast-properties
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 convert-source-map
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 unique-string
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 temp-dir
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 string-width
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 p-try
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 jsonpointer
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 is-typedarray
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 is-module
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 is-fullwidth-code-point
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 crypto-random-string
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 core-util-is
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 vary
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 utils-merge
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 unpipe
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 type-is
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 toidentifier
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 tempy
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 string_decoder
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 setprototypeof
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 range-parser
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 proxy-addr
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 pretty-bytes
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 p-retry
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 path-to-regexp
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 parseurl
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 on-headers
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 on-finished
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 methods
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 merge-descriptors
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 media-typer
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 is-plain-obj
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 http-parser-js
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 http-errors
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 fresh
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 forwarded
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 etag
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 encodeurl
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 cookie-signature
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 content-type
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 connect-history-api-fallback
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 compression
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 compressible
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 bytes
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 array-flatten
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 accepts
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 unquote
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 tmpl
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 supports-hyperlinks
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 stable
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 sisteransi
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 shebang-regex
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 regex-parser
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 quick-lru
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 queue-microtask
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 postcss-replace-overflow-wrap
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 postcss-page-break
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 postcss-nested
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 pkg-up
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 kleur
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 kind-of
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 is-wsl
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 is-root
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 is-binary-path
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 gzip-size
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 glob-to-regexp
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 didyoumean
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 define-lazy-prop
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 css-select-base-adapter
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 char-regex
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 camelcase-css
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 browser-process-hrtime
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 arg
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 ansi-regex
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 yocto-queue
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 word-wrap
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 symbol-tree
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 postcss-opacity-percentage
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 postcss-font-variant
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 p-locate
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 p-limit
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 mimic-fn
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 lines-and-columns
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 json-parse-even-better-errors
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 delayed-stream
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 terminal-link
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 strip-bom
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 string-length
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 signal-exit
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 resolve-cwd
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 onetime
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 npm-run-path
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 leven
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 jest-leak-detector
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 jest-docblock
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 is-stream
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 is-generator-fn
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 inherits
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 html-encoding-sniffer
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 fs.realpath
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 domexception
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 detect-newline
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 co
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 callsites
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 bser
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 anymatch
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 ansi-escapes
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 pkg-dir
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 path-exists
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 locate-path
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 has
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 esrecurse
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 array-union
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 strip-json-comments
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 strip-ansi
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 postcss-unique-selectors
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 postcss-reduce-transforms
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 postcss-normalize-whitespace
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 postcss-normalize-url
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 postcss-normalize-unicode
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 postcss-normalize-timing-functions
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 postcss-normalize-string
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 postcss-normalize-positions
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 postcss-normalize-charset
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 postcss-minify-params
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 postcss-discard-overridden
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 postcss-discard-empty
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 postcss-discard-duplicates
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 path-key
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 lilconfig
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 is-path-inside
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 write-file-atomic
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 supports-color
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 slash
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 resolve-from
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 path-type
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 make-dir
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 import-fresh
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 cssnano
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 babel-preset-current-node-syntax
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 babel-plugin-jest-hoist
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 js-tokens
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 find-up
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 dotenv-expand
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 common-path-prefix
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 camelcase
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 typedarray-to-buffer
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 get-caller-file
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 upath
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 statuses
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 makeerror
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 detect-node
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 util-deprecate
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 postcss-selector-not
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 postcss-place
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 postcss-overflow-shorthand
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 postcss-logical
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 postcss-lab-function
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 postcss-gap-properties
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 postcss-focus-within
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 postcss-focus-visible
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 postcss-env-function
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 postcss-double-position-gradients
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 postcss-dir-pseudo-class
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 postcss-custom-selectors
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 postcss-color-rebeccapurple
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 postcss-color-hex-alpha
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 postcss-attribute-case-insensitive
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 mkdirp
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 is-docker
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 yallist
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 walker
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 jest-pnp-resolver
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 import-local
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 get-stream
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 commondir
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 collect-v8-coverage
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 minimatch
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 json-schema-traverse
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 postcss-modules-values
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 postcss-modules-scope
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 postcss-minify-gradients
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 postcss-colormin
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 pirates
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 babel-plugin-macros
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 babel-jest
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 require-directory
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 get-own-enumerable-property-symbols
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 filelist
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 thunky
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 serve-static
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 rollup-plugin-terser
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 isexe
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 dns-equal
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 depd
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 content-disposition
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 xtend
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 safe-buffer
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 requires-port
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 loader-runner
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 es-array-method-boxes-properly
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 ajv-keywords
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 readdirp
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 raf
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 picocolors
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 normalize-url
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 duplexer
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 concat-map
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 binary-extensions
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 webidl-conversions
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 w3c-hr-time
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 type-check
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 mime-types
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 http-proxy-agent
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 braces
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 address
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 type-detect
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 jest-serializer
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 jest-mock
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 argparse
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 reusify
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 jest-message-util
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 for-each
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 emittery
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 damerau-levenshtein
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 which
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 postcss-normalize-repeat-style
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 postcss-normalize-display-values
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 postcss-modules-extract-imports
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 file-entry-cache
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 cssnano-preset-default
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 color-name
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 regenerator-runtime
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 react-app-polyfill
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 jest
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 graceful-fs
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 globals
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 identity-obj-proxy
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 case-sensitive-paths-webpack-plugin
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 json-schema
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 http-deceiver
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 handle-thing
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 builtin-modules
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 batch
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 finalhandler
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 cookie
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 colorette
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 acorn-import-assertions
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 unicode-match-property-value-ecmascript
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 regenerate
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 randombytes
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 postcss-pseudo-class-any-link
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 postcss-load-config
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 cssesc
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 postcss-nesting
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 postcss-media-minmax
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 postcss-image-set-function
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 postcss-custom-media
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 postcss-color-functional-notation
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 postcss-clamp
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 is-arrayish
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 node-int64
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 abab
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 safe-regex-test
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 rimraf
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 jsonfile
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 acorn-jsx
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 gopd
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 update-browserslist-db
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 postcss-reduce-initial
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 postcss-modules-local-by-default
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 lodash.merge
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 define-properties
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 cssnano-utils
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 babel-plugin-polyfill-regenerator
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 debug
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 chalk
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 ansi-html-community
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 loose-envify
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 eslint-config-react-app
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 raw-body
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 is-weakmap
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 follow-redirects
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 serve-index
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 safer-buffer
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 ipaddr.js
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 has-bigints
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 punycode
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 postcss-custom-properties
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 emojis-list
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 asynckit
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 throat
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 eslint-import-resolver-node
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 jest-runner
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 jest-matcher-utils
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 exit
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 esprima
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 which-collection
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 stackframe
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 postcss-minify-selectors
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 postcss-convert-values
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 levn
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 has-property-descriptors
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 globby
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 get-package-type
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 color-convert
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 babel-plugin-istanbul
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 postcss-flexbugs-fixes
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 select-hose
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 retry
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 estree-walker
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 supports-preserve-symlinks-flag
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 selfsigned
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 postcss-js
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 open
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 object-hash
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 escalade
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 coa
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 chrome-trace-event
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 asap
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 sanitize.css
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 glob
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 optionator
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 jest-runtime
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 jest-changed-files
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 is-weakref
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 harmony-reflect
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 function-bind
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 flat-cache
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 estraverse
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 eslint-visitor-keys
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 doctrine
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 test-exclude
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 postcss-svgo
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 postcss-minify-font-values
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 postcss-discard-comments
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 icss-utils
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 hoopy
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 check-types
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 postcss-preset-env
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 postcss-normalize
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 jsesc
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 gensync
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 workbox-sw
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 multicast-dns
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 dns-packet
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 regjsparser
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 postcss-import
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 deep-is
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 https-proxy-agent
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 big.js
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 agent-base
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 resolve.exports
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 form-data
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 language-tags
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 text-table
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 postcss-value-parser
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 postcss-merge-rules
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 file-loader
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 strip-comments
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 is-number-object
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 is-bigint
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 whatwg-fetch
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 url-parse
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 send
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 q
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 postcss-browser-comments
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 performance-now
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 negotiator
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 domhandler
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 domelementtype
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 default-gateway
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 stop-iteration-iterator
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 serialize-javascript
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 cssdb
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 ci-info
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 which-typed-array
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 unbox-primitive
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 side-channel
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 functions-have-names
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 diff-sequences
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 is-typed-array
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 is-string
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 is-shared-array-buffer
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 is-core-module
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 es-shim-unscopables
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 cross-spawn
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 available-typed-arrays
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 webpack-manifest-plugin
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 postcss-loader
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 babel-preset-react-app
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 sourcemap-codec
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 mime
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 is-boolean-object
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 ajv-formats
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 util.promisify
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 react-is
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 eventemitter3
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 defined
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 saxes
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 lower-case
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 has-proto
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 es-set-tostringtag
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 which-boxed-primitive
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 source-map-support
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 jest-each
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 is-symbol
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 is-negative-zero
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 is-date-object
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 is-arguments
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 escodegen
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 json-stable-stringify-without-jsonify
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 is-regex
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 grapheme-splitter
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 get-symbol-description
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 css-declaration-sorter
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 babel-plugin-transform-react-remove-prop-types
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 regexpu-core
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 error-stack-parser
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 y18n
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 is-weakset
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 cliui
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 utila
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 es-module-lexer
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 object-keys
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 is-set
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 is-map
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 is-callable
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 he
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 fast-deep-equal
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 call-bind
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 terser-webpack-plugin
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 source-map-loader
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 dotenv
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 deepmerge
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 css-minimizer-webpack-plugin
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 typed-array-length
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 prelude-ls
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 no-case
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 fraction.js
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 dot-case
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 pascal-case
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 param-case
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 istanbul-lib-coverage
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 html-escaper
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 camel-case
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 sass-loader
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 html-entities
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 has-tostringtag
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 eslint-plugin-react-hooks
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 browserslist
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 babel-loader
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 watchpack
+drwxrwxr-x   6 davidho davidho   4096 Jan 26 05:39 detect-port-alt
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 chokidar
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 acorn-walk
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 is-array-buffer
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 nwsapi
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 istanbul-lib-source-maps
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 istanbul-lib-report
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 html-minifier-terser
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 execa
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 tryer
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 eslint-webpack-plugin
+drwxrwxr-x   6 davidho davidho   4096 Jan 26 05:39 postcss-initial
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 object.getownpropertydescriptors
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 fs-monkey
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 tough-cookie
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 internal-slot
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 lru-cache
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 v8-to-istanbul
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 picomatch
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 jest-watcher
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 jest-validate
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 string.prototype.trimstart
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 string.prototype.trimend
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 object.fromentries
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 istanbul-lib-instrument
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 array.prototype.flat
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 array-includes
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 dom-serializer
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 js-sdsl
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 human-signals
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 get-intrinsic
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 resolve-url-loader
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 object.hasown
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 has-symbols
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 espree
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 array.prototype.tosorted
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 react-refresh
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 ignore
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 tslib
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 prop-types
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 flatted
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 cjs-module-lexer
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 object-is
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 jest-resolve
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 babel-plugin-polyfill-corejs2
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 array.prototype.flatmap
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 websocket-extensions
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 ejs
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 mime-db
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 filesize
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 node-releases
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 string.prototype.matchall
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 object.values
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 object.entries
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 jest-diff
+drwxrwxr-x   6 davidho davidho   4096 Jan 26 05:39 fast-json-stable-stringify
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 http-proxy-middleware
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 entities
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 deep-equal
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 css-blank-pseudo
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 body-parser
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 array.prototype.reduce
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 regexp.prototype.flags
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 commander
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 eslint-module-utils
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 sockjs
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 htmlparser2
+drwxrwxr-x   6 davidho davidho   4096 Jan 26 05:39 klona
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 fastq
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 es-get-iterator
+drwxrwxr-x   6 davidho davidho   4096 Jan 26 05:39 sprintf-js
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 es-to-primitive
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 schema-utils
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 globalthis
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 style-loader
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 jest-watch-typeahead
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 function.prototype.name
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 http-proxy
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 faye-websocket
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 domutils
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 css-prefers-color-scheme
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 type-fest
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 pretty-format
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 jest-snapshot
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 jest-circus
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 yargs-parser
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 webpack-dev-middleware
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 css-has-pseudo
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 adjust-sourcemap-loader
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 loader-utils
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 jest-cli
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 spdy
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 nth-check
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 shell-quote
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 regexpp
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 jest-worker
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 jest-util
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 emoji-regex
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 tapable
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 postcss-ordered-values
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 jest-config
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 expect
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 eslint-utils
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 eslint-scope
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 electron-to-chromium
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 ws
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 whatwg-url
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 decimal.js
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 acorn
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 idb
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 html-webpack-plugin
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 react-error-overlay
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 minimist
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 relateurl
+drwxrwxr-x   6 davidho davidho   4096 Jan 26 05:39 pretty-error
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 cssom
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 regenerator-transform
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 postcss-calc
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 babel-plugin-polyfill-corejs3
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 xmlchars
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 workbox-navigation-preload
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 workbox-cacheable-response
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 source-map-js
+drwxrwxr-x   6 davidho davidho   4096 Jan 26 05:39 nanoid
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 scheduler
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 css-what
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 jest-haste-map
+drwxrwxr-x   7 davidho davidho   4096 Jan 26 05:39 hpack.js
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 source-map
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 memfs
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 workbox-google-analytics
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 magic-string
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 express
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 stylehacks
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 mini-css-extract-plugin
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 bonjour-service
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 websocket-driver
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 webpack-sources
+drwxrwxr-x   6 davidho davidho   4096 Jan 26 05:39 qs
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 events
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 json5
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 cosmiconfig
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 css-select
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 jest-jasmine2
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 readable-stream
+drwxrwxr-x   6 davidho davidho   4096 Jan 26 05:39 jake
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 workbox-range-requests
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 psl
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 postcss-merge-longhand
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 tsconfig-paths
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 workbox-webpack-plugin
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 react
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 acorn-node
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 css-loader
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 workbox-broadcast-update
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 react-dev-utils
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 workbox-recipes
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 workbox-expiration
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 object-inspect
+drwxrwxr-x   8 davidho davidho   4096 Jan 26 05:39 react-scripts
+drwxrwxr-x   6 davidho davidho   4096 Jan 26 05:39 detective
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 mdn-data
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 fast-glob
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 workbox-streams
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 colord
+drwxrwxr-x   6 davidho davidho   4096 Jan 26 05:39 promise
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 postcss-selector-parser
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 fs-extra
+drwxrwxr-x   8 davidho davidho   4096 Jan 26 05:39 semver
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 postcss
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 core-js-compat
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 workbox-background-sync
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 enhanced-resolve
+drwxrwxr-x   6 davidho davidho   4096 Jan 26 05:39 iconv-lite
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 bfj
+drwxrwxr-x   7 davidho davidho   4096 Jan 26 05:39 webpack-dev-server
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 uri-js
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 parse5
+drwxrwxr-x   7 davidho davidho   4096 Jan 26 05:39 eslint-plugin-testing-library
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 js-yaml
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 esquery
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 workbox-routing
+drwxrwxr-x   6 davidho davidho   4096 Jan 26 05:39 workbox-strategies
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 workbox-window
+drwxrwxr-x   6 davidho davidho   4096 Jan 26 05:39 yargs
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 uuid
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 tsutils
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 object.assign
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 yaml
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 prompts
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 csso
+drwxrwxr-x   6 davidho davidho   4096 Jan 26 05:39 svgo
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 autoprefixer
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 cssstyle
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 language-subtag-registry
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 istanbul-reports
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 eslint-plugin-flowtype
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 immer
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 eslint-plugin-jest
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 renderkid
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 neo-async
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 workbox-precaching
+drwxrwxr-x   6 davidho davidho   4096 Jan 26 05:39 jsx-ast-utils
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 axobject-query
+drwxrwxr-x   7 davidho davidho   4096 Jan 26 05:39 workbox-core
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 ajv
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 node-forge
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 axe-core
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 workbox-build
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 async
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 aria-query
+drwxrwxr-x   7 davidho davidho   4096 Jan 26 05:39 terser
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 common-tags
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 clean-css
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 fork-ts-checker-webpack-plugin
+drwxrwxr-x   7 davidho davidho   4096 Jan 26 05:39 resolve
+drwxrwxr-x   5 davidho davidho   4096 Jan 26 05:39 eslint-plugin-react
+drwxrwxr-x   7 davidho davidho   4096 Jan 26 05:39 eslint-plugin-import
+drwxrwxr-x   6 davidho davidho   4096 Jan 26 05:39 css-tree
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 react-dom
+drwxrwxr-x   7 davidho davidho   4096 Jan 26 05:39 eslint-plugin-jsx-a11y
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 rollup
+drwxrwxr-x   7 davidho davidho   4096 Jan 26 05:39 regenerate-unicode-properties
+drwxrwxr-x  10 davidho davidho   4096 Jan 26 05:39 tailwindcss
+drwxrwxr-x   7 davidho davidho   4096 Jan 26 05:39 eslint
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 jsdom
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 caniuse-lite
+drwxrwxr-x   7 davidho davidho   4096 Jan 26 05:39 webpack
+drwxrwxr-x   3 davidho davidho  20480 Jan 26 05:39 lodash
+drwxrwxr-x  13 davidho davidho   4096 Jan 26 05:39 es-abstract
+drwxrwxr-x  12 davidho davidho   4096 Jan 26 05:39 core-js-pure
+drwxrwxr-x  12 davidho davidho   4096 Jan 26 05:39 core-js
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 typescript
+drwxrwxr-x   6 davidho davidho   4096 Jan 26 05:39 ..
+drwxrwxr-x  48 davidho davidho   4096 Jan 26 05:39 @types
+drwxrwxr-x   6 davidho davidho   4096 Jan 26 05:39 @testing-library
+drwxrwxr-x  15 davidho davidho   4096 Jan 26 05:39 @jest
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 @adobe
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 strip-indent
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 redent
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 min-indent
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 indent-string
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 css.escape
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 csstype
+drwxrwxr-x   7 davidho davidho   4096 Jan 26 05:39 lz-string
+drwxrwxr-x   4 davidho davidho   4096 Jan 26 05:39 web-vitals
+drwxrwxr-x   3 davidho davidho   4096 Jan 26 05:39 dom-accessibility-api
+drwxrwxr-x   2 davidho davidho   4096 Jan 26 05:39 .bin
+drwxrwxr-x 823 davidho davidho  36864 Jan 26 05:39 .
+-rw-rw-r--   1 davidho davidho 667557 Jan 26 05:39 .package-lock.json
+davidho@dphxps17:~/jsproj/dphreact1$ 
+davidho@dphxps17:~/jsproj/dphreact1$ npm start
+
+Compiled successfully!
+
+You can now view dphreact1 in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://192.168.86.247:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+webpack compiled successfully
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+git status
+git add .
+git commit -a -m "first commit"
+
+git remote add origin git@github.com:ashburndev/dphreact1.git
+git branch -M main
+git push -u origin main
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Compiled successfully!
+
+You can now view dphreact1 in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://192.168.86.247:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+webpack compiled successfully
+^C
+davidho@dphxps17:~/jsproj/dphreact1$ 
+davidho@dphxps17:~/jsproj/dphreact1$ git status
+On branch master
+nothing to commit, working tree clean
+davidho@dphxps17:~/jsproj/dphreact1$ git add .
+davidho@dphxps17:~/jsproj/dphreact1$ git commit -a -m "first commit"
+On branch master
+nothing to commit, working tree clean
+davidho@dphxps17:~/jsproj/dphreact1$ 
+davidho@dphxps17:~/jsproj/dphreact1$ git remote add origin git@github.com:ashburndev/dphreact1.git
+davidho@dphxps17:~/jsproj/dphreact1$ git branch -M main
+davidho@dphxps17:~/jsproj/dphreact1$ git push -u origin main
+Enumerating objects: 22, done.
+Counting objects: 100% (22/22), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (22/22), done.
+Writing objects: 100% (22/22), 307.68 KiB | 13.99 MiB/s, done.
+Total 22 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:ashburndev/dphreact1.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+davidho@dphxps17:~/jsproj/dphreact1$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/repositories$ ls -latr
+total 16
+drwxrwxr-x  4 davidho davidho 4096 Jan 10 17:27 .
+drwxrwxr-x 20 davidho davidho 4096 Jan 10 17:27 spring-in-action-6-samples
+drwxrwxr-x  3 davidho davidho 4096 Jan 24 08:28 miscdphxps17u22
+drwxr-x--- 51 davidho davidho 4096 Jan 26 05:34 ..
+davidho@dphxps17:~/repositories$ 
+davidho@dphxps17:~/repositories$ git clone git@github.com:ashburndev/dphreact1.git
+Cloning into 'dphreact1'...
+remote: Enumerating objects: 22, done.
+remote: Counting objects: 100% (22/22), done.
+remote: Compressing objects: 100% (22/22), done.
+remote: Total 22 (delta 0), reused 22 (delta 0), pack-reused 0
+Receiving objects: 100% (22/22), 307.68 KiB | 11.40 MiB/s, done.
+davidho@dphxps17:~/repositories$ 
+davidho@dphxps17:~/repositories$ cd dphreact1/
+davidho@dphxps17:~/repositories/dphreact1$ 
+davidho@dphxps17:~/repositories/dphreact1$ ls -latr
+total 1212
+drwxrwxr-x 5 davidho davidho    4096 Jan 26 06:07 ..
+-rw-rw-r-- 1 davidho davidho    3359 Jan 26 06:07 README.md
+-rw-rw-r-- 1 davidho davidho     310 Jan 26 06:07 .gitignore
+drwxrwxr-x 2 davidho davidho    4096 Jan 26 06:07 src
+drwxrwxr-x 2 davidho davidho    4096 Jan 26 06:07 public
+-rw-rw-r-- 1 davidho davidho 1204941 Jan 26 06:07 package-lock.json
+-rw-rw-r-- 1 davidho davidho     812 Jan 26 06:07 package.json
+drwxrwxr-x 8 davidho davidho    4096 Jan 26 06:07 .git
+drwxrwxr-x 5 davidho davidho    4096 Jan 26 06:07 .
+davidho@dphxps17:~/repositories/dphreact1$ 
+davidho@dphxps17:~/repositories/dphreact1$ npm start
+
+> dphreact1@0.1.0 start
+> react-scripts start
+
+sh: 1: react-scripts: not found
+davidho@dphxps17:~/repositories/dphreact1$ 
+davidho@dphxps17:~/repositories/dphreact1$ npm install
+npm WARN deprecated stable@0.1.8: Modern JS already guarantees Array#sort() is a stable sort, so this library is deprecated. See the compatibility table on MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#browser_compatibility
+npm WARN deprecated rollup-plugin-terser@7.0.2: This package has been deprecated and is no longer maintained. Please use @rollup/plugin-terser
+npm WARN deprecated w3c-hr-time@1.0.2: Use your platform's native performance.now() and performance.timeOrigin.
+npm WARN deprecated sourcemap-codec@1.4.8: Please use @jridgewell/sourcemap-codec instead
+npm WARN deprecated svgo@1.3.2: This SVGO version is no longer supported. Upgrade to v2.x.x.
+
+added 1470 packages, and audited 1471 packages in 5s
+
+231 packages are looking for funding
+  run `npm fund` for details
+
+6 high severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+davidho@dphxps17:~/repositories/dphreact1$ 
+davidho@dphxps17:~/repositories/dphreact1$ ls -latr
+total 1248
+drwxrwxr-x   5 davidho davidho    4096 Jan 26 06:07 ..
+-rw-rw-r--   1 davidho davidho    3359 Jan 26 06:07 README.md
+-rw-rw-r--   1 davidho davidho     310 Jan 26 06:07 .gitignore
+drwxrwxr-x   2 davidho davidho    4096 Jan 26 06:07 src
+drwxrwxr-x   2 davidho davidho    4096 Jan 26 06:07 public
+-rw-rw-r--   1 davidho davidho     812 Jan 26 06:07 package.json
+drwxrwxr-x   8 davidho davidho    4096 Jan 26 06:07 .git
+drwxrwxr-x   6 davidho davidho    4096 Jan 26 06:09 .
+-rw-rw-r--   1 davidho davidho 1204941 Jan 26 06:09 package-lock.json
+drwxrwxr-x 823 davidho davidho   32768 Jan 26 06:09 node_modules
+davidho@dphxps17:~/repositories/dphreact1$ 
+davidho@dphxps17:~/repositories/dphreact1$ find node_modules/ -print | wc
+  41192   41192 2304621
+davidho@dphxps17:~/repositories/dphreact1$ find node_modules/ -type f -print | wc
+  36295   36295 2089451
+davidho@dphxps17:~/repositories/dphreact1$ find node_modules/ -type d -print | wc
+   4826    4826  212574
+davidho@dphxps17:~/repositories/dphreact1$ 
+davidho@dphxps17:~/repositories/dphreact1$ npm start
+
+Compiled successfully!
+
+You can now view dphreact1 in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://192.168.86.247:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+webpack compiled successfully
+
+
