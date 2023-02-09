@@ -1,0 +1,827 @@
+davidho@dphxps17:~$ date
+Thu Feb  9 06:10:39 AM EST 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ code stuff-20230209.txt
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/Downloads$ ls -latr sb*
+-rw-rw-r-- 1 davidho davidho  64423 Oct 21 07:36 sbapp1grajarj11.zip
+-rw-rw-r-- 1 davidho davidho  64993 Nov  8 05:45 sbapp2.zip
+-rw-rw-r-- 1 davidho davidho  65324 Nov 25 05:17 sbapp3.zip
+-rw-rw-r-- 1 davidho davidho 981876 Jan  5 17:57 sbia_examples.zip
+-rw-rw-r-- 1 davidho davidho  65161 Jan 10 15:25 sbapp277g-orig.zip
+-rw-rw-r-- 1 davidho davidho  63568 Jan 10 15:28 sbapp277m-orig.zip
+-rw-rw-r-- 1 davidho davidho  65150 Jan 10 15:33 sbapp301g-orig.zip
+-rw-rw-r-- 1 davidho davidho  63570 Jan 10 15:40 sbapp301m-orig.zip
+-rw-rw-r-- 1 davidho davidho  65173 Jan 13 04:45 sbapp277g.zip
+-rw-rw-r-- 1 davidho davidho  63571 Jan 13 04:52 sbapp277m.zip
+-rw-rw-r-- 1 davidho davidho  65163 Jan 13 04:54 sbapp301g.zip
+-rw-rw-r-- 1 davidho davidho  63572 Jan 13 04:55 sbapp301m.zip
+-rw-rw-r-- 1 davidho davidho  65174 Jan 24 07:26 sbapp278g.zip
+-rw-rw-r-- 1 davidho davidho  63573 Jan 24 07:28 sbapp278m.zip
+-rw-rw-r-- 1 davidho davidho  65164 Jan 24 07:32 sbapp302g.zip
+-rw-rw-r-- 1 davidho davidho  63572 Jan 24 07:34 sbapp302m.zip
+davidho@dphxps17:~/Downloads$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://nodejs.org/en/
+
+Node.js® is an open-source, cross-platform JavaScript runtime environment.
+New security releases to be made available February 14th, 2023
+Download for Linux (x64)
+18.14.0 LTS       Recommended For Most Users
+19.6.0 Current    Latest Features
+
+davidho@dphxps17:~$ node -v
+v18.2.0
+davidho@dphxps17:~$ npm -v
+8.9.0
+davidho@dphxps17:~$ nvm list
+->      v18.2.0
+         system
+default -> node (-> v18.2.0)
+iojs -> N/A (default)
+unstable -> N/A (default)
+node -> stable (-> v18.2.0) (default)
+stable -> 18.2 (-> v18.2.0) (default)
+lts/* -> lts/hydrogen (-> N/A)
+lts/argon -> v4.9.1 (-> N/A)
+lts/boron -> v6.17.1 (-> N/A)
+lts/carbon -> v8.17.0 (-> N/A)
+lts/dubnium -> v10.24.1 (-> N/A)
+lts/erbium -> v12.22.12 (-> N/A)
+lts/fermium -> v14.21.2 (-> N/A)
+lts/gallium -> v16.19.0 (-> N/A)
+lts/hydrogen -> v18.13.0 (-> N/A)
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ nvm ls-remote | tail -15
+        v18.9.1
+       v18.10.0
+       v18.11.0
+       v18.12.0   (LTS: Hydrogen)
+       v18.12.1   (LTS: Hydrogen)
+       v18.13.0   (LTS: Hydrogen)
+       v18.14.0   (Latest LTS: Hydrogen)
+        v19.0.0
+        v19.0.1
+        v19.1.0
+        v19.2.0
+        v19.3.0
+        v19.4.0
+        v19.5.0
+        v19.6.0
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~$ nvm install v19.6.0
+Downloading and installing node v19.6.0...
+Downloading https://nodejs.org/dist/v19.6.0/node-v19.6.0-linux-x64.tar.xz...
+#################################################################################################################################################################################################### 100.0%
+Computing checksum with sha256sum
+Checksums matched!
+Now using node v19.6.0 (npm v9.4.0)
+davidho@dphxps17:~$ nvm use v19.6.0
+Now using node v19.6.0 (npm v9.4.0)
+davidho@dphxps17:~$ nvm ls
+        v18.2.0
+->      v19.6.0
+         system
+default -> node (-> v19.6.0)
+iojs -> N/A (default)
+unstable -> N/A (default)
+node -> stable (-> v19.6.0) (default)
+stable -> 19.6 (-> v19.6.0) (default)
+lts/* -> lts/hydrogen (-> N/A)
+lts/argon -> v4.9.1 (-> N/A)
+lts/boron -> v6.17.1 (-> N/A)
+lts/carbon -> v8.17.0 (-> N/A)
+lts/dubnium -> v10.24.1 (-> N/A)
+lts/erbium -> v12.22.12 (-> N/A)
+lts/fermium -> v14.21.2 (-> N/A)
+lts/gallium -> v16.19.0 (-> N/A)
+lts/hydrogen -> v18.14.0 (-> N/A)
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ node -v
+v19.6.0
+davidho@dphxps17:~$ npm -v
+9.4.0
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~$ nvm install v18.14.0
+Downloading and installing node v18.14.0...
+Downloading https://nodejs.org/dist/v18.14.0/node-v18.14.0-linux-x64.tar.xz...
+#################################################################################################################################################################################################### 100.0%
+Computing checksum with sha256sum
+Checksums matched!
+Now using node v18.14.0 (npm v9.3.1)
+davidho@dphxps17:~$ nvm use v18.14.0
+Now using node v18.14.0 (npm v9.3.1)
+davidho@dphxps17:~$ nvm ls
+        v18.2.0
+->     v18.14.0
+        v19.6.0
+         system
+default -> node (-> v19.6.0)
+iojs -> N/A (default)
+unstable -> N/A (default)
+node -> stable (-> v19.6.0) (default)
+stable -> 19.6 (-> v19.6.0) (default)
+lts/* -> lts/hydrogen (-> v18.14.0)
+lts/argon -> v4.9.1 (-> N/A)
+lts/boron -> v6.17.1 (-> N/A)
+lts/carbon -> v8.17.0 (-> N/A)
+lts/dubnium -> v10.24.1 (-> N/A)
+lts/erbium -> v12.22.12 (-> N/A)
+lts/fermium -> v14.21.2 (-> N/A)
+lts/gallium -> v16.19.0 (-> N/A)
+lts/hydrogen -> v18.14.0
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ node -v
+v18.14.0
+davidho@dphxps17:~$ npm -v
+9.3.1
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~$ ls -latr ~/.nvm
+total 316
+-rw-rw-r--  1 davidho davidho   2950 May 26  2022 .travis.yml
+-rw-rw-r--  1 davidho davidho     19 May 26  2022 .npmrc
+-rw-rw-r--  1 davidho davidho     51 May 26  2022 .mailmap
+-rw-rw-r--  1 davidho davidho    253 May 26  2022 .gitignore
+drwxrwxr-x  3 davidho davidho   4096 May 26  2022 .github
+-rw-rw-r--  1 davidho davidho      9 May 26  2022 .gitattributes
+-rw-rw-r--  1 davidho davidho    523 May 26  2022 .editorconfig
+-rw-rw-r--  1 davidho davidho    140 May 26  2022 .dockerignore
+-rw-rw-r--  1 davidho davidho   1057 May 26  2022 CONTRIBUTING.md
+-rw-rw-r--  1 davidho davidho    882 May 26  2022 ROADMAP.md
+-rwxrwxr-x  1 davidho davidho   1235 May 26  2022 rename_test.sh
+-rw-rw-r--  1 davidho davidho   2935 May 26  2022 PROJECT_CHARTER.md
+-rw-rw-r--  1 davidho davidho   2371 May 26  2022 package.json
+-rwxrwxr-x  1 davidho davidho    351 May 26  2022 nvm-exec
+-rw-rw-r--  1 davidho davidho   5361 May 26  2022 Makefile
+-rw-rw-r--  1 davidho davidho   1113 May 26  2022 LICENSE.md
+-rw-rw-r--  1 davidho davidho    467 May 26  2022 GOVERNANCE.md
+-rw-rw-r--  1 davidho davidho   3691 May 26  2022 Dockerfile
+-rw-rw-r--  1 davidho davidho   2299 May 26  2022 bash_completion
+-rwxrwxr-x  1 davidho davidho   2410 May 26  2022 update_test_mocks.sh
+drwxrwxr-x  9 davidho davidho   4096 May 26  2022 test
+-rw-rw-r--  1 davidho davidho  41117 May 26  2022 README.md
+-rw-rw-r--  1 davidho davidho 139220 May 26  2022 nvm.sh
+-rwxrwxr-x  1 davidho davidho  15037 May 26  2022 install.sh
+-rw-rw-r--  1 davidho davidho   5424 May 26  2022 CODE_OF_CONDUCT.md
+drwxrwxr-x  8 davidho davidho   4096 May 26  2022 .git
+drwxrwxr-x  3 davidho davidho   4096 May 26  2022 .cache
+drwxrwxr-x  3 davidho davidho   4096 May 26  2022 versions
+drwxrwxr-x  8 davidho davidho   4096 May 26  2022 .
+drwxrwxr-x  3 davidho davidho   4096 May 26  2022 alias
+drwxr-x--- 52 davidho davidho   4096 Feb  9 06:12 ..
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ ls -latr ~/.nvm/versions/
+total 12
+drwxrwxr-x 8 davidho davidho 4096 May 26  2022 ..
+drwxrwxr-x 3 davidho davidho 4096 May 26  2022 .
+drwxrwxr-x 5 davidho davidho 4096 Feb  9 06:28 node
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ ls -latr ~/.nvm/versions/node/
+total 20
+drwxrwxr-x 6 davidho davidho 4096 May 26  2022 v18.2.0
+drwxrwxr-x 3 davidho davidho 4096 May 26  2022 ..
+drwxrwxr-x 6 davidho davidho 4096 Feb  9 06:24 v19.6.0
+drwxrwxr-x 5 davidho davidho 4096 Feb  9 06:28 .
+drwxrwxr-x 6 davidho davidho 4096 Feb  9 06:28 v18.14.0
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ whereis node
+node: /usr/bin/node /home/davidho/.nvm/versions/node/v18.14.0/bin/node /usr/share/man/man1/node.1.gz
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ which node
+/home/davidho/.nvm/versions/node/v18.14.0/bin/node
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~$ npm list -g
+/home/davidho/.nvm/versions/node/v18.14.0/lib
+├── corepack@0.15.3
+└── npm@9.3.1
+
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://reactjs.org/docs/create-a-new-react-app.html
+
+npx create-react-app my-app
+cd my-app
+npm start
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~$ cd jsproj/
+davidho@dphxps17:~/jsproj$ ls -latr
+total 12
+drwxrwxr-x  3 davidho davidho 4096 Jan 26 05:39 .
+drwxrwxr-x  6 davidho davidho 4096 Jan 26 05:39 dphreact1
+drwxr-x--- 52 davidho davidho 4096 Feb  9 06:12 ..
+davidho@dphxps17:~/jsproj$ 
+davidho@dphxps17:~/jsproj$ npx create-react-app my-app
+
+Creating a new React app in /home/davidho/jsproj/my-app.
+
+Installing packages. This might take a couple of minutes.
+Installing react, react-dom, and react-scripts with cra-template...
+
+
+added 1416 packages in 17s
+
+231 packages are looking for funding
+  run `npm fund` for details
+
+Initialized a git repository.
+
+Installing template dependencies using npm...
+
+added 55 packages in 3s
+
+231 packages are looking for funding
+  run `npm fund` for details
+Removing template package using npm...
+
+
+removed 1 package, and audited 1471 packages in 1s
+
+231 packages are looking for funding
+  run `npm fund` for details
+
+6 high severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+Created git commit.
+
+Success! Created my-app at /home/davidho/jsproj/my-app
+Inside that directory, you can run several commands:
+
+  npm start
+    Starts the development server.
+
+  npm run build
+    Bundles the app into static files for production.
+
+  npm test
+    Starts the test runner.
+
+  npm run eject
+    Removes this tool and copies build dependencies, configuration files
+    and scripts into the app directory. If you do this, you can’t go back!
+
+We suggest that you begin by typing:
+
+  cd my-app
+  npm start
+
+Happy hacking!
+npm notice 
+npm notice New minor version of npm available! 9.3.1 -> 9.4.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v9.4.2
+npm notice Run npm install -g npm@9.4.2 to update!
+npm notice 
+davidho@dphxps17:~/jsproj$ 
+davidho@dphxps17:~/jsproj$ ls -latr
+total 16
+drwxrwxr-x  6 davidho davidho 4096 Jan 26 05:39 dphreact1
+drwxr-x--- 52 davidho davidho 4096 Feb  9 06:12 ..
+drwxrwxr-x  4 davidho davidho 4096 Feb  9 06:36 .
+drwxrwxr-x  6 davidho davidho 4096 Feb  9 06:37 my-app
+davidho@dphxps17:~/jsproj$ 
+davidho@dphxps17:~/jsproj$ cd my-app/
+davidho@dphxps17:~/jsproj/my-app$ 
+davidho@dphxps17:~/jsproj/my-app$ ls -latr
+total 728
+drwxrwxr-x   4 davidho davidho   4096 Feb  9 06:36 ..
+-rw-rw-r--   1 davidho davidho   3359 Feb  9 06:37 README.md
+-rw-rw-r--   1 davidho davidho    310 Feb  9 06:37 .gitignore
+drwxrwxr-x   2 davidho davidho   4096 Feb  9 06:37 src
+drwxrwxr-x   2 davidho davidho   4096 Feb  9 06:37 public
+drwxrwxr-x   6 davidho davidho   4096 Feb  9 06:37 .
+drwxrwxr-x 822 davidho davidho  36864 Feb  9 06:37 node_modules
+-rw-rw-r--   1 davidho davidho 668416 Feb  9 06:37 package-lock.json
+-rw-rw-r--   1 davidho davidho    809 Feb  9 06:37 package.json
+drwxrwxr-x   8 davidho davidho   4096 Feb  9 06:37 .git
+davidho@dphxps17:~/jsproj/my-app$ 
+davidho@dphxps17:~/jsproj/my-app$ npm start
+
+Compiled successfully!
+
+You can now view my-app in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://192.168.86.247:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+webpack compiled successfully
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/jsproj/my-app$ ls -latr
+total 728
+drwxrwxr-x   4 davidho davidho   4096 Feb  9 06:36 ..
+-rw-rw-r--   1 davidho davidho   3359 Feb  9 06:37 README.md
+-rw-rw-r--   1 davidho davidho    310 Feb  9 06:37 .gitignore
+drwxrwxr-x   2 davidho davidho   4096 Feb  9 06:37 src
+drwxrwxr-x   2 davidho davidho   4096 Feb  9 06:37 public
+drwxrwxr-x   6 davidho davidho   4096 Feb  9 06:37 .
+-rw-rw-r--   1 davidho davidho 668416 Feb  9 06:37 package-lock.json
+-rw-rw-r--   1 davidho davidho    809 Feb  9 06:37 package.json
+drwxrwxr-x   8 davidho davidho   4096 Feb  9 06:37 .git
+drwxrwxr-x 823 davidho davidho  36864 Feb  9 06:39 node_modules
+davidho@dphxps17:~/jsproj/my-app$ 
+davidho@dphxps17:~/jsproj/my-app$ cat package.json 
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
+davidho@dphxps17:~/jsproj/my-app$ 
+davidho@dphxps17:~/jsproj/my-app$ rm package-lock.json 
+davidho@dphxps17:~/jsproj/my-app$ rm -rf node_modules/
+davidho@dphxps17:~/jsproj/my-app$ 
+davidho@dphxps17:~/jsproj/my-app$ npm start
+
+> my-app@0.1.0 start
+> react-scripts start
+
+sh: 1: react-scripts: not found
+davidho@dphxps17:~/jsproj/my-app$ 
+davidho@dphxps17:~/jsproj/my-app$ npm install
+npm WARN deprecated stable@0.1.8: Modern JS already guarantees Array#sort() is a stable sort, so this library is deprecated. See the compatibility table on MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#browser_compatibility
+npm WARN deprecated rollup-plugin-terser@7.0.2: This package has been deprecated and is no longer maintained. Please use @rollup/plugin-terser
+npm WARN deprecated w3c-hr-time@1.0.2: Use your platform's native performance.now() and performance.timeOrigin.
+npm WARN deprecated sourcemap-codec@1.4.8: Please use @jridgewell/sourcemap-codec instead
+npm WARN deprecated svgo@1.3.2: This SVGO version is no longer supported. Upgrade to v2.x.x.
+
+added 1405 packages, and audited 1406 packages in 20s
+
+231 packages are looking for funding
+  run `npm fund` for details
+
+6 high severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+davidho@dphxps17:~/jsproj/my-app$ 
+davidho@dphxps17:~/jsproj/my-app$ ls -latr
+total 708
+drwxrwxr-x   4 davidho davidho   4096 Feb  9 06:36 ..
+-rw-rw-r--   1 davidho davidho   3359 Feb  9 06:37 README.md
+-rw-rw-r--   1 davidho davidho    310 Feb  9 06:37 .gitignore
+drwxrwxr-x   2 davidho davidho   4096 Feb  9 06:37 src
+drwxrwxr-x   2 davidho davidho   4096 Feb  9 06:37 public
+-rw-rw-r--   1 davidho davidho    809 Feb  9 06:37 package.json
+drwxrwxr-x   8 davidho davidho   4096 Feb  9 06:37 .git
+-rw-rw-r--   1 davidho davidho 651751 Feb  9 06:44 package-lock.json
+drwxrwxr-x   6 davidho davidho   4096 Feb  9 06:44 .
+drwxrwxr-x 822 davidho davidho  32768 Feb  9 06:44 node_modules
+davidho@dphxps17:~/jsproj/my-app$ 
+Compiled successfully!
+
+You can now view my-app in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://192.168.86.247:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+webpack compiled successfully
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+^C
+davidho@dphxps17:~/jsproj/my-app$ code .
+davidho@dphxps17:~/jsproj/my-app$ 
+
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4",
+    "react-textarea-counter": "^1.0.0"
+  },
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/jsproj/my-app$ ls -latr
+total 712
+drwxrwxr-x   4 davidho davidho   4096 Feb  9 06:36 ..
+-rw-rw-r--   1 davidho davidho   3359 Feb  9 06:37 README.md
+-rw-rw-r--   1 davidho davidho    310 Feb  9 06:37 .gitignore
+drwxrwxr-x   2 davidho davidho   4096 Feb  9 06:37 src
+drwxrwxr-x   2 davidho davidho   4096 Feb  9 06:37 public
+drwxrwxr-x   8 davidho davidho   4096 Feb  9 06:37 .git
+-rw-rw-r--   1 davidho davidho 651751 Feb  9 06:57 package-lock.json
+drwxrwxr-x   6 davidho davidho   4096 Feb  9 06:57 .
+drwxrwxr-x 822 davidho davidho  36864 Feb  9 06:57 node_modules
+-rw-rw-r--   1 davidho davidho    849 Feb  9 07:11 package.json
+davidho@dphxps17:~/jsproj/my-app$ 
+davidho@dphxps17:~/jsproj/my-app$ rm package-lock.json 
+davidho@dphxps17:~/jsproj/my-app$ rm -rf node_modules/
+davidho@dphxps17:~/jsproj/my-app$ 
+davidho@dphxps17:~/jsproj/my-app$ npm install
+npm ERR! code ERESOLVE
+npm ERR! ERESOLVE unable to resolve dependency tree
+npm ERR! 
+npm ERR! While resolving: my-app@0.1.0
+npm ERR! Found: react@18.2.0
+npm ERR! node_modules/react
+npm ERR!   react@"^18.2.0" from the root project
+npm ERR! 
+npm ERR! Could not resolve dependency:
+npm ERR! peer react@"16.13.1" from react-textarea-counter@1.0.0
+npm ERR! node_modules/react-textarea-counter
+npm ERR!   react-textarea-counter@"^1.0.0" from the root project
+npm ERR! 
+npm ERR! Fix the upstream dependency conflict, or retry
+npm ERR! this command with --force or --legacy-peer-deps
+npm ERR! to accept an incorrect (and potentially broken) dependency resolution.
+npm ERR! 
+npm ERR! 
+npm ERR! For a full report see:
+npm ERR! /home/davidho/.npm/_logs/2023-02-09T12_12_25_027Z-eresolve-report.txt
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/davidho/.npm/_logs/2023-02-09T12_12_25_027Z-debug-0.log
+davidho@dphxps17:~/jsproj/my-app$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://www.npmjs.com/package/react-textarea-counter
+
+npm i react-textarea-counter --save
+
+https://www.npmjs.com/package/react-textarea-counter?activeTab=explore
+
+{
+  "name": "react-textarea-counter",
+  "description": "Basic textarea character counter React component.",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "react-scripts start",
+    "test": "react-scripts test",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diogocapela/react-textarea-counter.git"
+  },
+  "author": "Diogo Capela",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/diogocapela/react-textarea-counter/issues"
+  },
+  "homepage": "https://github.com/diogocapela/react-textarea-counter#readme",
+  "peerDependencies": {
+    "prop-types": "15.7.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
+  },
+  "devDependencies": {
+    "@babel/core": "7.7.5",
+    "@babel/preset-env": "7.7.6",
+    "@babel/preset-react": "7.7.4",
+    "@testing-library/jest-dom": "4.2.4",
+    "@testing-library/react": "9.3.2",
+    "@testing-library/user-event": "7.1.2",
+    "babel-loader": "8.1.0",
+    "css-loader": "3.3.0",
+    "eslint-plugin-prettier": "3.1.2",
+    "prettier": "2.0.4",
+    "prop-types": "15.7.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-scripts": "3.4.1",
+    "style-loader": "1.0.1",
+    "webpack": "4.42.0",
+    "webpack-cli": "3.3.10"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/jsproj/my-app$ npm install --force
+npm WARN using --force Recommended protections disabled.
+npm WARN ERESOLVE overriding peer dependency
+npm WARN While resolving: react-textarea-counter@1.0.0
+npm WARN Found: react@18.2.0
+npm WARN node_modules/react
+npm WARN   react@"^18.2.0" from the root project
+npm WARN   3 more (@testing-library/react, react-dom, react-scripts)
+npm WARN 
+npm WARN Could not resolve dependency:
+npm WARN peer react@"16.13.1" from react-textarea-counter@1.0.0
+npm WARN node_modules/react-textarea-counter
+npm WARN   react-textarea-counter@"^1.0.0" from the root project
+npm WARN 
+npm WARN Conflicting peer dependency: react@16.13.1
+npm WARN node_modules/react
+npm WARN   peer react@"16.13.1" from react-textarea-counter@1.0.0
+npm WARN   node_modules/react-textarea-counter
+npm WARN     react-textarea-counter@"^1.0.0" from the root project
+npm WARN ERESOLVE overriding peer dependency
+npm WARN While resolving: react-textarea-counter@1.0.0
+npm WARN Found: react-dom@18.2.0
+npm WARN node_modules/react-dom
+npm WARN   react-dom@"^18.2.0" from the root project
+npm WARN   1 more (@testing-library/react)
+npm WARN 
+npm WARN Could not resolve dependency:
+npm WARN peer react-dom@"16.13.1" from react-textarea-counter@1.0.0
+npm WARN node_modules/react-textarea-counter
+npm WARN   react-textarea-counter@"^1.0.0" from the root project
+npm WARN 
+npm WARN Conflicting peer dependency: react-dom@16.13.1
+npm WARN node_modules/react-dom
+npm WARN   peer react-dom@"16.13.1" from react-textarea-counter@1.0.0
+npm WARN   node_modules/react-textarea-counter
+npm WARN     react-textarea-counter@"^1.0.0" from the root project
+npm WARN deprecated stable@0.1.8: Modern JS already guarantees Array#sort() is a stable sort, so this library is deprecated. See the compatibility table on MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#browser_compatibility
+npm WARN deprecated rollup-plugin-terser@7.0.2: This package has been deprecated and is no longer maintained. Please use @rollup/plugin-terser
+npm WARN deprecated w3c-hr-time@1.0.2: Use your platform's native performance.now() and performance.timeOrigin.
+npm WARN deprecated sourcemap-codec@1.4.8: Please use @jridgewell/sourcemap-codec instead
+npm WARN deprecated svgo@1.3.2: This SVGO version is no longer supported. Upgrade to v2.x.x.
+
+added 1408 packages, and audited 1409 packages in 18s
+
+231 packages are looking for funding
+  run `npm fund` for details
+
+6 high severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+davidho@dphxps17:~/jsproj/my-app$ 
+davidho@dphxps17:~/jsproj/my-app$ ls -latr
+total 708
+drwxrwxr-x   4 davidho davidho   4096 Feb  9 06:36 ..
+-rw-rw-r--   1 davidho davidho   3359 Feb  9 06:37 README.md
+-rw-rw-r--   1 davidho davidho    310 Feb  9 06:37 .gitignore
+drwxrwxr-x   2 davidho davidho   4096 Feb  9 06:37 src
+drwxrwxr-x   2 davidho davidho   4096 Feb  9 06:37 public
+drwxrwxr-x   8 davidho davidho   4096 Feb  9 06:37 .git
+-rw-rw-r--   1 davidho davidho    849 Feb  9 07:11 package.json
+-rw-rw-r--   1 davidho davidho 652992 Feb  9 07:34 package-lock.json
+drwxrwxr-x   6 davidho davidho   4096 Feb  9 07:34 .
+drwxrwxr-x 823 davidho davidho  32768 Feb  9 07:34 node_modules
+davidho@dphxps17:~/jsproj/my-app$ 
+davidho@dphxps17:~/jsproj/my-app$ npm ls
+my-app@0.1.0 /home/davidho/jsproj/my-app
+├── @testing-library/jest-dom@5.16.5
+├── @testing-library/react@13.4.0
+├── @testing-library/user-event@13.5.0
+├── react-dom@18.2.0
+├── react-scripts@5.0.1
+├── react-textarea-counter@1.0.0
+├── react@18.2.0
+└── web-vitals@2.1.4
+
+davidho@dphxps17:~/jsproj/my-app$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~$ cd  ~/sbootprojs/
+davidho@dphxps17:~/sbootprojs$ 
+davidho@dphxps17:~/sbootprojs$ ls -latrr
+total 804
+-rw-rw-r--  1 davidho davidho 64423 Oct 21 07:36 sbapp1grajarj11.zip
+-rw-rw-r--  1 davidho davidho 64993 Nov  8 05:45 sbapp2.zip
+-rw-rw-r--  1 davidho davidho 65324 Nov 25 05:17 sbapp3.zip
+drwxr-xr-x  4 davidho davidho  4096 Nov 25 10:17 sbapp3
+drwxr-xr-x  6 davidho davidho  4096 Dec 14 07:44 sbapp2
+-rw-rw-r--  1 davidho davidho 65161 Jan 10 15:25 sbapp277g-orig.zip
+-rw-rw-r--  1 davidho davidho 63568 Jan 10 15:28 sbapp277m-orig.zip
+-rw-rw-r--  1 davidho davidho 65150 Jan 10 15:33 sbapp301g-orig.zip
+-rw-rw-r--  1 davidho davidho 63570 Jan 10 15:40 sbapp301m-orig.zip
+-rw-rw-r--  1 davidho davidho 63241 Jan 10 19:35 taco-cloud.zip
+drwxr-xr-x  4 davidho davidho  4096 Jan 11 00:35 taco-cloud
+-rw-rw-r--  1 davidho davidho 65173 Jan 13 04:45 sbapp277g.zip
+-rw-rw-r--  1 davidho davidho 63571 Jan 13 04:52 sbapp277m.zip
+-rw-rw-r--  1 davidho davidho 65163 Jan 13 04:54 sbapp301g.zip
+-rw-rw-r--  1 davidho davidho 63572 Jan 13 04:55 sbapp301m.zip
+drwxrwxr-x  4 davidho davidho  4096 Jan 13 09:45 sbapp277g
+drwxrwxr-x  4 davidho davidho  4096 Jan 13 09:52 sbapp277m
+drwxrwxr-x  4 davidho davidho  4096 Jan 13 09:55 sbapp301m
+drwxrwxr-x  9 davidho davidho  4096 Jan 16 09:03 .
+drwxrwxr-x  5 davidho davidho  4096 Jan 16 09:45 sbapp301g
+drwxr-x--- 52 davidho davidho  4096 Feb  9 06:12 ..
+davidho@dphxps17:~/sbootprojs$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+cd  ~/sbootprojs/sbapp301g
+./gradlew --version
+gradle --version
+whereis gradle
+which gradle
+java -version
+
+rm -rf ~/.gradle/caches
+find ~/.gradle/caches -type f -print | wc
+gradle clean
+find ~/.gradle/caches -type f -print | wc
+gradle compileJava
+find ~/.gradle/caches -type f -print | wc
+gradle build
+find ~/.gradle/caches -type f -print | wc
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/sbootprojs/sbapp301g$ cd
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ cd  ~/sbootprojs/sbapp301g
+davidho@dphxps17:~/sbootprojs/sbapp301g$ 
+davidho@dphxps17:~/sbootprojs/sbapp301g$ ./gradlew --version
+
+------------------------------------------------------------
+Gradle 7.6
+------------------------------------------------------------
+
+Build time:   2022-11-25 13:35:10 UTC
+Revision:     daece9dbc5b79370cc8e4fd6fe4b2cd400e150a8
+
+Kotlin:       1.7.10
+Groovy:       3.0.13
+Ant:          Apache Ant(TM) version 1.10.11 compiled on July 10 2021
+JVM:          17.0.5 (Azul Systems, Inc. 17.0.5+8-LTS)
+OS:           Linux 5.15.0-58-generic amd64
+
+davidho@dphxps17:~/sbootprojs/sbapp301g$ 
+davidho@dphxps17:~/sbootprojs/sbapp301g$ gradle --version
+
+------------------------------------------------------------
+Gradle 7.4.2
+------------------------------------------------------------
+
+Build time:   2022-03-31 15:25:29 UTC
+Revision:     540473b8118064efcc264694cbcaa4b677f61041
+
+Kotlin:       1.5.31
+Groovy:       3.0.9
+Ant:          Apache Ant(TM) version 1.10.11 compiled on July 10 2021
+JVM:          17.0.5 (Azul Systems, Inc. 17.0.5+8-LTS)
+OS:           Linux 5.15.0-58-generic amd64
+
+davidho@dphxps17:~/sbootprojs/sbapp301g$ whereis gradle
+gradle: /home/davidho/.sdkman/candidates/gradle/7.4.2/bin/gradle
+davidho@dphxps17:~/sbootprojs/sbapp301g$ 
+davidho@dphxps17:~/sbootprojs/sbapp301g$ which gradle
+/home/davidho/.sdkman/candidates/gradle/current/bin/gradle
+davidho@dphxps17:~/sbootprojs/sbapp301g$ 
+
+davidho@dphxps17:~/sbootprojs/sbapp301g$ rm -rf ~/.gradle/caches
+davidho@dphxps17:~/sbootprojs/sbapp301g$ find ~/.gradle/caches -type f -print | wc
+find: ‘/home/davidho/.gradle/caches’: No such file or directory
+      0       0       0
+davidho@dphxps17:~/sbootprojs/sbapp301g$ gradle clean
+
+BUILD SUCCESSFUL in 1s
+1 actionable task: 1 up-to-date
+davidho@dphxps17:~/sbootprojs/sbapp301g$ 
+davidho@dphxps17:~/sbootprojs/sbapp301g$ find ~/.gradle/caches -type f -print | wc
+    163     163   22437
+davidho@dphxps17:~/sbootprojs/sbapp301g$ 
+davidho@dphxps17:~/sbootprojs/sbapp301g$ gradle compileJava
+
+BUILD SUCCESSFUL in 6s
+1 actionable task: 1 executed
+davidho@dphxps17:~/sbootprojs/sbapp301g$ 
+davidho@dphxps17:~/sbootprojs/sbapp301g$ find ~/.gradle/caches -type f -print | wc
+    539     539   81591
+davidho@dphxps17:~/sbootprojs/sbapp301g$ 
+davidho@dphxps17:~/sbootprojs/sbapp301g$ gradle build
+
+> Task :test FAILED
+
+Sbapp301grajarj17ApplicationTests > contextLoads() FAILED
+    java.lang.IllegalStateException at DefaultCacheAwareContextLoaderDelegate.java:142
+        Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException at ConstructorResolver.java:798
+            Caused by: org.springframework.beans.factory.BeanCreationException at ConstructorResolver.java:657
+                Caused by: org.springframework.beans.BeanInstantiationException at SimpleInstantiationStrategy.java:171
+                    Caused by: org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException at DataSourceProperties.java:182
+
+1 test completed, 1 failed
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':test'.
+> There were failing tests. See the report at: file:///home/davidho/sbootprojs/sbapp301g/build/reports/tests/test/index.html
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 4s
+7 actionable tasks: 6 executed, 1 up-to-date
+davidho@dphxps17:~/sbootprojs/sbapp301g$ 
+davidho@dphxps17:~/sbootprojs/sbapp301g$ find ~/.gradle/caches -type f -print | wc
+    647     647   98286
+davidho@dphxps17:~/sbootprojs/sbapp301g$ 
+davidho@dphxps17:~/sbootprojs/sbapp301g$ find ~/.gradle/caches -type f -print | grep jar | head -20
+/home/davidho/.gradle/caches/modules-2/files-2.1/com.fasterxml/classmate/1.5.1/3fe0bed568c62df5e89f4f174c101eab25345b6c/classmate-1.5.1.jar
+/home/davidho/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/3.0.1/9a7c15dfec7a5207965c8893abfd12fa0eac1d38/spring-boot-3.0.1.jar
+/home/davidho/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-json/3.0.1/e409ce80cf518c619d59e44f0173a7e728f75da2/spring-boot-starter-json-3.0.1.jar
+/home/davidho/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-loader-tools/3.0.1/fcf9f2b4f3fa5c106d428baf00796767bdb894b8/spring-boot-loader-tools-3.0.1.jar
+/home/davidho/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-web/3.0.1/1d99ce519a0fe66f15dc9bbdc2507a8d0a01690/spring-boot-starter-web-3.0.1.jar
+/home/davidho/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/3.0.1/7705d0e28d18b79b25587fb88eade85287a10513/spring-boot-autoconfigure-3.0.1.jar
+/home/davidho/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-logging/3.0.1/bf285578b44ecddaeb32f5d57a08fa5be60fc69f/spring-boot-starter-logging-3.0.1.jar
+/home/davidho/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter/3.0.1/c37bc07921436d1ef410ae4bd53747c721ae1c7c/spring-boot-starter-3.0.1.jar
+/home/davidho/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-aop/3.0.1/489dae5b71e160d74190738b0419c2cecd7f7e95/spring-boot-starter-aop-3.0.1.jar
+/home/davidho/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-rest/3.0.1/53511307037bdf13dfa983e59e35ab2152b2dcda/spring-boot-starter-data-rest-3.0.1.jar
+/home/davidho/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-jpa/3.0.1/a68c2e57bd3a0c5bdf7e4de6c0d563aad38d3f47/spring-boot-starter-data-jpa-3.0.1.jar
+/home/davidho/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-test-autoconfigure/3.0.1/26346db6db873dd9a7737691b66727cf6e0984d9/spring-boot-test-autoconfigure-3.0.1.jar
+/home/davidho/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-tomcat/3.0.1/e0c8b1f3bb20b08ef532bf58262b4374a6f64d06/spring-boot-starter-tomcat-3.0.1.jar
+/home/davidho/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-buildpack-platform/3.0.1/6762762f3b44ba23d6f2be7cd8f484e79662cd1d/spring-boot-buildpack-platform-3.0.1.jar
+/home/davidho/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-gradle-plugin/3.0.1/2f6a8f9d14006afa6ba6a3195055f616578f4d6d/spring-boot-gradle-plugin-3.0.1.jar
+/home/davidho/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-test/3.0.1/1ad6a6b50844ac5a3290b40963b7151b2684a3d3/spring-boot-test-3.0.1.jar
+/home/davidho/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-test/3.0.1/92d4e6de86bf76db3bd5c40155ede74c35f3323f/spring-boot-starter-test-3.0.1.jar
+/home/davidho/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-jdbc/3.0.1/a1121611438c39fdcad2c73da7564d851b386a75/spring-boot-starter-jdbc-3.0.1.jar
+/home/davidho/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-commons/1.10.2/3a97e1874b8ca9c1c08f67d58bf7d567bb748601/micrometer-commons-1.10.2.jar
+/home/davidho/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-observation/1.10.2/5b63205c0e9f3acf4b84f852ea707f9f9fffda6f/micrometer-observation-1.10.2.jar
+davidho@dphxps17:~/sbootprojs/sbapp301g$ 
+
+davidho@dphxps17:~/sbootprojs/sbapp301g$ 
+davidho@dphxps17:~/sbootprojs/sbapp301g$ date
+Thu Feb  9 08:03:59 AM EST 2023
+davidho@dphxps17:~/sbootprojs/sbapp301g$ 
+
+

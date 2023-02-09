@@ -1,0 +1,406 @@
+davidho@dphxps17:~$ date
+Wed Feb  1 06:51:48 AM EST 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ code stuff-20230201.txt
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+
+find . -maxdepth 1 -atime 0 -name "*sha256" -print
+find . -maxdepth 1 -atime 0 -name "*sha256" -exec sha256sum -c {} \;
+
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr | grep -i tool
+-rw-rw-r--  1 davidho davidho  607778592 Sep 22 08:14 spring-tool-suite-4-4.16.0.RELEASE-e4.25.0-linux.gtk.x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho  607778592 Oct 16 20:53 spring-tool-suite-4-4.16.0.RELEASE-e4.25.0-linux.gtk.x86_64(1).tar.gz
+-rw-rw-r--  1 davidho davidho  637138600 Dec  8 07:13 spring-tool-suite-4-4.17.0.RELEASE-e4.26.0-linux.gtk.x86_64.tar.gz
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr | grep -i eclipse
+-rw-rw-r--  1 davidho davidho  530568735 Sep 22 07:59 eclipse-jee-2022-09-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        176 Sep 22 08:02 eclipse-jee-2022-09-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  310380717 Sep 22 08:02 eclipse-java-2022-09-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        177 Sep 22 08:04 eclipse-java-2022-09-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  552970589 Dec  8 07:04 eclipse-jee-2022-12-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        178 Dec  8 07:08 eclipse-jee-2022-12-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  317456405 Dec  8 07:08 eclipse-java-2022-12-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        179 Dec  8 07:11 eclipse-java-2022-12-R-linux-gtk-x86_64.tar.gz.sha512
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr | tail -25
+-rw-rw-r--  1 davidho davidho      63572 Jan 13 04:55 sbapp301m.zip
+-rw-rw-r--  1 davidho davidho      65174 Jan 24 07:26 sbapp278g.zip
+-rw-rw-r--  1 davidho davidho      63573 Jan 24 07:28 sbapp278m.zip
+-rw-rw-r--  1 davidho davidho      65164 Jan 24 07:32 sbapp302g.zip
+-rw-rw-r--  1 davidho davidho      63572 Jan 24 07:34 sbapp302m.zip
+drwxr-x--- 51 davidho davidho       4096 Feb  1 06:53 ..
+-rw-rw-r--  1 davidho davidho   97998844 Feb  1 06:54 code_1.74.3-1673284829_amd64.deb
+-rw-rw-r--  1 davidho davidho  138905712 Feb  1 06:54 code-1.74.3-1673284922.el7.x86_64.rpm
+-rw-rw-r--  1 davidho davidho  138260370 Feb  1 06:55 code-stable-x64-1673285154.tar.gz
+-rw-rw-r--  1 davidho davidho    6031951 Feb  1 06:55 vscode_cli_alpine_x64_cli(1).tar.gz
+-rw-rw-r--  1 davidho davidho 1112131672 Feb  1 06:56 ideaIU-2022.3.2.tar.gz
+-rw-rw-r--  1 davidho davidho         89 Feb  1 06:56 ideaIU-2022.3.2.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  938318729 Feb  1 06:57 ideaIC-2022.3.2.tar.gz
+-rw-rw-r--  1 davidho davidho         89 Feb  1 06:57 ideaIC-2022.3.2.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  580112291 Feb  1 06:57 WebStorm-2022.3.2.tar.gz
+-rw-rw-r--  1 davidho davidho         91 Feb  1 06:57 WebStorm-2022.3.2.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  721400424 Feb  1 06:59 pycharm-professional-2022.3.2.tar.gz
+-rw-rw-r--  1 davidho davidho        103 Feb  1 07:00 pycharm-professional-2022.3.2.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  575274048 Feb  1 07:00 pycharm-community-2022.3.2.tar.gz
+-rw-rw-r--  1 davidho davidho        100 Feb  1 07:00 pycharm-community-2022.3.2.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  622402199 Feb  1 07:02 RubyMine-2022.3.2.tar.gz
+-rw-rw-r--  1 davidho davidho         91 Feb  1 07:02 RubyMine-2022.3.2.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  569259324 Feb  1 07:02 datagrip-2022.3.3.tar.gz
+-rw-rw-r--  1 davidho davidho         91 Feb  1 07:02 datagrip-2022.3.3.tar.gz.sha256
+drwxr-xr-x  6 davidho davidho      20480 Feb  1 07:02 .
+davidho@dphxps17:~/Downloads$ 
+
+davidho@dphxps17:~/Downloads$ find . -maxdepth 1 -atime 0 -name "*sha256" -print
+./pycharm-professional-2022.3.2.tar.gz.sha256
+./RubyMine-2022.3.2.tar.gz.sha256
+./datagrip-2022.3.3.tar.gz.sha256
+./ideaIC-2022.3.2.tar.gz.sha256
+./pycharm-community-2022.3.2.tar.gz.sha256
+./WebStorm-2022.3.2.tar.gz.sha256
+./ideaIU-2022.3.2.tar.gz.sha256
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ find . -maxdepth 1 -atime 0 -name "*sha256" -exec sha256sum -c {} \;
+pycharm-professional-2022.3.2.tar.gz: OK
+RubyMine-2022.3.2.tar.gz: OK
+datagrip-2022.3.3.tar.gz: OK
+ideaIC-2022.3.2.tar.gz: OK
+pycharm-community-2022.3.2.tar.gz: OK
+WebStorm-2022.3.2.tar.gz: OK
+ideaIU-2022.3.2.tar.gz: OK
+davidho@dphxps17:~/Downloads$ 
+
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr /opt
+total 92
+drwxr-xr-x  8 root    root    4096 Jan 20  1970 WebStorm-223.7571.168
+drwxr-xr-x  8 root    root    4096 Jan 20  1970 RubyMine-2022.3
+drwxr-xr-x  8 root    root    4096 Jan 20  1970 idea-IU-223.7571.182
+drwxr-xr-x  9 root    root    4096 Jan 20  1970 pycharm-2022.3
+drwxr-xr-x 20 root    root    4096 May 24  2022 ..
+drwxr-xr-x  8 root    root    4096 May 26  2022 RubyMine-2022.1.1
+drwxr-xr-x  8 root    root    4096 May 26  2022 idea-IU-221.5591.52
+drwxr-xr-x  3 root    root    4096 May 26  2022 google
+drwxr-xr-x  8 root    root    4096 Sep  8 15:44 eclipse-java-2022-09-R-linux-gtk-x86_64
+drwxr-xr-x  8 root    root    4096 Sep  8 15:54 eclipse-jee-2022-09-R-linux-gtk-x86_64
+drwxr-xr-x  8 root    root    4096 Sep 13 08:36 idea-IU-222.4167.29
+drwxr-xr-x  9     502 root    4096 Sep 15 07:57 sts-4.16.0.RELEASE
+drwxr-xr-x  8 root    root    4096 Oct  5 01:01 WebStorm-222.4345.14
+drwxr-xr-x  8 root    root    4096 Oct  5 01:01 RubyMine-2022.2.3
+drwxr-xr-x  8 root    root    4096 Oct  5 01:01 idea-IU-222.4345.14
+drwxr-xr-x  7 root    root    4096 Oct  5 01:01 idea-IC-222.4345.14
+drwxr-xr-x  8 root    root    4096 Oct 10 10:05 pycharm-community-2022.2.3
+drwxr-xr-x  9 root    root    4096 Oct 10 10:05 pycharm-2022.2.3
+drwxr-xr-x  5 davidho davidho 4096 Nov  1 11:44 VSCode-linux-x64-1.73.0
+drwxr-xr-x  5 davidho davidho 4096 Nov  8 22:55 VSCode-linux-x64-1.73.1
+drwxr-xr-x  4 root    root    4096 Nov 17 06:18 1Password
+drwxr-xr-x  5 davidho davidho 4096 Dec  5 11:47 VSCode-linux-x64-1.74.0
+drwxr-xr-x 23 root    root    4096 Dec  9 04:55 .
+davidho@dphxps17:~/Downloads$ 
+
+davidho@dphxps17:~/Downloads$ ls -latr *.tar.gz | tail -40
+-rw-rw-r-- 1 davidho davidho  535902788 Oct 16 18:59 pycharm-community-2022.2.3.tar.gz
+-rw-rw-r-- 1 davidho davidho  611463423 Oct 16 19:02 RubyMine-2022.2.3.tar.gz
+-rw-rw-r-- 1 davidho davidho  123828026 Oct 16 20:25 code-stable-x64-1665614670.tar.gz
+-rw-rw-r-- 1 davidho davidho  607778592 Oct 16 20:53 spring-tool-suite-4-4.16.0.RELEASE-e4.25.0-linux.gtk.x86_64(1).tar.gz
+-rw-rw-r-- 1 davidho davidho  189905998 Oct 20 19:25 jdk-19.0.1_linux-x64_bin.tar.gz
+-rw-rw-r-- 1 davidho davidho  181563408 Oct 20 19:28 jdk-17.0.5_linux-x64_bin.tar.gz
+-rw-rw-r-- 1 davidho davidho  169251172 Oct 20 19:37 jdk-11.0.17_linux-x64_bin.tar.gz
+-rw-rw-r-- 1 davidho davidho  149697219 Oct 20 19:41 jdk-8u351-linux-x64.tar.gz
+-rw-rw-r-- 1 davidho davidho  570969095 Nov  2 07:24 WebStorm-2022.2.3.tar.gz
+-rw-rw-r-- 1 davidho davidho  135608145 Nov  8 04:22 code-stable-x64-1667319089.tar.gz
+-rw-rw-r-- 1 davidho davidho 1119946465 Dec  5 05:04 ideaIU-2022.3.tar.gz
+-rw-rw-r-- 1 davidho davidho  947236841 Dec  5 05:05 ideaIC-2022.3.tar.gz
+-rw-rw-r-- 1 davidho davidho  707829681 Dec  5 05:06 pycharm-professional-2022.3.tar.gz
+-rw-rw-r-- 1 davidho davidho  562364769 Dec  5 05:06 pycharm-community-2022.3.tar.gz
+-rw-rw-r-- 1 davidho davidho  576217219 Dec  5 05:07 WebStorm-2022.3.tar.gz
+-rw-rw-r-- 1 davidho davidho  619318969 Dec  5 05:09 RubyMine-2022.3.tar.gz
+-rw-rw-r-- 1 davidho davidho  135604445 Dec  5 05:15 code-stable-x64-1667967614.tar.gz
+-rw-rw-r-- 1 davidho davidho     285382 Dec  5 06:31 mysql-connector-python-8.0.31.tar.gz
+-rw-rw-r-- 1 davidho davidho  552970589 Dec  8 07:04 eclipse-jee-2022-12-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r-- 1 davidho davidho  317456405 Dec  8 07:08 eclipse-java-2022-12-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r-- 1 davidho davidho  637138600 Dec  8 07:13 spring-tool-suite-4-4.17.0.RELEASE-e4.26.0-linux.gtk.x86_64.tar.gz
+-rw-rw-r-- 1 davidho davidho  138266029 Dec  9 04:45 code-stable-x64-1670260359.tar.gz
+-rw-rw-r-- 1 davidho davidho    6031978 Dec  9 04:45 vscode_cli_alpine_x64_cli.tar.gz
+-rw-rw-r-- 1 davidho davidho 1115457871 Dec 31 08:39 ideaIU-2022.3.1.tar.gz
+-rw-rw-r-- 1 davidho davidho  941758149 Dec 31 08:39 ideaIC-2022.3.1.tar.gz
+-rw-rw-r-- 1 davidho davidho  720880776 Dec 31 08:40 pycharm-professional-2022.3.1.tar.gz
+-rw-rw-r-- 1 davidho davidho  574512592 Dec 31 08:45 pycharm-community-2022.3.1.tar.gz
+-rw-rw-r-- 1 davidho davidho  622183501 Dec 31 08:56 RubyMine-2022.3.1.tar.gz
+-rw-rw-r-- 1 davidho davidho  579557623 Dec 31 08:57 WebStorm-2022.3.1.tar.gz
+-rw-rw-r-- 1 davidho davidho  567161673 Dec 31 08:58 datagrip-2022.3.2.tar.gz
+-rw-rw-r-- 1 davidho davidho  138265366 Dec 31 09:12 code-stable-x64-1671533708.tar.gz
+-rw-rw-r-- 1 davidho davidho  138260370 Feb  1 06:55 code-stable-x64-1673285154.tar.gz
+-rw-rw-r-- 1 davidho davidho    6031951 Feb  1 06:55 vscode_cli_alpine_x64_cli(1).tar.gz
+-rw-rw-r-- 1 davidho davidho 1112131672 Feb  1 06:56 ideaIU-2022.3.2.tar.gz
+-rw-rw-r-- 1 davidho davidho  938318729 Feb  1 06:57 ideaIC-2022.3.2.tar.gz
+-rw-rw-r-- 1 davidho davidho  580112291 Feb  1 06:57 WebStorm-2022.3.2.tar.gz
+-rw-rw-r-- 1 davidho davidho  721400424 Feb  1 06:59 pycharm-professional-2022.3.2.tar.gz
+-rw-rw-r-- 1 davidho davidho  575274048 Feb  1 07:00 pycharm-community-2022.3.2.tar.gz
+-rw-rw-r-- 1 davidho davidho  622402199 Feb  1 07:02 RubyMine-2022.3.2.tar.gz
+-rw-rw-r-- 1 davidho davidho  569259324 Feb  1 07:02 datagrip-2022.3.3.tar.gz
+davidho@dphxps17:~/Downloads$ 
+
+https://www.eclipse.org/downloads/
+https://www.eclipse.org/downloads/packages/
+https://spring.io/tools   apparently no corresponding .sha256 or .sha512 for the sts tar.gz file download
+
+davidho@dphxps17:~/Downloads$ ls -latr | grep -i tool
+-rw-rw-r--  1 davidho davidho  607778592 Sep 22 08:14 spring-tool-suite-4-4.16.0.RELEASE-e4.25.0-linux.gtk.x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho  607778592 Oct 16 20:53 spring-tool-suite-4-4.16.0.RELEASE-e4.25.0-linux.gtk.x86_64(1).tar.gz
+-rw-rw-r--  1 davidho davidho  637138600 Dec  8 07:13 spring-tool-suite-4-4.17.0.RELEASE-e4.26.0-linux.gtk.x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho  625754715 Feb  1 07:29 spring-tool-suite-4-4.17.2.RELEASE-e4.26.0-linux.gtk.x86_64.tar.gz
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr | grep eclipse
+-rw-rw-r--  1 davidho davidho  530568735 Sep 22 07:59 eclipse-jee-2022-09-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        176 Sep 22 08:02 eclipse-jee-2022-09-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  310380717 Sep 22 08:02 eclipse-java-2022-09-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        177 Sep 22 08:04 eclipse-java-2022-09-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  552970589 Dec  8 07:04 eclipse-jee-2022-12-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        178 Dec  8 07:08 eclipse-jee-2022-12-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  317456405 Dec  8 07:08 eclipse-java-2022-12-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        179 Dec  8 07:11 eclipse-java-2022-12-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  552970589 Feb  1 07:35 eclipse-jee-2022-12-R-linux-gtk-x86_64(1).tar.gz
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ rm 'eclipse-jee-2022-12-R-linux-gtk-x86_64(1).tar.gz'
+davidho@dphxps17:~/Downloads$ 
+
+sha512sum -c eclipse-jee-2022-12-R-linux-gtk-x86_64.tar.gz.sha512
+sha512sum -c eclipse-java-2022-12-R-linux-gtk-x86_64.tar.gz.sha512
+
+davidho@dphxps17:~/Downloads$ sha512sum -c eclipse-jee-2022-12-R-linux-gtk-x86_64.tar.gz.sha512
+sha512sum: eclipse-jee-2022-12-R-linux-gtk-x86_64.tar.gz.sha512: no properly formatted SHA512 checksum lines found
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ cat eclipse-jee-2022-12-R-linux-gtk-x86_64.tar.gz.sha512
+e798bd61539afaf287b7bdaf1c8ab2f4198a32483529a2ea312b634ed7da2d31f9c8fd1e8be3533f65cbf080473a0bb4842109a985d3abedc8dd1432e3be9eb5  eclipse-jee-2022-12-R-linux-gtk-x86_64.tar.gz
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ sha512sum eclipse-jee-2022-12-R-linux-gtk-x86_64.tar.gz
+e798bd61539afaf287b7bdaf1c8ab2f4198a32483529a2ea312b634ed7da2d31f9c8fd1e8be3533f65cbf080473a0bb4842109a985d3abedc8dd1432e3be9eb5  eclipse-jee-2022-12-R-linux-gtk-x86_64.tar.gz
+davidho@dphxps17:~/Downloads$ 
+
+davidho@dphxps17:~/Downloads$ sha512sum -c eclipse-java-2022-12-R-linux-gtk-x86_64.tar.gz.sha512
+sha512sum: eclipse-java-2022-12-R-linux-gtk-x86_64.tar.gz.sha512: no properly formatted SHA512 checksum lines found
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ cat eclipse-java-2022-12-R-linux-gtk-x86_64.tar.gz.sha512
+ef59976152d59f20e36196c918129cd1a0cfabcb1b4f195565142aec6952503bf67eca0d616620a987caed14840f9ca86ac09fb371d462bed0a304402893a77d  eclipse-java-2022-12-R-linux-gtk-x86_64.tar.gz
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ sha512sum eclipse-java-2022-12-R-linux-gtk-x86_64.tar.gz
+ef59976152d59f20e36196c918129cd1a0cfabcb1b4f195565142aec6952503bf67eca0d616620a987caed14840f9ca86ac09fb371d462bed0a304402893a77d  eclipse-java-2022-12-R-linux-gtk-x86_64.tar.gz
+davidho@dphxps17:~/Downloads$ 
+
+davidho@dphxps17:~/Downloads$ tar tvf vscode_cli_alpine_x64_cli.tar.gz
+-rwxrwxr-x cloudtest/cloudtest 13405768 2022-12-05 11:23 code
+davidho@dphxps17:~/Downloads$ 
+
+sudo tar -xzf eclipse-jee-2022-12-R-linux-gtk-x86_64.tar.gz -C /opt
+sudo mv /opt/eclipse /opt/eclipse-jee-2022-12-R-linux-gtk-x86_64
+
+sudo tar -xzf eclipse-java-2022-12-R-linux-gtk-x86_64.tar.gz -C /opt
+sudo mv /opt/eclipse /opt/eclipse-java-2022-12-R-linux-gtk-x86_64
+
+sudo tar -xzf spring-tool-suite-4-4.17.2.RELEASE-e4.26.0-linux.gtk.x86_64.tar.gz -C /opt
+
+sudo tar -xzf code-stable-x64-1673285154.tar.gz -C /opt
+sudo mv /opt/VSCode-linux-x64 /opt/VSCode-linux-x64-1.74.3
+
+sudo tar -xzf ideaIU-2022.3.2.tar.gz -C /opt
+sudo tar -xzf ideaIC-2022.3.2.tar.gz -C /opt
+sudo tar -xzf WebStorm-2022.3.2.tar.gz -C /opt
+sudo tar -xzf pycharm-professional-2022.3.2.tar.gz -C /opt
+sudo tar -xzf pycharm-community-2022.3.2.tar.gz -C /opt
+sudo tar -xzf RubyMine-2022.3.2.tar.gz -C /opt
+sudo tar -xzf datagrip-2022.3.3.tar.gz -C /opt
+
+davidho@dphxps17:~/Downloads$ history | grep sudo
+ 2040  sudo tar -xzf eclipse-jee-2022-12-R-linux-gtk-x86_64.tar.gz -C /opt
+ 2043  sudo mv /opt/eclipse /opt/eclipse-jee-2022-12-R-linux-gtk-x86_64
+ 2044  sudo tar -xzf eclipse-java-2022-12-R-linux-gtk-x86_64.tar.gz -C /opt
+ 2046  sudo mv /opt/eclipse /opt/eclipse-java-2022-12-R-linux-gtk-x86_64
+ 2048  sudo tar -xzf spring-tool-suite-4-4.17.2.RELEASE-e4.26.0-linux.gtk.x86_64.tar.gz -C /opt
+ 2050  sudo tar -xzf code-stable-x64-1673285154.tar.gz -C /opt
+ 2053  sudo tar -xzf ideaIU-2022.3.2.tar.gz -C /opt
+ 2058  sudo mv /opt/VSCode-linux-x64 /opt/VSCode-linux-x64-1.74.3
+ 2061  history | grep sudo
+ 2062  sudo tar -xzf ideaIC-2022.3.2.tar.gz -C /opt
+ 2063  sudo tar -xzf WebStorm-2022.3.2.tar.gz -C /opt
+ 2064  sudo tar -xzf pycharm-professional-2022.3.2.tar.gz -C /opt
+ 2066  sudo tar -xzf pycharm-community-2022.3.2.tar.gz -C /opt
+ 2067  sudo tar -xzf RubyMine-2022.3.2.tar.gz -C /opt
+ 2068  sudo tar -xzf datagrip-2022.3.3.tar.gz -C /opt
+ 2069  history | grep sudo
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr /opt
+total 136
+drwxr-xr-x  8 root       root       4096 Jan 20  1970 WebStorm-223.7571.168
+drwxr-xr-x  8 root       root       4096 Jan 20  1970 RubyMine-2022.3
+drwxr-xr-x  8 root       root       4096 Jan 20  1970 idea-IU-223.7571.182
+drwxr-xr-x  9 root       root       4096 Jan 20  1970 pycharm-2022.3
+drwxr-xr-x  7 root       root       4096 Jan 20  1970 DataGrip-2022.3.3
+drwxr-xr-x  8 root       root       4096 Jan 20  1970 WebStorm-223.8617.44
+drwxr-xr-x  8 root       root       4096 Jan 20  1970 RubyMine-2022.3.2
+drwxr-xr-x  8 root       root       4096 Jan 20  1970 pycharm-community-2022.3.2
+drwxr-xr-x  9 root       root       4096 Jan 20  1970 pycharm-2022.3.2
+drwxr-xr-x  8 root       root       4096 Jan 20  1970 idea-IU-223.8617.56
+drwxr-xr-x  7 root       root       4096 Jan 20  1970 idea-IC-223.8617.56
+drwxr-xr-x 20 root       root       4096 May 24  2022 ..
+drwxr-xr-x  8 root       root       4096 May 26  2022 RubyMine-2022.1.1
+drwxr-xr-x  8 root       root       4096 May 26  2022 idea-IU-221.5591.52
+drwxr-xr-x  3 root       root       4096 May 26  2022 google
+drwxr-xr-x  8 root       root       4096 Sep  8 15:44 eclipse-java-2022-09-R-linux-gtk-x86_64
+drwxr-xr-x  8 root       root       4096 Sep  8 15:54 eclipse-jee-2022-09-R-linux-gtk-x86_64
+drwxr-xr-x  8 root       root       4096 Sep 13 08:36 idea-IU-222.4167.29
+drwxr-xr-x  9        502 root       4096 Sep 15 07:57 sts-4.16.0.RELEASE
+drwxr-xr-x  8 root       root       4096 Oct  5 01:01 WebStorm-222.4345.14
+drwxr-xr-x  8 root       root       4096 Oct  5 01:01 RubyMine-2022.2.3
+drwxr-xr-x  8 root       root       4096 Oct  5 01:01 idea-IU-222.4345.14
+drwxr-xr-x  7 root       root       4096 Oct  5 01:01 idea-IC-222.4345.14
+drwxr-xr-x  8 root       root       4096 Oct 10 10:05 pycharm-community-2022.2.3
+drwxr-xr-x  9 root       root       4096 Oct 10 10:05 pycharm-2022.2.3
+drwxr-xr-x  5 davidho    davidho    4096 Nov  1 11:44 VSCode-linux-x64-1.73.0
+drwxr-xr-x  5 davidho    davidho    4096 Nov  8 22:55 VSCode-linux-x64-1.73.1
+drwxr-xr-x  4 root       root       4096 Nov 17 06:18 1Password
+drwxr-xr-x  8 1001330000 1001330000 4096 Dec  1 15:13 eclipse-java-2022-12-R-linux-gtk-x86_64
+drwxr-xr-x  8 1001330000 1001330000 4096 Dec  1 15:29 eclipse-jee-2022-12-R-linux-gtk-x86_64
+drwxr-xr-x  5 davidho    davidho    4096 Dec  5 11:47 VSCode-linux-x64-1.74.0
+drwxr-xr-x  5 davidho    davidho    4096 Jan  9 11:58 VSCode-linux-x64-1.74.3
+drwxr-xr-x  9        502 root       4096 Jan 31 02:27 sts-4.17.2.RELEASE
+drwxr-xr-x 34 root       root       4096 Feb  1 08:09 .
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr | tail -25
+-rw-rw-r--  1 davidho davidho      65174 Jan 24 07:26 sbapp278g.zip
+-rw-rw-r--  1 davidho davidho      63573 Jan 24 07:28 sbapp278m.zip
+-rw-rw-r--  1 davidho davidho      65164 Jan 24 07:32 sbapp302g.zip
+-rw-rw-r--  1 davidho davidho      63572 Jan 24 07:34 sbapp302m.zip
+drwxr-x--- 51 davidho davidho       4096 Feb  1 06:53 ..
+-rw-rw-r--  1 davidho davidho   97998844 Feb  1 06:54 code_1.74.3-1673284829_amd64.deb
+-rw-rw-r--  1 davidho davidho  138905712 Feb  1 06:54 code-1.74.3-1673284922.el7.x86_64.rpm
+-rw-rw-r--  1 davidho davidho  138260370 Feb  1 06:55 code-stable-x64-1673285154.tar.gz
+-rw-rw-r--  1 davidho davidho    6031951 Feb  1 06:55 vscode_cli_alpine_x64_cli(1).tar.gz
+-rw-rw-r--  1 davidho davidho 1112131672 Feb  1 06:56 ideaIU-2022.3.2.tar.gz
+-rw-rw-r--  1 davidho davidho         89 Feb  1 06:56 ideaIU-2022.3.2.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  938318729 Feb  1 06:57 ideaIC-2022.3.2.tar.gz
+-rw-rw-r--  1 davidho davidho         89 Feb  1 06:57 ideaIC-2022.3.2.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  580112291 Feb  1 06:57 WebStorm-2022.3.2.tar.gz
+-rw-rw-r--  1 davidho davidho         91 Feb  1 06:57 WebStorm-2022.3.2.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  721400424 Feb  1 06:59 pycharm-professional-2022.3.2.tar.gz
+-rw-rw-r--  1 davidho davidho        103 Feb  1 07:00 pycharm-professional-2022.3.2.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  575274048 Feb  1 07:00 pycharm-community-2022.3.2.tar.gz
+-rw-rw-r--  1 davidho davidho        100 Feb  1 07:00 pycharm-community-2022.3.2.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  622402199 Feb  1 07:02 RubyMine-2022.3.2.tar.gz
+-rw-rw-r--  1 davidho davidho         91 Feb  1 07:02 RubyMine-2022.3.2.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  569259324 Feb  1 07:02 datagrip-2022.3.3.tar.gz
+-rw-rw-r--  1 davidho davidho         91 Feb  1 07:02 datagrip-2022.3.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  625754715 Feb  1 07:29 spring-tool-suite-4-4.17.2.RELEASE-e4.26.0-linux.gtk.x86_64.tar.gz
+drwxr-xr-x  6 davidho davidho      20480 Feb  1 07:35 .
+davidho@dphxps17:~/Downloads$ 
+
+davidho@dphxps17:~/Downloads$ tar tvf WebStorm-2022.3.2.tar.gz
+davidho@dphxps17:~/Downloads$ sudo mv /opt/WebStorm-223.8617.44 /opt/WebStorm-2022.3.2
+
+davidho@dphxps17:~/Downloads$ tar tvf ideaIU-2022.3.2.tar.gz
+davidho@dphxps17:~/Downloads$ sudo mv /opt/idea-IU-223.8617.56 /opt/ideaIU-2022.3.2
+
+davidho@dphxps17:~/Downloads$ tar tvf ideaIC-2022.3.2.tar.gz
+davidho@dphxps17:~/Downloads$ sudo mv /opt/idea-IC-223.8617.56 /opt/ideaIC-2022.3.2
+
+davidho@dphxps17:~/Downloads$ ls -latr /opt
+total 136
+drwxr-xr-x  8 root       root       4096 Jan 20  1970 WebStorm-223.7571.168
+drwxr-xr-x  8 root       root       4096 Jan 20  1970 RubyMine-2022.3
+drwxr-xr-x  8 root       root       4096 Jan 20  1970 idea-IU-223.7571.182
+drwxr-xr-x  9 root       root       4096 Jan 20  1970 pycharm-2022.3
+drwxr-xr-x  7 root       root       4096 Jan 20  1970 DataGrip-2022.3.3
+drwxr-xr-x  8 root       root       4096 Jan 20  1970 WebStorm-2022.3.2
+drwxr-xr-x  8 root       root       4096 Jan 20  1970 RubyMine-2022.3.2
+drwxr-xr-x  8 root       root       4096 Jan 20  1970 pycharm-community-2022.3.2
+drwxr-xr-x  9 root       root       4096 Jan 20  1970 pycharm-2022.3.2
+drwxr-xr-x  8 root       root       4096 Jan 20  1970 ideaIU-2022.3.2
+drwxr-xr-x  7 root       root       4096 Jan 20  1970 ideaIC-2022.3.2
+drwxr-xr-x 20 root       root       4096 May 24  2022 ..
+drwxr-xr-x  8 root       root       4096 May 26  2022 RubyMine-2022.1.1
+drwxr-xr-x  8 root       root       4096 May 26  2022 idea-IU-221.5591.52
+drwxr-xr-x  3 root       root       4096 May 26  2022 google
+drwxr-xr-x  8 root       root       4096 Sep  8 15:44 eclipse-java-2022-09-R-linux-gtk-x86_64
+drwxr-xr-x  8 root       root       4096 Sep  8 15:54 eclipse-jee-2022-09-R-linux-gtk-x86_64
+drwxr-xr-x  8 root       root       4096 Sep 13 08:36 idea-IU-222.4167.29
+drwxr-xr-x  9        502 root       4096 Sep 15 07:57 sts-4.16.0.RELEASE
+drwxr-xr-x  8 root       root       4096 Oct  5 01:01 WebStorm-222.4345.14
+drwxr-xr-x  8 root       root       4096 Oct  5 01:01 RubyMine-2022.2.3
+drwxr-xr-x  8 root       root       4096 Oct  5 01:01 idea-IU-222.4345.14
+drwxr-xr-x  7 root       root       4096 Oct  5 01:01 idea-IC-222.4345.14
+drwxr-xr-x  8 root       root       4096 Oct 10 10:05 pycharm-community-2022.2.3
+drwxr-xr-x  9 root       root       4096 Oct 10 10:05 pycharm-2022.2.3
+drwxr-xr-x  5 davidho    davidho    4096 Nov  1 11:44 VSCode-linux-x64-1.73.0
+drwxr-xr-x  5 davidho    davidho    4096 Nov  8 22:55 VSCode-linux-x64-1.73.1
+drwxr-xr-x  4 root       root       4096 Nov 17 06:18 1Password
+drwxr-xr-x  8 1001330000 1001330000 4096 Dec  1 15:13 eclipse-java-2022-12-R-linux-gtk-x86_64
+drwxr-xr-x  8 1001330000 1001330000 4096 Dec  1 15:29 eclipse-jee-2022-12-R-linux-gtk-x86_64
+drwxr-xr-x  5 davidho    davidho    4096 Dec  5 11:47 VSCode-linux-x64-1.74.0
+drwxr-xr-x  5 davidho    davidho    4096 Jan  9 11:58 VSCode-linux-x64-1.74.3
+drwxr-xr-x  9        502 root       4096 Jan 31 02:27 sts-4.17.2.RELEASE
+drwxr-xr-x 34 root       root       4096 Feb  1 08:26 .
+davidho@dphxps17:~/Downloads$ 
+
+sudo chown -R davidho:davidho sts-4.16.0.RELEASE sts-4.17.2.RELEASE
+sudo chown -R davidho:davidho eclipse-java-2022-12-R-linux-gtk-x86_64 eclipse-jee-2022-12-R-linux-gtk-x86_64
+
+davidho@dphxps17:/opt$ ls -latr
+total 136
+drwxr-xr-x  8 root    root    4096 Jan 20  1970 WebStorm-223.7571.168
+drwxr-xr-x  8 root    root    4096 Jan 20  1970 RubyMine-2022.3
+drwxr-xr-x  8 root    root    4096 Jan 20  1970 idea-IU-223.7571.182
+drwxr-xr-x  9 root    root    4096 Jan 20  1970 pycharm-2022.3
+drwxr-xr-x  7 root    root    4096 Jan 20  1970 DataGrip-2022.3.3
+drwxr-xr-x  8 root    root    4096 Jan 20  1970 WebStorm-2022.3.2
+drwxr-xr-x  8 root    root    4096 Jan 20  1970 RubyMine-2022.3.2
+drwxr-xr-x  8 root    root    4096 Jan 20  1970 pycharm-community-2022.3.2
+drwxr-xr-x  9 root    root    4096 Jan 20  1970 pycharm-2022.3.2
+drwxr-xr-x  8 root    root    4096 Jan 20  1970 ideaIU-2022.3.2
+drwxr-xr-x  7 root    root    4096 Jan 20  1970 ideaIC-2022.3.2
+drwxr-xr-x 20 root    root    4096 May 24  2022 ..
+drwxr-xr-x  8 root    root    4096 May 26  2022 RubyMine-2022.1.1
+drwxr-xr-x  8 root    root    4096 May 26  2022 idea-IU-221.5591.52
+drwxr-xr-x  3 root    root    4096 May 26  2022 google
+drwxr-xr-x  8 root    root    4096 Sep  8 15:44 eclipse-java-2022-09-R-linux-gtk-x86_64
+drwxr-xr-x  8 root    root    4096 Sep  8 15:54 eclipse-jee-2022-09-R-linux-gtk-x86_64
+drwxr-xr-x  8 root    root    4096 Sep 13 08:36 idea-IU-222.4167.29
+drwxr-xr-x  9 davidho davidho 4096 Sep 15 07:57 sts-4.16.0.RELEASE
+drwxr-xr-x  8 root    root    4096 Oct  5 01:01 WebStorm-222.4345.14
+drwxr-xr-x  8 root    root    4096 Oct  5 01:01 RubyMine-2022.2.3
+drwxr-xr-x  8 root    root    4096 Oct  5 01:01 idea-IU-222.4345.14
+drwxr-xr-x  7 root    root    4096 Oct  5 01:01 idea-IC-222.4345.14
+drwxr-xr-x  8 root    root    4096 Oct 10 10:05 pycharm-community-2022.2.3
+drwxr-xr-x  9 root    root    4096 Oct 10 10:05 pycharm-2022.2.3
+drwxr-xr-x  5 davidho davidho 4096 Nov  1 11:44 VSCode-linux-x64-1.73.0
+drwxr-xr-x  5 davidho davidho 4096 Nov  8 22:55 VSCode-linux-x64-1.73.1
+drwxr-xr-x  4 root    root    4096 Nov 17 06:18 1Password
+drwxr-xr-x  8 davidho davidho 4096 Dec  1 15:13 eclipse-java-2022-12-R-linux-gtk-x86_64
+drwxr-xr-x  8 davidho davidho 4096 Dec  1 15:29 eclipse-jee-2022-12-R-linux-gtk-x86_64
+drwxr-xr-x  5 davidho davidho 4096 Dec  5 11:47 VSCode-linux-x64-1.74.0
+drwxr-xr-x  5 davidho davidho 4096 Jan  9 11:58 VSCode-linux-x64-1.74.3
+drwxr-xr-x  9 davidho davidho 4096 Jan 31 02:27 sts-4.17.2.RELEASE
+drwxr-xr-x 34 root    root    4096 Feb  1 08:26 .
+davidho@dphxps17:/opt$ 
+
+davidho@dphxps17:~$ ls -latr ~ | grep -i work
+drwxrwxr-x  4 davidho davidho   4096 Oct 19 07:57 eclipse-workspace
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ ls -latr ~/Documents/ | grep -i work
+drwxrwxr-x  3 davidho davidho   4096 Oct 16 21:10 workspace-spring-tool-suite-4-4.16.0.RELEASE
+drwxrwxr-x  4 davidho davidho   4096 Feb  1 08:55 workspace-spring-tool-suite-4-4.17.2.RELEASE
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ echo $JAVA_HOME
+/home/davidho/.sdkman/candidates/java/current
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ java -version
+openjdk version "17.0.5" 2022-10-18 LTS
+OpenJDK Runtime Environment Zulu17.38+21-CA (build 17.0.5+8-LTS)
+OpenJDK 64-Bit Server VM Zulu17.38+21-CA (build 17.0.5+8-LTS, mixed mode, sharing)
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ javac -version
+javac 17.0.5
+davidho@dphxps17:~$ 
+
