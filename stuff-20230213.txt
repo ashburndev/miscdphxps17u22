@@ -1,0 +1,112 @@
+davidho@dphxps17:~$ date
+Mon Feb 13 07:06:17 AM EST 2023
+davidho@dphxps17:~$ code stuff-20230213.txt
+davidho@dphxps17:~$ 
+
+file:///opt/sts-4.17.2.RELEASE/readme/readme_eclipse.html
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+spring boot embedded tomcat logs
+https://www.baeldung.com/spring-boot-embedded-tomcat-logs
+
+@GetMapping("/greetings/{username}")
+public String getGreetings(@PathVariable("username") String userName) {
+    return "Hello " + userName + ", Good day...!!!";
+}
+
+server.tomcat.accesslog.enabled=true
+
+java -jar -Dserver.tomcat.basedir=tomcat -Dserver.tomcat.accesslog.enabled=true app.jar
+
+server.tomcat.accesslog.suffix=.log
+server.tomcat.accesslog.prefix=access_log
+server.tomcat.accesslog.file-date-format=.yyyy-MM-dd
+
+Also, we can change the location of the log files:
+server.tomcat.basedir=tomcat
+server.tomcat.accesslog.directory=logs
+
+Finally, we can override the way logs are written in the log file:
+server.tomcat.accesslog.pattern=common
+
+logging.level.org.apache.tomcat=DEBUG
+logging.level.org.apache.catalina=DEBUG
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+spring boot rest controller httprequest
+
+Building a RESTful Web Service
+https://spring.io/guides/gs/rest-service/
+
+
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-actuator</artifactId>
+</dependency>
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'httptrace'
+
+http://server:port/actuator/httptrace
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+How to Read HTTP Headers in Spring REST Controllers
+https://www.baeldung.com/spring-rest-http-headers
+
+Spring Boot logs access logs in several ways
+https://www.springcloud.io/post/2022-02/mvc-httptrace/#gsc.tab=0
+
+https://docs.spring.io/spring-boot/docs/2.1.13.RELEASE/reference/html/boot-features-logging.html
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Logging in Spring Boot
+https://www.baeldung.com/spring-boot-logging
+
+@RestController
+public class LoggingController {
+
+    Logger logger = LoggerFactory.getLogger(LoggingController.class);
+
+    @RequestMapping("/")
+    public String index() {
+        logger.trace("A TRACE Message");
+        logger.debug("A DEBUG Message");
+        logger.info("An INFO Message");
+        logger.warn("A WARN Message");
+        logger.error("An ERROR Message");
+
+        return "Howdy! Check out the Logs to see the output...";
+    }
+}
+
+Once we've loaded the web application, we'll be able to trigger those logging lines by simply visiting http://localhost:8080/.
+
+java -jar target/spring-boot-logging-0.0.1-SNAPSHOT.jar --trace
+
+-Dlogging.level.org.springframework=TRACE 
+-Dlogging.level.com.baeldung=TRACE
+
+mvn spring-boot:run 
+  -Dspring-boot.run.arguments=--logging.level.org.springframework=TRACE,--logging.level.com.baeldung=TRACE
+
+./gradlew bootRun -Pargs=--logging.level.org.springframework=TRACE,--logging.level.com.baeldung=TRACE
+
+logging.level.root=WARN
+logging.level.com.baeldung=TRACE
+
+<logger name="org.springframework" level="INFO" />
+<logger name="com.baeldung" level="INFO" />
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Command-Line Arguments in Spring Boot
+https://www.baeldung.com/spring-boot-command-line-arguments#gradle
+
+
