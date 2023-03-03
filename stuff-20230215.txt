@@ -1,0 +1,212 @@
+davidho@dphxps17:~$ date
+Wed Feb 15 11:01:41 AM EST 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ code stuff-20230215.txt
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://grails.org/download.html
+
+davidho@dphxps17:~/Downloads$ date
+Wed Feb 15 11:07:45 AM EST 2023
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr | grep -i grail
+-rw-rw-r--  1 davidho davidho  186105481 Dec 31 09:40 grails-5.2.5.zip
+-rw-rw-r--  1 davidho davidho    9154897 Dec 31 09:40 grails-5.2.5.docs.zip
+-rw-rw-r--  1 davidho davidho  186251326 Feb 15 11:06 grails-5.3.2.zip
+-rw-rw-r--  1 davidho davidho    9154322 Feb 15 11:06 grails-docs.zip
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ mv grails-docs.zip grails-5.3.2-docs.zip
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr | grep -i grail
+-rw-rw-r--  1 davidho davidho  186105481 Dec 31 09:40 grails-5.2.5.zip
+-rw-rw-r--  1 davidho davidho    9154897 Dec 31 09:40 grails-5.2.5.docs.zip
+-rw-rw-r--  1 davidho davidho  186251326 Feb 15 11:06 grails-5.3.2.zip
+-rw-rw-r--  1 davidho davidho    9154322 Feb 15 11:06 grails-5.3.2-docs.zip
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr | grep -i grail
+-rw-rw-r--  1 davidho davidho  186105481 Dec 31 09:40 grails-5.2.5.zip
+-rw-rw-r--  1 davidho davidho    9154897 Dec 31 09:40 grails-5.2.5.docs.zip
+-rw-rw-r--  1 davidho davidho  186251326 Feb 15 11:06 grails-5.3.2.zip
+-rw-rw-r--  1 davidho davidho    9154322 Feb 15 11:06 grails-5.3.2-docs.zip
+-rw-rw-r--  1 davidho davidho  184819897 Feb 15 11:13 grails-5.2.6.zip
+-rw-rw-r--  1 davidho davidho  186247311 Feb 15 11:13 grails-5.3.0.zip
+-rw-rw-r--  1 davidho davidho  187089888 Feb 15 11:13 grails-5.3.1.zip
+davidho@dphxps17:~/Downloads$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://groovy.apache.org/download.html
+https://groovy.jfrog.io/ui/native/dist-release-local/groovy-zips/apache-groovy-binary-4.0.9.zip
+https://groovy.jfrog.io/ui/native/dist-release-local/groovy-zips/apache-groovy-docs-4.0.9.zip
+
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr | tail -20
+-rw-rw-r--  1 davidho davidho  569259324 Feb  1 07:02 datagrip-2022.3.3.tar.gz
+-rw-rw-r--  1 davidho davidho         91 Feb  1 07:02 datagrip-2022.3.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  625754715 Feb  1 07:29 spring-tool-suite-4-4.17.2.RELEASE-e4.26.0-linux.gtk.x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho    6313938 Feb  9 06:13 vscode_cli_alpine_x64_cli(2).tar.gz
+-rw-rw-r--  1 davidho davidho  569259324 Feb  9 06:13 datagrip-2022.3.3(1).tar.gz
+-rw-rw-r--  1 davidho davidho   93154472 Feb 13 07:41 VSCodeUserSetup-x64-1.75.1.exe
+-rw-rw-r--  1 davidho davidho   93154064 Feb 13 07:41 VSCodeSetup-x64-1.75.1.exe
+-rw-rw-r--  1 davidho davidho  131302436 Feb 13 07:41 VSCode-win32-x64-1.75.1.zip
+-rw-rw-r--  1 davidho davidho    5248566 Feb 13 07:41 vscode_cli_win32_x64_cli.zip
+drwxr-x--- 52 davidho davidho       4096 Feb 15 11:03 ..
+-rw-rw-r--  1 davidho davidho  186251326 Feb 15 11:06 grails-5.3.2.zip
+-rw-rw-r--  1 davidho davidho    9154322 Feb 15 11:06 grails-5.3.2-docs.zip
+-rw-rw-r--  1 davidho davidho  184819897 Feb 15 11:13 grails-5.2.6.zip
+-rw-rw-r--  1 davidho davidho  186247311 Feb 15 11:13 grails-5.3.0.zip
+-rw-rw-r--  1 davidho davidho  187089888 Feb 15 11:13 grails-5.3.1.zip
+-rw-rw-r--  1 davidho davidho   29467411 Feb 15 11:18 apache-groovy-binary-4.0.9.zip
+-rw-rw-r--  1 davidho davidho        838 Feb 15 11:19 apache-groovy-binary-4.0.9.zip.asc
+-rw-rw-r--  1 davidho davidho         66 Feb 15 11:20 apache-groovy-binary-4.0.9.zip.sha256
+-rw-rw-r--  1 davidho davidho   21484205 Feb 15 11:21 apache-groovy-docs-4.0.9.zip
+drwxr-xr-x  6 davidho davidho      20480 Feb 15 11:23 .
+davidho@dphxps17:~/Downloads$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/Downloads$ which grails
+/home/davidho/.sdkman/candidates/grails/current/bin/grails
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ which groovy
+/home/davidho/.sdkman/candidates/groovy/current/bin/groovy
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ grails --version
+| Grails Version: 5.2.5
+| JVM Version: 17.0.5
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ groovy --version
+Groovy Version: 4.0.3 JVM: 17.0.5 Vendor: Azul Systems, Inc. OS: Linux
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ java --version
+openjdk 17.0.5 2022-10-18 LTS
+OpenJDK Runtime Environment Zulu17.38+21-CA (build 17.0.5+8-LTS)
+OpenJDK 64-Bit Server VM Zulu17.38+21-CA (build 17.0.5+8-LTS, mixed mode, sharing)
+davidho@dphxps17:~/Downloads$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://www.oracle.com/java/technologies/downloads/
+
+Java SE Development Kit 19.0.2 downloads
+https://www.oracle.com/java/technologies/downloads/#java19
+https://docs.oracle.com/en/java/javase/19/
+https://docs.oracle.com/en/java/javase/19/install/overview-jdk-installation.html
+https://www.oracle.com/java/technologies/javase/19u-relnotes.html
+https://www.oracle.com/java/technologies/javase/jdk19-readme-downloads.html
+
+Java SE Development Kit 17.0.6 downloads
+https://www.oracle.com/java/technologies/downloads/#java17
+https://docs.oracle.com/en/java/javase/17/
+https://docs.oracle.com/en/java/javase/17/install/overview-jdk-installation.html
+https://www.oracle.com/java/technologies/javase/17u-relnotes.html
+https://www.oracle.com/java/technologies/javase/jdk17-readme-downloads.html
+
+Java SE Development Kit 11.0.18
+https://www.oracle.com/java/technologies/downloads/#java11
+https://docs.oracle.com/en/java/javase/11/
+https://docs.oracle.com/en/java/javase/11/install/overview-jdk-installation.html
+https://www.oracle.com/java/technologies/javase/11u-relnotes.html
+https://www.oracle.com/java/technologies/javase/jdk11-readme.html
+
+Java SE Development Kit 8u361
+https://www.oracle.com/java/technologies/downloads/#java8
+https://docs.oracle.com/javase/8/
+https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html
+https://www.oracle.com/java/technologies/javase/8u-relnotes.html
+https://www.oracle.com/java/technologies/javase/jdk8-readme.html
+https://www.oracle.com/java/technologies/javase/jre8-readme.html
+https://www.oracle.com/java/technologies/java-archive-misc-downloads.html#jdk8demos
+
+
+-rw-rw-r--  1 davidho davidho  189896383 Feb 15 11:39  jdk-19_linux-x64_bin.tar.gz
+-rw-rw-r--  1 davidho davidho         64 Feb 15 11:39  jdk-19_linux-x64_bin.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  162335712 Feb 15 11:39  jdk-19_linux-x64_bin.deb
+-rw-rw-r--  1 davidho davidho         64 Feb 15 11:39  jdk-19_linux-x64_bin.deb.sha256
+-rw-rw-r--  1 davidho davidho  181577323 Feb 15 11:42  jdk-17_linux-x64_bin.tar.gz
+-rw-rw-r--  1 davidho davidho         64 Feb 15 11:42  jdk-17_linux-x64_bin.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  155967886 Feb 15 11:42  jdk-17_linux-x64_bin.deb
+-rw-rw-r--  1 davidho davidho         64 Feb 15 11:43  jdk-17_linux-x64_bin.deb.sha256
+-rw-rw-r--  1 davidho davidho  169328243 Feb 15 11:59  jdk-11.0.18_linux-x64_bin.tar.gz
+-rw-rw-r--  1 davidho davidho  145609416 Feb 15 12:00  jdk-11.0.18_linux-x64_bin.deb
+-rw-rw-r--  1 davidho davidho       7494 Feb 15 12:06  11-0-18-checksum.html
+-rw-rw-r--  1 davidho davidho  138762230 Feb 15 12:08  jdk-8u361-linux-x64.tar.gz
+-rw-rw-r--  1 davidho davidho  141952037 Feb 15 12:09  jdk-8u361-linux-i586.tar.gz
+-rw-rw-r--  1 davidho davidho      11176 Feb 15 12:09  8u361checksum.html
+-rw-rw-r--  1 davidho davidho  125174504 Feb 15 12:10  jdk-8u361-docs-all.zip
+-rw-rw-r--  1 davidho davidho   10291167 Feb 15 12:10  javafx-8u361-apidocs.zip
+
+davidho@dphxps17:~/Downloads$ ls -latr jdk-19*
+-rw-rw-r-- 1 davidho davidho 189905998 Oct 20 19:25 jdk-19.0.1_linux-x64_bin.tar.gz
+-rw-rw-r-- 1 davidho davidho        64 Oct 20 19:25 jdk-19.0.1_linux-x64_bin.tar.gz.sha256
+-rw-rw-r-- 1 davidho davidho 162283762 Oct 20 19:26 jdk-19.0.1_linux-x64_bin.deb
+-rw-rw-r-- 1 davidho davidho        64 Oct 20 19:26 jdk-19.0.1_linux-x64_bin.deb.sha256
+-rw-rw-r-- 1 davidho davidho 169483428 Oct 20 19:26 jdk-19.0.1_linux-x64_bin.rpm
+-rw-rw-r-- 1 davidho davidho        64 Oct 20 19:26 jdk-19.0.1_linux-x64_bin.rpm.sha256
+-rw-rw-r-- 1 davidho davidho 189896383 Feb 15 11:39 jdk-19_linux-x64_bin.tar.gz
+-rw-rw-r-- 1 davidho davidho        64 Feb 15 11:39 jdk-19_linux-x64_bin.tar.gz.sha256
+-rw-rw-r-- 1 davidho davidho 162335712 Feb 15 11:39 jdk-19_linux-x64_bin.deb
+-rw-rw-r-- 1 davidho davidho        64 Feb 15 11:39 jdk-19_linux-x64_bin.deb.sha256
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr jdk-17*
+-rw-rw-r-- 1 davidho davidho 181244275 Sep 22 07:36 jdk-17.0.4.1_linux-x64_bin.tar.gz
+-rw-rw-r-- 1 davidho davidho        64 Sep 22 07:36 jdk-17.0.4.1_linux-x64_bin.tar.gz.sha256
+-rw-rw-r-- 1 davidho davidho 155639466 Sep 22 07:37 jdk-17.0.4.1_linux-x64_bin.deb
+-rw-rw-r-- 1 davidho davidho        64 Sep 22 07:37 jdk-17.0.4.1_linux-x64_bin.deb.sha256
+-rw-rw-r-- 1 davidho davidho 162804836 Sep 22 07:37 jdk-17.0.4.1_linux-x64_bin.rpm
+-rw-rw-r-- 1 davidho davidho        64 Sep 22 07:38 jdk-17.0.4.1_linux-x64_bin.rpm.sha256
+-rw-rw-r-- 1 davidho davidho 181563408 Oct 20 19:28 jdk-17.0.5_linux-x64_bin.tar.gz
+-rw-rw-r-- 1 davidho davidho        64 Oct 20 19:28 jdk-17.0.5_linux-x64_bin.tar.gz.sha256
+-rw-rw-r-- 1 davidho davidho 155996900 Oct 20 19:28 jdk-17.0.5_linux-x64_bin.deb
+-rw-rw-r-- 1 davidho davidho        64 Oct 20 19:28 jdk-17.0.5_linux-x64_bin.deb.sha256
+-rw-rw-r-- 1 davidho davidho 163101336 Oct 20 19:29 jdk-17.0.5_linux-x64_bin.rpm
+-rw-rw-r-- 1 davidho davidho        64 Oct 20 19:29 jdk-17.0.5_linux-x64_bin.rpm.sha256
+-rw-rw-r-- 1 davidho davidho 181577323 Feb 15 11:42 jdk-17_linux-x64_bin.tar.gz
+-rw-rw-r-- 1 davidho davidho        64 Feb 15 11:42 jdk-17_linux-x64_bin.tar.gz.sha256
+-rw-rw-r-- 1 davidho davidho 155967886 Feb 15 11:42 jdk-17_linux-x64_bin.deb
+-rw-rw-r-- 1 davidho davidho        64 Feb 15 11:43 jdk-17_linux-x64_bin.deb.sha256
+davidho@dphxps17:~/Downloads$ 
+
+davidho@dphxps17:~/Downloads$ la -latr jdk*tar.gz
+-rw-rw-r-- 1 davidho davidho 182299048 Sep 22 07:33 jdk-18.0.2.1_linux-x64_bin.tar.gz
+-rw-rw-r-- 1 davidho davidho 181244275 Sep 22 07:36 jdk-17.0.4.1_linux-x64_bin.tar.gz
+-rw-rw-r-- 1 davidho davidho 168905265 Sep 22 07:47 jdk-11.0.16_linux-x64_bin.tar.gz
+-rw-rw-r-- 1 davidho davidho 148003421 Sep 22 07:49 jdk-8u333-linux-x64.tar.gz
+-rw-rw-r-- 1 davidho davidho 189905998 Oct 20 19:25 jdk-19.0.1_linux-x64_bin.tar.gz
+-rw-rw-r-- 1 davidho davidho 181563408 Oct 20 19:28 jdk-17.0.5_linux-x64_bin.tar.gz
+-rw-rw-r-- 1 davidho davidho 169251172 Oct 20 19:37 jdk-11.0.17_linux-x64_bin.tar.gz
+-rw-rw-r-- 1 davidho davidho 149697219 Oct 20 19:41 jdk-8u351-linux-x64.tar.gz
+-rw-rw-r-- 1 davidho davidho 189896383 Feb 15 11:39 jdk-19.0.2_linux-x64_bin.tar.gz
+-rw-rw-r-- 1 davidho davidho 181577323 Feb 15 11:42 jdk-17.0.6_linux-x64_bin.tar.gz
+-rw-rw-r-- 1 davidho davidho 169328243 Feb 15 11:59 jdk-11.0.18_linux-x64_bin.tar.gz
+-rw-rw-r-- 1 davidho davidho 138762230 Feb 15 12:08 jdk-8u361-linux-x64.tar.gz
+-rw-rw-r-- 1 davidho davidho 141952037 Feb 15 12:09 jdk-8u361-linux-i586.tar.gz
+davidho@dphxps17:~/Downloads$ 
+
+-rw-rw-r--  1 davidho davidho  189896383 Feb 15 11:39  jdk-19.0.2_linux-x64_bin.tar.gz
+-rw-rw-r--  1 davidho davidho         64 Feb 15 11:39  jdk-19.0.2_linux-x64_bin.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  162335712 Feb 15 11:39  jdk-19.0.2_linux-x64_bin.deb
+-rw-rw-r--  1 davidho davidho         64 Feb 15 11:39  jdk-19.0.2_linux-x64_bin.deb.sha256
+-rw-rw-r--  1 davidho davidho  181577323 Feb 15 11:42  jdk-17.0.6_linux-x64_bin.tar.gz
+-rw-rw-r--  1 davidho davidho         64 Feb 15 11:42  jdk-17.0.6_linux-x64_bin.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  155967886 Feb 15 11:42  jdk-17.0.6_linux-x64_bin.deb
+-rw-rw-r--  1 davidho davidho         64 Feb 15 11:43  jdk-17.0.6_linux-x64_bin.deb.sha256
+-rw-rw-r--  1 davidho davidho  169328243 Feb 15 11:59  jdk-11.0.18_linux-x64_bin.tar.gz
+-rw-rw-r--  1 davidho davidho  145609416 Feb 15 12:00  jdk-11.0.18_linux-x64_bin.deb
+-rw-rw-r--  1 davidho davidho       7494 Feb 15 12:06  11-0-18-checksum.html
+-rw-rw-r--  1 davidho davidho  138762230 Feb 15 12:08  jdk-8u361-linux-x64.tar.gz
+-rw-rw-r--  1 davidho davidho  141952037 Feb 15 12:09  jdk-8u361-linux-i586.tar.gz
+-rw-rw-r--  1 davidho davidho      11176 Feb 15 12:09  8u361checksum.html
+-rw-rw-r--  1 davidho davidho  125174504 Feb 15 12:10  jdk-8u361-docs-all.zip
+-rw-rw-r--  1 davidho davidho   10291167 Feb 15 12:10  javafx-8u361-apidocs.zip
+-rw-rw-r--  1 davidho davidho   54787171 Feb 15 12:34  jdk-8-linux-i586-demos.tar.gz
+-rw-rw-r--  1 davidho davidho   54881447 Feb 15 12:35  jdk-8-linux-x64-demos.tar.gz
+
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+davidho@dphxps17:~$ date
+Sun Feb 26 06:58:22 AM EST 2023
+davidho@dphxps17:~$ code stuff-20230226.txt
+davidho@dphxps17:~$ 
+
+
+http://docs.groovy-lang.org/docs/groovy-1.7.3/html/groovy-jdk/java/io/File.html
+https://www.tutorialspoint.com/groovy/groovy_file_io.htm
+https://www.baeldung.com/groovy-io
+https://www.baeldung.com/reading-file-in-java
+
+
+https://docs.groovy-lang.org/latest/html/groovy-jdk/java/io/File.html
+
+
+https://opensource.com/article/21/4/groovy-io
+
+https://blog.mrhaki.com/2009/08/groovy-goodness-working-with-files.html
+
+
+
+

@@ -1,0 +1,2191 @@
+davidho@dphxps17:~$ date
+Thu Mar  2 08:36:53 AM EST 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ code stuff-20230302.txt
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://blog.mrhaki.com/2009/08/groovy-goodness-working-with-files.html
+https://groovy-lang.org/groovyconsole.html
+https://www.tutorialspoint.com/groovy/groovy_split.htm
+https://www.baeldung.com/groovy-io
+https://www.tutorialspoint.com/groovy/groovy_file_io.htm
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:/opt$ 
+davidho@dphxps17:/opt$ pwd
+/opt
+davidho@dphxps17:/opt$ ls -la
+total 136
+drwxr-xr-x 34 root    root    4096 Feb  1 08:26 .
+drwxr-xr-x 20 root    root    4096 May 24  2022 ..
+drwxr-xr-x  4 root    root    4096 Nov 17 06:18 1Password
+drwxr-xr-x  7 root    root    4096 Jan 20  1970 DataGrip-2022.3.3
+drwxr-xr-x  8 root    root    4096 Sep  8 15:44 eclipse-java-2022-09-R-linux-gtk-x86_64
+drwxr-xr-x  8 davidho davidho 4096 Dec  1 15:13 eclipse-java-2022-12-R-linux-gtk-x86_64
+drwxr-xr-x  8 root    root    4096 Sep  8 15:54 eclipse-jee-2022-09-R-linux-gtk-x86_64
+drwxr-xr-x  8 davidho davidho 4096 Dec  1 15:29 eclipse-jee-2022-12-R-linux-gtk-x86_64
+drwxr-xr-x  3 root    root    4096 May 26  2022 google
+drwxr-xr-x  7 root    root    4096 Jan 20  1970 ideaIC-2022.3.2
+drwxr-xr-x  7 root    root    4096 Oct  5 01:01 idea-IC-222.4345.14
+drwxr-xr-x  8 root    root    4096 Jan 20  1970 ideaIU-2022.3.2
+drwxr-xr-x  8 root    root    4096 May 26  2022 idea-IU-221.5591.52
+drwxr-xr-x  8 root    root    4096 Sep 13 08:36 idea-IU-222.4167.29
+drwxr-xr-x  8 root    root    4096 Oct  5 01:01 idea-IU-222.4345.14
+drwxr-xr-x  8 root    root    4096 Jan 20  1970 idea-IU-223.7571.182
+drwxr-xr-x  9 root    root    4096 Oct 10 10:05 pycharm-2022.2.3
+drwxr-xr-x  9 root    root    4096 Jan 20  1970 pycharm-2022.3
+drwxr-xr-x  9 root    root    4096 Jan 20  1970 pycharm-2022.3.2
+drwxr-xr-x  8 root    root    4096 Oct 10 10:05 pycharm-community-2022.2.3
+drwxr-xr-x  8 root    root    4096 Jan 20  1970 pycharm-community-2022.3.2
+drwxr-xr-x  8 root    root    4096 May 26  2022 RubyMine-2022.1.1
+drwxr-xr-x  8 root    root    4096 Oct  5 01:01 RubyMine-2022.2.3
+drwxr-xr-x  8 root    root    4096 Jan 20  1970 RubyMine-2022.3
+drwxr-xr-x  8 root    root    4096 Jan 20  1970 RubyMine-2022.3.2
+drwxr-xr-x  9 davidho davidho 4096 Sep 15 07:57 sts-4.16.0.RELEASE
+drwxr-xr-x  9 davidho davidho 4096 Jan 31 02:27 sts-4.17.2.RELEASE
+drwxr-xr-x  5 davidho davidho 4096 Nov  1 11:44 VSCode-linux-x64-1.73.0
+drwxr-xr-x  5 davidho davidho 4096 Nov  8 22:55 VSCode-linux-x64-1.73.1
+drwxr-xr-x  5 davidho davidho 4096 Dec  5 11:47 VSCode-linux-x64-1.74.0
+drwxr-xr-x  5 davidho davidho 4096 Jan  9 11:58 VSCode-linux-x64-1.74.3
+drwxr-xr-x  8 root    root    4096 Jan 20  1970 WebStorm-2022.3.2
+drwxr-xr-x  8 root    root    4096 Oct  5 01:01 WebStorm-222.4345.14
+drwxr-xr-x  8 root    root    4096 Jan 20  1970 WebStorm-223.7571.168
+davidho@dphxps17:/opt$ 
+davidho@dphxps17:/opt$ ls -latr
+total 136
+drwxr-xr-x  8 root    root    4096 Jan 20  1970 WebStorm-223.7571.168
+drwxr-xr-x  8 root    root    4096 Jan 20  1970 RubyMine-2022.3
+drwxr-xr-x  8 root    root    4096 Jan 20  1970 idea-IU-223.7571.182
+drwxr-xr-x  9 root    root    4096 Jan 20  1970 pycharm-2022.3
+drwxr-xr-x  7 root    root    4096 Jan 20  1970 DataGrip-2022.3.3
+drwxr-xr-x  8 root    root    4096 Jan 20  1970 WebStorm-2022.3.2
+drwxr-xr-x  8 root    root    4096 Jan 20  1970 RubyMine-2022.3.2
+drwxr-xr-x  8 root    root    4096 Jan 20  1970 pycharm-community-2022.3.2
+drwxr-xr-x  9 root    root    4096 Jan 20  1970 pycharm-2022.3.2
+drwxr-xr-x  8 root    root    4096 Jan 20  1970 ideaIU-2022.3.2
+drwxr-xr-x  7 root    root    4096 Jan 20  1970 ideaIC-2022.3.2
+drwxr-xr-x 20 root    root    4096 May 24  2022 ..
+drwxr-xr-x  8 root    root    4096 May 26  2022 RubyMine-2022.1.1
+drwxr-xr-x  8 root    root    4096 May 26  2022 idea-IU-221.5591.52
+drwxr-xr-x  3 root    root    4096 May 26  2022 google
+drwxr-xr-x  8 root    root    4096 Sep  8 15:44 eclipse-java-2022-09-R-linux-gtk-x86_64
+drwxr-xr-x  8 root    root    4096 Sep  8 15:54 eclipse-jee-2022-09-R-linux-gtk-x86_64
+drwxr-xr-x  8 root    root    4096 Sep 13 08:36 idea-IU-222.4167.29
+drwxr-xr-x  9 davidho davidho 4096 Sep 15 07:57 sts-4.16.0.RELEASE
+drwxr-xr-x  8 root    root    4096 Oct  5 01:01 WebStorm-222.4345.14
+drwxr-xr-x  8 root    root    4096 Oct  5 01:01 RubyMine-2022.2.3
+drwxr-xr-x  8 root    root    4096 Oct  5 01:01 idea-IU-222.4345.14
+drwxr-xr-x  7 root    root    4096 Oct  5 01:01 idea-IC-222.4345.14
+drwxr-xr-x  8 root    root    4096 Oct 10 10:05 pycharm-community-2022.2.3
+drwxr-xr-x  9 root    root    4096 Oct 10 10:05 pycharm-2022.2.3
+drwxr-xr-x  5 davidho davidho 4096 Nov  1 11:44 VSCode-linux-x64-1.73.0
+drwxr-xr-x  5 davidho davidho 4096 Nov  8 22:55 VSCode-linux-x64-1.73.1
+drwxr-xr-x  4 root    root    4096 Nov 17 06:18 1Password
+drwxr-xr-x  8 davidho davidho 4096 Dec  1 15:13 eclipse-java-2022-12-R-linux-gtk-x86_64
+drwxr-xr-x  8 davidho davidho 4096 Dec  1 15:29 eclipse-jee-2022-12-R-linux-gtk-x86_64
+drwxr-xr-x  5 davidho davidho 4096 Dec  5 11:47 VSCode-linux-x64-1.74.0
+drwxr-xr-x  5 davidho davidho 4096 Jan  9 11:58 VSCode-linux-x64-1.74.3
+drwxr-xr-x  9 davidho davidho 4096 Jan 31 02:27 sts-4.17.2.RELEASE
+drwxr-xr-x 34 root    root    4096 Feb  1 08:26 .
+davidho@dphxps17:/opt$ 
+davidho@dphxps17:/opt$ cd ideaIU-2022.3.2/bin
+davidho@dphxps17:/opt/ideaIU-2022.3.2/bin$ 
+davidho@dphxps17:/opt/ideaIU-2022.3.2/bin$ pwd
+/opt/ideaIU-2022.3.2/bin
+davidho@dphxps17:/opt/ideaIU-2022.3.2/bin$ ls -latr
+total 9924
+-rwxr-xr-x 1 root root     808 Jan 20  1970 restart.py
+-rwxr-xr-x 1 root root 9612497 Jan 20  1970 repair
+-rwxr-xr-x 1 root root    1310 Jan 20  1970 remote-dev-server.sh
+-rwxr-xr-x 1 root root     831 Jan 20  1970 ltedit.sh
+-rw-r--r-- 1 root root  297424 Jan 20  1970 libdbm.so
+-rwxr-xr-x 1 root root     298 Jan 20  1970 inspect.sh
+-rw-r--r-- 1 root root   18064 Jan 20  1970 idea.svg
+-rwxr-xr-x 1 root root    9304 Jan 20  1970 idea.sh
+-rw-r--r-- 1 root root   11016 Jan 20  1970 idea.properties
+-rw-r--r-- 1 root root    9701 Jan 20  1970 idea.png
+-rw-r--r-- 1 root root     599 Jan 20  1970 idea64.vmoptions
+drwxr-xr-x 2 root root    4096 Jan 20  1970 icons
+-rwxr-xr-x 1 root root   24208 Jan 20  1970 fsnotifier
+-rwxr-xr-x 1 root root     223 Jan 20  1970 format.sh
+-rw-r--r-- 1 root root  124298 Jan 20  1970 brokenPlugins.db
+-rw-r--r-- 1 root root     136 Jan 20  1970 appletviewer.policy
+drwxr-xr-x 8 root root    4096 Jan 20  1970 ..
+drwxr-xr-x 3 root root    4096 Jan 20  1970 .
+davidho@dphxps17:/opt/ideaIU-2022.3.2/bin$ 
+davidho@dphxps17:/opt/ideaIU-2022.3.2/bin$ ./idea.sh
+
+
+//static void main(String[] args) {
+  println "Hello world!"
+
+  println("----------")
+  Properties sysprops = System.getProperties()
+  //println("sysprops = " + sysprops)
+  println("sysprops.getClass().getName() = " + sysprops.getClass().getName())
+  //  sysprops.list(System.out)
+  Set keyset = sysprops.keySet()
+  //println("keyset = " + sysprops)
+  println("keyset.getClass().getName() = " + keyset.getClass().getName())
+  List keylist = keyset as List
+  //println("keylist = " + sysprops)
+  println("keylist.getClass().getName() = " + keylist.getClass().getName())
+  Collections.sort(keylist)
+  println("----------")
+  keylist.each{key ->
+    // println(key)
+    println("key = " + key + "   value = " + sysprops.get(key))
+  }
+
+  println("----------")
+  Map envmap = System.getenv()
+  //println("envmap = " + envmap)
+  println("envmap.getClass().getName() = " + envmap.getClass().getName())
+  keyset = envmap.keySet()
+  keylistt = sysprops.keySet()
+  //println("keyset = " + sysprops)
+  println("keyset.getClass().getName() = " + keyset.getClass().getName())
+  keylist = keyset as List
+  //println("keylist = " + sysprops)
+  println("keylist.getClass().getName() = " + keylist.getClass().getName())
+  Collections.sort(keylist)
+  println("----------")
+  keylist.each{key ->
+    // println(key)
+    println("key = " + key + "   value = " + envmap.get(key))
+  }
+
+  println("----------")
+  println("done")
+
+//}
+
+> //static void main(String[] args) {
+> 
+> println "Hello world!"
+> 
+> println("----------")
+> Properties sysprops = System.getProperties()
+> //println("sysprops = " + sysprops)
+> println("sysprops.getClass().getName() = " + sysprops.getClass().getName())
+> //  sysprops.list(System.out)
+> Set keyset = sysprops.keySet()
+> //println("keyset = " + sysprops)
+> println("keyset.getClass().getName() = " + keyset.getClass().getName())
+> List keylist = keyset as List
+> //println("keylist = " + sysprops)
+> println("keylist.getClass().getName() = " + keylist.getClass().getName())
+> Collections.sort(keylist)
+> println("----------")
+> keylist.each{key ->
+>     // println(key)
+>     println("key = " + key + "   value = " + sysprops.get(key))
+> }
+> 
+> println("----------")
+> Map envmap = System.getenv()
+> //println("envmap = " + envmap)
+> println("envmap.getClass().getName() = " + envmap.getClass().getName())
+> keyset = envmap.keySet()
+> keylistt = sysprops.keySet()
+> //println("keyset = " + sysprops)
+> println("keyset.getClass().getName() = " + keyset.getClass().getName())
+> keylist = keyset as List
+> //println("keylist = " + sysprops)
+> println("keylist.getClass().getName() = " + keylist.getClass().getName())
+> Collections.sort(keylist)
+> println("----------")
+> keylist.each{key ->
+>     // println(key)
+>     println("key = " + key + "   value = " + envmap.get(key))
+> }
+> 
+> println("----------")
+> println("done")
+> 
+> //}
+Hello world!
+----------
+sysprops.getClass().getName() = java.util.Properties
+keyset.getClass().getName() = java.util.Collections$SynchronizedSet
+keylist.getClass().getName() = java.util.ArrayList
+----------
+key = file.encoding   value = UTF-8
+key = file.separator   value = /
+key = groovy.home   value = /home/davidho/IdeaProjects/myurlstool
+key = java.class.path   value = /home/davidho/IdeaProjects/myurlstool/lib/groovy-4.0.2.jar:.:/home/davidho/IdeaProjects/myurlstool/out/production/myurlstool:/home/davidho/IdeaProjects/myurlstool/lib/groovy-dateutil-4.0.2.jar:/home/davidho/IdeaProjects/myurlstool/lib/groovy-astbuilder-4.0.2.jar:/home/davidho/IdeaProjects/myurlstool/lib/groovy-datetime-4.0.2.jar:/home/davidho/IdeaProjects/myurlstool/lib/groovy-ant-4.0.2.jar:/home/davidho/IdeaProjects/myurlstool/lib/groovy-jsr223-4.0.2.jar:/home/davidho/IdeaProjects/myurlstool/lib/groovy-groovydoc-4.0.2.jar:/home/davidho/IdeaProjects/myurlstool/lib/groovy-json-4.0.2.jar:/home/davidho/IdeaProjects/myurlstool/lib/groovy-cli-picocli-4.0.2.jar:/home/davidho/IdeaProjects/myurlstool/lib/groovy-cli-commons-4.0.2.jar:/home/davidho/IdeaProjects/myurlstool/lib/groovy-docgenerator-4.0.2.jar:/home/davidho/IdeaProjects/myurlstool/lib/groovy-contracts-4.0.2.jar:/home/davidho/IdeaProjects/myurlstool/lib/groovy-macro-library-4.0.2.jar:/home/davidho/IdeaProjects/myurlstool/lib/groovy-groovysh-4.0.2.jar:/home/davidho/IdeaProjects/myurlstool/lib/groovy-jmx-4.0.2.jar:/home/davidho/IdeaProjects/myurlstool/lib/groovy-console-4.0.2.jar:/home/davidho/IdeaProjects/myurlstool/lib/groovy-servlet-4.0.2.jar:/home/davidho/IdeaProjects/myurlstool/lib/groovy-ginq-4.0.2.jar:/home/davidho/IdeaProjects/myurlstool/lib/groovy-sql-4.0.2.jar:/home/davidho/IdeaProjects/myurlstool/lib/groovy-nio-4.0.2.jar:/home/davidho/IdeaProjects/myurlstool/lib/groovy-testng-4.0.2.jar:/home/davidho/IdeaProjects/myurlstool/lib/groovy-toml-4.0.2.jar:/home/davidho/IdeaProjects/myurlstool/lib/groovy-typecheckers-4.0.2.jar:/home/davidho/IdeaProjects/myurlstool/lib/groovy-test-junit5-4.0.2.jar:/home/davidho/IdeaProjects/myurlstool/lib/groovy-templates-4.0.2.jar:/home/davidho/IdeaProjects/myurlstool/lib/groovy-xml-4.0.2.jar:/home/davidho/IdeaProjects/myurlstool/lib/groovy-test-4.0.2.jar:/home/davidho/IdeaProjects/myurlstool/lib/groovy-macro-4.0.2.jar:/home/davidho/IdeaProjects/myurlstool/lib/groovy-swing-4.0.2.jar
+key = java.class.version   value = 61.0
+key = java.home   value = /home/davidho/.sdkman/candidates/java/17.0.5-zulu
+key = java.io.tmpdir   value = /tmp
+key = java.library.path   value = /usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib
+key = java.runtime.name   value = OpenJDK Runtime Environment
+key = java.runtime.version   value = 17.0.5+8-LTS
+key = java.specification.name   value = Java Platform API Specification
+key = java.specification.vendor   value = Oracle Corporation
+key = java.specification.version   value = 17
+key = java.vendor   value = Azul Systems, Inc.
+key = java.vendor.url   value = http://www.azul.com/
+key = java.vendor.url.bug   value = http://www.azul.com/support/
+key = java.vendor.version   value = Zulu17.38+21-CA
+key = java.version   value = 17.0.5
+key = java.version.date   value = 2022-10-18
+key = java.vm.compressedOopsMode   value = Zero based
+key = java.vm.info   value = mixed mode, sharing
+key = java.vm.name   value = OpenJDK 64-Bit Server VM
+key = java.vm.specification.name   value = Java Virtual Machine Specification
+key = java.vm.specification.vendor   value = Oracle Corporation
+key = java.vm.specification.version   value = 17
+key = java.vm.vendor   value = Azul Systems, Inc.
+key = java.vm.version   value = 17.0.5+8-LTS
+key = jdk.debug   value = release
+key = line.separator   value = 
+
+key = native.encoding   value = UTF-8
+key = os.arch   value = amd64
+key = os.name   value = Linux
+key = os.version   value = 5.19.0-32-generic
+key = path.separator   value = :
+key = sun.arch.data.model   value = 64
+key = sun.boot.library.path   value = /home/davidho/.sdkman/candidates/java/17.0.5-zulu/lib
+key = sun.cpu.endian   value = little
+key = sun.io.unicode.encoding   value = UnicodeLittle
+key = sun.java.command   value = org.codehaus.groovy.tools.GroovyStarter --main groovy.ui.GroovyMain -p /opt/ideaIU-2022.3.2/plugins/Groovy/lib/console.groovy
+key = sun.java.launcher   value = SUN_STANDARD
+key = sun.jnu.encoding   value = UTF-8
+key = sun.management.compiler   value = HotSpot 64-Bit Tiered Compilers
+key = user.country   value = US
+key = user.dir   value = /home/davidho/IdeaProjects/myurlstool
+key = user.home   value = /home/davidho
+key = user.language   value = en
+key = user.name   value = davidho
+key = user.timezone   value = America/New_York
+----------
+envmap.getClass().getName() = java.util.Collections$UnmodifiableMap
+keyset.getClass().getName() = java.util.Collections$UnmodifiableSet
+keylist.getClass().getName() = java.util.ArrayList
+----------
+key = ANT_HOME   value = /home/davidho/.sdkman/candidates/ant/current
+key = ASCIIDOCTORJ_HOME   value = /home/davidho/.sdkman/candidates/asciidoctorj/current
+key = COLORTERM   value = truecolor
+key = DBUS_SESSION_BUS_ADDRESS   value = unix:path=/run/user/1000/bus
+key = DESKTOP_SESSION   value = ubuntu
+key = DISPLAY   value = :0
+key = GDMSESSION   value = ubuntu
+key = GNOME_DESKTOP_SESSION_ID   value = this-is-deprecated
+key = GNOME_SETUP_DISPLAY   value = :1
+key = GNOME_SHELL_SESSION_MODE   value = ubuntu
+key = GNOME_TERMINAL_SCREEN   value = /org/gnome/Terminal/screen/bb2059b3_03f3_4e49_ab75_4ed55ab3bc20
+key = GNOME_TERMINAL_SERVICE   value = :1.102
+key = GRADLE_HOME   value = /home/davidho/.sdkman/candidates/gradle/current
+key = GRAILS_HOME   value = /home/davidho/.sdkman/candidates/grails/current
+key = GROOVY_HOME   value = /home/davidho/.sdkman/candidates/groovy/current
+key = GTK_MODULES   value = gail:atk-bridge
+key = HOME   value = /home/davidho
+key = IM_CONFIG_PHASE   value = 1
+key = JAVA_HOME   value = /home/davidho/.sdkman/candidates/java/current
+key = LANG   value = en_US.UTF-8
+key = LESSCLOSE   value = /usr/bin/lesspipe %s %s
+key = LESSOPEN   value = | /usr/bin/lesspipe %s
+key = LOGNAME   value = davidho
+key = LS_COLORS   value = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+key = NVM_BIN   value = /home/davidho/.nvm/versions/node/v19.6.0/bin
+key = NVM_CD_FLAGS   value = 
+key = NVM_DIR   value = /home/davidho/.nvm
+key = NVM_INC   value = /home/davidho/.nvm/versions/node/v19.6.0/include/node
+key = OLDPWD   value = /opt
+key = PATH   value = /home/davidho/.sdkman/candidates/java/current/bin:/home/davidho/.sdkman/candidates/groovy/current/bin:/home/davidho/.sdkman/candidates/grails/current/bin:/home/davidho/.sdkman/candidates/gradle/current/bin:/home/davidho/.sdkman/candidates/asciidoctorj/current/bin:/home/davidho/.sdkman/candidates/ant/current/bin:/home/davidho/.nvm/versions/node/v19.6.0/bin:/home/davidho/.rbenv/shims:/home/davidho/.rbenv/bin:/home/davidho/.pyenv/plugins/pyenv-virtualenv/shims:/home/davidho/.pyenv/shims:/opt/VSCode-linux-x64-1.74.0/bin:/home/davidho/.pyenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+key = PWD   value = /home/davidho/IdeaProjects/myurlstool
+key = PYENV_ROOT   value = /home/davidho/.pyenv
+key = PYENV_SHELL   value = bash
+key = PYENV_VIRTUALENV_INIT   value = 1
+key = QT_ACCESSIBILITY   value = 1
+key = QT_IM_MODULE   value = ibus
+key = RBENV_SHELL   value = bash
+key = SDKMAN_CANDIDATES_API   value = https://api.sdkman.io/2
+key = SDKMAN_CANDIDATES_DIR   value = /home/davidho/.sdkman/candidates
+key = SDKMAN_DIR   value = /home/davidho/.sdkman
+key = SDKMAN_PLATFORM   value = linuxx64
+key = SDKMAN_VERSION   value = 5.16.0
+key = SESSION_MANAGER   value = local/dphxps17:@/tmp/.ICE-unix/2138,unix/dphxps17:/tmp/.ICE-unix/2138
+key = SHELL   value = /bin/bash
+key = SHLVL   value = 1
+key = SSH_AGENT_LAUNCHER   value = gnome-keyring
+key = SSH_AUTH_SOCK   value = /run/user/1000/keyring/ssh
+key = SYSTEMD_EXEC_PID   value = 2162
+key = TERM   value = xterm-256color
+key = USER   value = davidho
+key = USERNAME   value = davidho
+key = VTE_VERSION   value = 6800
+key = WAYLAND_DISPLAY   value = wayland-0
+key = XAUTHORITY   value = /run/user/1000/.mutter-Xwaylandauth.5M3K01
+key = XDG_CONFIG_DIRS   value = /etc/xdg/xdg-ubuntu:/etc/xdg
+key = XDG_CURRENT_DESKTOP   value = ubuntu:GNOME
+key = XDG_DATA_DIRS   value = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+key = XDG_MENU_PREFIX   value = gnome-
+key = XDG_RUNTIME_DIR   value = /run/user/1000
+key = XDG_SESSION_CLASS   value = user
+key = XDG_SESSION_DESKTOP   value = ubuntu
+key = XDG_SESSION_TYPE   value = wayland
+key = XMODIFIERS   value = @im=ibus
+key = _   value = ./idea.sh
+----------
+done
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp279g
+Name:          sbapp279grajarj11
+Package name:  ashburncode.sbapp279g
+Description:   spring boot 2.7.9, gradle project, jar packaging, java 11
+Dependencies:
+  Spring Web WEB
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories WEB
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp279m
+Name:          sbapp279mvnjarj11
+Package name:  ashburncode.sbapp279m
+Description:   spring boot 2.7.9, maven project, jar packaging, java 11
+Dependencies:
+  Spring Web WEB
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories WEB
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp303g
+Name:          sbapp303grajarj17
+Package name:  ashburncode.sbapp303g
+Description:   spring boot 3.0.3, gradle project, jar packaging, java 17
+Dependencies:
+  Spring Web WEB
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories WEB
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp303m
+Name:          sbapp303mvnjarj17
+Package name:  ashburncode.sbapp303m
+Description:   spring boot 3.0.3, maven project, jar packaging, java 17
+Dependencies:
+  Spring Web WEB
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories WEB
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ ls -latr ~/Downloads/ | grep -i sbapp
+-rw-rw-r--  1 davidho davidho      64423 Oct 21 07:36 sbapp1grajarj11.zip
+-rw-rw-r--  1 davidho davidho      64993 Nov  8 05:45 sbapp2.zip
+-rw-rw-r--  1 davidho davidho      65324 Nov 25 05:17 sbapp3.zip
+-rw-rw-r--  1 davidho davidho      65161 Jan 10 15:25 sbapp277g-orig.zip
+-rw-rw-r--  1 davidho davidho      63568 Jan 10 15:28 sbapp277m-orig.zip
+-rw-rw-r--  1 davidho davidho      65150 Jan 10 15:33 sbapp301g-orig.zip
+-rw-rw-r--  1 davidho davidho      63570 Jan 10 15:40 sbapp301m-orig.zip
+-rw-rw-r--  1 davidho davidho      65173 Jan 13 04:45 sbapp277g.zip
+-rw-rw-r--  1 davidho davidho      63571 Jan 13 04:52 sbapp277m.zip
+-rw-rw-r--  1 davidho davidho      65163 Jan 13 04:54 sbapp301g.zip
+-rw-rw-r--  1 davidho davidho      63572 Jan 13 04:55 sbapp301m.zip
+-rw-rw-r--  1 davidho davidho      65174 Jan 24 07:26 sbapp278g.zip
+-rw-rw-r--  1 davidho davidho      63573 Jan 24 07:28 sbapp278m.zip
+-rw-rw-r--  1 davidho davidho      65164 Jan 24 07:32 sbapp302g.zip
+-rw-rw-r--  1 davidho davidho      63572 Jan 24 07:34 sbapp302m.zip
+-rw-rw-r--  1 davidho davidho      65216 Mar  2 14:28 sbapp279g.zip
+-rw-rw-r--  1 davidho davidho      64975 Mar  2 14:31 sbapp279m.zip
+-rw-rw-r--  1 davidho davidho      65207 Mar  2 14:34 sbapp303g.zip
+-rw-rw-r--  1 davidho davidho      65069 Mar  2 14:36 sbapp303m.zip
+davidho@dphxps17:~$ 
+
+cp -p ~/Downloads/sbapp278m.zip ~/sbootprojs
+cp -p ~/Downloads/sbapp302g.zip ~/sbootprojs
+cp -p ~/Downloads/sbapp302m.zip ~/sbootprojs
+cp -p ~/Downloads/sbapp279g.zip ~/sbootprojs
+cp -p ~/Downloads/sbapp279m.zip ~/sbootprojs
+cp -p ~/Downloads/sbapp303g.zip ~/sbootprojs
+cp -p ~/Downloads/sbapp303m.zip ~/sbootprojs
+cd ~/sbootprojs
+7z x sbapp278m.zip
+7z x sbapp302g.zip
+7z x sbapp302m.zip
+7z x sbapp279g.zip
+7z x sbapp279m.zip
+7z x sbapp303g.zip
+7z x sbapp303m.zip
+
+davidho@dphxps17:~/sbootprojs$ 
+davidho@dphxps17:~/sbootprojs$ ls -latr
+total 1280
+-rw-rw-r--  1 davidho davidho 64423 Oct 21 07:36 sbapp1grajarj11.zip
+-rw-rw-r--  1 davidho davidho 64993 Nov  8 05:45 sbapp2.zip
+-rw-rw-r--  1 davidho davidho 65324 Nov 25 05:17 sbapp3.zip
+drwxr-xr-x  4 davidho davidho  4096 Nov 25 10:17 sbapp3
+drwxr-xr-x  6 davidho davidho  4096 Dec 14 07:44 sbapp2
+-rw-rw-r--  1 davidho davidho 65161 Jan 10 15:25 sbapp277g-orig.zip
+-rw-rw-r--  1 davidho davidho 63568 Jan 10 15:28 sbapp277m-orig.zip
+-rw-rw-r--  1 davidho davidho 65150 Jan 10 15:33 sbapp301g-orig.zip
+-rw-rw-r--  1 davidho davidho 63570 Jan 10 15:40 sbapp301m-orig.zip
+-rw-rw-r--  1 davidho davidho 63241 Jan 10 19:35 taco-cloud.zip
+drwxr-xr-x  4 davidho davidho  4096 Jan 11 00:35 taco-cloud
+-rw-rw-r--  1 davidho davidho 65173 Jan 13 04:45 sbapp277g.zip
+-rw-rw-r--  1 davidho davidho 63571 Jan 13 04:52 sbapp277m.zip
+-rw-rw-r--  1 davidho davidho 65163 Jan 13 04:54 sbapp301g.zip
+-rw-rw-r--  1 davidho davidho 63572 Jan 13 04:55 sbapp301m.zip
+drwxrwxr-x  4 davidho davidho  4096 Jan 13 09:45 sbapp277g
+drwxrwxr-x  4 davidho davidho  4096 Jan 13 09:52 sbapp277m
+drwxrwxr-x  4 davidho davidho  4096 Jan 13 09:55 sbapp301m
+-rw-rw-r--  1 davidho davidho 63573 Jan 24 07:28 sbapp278m.zip
+-rw-rw-r--  1 davidho davidho 65164 Jan 24 07:32 sbapp302g.zip
+-rw-rw-r--  1 davidho davidho 63572 Jan 24 07:34 sbapp302m.zip
+drwxr-xr-x  4 davidho davidho  4096 Jan 24 12:28 sbapp278m
+drwxr-xr-x  4 davidho davidho  4096 Jan 24 12:32 sbapp302g
+drwxr-xr-x  4 davidho davidho  4096 Jan 24 12:34 sbapp302m
+drwxrwxr-x  6 davidho davidho  4096 Feb  9 07:52 sbapp301g
+drwxr-x--- 55 davidho davidho  4096 Mar  2 10:23 ..
+-rw-rw-r--  1 davidho davidho 65216 Mar  2 14:28 sbapp279g.zip
+-rw-rw-r--  1 davidho davidho 64975 Mar  2 14:31 sbapp279m.zip
+-rw-rw-r--  1 davidho davidho 65207 Mar  2 14:34 sbapp303g.zip
+-rw-rw-r--  1 davidho davidho 65069 Mar  2 14:36 sbapp303m.zip
+drwxr-xr-x  4 davidho davidho  4096 Mar  2 19:28 sbapp279g
+drwxr-xr-x  4 davidho davidho  4096 Mar  2 19:31 sbapp279m
+drwxr-xr-x  4 davidho davidho  4096 Mar  2 19:34 sbapp303g
+drwxr-xr-x  4 davidho davidho  4096 Mar  2 19:36 sbapp303m
+drwxrwxr-x 16 davidho davidho  4096 Mar  3 03:27 .
+davidho@dphxps17:~/sbootprojs$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/sbootprojs/sbapp279g$ ls -latr
+total 44
+drwxr-xr-x  4 davidho davidho 4096 Mar  2 19:28 src
+-rw-r--r--  1 davidho davidho   31 Mar  2 19:28 settings.gradle.kts
+-rw-r--r--  1 davidho davidho 1689 Mar  2 19:28 HELP.md
+-rw-r--r--  1 davidho davidho 2838 Mar  2 19:28 gradlew.bat
+-rwxr-xr-x  1 davidho davidho 8188 Mar  2 19:28 gradlew
+drwxr-xr-x  3 davidho davidho 4096 Mar  2 19:28 gradle
+-rw-r--r--  1 davidho davidho  444 Mar  2 19:28 .gitignore
+-rw-r--r--  1 davidho davidho  660 Mar  2 19:28 build.gradle.kts
+drwxr-xr-x  4 davidho davidho 4096 Mar  2 19:28 .
+drwxrwxr-x 16 davidho davidho 4096 Mar  3 03:27 ..
+davidho@dphxps17:~/sbootprojs/sbapp279g$ 
+davidho@dphxps17:~/sbootprojs/sbapp279g$ du .
+68	./gradle/wrapper
+72	./gradle
+8	./src/test/java/ashburncode/sbapp279g
+12	./src/test/java/ashburncode
+16	./src/test/java
+20	./src/test
+4	./src/main/resources/static
+4	./src/main/resources/templates
+16	./src/main/resources
+8	./src/main/java/ashburncode/sbapp279g
+12	./src/main/java/ashburncode
+16	./src/main/java
+36	./src/main
+60	./src
+164	.
+davidho@dphxps17:~/sbootprojs/sbapp279g$ 
+davidho@dphxps17:~/sbootprojs/sbapp279g$ gradle --version
+
+------------------------------------------------------------
+Gradle 7.4.2
+------------------------------------------------------------
+
+Build time:   2022-03-31 15:25:29 UTC
+Revision:     540473b8118064efcc264694cbcaa4b677f61041
+
+Kotlin:       1.5.31
+Groovy:       3.0.9
+Ant:          Apache Ant(TM) version 1.10.11 compiled on July 10 2021
+JVM:          17.0.5 (Azul Systems, Inc. 17.0.5+8-LTS)
+OS:           Linux 5.19.0-32-generic amd64
+
+davidho@dphxps17:~/sbootprojs/sbapp279g$ 
+davidho@dphxps17:~/sbootprojs/sbapp279g$ ./gradlew --version
+Downloading https://services.gradle.org/distributions/gradle-7.6.1-bin.zip
+
+Exception in thread "main" java.net.UnknownHostException: services.gradle.org
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:639)
+	at java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:304)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:178)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
+	at java.base/sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:266)
+	at java.base/sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:380)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:193)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1245)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1131)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:179)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1668)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1592)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:224)
+	at org.gradle.wrapper.Download.downloadInternal(Download.java:100)
+	at org.gradle.wrapper.Download.download(Download.java:80)
+	at org.gradle.wrapper.Install$1.call(Install.java:83)
+	at org.gradle.wrapper.Install$1.call(Install.java:63)
+	at org.gradle.wrapper.ExclusiveFileAccessManager.access(ExclusiveFileAccessManager.java:69)
+	at org.gradle.wrapper.Install.createDist(Install.java:63)
+	at org.gradle.wrapper.WrapperExecutor.execute(WrapperExecutor.java:107)
+	at org.gradle.wrapper.GradleWrapperMain.main(GradleWrapperMain.java:63)
+davidho@dphxps17:~/sbootprojs/sbapp279g$ 
+
+davidho@dphxps17:~/sbootprojs/sbapp279g$ ./gradlew --version
+Downloading https://services.gradle.org/distributions/gradle-7.6.1-bin.zip
+...........10%............20%...........30%............40%............50%...........60%............70%............80%...........90%............100%
+
+Welcome to Gradle 7.6.1!
+
+Here are the highlights of this release:
+ - Added support for Java 19.
+ - Introduced `--rerun` flag for individual task rerun.
+ - Improved dependency block for test suites to be strongly typed.
+ - Added a pluggable system for Java toolchains provisioning.
+
+For more details see https://docs.gradle.org/7.6.1/release-notes.html
+
+
+------------------------------------------------------------
+Gradle 7.6.1
+------------------------------------------------------------
+
+Build time:   2023-02-24 13:54:42 UTC
+Revision:     3905fe8ac072bbd925c70ddbddddf4463341f4b4
+
+Kotlin:       1.7.10
+Groovy:       3.0.13
+Ant:          Apache Ant(TM) version 1.10.11 compiled on July 10 2021
+JVM:          17.0.5 (Azul Systems, Inc. 17.0.5+8-LTS)
+OS:           Linux 5.19.0-32-generic amd64
+
+davidho@dphxps17:~/sbootprojs/sbapp279g$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/sbootprojs/sbapp303g$ 
+davidho@dphxps17:~/sbootprojs/sbapp303g$ ls -latr
+total 44
+drwxr-xr-x  4 davidho davidho 4096 Mar  2 19:34 src
+-rw-r--r--  1 davidho davidho   31 Mar  2 19:34 settings.gradle.kts
+-rw-r--r--  1 davidho davidho 1689 Mar  2 19:34 HELP.md
+-rw-r--r--  1 davidho davidho 2838 Mar  2 19:34 gradlew.bat
+-rwxr-xr-x  1 davidho davidho 8188 Mar  2 19:34 gradlew
+drwxr-xr-x  3 davidho davidho 4096 Mar  2 19:34 gradle
+-rw-r--r--  1 davidho davidho  444 Mar  2 19:34 .gitignore
+-rw-r--r--  1 davidho davidho  651 Mar  2 19:34 build.gradle.kts
+drwxr-xr-x  4 davidho davidho 4096 Mar  2 19:34 .
+drwxrwxr-x 16 davidho davidho 4096 Mar  3 03:27 ..
+davidho@dphxps17:~/sbootprojs/sbapp303g$ 
+davidho@dphxps17:~/sbootprojs/sbapp303g$ du .
+68	./gradle/wrapper
+72	./gradle
+8	./src/test/java/ashburncode/sbapp303g
+12	./src/test/java/ashburncode
+16	./src/test/java
+20	./src/test
+4	./src/main/resources/static
+4	./src/main/resources/templates
+16	./src/main/resources
+8	./src/main/java/ashburncode/sbapp303g
+12	./src/main/java/ashburncode
+16	./src/main/java
+36	./src/main
+60	./src
+164	.
+davidho@dphxps17:~/sbootprojs/sbapp303g$ 
+davidho@dphxps17:~/sbootprojs/sbapp303g$ gradle --version
+
+------------------------------------------------------------
+Gradle 7.4.2
+------------------------------------------------------------
+
+Build time:   2022-03-31 15:25:29 UTC
+Revision:     540473b8118064efcc264694cbcaa4b677f61041
+
+Kotlin:       1.5.31
+Groovy:       3.0.9
+Ant:          Apache Ant(TM) version 1.10.11 compiled on July 10 2021
+JVM:          17.0.5 (Azul Systems, Inc. 17.0.5+8-LTS)
+OS:           Linux 5.19.0-32-generic amd64
+
+davidho@dphxps17:~/sbootprojs/sbapp303g$ 
+davidho@dphxps17:~/sbootprojs/sbapp303g$ ./gradlew --version
+
+------------------------------------------------------------
+Gradle 7.6.1
+------------------------------------------------------------
+
+Build time:   2023-02-24 13:54:42 UTC
+Revision:     3905fe8ac072bbd925c70ddbddddf4463341f4b4
+
+Kotlin:       1.7.10
+Groovy:       3.0.13
+Ant:          Apache Ant(TM) version 1.10.11 compiled on July 10 2021
+JVM:          17.0.5 (Azul Systems, Inc. 17.0.5+8-LTS)
+OS:           Linux 5.19.0-32-generic amd64
+
+davidho@dphxps17:~/sbootprojs/sbapp303g$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://www.javadevjournal.com/spring-boot/spring-boot-mysql/
+https://hevodata.com/learn/spring-boot-mysql/
+
+https://spring.io/guides/gs/accessing-data-mysql/
+Download and unzip the source repository for this guide, 
+or clone it using Git: git clone https://github.com/spring-guides/gs-accessing-data-mysql.git
+
+davidho@dphxps17:~$ ls -latr ~/Downloads/ | tail
+-rw-rw-r--  1 davidho davidho   10291167 Feb 15 12:10 javafx-8u361-apidocs.zip
+-rw-rw-r--  1 davidho davidho   54787171 Feb 15 12:34 jdk-8-linux-i586-demos.tar.gz
+-rw-rw-r--  1 davidho davidho   54881447 Feb 15 12:35 jdk-8-linux-x64-demos.tar.gz
+drwxr-x--- 55 davidho davidho       4096 Mar  2 10:23 ..
+-rw-rw-r--  1 davidho davidho      65216 Mar  2 14:28 sbapp279g.zip
+-rw-rw-r--  1 davidho davidho      64975 Mar  2 14:31 sbapp279m.zip
+-rw-rw-r--  1 davidho davidho      65207 Mar  2 14:34 sbapp303g.zip
+-rw-rw-r--  1 davidho davidho      65069 Mar  2 14:36 sbapp303m.zip
+-rw-rw-r--  1 davidho davidho     243688 Mar  2 14:50 gs-accessing-data-mysql-main.zip
+drwxr-xr-x  6 davidho davidho      20480 Mar  2 14:50 .
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ date
+Fri Mar  3 03:22:05 AM EST 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~/sbootprojs$ 
+davidho@dphxps17:~/sbootprojs$ cp -p ~/Downloads/gs-accessing-data-mysql-main.zip  .
+davidho@dphxps17:~/sbootprojs$ 7z x gs-accessing-data-mysql-main.zip 
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,16 CPUs 11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz (806D1),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 243688 bytes (238 KiB)
+
+Extracting archive: gs-accessing-data-mysql-main.zip
+--
+Path = gs-accessing-data-mysql-main.zip
+Type = zip
+Physical Size = 243688
+Comment = 902d7ceb59c7f4f6dc8ba8f3f367bda9359d1c23
+
+Everything is Ok
+
+Folders: 31
+Files: 38
+Size:       307911
+Compressed: 243688
+davidho@dphxps17:~/sbootprojs$ 
+davidho@dphxps17:~/sbootprojs$ cd gs-accessing-data-mysql-main/
+davidho@dphxps17:~/sbootprojs/gs-accessing-data-mysql-main$ du 
+8	./test
+60	./initial/.mvn/wrapper
+64	./initial/.mvn
+68	./initial/gradle/wrapper
+72	./initial/gradle
+8	./initial/src/test/java/com/example/accessingdatamysql
+12	./initial/src/test/java/com/example
+16	./initial/src/test/java/com
+20	./initial/src/test/java
+24	./initial/src/test
+8	./initial/src/main/resources
+8	./initial/src/main/java/com/example/accessingdatamysql
+12	./initial/src/main/java/com/example
+16	./initial/src/main/java/com
+20	./initial/src/main/java
+32	./initial/src/main
+60	./initial/src
+244	./initial
+60	./complete/.mvn/wrapper
+64	./complete/.mvn
+68	./complete/gradle/wrapper
+72	./complete/gradle
+8	./complete/src/main/resources
+20	./complete/src/main/java/com/example/accessingdatamysql
+24	./complete/src/main/java/com/example
+28	./complete/src/main/java/com
+32	./complete/src/main/java
+44	./complete/src/main
+48	./complete/src
+236	./complete
+532	.
+davidho@dphxps17:~/sbootprojs/gs-accessing-data-mysql-main$ 
+davidho@dphxps17:~/sbootprojs/gs-accessing-data-mysql-main$ 
+
+
+$ sudo mysql --password
+mysql> create database db_example; -- Creates the new database
+mysql> create user 'springuser'@'%' identified by 'ThePassword'; -- Creates the user
+mysql> grant all on db_example.* to 'springuser'@'%'; -- Gives all privileges to the new user on the newly created database
+
+davidho@dphxps17:~/sbootprojs$ mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 8.0.32-0ubuntu0.22.04.2 (Ubuntu)
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create database db_example; -- Creates the new database
+ERROR 1007 (HY000): Can't create database 'db_example'; database exists
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| db_example         |
+| depot2_development |
+| dphpyapp1          |
+| dphpyapp2          |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sbapp2db           |
+| sbapp3db           |
+| sys                |
+| tacocloud          |
+| wire2_development  |
+| wire3_development  |
+| wire4_development  |
+| wire5_development  |
+| wire6_development  |
++--------------------+
+16 rows in set (0.00 sec)
+
+mysql> 
+mysql> quit;
+Bye
+davidho@dphxps17:~/sbootprojs$ mysql -u springuser -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 11
+Server version: 8.0.32-0ubuntu0.22.04.2 (Ubuntu)
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/db_example
+spring.datasource.username=springuser
+spring.datasource.password=ThePassword
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+#spring.jpa.show-sql: true
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/sbootprojs/gs-accessing-data-mysql-main$ cd complete/
+davidho@dphxps17:~/sbootprojs/gs-accessing-data-mysql-main/complete$ code .
+davidho@dphxps17:~/sbootprojs/gs-accessing-data-mysql-main/complete$ 
+davidho@dphxps17:~/sbootprojs/gs-accessing-data-mysql-main/complete$ 
+davidho@dphxps17:~/sbootprojs/gs-accessing-data-mysql-main/complete$ 
+davidho@dphxps17:~/sbootprojs/gs-accessing-data-mysql-main/complete$ 
+davidho@dphxps17:~/sbootprojs/gs-accessing-data-mysql-main/complete$ ./gradlew --version
+Downloading https://services.gradle.org/distributions/gradle-7.4.2-bin.zip
+...........10%...........20%...........30%...........40%...........50%...........60%...........70%...........80%...........90%...........100%
+
+------------------------------------------------------------
+Gradle 7.4.2
+------------------------------------------------------------
+
+Build time:   2022-03-31 15:25:29 UTC
+Revision:     540473b8118064efcc264694cbcaa4b677f61041
+
+Kotlin:       1.5.31
+Groovy:       3.0.9
+Ant:          Apache Ant(TM) version 1.10.11 compiled on July 10 2021
+JVM:          17.0.5 (Azul Systems, Inc. 17.0.5+8-LTS)
+OS:           Linux 5.19.0-32-generic amd64
+
+davidho@dphxps17:~/sbootprojs/gs-accessing-data-mysql-main/complete$ ./gradlew bootRun
+Starting a Gradle Daemon, 1 incompatible and 1 stopped Daemons could not be reused, use --status for details
+
+> Task :bootRun
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.0.0)
+
+2023-03-03T04:08:03.508-05:00  INFO 25243 --- [           main] c.e.a.AccessingDataMysqlApplication      : Starting AccessingDataMysqlApplication using Java 17.0.5 with PID 25243 (/home/davidho/sbootprojs/gs-accessing-data-mysql-main/complete/build/classes/java/main started by davidho in /home/davidho/sbootprojs/gs-accessing-data-mysql-main/complete)
+2023-03-03T04:08:03.509-05:00  INFO 25243 --- [           main] c.e.a.AccessingDataMysqlApplication      : No active profile set, falling back to 1 default profile: "default"
+2023-03-03T04:08:03.750-05:00  INFO 25243 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-03-03T04:08:03.771-05:00  INFO 25243 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 1 JPA repository interfaces.
+2023-03-03T04:08:03.990-05:00  INFO 25243 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-03-03T04:08:03.996-05:00  INFO 25243 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-03T04:08:03.997-05:00  INFO 25243 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.1]
+2023-03-03T04:08:04.041-05:00  INFO 25243 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-03T04:08:04.042-05:00  INFO 25243 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 509 ms
+2023-03-03T04:08:04.112-05:00  INFO 25243 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-03-03T04:08:04.132-05:00  INFO 25243 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.5.Final
+2023-03-03T04:08:04.197-05:00  WARN 25243 --- [           main] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-03-03T04:08:04.250-05:00  INFO 25243 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-03-03T04:08:04.421-05:00  INFO 25243 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@36510e73
+2023-03-03T04:08:04.422-05:00  INFO 25243 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-03-03T04:08:04.454-05:00  INFO 25243 --- [           main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-03-03T04:08:04.804-05:00  INFO 25243 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-03-03T04:08:04.807-05:00  INFO 25243 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-03-03T04:08:04.924-05:00  WARN 25243 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-03-03T04:08:05.066-05:00  INFO 25243 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-03-03T04:08:05.070-05:00  INFO 25243 --- [           main] c.e.a.AccessingDataMysqlApplication      : Started AccessingDataMysqlApplication in 1.733 seconds (process running for 1.86)
+
+Test the Application
+
+Now that the application is running, you can test it by using curl or some similar tool. You have two HTTP endpoints that you can test:
+
+GET localhost:8080/demo/all: Gets all data. POST localhost:8080/demo/add: Adds one user to the data.
+
+The following curl command adds a user:
+
+$ curl http://localhost:8080/demo/add -d name=First -d email=someemail@someemailprovider.com
+
+The reply should be as follows:
+
+Saved
+
+The following command shows all the users:
+
+$ curl http://localhost:8080/demo/all
+
+The reply should be as follows:
+
+[{"id":1,"name":"First","email":"someemail@someemailprovider.com"}]
+
+
+davidho@dphxps17:~$ curl localhost:8080/demo/all
+[]
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ curl http://localhost:8080/demo/add -d name=First -d email=someemail@someemailprovider.com
+Saved
+davidho@dphxps1curl localhost:8080/demo/all
+[{"id":1,"name":"First","email":"someemail@someemailprovider.com"}]
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 22
+Server version: 8.0.32-0ubuntu0.22.04.2 (Ubuntu)
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use db_example;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++----------------------+
+| Tables_in_db_example |
++----------------------+
+| user                 |
+| user_seq             |
++----------------------+
+2 rows in set (0.01 sec)
+
+mysql> select * from user;
++----+---------------------------------+-------+
+| id | email                           | name  |
++----+---------------------------------+-------+
+|  1 | someemail@someemailprovider.com | First |
++----+---------------------------------+-------+
+1 row in set (0.00 sec)
+
+mysql> select * from user_seq;
++----------+
+| next_val |
++----------+
+|       51 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://www.baeldung.com/spring-boot-logging
+https://www.baeldung.com/spring-boot-embedded-tomcat-logs
+
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/db_example
+spring.datasource.username=springuser
+spring.datasource.password=ThePassword
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+#spring.jpa.show-sql: true
+
+# Fri Mar  3 04:29:39 AM EST 2023
+# https://www.baeldung.com/spring-boot-embedded-tomcat-logs
+server.tomcat.accesslog.enabled=true
+
+server.tomcat.accesslog.suffix=.log
+server.tomcat.accesslog.prefix=access_log
+server.tomcat.accesslog.file-date-format=.yyyy-MM-dd
+server.tomcat.basedir=tomcat
+server.tomcat.accesslog.directory=logs
+server.tomcat.accesslog.pattern=common
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+curl localhost:8080/demo/all
+curl http://localhost:8080/demo/add -d name=First -d email=someemail@someemailprovider.com
+curl localhost:8080/demo/all
+curl http://localhost:8080/demo/add -d name=Second -d email=anotheremail@anotheremailprovider.com
+curl localhost:8080/demo/all
+curl http://localhost:8080/demo/add -d name=Third -d email=yetanotheremail@yetanotheremailprovider.com
+curl http://localhost:8080/demo/add -d name=Fourth -d email=stillanotheremail@stillanotheremailprovider.com
+
+127.0.0.1 - - [03/Mar/2023:04:37:56 -0500] "GET /demo/all HTTP/1.1" 200 151
+127.0.0.1 - - [03/Mar/2023:04:40:48 -0500] "POST /demo/add HTTP/1.1" 200 5
+127.0.0.1 - - [03/Mar/2023:04:41:02 -0500] "GET /demo/all HTTP/1.1" 200 230
+127.0.0.1 - - [03/Mar/2023:04:41:05 -0500] "GET /demo/all HTTP/1.1" 200 230
+127.0.0.1 - - [03/Mar/2023:04:41:11 -0500] "GET /demo/all HTTP/1.1" 200 230
+127.0.0.1 - - [03/Mar/2023:04:41:52 -0500] "POST /demo/add HTTP/1.1" 200 5
+127.0.0.1 - - [03/Mar/2023:04:41:56 -0500] "GET /demo/all HTTP/1.1" 200 315
+127.0.0.1 - - [03/Mar/2023:04:42:02 -0500] "GET /demo/all HTTP/1.1" 200 315
+
+mysql> show tables;
++----------------------+
+| Tables_in_db_example |
++----------------------+
+| user                 |
+| user_seq             |
++----------------------+
+2 rows in set (0.01 sec)
+
+mysql> select * from user;
++----+-------------------------------------------------+--------+
+| id | email                                           | name   |
++----+-------------------------------------------------+--------+
+|  1 | someemail@someemailprovider.com                 | First  |
+|  2 | anotheremail@anotheremailprovider.com           | Second |
+| 52 | yetanotheremail@yetanotheremailprovider.com     | Third  |
+| 53 | stillanotheremail@stillanotheremailprovider.com | Fourth |
++----+-------------------------------------------------+--------+
+4 rows in set (0.00 sec)
+
+mysql> select * from user_seq;
++----------+
+| next_val |
++----------+
+|      151 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Dependencies
+  Spring Web Web
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Boot DevTools Developer Tools
+    Provides fast application restarts, LiveReload, and configurations for enhanced development experience.
+  Lombok Developer Tools
+    Java annotation library which helps to reduce boilerplate code.
+  Spring Web Services Web
+    Facilitates contract-first SOAP development. Allows for the creation of flexible web services using one of the many ways to manipulate XML payloads.
+  Thymeleaf Template Engines
+    A modern server-side Java template engine for both web and standalone environments. Allows HTML to be correctly displayed in browsers and as static prototypes.
+  Jersey Web
+    Framework for developing RESTful Web Services in Java that provides support for JAX-RS APIs.
+  Spring Security Security
+    Highly customizable authentication and access-control framework for Spring applications.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.
+  Validation I/O
+    Bean Validation with Hibernate validator.
+  Spring Boot Actuator Ops
+    Supports built in (or custom) endpoints that let you monitor and manage your application - such as application health, metrics, sessions, etc.
+  Quartz Scheduler I/O
+    Schedule jobs using Quartz.
+
+
+dependencies {
+  implementation 'org.springframework.boot:spring-boot-starter-actuator'
+  implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+  implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+  implementation 'org.springframework.boot:spring-boot-starter-jersey'
+  implementation 'org.springframework.boot:spring-boot-starter-quartz'
+  implementation 'org.springframework.boot:spring-boot-starter-security'
+  implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+  implementation 'org.springframework.boot:spring-boot-starter-validation'
+  implementation 'org.springframework.boot:spring-boot-starter-web'
+  implementation 'org.springframework.boot:spring-boot-starter-web-services'
+  implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
+  compileOnly 'org.projectlombok:lombok'
+  developmentOnly 'org.springframework.boot:spring-boot-devtools'
+  runtimeOnly 'com.mysql:mysql-connector-j'
+  annotationProcessor 'org.projectlombok:lombok'
+  testImplementation 'org.springframework.boot:spring-boot-starter-test'
+  testImplementation 'org.springframework.security:spring-security-test'
+}
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html
+
+  implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+  management.endpoints.jmx.exposure.include=health,info
+  management.endpoints.web.exposure.include=*
+
+@Configuration(proxyBeanMethods = false)
+public class MySecurityConfiguration {
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http.securityMatcher(EndpointRequest.toAnyEndpoint());
+        http.authorizeHttpRequests((requests) -> requests.anyRequest().hasRole("ENDPOINT_ADMIN"));
+        http.httpBasic(withDefaults());
+        return http.build();
+    }
+}
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+/home/davidho/sbootprojs/gs-accessing-data-mysql-main/complete/build.gradle
+
+plugins {
+	id 'org.springframework.boot' version '3.0.0'
+	id 'io.spring.dependency-management' version '1.1.0'
+	id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+  implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	runtimeOnly 'mysql:mysql-connector-java'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+	useJUnitPlatform()
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+/home/davidho/sbootprojs/gs-accessing-data-mysql-main/complete/src/main/resources/application.properties
+
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/db_example
+spring.datasource.username=springuser
+spring.datasource.password=ThePassword
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+#spring.jpa.show-sql: true
+
+# Fri Mar  3 04:29:39 AM EST 2023
+# https://www.baeldung.com/spring-boot-embedded-tomcat-logs
+server.tomcat.accesslog.enabled=true
+
+server.tomcat.accesslog.suffix=.log
+server.tomcat.accesslog.prefix=access_log
+server.tomcat.accesslog.file-date-format=.yyyy-MM-dd
+server.tomcat.basedir=tomcat
+server.tomcat.accesslog.directory=logs
+server.tomcat.accesslog.pattern=common
+
+# Fri Mar  3 05:04:20 AM EST 2023
+# https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html
+management.endpoints.web.exposure.include=*
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+curl localhost:8080/actuator
+curl localhost:8080/actuator/health
+curl localhost:8080/actuator/env
+curl localhost:8080/actuator/info
+
+davidho@dphxps17:~/sbootprojs/gs-accessing-data-mysql-main/complete$ 
+davidho@dphxps17:~/sbootprojs/gs-accessing-data-mysql-main/complete$ curl localhost:8080/actuator
+{"_links":{"self":{"href":"http://localhost:8080/actuator","templated":false},"beans":{"href":"http://localhost:8080/actuator/beans","templated":false},"caches-cache":{"href":"http://localhost:8080/actuator/caches/{cache}","templated":true},"caches":{"href":"http://localhost:8080/actuator/caches","templated":false},"health":{"href":"http://localhost:8080/actuator/health","templated":false},"health-path":{"href":"http://localhost:8080/actuator/health/{*path}","templated":true},"info":{"href":"http://localhost:8080/actuator/info","templated":false},"conditions":{"href":"http://localhost:8080/actuator/conditions","templated":false},"configprops":{"href":"http://localhost:8080/actuator/configprops","templated":false},"configprops-prefix":{"href":"http://localhost:8080/actuator/configprops/{prefix}","templated":true},"env":{"href":"http://localhost:8080/actuator/env","templated":false},"env-toMatch":{"href":"http://localhost:8080/actuator/env/{toMatch}","templated":true},"loggers":{"href":"http://localhost:8080/actuator/loggers","templated":false},"loggers-name":{"href":"http://localhost:8080/actuator/loggers/{name}","templated":true},"heapdump":{"href":"http://localhost:8080/actuator/heapdump","templated":false},"threaddump":{"href":"http://localhost:8080/actuator/threaddump","templated":false},"metrics-requiredMetricName":{"href":"http://localhost:8080/actuator/metrics/{requiredMetricName}","templated":true},"metrics":{"href":"http://localhost:8080/actuator/metrics","templated":false},"scheduledtasks":{"href":"http://localhost:8080/actuator/scheduledtasks","templated":false},"mappings":{"href":"http://localhost:8080/actuator/mappings","templated":false}}}davidho@dphxps17:~/sbootprojs/gs-accessing-data-mysql-main/complete$ 
+davidho@dphxps17:~/sbootprojs/gs-accessing-data-mysql-main/complete$ 
+davidho@dphxps17:~/sbootprojs/gs-accessing-data-mysql-main/complete$ curl localhost:8080/actuator/health
+{"status":"UP"}davidho@dphxps17:~/sbootprojs/gs-accessing-data-mysql-main/complete$ 
+davidho@dphxps17:~/sbootprojs/gs-accessing-data-mysql-main/complete$ 
+davidho@dphxps17:~/sbootprojs/gs-accessing-data-mysql-main/complete$ curl localhost:8080/actuator/env
+{"activeProfiles":[],"propertySources":[{"name":"server.ports","properties":{"local.server.port":{"value":"******"}}},{"name":"servletContextInitParams","properties":{}},{"name":"systemProperties","properties":{"java.specification.version":{"value":"******"},"sun.jnu.encoding":{"value":"******"},"java.class.path":{"value":"******"},"java.vm.vendor":{"value":"******"},"sun.arch.data.model":{"value":"******"},"user.variant":{"value":"******"},"java.vendor.url":{"value":"******"},"catalina.useNaming":{"value":"******"},"user.timezone":{"value":"******"},"org.jboss.logging.provider":{"value":"******"},"java.vm.specification.version":{"value":"******"},"os.name":{"value":"******"},"user.country":{"value":"******"},"sun.java.launcher":{"value":"******"},"sun.boot.library.path":{"value":"******"},"sun.java.command":{"value":"******"},"jdk.debug":{"value":"******"},"sun.cpu.endian":{"value":"******"},"user.home":{"value":"******"},"user.language":{"value":"******"},"java.specification.vendor":{"value":"******"},"java.version.date":{"value":"******"},"java.home":{"value":"******"},"file.separator":{"value":"******"},"java.vm.compressedOopsMode":{"value":"******"},"line.separator":{"value":"******"},"java.vm.specification.vendor":{"value":"******"},"java.specification.name":{"value":"******"},"FILE_LOG_CHARSET":{"value":"******"},"java.awt.headless":{"value":"******"},"sun.management.compiler":{"value":"******"},"java.runtime.version":{"value":"******"},"user.name":{"value":"******"},"path.separator":{"value":"******"},"os.version":{"value":"******"},"java.runtime.name":{"value":"******"},"file.encoding":{"value":"******"},"java.vm.name":{"value":"******"},"java.vendor.version":{"value":"******"},"java.vendor.url.bug":{"value":"******"},"java.io.tmpdir":{"value":"******"},"catalina.home":{"value":"******"},"com.zaxxer.hikari.pool_number":{"value":"******"},"java.version":{"value":"******"},"user.dir":{"value":"******"},"os.arch":{"value":"******"},"java.vm.specification.name":{"value":"******"},"PID":{"value":"******"},"CONSOLE_LOG_CHARSET":{"value":"******"},"catalina.base":{"value":"******"},"native.encoding":{"value":"******"},"java.library.path":{"value":"******"},"java.vm.info":{"value":"******"},"java.vendor":{"value":"******"},"java.vm.version":{"value":"******"},"sun.io.unicode.encoding":{"value":"******"},"java.class.version":{"value":"******"}}},{"name":"systemEnvironment","properties":{"PATH":{"value":"******","origin":"System Environment Property \"PATH\""},"PYENV_SHELL":{"value":"******","origin":"System Environment Property \"PYENV_SHELL\""},"XAUTHORITY":{"value":"******","origin":"System Environment Property \"XAUTHORITY\""},"SDKMAN_VERSION":{"value":"******","origin":"System Environment Property \"SDKMAN_VERSION\""},"XMODIFIERS":{"value":"******","origin":"System Environment Property \"XMODIFIERS\""},"XDG_DATA_DIRS":{"value":"******","origin":"System Environment Property \"XDG_DATA_DIRS\""},"GDMSESSION":{"value":"******","origin":"System Environment Property \"GDMSESSION\""},"GRAILS_HOME":{"value":"******","origin":"System Environment Property \"GRAILS_HOME\""},"ASCIIDOCTORJ_HOME":{"value":"******","origin":"System Environment Property \"ASCIIDOCTORJ_HOME\""},"RBENV_SHELL":{"value":"******","origin":"System Environment Property \"RBENV_SHELL\""},"DBUS_SESSION_BUS_ADDRESS":{"value":"******","origin":"System Environment Property \"DBUS_SESSION_BUS_ADDRESS\""},"XDG_CURRENT_DESKTOP":{"value":"******","origin":"System Environment Property \"XDG_CURRENT_DESKTOP\""},"COLORTERM":{"value":"******","origin":"System Environment Property \"COLORTERM\""},"SDKMAN_DIR":{"value":"******","origin":"System Environment Property \"SDKMAN_DIR\""},"SESSION_MANAGER":{"value":"******","origin":"System Environment Property \"SESSION_MANAGER\""},"USERNAME":{"value":"******","origin":"System Environment Property \"USERNAME\""},"LOGNAME":{"value":"******","origin":"System Environment Property \"LOGNAME\""},"PWD":{"value":"******","origin":"System Environment Property \"PWD\""},"IM_CONFIG_PHASE":{"value":"******","origin":"System Environment Property \"IM_CONFIG_PHASE\""},"PYENV_VIRTUALENV_INIT":{"value":"******","origin":"System Environment Property \"PYENV_VIRTUALENV_INIT\""},"NVM_CD_FLAGS":{"value":"******","origin":"System Environment Property \"NVM_CD_FLAGS\""},"SHELL":{"value":"******","origin":"System Environment Property \"SHELL\""},"LESSOPEN":{"value":"******","origin":"System Environment Property \"LESSOPEN\""},"SDKMAN_CANDIDATES_API":{"value":"******","origin":"System Environment Property \"SDKMAN_CANDIDATES_API\""},"PYENV_ROOT":{"value":"******","origin":"System Environment Property \"PYENV_ROOT\""},"OLDPWD":{"value":"******","origin":"System Environment Property \"OLDPWD\""},"GNOME_DESKTOP_SESSION_ID":{"value":"******","origin":"System Environment Property \"GNOME_DESKTOP_SESSION_ID\""},"GNOME_TERMINAL_SCREEN":{"value":"******","origin":"System Environment Property \"GNOME_TERMINAL_SCREEN\""},"GTK_MODULES":{"value":"******","origin":"System Environment Property \"GTK_MODULES\""},"SYSTEMD_EXEC_PID":{"value":"******","origin":"System Environment Property \"SYSTEMD_EXEC_PID\""},"LS_COLORS":{"value":"******","origin":"System Environment Property \"LS_COLORS\""},"XDG_SESSION_DESKTOP":{"value":"******","origin":"System Environment Property \"XDG_SESSION_DESKTOP\""},"GNOME_SETUP_DISPLAY":{"value":"******","origin":"System Environment Property \"GNOME_SETUP_DISPLAY\""},"SSH_AGENT_LAUNCHER":{"value":"******","origin":"System Environment Property \"SSH_AGENT_LAUNCHER\""},"SHLVL":{"value":"******","origin":"System Environment Property \"SHLVL\""},"LESSCLOSE":{"value":"******","origin":"System Environment Property \"LESSCLOSE\""},"QT_IM_MODULE":{"value":"******","origin":"System Environment Property \"QT_IM_MODULE\""},"JAVA_HOME":{"value":"******","origin":"System Environment Property \"JAVA_HOME\""},"TERM":{"value":"******","origin":"System Environment Property \"TERM\""},"XDG_CONFIG_DIRS":{"value":"******","origin":"System Environment Property \"XDG_CONFIG_DIRS\""},"GNOME_TERMINAL_SERVICE":{"value":"******","origin":"System Environment Property \"GNOME_TERMINAL_SERVICE\""},"LANG":{"value":"******","origin":"System Environment Property \"LANG\""},"XDG_SESSION_TYPE":{"value":"******","origin":"System Environment Property \"XDG_SESSION_TYPE\""},"GRADLE_HOME":{"value":"******","origin":"System Environment Property \"GRADLE_HOME\""},"ANT_HOME":{"value":"******","origin":"System Environment Property \"ANT_HOME\""},"GROOVY_HOME":{"value":"******","origin":"System Environment Property \"GROOVY_HOME\""},"DISPLAY":{"value":"******","origin":"System Environment Property \"DISPLAY\""},"NVM_INC":{"value":"******","origin":"System Environment Property \"NVM_INC\""},"WAYLAND_DISPLAY":{"value":"******","origin":"System Environment Property \"WAYLAND_DISPLAY\""},"SDKMAN_CANDIDATES_DIR":{"value":"******","origin":"System Environment Property \"SDKMAN_CANDIDATES_DIR\""},"XDG_SESSION_CLASS":{"value":"******","origin":"System Environment Property \"XDG_SESSION_CLASS\""},"_":{"value":"******","origin":"System Environment Property \"_\""},"NVM_DIR":{"value":"******","origin":"System Environment Property \"NVM_DIR\""},"DESKTOP_SESSION":{"value":"******","origin":"System Environment Property \"DESKTOP_SESSION\""},"SDKMAN_PLATFORM":{"value":"******","origin":"System Environment Property \"SDKMAN_PLATFORM\""},"USER":{"value":"******","origin":"System Environment Property \"USER\""},"XDG_MENU_PREFIX":{"value":"******","origin":"System Environment Property \"XDG_MENU_PREFIX\""},"VTE_VERSION":{"value":"******","origin":"System Environment Property \"VTE_VERSION\""},"QT_ACCESSIBILITY":{"value":"******","origin":"System Environment Property \"QT_ACCESSIBILITY\""},"SSH_AUTH_SOCK":{"value":"******","origin":"System Environment Property \"SSH_AUTH_SOCK\""},"GNOME_SHELL_SESSION_MODE":{"value":"******","origin":"System Environment Property \"GNOME_SHELL_SESSION_MODE\""},"XDG_RUNTIME_DIR":{"value":"******","origin":"System Environment Property \"XDG_RUNTIME_DIR\""},"NVM_BIN":{"value":"******","origin":"System Environment Property \"NVM_BIN\""},"HOME":{"value":"******","origin":"System Environment Property \"HOME\""}}},{"name":"Config resource 'class path resource [application.properties]' via location 'optional:classpath:/'","properties":{"spring.jpa.hibernate.ddl-auto":{"value":"******","origin":"class path resource [application.properties] - 1:31"},"spring.datasource.url":{"value":"******","origin":"class path resource [application.properties] - 2:23"},"spring.datasource.username":{"value":"******","origin":"class path resource [application.properties] - 3:28"},"spring.datasource.password":{"value":"******","origin":"class path resource [application.properties] - 4:28"},"spring.datasource.driver-class-name":{"value":"******","origin":"class path resource [application.properties] - 5:37"},"server.tomcat.accesslog.enabled":{"value":"******","origin":"class path resource [application.properties] - 10:33"},"server.tomcat.accesslog.suffix":{"value":"******","origin":"class path resource [application.properties] - 12:32"},"server.tomcat.accesslog.prefix":{"value":"******","origin":"class path resource [application.properties] - 13:32"},"server.tomcat.accesslog.file-date-format":{"value":"******","origin":"class path resource [application.properties] - 14:42"},"server.tomcat.basedir":{"value":"******","origin":"class path resource [application.properties] - 15:23"},"server.tomcat.accesslog.directory":{"value":"******","origin":"class path resource [application.properties] - 16:35"},"server.tomcat.accesslog.pattern":{"value":"******","origin":"class path resource [application.properties] - 17:33"},"management.endpoints.web.exposure.include":{"value":"******","origin":"class path resource [application.properties] - 21:43"}}}]}davidho@dphxps17:~/sbootprojs/gs-accessing-data-mysql-main/complete$ 
+davidho@dphxps17:~/sbootprojs/gs-accessing-data-mysql-main/complete$ 
+davidho@dphxps17:~/sbootprojs/gs-accessing-data-mysql-main/complete$ curl /home/davidho/sbootprojs/gs-accessing-data-mysql-main/complete/tomcat/logs/access_log.2023-03-03.log
+localhost:8080/actuator/info
+{}
+davidho@dphxps17:~/sbootprojs/gs-accessing-data-mysql-main/complete$
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+/home/davidho/sbootprojs/gs-accessing-data-mysql-main/complete/tomcat/logs/access_log.2023-03-03.log
+
+127.0.0.1 - - [03/Mar/2023:04:37:56 -0500] "GET /demo/all HTTP/1.1" 200 151
+127.0.0.1 - - [03/Mar/2023:04:40:48 -0500] "POST /demo/add HTTP/1.1" 200 5
+127.0.0.1 - - [03/Mar/2023:04:41:02 -0500] "GET /demo/all HTTP/1.1" 200 230
+127.0.0.1 - - [03/Mar/2023:04:41:05 -0500] "GET /demo/all HTTP/1.1" 200 230
+127.0.0.1 - - [03/Mar/2023:04:41:11 -0500] "GET /demo/all HTTP/1.1" 200 230
+127.0.0.1 - - [03/Mar/2023:04:41:52 -0500] "POST /demo/add HTTP/1.1" 200 5
+127.0.0.1 - - [03/Mar/2023:04:41:56 -0500] "GET /demo/all HTTP/1.1" 200 315
+127.0.0.1 - - [03/Mar/2023:04:42:02 -0500] "GET /demo/all HTTP/1.1" 200 315
+127.0.0.1 - - [03/Mar/2023:05:10:23 -0500] "GET /actuator HTTP/1.1" 200 1692
+127.0.0.1 - - [03/Mar/2023:05:10:34 -0500] "GET /actuator/health HTTP/1.1" 200 25
+127.0.0.1 - - [03/Mar/2023:05:10:44 -0500] "GET /actuator/env HTTP/1.1" 200 9871
+127.0.0.1 - - [03/Mar/2023:05:21:06 -0500] "GET /info HTTP/1.1" 404 104
+127.0.0.1 - - [03/Mar/2023:05:21:35 -0500] "GET /actuator/info HTTP/1.1" 200 12
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+{
+  "_links": {
+    "self": {
+      "href": "http://localhost:8080/actuator",
+      "templated": false
+    },
+    "beans": {
+      "href": "http://localhost:8080/actuator/beans",
+      "templated": false
+    },
+    "caches-cache": {
+      "href": "http://localhost:8080/actuator/caches/{cache}",
+      "templated": true
+    },
+    "caches": {
+      "href": "http://localhost:8080/actuator/caches",
+      "templated": false
+    },
+    "health": {
+      "href": "http://localhost:8080/actuator/health",
+      "templated": false
+    },
+    "health-path": {
+      "href": "http://localhost:8080/actuator/health/{*path}",
+      "templated": true
+    },
+    "info": {
+      "href": "http://localhost:8080/actuator/info",
+      "templated": false
+    },
+    "conditions": {
+      "href": "http://localhost:8080/actuator/conditions",
+      "templated": false
+    },
+    "configprops": {
+      "href": "http://localhost:8080/actuator/configprops",
+      "templated": false
+    },
+    "configprops-prefix": {
+      "href": "http://localhost:8080/actuator/configprops/{prefix}",
+      "templated": true
+    },
+    "env": {
+      "href": "http://localhost:8080/actuator/env",
+      "templated": false
+    },
+    "env-toMatch": {
+      "href": "http://localhost:8080/actuator/env/{toMatch}",
+      "templated": true
+    },
+    "loggers": {
+      "href": "http://localhost:8080/actuator/loggers",
+      "templated": false
+    },
+    "loggers-name": {
+      "href": "http://localhost:8080/actuator/loggers/{name}",
+      "templated": true
+    },
+    "heapdump": {
+      "href": "http://localhost:8080/actuator/heapdump",
+      "templated": false
+    },
+    "threaddump": {
+      "href": "http://localhost:8080/actuator/threaddump",
+      "templated": false
+    },
+    "metrics-requiredMetricName": {
+      "href": "http://localhost:8080/actuator/metrics/{requiredMetricName}",
+      "templated": true
+    },
+    "metrics": {
+      "href": "http://localhost:8080/actuator/metrics",
+      "templated": false
+    },
+    "scheduledtasks": {
+      "href": "http://localhost:8080/actuator/scheduledtasks",
+      "templated": false
+    },
+    "mappings": {
+      "href": "http://localhost:8080/actuator/mappings",
+      "templated": false
+    }
+  }
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+{
+  "activeProfiles": [],
+  "propertySources": [
+    {
+      "name": "server.ports",
+      "properties": {
+        "local.server.port": {
+          "value": "******"
+        }
+      }
+    },
+    {
+      "name": "servletContextInitParams",
+      "properties": {}
+    },
+    {
+      "name": "systemProperties",
+      "properties": {
+        "java.specification.version": {
+          "value": "******"
+        },
+        "sun.jnu.encoding": {
+          "value": "******"
+        },
+        "java.class.path": {
+          "value": "******"
+        },
+        "java.vm.vendor": {
+          "value": "******"
+        },
+        "sun.arch.data.model": {
+          "value": "******"
+        },
+        "user.variant": {
+          "value": "******"
+        },
+        "java.vendor.url": {
+          "value": "******"
+        },
+        "catalina.useNaming": {
+          "value": "******"
+        },
+        "user.timezone": {
+          "value": "******"
+        },
+        "org.jboss.logging.provider": {
+          "value": "******"
+        },
+        "java.vm.specification.version": {
+          "value": "******"
+        },
+        "os.name": {
+          "value": "******"
+        },
+        "user.country": {
+          "value": "******"
+        },
+        "sun.java.launcher": {
+          "value": "******"
+        },
+        "sun.boot.library.path": {
+          "value": "******"
+        },
+        "sun.java.command": {
+          "value": "******"
+        },
+        "jdk.debug": {
+          "value": "******"
+        },
+        "sun.cpu.endian": {
+          "value": "******"
+        },
+        "user.home": {
+          "value": "******"
+        },
+        "user.language": {
+          "value": "******"
+        },
+        "java.specification.vendor": {
+          "value": "******"
+        },
+        "java.version.date": {
+          "value": "******"
+        },
+        "java.home": {
+          "value": "******"
+        },
+        "file.separator": {
+          "value": "******"
+        },
+        "java.vm.compressedOopsMode": {
+          "value": "******"
+        },
+        "line.separator": {
+          "value": "******"
+        },
+        "java.vm.specification.vendor": {
+          "value": "******"
+        },
+        "java.specification.name": {
+          "value": "******"
+        },
+        "FILE_LOG_CHARSET": {
+          "value": "******"
+        },
+        "java.awt.headless": {
+          "value": "******"
+        },
+        "sun.management.compiler": {
+          "value": "******"
+        },
+        "java.runtime.version": {
+          "value": "******"
+        },
+        "user.name": {
+          "value": "******"
+        },
+        "path.separator": {
+          "value": "******"
+        },
+        "os.version": {
+          "value": "******"
+        },
+        "java.runtime.name": {
+          "value": "******"
+        },
+        "file.encoding": {
+          "value": "******"
+        },
+        "java.vm.name": {
+          "value": "******"
+        },
+        "java.vendor.version": {
+          "value": "******"
+        },
+        "java.vendor.url.bug": {
+          "value": "******"
+        },
+        "java.io.tmpdir": {
+          "value": "******"
+        },
+        "catalina.home": {
+          "value": "******"
+        },
+        "com.zaxxer.hikari.pool_number": {
+          "value": "******"
+        },
+        "java.version": {
+          "value": "******"
+        },
+        "user.dir": {
+          "value": "******"
+        },
+        "os.arch": {
+          "value": "******"
+        },
+        "java.vm.specification.name": {
+          "value": "******"
+        },
+        "PID": {
+          "value": "******"
+        },
+        "CONSOLE_LOG_CHARSET": {
+          "value": "******"
+        },
+        "catalina.base": {
+          "value": "******"
+        },
+        "native.encoding": {
+          "value": "******"
+        },
+        "java.library.path": {
+          "value": "******"
+        },
+        "java.vm.info": {
+          "value": "******"
+        },
+        "java.vendor": {
+          "value": "******"
+        },
+        "java.vm.version": {
+          "value": "******"
+        },
+        "sun.io.unicode.encoding": {
+          "value": "******"
+        },
+        "java.class.version": {
+          "value": "******"
+        }
+      }
+    },
+    {
+      "name": "systemEnvironment",
+      "properties": {
+        "PATH": {
+          "value": "******",
+          "origin": "System Environment Property \"PATH\""
+        },
+        "PYENV_SHELL": {
+          "value": "******",
+          "origin": "System Environment Property \"PYENV_SHELL\""
+        },
+        "XAUTHORITY": {
+          "value": "******",
+          "origin": "System Environment Property \"XAUTHORITY\""
+        },
+        "SDKMAN_VERSION": {
+          "value": "******",
+          "origin": "System Environment Property \"SDKMAN_VERSION\""
+        },
+        "XMODIFIERS": {
+          "value": "******",
+          "origin": "System Environment Property \"XMODIFIERS\""
+        },
+        "XDG_DATA_DIRS": {
+          "value": "******",
+          "origin": "System Environment Property \"XDG_DATA_DIRS\""
+        },
+        "GDMSESSION": {
+          "value": "******",
+          "origin": "System Environment Property \"GDMSESSION\""
+        },
+        "GRAILS_HOME": {
+          "value": "******",
+          "origin": "System Environment Property \"GRAILS_HOME\""
+        },
+        "ASCIIDOCTORJ_HOME": {
+          "value": "******",
+          "origin": "System Environment Property \"ASCIIDOCTORJ_HOME\""
+        },
+        "RBENV_SHELL": {
+          "value": "******",
+          "origin": "System Environment Property \"RBENV_SHELL\""
+        },
+        "DBUS_SESSION_BUS_ADDRESS": {
+          "value": "******",
+          "origin": "System Environment Property \"DBUS_SESSION_BUS_ADDRESS\""
+        },
+        "XDG_CURRENT_DESKTOP": {
+          "value": "******",
+          "origin": "System Environment Property \"XDG_CURRENT_DESKTOP\""
+        },
+        "COLORTERM": {
+          "value": "******",
+          "origin": "System Environment Property \"COLORTERM\""
+        },
+        "SDKMAN_DIR": {
+          "value": "******",
+          "origin": "System Environment Property \"SDKMAN_DIR\""
+        },
+        "SESSION_MANAGER": {
+          "value": "******",
+          "origin": "System Environment Property \"SESSION_MANAGER\""
+        },
+        "USERNAME": {
+          "value": "******",
+          "origin": "System Environment Property \"USERNAME\""
+        },
+        "LOGNAME": {
+          "value": "******",
+          "origin": "System Environment Property \"LOGNAME\""
+        },
+        "PWD": {
+          "value": "******",
+          "origin": "System Environment Property \"PWD\""
+        },
+        "IM_CONFIG_PHASE": {
+          "value": "******",
+          "origin": "System Environment Property \"IM_CONFIG_PHASE\""
+        },
+        "PYENV_VIRTUALENV_INIT": {
+          "value": "******",
+          "origin": "System Environment Property \"PYENV_VIRTUALENV_INIT\""
+        },
+        "NVM_CD_FLAGS": {
+          "value": "******",
+          "origin": "System Environment Property \"NVM_CD_FLAGS\""
+        },
+        "SHELL": {
+          "value": "******",
+          "origin": "System Environment Property \"SHELL\""
+        },
+        "LESSOPEN": {
+          "value": "******",
+          "origin": "System Environment Property \"LESSOPEN\""
+        },
+        "SDKMAN_CANDIDATES_API": {
+          "value": "******",
+          "origin": "System Environment Property \"SDKMAN_CANDIDATES_API\""
+        },
+        "PYENV_ROOT": {
+          "value": "******",
+          "origin": "System Environment Property \"PYENV_ROOT\""
+        },
+        "OLDPWD": {
+          "value": "******",
+          "origin": "System Environment Property \"OLDPWD\""
+        },
+        "GNOME_DESKTOP_SESSION_ID": {
+          "value": "******",
+          "origin": "System Environment Property \"GNOME_DESKTOP_SESSION_ID\""
+        },
+        "GNOME_TERMINAL_SCREEN": {
+          "value": "******",
+          "origin": "System Environment Property \"GNOME_TERMINAL_SCREEN\""
+        },
+        "GTK_MODULES": {
+          "value": "******",
+          "origin": "System Environment Property \"GTK_MODULES\""
+        },
+        "SYSTEMD_EXEC_PID": {
+          "value": "******",
+          "origin": "System Environment Property \"SYSTEMD_EXEC_PID\""
+        },
+        "LS_COLORS": {
+          "value": "******",
+          "origin": "System Environment Property \"LS_COLORS\""
+        },
+        "XDG_SESSION_DESKTOP": {
+          "value": "******",
+          "origin": "System Environment Property \"XDG_SESSION_DESKTOP\""
+        },
+        "GNOME_SETUP_DISPLAY": {
+          "value": "******",
+          "origin": "System Environment Property \"GNOME_SETUP_DISPLAY\""
+        },
+        "SSH_AGENT_LAUNCHER": {
+          "value": "******",
+          "origin": "System Environment Property \"SSH_AGENT_LAUNCHER\""
+        },
+        "SHLVL": {
+          "value": "******",
+          "origin": "System Environment Property \"SHLVL\""
+        },
+        "LESSCLOSE": {
+          "value": "******",
+          "origin": "System Environment Property \"LESSCLOSE\""
+        },
+        "QT_IM_MODULE": {
+          "value": "******",
+          "origin": "System Environment Property \"QT_IM_MODULE\""
+        },
+        "JAVA_HOME": {
+          "value": "******",
+          "origin": "System Environment Property \"JAVA_HOME\""
+        },
+        "TERM": {
+          "value": "******",
+          "origin": "System Environment Property \"TERM\""
+        },
+        "XDG_CONFIG_DIRS": {
+          "value": "******",
+          "origin": "System Environment Property \"XDG_CONFIG_DIRS\""
+        },
+        "GNOME_TERMINAL_SERVICE": {
+          "value": "******",
+          "origin": "System Environment Property \"GNOME_TERMINAL_SERVICE\""
+        },
+        "LANG": {
+          "value": "******",
+          "origin": "System Environment Property \"LANG\""
+        },
+        "XDG_SESSION_TYPE": {
+          "value": "******",
+          "origin": "System Environment Property \"XDG_SESSION_TYPE\""
+        },
+        "GRADLE_HOME": {
+          "value": "******",
+          "origin": "System Environment Property \"GRADLE_HOME\""
+        },
+        "ANT_HOME": {
+          "value": "******",
+          "origin": "System Environment Property \"ANT_HOME\""
+        },
+        "GROOVY_HOME": {
+          "value": "******",
+          "origin": "System Environment Property \"GROOVY_HOME\""
+        },
+        "DISPLAY": {
+          "value": "******",
+          "origin": "System Environment Property \"DISPLAY\""
+        },
+        "NVM_INC": {
+          "value": "******",
+          "origin": "System Environment Property \"NVM_INC\""
+        },
+        "WAYLAND_DISPLAY": {
+          "value": "******",
+          "origin": "System Environment Property \"WAYLAND_DISPLAY\""
+        },
+        "SDKMAN_CANDIDATES_DIR": {
+          "value": "******",
+          "origin": "System Environment Property \"SDKMAN_CANDIDATES_DIR\""
+        },
+        "XDG_SESSION_CLASS": {
+          "value": "******",
+          "origin": "System Environment Property \"XDG_SESSION_CLASS\""
+        },
+        "_": {
+          "value": "******",
+          "origin": "System Environment Property \"_\""
+        },
+        "NVM_DIR": {
+          "value": "******",
+          "origin": "System Environment Property \"NVM_DIR\""
+        },
+        "DESKTOP_SESSION": {
+          "value": "******",
+          "origin": "System Environment Property \"DESKTOP_SESSION\""
+        },
+        "SDKMAN_PLATFORM": {
+          "value": "******",
+          "origin": "System Environment Property \"SDKMAN_PLATFORM\""
+        },
+        "USER": {
+          "value": "******",
+          "origin": "System Environment Property \"USER\""
+        },
+        "XDG_MENU_PREFIX": {
+          "value": "******",
+          "origin": "System Environment Property \"XDG_MENU_PREFIX\""
+        },
+        "VTE_VERSION": {
+          "value": "******",
+          "origin": "System Environment Property \"VTE_VERSION\""
+        },
+        "QT_ACCESSIBILITY": {
+          "value": "******",
+          "origin": "System Environment Property \"QT_ACCESSIBILITY\""
+        },
+        "SSH_AUTH_SOCK": {
+          "value": "******",
+          "origin": "System Environment Property \"SSH_AUTH_SOCK\""
+        },
+        "GNOME_SHELL_SESSION_MODE": {
+          "value": "******",
+          "origin": "System Environment Property \"GNOME_SHELL_SESSION_MODE\""
+        },
+        "XDG_RUNTIME_DIR": {
+          "value": "******",
+          "origin": "System Environment Property \"XDG_RUNTIME_DIR\""
+        },
+        "NVM_BIN": {
+          "value": "******",
+          "origin": "System Environment Property \"NVM_BIN\""
+        },
+        "HOME": {
+          "value": "******",
+          "origin": "System Environment Property \"HOME\""
+        }
+      }
+    },
+    {
+      "name": "Config resource 'class path resource [application.properties]' via location 'optional:classpath:/'",
+      "properties": {
+        "spring.jpa.hibernate.ddl-auto": {
+          "value": "******",
+          "origin": "class path resource [application.properties] - 1:31"
+        },
+        "spring.datasource.url": {
+          "value": "******",
+          "origin": "class path resource [application.properties] - 2:23"
+        },
+        "spring.datasource.username": {
+          "value": "******",
+          "origin": "class path resource [application.properties] - 3:28"
+        },
+        "spring.datasource.password": {
+          "value": "******",
+          "origin": "class path resource [application.properties] - 4:28"
+        },
+        "spring.datasource.driver-class-name": {
+          "value": "******",
+          "origin": "class path resource [application.properties] - 5:37"
+        },
+        "server.tomcat.accesslog.enabled": {
+          "value": "******",
+          "origin": "class path resource [application.properties] - 10:33"
+        },
+        "server.tomcat.accesslog.suffix": {
+          "value": "******",
+          "origin": "class path resource [application.properties] - 12:32"
+        },
+        "server.tomcat.accesslog.prefix": {
+          "value": "******",
+          "origin": "class path resource [application.properties] - 13:32"
+        },
+        "server.tomcat.accesslog.file-date-format": {
+          "value": "******",
+          "origin": "class path resource [application.properties] - 14:42"
+        },
+        "server.tomcat.basedir": {
+          "value": "******",
+          "origin": "class path resource [application.properties] - 15:23"
+        },
+        "server.tomcat.accesslog.directory": {
+          "value": "******",
+          "origin": "class path resource [application.properties] - 16:35"
+        },
+        "server.tomcat.accesslog.pattern": {
+          "value": "******",
+          "origin": "class path resource [application.properties] - 17:33"
+        },
+        "management.endpoints.web.exposure.include": {
+          "value": "******",
+          "origin": "class path resource [application.properties] - 21:43"
+        }
+      }
+    }
+  ]
+}
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://docs.spring.io/spring-boot/docs/current/actuator-api/htmlsingle/
+https://www.baeldung.com/spring-rest-http-headers
+https://www.baeldung.com/spring-boot-actuator-http
+
+management.endpoints.web.exposure.include=httptrace
+management.trace.http.include=RESPONSE_HEADERS
+
+curl 'http://localhost:8080/actuator/auditevents?principal=alice&after=2023-02-23T14%3A13%3A10.297472689Z&type=logout' -i -X GET
+curl 'http://localhost:8080/actuator/beans' -i -X GET
+curl 'http://localhost:8080/actuator/configprops' -i -X GET
+curl 'http://localhost:8080/actuator/httpexchanges' -i -X GET
+curl 'http://localhost:8080/actuator/httptrace' -i -X GET
+curl 'http://localhost:8080/actuator/httpTrace' -i -X GET
+
+curl 'http://localhost:8080/actuator/foobar' -i -X GET
+
+davidho@dphxps17:~$ curl 'http://localhost:8080/actuator/foobar' -i -X GET
+HTTP/1.1 404 
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Fri, 03 Mar 2023 11:12:49 GMT
+
+{"timestamp":"2023-03-03T11:12:49.685+00:00","status":404,"error":"Not Found","path":"/actuator/foobar"}davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ curl 'http://localhost:8080/actuator/httpTrace' -i -X GET
+HTTP/1.1 404 
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Fri, 03 Mar 2023 10:58:18 GMT
+
+{"timestamp":"2023-03-03T10:58:18.178+00:00","status":404,"error":"Not Found","path":"/actuator/httpTrace"}davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ curl 'http://localhost:8080/actuator/httptrace' -i -X GET
+HTTP/1.1 404 
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Fri, 03 Mar 2023 11:00:37 GMT
+
+{"timestamp":"2023-03-03T11:00:37.777+00:00","status":404,"error":"Not Found","path":"/actuator/httptrace"}
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ curl 'http://localhost:8080/actuator/httpTrace' -i -X GET
+HTTP/1.1 404 
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Fri, 03 Mar 2023 10:58:18 GMT
+
+{"timestamp":"2023-03-03T10:58:18.178+00:00","status":404,"error":"Not Found","path":"/actuator/httpTrace"}
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ curl 'http://localhost:8080/actuator/httpexchanges' -i -X GET
+HTTP/1.1 404 
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Fri, 03 Mar 2023 10:59:18 GMT
+
+{"timestamp":"2023-03-03T10:59:18.955+00:00","status":404,"error":"Not Found","path":"/actuator/httpexchanges"}
+
+davidho@dphxps17:~$ 
+
+https://stackoverflow.com/questions/59115578/httptrace-endpoint-of-spring-boot-actuator-doesnt-exist-anymore-with-spring-b
+
+management.trace.http.enabled: true
+management.endpoints.web.exposure.include: httptrace
+
+and provide an HttpTraceRepository bean like this:
+
+@Configuration
+// @Profile("actuator-endpoints")
+// if you want: register bean only if profile is set
+public class HttpTraceActuatorConfiguration {
+
+    @Bean
+    public HttpTraceRepository httpTraceRepository() {
+        return new InMemoryHttpTraceRepository();
+    }
+
+}
+
+https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.2.0-M3-Release-Notes#actuator-http-trace-and-auditing-are-disabled-by-default
+
+Actuator HTTP Trace and Auditing are disabled by default
+
+The Actuator HTTP Trace and Auditing features are not enabled by default anymore, since the default repositories implementations are in-memory and may consume too many resources and are not cluster friendly. For robust, production-grade HTTP tracing we recommend the use of Spring Cloud Sleuth or similar.
+
+To enable HTTP tracing, contribute a bean implementing HttpTraceRepository or AuditEventRepository to turn those features back on. Configuration properties are available to turn those features off even in the presence of beans (see management.auditevents.enabled and management.trace.http.enabled)
+
+https://stackoverflow.com/questions/75142428/spring-boot-3-0-1-actuator-httptracerepository
+
+As explained in the migration guide you need to use the HttpExchangeRepository instead of HttpTraceRepository. In your case that would be the InMemoryHttpExchangeRepository.
+
+@Bean
+public InMemoryHttpExchangeRepository createTraceRepository() {
+  return new InMemoryHttpExchangeRepository();
+}
+
+https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#httptrace-endpoint-renamed-to-httpexchanges
+
+'httptrace' Endpoint Renamed to 'httpexchanges'
+
+The httptrace endpoint and related infrastructure records and provides access to information about recent HTTP request-response exchanges. Following the introduction of support for Micrometer Tracing, the name httptrace may cause confusion. To reduce this possible confusion the endpoint has been renamed to httpexchanges. The contents of the endpoint’s response has also been affected by this renaming. Please refer to the Actuator API documentation for further details.
+
+Related infrastructure classes have also been renamed. For example, HttpTraceRepository is now named HttpExchangeRepository and can be found in the org.springframework.boot.actuate.web.exchanges package.
+
+https://www.baeldung.com/spring-bean-annotations
+
+davidho@dphxps17:~$ curl 'http://localhost:8080/actuator/httpexchanges' -i -X GET
+HTTP/1.1 200 
+Content-Type: application/vnd.spring-boot.actuator.v3+json
+Transfer-Encoding: chunked
+Date: Fri, 03 Mar 2023 12:14:32 GMT
+
+{"exchanges":[{"timestamp":"2023-03-03T12:14:24.943445436Z","request":{"uri":"http://localhost:8080/demo/all","method":"GET","headers":{"host":["localhost:8080"],"user-agent":["curl/7.81.0"],"accept":["*/*"]}},"response":{"status":200,"headers":{"Content-Type":["application/json"],"Transfer-Encoding":["chunked"],"Date":["Fri, 03 Mar 2023 12:14:25 GMT"]}},"timeTaken":"PT0.06847079S"},{"timestamp":"2023-03-03T12:13:54.277923592Z","request":{"uri":"http://localhost:8080/actuator/httpexchanges","method":"GET","headers":{"host":["localhost:8080"],"user-agent":["curl/7.81.0"],"accept":["*/*"]}},"response":{"status":200,"headers":{"Content-Type":["application/vnd.spring-boot.actuator.v3+json"],"Transfer-Encoding":["chunked"],"Date":["Fri, 03 Mar 2023 12:13:54 GMT"]}},"timeTaken":"PT0.002370428S"},{"timestamp":"2023-03-03T12:13:50.484705793Z","request":{"uri":"http://localhost:8080/actuator","method":"GET","headers":{"host":["localhost:8080"],"user-agent":["curl/7.81.0"],"accept":["*/*"]}},"response":{"status":200,"headers":{"Content-Type":["application/vnd.spring-boot.actuator.v3+json"],"Transfer-Encoding":["chunked"],"Date":["Fri, 03 Mar 2023 12:13:50 GMT"]}},"timeTaken":"PT0.008017035S"},{"timestamp":"2023-03-03T12:13:25.326863350Z","request":{"uri":"http://localhost:8080/actuator/httpexchanges","method":"GET","headers":{"host":["localhost:8080"],"user-agent":["curl/7.81.0"],"accept":["*/*"]}},"response":{"status":200,"headers":{"Content-Type":["application/vnd.spring-boot.actuator.v3+json"],"Transfer-Encoding":["chunked"],"Date":["Fri, 03 Mar 2023 12:13:25 GMT"]}},"timeTaken":"PT0.038077529S"}]}davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+
+{
+  "exchanges": [
+    {
+      "timestamp": "2023-03-03T12:14:24.943445436Z",
+      "request": {
+        "uri": "http://localhost:8080/demo/all",
+        "method": "GET",
+        "headers": {
+          "host": [
+            "localhost:8080"
+          ],
+          "user-agent": [
+            "curl/7.81.0"
+          ],
+          "accept": [
+            "*/*"
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": [
+            "application/json"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Date": [
+            "Fri, 03 Mar 2023 12:14:25 GMT"
+          ]
+        }
+      },
+      "timeTaken": "PT0.06847079S"
+    },
+    {
+      "timestamp": "2023-03-03T12:13:54.277923592Z",
+      "request": {
+        "uri": "http://localhost:8080/actuator/httpexchanges",
+        "method": "GET",
+        "headers": {
+          "host": [
+            "localhost:8080"
+          ],
+          "user-agent": [
+            "curl/7.81.0"
+          ],
+          "accept": [
+            "*/*"
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": [
+            "application/vnd.spring-boot.actuator.v3+json"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Date": [
+            "Fri, 03 Mar 2023 12:13:54 GMT"
+          ]
+        }
+      },
+      "timeTaken": "PT0.002370428S"
+    },
+    {
+      "timestamp": "2023-03-03T12:13:50.484705793Z",
+      "request": {
+        "uri": "http://localhost:8080/actuator",
+        "method": "GET",
+        "headers": {
+          "host": [
+            "localhost:8080"
+          ],
+          "user-agent": [
+            "curl/7.81.0"
+          ],
+          "accept": [
+            "*/*"
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": [
+            "application/vnd.spring-boot.actuator.v3+json"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Date": [
+            "Fri, 03 Mar 2023 12:13:50 GMT"
+          ]
+        }
+      },
+      "timeTaken": "PT0.008017035S"
+    },
+    {
+      "timestamp": "2023-03-03T12:13:25.326863350Z",
+      "request": {
+        "uri": "http://localhost:8080/actuator/httpexchanges",
+        "method": "GET",
+        "headers": {
+          "host": [
+            "localhost:8080"
+          ],
+          "user-agent": [
+            "curl/7.81.0"
+          ],
+          "accept": [
+            "*/*"
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": [
+            "application/vnd.spring-boot.actuator.v3+json"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Date": [
+            "Fri, 03 Mar 2023 12:13:25 GMT"
+          ]
+        }
+      },
+      "timeTaken": "PT0.038077529S"
+    }
+  ]
+}
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+/home/davidho/sbootprojs/gs-accessing-data-mysql-main/complete/src/main/java/com/example/accessingdatamysql/HttpTraceActuatorConfiguration.java
+
+package com.example.accessingdatamysql;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+// import org.springframework.boot.actuate.trace.http.HttpExchangeTracer;
+// import org.springframework.boot.actuate.trace.http.HttpTraceRepository;
+// import org.springframework.boot.actuate.trace.http.InMemoryHttpTraceRepository;
+// import org.springframework.boot.SpringApplication;
+// import org.springframework.boot.actuate.trace.http.HttpTraceRepository;
+// import org.springframework.boot.actuate.trace.http.InMemoryHttpTraceRepository;
+// import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
+import org.springframework.boot.actuate.web.exchanges.*;
+import org.springframework.boot.actuate.web.exchanges.HttpExchangeRepository;
+
+@Configuration
+// @Profile("actuator-endpoints")
+// if you want: register bean only if profile is set
+public class HttpTraceActuatorConfiguration {
+
+    // @Bean
+    // public HttpTraceRepository httpTraceRepository() {
+    //     return new InMemoryHttpTraceRepository();
+    // }
+
+    @Bean
+    public HttpExchangeRepository httpExchangeRepository() {
+        return new InMemoryHttpExchangeRepository();
+    }
+
+}
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+/home/davidho/sbootprojs/gs-accessing-data-mysql-main/complete/build.gradle
+
+plugins {
+	id 'org.springframework.boot' version '3.0.0'
+	id 'io.spring.dependency-management' version '1.1.0'
+	id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+  implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	runtimeOnly 'mysql:mysql-connector-java'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+	useJUnitPlatform()
+}
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+/home/davidho/sbootprojs/gs-accessing-data-mysql-main/complete/src/main/resources/application.properties
+
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/db_example
+spring.datasource.username=springuser
+spring.datasource.password=ThePassword
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+#spring.jpa.show-sql: true
+
+# Fri Mar  3 04:29:39 AM EST 2023
+# https://www.baeldung.com/spring-boot-embedded-tomcat-logs
+server.tomcat.accesslog.enabled=true
+
+server.tomcat.accesslog.suffix=.log
+server.tomcat.accesslog.prefix=access_log
+server.tomcat.accesslog.file-date-format=.yyyy-MM-dd
+server.tomcat.basedir=tomcat
+server.tomcat.accesslog.directory=logs
+server.tomcat.accesslog.pattern=common
+
+# Fri Mar  3 05:04:20 AM EST 2023
+# https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html
+management.endpoints.web.exposure.include=*
+
+# Fri Mar  3 06:14:05 AM EST 2023
+# https://www.baeldung.com/spring-boot-actuator-http
+# management.endpoints.web.exposure.include=httptrace
+
+# Fri Mar  3 06:26:08 AM EST 2023
+# https://stackoverflow.com/questions/59115578/httptrace-endpoint-of-spring-boot-actuator-doesnt-exist-anymore-with-spring-b
+# management.trace.http.enabled: true
+# management.endpoints.web.exposure.include: httptrace
+
+management.endpoints.web.exposure.include: httpexchanges
+
+
