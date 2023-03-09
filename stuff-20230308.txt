@@ -1,0 +1,629 @@
+davidho@dphxps17:~$ date
+Wed Mar  8 06:51:01 AM EST 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ code stuff-20230308.txt
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://pypi.org/project/Flask/
+pip install -U Flask
+2.2.3 Feb 15, 2023
+2.2.2 Aug 8, 2022
+2.2.1 Aug 3, 2022
+2.2.0 Aug 1, 2022
+
+https://pip.pypa.io/en/stable/cli/pip_install/
+
+https://flask.palletsprojects.com/en/2.2.x/
+https://flask.palletsprojects.com/en/2.2.x/#user-s-guide
+https://flask.palletsprojects.com/en/2.2.x/quickstart/
+https://flask.palletsprojects.com/en/2.2.x/tutorial/
+https://flask.palletsprojects.com/en/0.12.x/cli/
+
+https://www.jetbrains.com/help/pycharm/creating-flask-project.html
+https://www.jetbrains.com/help/pycharm/creating-web-application-with-flask.html
+https://www.jetbrains.com/help/pycharm/run-debug-configuration-flask-server.html
+
+https://blog.jetbrains.com/pycharm/2022/08/flask-tutorial/
+
+https://craigrosie.github.io/blog/pycharm-with-pyenv/
+
+https://www.tutorialspoint.com/flask/index.htm
+
+https://medium.com/analytics-vidhya/a-short-but-complete-guide-to-python-flask-app-development-9b493f960bd1
+
+https://blog.miguelgrinberg.com/post/flask-pagedown-markdown-editor-extension-for-flask-wtf
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+cd /opt/pycharm-2022.3.2/bin
+./pycharm.sh
+
+cd /home/davidho/PycharmProjects/dphflask2
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~$ pyenv --version
+pyenv 2.3.6
+davidho@dphxps17:~$ pyenv
+davidho@dphxps17:~$ pyenv versions
+  system
+* 3.11.0 (set by /home/davidho/.pyenv/version)
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ python3 -V
+Python 3.11.0
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ whereis python3
+python3: /usr/bin/python3 /usr/lib/python3 /etc/python3 /usr/share/python3 /home/davidho/.pyenv/shims/python3 /usr/share/man/man1/python3.1.gz
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ which python3
+/home/davidho/.pyenv/shims/python3
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ ls -latr ~/Downloads/ | grep -i charm
+-rw-rw-r--  1 davidho davidho  697011515 Sep 22 07:56 pycharm-professional-2022.2.2.tar.gz
+-rw-rw-r--  1 davidho davidho        103 Sep 22 07:56 pycharm-professional-2022.2.2.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  535765721 Sep 22 07:56 pycharm-community-2022.2.2.tar.gz
+-rw-rw-r--  1 davidho davidho        100 Sep 22 07:56 pycharm-community-2022.2.2.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  696937833 Oct 16 18:58 pycharm-professional-2022.2.3.tar.gz
+-rw-rw-r--  1 davidho davidho        103 Oct 16 18:59 pycharm-professional-2022.2.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  535902788 Oct 16 18:59 pycharm-community-2022.2.3.tar.gz
+-rw-rw-r--  1 davidho davidho        100 Oct 16 19:00 pycharm-community-2022.2.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  707829681 Dec  5 05:06 pycharm-professional-2022.3.tar.gz
+-rw-rw-r--  1 davidho davidho        101 Dec  5 05:06 pycharm-professional-2022.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  562364769 Dec  5 05:06 pycharm-community-2022.3.tar.gz
+-rw-rw-r--  1 davidho davidho         98 Dec  5 05:06 pycharm-community-2022.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  720880776 Dec 31 08:40 pycharm-professional-2022.3.1.tar.gz
+-rw-rw-r--  1 davidho davidho        103 Dec 31 08:40 pycharm-professional-2022.3.1.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  574512592 Dec 31 08:45 pycharm-community-2022.3.1.tar.gz
+-rw-rw-r--  1 davidho davidho        100 Dec 31 08:45 pycharm-community-2022.3.1.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  721400424 Feb  1 06:59 pycharm-professional-2022.3.2.tar.gz
+-rw-rw-r--  1 davidho davidho        103 Feb  1 07:00 pycharm-professional-2022.3.2.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  575274048 Feb  1 07:00 pycharm-community-2022.3.2.tar.gz
+-rw-rw-r--  1 davidho davidho        100 Feb  1 07:00 pycharm-community-2022.3.2.tar.gz.sha256
+davidho@dphxps17:~$ 
+
+davidho@dphxps17:/opt$ 
+davidho@dphxps17:/opt$ ls -latr | grep -i charm
+drwxr-xr-x  9 root    root    4096 Jan 20  1970 pycharm-2022.3
+drwxr-xr-x  8 root    root    4096 Jan 20  1970 pycharm-community-2022.3.2
+drwxr-xr-x  9 root    root    4096 Jan 20  1970 pycharm-2022.3.2
+drwxr-xr-x  8 root    root    4096 Oct 10 10:05 pycharm-community-2022.2.3
+drwxr-xr-x  9 root    root    4096 Oct 10 10:05 pycharm-2022.2.3
+davidho@dphxps17:/opt$ 
+davidho@dphxps17:/opt$ cd pycharm-2022.3.2
+davidho@dphxps17:/opt/pycharm-2022.3.2$
+davidho@dphxps17:/opt/pycharm-2022.3.2$ ls -latr
+total 60
+-rw-r--r--  1 root root 13430 Jan 20  1970 product-info.json
+drwxr-xr-x 87 root root  4096 Jan 20  1970 plugins
+drwxr-xr-x  2 root root  4096 Jan 20  1970 license
+drwxr-xr-x  6 root root  4096 Jan 20  1970 lib
+drwxr-xr-x  7 root root  4096 Jan 20  1970 jbr
+-rw-r--r--  1 root root  1808 Jan 20  1970 Install-Linux-tar.txt
+drwxr-xr-x  2 root root  4096 Jan 20  1970 help
+drwxr-xr-x  2 root root  4096 Jan 20  1970 debug-eggs
+-rw-r--r--  1 root root    14 Jan 20  1970 build.txt
+drwxr-xr-x  3 root root  4096 Jan 20  1970 bin
+drwxr-xr-x  9 root root  4096 Jan 20  1970 .
+drwxr-xr-x 34 root root  4096 Feb  1 08:26 ..
+davidho@dphxps17:/opt/pycharm-2022.3.2$ 
+davidho@dphxps17:/opt/pycharm-2022.3.2$ cd bin
+davidho@dphxps17:/opt/pycharm-2022.3.2/bin$
+davidho@dphxps17:/opt/pycharm-2022.3.2/bin$ ls -latr
+total 9912
+-rwxr-xr-x 1 root root     808 Jan 20  1970 restart.py
+-rwxr-xr-x 1 root root 9612497 Jan 20  1970 repair
+-rwxr-xr-x 1 root root    1319 Jan 20  1970 remote-dev-server.sh
+-rw-r--r-- 1 root root   10784 Jan 20  1970 pycharm.svg
+-rwxr-xr-x 1 root root    9099 Jan 20  1970 pycharm.sh
+-rw-r--r-- 1 root root   10281 Jan 20  1970 pycharm.png
+-rw-r--r-- 1 root root     599 Jan 20  1970 pycharm64.vmoptions
+-rwxr-xr-x 1 root root     828 Jan 20  1970 ltedit.sh
+-rw-r--r-- 1 root root  297424 Jan 20  1970 libdbm.so
+-rwxr-xr-x 1 root root     295 Jan 20  1970 inspect.sh
+-rw-r--r-- 1 root root   10711 Jan 20  1970 idea.properties
+drwxr-xr-x 2 root root    4096 Jan 20  1970 icons
+-rwxr-xr-x 1 root root   24208 Jan 20  1970 fsnotifier
+-rwxr-xr-x 1 root root     220 Jan 20  1970 format.sh
+-rw-r--r-- 1 root root  124275 Jan 20  1970 brokenPlugins.db
+drwxr-xr-x 9 root root    4096 Jan 20  1970 ..
+drwxr-xr-x 3 root root    4096 Jan 20  1970 .
+davidho@dphxps17:/opt/pycharm-2022.3.2/bin$ 
+davidho@dphxps17:/opt/pycharm-2022.3.2/bin$ ./pycharm.sh
+CompileCommand: exclude com/intellij/openapi/vfs/impl/FilePartNodeRoot.trieDescend bool exclude = true
+2023-03-08 07:03:14,529 [    725]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Visual Studio" not found PluginDescriptor(name=IDEA CORE, id=com.intellij, descriptorPath=plugin.xml, path=/opt/pycharm-2022.3.2/lib, version=223.8617.48, package=com.intellij.structuralsearch, isBundled=true)
+2023-03-08 07:03:14,534 [    730]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Eclipse" not found PluginDescriptor(name=IDEA CORE, id=com.intellij, descriptorPath=plugin.xml, path=/opt/pycharm-2022.3.2/lib, version=223.8617.48, package=com.intellij.structuralsearch, isBundled=true)
+2023-03-08 07:03:14,534 [    730]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "NetBeans 6.5" not found PluginDescriptor(name=IDEA CORE, id=com.intellij, descriptorPath=plugin.xml, path=/opt/pycharm-2022.3.2/lib, version=223.8617.48, package=com.intellij.structuralsearch, isBundled=true)
+2023-03-08 07:03:14,535 [    731]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Visual Studio" not found PluginDescriptor(name=IDEA CORE, id=com.intellij, descriptorPath=plugin.xml, path=/opt/pycharm-2022.3.2/lib, version=223.8617.48, package=com.intellij.structuralsearch, isBundled=true)
+2023-03-08 07:03:14,556 [    752]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Visual Studio" not found PluginDescriptor(name=HTML Tools, id=HtmlTools, descriptorPath=plugin.xml, path=/opt/pycharm-2022.3.2/plugins/html-tools, version=223.8617.48, package=null, isBundled=true)
+2023-03-08 07:03:14,584 [    780]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Eclipse" not found PluginDescriptor(name=GitHub, id=org.jetbrains.plugins.github, descriptorPath=plugin.xml, path=/opt/pycharm-2022.3.2/plugins/vcs-github, version=223.8617.48, package=org.jetbrains.plugins.github, isBundled=true)
+2023-03-08 07:03:14,591 [    787]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Eclipse" not found PluginDescriptor(name=JavaScript and TypeScript, id=JavaScript, descriptorPath=plugin.xml, path=/opt/pycharm-2022.3.2/plugins/javascript-impl, version=223.8617.48, package=null, isBundled=true)
+2023-03-08 07:03:14,591 [    787]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Visual Studio" not found PluginDescriptor(name=JavaScript and TypeScript, id=JavaScript, descriptorPath=plugin.xml, path=/opt/pycharm-2022.3.2/plugins/javascript-impl, version=223.8617.48, package=null, isBundled=true)
+2023-03-08 07:03:14,594 [    790]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Eclipse" not found PluginDescriptor(name=Space, id=com.jetbrains.space, moduleName=intellij.space.vcs, descriptorPath=intellij.space.vcs.xml, path=/opt/pycharm-2022.3.2/plugins/space, version=223.8617.48, package=com.intellij.space.vcs, isBundled=true)
+2023-03-08 07:03:14,610 [    806]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Eclipse" not found PluginDescriptor(name=Python, id=Pythonid, descriptorPath=plugin.xml, path=/opt/pycharm-2022.3.2/plugins/python, version=223.8617.48, package=null, isBundled=true)
+2023-03-08 07:03:14,610 [    806]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "NetBeans 6.5" not found PluginDescriptor(name=Python, id=Pythonid, descriptorPath=plugin.xml, path=/opt/pycharm-2022.3.2/plugins/python, version=223.8617.48, package=null, isBundled=true)
+2023-03-08 07:03:14,611 [    807]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Visual Studio" not found PluginDescriptor(name=Python, id=Pythonid, descriptorPath=plugin.xml, path=/opt/pycharm-2022.3.2/plugins/python, version=223.8617.48, package=null, isBundled=true)
+2023-03-08 07:03:14,612 [    808]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Eclipse" not found PluginDescriptor(name=Python, id=Pythonid, descriptorPath=plugin.xml, path=/opt/pycharm-2022.3.2/plugins/python, version=223.8617.48, package=null, isBundled=true)
+2023-03-08 07:03:14,833 [   1029]   WARN - #c.i.e.t.TargetBasedSdks - SDK target configuration data is absent
+2023-03-08 07:03:15,297 [   1493]   WARN - #c.i.e.RunManager - Must be not called before project components initialized
+Info  | RdCoroutineScope          | 74:DefaultDispatcher-worker-52 | RdCoroutineHost overridden 
+2023-03-08 07:03:17,109 [   3305]   WARN - #c.i.i.s.p.i.SharedIndexChunkConfigurationImpl - Chunk bundled-python-sdk-cd7b89ea080f-8e99f19ecdc7-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-223.7571.203 is incompatible and is not registered for project 'dphpyapp1'
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+... running neofetch also launches RubyMine ???  Why ???
+
+davidho@dphxps17:~$ neofetch --off
+davidho@dphxps17 
+---------------- 
+OS: Ubuntu 22.04.1 LTS x86_64 
+Host: XPS 17 9710 
+Kernel: 5.19.0-35-generic 
+Uptime: 53 mins 
+Packages: 2043 (dpkg), 4 (mine), 11 (snap) 
+Shell: bash 5.1.16 
+Resolution: 3840x2400 
+DE: GNOME 42.5 
+WM: Mutter 
+WM Theme: Adwaita 
+Theme: Yaru [GTK2/3] 
+Icons: Yaru [GTK2/3] 
+Terminal: gnome-terminal 
+CPU: 11th Gen Intel i7-11800H (16) @ 4.600GHz 
+GPU: Intel TigerLake-H GT1 [UHD Graphics] 
+GPU: NVIDIA GeForce RTX 3060 Mobile / Max-Q 
+Memory: 6735MiB / 31827MiB 
+
+davidho@dphxps17:~$ 
+
+PyCharm 2022.3.2 (Professional Edition)
+Build #PY-223.8617.48, built on January 24, 2023
+Licensed to David Holberton
+Subscription is active until June 15, 2023.
+Runtime version: 17.0.5+1-b653.25 amd64
+VM: OpenJDK 64-Bit Server VM by JetBrains s.r.o.
+Linux 5.19.0-35-generic
+GC: G1 Young Generation, G1 Old Generation
+Memory: 2048M
+Cores: 16
+
+Current Desktop: ubuntu:GNOME
+
+RubyMine 2022.2.3
+Build #RM-222.4345.14, built on October 5, 2022
+Licensed to David Holberton
+Subscription is active until June 15, 2023.
+Runtime version: 17.0.4.1+7-b469.62 amd64
+VM: OpenJDK 64-Bit Server VM by JetBrains s.r.o.
+Linux 5.19.0-35-generic
+GC: G1 Young Generation, G1 Old Generation
+Memory: 2048M
+Cores: 16
+
+Current Desktop: ubuntu:GNOME
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+/home/davidho/PycharmProjects/dphflask1
+/home/davidho/PycharmProjects/dphflask1/venv
+/usr/bin/python3.10
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ ls -latr /usr/bin | grep -i python
+lrwxrwxrwx  1 root root          10 Aug 18  2022 python3 -> python3.10
+lrwxrwxrwx  1 root root          31 Aug 18  2022 py3versions -> ../share/python3/py3versions.py
+-rwxr-xr-x  1 root root     5921160 Nov 14 11:10 python3.10
+lrwxrwxrwx  1 root root          24 Nov 14 11:10 pdb3.10 -> ../lib/python3.10/pdb.py
+-rwxr-xr-x  1 root root         964 Jan 25 03:29 python3-pasteurize
+-rwxr-xr-x  1 root root         960 Jan 25 03:29 python3-futurize
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ java --version
+openjdk 17.0.5 2022-10-18 LTS
+OpenJDK Runtime Environment Zulu17.38+21-CA (build 17.0.5+8-LTS)
+OpenJDK 64-Bit Server VM Zulu17.38+21-CA (build 17.0.5+8-LTS, mixed mode, sharing)
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ whereis javac
+javac: /home/davidho/.sdkman/candidates/java/17.0.5-zulu/bin/javac
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ whence javac
+whence: command not found
+davidho@dphxps17:~$ which javac
+/home/davidho/.sdkman/candidates/java/current/bin/javac
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/PycharmProjects/dphflask1$ tree -L 5
+.
+├── main.py
+└── venv
+    ├── bin
+    │   ├── activate
+    │   ├── activate.csh
+    │   ├── activate.fish
+    │   ├── activate.nu
+    │   ├── activate.ps1
+    │   ├── activate_this.py
+    │   ├── deactivate.nu
+    │   ├── pip
+    │   ├── pip3
+    │   ├── pip-3.10
+    │   ├── pip3.10
+    │   ├── python -> /usr/bin/python3.10
+    │   ├── python3 -> python
+    │   ├── python3.10 -> python
+    │   ├── wheel
+    │   ├── wheel3
+    │   ├── wheel-3.10
+    │   └── wheel3.10
+    ├── lib
+    │   └── python3.10
+    │       └── site-packages
+    │           ├── _distutils_hack
+    │           ├── distutils-precedence.pth
+    │           ├── pip
+    │           ├── pip-22.3.1.dist-info
+    │           ├── pip-22.3.1.virtualenv
+    │           ├── pkg_resources
+    │           ├── __pycache__
+    │           ├── setuptools
+    │           ├── setuptools-65.5.1.dist-info
+    │           ├── setuptools-65.5.1.virtualenv
+    │           ├── _virtualenv.pth
+    │           ├── _virtualenv.py
+    │           ├── wheel
+    │           ├── wheel-0.38.4.dist-info
+    │           └── wheel-0.38.4.virtualenv
+    └── pyvenv.cfg
+
+14 directories, 26 files
+davidho@dphxps17:~/PycharmProjects/dphflask1$ 
+davidho@dphxps17:~/PycharmProjects/dphflask1$ cat main.py 
+# This is a sample Python script.
+
+# Press Shift+F10 to execute it or replace it with your code.
+# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+
+
+def print_hi(name):
+    # Use a breakpoint in the code line below to debug your script.
+    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+
+
+# Press the green button in the gutter to run the script.
+if __name__ == '__main__':
+    print_hi('PyCharm')
+
+# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+davidho@dphxps17:~/PycharmProjects/dphflask1$ 
+davidho@dphxps17:~/PycharmProjects/dphflask1$ cat venv/pyvenv.cfg 
+home = /usr/bin
+implementation = CPython
+version_info = 3.10.6.final.0
+virtualenv = 20.16.7
+include-system-site-packages = false
+base-prefix = /usr
+base-exec-prefix = /usr
+base-executable = /usr/bin/python3.10
+davidho@dphxps17:~/PycharmProjects/dphflask1$ 
+davidho@dphxps17:~/PycharmProjects/dphflask1$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+FLASK_APP = autoapp.py:app
+FLASK_ENV = development
+FLASK_DEBUG = 0
+In folder /home/davidho/PycharmProjects/dphflask1
+/home/davidho/PycharmProjects/dphflask1/venv/bin/python -m flask run 
+/home/davidho/PycharmProjects/dphflask1/venv/bin/python: No module named flask
+
+Process finished with exit code 1
+
+
+https://www.jetbrains.com/help/pycharm/creating-flask-project.html
+https://www.jetbrains.com/help/pycharm/creating-web-application-with-flask.html
+
+
+
+I am trying to initialise my db, and everytime i run the flask db init command, I get that error.
+
+I am unsure why, my FLASK_APP and FLASK_ENV are set correctly.app
+
+
+
+zZFLASL\\\FLASK_APP
+
+FLASK_APP = app.py
+FLASK_ENV = development
+FLASK_DEBUG = 0
+
+
+
+
+FLASK_APP = autoapp.py:app
+FLASK_ENV = development
+FLASK_DEBUG = 0
+In folder /home/davidho/PycharmProjects/dphflask2
+/home/davidho/PycharmProjects/dphflask2/venv/bin/python /opt/pycharm-2022.3.2/plugins/python/helpers/pydev/pydevd.py --module --multiprocess --qt-support=auto --client 127.0.0.1 --port 39973 --file flask run 
+Connected to pydev debugger (build 223.8617.48)
+Usage: python -m flask run [OPTIONS]
+Try 'python -m flask run --help' for help.
+
+Error: Could not import 'autoapp'.
+
+Process finished with exit code 2
+
+
+
+FLASK_APP = autoapp.py:app
+FLASK_ENV = development
+FLASK_DEBUG = 0
+In folder /home/davidho/PycharmProjects/dphflask2
+/home/davidho/PycharmProjects/dphflask2/venv/bin/python -m flask run 
+Usage: python -m flask run [OPTIONS]
+Try 'python -m flask run --help' for help.
+
+Error: Could not import 'autoapp'.
+
+Process finished with exit code 2
+
+
+pycharm Could not import autoapp
+
+
+
+cd /opt/pycharm-2022.3.2/bin
+./pycharm.sh
+CompileCommand: exclude com/intellij/openapi/vfs/impl/FilePartNodeRoot.trieDescend bool exclude = true
+2023-03-08 09:34:09,898 [    605]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Visual Studio" not found PluginDescriptor(name=IDEA CORE, id=com.intellij, descriptorPath=plugin.xml, path=/opt/pycharm-2022.3.2/lib, version=223.8617.48, package=com.intellij.structuralsearch, isBundled=true)
+2023-03-08 09:34:09,909 [    616]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Eclipse" not found PluginDescriptor(name=IDEA CORE, id=com.intellij, descriptorPath=plugin.xml, path=/opt/pycharm-2022.3.2/lib, version=223.8617.48, package=com.intellij.structuralsearch, isBundled=true)
+2023-03-08 09:34:09,910 [    617]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "NetBeans 6.5" not found PluginDescriptor(name=IDEA CORE, id=com.intellij, descriptorPath=plugin.xml, path=/opt/pycharm-2022.3.2/lib, version=223.8617.48, package=com.intellij.structuralsearch, isBundled=true)
+2023-03-08 09:34:09,910 [    617]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Visual Studio" not found PluginDescriptor(name=IDEA CORE, id=com.intellij, descriptorPath=plugin.xml, path=/opt/pycharm-2022.3.2/lib, version=223.8617.48, package=com.intellij.structuralsearch, isBundled=true)
+2023-03-08 09:34:09,929 [    636]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Visual Studio" not found PluginDescriptor(name=HTML Tools, id=HtmlTools, descriptorPath=plugin.xml, path=/opt/pycharm-2022.3.2/plugins/html-tools, version=223.8617.48, package=null, isBundled=true)
+2023-03-08 09:34:09,945 [    652]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Eclipse" not found PluginDescriptor(name=GitHub, id=org.jetbrains.plugins.github, descriptorPath=plugin.xml, path=/opt/pycharm-2022.3.2/plugins/vcs-github, version=223.8617.48, package=org.jetbrains.plugins.github, isBundled=true)
+2023-03-08 09:34:09,951 [    658]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Eclipse" not found PluginDescriptor(name=JavaScript and TypeScript, id=JavaScript, descriptorPath=plugin.xml, path=/opt/pycharm-2022.3.2/plugins/javascript-impl, version=223.8617.48, package=null, isBundled=true)
+2023-03-08 09:34:09,951 [    658]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Visual Studio" not found PluginDescriptor(name=JavaScript and TypeScript, id=JavaScript, descriptorPath=plugin.xml, path=/opt/pycharm-2022.3.2/plugins/javascript-impl, version=223.8617.48, package=null, isBundled=true)
+2023-03-08 09:34:09,954 [    661]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Eclipse" not found PluginDescriptor(name=Space, id=com.jetbrains.space, moduleName=intellij.space.vcs, descriptorPath=intellij.space.vcs.xml, path=/opt/pycharm-2022.3.2/plugins/space, version=223.8617.48, package=com.intellij.space.vcs, isBundled=true)
+2023-03-08 09:34:09,966 [    673]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Eclipse" not found PluginDescriptor(name=Python, id=Pythonid, descriptorPath=plugin.xml, path=/opt/pycharm-2022.3.2/plugins/python, version=223.8617.48, package=null, isBundled=true)
+2023-03-08 09:34:09,966 [    673]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "NetBeans 6.5" not found PluginDescriptor(name=Python, id=Pythonid, descriptorPath=plugin.xml, path=/opt/pycharm-2022.3.2/plugins/python, version=223.8617.48, package=null, isBundled=true)
+2023-03-08 09:34:09,968 [    675]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Visual Studio" not found PluginDescriptor(name=Python, id=Pythonid, descriptorPath=plugin.xml, path=/opt/pycharm-2022.3.2/plugins/python, version=223.8617.48, package=null, isBundled=true)
+2023-03-08 09:34:09,968 [    675]   WARN - #c.i.o.a.i.ActionManagerImpl - keymap "Eclipse" not found PluginDescriptor(name=Python, id=Pythonid, descriptorPath=plugin.xml, path=/opt/pycharm-2022.3.2/plugins/python, version=223.8617.48, package=null, isBundled=true)
+2023-03-08 09:34:10,156 [    863]   WARN - #c.i.e.t.TargetBasedSdks - SDK target configuration data is absent
+2023-03-08 09:34:10,170 [    877]   WARN - #c.i.e.t.TargetBasedSdks - SDK target configuration data is absent
+2023-03-08 09:34:10,174 [    881]   WARN - #c.i.e.t.TargetBasedSdks - SDK target configuration data is absent
+2023-03-08 09:34:50,962 [  41669]   WARN - #c.i.e.RunManager - Must be not called before project components initialized
+Info  | RdCoroutineScope          | 56:DefaultDispatcher-worker-39 | RdCoroutineHost overridden 
+2023-03-08 09:34:51,885 [  42592]   WARN - #c.i.o.a.i.ActionUpdater - 357 ms to grab EDT for ToolWindowHeader$2#update@ToolwindowTitle (com.intellij.toolWindow.ToolWindowHeader$2)
+2023-03-08 09:34:54,270 [  44977]   WARN - #c.i.u.x.Binding - no accessors for com.intellij.openapi.projectRoots.Sdk
+
+
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://www.manning.com/books/the-well-grounded-python-developer
+The Well-Grounded Python Developer
+Doug Farrell
+MEAP began February 2020 Publication in Summer 2023 (estimated) 
+ISBN 9781617297441 300 pages (estimated) printed in black & white 
+
+The Well-Grounded Python Developer
+Doug Farrell
+version: 8, last updated: 2022-09-26
+
+OpenID Connect in Action
+Prabath Siriwardena
+version: 13, last updated: 2023-03-03
+
+Amazon Web Services in Action, Third Edition
+Andreas Wittig and Michael Wittig
+version: 10, last updated: 2022-12-22
+
+-rw-rw-r--  1 davidho davidho    7586709 Mar  8 10:18  The_Well-Grounded_Python_Developer_v8.pdf
+-rw-rw-r--  1 davidho davidho    3333777 Mar  8 10:19  The_Well-Grounded_Python_Developer_v8.epub
+-rw-rw-r--  1 davidho davidho    2381239 Mar  8 10:19  The_Well-Grounded_Python_Developer_v8.mobi
+-rw-rw-r--  1 davidho davidho  107981788 Mar  8 10:23  the-well-grounded-python-developer-integration.zip
+-rw-rw-r--  1 davidho davidho   11221868 Mar  8 10:23  OpenID_Connect_in_Action_v13.pdf
+-rw-rw-r--  1 davidho davidho    7897973 Mar  8 10:23  OpenID_Connect_in_Action_v13.epub
+-rw-rw-r--  1 davidho davidho    4750993 Mar  8 10:23  OpenID_Connect_in_Action_v13.mobi
+-rw-rw-r--  1 davidho davidho   40026009 Mar  8 10:23  samples-master.zip
+
+mv samples-master.zip OpenID_Connect_in_Action_v13.samples-master.zip
+
+-rw-rw-r--  1 davidho davidho    7586709 Mar  8 10:18  The_Well-Grounded_Python_Developer_v8.pdf
+-rw-rw-r--  1 davidho davidho    3333777 Mar  8 10:19  The_Well-Grounded_Python_Developer_v8.epub
+-rw-rw-r--  1 davidho davidho    2381239 Mar  8 10:19  The_Well-Grounded_Python_Developer_v8.mobi
+-rw-rw-r--  1 davidho davidho  107981788 Mar  8 10:23  the-well-grounded-python-developer-integration.zip
+-rw-rw-r--  1 davidho davidho   11221868 Mar  8 10:23  OpenID_Connect_in_Action_v13.pdf
+-rw-rw-r--  1 davidho davidho    7897973 Mar  8 10:23  OpenID_Connect_in_Action_v13.epub
+-rw-rw-r--  1 davidho davidho    4750993 Mar  8 10:23  OpenID_Connect_in_Action_v13.mobi
+-rw-rw-r--  1 davidho davidho   40026009 Mar  8 10:23  OpenID_Connect_in_Action_v13.samples-master.zip
+-rw-rw-r--  1 davidho davidho   42003461 Mar  8 10:30  Amazon_Web_Services_in_Action_Third_Edi_v10.pdf
+-rw-rw-r--  1 davidho davidho   41239678 Mar  8 10:30  Amazon_Web_Services_in_Action_Third_Edi_v10.epub
+-rw-rw-r--  1 davidho davidho   22878443 Mar  8 10:30  Amazon_Web_Services_in_Action_Third_Edi_v10.mobi
+-rw-rw-r--  1 davidho davidho   18806644 Mar  8 10:30  code3-main.zip
+
+mv code3-main.zip Amazon_Web_Services_in_Action_Third_Edi_v10.code3-main.zip
+
+-rw-rw-r--  1 davidho davidho    7586709 Mar  8 10:18  The_Well-Grounded_Python_Developer_v8.pdf
+-rw-rw-r--  1 davidho davidho    3333777 Mar  8 10:19  The_Well-Grounded_Python_Developer_v8.epub
+-rw-rw-r--  1 davidho davidho    2381239 Mar  8 10:19  The_Well-Grounded_Python_Developer_v8.mobi
+-rw-rw-r--  1 davidho davidho  107981788 Mar  8 10:23  the-well-grounded-python-developer-integration.zip
+-rw-rw-r--  1 davidho davidho   11221868 Mar  8 10:23  OpenID_Connect_in_Action_v13.pdf
+-rw-rw-r--  1 davidho davidho    7897973 Mar  8 10:23  OpenID_Connect_in_Action_v13.epub
+-rw-rw-r--  1 davidho davidho    4750993 Mar  8 10:23  OpenID_Connect_in_Action_v13.mobi
+-rw-rw-r--  1 davidho davidho   40026009 Mar  8 10:23  OpenID_Connect_in_Action_v13.samples-master.zip
+-rw-rw-r--  1 davidho davidho   42003461 Mar  8 10:30  Amazon_Web_Services_in_Action_Third_Edi_v10.pdf
+-rw-rw-r--  1 davidho davidho   41239678 Mar  8 10:30  Amazon_Web_Services_in_Action_Third_Edi_v10.epub
+-rw-rw-r--  1 davidho davidho   22878443 Mar  8 10:30  Amazon_Web_Services_in_Action_Third_Edi_v10.mobi
+-rw-rw-r--  1 davidho davidho   18806644 Mar  8 10:30  Amazon_Web_Services_in_Action_Third_Edi_v10.code3-main.zip
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://flask.palletsprojects.com/en/2.2.x/quickstart/
+https://www.manning.com/books/the-well-grounded-python-developer
+
+page 18, "The Well-Grounded Python Developer"
+
+cd ~/pythonprojs/
+mkdir dphflask
+cd dphflask
+python3 -m venv .venv
+.vevn/Scripts/activate
+python3 -m pip install --upgrade pip
+
+davidho@dphxps17:~/pythonprojs/dphflask$ tree -a -L 5
+.
+└── .venv
+    ├── bin
+    │   ├── activate
+    │   ├── activate.csh
+    │   ├── activate.fish
+    │   ├── Activate.ps1
+    │   ├── pip
+    │   ├── pip3
+    │   ├── pip3.10
+    │   ├── pip3.11
+    │   ├── python -> python3
+    │   ├── python3 -> /home/davidho/.pyenv/versions/3.11.0/bin/python3
+    │   └── python3.11 -> python3
+    ├── include
+    │   └── python3.11
+    ├── lib
+    │   └── python3.11
+    │       └── site-packages
+    │           ├── _distutils_hack
+    │           ├── distutils-precedence.pth
+    │           ├── pip
+    │           ├── pip-22.3.dist-info
+    │           ├── pkg_resources
+    │           ├── setuptools
+    │           └── setuptools-65.5.0.dist-info
+    ├── lib64 -> lib
+    └── pyvenv.cfg
+
+14 directories, 13 files
+davidho@dphxps17:~/pythonprojs/dphflask$ 
+davidho@dphxps17:~/pythonprojs/dphflask$ touch hello.py
+davidho@dphxps17:~/pythonprojs/dphflask$ code .
+davidho@dphxps17:~/pythonprojs/dphflask$ tree
+.
+└── hello.py
+
+0 directories, 1 file
+davidho@dphxps17:~/pythonprojs/dphflask$ tree -a -L 5
+.
+├── hello.py
+└── .venv
+    ├── bin
+    │   ├── activate
+    │   ├── activate.csh
+    │   ├── activate.fish
+    │   ├── Activate.ps1
+    │   ├── pip
+    │   ├── pip3
+    │   ├── pip3.10
+    │   ├── pip3.11
+    │   ├── python -> python3
+    │   ├── python3 -> /home/davidho/.pyenv/versions/3.11.0/bin/python3
+    │   └── python3.11 -> python3
+    ├── include
+    │   └── python3.11
+    ├── lib
+    │   └── python3.11
+    │       └── site-packages
+    │           ├── _distutils_hack
+    │           ├── distutils-precedence.pth
+    │           ├── pip
+    │           ├── pip-22.3.dist-info
+    │           ├── pkg_resources
+    │           ├── setuptools
+    │           └── setuptools-65.5.0.dist-info
+    ├── lib64 -> lib
+    └── pyvenv.cfg
+
+14 directories, 14 files
+davidho@dphxps17:~/pythonprojs/dphflask$ 
+davidho@dphxps17:~/pythonprojs/dphflask$ pip install -U Flask
+Collecting Flask
+  Using cached Flask-2.2.3-py3-none-any.whl (101 kB)
+Collecting Werkzeug>=2.2.2
+  Using cached Werkzeug-2.2.3-py3-none-any.whl (233 kB)
+Collecting Jinja2>=3.0
+  Using cached Jinja2-3.1.2-py3-none-any.whl (133 kB)
+Collecting itsdangerous>=2.0
+  Using cached itsdangerous-2.1.2-py3-none-any.whl (15 kB)
+Collecting click>=8.0
+  Using cached click-8.1.3-py3-none-any.whl (96 kB)
+Collecting MarkupSafe>=2.0
+  Downloading MarkupSafe-2.1.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (27 kB)
+Installing collected packages: MarkupSafe, itsdangerous, click, Werkzeug, Jinja2, Flask
+Successfully installed Flask-2.2.3 Jinja2-3.1.2 MarkupSafe-2.1.2 Werkzeug-2.2.3 click-8.1.3 itsdangerous-2.1.2
+davidho@dphxps17:~/pythonprojs/dphflask$ 
+davidho@dphxps17:~/pythonprojs/dphflask$ tree -a -L 5
+.
+├── hello.py
+└── .venv
+    ├── bin
+    │   ├── activate
+    │   ├── activate.csh
+    │   ├── activate.fish
+    │   ├── Activate.ps1
+    │   ├── pip
+    │   ├── pip3
+    │   ├── pip3.10
+    │   ├── pip3.11
+    │   ├── python -> python3
+    │   ├── python3 -> /home/davidho/.pyenv/versions/3.11.0/bin/python3
+    │   └── python3.11 -> python3
+    ├── include
+    │   └── python3.11
+    ├── lib
+    │   └── python3.11
+    │       └── site-packages
+    │           ├── _distutils_hack
+    │           ├── distutils-precedence.pth
+    │           ├── pip
+    │           ├── pip-22.3.dist-info
+    │           ├── pkg_resources
+    │           ├── setuptools
+    │           └── setuptools-65.5.0.dist-info
+    ├── lib64 -> lib
+    └── pyvenv.cfg
+
+14 directories, 14 files
+davidho@dphxps17:~/pythonprojs/dphflask$ 
+davidho@dphxps17:~/pythonprojs/dphflask$ flask --app hello run
+ * Serving Flask app 'hello'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+
+Hello, World!
+
+
+davidho@dphxps17:~/.pyenv/versions/3.11.0$ date
+Wed Mar  8 11:01:24 AM EST 2023
+davidho@dphxps17:~/.pyenv/versions/3.11.0$ pwd -P
+/home/davidho/.pyenv/versions/3.11.0
+davidho@dphxps17:~/.pyenv/versions/3.11.0$ tree  | grep -i flask
+│   ├── flask
+│       │   ├── flask
+│       │   ├── Flask-2.2.3.dist-info
+davidho@dphxps17:~/.pyenv/versions/3.11.0$ 
+
+
+davidho@dphxps17:~/.pyenv/versions/3.11.0$ date
+Wed Mar  8 11:07:01 AM EST 2023
+davidho@dphxps17:~/.pyenv/versions/3.11.0$ pwd -P
+/home/davidho/.pyenv/versions/3.11.0
+davidho@dphxps17:~/.pyenv/versions/3.11.0$ find /home/davidho/.pyenv/versions -name "*flask*" -print
+/home/davidho/.pyenv/versions/3.11.0/bin/flask
+/home/davidho/.pyenv/versions/3.11.0/lib/python3.11/site-packages/flask
+davidho@dphxps17:~/.pyenv/versions/3.11.0$ 
+
+
