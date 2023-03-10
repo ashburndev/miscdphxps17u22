@@ -1,0 +1,692 @@
+davidho@dphxps17:~$ date
+Fri Mar 10 07:14:25 AM EST 2023
+davidho@dphxps17:~$ code stuff-20230310.txt
+davidho@dphxps17:~$ 
+
+https://sdkman.io/
+https://sdkman.io/install
+https://sdkman.io/usage
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~$ date
+Fri Mar 10 07:18:34 AM EST 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ sdk version
+We periodically need to update the local cache. Please run:
+
+  $ sdk update
+
+Broadcasts discontinued. Please follow @sdkman_ on Twitter for announcements.
+
+SDKMAN 5.16.0
+
+
+ATTENTION: A new version of SDKMAN is available...
+
+The current version is 5.17.0, but you have 5.16.0.
+
+Would you like to upgrade now? (Y/n): 
+
+Updating SDKMAN...
+Installing script cli archive...
+* Downloading...
+######################################################################## 100.0%
+* Checking archive integrity...
+* Extracting archive...
+* Copying archive contents...
+* Cleaning up...
+
+Installing native cli archive...
+* Downloading...
+######################################################################## 100.0%
+* Checking archive integrity...
+* Extracting archive...
+* Copying archive contents...
+* Cleaning up...
+
+Updating config file...
+
+sdkman_auto_answer=false
+sdkman_insecure_ssl=false
+sdkman_curl_connect_timeout=7
+sdkman_curl_max_time=10
+sdkman_beta_channel=false
+sdkman_debug_mode=false
+sdkman_colour_enable=true
+sdkman_auto_env=false
+sdkman_rosetta2_compatible=false
+sdkman_checksum_enable=true
+sdkman_selfupdate_feature=true
+sdkman_auto_complete=true
+sdkman_auto_update=true
+
+Creating config file backup...
+
+
+Successfully upgraded SDKMAN!
+
+Open a new terminal to start using SDKMAN 5.17.0.
+
+To join our BETA channel, simply follow the instructions on:
+
+   http://sdkman.io/install
+
+Enjoy!!!
+
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~$ sdk version
+
+SDKMAN!
+script: 5.17.0
+native: 0.1.3
+
+davidho@dphxps17:~$ 
+
+sdk list
+sdk list java
+sdk list groovy
+sdk list grails
+sdk list gradle
+sdk list maven
+sdk list ant
+sdk list jmeter
+sdk list jmc
+sdk list visualvm
+sdk list springboot
+sdk list activemq
+sdk list sciidoctorj
+sdk list micronaut
+sdk list quarkus
+
+
+davidho@dphxps17:~$ sdk list
+davidho@dphxps17:~$ sdk list | grep "sdk install"
+$ sdk install activemq
+$ sdk install ant
+$ sdk install asciidoctorj
+$ sdk install ballerina
+$ sdk install bpipe
+$ sdk install btrace
+$ sdk install concurnas
+$ sdk install connor
+$ sdk install coursier
+$ sdk install cuba
+$ sdk install cxf
+$ sdk install doctoolchain
+$ sdk install flink
+$ sdk install gaiden
+$ sdk install gradle
+$ sdk install gradleprofiler
+$ sdk install grails
+$ sdk install groovy
+$ sdk install groovyserv
+$ sdk install hadoop
+$ sdk install helidon
+$ sdk install http4k
+$ sdk install infrastructor
+$ sdk install jarviz
+$ sdk install java
+$ sdk install jbake
+$ sdk install jbang
+$ sdk install jmc
+$ sdk install jmeter
+$ sdk install joern
+$ sdk install jreleaser
+$ sdk install karaf
+$ sdk install kcctl
+$ sdk install ki
+$ sdk install kobweb
+$ sdk install kotlin
+$ sdk install kscript
+$ sdk install ktx
+$ sdk install layrry
+$ sdk install leiningen
+$ sdk install maven
+$ sdk install mcs
+$ sdk install micronaut
+$ sdk install mulefd
+$ sdk install mvnd
+$ sdk install mybatis
+$ sdk install neo4jmigrations
+$ sdk install pierrot
+$ sdk install pomchecker
+$ sdk install quarkus
+$ sdk install sbt
+$ sdk install scala
+$ sdk install scalacli
+$ sdk install schemacrawler
+$ sdk install skeletal
+$ sdk install spark
+$ sdk install springboot
+$ sdk install sshoogr
+$ sdk install taxi
+$ sdk install tomcat
+$ sdk install toolkit
+$ sdk install vertx
+$ sdk install visualvm
+$ sdk install webtau
+$ sdk install znai
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~$ sdk current
+
+Using:
+
+ant: 1.10.12
+asciidoctorj: 2.5.4
+gradle: 7.4.2
+grails: 5.2.5
+groovy: 4.0.3
+java: 17.0.5-zulu
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+sdk list springboot
+
+================================================================================
+Available Springboot Versions
+================================================================================
+     3.0.4               2.4.13              2.1.12.RELEASE      1.5.1.RELEASE  
+     3.0.3               2.4.12              2.1.11.RELEASE      1.4.7.RELEASE  
+     3.0.2               2.4.11              2.1.10.RELEASE      1.4.6.RELEASE  
+     3.0.1               2.4.10              2.1.9.RELEASE       1.4.5.RELEASE  
+     3.0.0               2.4.9               2.1.8.RELEASE       1.4.4.RELEASE  
+     2.7.9               2.4.8               2.1.7.RELEASE       1.4.3.RELEASE  
+     2.7.8               2.4.7               2.1.6.RELEASE       1.4.2.RELEASE  
+     2.7.7               2.4.6               2.1.5.RELEASE       1.4.1.RELEASE  
+     2.7.6               2.4.5               2.1.4.RELEASE       1.4.0.RELEASE  
+     2.7.5               2.4.4               2.1.3.RELEASE       1.3.8.RELEASE  
+     2.7.3               2.4.3               2.1.2.RELEASE       1.3.7.RELEASE  
+     2.7.2               2.4.2               2.1.1.RELEASE       1.3.6.RELEASE  
+     2.7.1               2.4.1               2.1.0.RELEASE       1.3.5.RELEASE  
+     2.7.0               2.4.0               2.0.9.RELEASE       1.3.4.RELEASE  
+     2.6.14              2.3.12.RELEASE      2.0.8.RELEASE       1.3.3.RELEASE  
+     2.6.13              2.3.11.RELEASE      2.0.7.RELEASE       1.3.2.RELEASE  
+     2.6.12              2.3.9.RELEASE       2.0.6.RELEASE       1.3.1.RELEASE  
+     2.6.11              2.3.8.RELEASE       2.0.5.RELEASE       1.3.0.RELEASE  
+     2.6.10              2.3.7.RELEASE       2.0.4.RELEASE       1.2.8.RELEASE  
+     2.6.9               2.3.6.RELEASE       2.0.3.RELEASE       1.2.7.RELEASE  
+     2.6.8               2.3.5.RELEASE       2.0.2.RELEASE       1.2.6.RELEASE  
+     2.6.7               2.3.4.RELEASE       2.0.1.RELEASE       1.2.5.RELEASE  
+     2.6.6               2.3.3.RELEASE       2.0.0.RELEASE       1.2.4.RELEASE  
+     2.6.5               2.3.2.RELEASE       1.5.22.RELEASE      1.2.3.RELEASE  
+     2.6.4               2.3.1.RELEASE       1.5.21.RELEASE      1.2.2.RELEASE  
+     2.6.3               2.3.0.RELEASE       1.5.20.RELEASE      1.2.1.RELEASE  
+     2.6.2               2.2.13.RELEASE      1.5.19.RELEASE      1.2.0.RELEASE  
+     2.6.1               2.2.12.RELEASE      1.5.18.RELEASE      1.1.12.RELEASE 
+     2.6.0               2.2.11.RELEASE      1.5.17.RELEASE      1.1.11.RELEASE 
+     2.5.14              2.2.9.RELEASE       1.5.16.RELEASE      1.1.10.RELEASE 
+     2.5.13              2.2.8.RELEASE       1.5.15.RELEASE      1.1.9.RELEASE  
+     2.5.12              2.2.7.RELEASE       1.5.14.RELEASE      1.1.8.RELEASE  
+     2.5.11              2.2.6.RELEASE       1.5.13.RELEASE      1.1.7.RELEASE  
+     2.5.10              2.2.5.RELEASE       1.5.12.RELEASE      1.1.6.RELEASE  
+     2.5.9               2.2.4.RELEASE       1.5.11.RELEASE      1.1.5.RELEASE  
+     2.5.8               2.2.3.RELEASE       1.5.10.RELEASE      1.1.4.RELEASE  
+     2.5.7               2.2.2.RELEASE       1.5.9.RELEASE       1.1.3.RELEASE  
+     2.5.6               2.2.1.RELEASE       1.5.8.RELEASE       1.1.2.RELEASE  
+     2.5.5               2.2.0.RELEASE       1.5.7.RELEASE       1.1.1.RELEASE  
+     2.5.4               2.1.18.RELEASE      1.5.6.RELEASE       1.1.0.RELEASE  
+     2.5.3               2.1.16.RELEASE      1.5.5.RELEASE       1.0.2.RELEASE  
+     2.5.2               2.1.15.RELEASE      1.5.4.RELEASE       1.0.1.RELEASE  
+     2.5.1               2.1.14.RELEASE      1.5.3.RELEASE       1.0.0.RELEASE  
+     2.5.0               2.1.13.RELEASE      1.5.2.RELEASE                      
+
+================================================================================
+Available Groovy Versions
+================================================================================
+     4.0.9               2.5.15              2.3.11              1.8.5          
+     4.0.8               2.5.14              2.3.10              1.8.4          
+     4.0.7               2.5.13              2.3.9               1.8.3          
+     4.0.6               2.5.12              2.3.8               1.8.2          
+     4.0.5               2.5.11              2.3.7               1.8.1          
+     4.0.4               2.5.10              2.3.6               1.8.0          
+ > * 4.0.3               2.5.9               2.3.5               1.7.11         
+     4.0.2               2.5.8               2.3.4               1.7.10         
+     4.0.1               2.5.7               2.3.3               1.7.9          
+     4.0.0               2.5.6               2.3.2               1.7.8          
+     4.0.0-rc-2          2.5.5               2.3.1               1.7.7          
+     4.0.0-rc-1          2.5.4               2.3.0               1.7.6          
+     3.0.15              2.5.3               2.2.2               1.7.5          
+     3.0.14              2.5.2               2.2.1               1.7.4          
+     3.0.13              2.5.1               2.2.0               1.7.3          
+     3.0.12              2.5.0               2.1.9               1.7.2          
+     3.0.11              2.4.21              2.1.8               1.7.1          
+     3.0.10              2.4.20              2.1.7               1.7.0          
+     3.0.9               2.4.19              2.1.6               1.6.9          
+     3.0.8               2.4.18              2.1.5               1.6.8          
+     3.0.7               2.4.17              2.1.4               1.6.7          
+     3.0.6               2.4.16              2.1.3               1.6.6          
+     3.0.5               2.4.15              2.1.2               1.6.5          
+     3.0.4               2.4.14              2.1.1               1.6.4          
+     3.0.3               2.4.13              2.1.0               1.6.3          
+     3.0.2               2.4.12              2.0.8               1.6.2          
+     3.0.1               2.4.11              2.0.7               1.6.1          
+     3.0.0               2.4.10              2.0.6               1.6.0          
+     2.6.0-alpha-4       2.4.9               2.0.5               1.5.8          
+     2.6.0-alpha-3       2.4.8               2.0.4               1.5.7          
+     2.6.0-alpha-2       2.4.7               2.0.3               1.5.6          
+     2.6.0-alpha-1       2.4.6               2.0.2               1.5.5          
+     2.5.21              2.4.5               2.0.1               1.5.4          
+     2.5.20              2.4.4               2.0.0               1.5.3          
+     2.5.19              2.4.3               1.8.9               1.5.2          
+     2.5.18              2.4.2               1.8.8               1.5.1          
+     2.5.17              2.4.1               1.8.7               1.5.0          
+     2.5.16              2.4.0               1.8.6                              
+
+================================================================================
+Available Grails Versions
+================================================================================
+     6.0.0-M1            4.0.7               3.1.13              2.3.10         
+     5.3.2               4.0.6               3.1.12              2.3.9          
+     5.3.1               4.0.5               3.1.11              2.3.8          
+     5.3.0               4.0.4               3.1.10              2.3.7          
+     5.2.6               4.0.3               3.1.9               2.3.6          
+ > * 5.2.5               4.0.2               3.1.8               2.3.5          
+     5.2.4               4.0.1               3.1.7               2.3.4          
+     5.2.3               4.0.0               3.1.6               2.3.3          
+     5.2.2               4.0.0.RC2           3.1.5               2.3.2          
+     5.2.1               4.0.0.RC1           3.1.4               2.3.1          
+     5.2.0               4.0.0.M2            3.1.3               2.3.0          
+     5.1.10              4.0.0.M1            3.1.2               2.2.5          
+     5.1.9               3.3.16              3.1.1               2.2.4          
+   * 5.1.8               3.3.15              3.1.0               2.2.3          
+     5.1.7               3.3.14              3.0.17              2.2.2          
+     5.1.6               3.3.13              3.0.16              2.2.1          
+     5.1.5               3.3.12              3.0.15              2.2.0          
+     5.1.4               3.3.11              3.0.14              2.1.5          
+     5.1.3               3.3.10              3.0.13              2.1.4          
+     5.1.2               3.3.9               3.0.12              2.1.3          
+     5.1.1               3.3.8               3.0.11              2.1.2          
+     5.1.0               3.3.7               3.0.10              2.1.1          
+     5.0.3               3.3.6               3.0.9               2.1.0          
+     5.0.2               3.3.5               3.0.8               2.0.4          
+     5.0.1               3.3.4               3.0.7               2.0.3          
+     5.0.0               3.3.3               3.0.6               2.0.2          
+     5.0.0-RC4           3.3.2               3.0.5               2.0.1          
+     5.0.0-RC3           3.3.1               3.0.4               2.0.0          
+     5.0.0.RC2           3.3.0               3.0.3               1.3.9          
+     5.0.0.RC1           3.2.13              3.0.2               1.3.8          
+     5.0.0.M2            3.2.12              3.0.1               1.3.7          
+     5.0.0.M1            3.2.11              3.0.0               1.3.6          
+     4.1.2               3.2.10              2.5.6               1.3.5          
+     4.1.1               3.2.9               2.5.5               1.3.4          
+     4.1.0               3.2.8               2.5.4               1.3.3          
+     4.1.0.M5            3.2.7               2.5.3               1.3.2          
+     4.1.0.M4            3.2.6               2.5.2               1.3.1          
+     4.1.0.M3            3.2.5               2.5.1               1.3.0          
+     4.1.0.M2            3.2.4               2.5.0               1.2.5          
+     4.1.0.M1            3.2.3               2.4.5               1.2.4          
+     4.0.13              3.2.2               2.4.4               1.2.3          
+     4.0.12              3.2.1               2.4.3               1.2.2          
+     4.0.11              3.2.0               2.4.2               1.2.1          
+     4.0.10              3.1.16              2.4.1               1.2.0          
+     4.0.9               3.1.15              2.4.0                              
+     4.0.8               3.1.14              2.3.11                             
+
+================================================================================
+Available Gradle Versions
+================================================================================
+     8.0.2               6.8.3               5.1                 2.13           
+     8.0.1               6.8.2               5.0                 2.12           
+     8.0                 6.8.1               4.10.3              2.11           
+     8.0-rc-5            6.8                 4.10.2              2.10           
+     8.0-rc-4            6.7.1               4.10.1              2.9            
+     8.0-rc-3            6.7                 4.10                2.8            
+     8.0-rc-2            6.6.1               4.9                 2.7            
+     8.0-rc-1            6.6                 4.8.1               2.6            
+     7.6.1               6.5.1               4.8                 2.5            
+     7.6                 6.5                 4.7                 2.4            
+     7.6-rc-4            6.4.1               4.6                 2.3            
+     7.6-rc-3            6.4                 4.5.1               2.2.1          
+     7.6-rc-2            6.3                 4.5                 2.2            
+     7.6-rc-1            6.2.2               4.4.1               2.1            
+     7.5.1               6.2.1               4.4                 2.0            
+     7.5                 6.2                 4.3.1               1.12           
+ > * 7.4.2               6.1.1               4.3                 1.11           
+     7.4.1               6.1                 4.2.1               1.10           
+     7.4                 6.0.1               4.2                 1.9            
+     7.3.3               6.0                 4.1                 1.8            
+     7.3.2               5.6.4               4.0.2               1.7            
+     7.3.1               5.6.3               4.0.1               1.6            
+     7.3                 5.6.2               4.0                 1.5            
+     7.2                 5.6.1               3.5.1               1.4            
+     7.1.1               5.6                 3.5                 1.3            
+     7.1                 5.5.1               3.4.1               1.2            
+     7.0.2               5.5                 3.4                 1.1            
+     7.0.1               5.4.1               3.3                 1.0            
+     7.0                 5.4                 3.2.1               0.9.2          
+     6.9.4               5.3.1               3.2                 0.9.1          
+     6.9.3               5.3                 3.1                 0.9            
+     6.9.2               5.2.1               3.0                 0.8            
+     6.9.1               5.2                 2.14.1              0.7            
+     6.9                 5.1.1               2.14                               
+
+================================================================================
+Available Maven Versions
+================================================================================
+     4.0.0-alpha-4       3.5.2                                                  
+     3.9.0               3.5.0                                                  
+     3.8.7               3.3.9                                                  
+     3.8.6               3.3.3                                                  
+   * 3.8.5               3.3.1                                                  
+     3.8.4               3.2.5                                                  
+     3.8.3               3.2.3                                                  
+     3.8.2               3.2.2                                                  
+     3.8.1               3.2.1                                                  
+     3.6.3               3.1.1                                                  
+     3.6.2               3.1.0                                                  
+     3.6.1               3.0.5                                                  
+     3.6.0               3.0.4                                                  
+     3.5.4                                                                      
+     3.5.3                                                           
+
+davidho@dphxps17:~$ sdk list java | grep -i zulu
+ Zulu          |     | 19.0.2       | zulu    |            | 19.0.2-zulu         
+               |     | 19.0.2.fx    | zulu    |            | 19.0.2.fx-zulu      
+               |     | 19.0.1       | zulu    |            | 19.0.1-zulu         
+               |     | 19.0.1.fx    | zulu    |            | 19.0.1.fx-zulu      
+               |     | 17.0.6       | zulu    |            | 17.0.6-zulu         
+               |     | 17.0.6.fx    | zulu    |            | 17.0.6.fx-zulu      
+               | >>> | 17.0.5       | zulu    | installed  | 17.0.5-zulu         
+               |     | 17.0.5.fx    | zulu    |            | 17.0.5.fx-zulu      
+               |     | 17.0.3       | zulu    | local only | 17.0.3-zulu         
+               |     | 17.0.3.fx    | zulu    | local only | 17.0.3.fx-zulu      
+               |     | 11.0.18      | zulu    |            | 11.0.18-zulu        
+               |     | 11.0.18.fx   | zulu    |            | 11.0.18.fx-zulu     
+               |     | 11.0.17      | zulu    |            | 11.0.17-zulu        
+               |     | 11.0.17.fx   | zulu    |            | 11.0.17.fx-zulu     
+               |     | 8.0.362      | zulu    |            | 8.0.362-zulu        
+               |     | 8.0.362.fx   | zulu    |            | 8.0.362.fx-zulu     
+               |     | 8.0.352      | zulu    |            | 8.0.352-zulu        
+               |     | 8.0.352.fx   | zulu    |            | 8.0.352.fx-zulu     
+               |     | 7.0.352      | zulu    |            | 7.0.352-zulu        
+               |     | 6.0.119      | zulu    |            | 6.0.119-zulu        
+davidho@dphxps17:~$ 
+
+davidho@dphxps17:~$ history | grep "sdk install"
+ 2003  sdk list | grep "sdk install"
+ 2013  sdk install java 17.0.6-zulu
+ 2014  sdk install groovy 3.0.15
+ 2015  sdk install groovy 4.0.9
+ 2016  sdk install grails 4.1.2
+ 2017  sdk install grails 5.3.2
+ 2019  sdk install gradle 7.6.1
+ 2020  sdk install gradle 8.0.2
+ 2022  sdk install maven 3.9.0
+ 2023  history | grep "sdk install"
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ sdk current
+
+Using:
+
+ant: 1.10.12
+asciidoctorj: 2.5.4
+gradle: 8.0.2
+grails: 5.3.2
+groovy: 4.0.9
+java: 17.0.6-zulu
+maven: 3.9.0
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ tree -L 2 ~/.sdkman/candidates
+/home/davidho/.sdkman/candidates
+├── ant
+│   ├── 1.10.12
+│   └── current -> 1.10.12
+├── asciidoctorj
+│   ├── 2.5.4
+│   └── current -> 2.5.4
+├── gradle
+│   ├── 7.4.2
+│   ├── 7.6.1
+│   ├── 8.0.2
+│   └── current -> 8.0.2
+├── grails
+│   ├── 4.1.2
+│   ├── 5.1.8
+│   ├── 5.2.5
+│   ├── 5.3.2
+│   └── current -> 5.3.2
+├── groovy
+│   ├── 3.0.15
+│   ├── 4.0.3
+│   ├── 4.0.9
+│   └── current -> 4.0.9
+├── java
+│   ├── 17.0.3.6.1-amzn
+│   ├── 17.0.3.fx-zulu
+│   ├── 17.0.3-oracle
+│   ├── 17.0.3-tem
+│   ├── 17.0.3-zulu
+│   ├── 17.0.5-zulu
+│   ├── 17.0.6-zulu
+│   └── current -> 17.0.6-zulu
+├── jbang
+│   └── 0.95.0
+├── jmc
+│   └── 8.1.1.51-zulu
+├── jmeter
+│   └── 5.4.3
+├── maven
+│   ├── 3.8.5
+│   ├── 3.9.0
+│   └── current -> 3.9.0
+├── tomcat
+│   ├── 10.0.14
+│   └── 9.0.56
+├── vertx
+│   └── 4.3.1
+└── visualvm
+    └── 2.1.3
+
+48 directories, 0 files
+davidho@dphxps17:~$ 
+
+
+================================================================================
+Available Java Versions for Linux 64bit
+================================================================================
+ Vendor        | Use | Version      | Dist    | Status     | Identifier
+--------------------------------------------------------------------------------
+ Corretto      |     | 19.0.2       | amzn    |            | 19.0.2-amzn         
+               |     | 19.0.1       | amzn    |            | 19.0.1-amzn         
+               |     | 17.0.6       | amzn    |            | 17.0.6-amzn         
+               |     | 17.0.5       | amzn    |            | 17.0.5-amzn         
+               |     | 17.0.3.6.1   | amzn    | local only | 17.0.3.6.1-amzn     
+               |     | 11.0.18      | amzn    |            | 11.0.18-amzn        
+               |     | 11.0.17      | amzn    |            | 11.0.17-amzn        
+               |     | 8.0.362      | amzn    |            | 8.0.362-amzn        
+               |     | 8.0.352      | amzn    |            | 8.0.352-amzn        
+ Dragonwell    |     | 17.0.6       | albba   |            | 17.0.6-albba        
+               |     | 17.0.5       | albba   |            | 17.0.5-albba        
+               |     | 17.0.4       | albba   |            | 17.0.4-albba        
+               |     | 11.0.18      | albba   |            | 11.0.18-albba       
+               |     | 11.0.17      | albba   |            | 11.0.17-albba       
+               |     | 11.0.16      | albba   |            | 11.0.16-albba       
+               |     | 8.0.362      | albba   |            | 8.0.362-albba       
+               |     | 8.0.352      | albba   |            | 8.0.352-albba       
+               |     | 8.0.345      | albba   |            | 8.0.345-albba       
+ Gluon         |     | 22.1.0.1.r17 | gln     |            | 22.1.0.1.r17-gln    
+               |     | 22.1.0.1.r11 | gln     |            | 22.1.0.1.r11-gln    
+ GraalVM       |     | 22.3.r19     | grl     |            | 22.3.r19-grl        
+               |     | 22.3.r17     | grl     |            | 22.3.r17-grl        
+               |     | 22.3.r11     | grl     |            | 22.3.r11-grl        
+               |     | 22.3.1.r19   | grl     |            | 22.3.1.r19-grl      
+               |     | 22.3.1.r17   | grl     |            | 22.3.1.r17-grl      
+               |     | 22.3.1.r11   | grl     |            | 22.3.1.r11-grl      
+               |     | 22.2.r17     | grl     |            | 22.2.r17-grl        
+               |     | 22.2.r11     | grl     |            | 22.2.r11-grl        
+               |     | 22.1.0.r17   | grl     |            | 22.1.0.r17-grl      
+               |     | 22.1.0.r11   | grl     |            | 22.1.0.r11-grl      
+               |     | 22.0.0.2.r17 | grl     |            | 22.0.0.2.r17-grl    
+               |     | 22.0.0.2.r11 | grl     |            | 22.0.0.2.r11-grl    
+               |     | 21.3.3.r17   | grl     |            | 21.3.3.r17-grl      
+               |     | 21.3.3.r11   | grl     |            | 21.3.3.r11-grl      
+               |     | 21.3.3.1.r17 | grl     |            | 21.3.3.1.r17-grl    
+               |     | 21.3.3.1.r11 | grl     |            | 21.3.3.1.r11-grl    
+               |     | 21.3.2.r17   | grl     |            | 21.3.2.r17-grl      
+               |     | 21.3.2.r11   | grl     |            | 21.3.2.r11-grl      
+               |     | 21.3.1.r8    | grl     |            | 21.3.1.r8-grl       
+               |     | 21.2.0.r8    | grl     |            | 21.2.0.r8-grl       
+               |     | 21.1.0.r8    | grl     |            | 21.1.0.r8-grl       
+               |     | 20.3.6.r11   | grl     |            | 20.3.6.r11-grl      
+               |     | 20.3.3.r8    | grl     |            | 20.3.3.r8-grl       
+               |     | 20.3.2.r8    | grl     |            | 20.3.2.r8-grl       
+               |     | 19.3.6.r11   | grl     |            | 19.3.6.r11-grl      
+               |     | 19.3.6.r8    | grl     |            | 19.3.6.r8-grl       
+ Java.net      |     | 21.ea.13     | open    |            | 21.ea.13-open       
+               |     | 21.ea.12     | open    |            | 21.ea.12-open       
+               |     | 21.ea.8      | open    |            | 21.ea.8-open        
+               |     | 21.ea.7      | open    |            | 21.ea.7-open        
+               |     | 21.ea.6      | open    |            | 21.ea.6-open        
+               |     | 21.ea.5      | open    |            | 21.ea.5-open        
+               |     | 21.ea.4      | open    |            | 21.ea.4-open        
+               |     | 20.ea.36     | open    |            | 20.ea.36-open       
+               |     | 20.ea.34     | open    |            | 20.ea.34-open       
+               |     | 20.ea.33     | open    |            | 20.ea.33-open       
+               |     | 20.ea.32     | open    |            | 20.ea.32-open       
+               |     | 20.ea.31     | open    |            | 20.ea.31-open       
+               |     | 20.ea.30     | open    |            | 20.ea.30-open       
+               |     | 19.ea.1.pma  | open    |            | 19.ea.1.pma-open    
+               |     | 19.0.2       | open    |            | 19.0.2-open         
+               |     | 19.0.1       | open    |            | 19.0.1-open         
+               |     | 11.0.12      | open    |            | 11.0.12-open        
+               |     | 11.0.2       | open    |            | 11.0.2-open         
+               |     | 8.0.302      | open    |            | 8.0.302-open        
+               |     | 8.0.282      | open    |            | 8.0.282-open        
+               |     | 8.0.265      | open    |            | 8.0.265-open        
+ Liberica      |     | 19.0.2.fx    | librca  |            | 19.0.2.fx-librca    
+               |     | 19.0.2       | librca  |            | 19.0.2-librca       
+               |     | 19.0.1.fx    | librca  |            | 19.0.1.fx-librca    
+               |     | 19.0.1       | librca  |            | 19.0.1-librca       
+               |     | 17.0.6.fx    | librca  |            | 17.0.6.fx-librca    
+               |     | 17.0.6       | librca  |            | 17.0.6-librca       
+               |     | 17.0.5.fx    | librca  |            | 17.0.5.fx-librca    
+               |     | 17.0.5       | librca  |            | 17.0.5-librca       
+               |     | 11.0.18.fx   | librca  |            | 11.0.18.fx-librca   
+               |     | 11.0.18      | librca  |            | 11.0.18-librca      
+               |     | 11.0.17.fx   | librca  |            | 11.0.17.fx-librca   
+               |     | 11.0.17      | librca  |            | 11.0.17-librca      
+               |     | 8.0.362.fx   | librca  |            | 8.0.362.fx-librca   
+               |     | 8.0.362      | librca  |            | 8.0.362-librca      
+               |     | 8.0.352.fx   | librca  |            | 8.0.352.fx-librca   
+               |     | 8.0.352      | librca  |            | 8.0.352-librca      
+               |     | 8.0.332.fx   | librca  |            | 8.0.332.fx-librca   
+ Liberica NIK  |     | 22.3.r17     | nik     |            | 22.3.r17-nik        
+               |     | 22.3.r11     | nik     |            | 22.3.r11-nik        
+               |     | 22.3.1.r17   | nik     |            | 22.3.1.r17-nik      
+               |     | 22.3.1.r11   | nik     |            | 22.3.1.r11-nik      
+               |     | 22.2.r17     | nik     |            | 22.2.r17-nik        
+               |     | 22.2.r11     | nik     |            | 22.2.r11-nik        
+               |     | 22.1.r17     | nik     |            | 22.1.r17-nik        
+               |     | 22.1.r11     | nik     |            | 22.1.r11-nik        
+               |     | 22.0.0.2.r17 | nik     |            | 22.0.0.2.r17-nik    
+               |     | 22.0.0.2.r11 | nik     |            | 22.0.0.2.r11-nik    
+               |     | 21.3.3.r17   | nik     |            | 21.3.3.r17-nik      
+               |     | 21.3.3.r11   | nik     |            | 21.3.3.r11-nik      
+               |     | 21.3.3.1.r17 | nik     |            | 21.3.3.1.r17-nik    
+               |     | 21.3.3.1.r11 | nik     |            | 21.3.3.1.r11-nik    
+               |     | 21.3.2.r17   | nik     |            | 21.3.2.r17-nik      
+               |     | 21.3.2.r11   | nik     |            | 21.3.2.r11-nik      
+               |     | 21.2         | nik     |            | 21.2-nik            
+               |     | 21.1         | nik     |            | 21.1-nik            
+               |     | 21.0.0.2.r11 | nik     |            | 21.0.0.2.r11-nik    
+               |     | 21.0.0.2     | nik     |            | 21.0.0.2-nik        
+ Mandrel       |     | 22.3.1.r17   | mandrel |            | 22.3.1.r17-mandrel  
+               |     | 22.3.0.1.r17 | mandrel |            | 22.3.0.1.r17-mandrel
+               |     | 22.2.r17     | mandrel |            | 22.2.r17-mandrel    
+               |     | 22.2.r11     | mandrel |            | 22.2.r11-mandrel    
+               |     | 22.1.0.0.r17 | mandrel |            | 22.1.0.0.r17-mandrel
+               |     | 22.1.0.0.r11 | mandrel |            | 22.1.0.0.r11-mandrel
+               |     | 22.0.0.2.r17 | mandrel |            | 22.0.0.2.r17-mandrel
+               |     | 22.0.0.2.r11 | mandrel |            | 22.0.0.2.r11-mandrel
+               |     | 21.3.5.1.r17 | mandrel |            | 21.3.5.1.r17-mandrel
+               |     | 21.3.5.1.r11 | mandrel |            | 21.3.5.1.r11-mandrel
+               |     | 21.3.4.r17   | mandrel |            | 21.3.4.r17-mandrel  
+               |     | 21.3.4.r11   | mandrel |            | 21.3.4.r11-mandrel  
+               |     | 21.3.3.r17   | mandrel |            | 21.3.3.r17-mandrel  
+               |     | 21.3.3.r11   | mandrel |            | 21.3.3.r11-mandrel  
+               |     | 21.3.2.0.r17 | mandrel |            | 21.3.2.0.r17-mandrel
+               |     | 21.3.2.0.r11 | mandrel |            | 21.3.2.0.r11-mandrel
+               |     | 21.3.1.1.r17 | mandrel |            | 21.3.1.1.r17-mandrel
+               |     | 21.3.1.1.r11 | mandrel |            | 21.3.1.1.r11-mandrel
+               |     | 21.3.1.0.r17 | mandrel |            | 21.3.1.0.r17-mandrel
+               |     | 21.3.1.0.r11 | mandrel |            | 21.3.1.0.r11-mandrel
+               |     | 21.3.0.0     | mandrel |            | 21.3.0.0-mandrel    
+               |     | 21.2.0.2     | mandrel |            | 21.2.0.2-mandrel    
+               |     | 20.3.3.0     | mandrel |            | 20.3.3.0-mandrel    
+ Microsoft     |     | 17.0.6       | ms      |            | 17.0.6-ms           
+               |     | 17.0.5       | ms      |            | 17.0.5-ms           
+               |     | 11.0.18      | ms      |            | 11.0.18-ms          
+               |     | 11.0.17      | ms      |            | 11.0.17-ms          
+ Oracle        |     | 19.0.2       | oracle  |            | 19.0.2-oracle       
+               |     | 19.0.1       | oracle  |            | 19.0.1-oracle       
+               |     | 17.0.6       | oracle  |            | 17.0.6-oracle       
+               |     | 17.0.5       | oracle  |            | 17.0.5-oracle       
+               |     | 17.0.3       | oracle  | local only | 17.0.3-oracle       
+ SapMachine    |     | 19.0.2       | sapmchn |            | 19.0.2-sapmchn      
+               |     | 19.0.1       | sapmchn |            | 19.0.1-sapmchn      
+               |     | 17.0.6       | sapmchn |            | 17.0.6-sapmchn      
+               |     | 17.0.5       | sapmchn |            | 17.0.5-sapmchn      
+               |     | 11.0.18      | sapmchn |            | 11.0.18-sapmchn     
+               |     | 11.0.17      | sapmchn |            | 11.0.17-sapmchn     
+ Semeru        |     | 18.0.2       | sem     |            | 18.0.2-sem          
+               |     | 17.0.6       | sem     |            | 17.0.6-sem          
+               |     | 17.0.5       | sem     |            | 17.0.5-sem          
+               |     | 17.0.4.1     | sem     |            | 17.0.4.1-sem        
+               |     | 11.0.18      | sem     |            | 11.0.18-sem         
+               |     | 11.0.17      | sem     |            | 11.0.17-sem         
+               |     | 11.0.16.1    | sem     |            | 11.0.16.1-sem       
+               |     | 8.0.362      | sem     |            | 8.0.362-sem         
+               |     | 8.0.352      | sem     |            | 8.0.352-sem         
+               |     | 8.0.345      | sem     |            | 8.0.345-sem         
+ Temurin       |     | 19.0.2       | tem     |            | 19.0.2-tem          
+               |     | 19.0.1       | tem     |            | 19.0.1-tem          
+               |     | 17.0.6       | tem     |            | 17.0.6-tem          
+               |     | 17.0.5       | tem     |            | 17.0.5-tem          
+               |     | 17.0.3       | tem     | local only | 17.0.3-tem          
+               |     | 11.0.18      | tem     |            | 11.0.18-tem         
+               |     | 11.0.17      | tem     |            | 11.0.17-tem         
+               |     | 8.0.362      | tem     |            | 8.0.362-tem         
+               |     | 8.0.352      | tem     |            | 8.0.352-tem         
+               |     | 8.0.345      | tem     |            | 8.0.345-tem         
+ Trava         |     | 11.0.15      | trava   |            | 11.0.15-trava       
+               |     | 11.0.9       | trava   |            | 11.0.9-trava        
+               |     | 8.0.282      | trava   |            | 8.0.282-trava       
+               |     | 8.0.232      | trava   |            | 8.0.232-trava       
+ Zulu          |     | 19.0.2       | zulu    |            | 19.0.2-zulu         
+               |     | 19.0.2.fx    | zulu    |            | 19.0.2.fx-zulu      
+               |     | 19.0.1       | zulu    |            | 19.0.1-zulu         
+               |     | 19.0.1.fx    | zulu    |            | 19.0.1.fx-zulu      
+               | >>> | 17.0.6       | zulu    | installed  | 17.0.6-zulu         
+               |     | 17.0.6.fx    | zulu    |            | 17.0.6.fx-zulu      
+               |     | 17.0.5       | zulu    | installed  | 17.0.5-zulu         
+               |     | 17.0.5.fx    | zulu    |            | 17.0.5.fx-zulu      
+               |     | 17.0.3       | zulu    | local only | 17.0.3-zulu         
+               |     | 17.0.3.fx    | zulu    | local only | 17.0.3.fx-zulu      
+               |     | 11.0.18      | zulu    |            | 11.0.18-zulu        
+               |     | 11.0.18.fx   | zulu    |            | 11.0.18.fx-zulu     
+               |     | 11.0.17      | zulu    |            | 11.0.17-zulu        
+               |     | 11.0.17.fx   | zulu    |            | 11.0.17.fx-zulu     
+               |     | 8.0.362      | zulu    |            | 8.0.362-zulu        
+               |     | 8.0.362.fx   | zulu    |            | 8.0.362.fx-zulu     
+               |     | 8.0.352      | zulu    |            | 8.0.352-zulu        
+               |     | 8.0.352.fx   | zulu    |            | 8.0.352.fx-zulu     
+               |     | 7.0.352      | zulu    |            | 7.0.352-zulu        
+               |     | 6.0.119      | zulu    |            | 6.0.119-zulu        
+================================================================================
+Omit Identifier to install default version 17.0.6-tem:
+    $ sdk install java
+Use TAB completion to discover available versions
+    $ sdk install java [TAB]
+Or install a specific version by Identifier:
+    $ sdk install java 17.0.6-tem
+Hit Q to exit this list view
+================================================================================
+
