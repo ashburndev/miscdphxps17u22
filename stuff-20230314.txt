@@ -1,0 +1,228 @@
+davidho@dphxps17:~$ date
+Tue Mar 14 06:18:33 AM EDT 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ code stuff-20230414.txt
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp304g
+Name:          sbapp304grajarj17
+Package name:  ashburncode.sbapp304g
+Description:   spring boot 3.0.4, gradle project, jar packaging, java 17
+Dependencies:
+  Spring Web Web
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp304m
+Name:          sbapp304mvnjarj17
+Package name:  ashburncode.sbapp304m
+Description:   spring boot 3.0.4, maven project, jar packaging, java 17
+Dependencies:
+  Spring Web WEB
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories WEB
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/Downloads$ ls -latr | tail -25
+-rw-rw-r--  1 davidho davidho  125174504 Feb 15 12:10 jdk-8u361-docs-all.zip
+-rw-rw-r--  1 davidho davidho   10291167 Feb 15 12:10 javafx-8u361-apidocs.zip
+-rw-rw-r--  1 davidho davidho   54787171 Feb 15 12:34 jdk-8-linux-i586-demos.tar.gz
+-rw-rw-r--  1 davidho davidho   54881447 Feb 15 12:35 jdk-8-linux-x64-demos.tar.gz
+-rw-rw-r--  1 davidho davidho      65216 Mar  2 14:28 sbapp279g.zip
+-rw-rw-r--  1 davidho davidho      64975 Mar  2 14:31 sbapp279m.zip
+-rw-rw-r--  1 davidho davidho      65207 Mar  2 14:34 sbapp303g.zip
+-rw-rw-r--  1 davidho davidho      65069 Mar  2 14:36 sbapp303m.zip
+-rw-rw-r--  1 davidho davidho     243688 Mar  2 14:50 gs-accessing-data-mysql-main.zip
+-rw-rw-r--  1 davidho davidho    7586709 Mar  8 10:18 The_Well-Grounded_Python_Developer_v8.pdf
+-rw-rw-r--  1 davidho davidho    3333777 Mar  8 10:19 The_Well-Grounded_Python_Developer_v8.epub
+-rw-rw-r--  1 davidho davidho    2381239 Mar  8 10:19 The_Well-Grounded_Python_Developer_v8.mobi
+-rw-rw-r--  1 davidho davidho  107981788 Mar  8 10:23 the-well-grounded-python-developer-integration.zip
+-rw-rw-r--  1 davidho davidho   11221868 Mar  8 10:23 OpenID_Connect_in_Action_v13.pdf
+-rw-rw-r--  1 davidho davidho    7897973 Mar  8 10:23 OpenID_Connect_in_Action_v13.epub
+-rw-rw-r--  1 davidho davidho    4750993 Mar  8 10:23 OpenID_Connect_in_Action_v13.mobi
+-rw-rw-r--  1 davidho davidho   40026009 Mar  8 10:23 OpenID_Connect_in_Action_v13.samples-master.zip
+-rw-rw-r--  1 davidho davidho   42003461 Mar  8 10:30 Amazon_Web_Services_in_Action_Third_Edi_v10.pdf
+-rw-rw-r--  1 davidho davidho   41239678 Mar  8 10:30 Amazon_Web_Services_in_Action_Third_Edi_v10.epub
+-rw-rw-r--  1 davidho davidho   22878443 Mar  8 10:30 Amazon_Web_Services_in_Action_Third_Edi_v10.mobi
+-rw-rw-r--  1 davidho davidho   18806644 Mar  8 10:30 Amazon_Web_Services_in_Action_Third_Edi_v10.code3-main.zip
+drwxr-x--- 55 davidho davidho       4096 Mar 14 06:19 ..
+-rw-rw-r--  1 davidho davidho      65167 Mar 14 06:26 sbapp304g.zip
+-rw-rw-r--  1 davidho davidho      65069 Mar 14 06:29 sbapp304m.zip
+drwxr-xr-x  6 davidho davidho      20480 Mar 14 06:30 .
+davidho@dphxps17:~/Downloads$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/sbootprojs/sbapp304g$ 
+davidho@dphxps17:~/sbootprojs/sbapp304g$ date
+Tue Mar 14 06:35:32 AM EDT 2023
+davidho@dphxps17:~/sbootprojs/sbapp304g$ pwd -P
+/home/davidho/sbootprojs/sbapp304g
+davidho@dphxps17:~/sbootprojs/sbapp304g$ ls -latr
+total 44
+drwxrwxr-x 19 davidho davidho 4096 Mar 14 06:35 ..
+drwxr-xr-x  4 davidho davidho 4096 Mar 14  2023 src
+-rw-r--r--  1 davidho davidho   31 Mar 14  2023 settings.gradle
+-rw-r--r--  1 davidho davidho 1689 Mar 14  2023 HELP.md
+-rw-r--r--  1 davidho davidho 2838 Mar 14  2023 gradlew.bat
+-rwxr-xr-x  1 davidho davidho 8188 Mar 14  2023 gradlew
+drwxr-xr-x  3 davidho davidho 4096 Mar 14  2023 gradle
+-rw-r--r--  1 davidho davidho  444 Mar 14  2023 .gitignore
+-rw-r--r--  1 davidho davidho  625 Mar 14  2023 build.gradle
+drwxr-xr-x  4 davidho davidho 4096 Mar 14  2023 .
+davidho@dphxps17:~/sbootprojs/sbapp304g$ 
+davidho@dphxps17:~/sbootprojs/sbapp304g$ tree -a
+.
+├── build.gradle
+├── .gitignore
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradlew
+├── gradlew.bat
+├── HELP.md
+├── settings.gradle
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── ashburncode
+    │   │       └── sbapp304g
+    │   │           └── Sbapp304grajarj17Application.java
+    │   └── resources
+    │       ├── application.properties
+    │       ├── static
+    │       └── templates
+    └── test
+        └── java
+            └── ashburncode
+                └── sbapp304g
+                    └── Sbapp304grajarj17ApplicationTests.java
+
+14 directories, 11 files
+davidho@dphxps17:~/sbootprojs/sbapp304g$ 
+davidho@dphxps17:~/sbootprojs/sbapp304g$ ./gradlew --version
+
+------------------------------------------------------------
+Gradle 7.6.1
+------------------------------------------------------------
+
+Build time:   2023-02-24 13:54:42 UTC
+Revision:     3905fe8ac072bbd925c70ddbddddf4463341f4b4
+
+Kotlin:       1.7.10
+Groovy:       3.0.13
+Ant:          Apache Ant(TM) version 1.10.11 compiled on July 10 2021
+JVM:          17.0.6 (Azul Systems, Inc. 17.0.6+10-LTS)
+OS:           Linux 5.19.0-35-generic amd64
+
+davidho@dphxps17:~/sbootprojs/sbapp304g$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+/home/davidho/sbootprojs/sbapp304g/build.gradle
+
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.0.4'
+	id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'ashburncode'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	runtimeOnly 'com.mysql:mysql-connector-j'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-s3
+https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-s3/1.12.425
+
+// https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-s3
+implementation group: 'com.amazonaws', name: 'aws-java-sdk-s3', version: '1.12.425'
+
+// https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-s3
+implementation 'com.amazonaws:aws-java-sdk-s3:1.12.425'
+
+<!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-s3 -->
+<dependency>
+    <groupId>com.amazonaws</groupId>
+    <artifactId>aws-java-sdk-s3</artifactId>
+    <version>1.12.425</version>
+</dependency>
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk
+https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk/1.12.425
+
+// https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk
+implementation group: 'com.amazonaws', name: 'aws-java-sdk', version: '1.12.425'
+
+// https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk
+implementation 'com.amazonaws:aws-java-sdk:1.12.425'
+
+<!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk -->
+<dependency>
+    <groupId>com.amazonaws</groupId>
+    <artifactId>aws-java-sdk</artifactId>
+    <version>1.12.425</version>
+</dependency>
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-bom
+https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-bom/1.12.425
+
+// https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-bom
+implementation group: 'com.amazonaws', name: 'aws-java-sdk-bom', version: '1.12.425', ext: 'pom'
+
+// https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-bom
+implementation 'com.amazonaws:aws-java-sdk-bom:1.12.425'
+
+<!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-bom -->
+<dependency>
+    <groupId>com.amazonaws</groupId>
+    <artifactId>aws-java-sdk-bom</artifactId>
+    <version>1.12.425</version>
+    <type>pom</type>
+</dependency>
+
