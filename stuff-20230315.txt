@@ -1,0 +1,589 @@
+davidho@dphxps17:~$ date
+Wed Mar 15 06:52:11 AM EDT 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ code stuff-20230315.txt
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://grails.org/documentation.html
+https://docs.grails.org/snapshot/
+https://grails.org/download.html
+5.3.2 is the newest version
+
+https://guides.grails.org/index.html
+https://guides.grails.org/grails-vue-combined/guide/index.html
+https://guides.grails.org/categories/grailsangular.html
+
+https://guides.grails.org/creating-your-first-grails-app/guide/index.html
+https://start.grails.org/
+  Grails Application Forge
+  curl -O https://start.grails.org/prezinfogaf.zip
+
+davidho@dphxps17:~$ groovy --version
+Groovy Version: 4.0.9 JVM: 17.0.6 Vendor: Azul Systems, Inc. OS: Linux
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ java --version
+openjdk 17.0.6 2023-01-17 LTS
+OpenJDK Runtime Environment Zulu17.40+19-CA (build 17.0.6+10-LTS)
+OpenJDK 64-Bit Server VM Zulu17.40+19-CA (build 17.0.6+10-LTS, mixed mode, sharing)
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ grails --version
+| Grails Version: 5.3.2
+| JVM Version: 17.0.6
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+DROP DATABASE IF EXISTS prezdb;
+DROP USER 'prez'@'localhost';
+CREATE USER 'prez'@'localhost' IDENTIFIED BY 'prezpw';
+DROP  prezdb;
+CREATE DATABASE prezdb;
+GRANT ALL PRIVILEGES ON prezdb.* TO 'prez'@'localhost' WITH GRANT OPTION;
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| db_example         |
+| depot2_development |
+| dphpyapp1          |
+| dphpyapp2          |
+| information_schema |
+| mysql              |
+| performance_schema |
+| prezdb             |
+| sbapp2db           |
+| sbapp3db           |
+| sys                |
+| tacocloud          |
+| wire2_development  |
+| wire3_development  |
+| wire4_development  |
+| wire5_development  |
+| wire6_development  |
++--------------------+
+17 rows in set (0.04 sec)
+
+mysql> 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://stackoverflow.com/questions/31764922/how-to-connect-grails-3-0-to-my-local-mysql-database
+
+dataSource:
+    pooled: true
+    jmxExport: true
+    driverClassName: com.mysql.jdbc.Driver
+    dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    username: sa
+    password:
+
+environments:
+    development:
+        dataSource:
+            dbCreate: create-drop
+            url: jdbc:mysql://liveip.com/liveDb
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://sites.google.com/site/grailsusergroup/home/sample-projects/using-mysql-with-grails
+https://gist.github.com/abadongutierrez/4665610
+
+dataSource {
+    pooled = true
+       driverClassName = "com.mysql.jdbc.Driver"
+       username = "root"
+       password = "****"
+       dialect = org.hibernate.dialect.MySQL5InnoDBDialect
+       properties {
+          maxActive = 50
+          maxIdle = 25
+          minIdle = 5
+          initialSize = 5
+          minEvictableIdleTimeMillis = 1800000
+          timeBetweenEvictionRunsMillis = 1800000
+          maxWait = 10000
+          ValidationQuery = 'select 1'
+       }
+}
+
+hibernate {
+    cache.use_second_level_cache = true
+    cache.use_query_cache = false
+    cache.region.factory_class = 'net.sf.ehcache.hibernate.EhCacheRegionFactory'
+}
+// environment specific settings
+environments {
+    development {
+        dataSource {
+            dbCreate = "none" // one of 'create', 'create-drop', 'update', 'validate', ''
+            url = "jdbc:mysql://localhost/db_dev?useOldAliasMetadataBehavior=true"
+        }
+    }
+    test {
+        dataSource {
+            dbCreate = "none"
+            url = "jdbc:mysql://localhost/db_test?useOldAliasMetadataBehavior=true"
+        }
+    }
+    production {
+        dataSource {
+            ...
+        }
+    }
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://docs.grails.org/snapshot/guide/gettingStarted.html#creatingAnApplication
+
+mkdir ~/grailsprojs
+cd ~/grailsprojs
+
+grails create-app prezinfo
+cd prezinfo
+grails run-app
+grails run-app -port=8090
+grails run-app -Dgrails.server.servlet.context-path=/prezinfo
+grails test-app
+
+grails war
+java -Dgrails.env=prod -jar build/libs/mywar-0.1.war
+
+grails create-domain-class president
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/grailsprojs/prezinfo$ ls -latr
+total 72
+-rwxrw-r--  1 davidho davidho 2763 Mar 15 07:05 gradlew.bat
+-rwxrw-r--  1 davidho davidho 5766 Mar 15 07:05 gradlew
+drwxrwxr-x  3 davidho davidho 4096 Mar 15 07:05 gradle
+drwxrwxr-x  3 davidho davidho 4096 Mar 15 07:05 ..
+drwxrwxr-x  5 davidho davidho 4096 Mar 15 07:05 src
+-rw-rw-r--  1 davidho davidho   30 Mar 15 07:05 settings.gradle
+-rwxrw-r--  1 davidho davidho 2375 Mar 15 07:05 grailsw.bat
+-rwxrw-r--  1 davidho davidho 4672 Mar 15 07:05 grailsw
+-rw-rw-r--  1 davidho davidho 5507 Mar 15 07:05 grails-wrapper.jar
+-rw-rw-r--  1 davidho davidho   94 Mar 15 07:05 .gitignore
+drwxrwxr-x 12 davidho davidho 4096 Mar 15 07:05 grails-app
+-rw-------  1 davidho davidho  191 Mar 15 07:05 gradle.properties
+-rw-------  1 davidho davidho 4702 Mar 15 07:05 build.gradle
+drwxrwxr-x  5 davidho davidho 4096 Mar 15 07:05 .
+davidho@dphxps17:~/grailsprojs/prezinfo$ 
+davidho@dphxps17:~/grailsprojs/prezinfo$ tree -d
+.
+├── gradle
+│   └── wrapper
+├── grails-app
+│   ├── assets
+│   │   ├── images
+│   │   │   └── skin
+│   │   ├── javascripts
+│   │   └── stylesheets
+│   ├── conf
+│   │   └── spring
+│   ├── controllers
+│   │   └── prezinfo
+│   ├── domain
+│   ├── i18n
+│   ├── init
+│   │   └── prezinfo
+│   ├── services
+│   ├── taglib
+│   ├── utils
+│   └── views
+│       └── layouts
+└── src
+    ├── integration-test
+    │   ├── groovy
+    │   └── resources
+    ├── main
+    │   ├── groovy
+    │   └── webapp
+    └── test
+        └── groovy
+
+30 directories
+davidho@dphxps17:~/grailsprojs/prezinfo$ 
+davidho@dphxps17:~/grailsprojs/prezinfo$ tree -a src
+src
+├── integration-test
+│   ├── groovy
+│   └── resources
+│       └── GebConfig.groovy
+├── main
+│   ├── groovy
+│   └── webapp
+└── test
+    └── groovy
+
+8 directories, 1 file
+davidho@dphxps17:~/grailsprojs/prezinfo$ 
+davidho@dphxps17:~/grailsprojs/prezinfo$ grails run-app
+| Resolving Dependencies. Please wait...
+Downloading https://services.gradle.org/distributions/gradle-7.2-bin.zip
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 8.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+See https://docs.gradle.org/7.2/userguide/command_line_interface.html#sec:command_line_warnings
+
+CONFIGURE SUCCESSFUL in 33s
+| Running application...
+Grails application running at http://localhost:8080 in environment: development
+<===========--> 85% EXECUTING [2m 22s]
+> :bootRun
+> IDLE
+
+I opened browser and entered the URL http://localhost:8080/
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+grails create-app prez
+
+davidho@dphxps17:~/grailsprojs/prezinfo$ tree -d
+.
+├── build
+│   ├── classes
+│   │   └── groovy
+│   │       └── main
+│   │           ├── META-INF
+│   │           └── prezinfo
+│   ├── generated
+│   │   └── sources
+│   │       └── annotationProcessor
+│   │           └── groovy
+│   │               └── main
+│   ├── resources
+│   │   └── main
+│   │       ├── layouts
+│   │       ├── META-INF
+│   │       └── spring
+│   └── tmp
+│       └── compileGroovy
+│           └── groovy-java-stubs
+├── gradle
+│   └── wrapper
+├── grails-app
+│   ├── assets
+│   │   ├── images
+│   │   │   └── skin
+│   │   ├── javascripts
+│   │   └── stylesheets
+│   ├── conf
+│   │   └── spring
+│   ├── controllers
+│   │   └── prezinfo
+│   ├── domain
+│   │   └── prezinfo
+│   ├── i18n
+│   ├── init
+│   │   └── prezinfo
+│   ├── services
+│   ├── taglib
+│   ├── utils
+│   └── views
+│       └── layouts
+└── src
+    ├── integration-test
+    │   ├── groovy
+    │   └── resources
+    ├── main
+    │   ├── groovy
+    │   └── webapp
+    └── test
+        └── groovy
+            └── prezinfo
+
+51 directories
+davidho@dphxps17:~/grailsprojs/prezinfo$ 
+davidho@dphxps17:~/grailsprojs/prezinfo$ find . -name *.groovy -print
+./grails-app/init/prezinfo/BootStrap.groovy
+./grails-app/init/prezinfo/Application.groovy
+./grails-app/conf/spring/resources.groovy
+./grails-app/domain/prezinfo/President.groovy
+./grails-app/controllers/prezinfo/UrlMappings.groovy
+./build/resources/main/spring/resources.groovy
+./src/integration-test/resources/GebConfig.groovy
+./src/test/groovy/prezinfo/PresidentSpec.groovy
+davidho@dphxps17:~/grailsprojs/prezinfo$ 
+
+/home/davidho/grailsprojs/prezinfo/grails-app/domain/prezinfo/President.groovy
+
+package prezinfo
+
+class President {
+
+    static constraints = {
+    }
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+grails create-domain-class president
+grails generate-all prezinfo.President
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+/home/davidho/grailsprojs/prezinfo/grails-app/conf/application.yml
+
+---
+grails:
+    profile: web
+    codegen:
+        defaultPackage: prezinfo
+    gorm:
+        reactor:
+            # Whether to translate GORM events into Reactor events
+            # Disabled by default for performance reasons
+            events: false
+info:
+    app:
+        name: '@info.app.name@'
+        version: '@info.app.version@'
+        grailsVersion: '@info.app.grailsVersion@'
+spring:
+    jmx:
+        unique-names: true
+    main:
+        banner-mode: "off"
+    groovy:
+        template:
+            check-template-location: false
+    devtools:
+        restart:
+            additional-exclude:
+                - '*.gsp'
+                - '**/*.gsp'
+                - '*.gson'
+                - '**/*.gson'
+                - 'logback.groovy'
+                - '*.properties'
+environments:
+    development:
+        management:
+            endpoints:
+                enabled-by-default: true
+                web:
+                    base-path: '/actuator'
+                    exposure:
+                        include: '*'
+    production:
+        management:
+            endpoints:
+                enabled-by-default: false
+
+---
+grails:
+    mime:
+        disable:
+            accept:
+                header:
+                    userAgents:
+                        - Gecko
+                        - WebKit
+                        - Presto
+                        - Trident
+        types:
+            all: '*/*'
+            atom: application/atom+xml
+            css: text/css
+            csv: text/csv
+            form: application/x-www-form-urlencoded
+            html:
+              - text/html
+              - application/xhtml+xml
+            js: text/javascript
+            json:
+              - application/json
+              - text/json
+            multipartForm: multipart/form-data
+            pdf: application/pdf
+            rss: application/rss+xml
+            text: text/plain
+            hal:
+              - application/hal+json
+              - application/hal+xml
+            xml:
+              - text/xml
+              - application/xml
+    urlmapping:
+        cache:
+            maxsize: 1000
+    controllers:
+        defaultScope: singleton
+    converters:
+        encoding: UTF-8
+    views:
+        default:
+            codec: html
+        gsp:
+            encoding: UTF-8
+            htmlcodec: xml
+            codecs:
+                expression: html
+                scriptlet: html
+                taglib: none
+                staticparts: none
+
+---
+hibernate:
+    cache:
+        queries: false
+        use_second_level_cache: false
+        use_query_cache: false
+dataSource:
+    pooled: true
+    jmxExport: true
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ''
+
+environments:
+    development:
+        dataSource:
+            dbCreate: create-drop
+            url: jdbc:h2:mem:devDb;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+    test:
+        dataSource:
+            dbCreate: update
+            url: jdbc:h2:mem:testDb;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+    production:
+        dataSource:
+            dbCreate: none
+            url: jdbc:h2:./prodDb;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+            properties:
+                jmxEnabled: true
+                initialSize: 5
+                maxActive: 50
+                minIdle: 5
+                maxIdle: 25
+                maxWait: 10000
+                maxAge: 600000
+                timeBetweenEvictionRunsMillis: 5000
+                minEvictableIdleTimeMillis: 60000
+                validationQuery: SELECT 1
+                validationQueryTimeout: 3
+                validationInterval: 15000
+                testOnBorrow: true
+                testWhileIdle: true
+                testOnReturn: false
+                jdbcInterceptors: ConnectionState
+                defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://docs.grails.org/latest/guide/conf.html
+https://docs.grails.org/5.0.1/guide/conf.html
+https://docs.grails.org/latest/guide/conf.html
+https://docs.grails.org/latest/guide/conf.html
+  Version: 5.3.2
+
+  dialect: org.hibernate.dialect.Oracle10gDialect
+  driverClassName: oracle.jdbc.driver.OracleDriver
+  username: lookup
+  password: secret
+  url: jdbc:oracle:thin:@localhost:1521:lookup
+  dbCreate: update
+
+
+dependencies {
+    runtime 'mysql:mysql-connector-java:5.1.29'
+}
+
+A typical configuration for MySQL in application.groovy may be something like:
+
+dataSource {
+    pooled = true
+    dbCreate = "update"
+    url = "jdbc:mysql://localhost:3306/my_database"
+    driverClassName = "com.mysql.jdbc.Driver"
+    dialect = org.hibernate.dialect.MySQL5InnoDBDialect
+    username = "username"
+    password = "password"
+    type = "com.zaxxer.hikari.HikariDataSource"
+    properties {
+       jmxEnabled = true
+       initialSize = 5
+       maxActive = 50
+       minIdle = 5
+       maxIdle = 25
+       maxWait = 10000
+       maxAge = 10 * 60000
+       timeBetweenEvictionRunsMillis = 5000
+       minEvictableIdleTimeMillis = 60000
+       validationQuery = "SELECT 1"
+       validationQueryTimeout = 3
+       validationInterval = 15000
+       testOnBorrow = true
+       testWhileIdle = true
+       testOnReturn = false
+       jdbcInterceptors = "ConnectionState;StatementCache(max=200)"
+       defaultTransactionIsolation = java.sql.Connection.TRANSACTION_READ_COMMITTED
+    }
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/grailsprojs$ ls -latr
+total 1084
+drwxrwxr-x  7 davidho davidho    4096 Mar 15 07:07 prezinfo
+drwxr-x--- 56 davidho davidho    4096 Mar 15 07:37 ..
+-rw-rw-r--  1 davidho davidho 1093284 Mar 15 07:56 prezinfogaf.zip
+drwxrwxr-x  4 davidho davidho    4096 Mar 15 07:58 .
+drwx------  5 davidho davidho    4096 Mar 15  2023 prezinfogaf
+davidho@dphxps17:~/grailsprojs$ 
+davidho@dphxps17:~/grailsprojs$ ls -latr prezinfogaf
+total 72
+drwxrwxr-x  4 davidho davidho 4096 Mar 15 07:58 ..
+drwx------  5 davidho davidho 4096 Mar 15  2023 src
+-rw-rw-r--  1 davidho davidho   33 Mar 15  2023 settings.gradle
+-rw-rw-r--  1 davidho davidho 5507 Mar 15  2023 grails-wrapper.jar
+-rw-rw-r--  1 davidho davidho 2375 Mar 15  2023 grailsw.bat
+-rw-rw-r--  1 davidho davidho 4672 Mar 15  2023 grailsw
+drwx------ 12 davidho davidho 4096 Mar 15  2023 grails-app
+-rw-rw-r--  1 davidho davidho 2763 Mar 15  2023 gradlew.bat
+-rw-rw-r--  1 davidho davidho 5766 Mar 15  2023 gradlew
+-rw-rw-r--  1 davidho davidho  191 Mar 15  2023 gradle.properties
+drwx------  3 davidho davidho 4096 Mar 15  2023 gradle
+-rw-rw-r--  1 davidho davidho   94 Mar 15  2023 .gitignore
+-rw-rw-r--  1 davidho davidho 4705 Mar 15  2023 build.gradle
+drwx------  5 davidho davidho 4096 Mar 15  2023 .
+davidho@dphxps17:~/grailsprojs$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+git remote add origin git@github.com:ashburndev/prezinfo.git
+git branch -M main
+git push -u origin main
+
+davidho@dphxps17:~/grailsprojs/prezinfo$ 
+git remote add origin git@github.com:ashburndev/prezinfo.git
+git branch -M main
+git push -u origin main
+Enumerating objects: 117, done.
+Counting objects: 100% (117/117), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (102/102), done.
+Writing objects: 100% (117/117), 803.28 KiB | 8.11 MiB/s, done.
+Total 117 (delta 15), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (15/15), done.
+To github.com:ashburndev/prezinfo.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+davidho@dphxps17:~/grailsprojs/prezinfo$ 
+davidho@dphxps17:~/grailsprojs/prezinfo$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+davidho@dphxps17:~/grailsprojs/prezinfo$ git push
+Everything up-to-date
+davidho@dphxps17:~/grailsprojs/prezinfo$ 
+
