@@ -1,0 +1,256 @@
+davidho@dphxps17:~$ date
+Fri Mar 17 05:47:02 AM EDT 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ code stuff-20230317.txt
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://www.eclipse.org/downloads/
+https://www.eclipse.org/downloads/packages/
+
+davidho@dphxps17:~/Downloads$ ls -latr | grep eclipse
+-rw-rw-r--  1 davidho davidho  530568735 Sep 22 07:59 eclipse-jee-2022-09-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        176 Sep 22 08:02 eclipse-jee-2022-09-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  310380717 Sep 22 08:02 eclipse-java-2022-09-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        177 Sep 22 08:04 eclipse-java-2022-09-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  552970589 Dec  8 07:04 eclipse-jee-2022-12-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        178 Dec  8 07:08 eclipse-jee-2022-12-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  317456405 Dec  8 07:08 eclipse-java-2022-12-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        179 Dec  8 07:11 eclipse-java-2022-12-R-linux-gtk-x86_64.tar.gz.sha512
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr | grep -i "spring-tool"
+-rw-rw-r--  1 davidho davidho  607778592 Sep 22 08:14 spring-tool-suite-4-4.16.0.RELEASE-e4.25.0-linux.gtk.x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho  607778592 Oct 16 20:53 spring-tool-suite-4-4.16.0.RELEASE-e4.25.0-linux.gtk.x86_64(1).tar.gz
+-rw-rw-r--  1 davidho davidho  637138600 Dec  8 07:13 spring-tool-suite-4-4.17.0.RELEASE-e4.26.0-linux.gtk.x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho  625754715 Feb  1 07:29 spring-tool-suite-4-4.17.2.RELEASE-e4.26.0-linux.gtk.x86_64.tar.gz
+davidho@dphxps17:~/Downloads$ 
+
+7ae753122dd0602f4cd0be915cc56fe0a62c4e336f78d111a2e9e12908bf7342c68089449221f705d746f45eb7003825468754f9e32990e145cd84d24f9fa267  eclipse-jee-2023-03-R-linux-gtk-x86_64.tar.gz
+ab9a9d25c1f1bbe0970e33ff5ea8a027bcd9e49c2c183bc0b6a50ef35e78644d4e8ba714ae0b7ccea41e2afd0d76ff4bcd40271560effc39c87f9db9ff02b90a  eclipse-java-2023-03-R-linux-gtk-x86_64.tar.gz
+
+sha512sum -c eclipse-jee-2023-03-R-linux-gtk-x86_64.tar.gz.sha512
+sha512sum -c eclipse-java-2023-03-R-linux-gtk-x86_64.tar.gz.sha512
+
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ sha512sum -c eclipse-jee-2023-03-R-linux-gtk-x86_64.tar.gz.sha512
+eclipse-jee-2023-03-R-linux-gtk-x86_64.tar.gz: OK
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ sha512sum -c eclipse-java-2023-03-R-linux-gtk-x86_64.tar.gz.sha512
+eclipse-java-2023-03-R-linux-gtk-x86_64.tar.gz: OK
+davidho@dphxps17:~/Downloads$ 
+
+sudo tar -xzf eclipse-jee-2023-03-R-linux-gtk-x86_64.tar.gz -C /opt
+sudo mv /opt/eclipse /opt/eclipse-jee-2023-03-R-linux-gtk-x86_64
+
+sudo tar -xzf eclipse-java-2023-03-R-linux-gtk-x86_64.tar.gz -C /opt
+sudo mv /opt/eclipse /opt/eclipse-java-2023-03-R-linux-gtk-x86_64
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://spring.io/blog/2021/06/21/spring-tools-4-11-0-released
+https://spring.io/tools
+
+sudo tar -xzf spring-tool-suite-4-4.18.0.RELEASE-e4.27.0-linux.gtk.x86_64.tar.gz -C /opt
+
+davidho@dphxps17:~/Downloads$ ls -latr ~/Downloads/ | tail
+-rw-rw-r--  1 davidho davidho      65069 Mar 14 06:29 sbapp304m.zip
+-rw-rw-r--  1 davidho davidho    1093284 Mar 15 07:56 prezinfogaf.zip
+-rw-rw-r--  1 davidho davidho      65157 Mar 15 17:23 prezsb304.zip
+-rw-rw-r--  1 davidho davidho  555719346 Mar 17 05:52 eclipse-jee-2023-03-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        176 Mar 17 05:55 eclipse-jee-2023-03-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  321261795 Mar 17 05:56 eclipse-java-2023-03-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        177 Mar 17 05:57 eclipse-java-2023-03-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  565545792 Mar 17 06:01 spring-tool-suite-4-4.18.0.RELEASE-e4.27.0-linux.gtk.x86_64.tar.gz
+drwxr-xr-x  6 davidho davidho      20480 Mar 17 06:03 .
+drwxr-x--- 56 davidho davidho       4096 Mar 17 06:04 ..
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr /opt | tail
+drwxr-xr-x  4 root       root       4096 Nov 17 06:18 1Password
+drwxr-xr-x  8 davidho    davidho    4096 Dec  1 15:13 eclipse-java-2022-12-R-linux-gtk-x86_64
+drwxr-xr-x  8 davidho    davidho    4096 Dec  1 15:29 eclipse-jee-2022-12-R-linux-gtk-x86_64
+drwxr-xr-x  5 davidho    davidho    4096 Dec  5 11:47 VSCode-linux-x64-1.74.0
+drwxr-xr-x  5 davidho    davidho    4096 Jan  9 11:58 VSCode-linux-x64-1.74.3
+drwxr-xr-x  9 davidho    davidho    4096 Jan 31 02:27 sts-4.17.2.RELEASE
+drwxr-xr-x  8 1001330000 1001330000 4096 Mar  9 11:07 eclipse-java-2023-03-R-linux-gtk-x86_64
+drwxr-xr-x  8 1001330000 1001330000 4096 Mar  9 11:19 eclipse-jee-2023-03-R-linux-gtk-x86_64
+drwxr-xr-x  9        502 root       4096 Mar 13 11:16 sts-4.18.0.RELEASE
+drwxr-xr-x 37 root       root       4096 Mar 17 06:21 .
+davidho@dphxps17:~/Downloads$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://code.visualstudio.com/download
+
+sudo tar -xzf code-stable-x64-1678818101.tar.gz -C /opt
+sudo mv /opt/VSCode-linux-x64 /opt/VSCode-linux-x64-1.76.2
+
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr | tail
+-rw-rw-r--  1 davidho davidho  555719346 Mar 17 05:52 eclipse-jee-2023-03-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        176 Mar 17 05:55 eclipse-jee-2023-03-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  321261795 Mar 17 05:56 eclipse-java-2023-03-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        177 Mar 17 05:57 eclipse-java-2023-03-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  565545792 Mar 17 06:01 spring-tool-suite-4-4.18.0.RELEASE-e4.27.0-linux.gtk.x86_64.tar.gz
+drwxr-x--- 56 davidho davidho       4096 Mar 17 06:04 ..
+-rw-rw-r--  1 davidho davidho   94824048 Mar 17 06:24 code_1.76.2-1678817801_amd64.deb
+-rw-rw-r--  1 davidho davidho  134497483 Mar 17 06:24 code-1.76.2-1678817890.el7.x86_64.rpm
+-rw-rw-r--  1 davidho davidho  133943122 Mar 17 06:24 code-stable-x64-1678818101.tar.gz
+drwxr-xr-x  6 davidho davidho      20480 Mar 17 06:24 .
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr /opt | tail
+drwxr-xr-x  8 davidho    davidho    4096 Dec  1 15:13 eclipse-java-2022-12-R-linux-gtk-x86_64
+drwxr-xr-x  8 davidho    davidho    4096 Dec  1 15:29 eclipse-jee-2022-12-R-linux-gtk-x86_64
+drwxr-xr-x  5 davidho    davidho    4096 Dec  5 11:47 VSCode-linux-x64-1.74.0
+drwxr-xr-x  5 davidho    davidho    4096 Jan  9 11:58 VSCode-linux-x64-1.74.3
+drwxr-xr-x  9 davidho    davidho    4096 Jan 31 02:27 sts-4.17.2.RELEASE
+drwxr-xr-x  8 1001330000 1001330000 4096 Mar  9 11:07 eclipse-java-2023-03-R-linux-gtk-x86_64
+drwxr-xr-x  8 1001330000 1001330000 4096 Mar  9 11:19 eclipse-jee-2023-03-R-linux-gtk-x86_64
+drwxr-xr-x  9        502 root       4096 Mar 13 11:16 sts-4.18.0.RELEASE
+drwxr-xr-x  5 davidho    davidho    4096 Mar 14 13:57 VSCode-linux-x64-1.76.2
+drwxr-xr-x 38 root       root       4096 Mar 17 06:33 .
+davidho@dphxps17:~/Downloads$ 
+
+davidho@dphxps17:~/Downloads$ ls -latr | grep -i "code-stable"
+-rw-rw-r--  1 davidho davidho  115658426 May 24  2022 code-stable-x64-1652813090.tar.gz
+-rw-rw-r--  1 davidho davidho  116923664 Jun 12  2022 code-stable-x64-1654690355.tar.gz
+-rw-rw-r--  1 davidho davidho  120012826 Sep 22 08:06 code-stable-x64-1663191492.tar.gz
+-rw-rw-r--  1 davidho davidho  123828026 Oct 16 20:25 code-stable-x64-1665614670.tar.gz
+-rw-rw-r--  1 davidho davidho  135608145 Nov  8 04:22 code-stable-x64-1667319089.tar.gz
+-rw-rw-r--  1 davidho davidho  135604445 Dec  5 05:15 code-stable-x64-1667967614.tar.gz
+-rw-rw-r--  1 davidho davidho  138266029 Dec  9 04:45 code-stable-x64-1670260359.tar.gz
+-rw-rw-r--  1 davidho davidho  138265366 Dec 31 09:12 code-stable-x64-1671533708.tar.gz
+-rw-rw-r--  1 davidho davidho  138260370 Feb  1 06:55 code-stable-x64-1673285154.tar.gz
+-rw-rw-r--  1 davidho davidho  133943122 Mar 17 06:24 code-stable-x64-1678818101.tar.gz
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr /opt | grep -i vscode
+drwxr-xr-x  5 davidho    davidho    4096 Nov  1 11:44 VSCode-linux-x64-1.73.0
+drwxr-xr-x  5 davidho    davidho    4096 Nov  8 22:55 VSCode-linux-x64-1.73.1
+drwxr-xr-x  5 davidho    davidho    4096 Dec  5 11:47 VSCode-linux-x64-1.74.0
+drwxr-xr-x  5 davidho    davidho    4096 Jan  9 11:58 VSCode-linux-x64-1.74.3
+drwxr-xr-x  5 davidho    davidho    4096 Mar 14 13:57 VSCode-linux-x64-1.76.2
+davidho@dphxps17:~/Downloads$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://www.keycloak.org/downloads
+
+https://www.elastic.co/downloads/elasticsearch
+https://www.elastic.co/downloads/kibana
+https://www.elastic.co/cn/downloads/kibana
+
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr | tail -20
+-rw-rw-r--  1 davidho davidho  555719346 Mar 17 05:52 eclipse-jee-2023-03-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        176 Mar 17 05:55 eclipse-jee-2023-03-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  321261795 Mar 17 05:56 eclipse-java-2023-03-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        177 Mar 17 05:57 eclipse-java-2023-03-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  565545792 Mar 17 06:01 spring-tool-suite-4-4.18.0.RELEASE-e4.27.0-linux.gtk.x86_64.tar.gz
+drwxr-x--- 56 davidho davidho       4096 Mar 17 06:04 ..
+-rw-rw-r--  1 davidho davidho   94824048 Mar 17 06:24 code_1.76.2-1678817801_amd64.deb
+-rw-rw-r--  1 davidho davidho  134497483 Mar 17 06:24 code-1.76.2-1678817890.el7.x86_64.rpm
+-rw-rw-r--  1 davidho davidho  133943122 Mar 17 06:24 code-stable-x64-1678818101.tar.gz
+-rw-rw-r--  1 davidho davidho  168632360 Mar 17 06:40 keycloak-21.0.1.zip
+-rw-rw-r--  1 davidho davidho         40 Mar 17 06:40 keycloak-21.0.1.zip.sha1
+-rw-rw-r--  1 davidho davidho  168541817 Mar 17 06:40 keycloak-21.0.1.tar.gz
+-rw-rw-r--  1 davidho davidho         40 Mar 17 06:40 keycloak-21.0.1.tar.gz.sha1
+-rw-rw-r--  1 davidho davidho  581745209 Mar 17 06:42 elasticsearch-8.6.2-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        170 Mar 17 06:42 elasticsearch-8.6.2-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho        488 Mar 17 06:42 elasticsearch-8.6.2-linux-x86_64.tar.gz.asc
+-rw-rw-r--  1 davidho davidho  227238517 Mar 17 06:43 kibana-8.6.2-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        163 Mar 17 06:43 kibana-8.6.2-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho        488 Mar 17 06:43 kibana-8.6.2-linux-x86_64.tar.gz.asc
+drwxr-xr-x  6 davidho davidho      20480 Mar 17 06:43 .
+davidho@dphxps17:~/Downloads$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:/opt/sts-4.18.0.RELEASE$ date
+Fri Mar 17 06:47:22 AM EDT 2023
+davidho@dphxps17:/opt/sts-4.18.0.RELEASE$ pwd -P
+/opt/sts-4.18.0.RELEASE
+davidho@dphxps17:/opt/sts-4.18.0.RELEASE$ ls -latr
+total 1252
+-rw-r--r--  1  502 root     61 Mar  2 11:14 .eclipseproduct
+-rw-r--r--  1  502 root  11522 Mar 13 10:55 license.txt
+-rwxr-xr-x  1  502 root  89784 Mar 13 11:06 SpringToolSuite4
+-rwxr-xr-x  1  502 root 136129 Mar 13 11:06 icon.xpm
+drwxr-xr-x  5  502 root   4096 Mar 13 11:12 p2
+drwxr-xr-x  2  502 root   4096 Mar 13 11:13 readme
+drwxr-xr-x  2  502 root   4096 Mar 13 11:13 META-INF
+drwxr-xr-x  2  502 root   4096 Mar 13 11:13 dropins
+drwxr-xr-x  4  502 root   4096 Mar 13 11:13 configuration
+drwxr-xr-x 17  502 root  61440 Mar 13 11:15 plugins
+drwxr-xr-x 65  502 root   4096 Mar 13 11:15 features
+-rw-r--r--  1  502 root    722 Mar 13 11:15 SpringToolSuite4.ini
+-rw-r--r--  1  502 root 154319 Mar 13 11:15 artifacts.xml
+-rw-r--r--  1  502 root 774530 Mar 13 11:16 open-source-licenses.txt
+drwxr-xr-x  9  502 root   4096 Mar 13 11:16 .
+drwxr-xr-x 38 root root   4096 Mar 17 06:33 ..
+davidho@dphxps17:/opt/sts-4.18.0.RELEASE$ 
+davidho@dphxps17:/opt/sts-4.18.0.RELEASE$ ./SpringToolSuite4 
+OpenJDK 64-Bit Server VM warning: Ignoring option --illegal-access=permit; support was removed in 17.0
+
+/home/davidho/Documents/workspace-spring-tool-suite-4-4.18.0.RELEASE
+
+import  /home/davidho/sbootprojs/sbapp304g
+
+project root directory after importing into sts
+
+davidho@dphxps17:~/sbootprojs/sbapp304g$ 
+davidho@dphxps17:~/sbootprojs/sbapp304g$ date
+Fri Mar 17 07:41:25 AM EDT 2023
+davidho@dphxps17:~/sbootprojs/sbapp304g$ pwd -P
+/home/davidho/sbootprojs/sbapp304g
+davidho@dphxps17:~/sbootprojs/sbapp304g$ ls -latr
+total 68
+drwxr-xr-x  4 davidho davidho 4096 Mar 14 10:26 src
+-rw-r--r--  1 davidho davidho   31 Mar 14 10:26 settings.gradle
+-rw-r--r--  1 davidho davidho 1689 Mar 14 10:26 HELP.md
+-rw-r--r--  1 davidho davidho 2838 Mar 14 10:26 gradlew.bat
+-rwxr-xr-x  1 davidho davidho 8188 Mar 14 10:26 gradlew
+drwxr-xr-x  3 davidho davidho 4096 Mar 14 10:26 gradle
+-rw-r--r--  1 davidho davidho  444 Mar 14 10:26 .gitignore
+-rw-r--r--  1 davidho davidho  625 Mar 14 10:26 build.gradle
+drwxrwxr-x 20 davidho davidho 4096 Mar 15 17:27 ..
+-rw-rw-r--  1 davidho davidho 1079 Mar 17 06:53 .classpath
+drwxrwxr-x  2 davidho davidho 4096 Mar 17 06:53 .settings
+-rw-rw-r--  1 davidho davidho  751 Mar 17 06:53 .project
+drwxrwxr-x  4 davidho davidho 4096 Mar 17 06:53 bin
+drwxrwxr-x  5 davidho davidho 4096 Mar 17 06:55 .gradle
+drwxr-xr-x  8 davidho davidho 4096 Mar 17 06:55 .
+drwxrwxr-x  7 davidho davidho 4096 Mar 17 06:55 build
+davidho@dphxps17:~/sbootprojs/sbapp304g$ 
+
+davidho@dphxps17:~/Documents$ 
+davidho@dphxps17:~/Documents$ ls -latr | grep -v stuff
+total 1860
+-rw-rw-r--  1 davidho davidho    714 Jun 21  2022 es-gem-test1.rb
+-rw-rw-r--  1 davidho davidho    758 Jun 21  2022 es-gem-test2.rb
+-rw-rw-r--  1 davidho davidho   1030 Jun 21  2022 es-gem-test3.rb
+-rw-rw-r--  1 davidho davidho   1931 Jun 23  2022 es-gem-test4.rb
+-rw-rw-r--  1 davidho davidho  61362 Jun 25  2022 wire6-development-mysqldump-20220625.sql
+-rw-rw-r--  1 davidho davidho   8514 Jun 26  2022 wire-table-names.rb
+drwxrwxr-x  3 davidho davidho   4096 Oct 16 21:10 workspace-spring-tool-suite-4-4.16.0.RELEASE
+-rw-rw-r--  1 davidho davidho   8970 Oct 19 07:34 downloads-dphxps17u22-20221019.txt
+-rw-rw-r--  1 davidho davidho     40 Nov 17 07:11 split.py
+drwxrwxr-x  4 davidho davidho   4096 Feb  1 08:55 workspace-spring-tool-suite-4-4.17.2.RELEASE
+-rw-rw-r--  1 davidho davidho   2988 Mar  3 07:31 actuator.json
+drwxr-x--- 56 davidho davidho   4096 Mar 17 06:04 ..
+drwxrwxr-x  3 davidho davidho   4096 Mar 17 06:49 workspace-spring-tool-suite-4-4.18.0.RELEASE
+drwxr-xr-x  5 davidho davidho   4096 Mar 17 06:49 .
+davidho@dphxps17:~/Documents$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://aws.amazon.com/blogs/opensource/getting-started-with-spring-boot-on-aws-part-1/
+https://aws.amazon.com/blogs/opensource/getting-started-with-spring-boot-on-aws-part-2/
+
+dependencies {
+   implementation 'org.springframework.boot:spring-boot-starter-web'
+   implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+   implementation 'org.springframework.cloud:spring-cloud-starter-aws'
+   implementation 'org.springframework.cloud:spring-cloud-starter-aws-messaging'
+   implementation 'org.springframework.cloud:spring-cloud-starter-aws-parameter-store-config'
+}
+
