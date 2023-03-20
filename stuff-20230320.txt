@@ -1,0 +1,394 @@
+davidho@dphxps17:~$ date
+Mon Mar 20 07:31:52 AM EDT 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ code stuff-20230320.txt
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+DROP DATABASE IF EXISTS prezdbsb;
+DROP USER 'prez'@'localhost';
+CREATE USER 'prez'@'localhost' IDENTIFIED BY 'prezpw';
+DROP  prezdbsb;
+CREATE DATABASE prezdbsb;
+GRANT ALL PRIVILEGES ON prezdbsb.* TO 'prez'@'localhost' WITH GRANT OPTION;
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+mysql> CREATE DATABASE prezdbsb;
+Query OK, 1 row affected (0.04 sec)
+
+mysql> GRANT ALL PRIVILEGES ON prezdbsb.* TO 'prez'@'localhost' WITH GRANT OPTION;
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| db_example         |
+| depot2_development |
+| dphpyapp1          |
+| dphpyapp2          |
+| information_schema |
+| mysql              |
+| performance_schema |
+| prezdb             |
+| prezdbsb           |
+| sbapp2db           |
+| sbapp3db           |
+| sys                |
+| tacocloud          |
+| wire2_development  |
+| wire3_development  |
+| wire4_development  |
+| wire5_development  |
+| wire6_development  |
++--------------------+
+18 rows in set (0.00 sec)
+
+mysql> 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://lindevs.com/install-jq-on-ubuntu
+
+sudo apt update
+sudo apt install -y jq
+jq --version
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+/home/davidho/sbootprojs/prezsb304/tomcat/logs/access_log.2023-03-20.log
+
+127.0.0.1 - - [20/Mar/2023:08:10:49 -0400] "GET /actuator HTTP/1.1" 200 1782
+127.0.0.1 - - [20/Mar/2023:08:11:39 -0400] "GET /actuator HTTP/1.1" 200 1782
+127.0.0.1 - - [20/Mar/2023:08:12:01 -0400] "GET /actuator HTTP/1.1" 200 1782
+127.0.0.1 - - [20/Mar/2023:08:14:54 -0400] "GET /actuator HTTP/1.1" 200 1782
+127.0.0.1 - - [20/Mar/2023:08:15:26 -0400] "GET /actuator/httpexchanges HTTP/1.1" 200 1630
+127.0.0.1 - - [20/Mar/2023:08:15:36 -0400] "GET /actuator/httpexchanges HTTP/1.1" 200 2044
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+/home/davidho/sbootprojs/prezsb304/src/main/java/ashburncode/prezsb304/ActuatorHttpExchangesConfiguration.java
+
+package ashburncode.prezsb304;
+
+import org.springframework.boot.actuate.web.exchanges.HttpExchangeRepository;
+import org.springframework.boot.actuate.web.exchanges.InMemoryHttpExchangeRepository;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class ActuatorHttpExchangesConfiguration {
+
+    @Bean
+    public HttpExchangeRepository httpExchangeRepository() {
+      return new InMemoryHttpExchangeRepository();
+    }
+
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~$ curl http://localhost:8080/actuator
+{"_links":{"self":{"href":"http://localhost:8080/actuator","templated":false},"beans":{"href":"http://localhost:8080/actuator/beans","templated":false},"caches-cache":{"href":"http://localhost:8080/actuator/caches/{cache}","templated":true},"caches":{"href":"http://localhost:8080/actuator/caches","templated":false},"health":{"href":"http://localhost:8080/actuator/health","templated":false},"health-path":{"href":"http://localhost:8080/actuator/health/{*path}","templated":true},"info":{"href":"http://localhost:8080/actuator/info","templated":false},"conditions":{"href":"http://localhost:8080/actuator/conditions","templated":false},"configprops":{"href":"http://localhost:8080/actuator/configprops","templated":false},"configprops-prefix":{"href":"http://localhost:8080/actuator/configprops/{prefix}","templated":true},"env":{"href":"http://localhost:8080/actuator/env","templated":false},"env-toMatch":{"href":"http://localhost:8080/actuator/env/{toMatch}","templated":true},"loggers":{"href":"http://localhost:8080/actuator/loggers","templated":false},"loggers-name":{"href":"http://localhost:8080/actuator/loggers/{name}","templated":true},"heapdump":{"href":"http://localhost:8080/actuator/heapdump","templated":false},"threaddump":{"href":"http://localhost:8080/actuator/threaddump","templated":false},"metrics-requiredMetricName":{"href":"http://localhost:8080/actuator/metrics/{requiredMetricName}","templated":true},"metrics":{"href":"http://localhost:8080/actuator/metrics","templated":false},"scheduledtasks":{"href":"http://localhost:8080/actuator/scheduledtasks","templated":false},"httpexchanges":{"href":"http://localhost:8080/actuator/httpexchanges","templated":false},"mappings":{"href":"http://localhost:8080/actuator/mappings","templated":false}}}davidho@dphxps17:~$ 
+
+
+davidho@dphxps17:~$ history | tail -20
+ 1993  ls -latr | grep boot
+ 1994  cd sbootprojs/
+ 1995  ls -latr
+ 1996  code prezsb304
+ 1997  ./gradlew bootRun
+ 1998  cd prezsb304/
+ 1999  ./gradlew bootRun
+ 2000  /gradlew bootRun
+ 2001  curl http://localhost:8080/actuator
+ 2002  curl http://localhost:8080/actuator | jq
+ 2003  apt get jq
+ 2004  sudo apt update
+ 2005  sudo apt install -y jq
+ 2006  jq --version
+ 2007  history
+ 2008  curl http://localhost:8080/actuator | jq
+ 2009  http://localhost:8080/actuator/httpexchanges
+ 2010  curl http://localhost:8080/actuator/httpexchanges
+ 2011  curl http://localhost:8080/actuator/httpexchanges | jq
+ 2012  history | tail -20
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ curl http://localhost:8080/actuator/httpexchanges | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  2032    0  2032    0     0   817k      0 --:--:-- --:--:-- --:--:--  992k
+{
+  "exchanges": [
+    {
+      "timestamp": "2023-03-20T12:15:26.297897891Z",
+      "request": {
+        "uri": "http://localhost:8080/actuator/httpexchanges",
+        "method": "GET",
+        "headers": {
+          "host": [
+            "localhost:8080"
+          ],
+          "user-agent": [
+            "curl/7.81.0"
+          ],
+          "accept": [
+            "*/*"
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": [
+            "application/vnd.spring-boot.actuator.v3+json"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Date": [
+            "Mon, 20 Mar 2023 12:15:26 GMT"
+          ]
+        }
+      },
+      "timeTaken": "PT0.01671458S"
+    },
+    {
+      "timestamp": "2023-03-20T12:14:54.733203590Z",
+      "request": {
+        "uri": "http://localhost:8080/actuator",
+        "method": "GET",
+        "headers": {
+          "host": [
+            "localhost:8080"
+          ],
+          "user-agent": [
+            "curl/7.81.0"
+          ],
+          "accept": [
+            "*/*"
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": [
+            "application/vnd.spring-boot.actuator.v3+json"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Date": [
+            "Mon, 20 Mar 2023 12:14:54 GMT"
+          ]
+        }
+      },
+      "timeTaken": "PT0.001065257S"
+    },
+    {
+      "timestamp": "2023-03-20T12:12:01.870987287Z",
+      "request": {
+        "uri": "http://localhost:8080/actuator",
+        "method": "GET",
+        "headers": {
+          "host": [
+            "localhost:8080"
+          ],
+          "user-agent": [
+            "curl/7.81.0"
+          ],
+          "accept": [
+            "*/*"
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": [
+            "application/vnd.spring-boot.actuator.v3+json"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Date": [
+            "Mon, 20 Mar 2023 12:12:01 GMT"
+          ]
+        }
+      },
+      "timeTaken": "PT0.00096055S"
+    },
+    {
+      "timestamp": "2023-03-20T12:11:39.946162583Z",
+      "request": {
+        "uri": "http://localhost:8080/actuator",
+        "method": "GET",
+        "headers": {
+          "host": [
+            "localhost:8080"
+          ],
+          "user-agent": [
+            "curl/7.81.0"
+          ],
+          "accept": [
+            "*/*"
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": [
+            "application/vnd.spring-boot.actuator.v3+json"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Date": [
+            "Mon, 20 Mar 2023 12:11:39 GMT"
+          ]
+        }
+      },
+      "timeTaken": "PT0.001003937S"
+    },
+    {
+      "timestamp": "2023-03-20T12:10:49.188869339Z",
+      "request": {
+        "uri": "http://localhost:8080/actuator",
+        "method": "GET",
+        "headers": {
+          "host": [
+            "localhost:8080"
+          ],
+          "user-agent": [
+            "curl/7.81.0"
+          ],
+          "accept": [
+            "*/*"
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": [
+            "application/vnd.spring-boot.actuator.v3+json"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Date": [
+            "Mon, 20 Mar 2023 12:10:49 GMT"
+          ]
+        }
+      },
+      "timeTaken": "PT0.034239213S"
+    }
+  ]
+}
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~$ curl http://localhost:8080/actuator | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1770    0  1770    0     0   757k      0 --:--:-- --:--:-- --:--:--  864k
+{
+  "_links": {
+    "self": {
+      "href": "http://localhost:8080/actuator",
+      "templated": false
+    },
+    "beans": {
+      "href": "http://localhost:8080/actuator/beans",
+      "templated": false
+    },
+    "caches-cache": {
+      "href": "http://localhost:8080/actuator/caches/{cache}",
+      "templated": true
+    },
+    "caches": {
+      "href": "http://localhost:8080/actuator/caches",
+      "templated": false
+    },
+    "health": {
+      "href": "http://localhost:8080/actuator/health",
+      "templated": false
+    },
+    "health-path": {
+      "href": "http://localhost:8080/actuator/health/{*path}",
+      "templated": true
+    },
+    "info": {
+      "href": "http://localhost:8080/actuator/info",
+      "templated": false
+    },
+    "conditions": {
+      "href": "http://localhost:8080/actuator/conditions",
+      "templated": false
+    },
+    "configprops": {
+      "href": "http://localhost:8080/actuator/configprops",
+      "templated": false
+    },
+    "configprops-prefix": {
+      "href": "http://localhost:8080/actuator/configprops/{prefix}",
+      "templated": true
+    },
+    "env": {
+      "href": "http://localhost:8080/actuator/env",
+      "templated": false
+    },
+    "env-toMatch": {
+      "href": "http://localhost:8080/actuator/env/{toMatch}",
+      "templated": true
+    },
+    "loggers": {
+      "href": "http://localhost:8080/actuator/loggers",
+      "templated": false
+    },
+    "loggers-name": {
+      "href": "http://localhost:8080/actuator/loggers/{name}",
+      "templated": true
+    },
+    "heapdump": {
+      "href": "http://localhost:8080/actuator/heapdump",
+      "templated": false
+    },
+    "threaddump": {
+      "href": "http://localhost:8080/actuator/threaddump",
+      "templated": false
+    },
+    "metrics-requiredMetricName": {
+      "href": "http://localhost:8080/actuator/metrics/{requiredMetricName}",
+      "templated": true
+    },
+    "metrics": {
+      "href": "http://localhost:8080/actuator/metrics",
+      "templated": false
+    },
+    "scheduledtasks": {
+      "href": "http://localhost:8080/actuator/scheduledtasks",
+      "templated": false
+    },
+    "httpexchanges": {
+      "href": "http://localhost:8080/actuator/httpexchanges",
+      "templated": false
+    },
+    "mappings": {
+      "href": "http://localhost:8080/actuator/mappings",
+      "templated": false
+    }
+  }
+}
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+
+
+
