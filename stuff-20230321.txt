@@ -1,0 +1,404 @@
+davidho@dphxps17:~$ date
+Tue Mar 21 06:10:21 AM EDT 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ code stuff-20230321.txt
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://start.spring.io/
+https://spring.io/guides/gs/accessing-data-mysql/
+
+https://docs.spring.io/spring-boot/docs/current/reference/html/data.
+https://www.javaguides.net/2022/12/spring-boot-3-tutorial.html
+https://www.bezkoder.com/jpa-one-to-many/
+  spring.jpa.properties.hibernate.dialect= org.hibernate.dialect.MySQL5InnoDBDialect
+
+https://spring.io/blog/2022/05/24/preparing-for-spring-boot-3-0
+https://www.baeldung.com/spring-data-jpa-delete
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Book> books;
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      prezinfosb
+Name:          prezinfosb
+Package name:  ashburncode.prezinfosb
+Description:   spring boot 3.0.4, gradle project, jar packaging, java 17
+Dependencies:
+  Spring Web Web
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.
+  Spring Boot Actuator Ops
+    Supports built in (or custom) endpoints that let you monitor and manage your application - such as application health, metrics, sessions, etc.
+  Thymeleaf Template Engines
+    A modern server-side Java template engine for both web and standalone environments. Allows HTML to be correctly displayed in browsers and as static prototypes.
+  Lombok Developer Tools
+    Java annotation library which helps to reduce boilerplate code.
+  Spring Boot DevTools Developer Tools
+    Provides fast application restarts, LiveReload, and configurations for enhanced development experience.   
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+DROP DATABASE IF EXISTS prezdbsb;
+DROP USER 'prez'@'localhost';
+CREATE USER 'prez'@'localhost' IDENTIFIED BY 'prezpw';
+DROP  prezdbsb;
+CREATE DATABASE prezdbsb;
+GRANT ALL PRIVILEGES ON prezdbsb.* TO 'prez'@'localhost' WITH GRANT OPTION;
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+davidho@dphxps17:~$ ls -latr ~/Downloads/ | tail
+-rw-rw-r--  1 davidho davidho         40 Mar 17 06:40 keycloak-21.0.1.tar.gz.sha1
+-rw-rw-r--  1 davidho davidho  581745209 Mar 17 06:42 elasticsearch-8.6.2-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        170 Mar 17 06:42 elasticsearch-8.6.2-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho        488 Mar 17 06:42 elasticsearch-8.6.2-linux-x86_64.tar.gz.asc
+-rw-rw-r--  1 davidho davidho  227238517 Mar 17 06:43 kibana-8.6.2-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        163 Mar 17 06:43 kibana-8.6.2-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho        488 Mar 17 06:43 kibana-8.6.2-linux-x86_64.tar.gz.asc
+drwxr-x--- 56 davidho davidho       4096 Mar 21 06:11 ..
+-rw-rw-r--  1 davidho davidho      65395 Mar 21 06:21 prezinfosb.zip
+drwxr-xr-x  6 davidho davidho      20480 Mar 21 06:21 .
+davidho@dphxps17:~$ 
+
+davidho@dphxps17:~$ ls -latr ~/sbootprojs/ | tail -4
+drwxr-x--- 56 davidho davidho   4096 Mar 21 06:11 ..
+-rw-rw-r--  1 davidho davidho  65395 Mar 21 06:21 prezinfosb.zip
+drwxrwxr-x 21 davidho davidho   4096 Mar 21 06:24 .
+drwxr-xr-x  4 davidho davidho   4096 Mar 21  2023 prezinfosb
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/sbootprojs/prezinfosb$ ls -latr
+total 44
+drwxrwxr-x 21 davidho davidho 4096 Mar 21 06:24 ..
+drwxr-xr-x  4 davidho davidho 4096 Mar 21  2023 src
+-rw-r--r--  1 davidho davidho   32 Mar 21  2023 settings.gradle
+-rw-r--r--  1 davidho davidho 2216 Mar 21  2023 HELP.md
+-rw-r--r--  1 davidho davidho 2838 Mar 21  2023 gradlew.bat
+-rwxr-xr-x  1 davidho davidho 8188 Mar 21  2023 gradlew
+drwxr-xr-x  3 davidho davidho 4096 Mar 21  2023 gradle
+-rw-r--r--  1 davidho davidho  444 Mar 21  2023 .gitignore
+-rw-r--r--  1 davidho davidho  995 Mar 21  2023 build.gradle
+drwxr-xr-x  4 davidho davidho 4096 Mar 21  2023 .
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ ./gradlew --version
+
+------------------------------------------------------------
+Gradle 7.6.1
+------------------------------------------------------------
+
+Build time:   2023-02-24 13:54:42 UTC
+Revision:     3905fe8ac072bbd925c70ddbddddf4463341f4b4
+
+Kotlin:       1.7.10
+Groovy:       3.0.13
+Ant:          Apache Ant(TM) version 1.10.11 compiled on July 10 2021
+JVM:          17.0.6 (Azul Systems, Inc. 17.0.6+10-LTS)
+OS:           Linux 5.19.0-35-generic amd64
+
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/sbootprojs/prezinfosb$ ./gradlew bootRun
+
+> Task :bootRun
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.0.4)
+
+2023-03-21T06:40:22.579-04:00  INFO 14217 --- [  restartedMain] a.prezinfosb.PrezinfosbApplication       : Starting PrezinfosbApplication using Java 17.0.6 with PID 14217 (/home/davidho/sbootprojs/prezinfosb/build/classes/java/main started by davidho in /home/davidho/sbootprojs/prezinfosb)
+2023-03-21T06:40:22.581-04:00  INFO 14217 --- [  restartedMain] a.prezinfosb.PrezinfosbApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-03-21T06:40:22.603-04:00  INFO 14217 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-03-21T06:40:22.603-04:00  INFO 14217 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-03-21T06:40:22.976-04:00  INFO 14217 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-03-21T06:40:22.985-04:00  INFO 14217 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2023-03-21T06:40:23.262-04:00  INFO 14217 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-03-21T06:40:23.267-04:00  INFO 14217 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-21T06:40:23.268-04:00  INFO 14217 --- [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-03-21T06:40:23.294-04:00  INFO 14217 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-21T06:40:23.295-04:00  INFO 14217 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 691 ms
+2023-03-21T06:40:23.409-04:00  INFO 14217 --- [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-03-21T06:40:23.429-04:00  INFO 14217 --- [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-03-21T06:40:23.543-04:00  INFO 14217 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-03-21T06:40:23.694-04:00  INFO 14217 --- [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4022d437
+2023-03-21T06:40:23.695-04:00  INFO 14217 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-03-21T06:40:23.727-04:00  INFO 14217 --- [  restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-03-21T06:40:23.855-04:00  INFO 14217 --- [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-03-21T06:40:23.860-04:00  INFO 14217 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-03-21T06:40:23.880-04:00  WARN 14217 --- [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-03-21T06:40:24.262-04:00  INFO 14217 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-03-21T06:40:24.265-04:00  INFO 14217 --- [  restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 13 endpoint(s) beneath base path '/actuator'
+2023-03-21T06:40:24.301-04:00  INFO 14217 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-03-21T06:40:24.311-04:00  INFO 14217 --- [  restartedMain] a.prezinfosb.PrezinfosbApplication       : Started PrezinfosbApplication in 1.89 seconds (process running for 2.057)
+<==========---> 80% EXECUTING [16s]
+> :bootRun
+^Cdavidho@dphxps17:~/sbootprojs/prezinfosb$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+
+mysql> 
+mysql> drop table election;
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> drop table election_seq;
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> drop table president;
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> drop table president_seq;
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> show tables;
+Empty set (0.00 sec)
+
+mysql> 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| db_example         |
+| depot2_development |
+| dphpyapp1          |
+| dphpyapp2          |
+| information_schema |
+| mysql              |
+| performance_schema |
+| prezdb             |
+| prezdbsb           |
+| sbapp2db           |
+| sbapp3db           |
+| sys                |
+| tacocloud          |
+| wire2_development  |
+| wire3_development  |
+| wire4_development  |
+| wire5_development  |
+| wire6_development  |
++--------------------+
+18 rows in set (0.00 sec)
+
+mysql> use prezdbsb;
+Database changed
+mysql> 
+mysql> show tables;
++--------------------+
+| Tables_in_prezdbsb |
++--------------------+
+| election           |
+| election_seq       |
+| president          |
+| president_seq      |
++--------------------+
+4 rows in set (0.00 sec)
+
+mysql> desc president;
++-------------------+--------------+------+-----+---------+-------+
+| Field             | Type         | Null | Key | Default | Extra |
++-------------------+--------------+------+-----+---------+-------+
+| id                | bigint       | NO   | PRI | NULL    |       |
+| first_inaug_date  | datetime(6)  | YES  |     | NULL    |       |
+| first_name        | varchar(255) | YES  |     | NULL    |       |
+| last_name         | varchar(255) | YES  |     | NULL    |       |
+| middle_name       | varchar(255) | YES  |     | NULL    |       |
+| second_inaug_date | datetime(6)  | YES  |     | NULL    |       |
++-------------------+--------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> desc election;
++-----------------------+-------------+------+-----+---------+-------+
+| Field                 | Type        | Null | Key | Default | Extra |
++-----------------------+-------------+------+-----+---------+-------+
+| id                    | bigint      | NO   | PRI | NULL    |       |
+| election_date         | datetime(6) | YES  |     | NULL    |       |
+| incumb_electoral_vote | int         | YES  |     | NULL    |       |
+| incumb_popular_vote   | bigint      | YES  |     | NULL    |       |
+| incumb_won_election   | bit(1)      | YES  |     | NULL    |       |
+| total_electoral_vote  | int         | YES  |     | NULL    |       |
+| total_popular_vote    | bigint      | YES  |     | NULL    |       |
+| president_id          | bigint      | YES  | MUL | NULL    |       |
++-----------------------+-------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> desc president_seq;
++----------+--------+------+-----+---------+-------+
+| Field    | Type   | Null | Key | Default | Extra |
++----------+--------+------+-----+---------+-------+
+| next_val | bigint | YES  |     | NULL    |       |
++----------+--------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> desc election_seq;
++----------+--------+------+-----+---------+-------+
+| Field    | Type   | Null | Key | Default | Extra |
++----------+--------+------+-----+---------+-------+
+| next_val | bigint | YES  |     | NULL    |       |
++----------+--------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ !mysqldump
+mysqldump -u root -p prezdbsb
+Enter password: 
+-- MySQL dump 10.13  Distrib 8.0.32, for Linux (x86_64)
+--
+-- Host: localhost    Database: prezdbsb
+-- ------------------------------------------------------
+-- Server version	8.0.32-0ubuntu0.22.04.2
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `election`
+--
+
+DROP TABLE IF EXISTS `election`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `election` (
+  `id` bigint NOT NULL,
+  `election_date` datetime(6) DEFAULT NULL,
+  `incumb_electoral_vote` int DEFAULT NULL,
+  `incumb_popular_vote` bigint DEFAULT NULL,
+  `incumb_won_election` bit(1) DEFAULT NULL,
+  `total_electoral_vote` int DEFAULT NULL,
+  `total_popular_vote` bigint DEFAULT NULL,
+  `president_id` bigint DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FKof13dcj45tg3ts9hbp4hf5tov` (`president_id`),
+  CONSTRAINT `FKof13dcj45tg3ts9hbp4hf5tov` FOREIGN KEY (`president_id`) REFERENCES `president` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `election`
+--
+
+LOCK TABLES `election` WRITE;
+/*!40000 ALTER TABLE `election` DISABLE KEYS */;
+/*!40000 ALTER TABLE `election` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `election_seq`
+--
+
+DROP TABLE IF EXISTS `election_seq`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `election_seq` (
+  `next_val` bigint DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `election_seq`
+--
+
+LOCK TABLES `election_seq` WRITE;
+/*!40000 ALTER TABLE `election_seq` DISABLE KEYS */;
+INSERT INTO `election_seq` VALUES (1);
+/*!40000 ALTER TABLE `election_seq` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `president`
+--
+
+DROP TABLE IF EXISTS `president`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `president` (
+  `id` bigint NOT NULL,
+  `first_inaug_date` datetime(6) DEFAULT NULL,
+  `first_name` varchar(255) DEFAULT NULL,
+  `last_name` varchar(255) DEFAULT NULL,
+  `middle_name` varchar(255) DEFAULT NULL,
+  `second_inaug_date` datetime(6) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `president`
+--
+
+LOCK TABLES `president` WRITE;
+/*!40000 ALTER TABLE `president` DISABLE KEYS */;
+/*!40000 ALTER TABLE `president` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `president_seq`
+--
+
+DROP TABLE IF EXISTS `president_seq`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `president_seq` (
+  `next_val` bigint DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `president_seq`
+--
+
+LOCK TABLES `president_seq` WRITE;
+/*!40000 ALTER TABLE `president_seq` DISABLE KEYS */;
+INSERT INTO `president_seq` VALUES (1);
+/*!40000 ALTER TABLE `president_seq` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2023-03-21  8:08:27
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+git remote add origin git@github.com:ashburndev/prezinfosb.git
+git branch -M main
+git push -u origin main
+
