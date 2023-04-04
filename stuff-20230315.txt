@@ -587,3 +587,47 @@ davidho@dphxps17:~/grailsprojs/prezinfo$ git push
 Everything up-to-date
 davidho@dphxps17:~/grailsprojs/prezinfo$ 
 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~$ ls -latr ~/Downloads/ | grep -i "elastic\|kibana"
+-rw-rw-r--  1 davidho davidho  526118574 May 25  2022 elasticsearch-8.2.1-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        170 May 25  2022 elasticsearch-8.2.1-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho        488 May 25  2022 elasticsearch-8.2.1-linux-x86_64.tar.gz.asc
+-rw-rw-r--  1 davidho davidho  346794062 May 25  2022 elasticsearch-7.1.1-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        169 May 25  2022 elasticsearch-7.1.1-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  346825772 May 25  2022 elasticsearch-7.1.1-amd64.deb
+-rw-rw-r--  1 davidho davidho        159 May 25  2022 elasticsearch-7.1.1-amd64.deb.sha512
+-rw-rw-r--  1 davidho davidho  255005883 May 25  2022 kibana-8.2.1-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        163 May 25  2022 kibana-8.2.1-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho        488 May 25  2022 kibana-8.2.1-linux-x86_64.tar.gz.asc
+-rw-rw-r--  1 davidho davidho  167785446 May 25  2022 kibana-7.1.1-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        162 May 25  2022 kibana-7.1.1-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  172293244 May 25  2022 kibana-7.1.1-amd64.deb
+-rw-rw-r--  1 davidho davidho        152 May 25  2022 kibana-7.1.1-amd64.deb.sha512
+-rw-rw-r--  1 davidho davidho      54908 May 26  2022 elasticsearch-in-action-main.zip
+-rw-rw-r--  1 davidho davidho       5497 May 26  2022 Elasticsearch_SourceCode.zip
+-rw-rw-r--  1 davidho davidho  526116807 Jun  1  2022 elasticsearch-8.2.2-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        170 Jun  1  2022 elasticsearch-8.2.2-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho        488 Jun  1  2022 elasticsearch-8.2.2-linux-x86_64.tar.gz.asc
+-rw-rw-r--  1 davidho davidho  255005085 Jun  1  2022 kibana-8.2.2-linux-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        163 Jun  1  2022 kibana-8.2.2-linux-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho        488 Jun  1  2022 kibana-8.2.2-linux-x86_64.tar.gz.asc
+drwxrwxr-x  8 davidho davidho       4096 Jun  6  2022 elastic
+-rw-rw-r--  1 davidho davidho   14996746 Jun  6  2022 Elasticsearch_in_Action.pdf
+-rw-rw-r--  1 davidho davidho   12382585 Jun  6  2022 Elasticsearch_in_Action.epub
+-rw-rw-r--  1 davidho davidho   14759092 Jun  6  2022 Elasticsearch_in_Action.mobi
+-rw-rw-r--  1 davidho davidho   15264613 Jun  6  2022 Elasticsearch_in_Action_Second_Edition_v8.pdf
+-rw-rw-r--  1 davidho davidho   12765181 Jun  6  2022 Elasticsearch_in_Action_Second_Edition_v8.epub
+-rw-rw-r--  1 davidho davidho    6584403 Jun  6  2022 Elasticsearch_in_Action_Second_Edition_v8.mobi
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ ls -latr ~/Downloads/ | grep -i "eclipse"
+-rw-rw-r--  1 davidho davidho  530568735 Sep 22 07:59 eclipse-jee-2022-09-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        176 Sep 22 08:02 eclipse-jee-2022-09-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  310380717 Sep 22 08:02 eclipse-java-2022-09-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        177 Sep 22 08:04 eclipse-java-2022-09-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  552970589 Dec  8 07:04 eclipse-jee-2022-12-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        178 Dec  8 07:08 eclipse-jee-2022-12-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  317456405 Dec  8 07:08 eclipse-java-2022-12-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        179 Dec  8 07:11 eclipse-java-2022-12-R-linux-gtk-x86_64.tar.gz.sha512
+davidho@dphxps17:~$ 
+

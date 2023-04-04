@@ -1,0 +1,243 @@
+davidho@dphxps17:~$ date
+Tue Apr  4 06:49:13 AM EDT 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ code stuff-20230404.txt
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/sbootprojs/prezinfosb$ ./gradlew build
+Starting a Gradle Daemon, 2 incompatible and 1 stopped Daemons could not be reused, use --status for details
+
+> Task :test
+2023-04-04T06:55:07.129-04:00  INFO 9879 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-04T06:55:07.130-04:00  INFO 9879 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-04T06:55:07.134-04:00  INFO 9879 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+
+BUILD SUCCESSFUL in 10s
+7 actionable tasks: 4 executed, 3 up-to-date
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ date
+Tue Apr  4 06:55:24 AM EDT 2023
+davidho@dphxps17:~/sbootprojs/prezinfosb$ pwd -P
+/home/davidho/sbootprojs/prezinfosb
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ ls -latr
+total 60
+drwxrwxr-x 21 davidho davidho 4096 Mar 21 06:24 ..
+drwxrwxr-x  5 davidho davidho 4096 Mar 21 06:31 .gradle
+drwxrwxr-x  4 davidho davidho 4096 Mar 21 06:31 tomcat
+-rw-r--r--  1 davidho davidho 1004 Mar 21 06:42 build.gradle
+drwxrwxr-x  8 davidho davidho 4096 Mar 21 08:15 .git
+drwxr-xr-x  4 davidho davidho 4096 Mar 21 10:21 src
+-rw-r--r--  1 davidho davidho   32 Mar 21 10:21 settings.gradle
+-rw-r--r--  1 davidho davidho 2216 Mar 21 10:21 HELP.md
+-rw-r--r--  1 davidho davidho 2838 Mar 21 10:21 gradlew.bat
+-rwxr-xr-x  1 davidho davidho 8188 Mar 21 10:21 gradlew
+drwxr-xr-x  3 davidho davidho 4096 Mar 21 10:21 gradle
+-rw-r--r--  1 davidho davidho  444 Mar 21 10:21 .gitignore
+drwxr-xr-x  8 davidho davidho 4096 Apr  3 07:22 .
+drwxrwxr-x  9 davidho davidho 4096 Apr  4 06:55 build
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ find . -name *.jar -print
+./gradle/wrapper/gradle-wrapper.jar
+./build/libs/prezinfosb-0.0.1-SNAPSHOT.jar
+./build/libs/prezinfosb-0.0.1-SNAPSHOT-plain.jar
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ find . -name *.jar -exec ls -la {} \;
+-rw-r--r-- 1 davidho davidho 60756 Mar 21 10:21 ./gradle/wrapper/gradle-wrapper.jar
+-rw-rw-r-- 1 davidho davidho 46172217 Apr  4 06:55 ./build/libs/prezinfosb-0.0.1-SNAPSHOT.jar
+-rw-rw-r-- 1 davidho davidho 4288 Apr  4 06:55 ./build/libs/prezinfosb-0.0.1-SNAPSHOT-plain.jar
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ jar tvf ./build/libs/prezinfosb-0.0.1-SNAPSHOT.jar | grep -i sql
+2480823 Wed Mar 15 21:40:38 EDT 2023 BOOT-INF/lib/mysql-connector-j-8.0.32.jar
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ ./gradlew dependencies | grep -i sql
+\--- com.mysql:mysql-connector-j -> 8.0.32
+\--- com.mysql:mysql-connector-j -> 8.0.32
+\--- com.mysql:mysql-connector-j (n)
++--- com.mysql:mysql-connector-j -> 8.0.32
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ ./gradlew dependencies | grep -i hib
+|    +--- org.hibernate.orm:hibernate-core:6.1.7.Final
+|    +--- org.hibernate.orm:hibernate-core:6.1.7.Final
+|    |    +--- org.hibernate.common:hibernate-commons-annotations:6.0.6.Final
+|    +--- org.hibernate.orm:hibernate-core:6.1.7.Final
+|    |    +--- org.hibernate.common:hibernate-commons-annotations:6.0.6.Final
+|    +--- org.hibernate.orm:hibernate-core:6.1.7.Final
+|    +--- org.hibernate.orm:hibernate-core:6.1.7.Final
+|    |    +--- org.hibernate.common:hibernate-commons-annotations:6.0.6.Final
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ ./gradlew dependencies | grep -i jpa
++--- org.springframework.boot:spring-boot-starter-data-jpa -> 3.0.4
+|    +--- org.springframework.data:spring-data-jpa:3.0.3
++--- org.springframework.boot:spring-boot-starter-data-jpa (n)
++--- org.springframework.boot:spring-boot-starter-data-jpa -> 3.0.4
+|    +--- org.springframework.data:spring-data-jpa:3.0.3
++--- org.springframework.boot:spring-boot-starter-data-jpa -> 3.0.4
+|    +--- org.springframework.data:spring-data-jpa:3.0.3
++--- org.springframework.boot:spring-boot-starter-data-jpa -> 3.0.4
+|    +--- org.springframework.data:spring-data-jpa:3.0.3
++--- org.springframework.boot:spring-boot-starter-data-jpa -> 3.0.4
+|    +--- org.springframework.data:spring-data-jpa:3.0.3
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/sbootprojs/prezinfosb$ mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 18
+Server version: 8.0.32-0ubuntu0.22.04.2 (Ubuntu)
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> 
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| db_example         |
+| depot2_development |
+| dphpyapp1          |
+| dphpyapp2          |
+| information_schema |
+| mysql              |
+| performance_schema |
+| prezdb             |
+| prezdbsb           |
+| sbapp2db           |
+| sbapp3db           |
+| sys                |
+| tacocloud          |
+| wire2_development  |
+| wire3_development  |
+| wire4_development  |
+| wire5_development  |
+| wire6_development  |
++--------------------+
+18 rows in set (0.00 sec)
+
+mysql> use prezdbsb;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++--------------------+
+| Tables_in_prezdbsb |
++--------------------+
+| election           |
+| election_seq       |
+| president          |
+| president_seq      |
++--------------------+
+4 rows in set (0.00 sec)
+
+mysql> 
+mysql> quit;
+Bye
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ mysqldump -u root -p --no-data prezdbsb
+Enter password: 
+-- MySQL dump 10.13  Distrib 8.0.32, for Linux (x86_64)
+--
+-- Host: localhost    Database: prezdbsb
+-- ------------------------------------------------------
+-- Server version	8.0.32-0ubuntu0.22.04.2
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `election`
+--
+
+DROP TABLE IF EXISTS `election`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `election` (
+  `id` bigint NOT NULL,
+  `election_date` datetime(6) DEFAULT NULL,
+  `incumb_electoral_vote` int DEFAULT NULL,
+  `incumb_popular_vote` bigint DEFAULT NULL,
+  `incumb_won_election` bit(1) DEFAULT NULL,
+  `total_electoral_vote` int DEFAULT NULL,
+  `total_popular_vote` bigint DEFAULT NULL,
+  `president_id` bigint DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FKof13dcj45tg3ts9hbp4hf5tov` (`president_id`),
+  CONSTRAINT `FKof13dcj45tg3ts9hbp4hf5tov` FOREIGN KEY (`president_id`) REFERENCES `president` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `election_seq`
+--
+
+DROP TABLE IF EXISTS `election_seq`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `election_seq` (
+  `next_val` bigint DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `president`
+--
+
+DROP TABLE IF EXISTS `president`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `president` (
+  `id` bigint NOT NULL,
+  `first_inaug_date` datetime(6) DEFAULT NULL,
+  `first_name` varchar(255) DEFAULT NULL,
+  `last_name` varchar(255) DEFAULT NULL,
+  `middle_name` varchar(255) DEFAULT NULL,
+  `second_inaug_date` datetime(6) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `president_seq`
+--
+
+DROP TABLE IF EXISTS `president_seq`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `president_seq` (
+  `next_val` bigint DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2023-04-04  7:05:06
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+
