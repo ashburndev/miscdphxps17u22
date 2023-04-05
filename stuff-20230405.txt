@@ -1,0 +1,602 @@
+davidho@dphxps17:~$ date
+Wed Apr  5 06:26:20 AM EDT 2023
+davidho@dphxps17:~$ code stuff-20230405.txt
+davidho@dphxps17:~$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/sbootprojs/prezinfosb$ ./gradlew --version
+
+------------------------------------------------------------
+Gradle 7.6.1
+------------------------------------------------------------
+
+Build time:   2023-02-24 13:54:42 UTC
+Revision:     3905fe8ac072bbd925c70ddbddddf4463341f4b4
+
+Kotlin:       1.7.10
+Groovy:       3.0.13
+Ant:          Apache Ant(TM) version 1.10.11 compiled on July 10 2021
+JVM:          17.0.6 (Azul Systems, Inc. 17.0.6+10-LTS)
+OS:           Linux 5.19.0-38-generic amd64
+
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/sbootprojs/prezinfosb$ date
+Wed Apr  5 06:57:55 AM EDT 2023
+davidho@dphxps17:~/sbootprojs/prezinfosb$ ./gradlew bootRun
+
+> Task :bootRun
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.0.4)
+
+2023-04-05T06:58:03.428-04:00  INFO 12933 --- [           main] a.prezinfosb.PrezinfosbApplication       : Starting PrezinfosbApplication using Java 17.0.6 with PID 12933 (/home/davidho/sbootprojs/prezinfosb/build/classes/java/main started by davidho in /home/davidho/sbootprojs/prezinfosb)
+2023-04-05T06:58:03.430-04:00  INFO 12933 --- [           main] a.prezinfosb.PrezinfosbApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-04-05T06:58:03.794-04:00  INFO 12933 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-05T06:58:03.815-04:00  INFO 12933 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 3 JPA repository interfaces.
+2023-04-05T06:58:04.072-04:00  INFO 12933 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-05T06:58:04.077-04:00  INFO 12933 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-05T06:58:04.077-04:00  INFO 12933 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-04-05T06:58:04.121-04:00  INFO 12933 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-05T06:58:04.121-04:00  INFO 12933 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 668 ms
+2023-04-05T06:58:04.234-04:00  INFO 12933 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-05T06:58:04.254-04:00  INFO 12933 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-05T06:58:04.375-04:00  INFO 12933 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-05T06:58:04.525-04:00  INFO 12933 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@156324b
+2023-04-05T06:58:04.526-04:00  INFO 12933 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-05T06:58:04.535-04:00  INFO 12933 --- [           main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-04-05T06:58:04.536-04:00  WARN 12933 --- [           main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2023-04-05T06:58:05.041-04:00  INFO 12933 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-05T06:58:05.045-04:00  INFO 12933 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-05T06:58:05.063-04:00  WARN 12933 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-05T06:58:05.507-04:00  INFO 12933 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2023-04-05T06:58:05.550-04:00  INFO 12933 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-05T06:58:05.558-04:00  INFO 12933 --- [           main] a.prezinfosb.PrezinfosbApplication       : Started PrezinfosbApplication in 2.298 seconds (process running for 2.468)
+<==========---> 80% EXECUTING [7s]
+> :bootRun
+^Cdavidho@dphxps17:~/sbootprojs/prezinfosb$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+DROP TABLE IF EXISTS `term`;
+DROP TABLE IF EXISTS `term_seq`;
+DROP TABLE IF EXISTS `election`;
+DROP TABLE IF EXISTS `election_seq`;
+DROP TABLE IF EXISTS `president`;
+DROP TABLE IF EXISTS `president_seq`;
+
+DESC `term`;
+DESC `term_seq`;
+DESC `election`;
+DESC `election_seq`;
+DESC `president`;
+DESC `president_seq`;
+
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 31
+Server version: 8.0.32-0ubuntu0.22.04.2 (Ubuntu)
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use prezdbsb;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> 
+mysql> DESC `term`;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| id           | bigint      | NO   | PRI | NULL    |       |
+| beg_date     | datetime(6) | YES  |     | NULL    |       |
+| end_date     | datetime(6) | YES  |     | NULL    |       |
+| president_id | bigint      | YES  | MUL | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> DESC `term_seq`;
++----------+--------+------+-----+---------+-------+
+| Field    | Type   | Null | Key | Default | Extra |
++----------+--------+------+-----+---------+-------+
+| next_val | bigint | YES  |     | NULL    |       |
++----------+--------+------+-----+---------+-------+
+1 row in set (0.01 sec)
+
+mysql> DESC `election`;
++-----------------------+-------------+------+-----+---------+-------+
+| Field                 | Type        | Null | Key | Default | Extra |
++-----------------------+-------------+------+-----+---------+-------+
+| id                    | bigint      | NO   | PRI | NULL    |       |
+| election_date         | datetime(6) | YES  |     | NULL    |       |
+| incumb_won_election   | bit(1)      | YES  |     | NULL    |       |
+| total_electoral_vote  | int         | YES  |     | NULL    |       |
+| total_popular_vote    | bigint      | YES  |     | NULL    |       |
+| winner_electoral_vote | int         | YES  |     | NULL    |       |
+| winner_popular_vote   | bigint      | YES  |     | NULL    |       |
+| president_id          | bigint      | YES  | MUL | NULL    |       |
++-----------------------+-------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> DESC `election_seq`;
++----------+--------+------+-----+---------+-------+
+| Field    | Type   | Null | Key | Default | Extra |
++----------+--------+------+-----+---------+-------+
+| next_val | bigint | YES  |     | NULL    |       |
++----------+--------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> DESC `president`;
++---------------------+--------------+------+-----+---------+-------+
+| Field               | Type         | Null | Key | Default | Extra |
++---------------------+--------------+------+-----+---------+-------+
+| id                  | bigint       | NO   | PRI | NULL    |       |
+| first_inaug_address | varchar(255) | YES  |     | NULL    |       |
+| first_inaug_date    | datetime(6)  | YES  |     | NULL    |       |
+| first_name          | varchar(255) | YES  |     | NULL    |       |
+| last_name           | varchar(255) | YES  |     | NULL    |       |
+| middle_name         | varchar(255) | YES  |     | NULL    |       |
++---------------------+--------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> DESC `president_seq`;
++----------+--------+------+-----+---------+-------+
+| Field    | Type   | Null | Key | Default | Extra |
++----------+--------+------+-----+---------+-------+
+| next_val | bigint | YES  |     | NULL    |       |
++----------+--------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ find -name *.jar -print
+./gradle/wrapper/gradle-wrapper.jar
+./build/libs/prezinfosb-0.0.1-SNAPSHOT.jar
+./build/libs/prezinfosb-0.0.1-SNAPSHOT-plain.jar
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ find -name *.jar -exec ls -la {} \;
+-rw-r--r-- 1 davidho davidho 60756 Mar 21 10:21 ./gradle/wrapper/gradle-wrapper.jar
+-rw-rw-r-- 1 davidho davidho 46173885 Apr  5 07:01 ./build/libs/prezinfosb-0.0.1-SNAPSHOT.jar
+-rw-rw-r-- 1 davidho davidho 5806 Apr  5 07:01 ./build/libs/prezinfosb-0.0.1-SNAPSHOT-plain.jar
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ jar tvf ./build/libs/prezinfosb-0.0.1-SNAPSHOT.jar | grep -i sql
+2480823 Wed Mar 15 21:40:38 EDT 2023 BOOT-INF/lib/mysql-connector-j-8.0.32.jar
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ jar tvf ./build/libs/prezinfosb-0.0.1-SNAPSHOT.jar | grep -i hib
+9789851 Wed Mar 15 21:40:58 EDT 2023 BOOT-INF/lib/hibernate-core-6.1.7.Final.jar
+ 67807 Wed Mar 15 21:41:10 EDT 2023 BOOT-INF/lib/hibernate-commons-annotations-6.0.6.Final.jar
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ jar tvf ./build/libs/prezinfosb-0.0.1-SNAPSHOT.jar | grep -i jpa
+408089 Wed Mar 15 21:40:58 EDT 2023 BOOT-INF/lib/spring-data-jpa-3.0.3.jar
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+
+davidho@dphxps17:~/sbootprojs/prezinfosb$ ./gradlew dependencies | grep -i sql
+\--- com.mysql:mysql-connector-j -> 8.0.32
+\--- com.mysql:mysql-connector-j -> 8.0.32
+\--- com.mysql:mysql-connector-j (n)
++--- com.mysql:mysql-connector-j -> 8.0.32
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ ./gradlew dependencies | grep -i hib
+|    +--- org.hibernate.orm:hibernate-core:6.1.7.Final
+|    +--- org.hibernate.orm:hibernate-core:6.1.7.Final
+|    |    +--- org.hibernate.common:hibernate-commons-annotations:6.0.6.Final
+|    +--- org.hibernate.orm:hibernate-core:6.1.7.Final
+|    |    +--- org.hibernate.common:hibernate-commons-annotations:6.0.6.Final
+|    +--- org.hibernate.orm:hibernate-core:6.1.7.Final
+|    +--- org.hibernate.orm:hibernate-core:6.1.7.Final
+|    |    +--- org.hibernate.common:hibernate-commons-annotations:6.0.6.Final
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ ./gradlew dependencies | grep -i jpa
++--- org.springframework.boot:spring-boot-starter-data-jpa -> 3.0.4
+|    +--- org.springframework.data:spring-data-jpa:3.0.3
++--- org.springframework.boot:spring-boot-starter-data-jpa (n)
++--- org.springframework.boot:spring-boot-starter-data-jpa -> 3.0.4
+|    +--- org.springframework.data:spring-data-jpa:3.0.3
++--- org.springframework.boot:spring-boot-starter-data-jpa -> 3.0.4
+|    +--- org.springframework.data:spring-data-jpa:3.0.3
++--- org.springframework.boot:spring-boot-starter-data-jpa -> 3.0.4
+|    +--- org.springframework.data:spring-data-jpa:3.0.3
++--- org.springframework.boot:spring-boot-starter-data-jpa -> 3.0.4
+|    +--- org.springframework.data:spring-data-jpa:3.0.3
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+
+davidho@dphxps17:~/sbootprojs/prezinfosb$ mysqldump -u root -p --no-data > prezdbsb-mysqldump-20230405.sql
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ ls -latr
+total 68
+drwxrwxr-x 21 davidho davidho 4096 Mar 21 06:24 ..
+drwxrwxr-x  5 davidho davidho 4096 Mar 21 06:31 .gradle
+drwxrwxr-x  4 davidho davidho 4096 Mar 21 06:31 tomcat
+-rw-r--r--  1 davidho davidho 1004 Mar 21 06:42 build.gradle
+drwxr-xr-x  4 davidho davidho 4096 Mar 21 10:21 src
+-rw-r--r--  1 davidho davidho   32 Mar 21 10:21 settings.gradle
+-rw-r--r--  1 davidho davidho 2216 Mar 21 10:21 HELP.md
+-rw-r--r--  1 davidho davidho 2838 Mar 21 10:21 gradlew.bat
+-rwxr-xr-x  1 davidho davidho 8188 Mar 21 10:21 gradlew
+drwxr-xr-x  3 davidho davidho 4096 Mar 21 10:21 gradle
+-rw-r--r--  1 davidho davidho  481 Apr  4 07:13 .gitignore
+-rw-rw-r--  1 davidho davidho 3508 Apr  4 07:14 prezdbsb-mysqldump-20230404.sql
+drwxrwxr-x  8 davidho davidho 4096 Apr  5 06:32 .git
+drwxrwxr-x  9 davidho davidho 4096 Apr  5 07:01 build
+drwxr-xr-x  8 davidho davidho 4096 Apr  5 07:12 .
+-rw-rw-r--  1 davidho davidho  203 Apr  5 07:12 prezdbsb-mysqldump-20230405.sql
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ find src -type f -print
+src/test/java/ashburncode/prezinfosb/PrezinfosbApplicationTests.java
+src/main/resources/application.properties
+src/main/java/ashburncode/prezinfosb/Election.java
+src/main/java/ashburncode/prezinfosb/TermRepository.java
+src/main/java/ashburncode/prezinfosb/President.java
+src/main/java/ashburncode/prezinfosb/ElectionRepository.java
+src/main/java/ashburncode/prezinfosb/PresidentRepository.java
+src/main/java/ashburncode/prezinfosb/PrezinfosbApplication.java
+src/main/java/ashburncode/prezinfosb/Term.java
+src/main/java/ashburncode/prezinfosb/ActuatorHttpExchangesConfiguration.java
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+https://www.manning.com/books/the-well-grounded-python-developer
+
+page 18, "The Well-Grounded Python Developer"
+... I am changing .venv to venv ... easier to use "tree" command
+
+python3 -m pip --version
+python3 -V
+
+rm -rf ~/pythonprojs/dphproj1
+cd ~/pythonprojs/
+mkdir dphproj1
+cd dphproj1
+python3 -m venv venv
+source ./venv/bin/activate
+python3 -m pip install --upgrade pip
+pip --version
+pip list
+tree -L 5
+
+python -m pip install SQLAlchemy
+python -m pip install Flask-SQLAlchemy
+python -m pip install marshmallow-sqlalchemy
+python -m pip install PyMySQL
+
+pip list
+tree -L 5
+
+python -m pip install pipdeptree
+pipdeptree
+
+pip list
+tree -L 5
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+davidho@dphxps17:~$ rm -rf ~/pythonprojs/dphproj1
+davidho@dphxps17:~$ cd ~/pythonprojs/
+davidho@dphxps17:~/pythonprojs$ mkdir dphproj1
+davidho@dphxps17:~/pythonprojs$ cd dphproj1
+davidho@dphxps17:~/pythonprojs/dphproj1$ python3 -m venv venv
+davidho@dphxps17:~/pythonprojs/dphproj1$ source ./venv/bin/activate
+(venv) davidho@dphxps17:~/pythonprojs/dphproj1$ python3 -m pip install --upgrade pip
+Requirement already satisfied: pip in ./venv/lib/python3.11/site-packages (22.3)
+Collecting pip
+  Using cached pip-23.0.1-py3-none-any.whl (2.1 MB)
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 22.3
+    Uninstalling pip-22.3:
+      Successfully uninstalled pip-22.3
+Successfully installed pip-23.0.1
+(venv) davidho@dphxps17:~/pythonprojs/dphproj1$ pip --version
+pip 23.0.1 from /home/davidho/pythonprojs/dphproj1/venv/lib/python3.11/site-packages/pip (python 3.11)
+(venv) davidho@dphxps17:~/pythonprojs/dphproj1$ pip list
+Package    Version
+---------- -------
+pip        23.0.1
+setuptools 65.5.0
+(venv) davidho@dphxps17:~/pythonprojs/dphproj1$ tree -L 5
+.
+└── venv
+    ├── bin
+    │   ├── activate
+    │   ├── activate.csh
+    │   ├── activate.fish
+    │   ├── Activate.ps1
+    │   ├── pip
+    │   ├── pip3
+    │   ├── pip3.11
+    │   ├── python -> python3
+    │   ├── python3 -> /home/davidho/.pyenv/versions/3.11.0/bin/python3
+    │   └── python3.11 -> python3
+    ├── include
+    │   └── python3.11
+    ├── lib
+    │   └── python3.11
+    │       └── site-packages
+    │           ├── _distutils_hack
+    │           ├── distutils-precedence.pth
+    │           ├── pip
+    │           ├── pip-23.0.1.dist-info
+    │           ├── pkg_resources
+    │           ├── setuptools
+    │           └── setuptools-65.5.0.dist-info
+    ├── lib64 -> lib
+    └── pyvenv.cfg
+
+14 directories, 12 files
+(venv) davidho@dphxps17:~/pythonprojs/dphproj1$ 
+(venv) davidho@dphxps17:~/pythonprojs/dphproj1$ python -m pip install SQLAlchemy
+Collecting SQLAlchemy
+  Using cached SQLAlchemy-2.0.8-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.8 MB)
+Collecting typing-extensions>=4.2.0
+  Using cached typing_extensions-4.5.0-py3-none-any.whl (27 kB)
+Collecting greenlet!=0.4.17
+  Using cached greenlet-2.0.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (618 kB)
+Installing collected packages: typing-extensions, greenlet, SQLAlchemy
+Successfully installed SQLAlchemy-2.0.8 greenlet-2.0.2 typing-extensions-4.5.0
+(venv) davidho@dphxps17:~/pythonprojs/dphproj1$ python -m pip install Flask-SQLAlchemy
+Collecting Flask-SQLAlchemy
+  Using cached Flask_SQLAlchemy-3.0.3-py3-none-any.whl (24 kB)
+Collecting Flask>=2.2
+  Using cached Flask-2.2.3-py3-none-any.whl (101 kB)
+Requirement already satisfied: SQLAlchemy>=1.4.18 in ./venv/lib/python3.11/site-packages (from Flask-SQLAlchemy) (2.0.8)
+Collecting Werkzeug>=2.2.2
+  Using cached Werkzeug-2.2.3-py3-none-any.whl (233 kB)
+Collecting Jinja2>=3.0
+  Using cached Jinja2-3.1.2-py3-none-any.whl (133 kB)
+Collecting itsdangerous>=2.0
+  Using cached itsdangerous-2.1.2-py3-none-any.whl (15 kB)
+Collecting click>=8.0
+  Using cached click-8.1.3-py3-none-any.whl (96 kB)
+Requirement already satisfied: typing-extensions>=4.2.0 in ./venv/lib/python3.11/site-packages (from SQLAlchemy>=1.4.18->Flask-SQLAlchemy) (4.5.0)
+Requirement already satisfied: greenlet!=0.4.17 in ./venv/lib/python3.11/site-packages (from SQLAlchemy>=1.4.18->Flask-SQLAlchemy) (2.0.2)
+Collecting MarkupSafe>=2.0
+  Using cached MarkupSafe-2.1.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (27 kB)
+Installing collected packages: MarkupSafe, itsdangerous, click, Werkzeug, Jinja2, Flask, Flask-SQLAlchemy
+Successfully installed Flask-2.2.3 Flask-SQLAlchemy-3.0.3 Jinja2-3.1.2 MarkupSafe-2.1.2 Werkzeug-2.2.3 click-8.1.3 itsdangerous-2.1.2
+(venv) davidho@dphxps17:~/pythonprojs/dphproj1$ python -m pip install marshmallow-sqlalchemy
+Collecting marshmallow-sqlalchemy
+  Downloading marshmallow_sqlalchemy-0.29.0-py2.py3-none-any.whl (16 kB)
+Collecting marshmallow>=3.0.0
+  Using cached marshmallow-3.19.0-py3-none-any.whl (49 kB)
+Requirement already satisfied: SQLAlchemy<3.0,>=1.4.40 in ./venv/lib/python3.11/site-packages (from marshmallow-sqlalchemy) (2.0.8)
+Collecting packaging>=21.3
+  Downloading packaging-23.0-py3-none-any.whl (42 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.7/42.7 kB 3.4 MB/s eta 0:00:00
+Requirement already satisfied: typing-extensions>=4.2.0 in ./venv/lib/python3.11/site-packages (from SQLAlchemy<3.0,>=1.4.40->marshmallow-sqlalchemy) (4.5.0)
+Requirement already satisfied: greenlet!=0.4.17 in ./venv/lib/python3.11/site-packages (from SQLAlchemy<3.0,>=1.4.40->marshmallow-sqlalchemy) (2.0.2)
+Installing collected packages: packaging, marshmallow, marshmallow-sqlalchemy
+Successfully installed marshmallow-3.19.0 marshmallow-sqlalchemy-0.29.0 packaging-23.0
+(venv) davidho@dphxps17:~/pythonprojs/dphproj1$ python -m pip install PyMySQL
+Collecting PyMySQL
+  Using cached PyMySQL-1.0.3-py3-none-any.whl (43 kB)
+Installing collected packages: PyMySQL
+Successfully installed PyMySQL-1.0.3
+(venv) davidho@dphxps17:~/pythonprojs/dphproj1$ 
+(venv) davidho@dphxps17:~/pythonprojs/dphproj1$ pip list
+Package                Version
+---------------------- -------
+click                  8.1.3
+Flask                  2.2.3
+Flask-SQLAlchemy       3.0.3
+greenlet               2.0.2
+itsdangerous           2.1.2
+Jinja2                 3.1.2
+MarkupSafe             2.1.2
+marshmallow            3.19.0
+marshmallow-sqlalchemy 0.29.0
+packaging              23.0
+pip                    23.0.1
+PyMySQL                1.0.3
+setuptools             65.5.0
+SQLAlchemy             2.0.8
+typing_extensions      4.5.0
+Werkzeug               2.2.3
+(venv) davidho@dphxps17:~/pythonprojs/dphproj1$ tree -L 5
+.
+└── venv
+    ├── bin
+    │   ├── activate
+    │   ├── activate.csh
+    │   ├── activate.fish
+    │   ├── Activate.ps1
+    │   ├── flask
+    │   ├── pip
+    │   ├── pip3
+    │   ├── pip3.11
+    │   ├── python -> python3
+    │   ├── python3 -> /home/davidho/.pyenv/versions/3.11.0/bin/python3
+    │   └── python3.11 -> python3
+    ├── include
+    │   ├── python3.11
+    │   └── site
+    │       └── python3.11
+    │           └── greenlet
+    ├── lib
+    │   └── python3.11
+    │       └── site-packages
+    │           ├── click
+    │           ├── click-8.1.3.dist-info
+    │           ├── _distutils_hack
+    │           ├── distutils-precedence.pth
+    │           ├── flask
+    │           ├── Flask-2.2.3.dist-info
+    │           ├── flask_sqlalchemy
+    │           ├── Flask_SQLAlchemy-3.0.3.dist-info
+    │           ├── greenlet
+    │           ├── greenlet-2.0.2.dist-info
+    │           ├── itsdangerous
+    │           ├── itsdangerous-2.1.2.dist-info
+    │           ├── jinja2
+    │           ├── Jinja2-3.1.2.dist-info
+    │           ├── markupsafe
+    │           ├── MarkupSafe-2.1.2.dist-info
+    │           ├── marshmallow
+    │           ├── marshmallow-3.19.0.dist-info
+    │           ├── marshmallow_sqlalchemy
+    │           ├── marshmallow_sqlalchemy-0.29.0.dist-info
+    │           ├── packaging
+    │           ├── packaging-23.0.dist-info
+    │           ├── pip
+    │           ├── pip-23.0.1.dist-info
+    │           ├── pkg_resources
+    │           ├── __pycache__
+    │           ├── pymysql
+    │           ├── PyMySQL-1.0.3.dist-info
+    │           ├── setuptools
+    │           ├── setuptools-65.5.0.dist-info
+    │           ├── sqlalchemy
+    │           ├── SQLAlchemy-2.0.8.dist-info
+    │           ├── typing_extensions-4.5.0.dist-info
+    │           ├── typing_extensions.py
+    │           ├── werkzeug
+    │           └── Werkzeug-2.2.3.dist-info
+    ├── lib64 -> lib
+    └── pyvenv.cfg
+
+45 directories, 14 files
+(venv) davidho@dphxps17:~/pythonprojs/dphproj1$ 
+(venv) davidho@dphxps17:~/pythonprojs/dphproj1$ python -m pip install pipdeptree
+Collecting pipdeptree
+  Using cached pipdeptree-2.7.0-py3-none-any.whl (17 kB)
+Installing collected packages: pipdeptree
+Successfully installed pipdeptree-2.7.0
+(venv) davidho@dphxps17:~/pythonprojs/dphproj1$ pipdeptree
+Flask-SQLAlchemy==3.0.3
+  - Flask [required: >=2.2, installed: 2.2.3]
+    - click [required: >=8.0, installed: 8.1.3]
+    - itsdangerous [required: >=2.0, installed: 2.1.2]
+    - Jinja2 [required: >=3.0, installed: 3.1.2]
+      - MarkupSafe [required: >=2.0, installed: 2.1.2]
+    - Werkzeug [required: >=2.2.2, installed: 2.2.3]
+      - MarkupSafe [required: >=2.1.1, installed: 2.1.2]
+  - SQLAlchemy [required: >=1.4.18, installed: 2.0.8]
+    - greenlet [required: !=0.4.17, installed: 2.0.2]
+    - typing-extensions [required: >=4.2.0, installed: 4.5.0]
+marshmallow-sqlalchemy==0.29.0
+  - marshmallow [required: >=3.0.0, installed: 3.19.0]
+    - packaging [required: >=17.0, installed: 23.0]
+  - packaging [required: >=21.3, installed: 23.0]
+  - SQLAlchemy [required: >=1.4.40,<3.0, installed: 2.0.8]
+    - greenlet [required: !=0.4.17, installed: 2.0.2]
+    - typing-extensions [required: >=4.2.0, installed: 4.5.0]
+pip==23.0.1
+pipdeptree==2.7.0
+PyMySQL==1.0.3
+setuptools==65.5.0
+(venv) davidho@dphxps17:~/pythonprojs/dphproj1$ 
+(venv) davidho@dphxps17:~/pythonprojs/dphproj1$ pip list
+Package                Version
+---------------------- -------
+click                  8.1.3
+Flask                  2.2.3
+Flask-SQLAlchemy       3.0.3
+greenlet               2.0.2
+itsdangerous           2.1.2
+Jinja2                 3.1.2
+MarkupSafe             2.1.2
+marshmallow            3.19.0
+marshmallow-sqlalchemy 0.29.0
+packaging              23.0
+pip                    23.0.1
+pipdeptree             2.7.0
+PyMySQL                1.0.3
+setuptools             65.5.0
+SQLAlchemy             2.0.8
+typing_extensions      4.5.0
+Werkzeug               2.2.3
+(venv) davidho@dphxps17:~/pythonprojs/dphproj1$ tree -L 5
+.
+└── venv
+    ├── bin
+    │   ├── activate
+    │   ├── activate.csh
+    │   ├── activate.fish
+    │   ├── Activate.ps1
+    │   ├── flask
+    │   ├── pip
+    │   ├── pip3
+    │   ├── pip3.11
+    │   ├── pipdeptree
+    │   ├── python -> python3
+    │   ├── python3 -> /home/davidho/.pyenv/versions/3.11.0/bin/python3
+    │   └── python3.11 -> python3
+    ├── include
+    │   ├── python3.11
+    │   └── site
+    │       └── python3.11
+    │           └── greenlet
+    ├── lib
+    │   └── python3.11
+    │       └── site-packages
+    │           ├── click
+    │           ├── click-8.1.3.dist-info
+    │           ├── _distutils_hack
+    │           ├── distutils-precedence.pth
+    │           ├── flask
+    │           ├── Flask-2.2.3.dist-info
+    │           ├── flask_sqlalchemy
+    │           ├── Flask_SQLAlchemy-3.0.3.dist-info
+    │           ├── greenlet
+    │           ├── greenlet-2.0.2.dist-info
+    │           ├── itsdangerous
+    │           ├── itsdangerous-2.1.2.dist-info
+    │           ├── jinja2
+    │           ├── Jinja2-3.1.2.dist-info
+    │           ├── markupsafe
+    │           ├── MarkupSafe-2.1.2.dist-info
+    │           ├── marshmallow
+    │           ├── marshmallow-3.19.0.dist-info
+    │           ├── marshmallow_sqlalchemy
+    │           ├── marshmallow_sqlalchemy-0.29.0.dist-info
+    │           ├── packaging
+    │           ├── packaging-23.0.dist-info
+    │           ├── pip
+    │           ├── pip-23.0.1.dist-info
+    │           ├── pipdeptree
+    │           ├── pipdeptree-2.7.0.dist-info
+    │           ├── pkg_resources
+    │           ├── __pycache__
+    │           ├── pymysql
+    │           ├── PyMySQL-1.0.3.dist-info
+    │           ├── setuptools
+    │           ├── setuptools-65.5.0.dist-info
+    │           ├── sqlalchemy
+    │           ├── SQLAlchemy-2.0.8.dist-info
+    │           ├── typing_extensions-4.5.0.dist-info
+    │           ├── typing_extensions.py
+    │           ├── werkzeug
+    │           └── Werkzeug-2.2.3.dist-info
+    ├── lib64 -> lib
+    └── pyvenv.cfg
+
+47 directories, 15 files
+(venv) davidho@dphxps17:~/pythonprojs/dphproj1$ 
+
