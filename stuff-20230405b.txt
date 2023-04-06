@@ -1,0 +1,1474 @@
+python3 -m pip install aniso8601
+python3 -m pip install atomicwrites
+python3 -m pip install attrs
+python3 -m pip install Authlib
+python3 -m pip install blinker
+python3 -m pip install blinker
+python3 -m pip install boto3
+python3 -m pip install botocore
+python3 -m pip install certifi
+python3 -m pip install cffi
+python3 -m pip install chardet
+python3 -m pip install Click
+python3 -m pip install cryptography
+python3 -m pip install docutils
+python3 -m pip install Flask
+python3 -m pip install flask-buzz
+python3 -m pip install Flask-Cors
+python3 -m pip install Flask-Mail
+python3 -m pip install flask-praetorian
+python3 -m pip install Flask-RESTful
+python3 -m pip install Flask-Session
+python3 -m pip install Flask-SQLAlchemy
+python3 -m pip install future
+python3 -m pip install gunicorn
+python3 -m pip install idna
+python3 -m pip install importlib-metadata
+python3 -m pip install itsdangerous
+python3 -m pip install Jinja2
+python3 -m pip install jmespath
+python3 -m pip install jsonpickle
+python3 -m pip install MarkupSafe
+python3 -m pip install marshmallow
+python3 -m pip install marshmallow-sqlalchemy
+python3 -m pip install more-itertools
+python3 -m pip install packaging
+python3 -m pip install passlib
+python3 -m pip install pendulum
+python3 -m pip install pluggy
+python3 -m pip install py
+python3 -m pip install py-buzz
+python3 -m pip install pycparser
+python3 -m pip install PyHive
+python3 -m pip install PyJWT
+python3 -m pip install PyMySQL
+python3 -m pip install pyparsing
+python3 -m pip install pytest
+python3 -m pip install python-dateutil
+python3 -m pip install pytz
+python3 -m pip install pytzdata
+python3 -m pip install requests
+python3 -m pip install s3transfer
+python3 -m pip install six
+python3 -m pip install SQLAlchemy
+python3 -m pip install urllib3
+python3 -m pip install wcwidth
+python3 -m pip install Werkzeug
+python3 -m pip install zipp
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ cat ~/dphproj1.sh 
+# https://www.manning.com/books/the-well-grounded-python-developer
+
+# page 18, "The Well-Grounded Python Developer"
+# ... I am changing .venv to venv ... easier to use "tree" command
+
+python3 -m pip --version
+python3 -V
+
+rm -rf ~/pythonprojs/dphproj1
+cd ~/pythonprojs/
+mkdir dphproj1
+cd dphproj1
+python3 -m venv venv
+source ./venv/bin/activate
+python3 -m pip install --upgrade pip
+pip --version
+pip list
+tree -L 5
+
+python3 -m pip install aniso8601
+python3 -m pip install atomicwrites
+python3 -m pip install attrs
+python3 -m pip install Authlib
+python3 -m pip install blinker
+python3 -m pip install blinker
+python3 -m pip install boto3
+python3 -m pip install botocore
+python3 -m pip install certifi
+python3 -m pip install cffi
+python3 -m pip install chardet
+python3 -m pip install Click
+python3 -m pip install cryptography
+python3 -m pip install docutils
+python3 -m pip install Flask
+python3 -m pip install flask-buzz
+python3 -m pip install Flask-Cors
+python3 -m pip install Flask-Mail
+python3 -m pip install flask-praetorian
+python3 -m pip install Flask-RESTful
+python3 -m pip install Flask-Session
+python3 -m pip install Flask-SQLAlchemy
+python3 -m pip install future
+python3 -m pip install gunicorn
+python3 -m pip install idna
+python3 -m pip install importlib-metadata
+python3 -m pip install itsdangerous
+python3 -m pip install Jinja2
+python3 -m pip install jmespath
+python3 -m pip install jsonpickle
+python3 -m pip install MarkupSafe
+python3 -m pip install marshmallow
+python3 -m pip install marshmallow-sqlalchemy
+python3 -m pip install more-itertools
+python3 -m pip install packaging
+python3 -m pip install passlib
+python3 -m pip install pendulum
+python3 -m pip install pluggy
+python3 -m pip install py
+python3 -m pip install py-buzz
+python3 -m pip install pycparser
+python3 -m pip install PyHive
+python3 -m pip install PyJWT
+python3 -m pip install PyMySQL
+python3 -m pip install pyparsing
+python3 -m pip install pytest
+python3 -m pip install python-dateutil
+python3 -m pip install pytz
+python3 -m pip install pytzdata
+python3 -m pip install requests
+python3 -m pip install s3transfer
+python3 -m pip install six
+python3 -m pip install SQLAlchemy
+python3 -m pip install urllib3
+python3 -m pip install wcwidth
+python3 -m pip install Werkzeug
+python3 -m pip install zipp
+
+pip list
+tree -L 5
+
+python -m pip install pipdeptree
+pipdeptree
+
+pip list
+tree -L 5
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ ~/dphproj1.sh 
+pip 23.0.1 from /home/davidho/.pyenv/versions/3.11.0/lib/python3.11/site-packages/pip (python 3.11)
+Python 3.11.0
+Requirement already satisfied: pip in ./venv/lib/python3.11/site-packages (22.3)
+Collecting pip
+  Using cached pip-23.0.1-py3-none-any.whl (2.1 MB)
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 22.3
+    Uninstalling pip-22.3:
+      Successfully uninstalled pip-22.3
+Successfully installed pip-23.0.1
+pip 23.0.1 from /home/davidho/pythonprojs/dphproj1/venv/lib/python3.11/site-packages/pip (python 3.11)
+Package    Version
+---------- -------
+pip        23.0.1
+setuptools 65.5.0
+.
+└── venv
+    ├── bin
+    │   ├── activate
+    │   ├── activate.csh
+    │   ├── activate.fish
+    │   ├── Activate.ps1
+    │   ├── pip
+    │   ├── pip3
+    │   ├── pip3.11
+    │   ├── python -> python3
+    │   ├── python3 -> /home/davidho/.pyenv/versions/3.11.0/bin/python3
+    │   └── python3.11 -> python3
+    ├── include
+    │   └── python3.11
+    ├── lib
+    │   └── python3.11
+    │       └── site-packages
+    │           ├── _distutils_hack
+    │           ├── distutils-precedence.pth
+    │           ├── pip
+    │           ├── pip-23.0.1.dist-info
+    │           ├── pkg_resources
+    │           ├── setuptools
+    │           └── setuptools-65.5.0.dist-info
+    ├── lib64 -> lib
+    └── pyvenv.cfg
+
+14 directories, 12 files
+Collecting aniso8601
+  Using cached aniso8601-9.0.1-py2.py3-none-any.whl (52 kB)
+Installing collected packages: aniso8601
+Successfully installed aniso8601-9.0.1
+Collecting atomicwrites
+  Using cached atomicwrites-1.4.1.tar.gz (14 kB)
+  Preparing metadata (setup.py) ... done
+Installing collected packages: atomicwrites
+  DEPRECATION: atomicwrites is being installed using the legacy 'setup.py install' method, because it does not have a 'pyproject.toml' and the 'wheel' package is not installed. pip 23.1 will enforce this behaviour change. A possible replacement is to enable the '--use-pep517' option. Discussion can be found at https://github.com/pypa/pip/issues/8559
+  Running setup.py install for atomicwrites ... done
+Successfully installed atomicwrites-1.4.1
+Collecting attrs
+  Using cached attrs-22.2.0-py3-none-any.whl (60 kB)
+Installing collected packages: attrs
+Successfully installed attrs-22.2.0
+Collecting Authlib
+  Using cached Authlib-1.2.0-py2.py3-none-any.whl (214 kB)
+Collecting cryptography>=3.2
+  Using cached cryptography-40.0.1-cp36-abi3-manylinux_2_28_x86_64.whl (3.7 MB)
+Collecting cffi>=1.12
+  Using cached cffi-1.15.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (462 kB)
+Collecting pycparser
+  Using cached pycparser-2.21-py2.py3-none-any.whl (118 kB)
+Installing collected packages: pycparser, cffi, cryptography, Authlib
+Successfully installed Authlib-1.2.0 cffi-1.15.1 cryptography-40.0.1 pycparser-2.21
+Collecting blinker
+  Using cached blinker-1.6-py3-none-any.whl (13 kB)
+Collecting typing-extensions
+  Using cached typing_extensions-4.5.0-py3-none-any.whl (27 kB)
+Installing collected packages: typing-extensions, blinker
+Successfully installed blinker-1.6 typing-extensions-4.5.0
+Requirement already satisfied: blinker in ./venv/lib/python3.11/site-packages (1.6)
+Requirement already satisfied: typing-extensions in ./venv/lib/python3.11/site-packages (from blinker) (4.5.0)
+Collecting boto3
+  Using cached boto3-1.26.107-py3-none-any.whl (135 kB)
+Collecting botocore<1.30.0,>=1.29.107
+  Using cached botocore-1.29.107-py3-none-any.whl (10.6 MB)
+Collecting jmespath<2.0.0,>=0.7.1
+  Using cached jmespath-1.0.1-py3-none-any.whl (20 kB)
+Collecting s3transfer<0.7.0,>=0.6.0
+  Using cached s3transfer-0.6.0-py3-none-any.whl (79 kB)
+Collecting python-dateutil<3.0.0,>=2.1
+  Using cached python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)
+Collecting urllib3<1.27,>=1.25.4
+  Using cached urllib3-1.26.15-py2.py3-none-any.whl (140 kB)
+Collecting six>=1.5
+  Using cached six-1.16.0-py2.py3-none-any.whl (11 kB)
+Installing collected packages: urllib3, six, jmespath, python-dateutil, botocore, s3transfer, boto3
+Successfully installed boto3-1.26.107 botocore-1.29.107 jmespath-1.0.1 python-dateutil-2.8.2 s3transfer-0.6.0 six-1.16.0 urllib3-1.26.15
+Requirement already satisfied: botocore in ./venv/lib/python3.11/site-packages (1.29.107)
+Requirement already satisfied: jmespath<2.0.0,>=0.7.1 in ./venv/lib/python3.11/site-packages (from botocore) (1.0.1)
+Requirement already satisfied: python-dateutil<3.0.0,>=2.1 in ./venv/lib/python3.11/site-packages (from botocore) (2.8.2)
+Requirement already satisfied: urllib3<1.27,>=1.25.4 in ./venv/lib/python3.11/site-packages (from botocore) (1.26.15)
+Requirement already satisfied: six>=1.5 in ./venv/lib/python3.11/site-packages (from python-dateutil<3.0.0,>=2.1->botocore) (1.16.0)
+Collecting certifi
+  Using cached certifi-2022.12.7-py3-none-any.whl (155 kB)
+Installing collected packages: certifi
+Successfully installed certifi-2022.12.7
+Requirement already satisfied: cffi in ./venv/lib/python3.11/site-packages (1.15.1)
+Requirement already satisfied: pycparser in ./venv/lib/python3.11/site-packages (from cffi) (2.21)
+Collecting chardet
+  Using cached chardet-5.1.0-py3-none-any.whl (199 kB)
+Installing collected packages: chardet
+Successfully installed chardet-5.1.0
+Collecting Click
+  Using cached click-8.1.3-py3-none-any.whl (96 kB)
+Installing collected packages: Click
+Successfully installed Click-8.1.3
+Requirement already satisfied: cryptography in ./venv/lib/python3.11/site-packages (40.0.1)
+Requirement already satisfied: cffi>=1.12 in ./venv/lib/python3.11/site-packages (from cryptography) (1.15.1)
+Requirement already satisfied: pycparser in ./venv/lib/python3.11/site-packages (from cffi>=1.12->cryptography) (2.21)
+Collecting docutils
+  Using cached docutils-0.19-py3-none-any.whl (570 kB)
+Installing collected packages: docutils
+Successfully installed docutils-0.19
+Collecting Flask
+  Using cached Flask-2.2.3-py3-none-any.whl (101 kB)
+Collecting Werkzeug>=2.2.2
+  Using cached Werkzeug-2.2.3-py3-none-any.whl (233 kB)
+Collecting Jinja2>=3.0
+  Using cached Jinja2-3.1.2-py3-none-any.whl (133 kB)
+Collecting itsdangerous>=2.0
+  Using cached itsdangerous-2.1.2-py3-none-any.whl (15 kB)
+Requirement already satisfied: click>=8.0 in ./venv/lib/python3.11/site-packages (from Flask) (8.1.3)
+Collecting MarkupSafe>=2.0
+  Using cached MarkupSafe-2.1.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (27 kB)
+Installing collected packages: MarkupSafe, itsdangerous, Werkzeug, Jinja2, Flask
+Successfully installed Flask-2.2.3 Jinja2-3.1.2 MarkupSafe-2.1.2 Werkzeug-2.2.3 itsdangerous-2.1.2
+Collecting flask-buzz
+  Using cached flask_buzz-2.0.1-py3-none-any.whl (3.4 kB)
+Requirement already satisfied: flask<3.0,>=1.0 in ./venv/lib/python3.11/site-packages (from flask-buzz) (2.2.3)
+Collecting py-buzz<3.0.0,>=2.0.0
+  Using cached py_buzz-2.1.3-py3-none-any.whl (5.0 kB)
+Requirement already satisfied: Werkzeug>=2.2.2 in ./venv/lib/python3.11/site-packages (from flask<3.0,>=1.0->flask-buzz) (2.2.3)
+Requirement already satisfied: Jinja2>=3.0 in ./venv/lib/python3.11/site-packages (from flask<3.0,>=1.0->flask-buzz) (3.1.2)
+Requirement already satisfied: itsdangerous>=2.0 in ./venv/lib/python3.11/site-packages (from flask<3.0,>=1.0->flask-buzz) (2.1.2)
+Requirement already satisfied: click>=8.0 in ./venv/lib/python3.11/site-packages (from flask<3.0,>=1.0->flask-buzz) (8.1.3)
+Collecting deprecated<2.0,>=1.2
+  Using cached Deprecated-1.2.13-py2.py3-none-any.whl (9.6 kB)
+Collecting inflection<0.6.0,>=0.5.1
+  Using cached inflection-0.5.1-py2.py3-none-any.whl (9.5 kB)
+Collecting wrapt<2,>=1.10
+  Using cached wrapt-1.15.0-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (78 kB)
+Requirement already satisfied: MarkupSafe>=2.0 in ./venv/lib/python3.11/site-packages (from Jinja2>=3.0->flask<3.0,>=1.0->flask-buzz) (2.1.2)
+Installing collected packages: wrapt, inflection, deprecated, py-buzz, flask-buzz
+Successfully installed deprecated-1.2.13 flask-buzz-2.0.1 inflection-0.5.1 py-buzz-2.1.3 wrapt-1.15.0
+Collecting Flask-Cors
+  Using cached Flask_Cors-3.0.10-py2.py3-none-any.whl (14 kB)
+Requirement already satisfied: Flask>=0.9 in ./venv/lib/python3.11/site-packages (from Flask-Cors) (2.2.3)
+Requirement already satisfied: Six in ./venv/lib/python3.11/site-packages (from Flask-Cors) (1.16.0)
+Requirement already satisfied: Werkzeug>=2.2.2 in ./venv/lib/python3.11/site-packages (from Flask>=0.9->Flask-Cors) (2.2.3)
+Requirement already satisfied: Jinja2>=3.0 in ./venv/lib/python3.11/site-packages (from Flask>=0.9->Flask-Cors) (3.1.2)
+Requirement already satisfied: itsdangerous>=2.0 in ./venv/lib/python3.11/site-packages (from Flask>=0.9->Flask-Cors) (2.1.2)
+Requirement already satisfied: click>=8.0 in ./venv/lib/python3.11/site-packages (from Flask>=0.9->Flask-Cors) (8.1.3)
+Requirement already satisfied: MarkupSafe>=2.0 in ./venv/lib/python3.11/site-packages (from Jinja2>=3.0->Flask>=0.9->Flask-Cors) (2.1.2)
+Installing collected packages: Flask-Cors
+Successfully installed Flask-Cors-3.0.10
+Collecting Flask-Mail
+  Using cached Flask-Mail-0.9.1.tar.gz (45 kB)
+  Preparing metadata (setup.py) ... done
+Requirement already satisfied: Flask in ./venv/lib/python3.11/site-packages (from Flask-Mail) (2.2.3)
+Requirement already satisfied: blinker in ./venv/lib/python3.11/site-packages (from Flask-Mail) (1.6)
+Requirement already satisfied: typing-extensions in ./venv/lib/python3.11/site-packages (from blinker->Flask-Mail) (4.5.0)
+Requirement already satisfied: Werkzeug>=2.2.2 in ./venv/lib/python3.11/site-packages (from Flask->Flask-Mail) (2.2.3)
+Requirement already satisfied: Jinja2>=3.0 in ./venv/lib/python3.11/site-packages (from Flask->Flask-Mail) (3.1.2)
+Requirement already satisfied: itsdangerous>=2.0 in ./venv/lib/python3.11/site-packages (from Flask->Flask-Mail) (2.1.2)
+Requirement already satisfied: click>=8.0 in ./venv/lib/python3.11/site-packages (from Flask->Flask-Mail) (8.1.3)
+Requirement already satisfied: MarkupSafe>=2.0 in ./venv/lib/python3.11/site-packages (from Jinja2>=3.0->Flask->Flask-Mail) (2.1.2)
+Installing collected packages: Flask-Mail
+  DEPRECATION: Flask-Mail is being installed using the legacy 'setup.py install' method, because it does not have a 'pyproject.toml' and the 'wheel' package is not installed. pip 23.1 will enforce this behaviour change. A possible replacement is to enable the '--use-pep517' option. Discussion can be found at https://github.com/pypa/pip/issues/8559
+  Running setup.py install for Flask-Mail ... done
+Successfully installed Flask-Mail-0.9.1
+Collecting flask-praetorian
+  Using cached flask_praetorian-1.4.0-py3-none-any.whl (21 kB)
+Requirement already satisfied: flask<3.0,>=1.0 in ./venv/lib/python3.11/site-packages (from flask-praetorian) (2.2.3)
+Requirement already satisfied: flask-buzz>=0.1.7 in ./venv/lib/python3.11/site-packages (from flask-praetorian) (2.0.1)
+Requirement already satisfied: flask-mail<0.10.0,>=0.9.1 in ./venv/lib/python3.11/site-packages (from flask-praetorian) (0.9.1)
+Collecting passlib<2.0,>=1.7
+  Using cached passlib-1.7.4-py2.py3-none-any.whl (525 kB)
+Collecting pendulum<3.0,>=2.1
+  Using cached pendulum-2.1.2-cp311-cp311-manylinux_2_35_x86_64.whl
+Collecting pyjwt<3.0,>=2.0
+  Using cached PyJWT-2.6.0-py3-none-any.whl (20 kB)
+Requirement already satisfied: Werkzeug>=2.2.2 in ./venv/lib/python3.11/site-packages (from flask<3.0,>=1.0->flask-praetorian) (2.2.3)
+Requirement already satisfied: Jinja2>=3.0 in ./venv/lib/python3.11/site-packages (from flask<3.0,>=1.0->flask-praetorian) (3.1.2)
+Requirement already satisfied: itsdangerous>=2.0 in ./venv/lib/python3.11/site-packages (from flask<3.0,>=1.0->flask-praetorian) (2.1.2)
+Requirement already satisfied: click>=8.0 in ./venv/lib/python3.11/site-packages (from flask<3.0,>=1.0->flask-praetorian) (8.1.3)
+Requirement already satisfied: py-buzz<3.0.0,>=2.0.0 in ./venv/lib/python3.11/site-packages (from flask-buzz>=0.1.7->flask-praetorian) (2.1.3)
+Requirement already satisfied: blinker in ./venv/lib/python3.11/site-packages (from flask-mail<0.10.0,>=0.9.1->flask-praetorian) (1.6)
+Requirement already satisfied: python-dateutil<3.0,>=2.6 in ./venv/lib/python3.11/site-packages (from pendulum<3.0,>=2.1->flask-praetorian) (2.8.2)
+Collecting pytzdata>=2020.1
+  Using cached pytzdata-2020.1-py2.py3-none-any.whl (489 kB)
+Requirement already satisfied: MarkupSafe>=2.0 in ./venv/lib/python3.11/site-packages (from Jinja2>=3.0->flask<3.0,>=1.0->flask-praetorian) (2.1.2)
+Requirement already satisfied: deprecated<2.0,>=1.2 in ./venv/lib/python3.11/site-packages (from py-buzz<3.0.0,>=2.0.0->flask-buzz>=0.1.7->flask-praetorian) (1.2.13)
+Requirement already satisfied: inflection<0.6.0,>=0.5.1 in ./venv/lib/python3.11/site-packages (from py-buzz<3.0.0,>=2.0.0->flask-buzz>=0.1.7->flask-praetorian) (0.5.1)
+Requirement already satisfied: six>=1.5 in ./venv/lib/python3.11/site-packages (from python-dateutil<3.0,>=2.6->pendulum<3.0,>=2.1->flask-praetorian) (1.16.0)
+Requirement already satisfied: typing-extensions in ./venv/lib/python3.11/site-packages (from blinker->flask-mail<0.10.0,>=0.9.1->flask-praetorian) (4.5.0)
+Requirement already satisfied: wrapt<2,>=1.10 in ./venv/lib/python3.11/site-packages (from deprecated<2.0,>=1.2->py-buzz<3.0.0,>=2.0.0->flask-buzz>=0.1.7->flask-praetorian) (1.15.0)
+Installing collected packages: passlib, pytzdata, pyjwt, pendulum, flask-praetorian
+Successfully installed flask-praetorian-1.4.0 passlib-1.7.4 pendulum-2.1.2 pyjwt-2.6.0 pytzdata-2020.1
+Collecting Flask-RESTful
+  Using cached Flask_RESTful-0.3.9-py2.py3-none-any.whl (25 kB)
+Requirement already satisfied: aniso8601>=0.82 in ./venv/lib/python3.11/site-packages (from Flask-RESTful) (9.0.1)
+Requirement already satisfied: Flask>=0.8 in ./venv/lib/python3.11/site-packages (from Flask-RESTful) (2.2.3)
+Requirement already satisfied: six>=1.3.0 in ./venv/lib/python3.11/site-packages (from Flask-RESTful) (1.16.0)
+Collecting pytz
+  Using cached pytz-2023.3-py2.py3-none-any.whl (502 kB)
+Requirement already satisfied: Werkzeug>=2.2.2 in ./venv/lib/python3.11/site-packages (from Flask>=0.8->Flask-RESTful) (2.2.3)
+Requirement already satisfied: Jinja2>=3.0 in ./venv/lib/python3.11/site-packages (from Flask>=0.8->Flask-RESTful) (3.1.2)
+Requirement already satisfied: itsdangerous>=2.0 in ./venv/lib/python3.11/site-packages (from Flask>=0.8->Flask-RESTful) (2.1.2)
+Requirement already satisfied: click>=8.0 in ./venv/lib/python3.11/site-packages (from Flask>=0.8->Flask-RESTful) (8.1.3)
+Requirement already satisfied: MarkupSafe>=2.0 in ./venv/lib/python3.11/site-packages (from Jinja2>=3.0->Flask>=0.8->Flask-RESTful) (2.1.2)
+Installing collected packages: pytz, Flask-RESTful
+Successfully installed Flask-RESTful-0.3.9 pytz-2023.3
+Collecting Flask-Session
+  Using cached Flask_Session-0.4.0-py2.py3-none-any.whl (7.5 kB)
+Requirement already satisfied: Flask>=0.8 in ./venv/lib/python3.11/site-packages (from Flask-Session) (2.2.3)
+Collecting cachelib
+  Using cached cachelib-0.10.2-py3-none-any.whl (18 kB)
+Requirement already satisfied: Werkzeug>=2.2.2 in ./venv/lib/python3.11/site-packages (from Flask>=0.8->Flask-Session) (2.2.3)
+Requirement already satisfied: Jinja2>=3.0 in ./venv/lib/python3.11/site-packages (from Flask>=0.8->Flask-Session) (3.1.2)
+Requirement already satisfied: itsdangerous>=2.0 in ./venv/lib/python3.11/site-packages (from Flask>=0.8->Flask-Session) (2.1.2)
+Requirement already satisfied: click>=8.0 in ./venv/lib/python3.11/site-packages (from Flask>=0.8->Flask-Session) (8.1.3)
+Requirement already satisfied: MarkupSafe>=2.0 in ./venv/lib/python3.11/site-packages (from Jinja2>=3.0->Flask>=0.8->Flask-Session) (2.1.2)
+Installing collected packages: cachelib, Flask-Session
+Successfully installed Flask-Session-0.4.0 cachelib-0.10.2
+Collecting Flask-SQLAlchemy
+  Using cached Flask_SQLAlchemy-3.0.3-py3-none-any.whl (24 kB)
+Requirement already satisfied: Flask>=2.2 in ./venv/lib/python3.11/site-packages (from Flask-SQLAlchemy) (2.2.3)
+Collecting SQLAlchemy>=1.4.18
+  Using cached SQLAlchemy-2.0.8-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.8 MB)
+Requirement already satisfied: Werkzeug>=2.2.2 in ./venv/lib/python3.11/site-packages (from Flask>=2.2->Flask-SQLAlchemy) (2.2.3)
+Requirement already satisfied: Jinja2>=3.0 in ./venv/lib/python3.11/site-packages (from Flask>=2.2->Flask-SQLAlchemy) (3.1.2)
+Requirement already satisfied: itsdangerous>=2.0 in ./venv/lib/python3.11/site-packages (from Flask>=2.2->Flask-SQLAlchemy) (2.1.2)
+Requirement already satisfied: click>=8.0 in ./venv/lib/python3.11/site-packages (from Flask>=2.2->Flask-SQLAlchemy) (8.1.3)
+Requirement already satisfied: typing-extensions>=4.2.0 in ./venv/lib/python3.11/site-packages (from SQLAlchemy>=1.4.18->Flask-SQLAlchemy) (4.5.0)
+Collecting greenlet!=0.4.17
+  Using cached greenlet-2.0.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (618 kB)
+Requirement already satisfied: MarkupSafe>=2.0 in ./venv/lib/python3.11/site-packages (from Jinja2>=3.0->Flask>=2.2->Flask-SQLAlchemy) (2.1.2)
+Installing collected packages: greenlet, SQLAlchemy, Flask-SQLAlchemy
+Successfully installed Flask-SQLAlchemy-3.0.3 SQLAlchemy-2.0.8 greenlet-2.0.2
+Collecting future
+  Using cached future-0.18.3.tar.gz (840 kB)
+  Preparing metadata (setup.py) ... done
+Installing collected packages: future
+  DEPRECATION: future is being installed using the legacy 'setup.py install' method, because it does not have a 'pyproject.toml' and the 'wheel' package is not installed. pip 23.1 will enforce this behaviour change. A possible replacement is to enable the '--use-pep517' option. Discussion can be found at https://github.com/pypa/pip/issues/8559
+  Running setup.py install for future ... done
+Successfully installed future-0.18.3
+Collecting gunicorn
+  Using cached gunicorn-20.1.0-py3-none-any.whl (79 kB)
+Requirement already satisfied: setuptools>=3.0 in ./venv/lib/python3.11/site-packages (from gunicorn) (65.5.0)
+Installing collected packages: gunicorn
+Successfully installed gunicorn-20.1.0
+Collecting idna
+  Using cached idna-3.4-py3-none-any.whl (61 kB)
+Installing collected packages: idna
+Successfully installed idna-3.4
+Collecting importlib-metadata
+  Using cached importlib_metadata-6.1.0-py3-none-any.whl (21 kB)
+Collecting zipp>=0.5
+  Using cached zipp-3.15.0-py3-none-any.whl (6.8 kB)
+Installing collected packages: zipp, importlib-metadata
+Successfully installed importlib-metadata-6.1.0 zipp-3.15.0
+Requirement already satisfied: itsdangerous in ./venv/lib/python3.11/site-packages (2.1.2)
+Requirement already satisfied: Jinja2 in ./venv/lib/python3.11/site-packages (3.1.2)
+Requirement already satisfied: MarkupSafe>=2.0 in ./venv/lib/python3.11/site-packages (from Jinja2) (2.1.2)
+Requirement already satisfied: jmespath in ./venv/lib/python3.11/site-packages (1.0.1)
+Collecting jsonpickle
+  Using cached jsonpickle-3.0.1-py2.py3-none-any.whl (40 kB)
+Installing collected packages: jsonpickle
+Successfully installed jsonpickle-3.0.1
+Requirement already satisfied: MarkupSafe in ./venv/lib/python3.11/site-packages (2.1.2)
+Collecting marshmallow
+  Using cached marshmallow-3.19.0-py3-none-any.whl (49 kB)
+Collecting packaging>=17.0
+  Using cached packaging-23.0-py3-none-any.whl (42 kB)
+Installing collected packages: packaging, marshmallow
+Successfully installed marshmallow-3.19.0 packaging-23.0
+Collecting marshmallow-sqlalchemy
+  Using cached marshmallow_sqlalchemy-0.29.0-py2.py3-none-any.whl (16 kB)
+Requirement already satisfied: marshmallow>=3.0.0 in ./venv/lib/python3.11/site-packages (from marshmallow-sqlalchemy) (3.19.0)
+Requirement already satisfied: SQLAlchemy<3.0,>=1.4.40 in ./venv/lib/python3.11/site-packages (from marshmallow-sqlalchemy) (2.0.8)
+Requirement already satisfied: packaging>=21.3 in ./venv/lib/python3.11/site-packages (from marshmallow-sqlalchemy) (23.0)
+Requirement already satisfied: typing-extensions>=4.2.0 in ./venv/lib/python3.11/site-packages (from SQLAlchemy<3.0,>=1.4.40->marshmallow-sqlalchemy) (4.5.0)
+Requirement already satisfied: greenlet!=0.4.17 in ./venv/lib/python3.11/site-packages (from SQLAlchemy<3.0,>=1.4.40->marshmallow-sqlalchemy) (2.0.2)
+Installing collected packages: marshmallow-sqlalchemy
+Successfully installed marshmallow-sqlalchemy-0.29.0
+Collecting more-itertools
+  Using cached more_itertools-9.1.0-py3-none-any.whl (54 kB)
+Installing collected packages: more-itertools
+Successfully installed more-itertools-9.1.0
+Requirement already satisfied: packaging in ./venv/lib/python3.11/site-packages (23.0)
+Requirement already satisfied: passlib in ./venv/lib/python3.11/site-packages (1.7.4)
+Requirement already satisfied: pendulum in ./venv/lib/python3.11/site-packages (2.1.2)
+Requirement already satisfied: python-dateutil<3.0,>=2.6 in ./venv/lib/python3.11/site-packages (from pendulum) (2.8.2)
+Requirement already satisfied: pytzdata>=2020.1 in ./venv/lib/python3.11/site-packages (from pendulum) (2020.1)
+Requirement already satisfied: six>=1.5 in ./venv/lib/python3.11/site-packages (from python-dateutil<3.0,>=2.6->pendulum) (1.16.0)
+Collecting pluggy
+  Using cached pluggy-1.0.0-py2.py3-none-any.whl (13 kB)
+Installing collected packages: pluggy
+Successfully installed pluggy-1.0.0
+Collecting py
+  Using cached py-1.11.0-py2.py3-none-any.whl (98 kB)
+Installing collected packages: py
+Successfully installed py-1.11.0
+Requirement already satisfied: py-buzz in ./venv/lib/python3.11/site-packages (2.1.3)
+Requirement already satisfied: deprecated<2.0,>=1.2 in ./venv/lib/python3.11/site-packages (from py-buzz) (1.2.13)
+Requirement already satisfied: inflection<0.6.0,>=0.5.1 in ./venv/lib/python3.11/site-packages (from py-buzz) (0.5.1)
+Requirement already satisfied: wrapt<2,>=1.10 in ./venv/lib/python3.11/site-packages (from deprecated<2.0,>=1.2->py-buzz) (1.15.0)
+Requirement already satisfied: pycparser in ./venv/lib/python3.11/site-packages (2.21)
+Collecting PyHive
+  Using cached PyHive-0.6.5.tar.gz (44 kB)
+  Preparing metadata (setup.py) ... done
+Requirement already satisfied: future in ./venv/lib/python3.11/site-packages (from PyHive) (0.18.3)
+Requirement already satisfied: python-dateutil in ./venv/lib/python3.11/site-packages (from PyHive) (2.8.2)
+Requirement already satisfied: six>=1.5 in ./venv/lib/python3.11/site-packages (from python-dateutil->PyHive) (1.16.0)
+Installing collected packages: PyHive
+  DEPRECATION: PyHive is being installed using the legacy 'setup.py install' method, because it does not have a 'pyproject.toml' and the 'wheel' package is not installed. pip 23.1 will enforce this behaviour change. A possible replacement is to enable the '--use-pep517' option. Discussion can be found at https://github.com/pypa/pip/issues/8559
+  Running setup.py install for PyHive ... done
+Successfully installed PyHive-0.6.5
+Requirement already satisfied: PyJWT in ./venv/lib/python3.11/site-packages (2.6.0)
+Collecting PyMySQL
+  Using cached PyMySQL-1.0.3-py3-none-any.whl (43 kB)
+Installing collected packages: PyMySQL
+Successfully installed PyMySQL-1.0.3
+Collecting pyparsing
+  Using cached pyparsing-3.0.9-py3-none-any.whl (98 kB)
+Installing collected packages: pyparsing
+Successfully installed pyparsing-3.0.9
+Collecting pytest
+  Using cached pytest-7.2.2-py3-none-any.whl (317 kB)
+Requirement already satisfied: attrs>=19.2.0 in ./venv/lib/python3.11/site-packages (from pytest) (22.2.0)
+Collecting iniconfig
+  Using cached iniconfig-2.0.0-py3-none-any.whl (5.9 kB)
+Requirement already satisfied: packaging in ./venv/lib/python3.11/site-packages (from pytest) (23.0)
+Requirement already satisfied: pluggy<2.0,>=0.12 in ./venv/lib/python3.11/site-packages (from pytest) (1.0.0)
+Installing collected packages: iniconfig, pytest
+Successfully installed iniconfig-2.0.0 pytest-7.2.2
+Requirement already satisfied: python-dateutil in ./venv/lib/python3.11/site-packages (2.8.2)
+Requirement already satisfied: six>=1.5 in ./venv/lib/python3.11/site-packages (from python-dateutil) (1.16.0)
+Requirement already satisfied: pytz in ./venv/lib/python3.11/site-packages (2023.3)
+Requirement already satisfied: pytzdata in ./venv/lib/python3.11/site-packages (2020.1)
+Collecting requests
+  Using cached requests-2.28.2-py3-none-any.whl (62 kB)
+Collecting charset-normalizer<4,>=2
+  Using cached charset_normalizer-3.1.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (197 kB)
+Requirement already satisfied: idna<4,>=2.5 in ./venv/lib/python3.11/site-packages (from requests) (3.4)
+Requirement already satisfied: urllib3<1.27,>=1.21.1 in ./venv/lib/python3.11/site-packages (from requests) (1.26.15)
+Requirement already satisfied: certifi>=2017.4.17 in ./venv/lib/python3.11/site-packages (from requests) (2022.12.7)
+Installing collected packages: charset-normalizer, requests
+Successfully installed charset-normalizer-3.1.0 requests-2.28.2
+Requirement already satisfied: s3transfer in ./venv/lib/python3.11/site-packages (0.6.0)
+Requirement already satisfied: botocore<2.0a.0,>=1.12.36 in ./venv/lib/python3.11/site-packages (from s3transfer) (1.29.107)
+Requirement already satisfied: jmespath<2.0.0,>=0.7.1 in ./venv/lib/python3.11/site-packages (from botocore<2.0a.0,>=1.12.36->s3transfer) (1.0.1)
+Requirement already satisfied: python-dateutil<3.0.0,>=2.1 in ./venv/lib/python3.11/site-packages (from botocore<2.0a.0,>=1.12.36->s3transfer) (2.8.2)
+Requirement already satisfied: urllib3<1.27,>=1.25.4 in ./venv/lib/python3.11/site-packages (from botocore<2.0a.0,>=1.12.36->s3transfer) (1.26.15)
+Requirement already satisfied: six>=1.5 in ./venv/lib/python3.11/site-packages (from python-dateutil<3.0.0,>=2.1->botocore<2.0a.0,>=1.12.36->s3transfer) (1.16.0)
+Requirement already satisfied: six in ./venv/lib/python3.11/site-packages (1.16.0)
+Requirement already satisfied: SQLAlchemy in ./venv/lib/python3.11/site-packages (2.0.8)
+Requirement already satisfied: typing-extensions>=4.2.0 in ./venv/lib/python3.11/site-packages (from SQLAlchemy) (4.5.0)
+Requirement already satisfied: greenlet!=0.4.17 in ./venv/lib/python3.11/site-packages (from SQLAlchemy) (2.0.2)
+Requirement already satisfied: urllib3 in ./venv/lib/python3.11/site-packages (1.26.15)
+Collecting wcwidth
+  Using cached wcwidth-0.2.6-py2.py3-none-any.whl (29 kB)
+Installing collected packages: wcwidth
+Successfully installed wcwidth-0.2.6
+Requirement already satisfied: Werkzeug in ./venv/lib/python3.11/site-packages (2.2.3)
+Requirement already satisfied: MarkupSafe>=2.1.1 in ./venv/lib/python3.11/site-packages (from Werkzeug) (2.1.2)
+Requirement already satisfied: zipp in ./venv/lib/python3.11/site-packages (3.15.0)
+Package                Version
+---------------------- ---------
+aniso8601              9.0.1
+atomicwrites           1.4.1
+attrs                  22.2.0
+Authlib                1.2.0
+blinker                1.6
+boto3                  1.26.107
+botocore               1.29.107
+cachelib               0.10.2
+certifi                2022.12.7
+cffi                   1.15.1
+chardet                5.1.0
+charset-normalizer     3.1.0
+click                  8.1.3
+cryptography           40.0.1
+Deprecated             1.2.13
+docutils               0.19
+Flask                  2.2.3
+flask-buzz             2.0.1
+Flask-Cors             3.0.10
+Flask-Mail             0.9.1
+flask-praetorian       1.4.0
+Flask-RESTful          0.3.9
+Flask-Session          0.4.0
+Flask-SQLAlchemy       3.0.3
+future                 0.18.3
+greenlet               2.0.2
+gunicorn               20.1.0
+idna                   3.4
+importlib-metadata     6.1.0
+inflection             0.5.1
+iniconfig              2.0.0
+itsdangerous           2.1.2
+Jinja2                 3.1.2
+jmespath               1.0.1
+jsonpickle             3.0.1
+MarkupSafe             2.1.2
+marshmallow            3.19.0
+marshmallow-sqlalchemy 0.29.0
+more-itertools         9.1.0
+packaging              23.0
+passlib                1.7.4
+pendulum               2.1.2
+pip                    23.0.1
+pluggy                 1.0.0
+py                     1.11.0
+py-buzz                2.1.3
+pycparser              2.21
+PyHive                 0.6.5
+PyJWT                  2.6.0
+PyMySQL                1.0.3
+pyparsing              3.0.9
+pytest                 7.2.2
+python-dateutil        2.8.2
+pytz                   2023.3
+pytzdata               2020.1
+requests               2.28.2
+s3transfer             0.6.0
+setuptools             65.5.0
+six                    1.16.0
+SQLAlchemy             2.0.8
+typing_extensions      4.5.0
+urllib3                1.26.15
+wcwidth                0.2.6
+Werkzeug               2.2.3
+wrapt                  1.15.0
+zipp                   3.15.0
+.
+└── venv
+    ├── bin
+    │   ├── activate
+    │   ├── activate.csh
+    │   ├── activate.fish
+    │   ├── Activate.ps1
+    │   ├── chardetect
+    │   ├── docutils
+    │   ├── flask
+    │   ├── futurize
+    │   ├── gunicorn
+    │   ├── jp.py
+    │   ├── normalizer
+    │   ├── pasteurize
+    │   ├── pip
+    │   ├── pip3
+    │   ├── pip3.11
+    │   ├── __pycache__
+    │   │   ├── jp.cpython-311.pyc
+    │   │   ├── rst2html4.cpython-311.pyc
+    │   │   ├── rst2html5.cpython-311.pyc
+    │   │   ├── rst2html.cpython-311.pyc
+    │   │   ├── rst2latex.cpython-311.pyc
+    │   │   ├── rst2man.cpython-311.pyc
+    │   │   ├── rst2odt.cpython-311.pyc
+    │   │   ├── rst2odt_prepstyles.cpython-311.pyc
+    │   │   ├── rst2pseudoxml.cpython-311.pyc
+    │   │   ├── rst2s5.cpython-311.pyc
+    │   │   ├── rst2xetex.cpython-311.pyc
+    │   │   ├── rst2xml.cpython-311.pyc
+    │   │   └── rstpep2html.cpython-311.pyc
+    │   ├── py.test
+    │   ├── pytest
+    │   ├── python -> python3
+    │   ├── python3 -> /home/davidho/.pyenv/versions/3.11.0/bin/python3
+    │   ├── python3.11 -> python3
+    │   ├── rst2html4.py
+    │   ├── rst2html5.py
+    │   ├── rst2html.py
+    │   ├── rst2latex.py
+    │   ├── rst2man.py
+    │   ├── rst2odt_prepstyles.py
+    │   ├── rst2odt.py
+    │   ├── rst2pseudoxml.py
+    │   ├── rst2s5.py
+    │   ├── rst2xetex.py
+    │   ├── rst2xml.py
+    │   └── rstpep2html.py
+    ├── include
+    │   ├── python3.11
+    │   └── site
+    │       └── python3.11
+    │           └── greenlet
+    ├── lib
+    │   └── python3.11
+    │       └── site-packages
+    │           ├── aniso8601
+    │           ├── aniso8601-9.0.1.dist-info
+    │           ├── atomicwrites
+    │           ├── atomicwrites-1.4.1-py3.11.egg-info
+    │           ├── attr
+    │           ├── attrs
+    │           ├── attrs-22.2.0.dist-info
+    │           ├── authlib
+    │           ├── Authlib-1.2.0.dist-info
+    │           ├── blinker
+    │           ├── blinker-1.6.dist-info
+    │           ├── boto3
+    │           ├── boto3-1.26.107.dist-info
+    │           ├── botocore
+    │           ├── botocore-1.29.107.dist-info
+    │           ├── buzz
+    │           ├── cachelib
+    │           ├── cachelib-0.10.2.dist-info
+    │           ├── certifi
+    │           ├── certifi-2022.12.7.dist-info
+    │           ├── cffi
+    │           ├── cffi-1.15.1.dist-info
+    │           ├── _cffi_backend.cpython-311-x86_64-linux-gnu.so
+    │           ├── chardet
+    │           ├── chardet-5.1.0.dist-info
+    │           ├── charset_normalizer
+    │           ├── charset_normalizer-3.1.0.dist-info
+    │           ├── click
+    │           ├── click-8.1.3.dist-info
+    │           ├── cryptography
+    │           ├── cryptography-40.0.1.dist-info
+    │           ├── dateutil
+    │           ├── deprecated
+    │           ├── Deprecated-1.2.13.dist-info
+    │           ├── _distutils_hack
+    │           ├── distutils-precedence.pth
+    │           ├── docutils
+    │           ├── docutils-0.19.dist-info
+    │           ├── flask
+    │           ├── Flask-2.2.3.dist-info
+    │           ├── flask_buzz
+    │           ├── flask_buzz-2.0.1.dist-info
+    │           ├── flask_cors
+    │           ├── Flask_Cors-3.0.10.dist-info
+    │           ├── Flask_Mail-0.9.1-py3.11.egg-info
+    │           ├── flask_mail.py
+    │           ├── flask_praetorian
+    │           ├── flask_praetorian-1.4.0.dist-info
+    │           ├── flask_restful
+    │           ├── Flask_RESTful-0.3.9.dist-info
+    │           ├── flask_session
+    │           ├── Flask_Session-0.4.0.dist-info
+    │           ├── flask_sqlalchemy
+    │           ├── Flask_SQLAlchemy-3.0.3.dist-info
+    │           ├── future
+    │           ├── future-0.18.3-py3.11.egg-info
+    │           ├── greenlet
+    │           ├── greenlet-2.0.2.dist-info
+    │           ├── gunicorn
+    │           ├── gunicorn-20.1.0.dist-info
+    │           ├── idna
+    │           ├── idna-3.4.dist-info
+    │           ├── importlib_metadata
+    │           ├── importlib_metadata-6.1.0.dist-info
+    │           ├── inflection
+    │           ├── inflection-0.5.1.dist-info
+    │           ├── inflection.py
+    │           ├── iniconfig
+    │           ├── iniconfig-2.0.0.dist-info
+    │           ├── itsdangerous
+    │           ├── itsdangerous-2.1.2.dist-info
+    │           ├── jinja2
+    │           ├── Jinja2-3.1.2.dist-info
+    │           ├── jmespath
+    │           ├── jmespath-1.0.1.dist-info
+    │           ├── jsonpickle
+    │           ├── jsonpickle-3.0.1.dist-info
+    │           ├── jwt
+    │           ├── libfuturize
+    │           ├── libpasteurize
+    │           ├── markupsafe
+    │           ├── MarkupSafe-2.1.2.dist-info
+    │           ├── marshmallow
+    │           ├── marshmallow-3.19.0.dist-info
+    │           ├── marshmallow_sqlalchemy
+    │           ├── marshmallow_sqlalchemy-0.29.0.dist-info
+    │           ├── more_itertools
+    │           ├── more_itertools-9.1.0.dist-info
+    │           ├── packaging
+    │           ├── packaging-23.0.dist-info
+    │           ├── passlib
+    │           ├── passlib-1.7.4.dist-info
+    │           ├── past
+    │           ├── pendulum
+    │           ├── pendulum-2.1.2.dist-info
+    │           ├── pip
+    │           ├── pip-23.0.1.dist-info
+    │           ├── pkg_resources
+    │           ├── pluggy
+    │           ├── pluggy-1.0.0.dist-info
+    │           ├── py
+    │           ├── py-1.11.0.dist-info
+    │           ├── py_buzz-2.1.3.dist-info
+    │           ├── __pycache__
+    │           ├── pycparser
+    │           ├── pycparser-2.21.dist-info
+    │           ├── pyhive
+    │           ├── PyHive-0.6.5-py3.11.egg-info
+    │           ├── PyJWT-2.6.0.dist-info
+    │           ├── pymysql
+    │           ├── PyMySQL-1.0.3.dist-info
+    │           ├── pyparsing
+    │           ├── pyparsing-3.0.9.dist-info
+    │           ├── py.py
+    │           ├── _pytest
+    │           ├── pytest
+    │           ├── pytest-7.2.2.dist-info
+    │           ├── python_dateutil-2.8.2.dist-info
+    │           ├── pytz
+    │           ├── pytz-2023.3.dist-info
+    │           ├── pytzdata
+    │           ├── pytzdata-2020.1.dist-info
+    │           ├── requests
+    │           ├── requests-2.28.2.dist-info
+    │           ├── s3transfer
+    │           ├── s3transfer-0.6.0.dist-info
+    │           ├── setuptools
+    │           ├── setuptools-65.5.0.dist-info
+    │           ├── six-1.16.0.dist-info
+    │           ├── six.py
+    │           ├── sqlalchemy
+    │           ├── SQLAlchemy-2.0.8.dist-info
+    │           ├── TCLIService
+    │           ├── typing_extensions-4.5.0.dist-info
+    │           ├── typing_extensions.py
+    │           ├── urllib3
+    │           ├── urllib3-1.26.15.dist-info
+    │           ├── wcwidth
+    │           ├── wcwidth-0.2.6.dist-info
+    │           ├── werkzeug
+    │           ├── Werkzeug-2.2.3.dist-info
+    │           ├── wrapt
+    │           ├── wrapt-1.15.0.dist-info
+    │           ├── zipp
+    │           └── zipp-3.15.0.dist-info
+    ├── lib64 -> lib
+    └── pyvenv.cfg
+
+150 directories, 53 files
+Collecting pipdeptree
+  Using cached pipdeptree-2.7.0-py3-none-any.whl (17 kB)
+Installing collected packages: pipdeptree
+Successfully installed pipdeptree-2.7.0
+atomicwrites==1.4.1
+Authlib==1.2.0
+  - cryptography [required: >=3.2, installed: 40.0.1]
+    - cffi [required: >=1.12, installed: 1.15.1]
+      - pycparser [required: Any, installed: 2.21]
+boto3==1.26.107
+  - botocore [required: >=1.29.107,<1.30.0, installed: 1.29.107]
+    - jmespath [required: >=0.7.1,<2.0.0, installed: 1.0.1]
+    - python-dateutil [required: >=2.1,<3.0.0, installed: 2.8.2]
+      - six [required: >=1.5, installed: 1.16.0]
+    - urllib3 [required: >=1.25.4,<1.27, installed: 1.26.15]
+  - jmespath [required: >=0.7.1,<2.0.0, installed: 1.0.1]
+  - s3transfer [required: >=0.6.0,<0.7.0, installed: 0.6.0]
+    - botocore [required: >=1.12.36,<2.0a.0, installed: 1.29.107]
+      - jmespath [required: >=0.7.1,<2.0.0, installed: 1.0.1]
+      - python-dateutil [required: >=2.1,<3.0.0, installed: 2.8.2]
+        - six [required: >=1.5, installed: 1.16.0]
+      - urllib3 [required: >=1.25.4,<1.27, installed: 1.26.15]
+chardet==5.1.0
+docutils==0.19
+Flask-Cors==3.0.10
+  - Flask [required: >=0.9, installed: 2.2.3]
+    - click [required: >=8.0, installed: 8.1.3]
+    - itsdangerous [required: >=2.0, installed: 2.1.2]
+    - Jinja2 [required: >=3.0, installed: 3.1.2]
+      - MarkupSafe [required: >=2.0, installed: 2.1.2]
+    - Werkzeug [required: >=2.2.2, installed: 2.2.3]
+      - MarkupSafe [required: >=2.1.1, installed: 2.1.2]
+  - Six [required: Any, installed: 1.16.0]
+flask-praetorian==1.4.0
+  - flask [required: >=1.0,<3.0, installed: 2.2.3]
+    - click [required: >=8.0, installed: 8.1.3]
+    - itsdangerous [required: >=2.0, installed: 2.1.2]
+    - Jinja2 [required: >=3.0, installed: 3.1.2]
+      - MarkupSafe [required: >=2.0, installed: 2.1.2]
+    - Werkzeug [required: >=2.2.2, installed: 2.2.3]
+      - MarkupSafe [required: >=2.1.1, installed: 2.1.2]
+  - flask-buzz [required: >=0.1.7, installed: 2.0.1]
+    - flask [required: >=1.0,<3.0, installed: 2.2.3]
+      - click [required: >=8.0, installed: 8.1.3]
+      - itsdangerous [required: >=2.0, installed: 2.1.2]
+      - Jinja2 [required: >=3.0, installed: 3.1.2]
+        - MarkupSafe [required: >=2.0, installed: 2.1.2]
+      - Werkzeug [required: >=2.2.2, installed: 2.2.3]
+        - MarkupSafe [required: >=2.1.1, installed: 2.1.2]
+    - py-buzz [required: >=2.0.0,<3.0.0, installed: 2.1.3]
+      - deprecated [required: >=1.2,<2.0, installed: 1.2.13]
+        - wrapt [required: >=1.10,<2, installed: 1.15.0]
+      - inflection [required: >=0.5.1,<0.6.0, installed: 0.5.1]
+  - flask-mail [required: >=0.9.1,<0.10.0, installed: 0.9.1]
+    - blinker [required: Any, installed: 1.6]
+      - typing-extensions [required: Any, installed: 4.5.0]
+    - Flask [required: Any, installed: 2.2.3]
+      - click [required: >=8.0, installed: 8.1.3]
+      - itsdangerous [required: >=2.0, installed: 2.1.2]
+      - Jinja2 [required: >=3.0, installed: 3.1.2]
+        - MarkupSafe [required: >=2.0, installed: 2.1.2]
+      - Werkzeug [required: >=2.2.2, installed: 2.2.3]
+        - MarkupSafe [required: >=2.1.1, installed: 2.1.2]
+  - passlib [required: >=1.7,<2.0, installed: 1.7.4]
+  - pendulum [required: >=2.1,<3.0, installed: 2.1.2]
+    - python-dateutil [required: >=2.6,<3.0, installed: 2.8.2]
+      - six [required: >=1.5, installed: 1.16.0]
+    - pytzdata [required: >=2020.1, installed: 2020.1]
+  - pyjwt [required: >=2.0,<3.0, installed: 2.6.0]
+Flask-RESTful==0.3.9
+  - aniso8601 [required: >=0.82, installed: 9.0.1]
+  - Flask [required: >=0.8, installed: 2.2.3]
+    - click [required: >=8.0, installed: 8.1.3]
+    - itsdangerous [required: >=2.0, installed: 2.1.2]
+    - Jinja2 [required: >=3.0, installed: 3.1.2]
+      - MarkupSafe [required: >=2.0, installed: 2.1.2]
+    - Werkzeug [required: >=2.2.2, installed: 2.2.3]
+      - MarkupSafe [required: >=2.1.1, installed: 2.1.2]
+  - pytz [required: Any, installed: 2023.3]
+  - six [required: >=1.3.0, installed: 1.16.0]
+Flask-Session==0.4.0
+  - cachelib [required: Any, installed: 0.10.2]
+  - Flask [required: >=0.8, installed: 2.2.3]
+    - click [required: >=8.0, installed: 8.1.3]
+    - itsdangerous [required: >=2.0, installed: 2.1.2]
+    - Jinja2 [required: >=3.0, installed: 3.1.2]
+      - MarkupSafe [required: >=2.0, installed: 2.1.2]
+    - Werkzeug [required: >=2.2.2, installed: 2.2.3]
+      - MarkupSafe [required: >=2.1.1, installed: 2.1.2]
+Flask-SQLAlchemy==3.0.3
+  - Flask [required: >=2.2, installed: 2.2.3]
+    - click [required: >=8.0, installed: 8.1.3]
+    - itsdangerous [required: >=2.0, installed: 2.1.2]
+    - Jinja2 [required: >=3.0, installed: 3.1.2]
+      - MarkupSafe [required: >=2.0, installed: 2.1.2]
+    - Werkzeug [required: >=2.2.2, installed: 2.2.3]
+      - MarkupSafe [required: >=2.1.1, installed: 2.1.2]
+  - SQLAlchemy [required: >=1.4.18, installed: 2.0.8]
+    - greenlet [required: !=0.4.17, installed: 2.0.2]
+    - typing-extensions [required: >=4.2.0, installed: 4.5.0]
+gunicorn==20.1.0
+  - setuptools [required: >=3.0, installed: 65.5.0]
+importlib-metadata==6.1.0
+  - zipp [required: >=0.5, installed: 3.15.0]
+jsonpickle==3.0.1
+marshmallow-sqlalchemy==0.29.0
+  - marshmallow [required: >=3.0.0, installed: 3.19.0]
+    - packaging [required: >=17.0, installed: 23.0]
+  - packaging [required: >=21.3, installed: 23.0]
+  - SQLAlchemy [required: >=1.4.40,<3.0, installed: 2.0.8]
+    - greenlet [required: !=0.4.17, installed: 2.0.2]
+    - typing-extensions [required: >=4.2.0, installed: 4.5.0]
+more-itertools==9.1.0
+pip==23.0.1
+pipdeptree==2.7.0
+py==1.11.0
+PyHive==0.6.5
+  - future [required: Any, installed: 0.18.3]
+  - python-dateutil [required: Any, installed: 2.8.2]
+    - six [required: >=1.5, installed: 1.16.0]
+PyMySQL==1.0.3
+pyparsing==3.0.9
+pytest==7.2.2
+  - attrs [required: >=19.2.0, installed: 22.2.0]
+  - iniconfig [required: Any, installed: 2.0.0]
+  - packaging [required: Any, installed: 23.0]
+  - pluggy [required: >=0.12,<2.0, installed: 1.0.0]
+requests==2.28.2
+  - certifi [required: >=2017.4.17, installed: 2022.12.7]
+  - charset-normalizer [required: >=2,<4, installed: 3.1.0]
+  - idna [required: >=2.5,<4, installed: 3.4]
+  - urllib3 [required: >=1.21.1,<1.27, installed: 1.26.15]
+wcwidth==0.2.6
+Package                Version
+---------------------- ---------
+aniso8601              9.0.1
+atomicwrites           1.4.1
+attrs                  22.2.0
+Authlib                1.2.0
+blinker                1.6
+boto3                  1.26.107
+botocore               1.29.107
+cachelib               0.10.2
+certifi                2022.12.7
+cffi                   1.15.1
+chardet                5.1.0
+charset-normalizer     3.1.0
+click                  8.1.3
+cryptography           40.0.1
+Deprecated             1.2.13
+docutils               0.19
+Flask                  2.2.3
+flask-buzz             2.0.1
+Flask-Cors             3.0.10
+Flask-Mail             0.9.1
+flask-praetorian       1.4.0
+Flask-RESTful          0.3.9
+Flask-Session          0.4.0
+Flask-SQLAlchemy       3.0.3
+future                 0.18.3
+greenlet               2.0.2
+gunicorn               20.1.0
+idna                   3.4
+importlib-metadata     6.1.0
+inflection             0.5.1
+iniconfig              2.0.0
+itsdangerous           2.1.2
+Jinja2                 3.1.2
+jmespath               1.0.1
+jsonpickle             3.0.1
+MarkupSafe             2.1.2
+marshmallow            3.19.0
+marshmallow-sqlalchemy 0.29.0
+more-itertools         9.1.0
+packaging              23.0
+passlib                1.7.4
+pendulum               2.1.2
+pip                    23.0.1
+pipdeptree             2.7.0
+pluggy                 1.0.0
+py                     1.11.0
+py-buzz                2.1.3
+pycparser              2.21
+PyHive                 0.6.5
+PyJWT                  2.6.0
+PyMySQL                1.0.3
+pyparsing              3.0.9
+pytest                 7.2.2
+python-dateutil        2.8.2
+pytz                   2023.3
+pytzdata               2020.1
+requests               2.28.2
+s3transfer             0.6.0
+setuptools             65.5.0
+six                    1.16.0
+SQLAlchemy             2.0.8
+typing_extensions      4.5.0
+urllib3                1.26.15
+wcwidth                0.2.6
+Werkzeug               2.2.3
+wrapt                  1.15.0
+zipp                   3.15.0
+.
+└── venv
+    ├── bin
+    │   ├── activate
+    │   ├── activate.csh
+    │   ├── activate.fish
+    │   ├── Activate.ps1
+    │   ├── chardetect
+    │   ├── docutils
+    │   ├── flask
+    │   ├── futurize
+    │   ├── gunicorn
+    │   ├── jp.py
+    │   ├── normalizer
+    │   ├── pasteurize
+    │   ├── pip
+    │   ├── pip3
+    │   ├── pip3.11
+    │   ├── pipdeptree
+    │   ├── __pycache__
+    │   │   ├── jp.cpython-311.pyc
+    │   │   ├── rst2html4.cpython-311.pyc
+    │   │   ├── rst2html5.cpython-311.pyc
+    │   │   ├── rst2html.cpython-311.pyc
+    │   │   ├── rst2latex.cpython-311.pyc
+    │   │   ├── rst2man.cpython-311.pyc
+    │   │   ├── rst2odt.cpython-311.pyc
+    │   │   ├── rst2odt_prepstyles.cpython-311.pyc
+    │   │   ├── rst2pseudoxml.cpython-311.pyc
+    │   │   ├── rst2s5.cpython-311.pyc
+    │   │   ├── rst2xetex.cpython-311.pyc
+    │   │   ├── rst2xml.cpython-311.pyc
+    │   │   └── rstpep2html.cpython-311.pyc
+    │   ├── py.test
+    │   ├── pytest
+    │   ├── python -> python3
+    │   ├── python3 -> /home/davidho/.pyenv/versions/3.11.0/bin/python3
+    │   ├── python3.11 -> python3
+    │   ├── rst2html4.py
+    │   ├── rst2html5.py
+    │   ├── rst2html.py
+    │   ├── rst2latex.py
+    │   ├── rst2man.py
+    │   ├── rst2odt_prepstyles.py
+    │   ├── rst2odt.py
+    │   ├── rst2pseudoxml.py
+    │   ├── rst2s5.py
+    │   ├── rst2xetex.py
+    │   ├── rst2xml.py
+    │   └── rstpep2html.py
+    ├── include
+    │   ├── python3.11
+    │   └── site
+    │       └── python3.11
+    │           └── greenlet
+    ├── lib
+    │   └── python3.11
+    │       └── site-packages
+    │           ├── aniso8601
+    │           ├── aniso8601-9.0.1.dist-info
+    │           ├── atomicwrites
+    │           ├── atomicwrites-1.4.1-py3.11.egg-info
+    │           ├── attr
+    │           ├── attrs
+    │           ├── attrs-22.2.0.dist-info
+    │           ├── authlib
+    │           ├── Authlib-1.2.0.dist-info
+    │           ├── blinker
+    │           ├── blinker-1.6.dist-info
+    │           ├── boto3
+    │           ├── boto3-1.26.107.dist-info
+    │           ├── botocore
+    │           ├── botocore-1.29.107.dist-info
+    │           ├── buzz
+    │           ├── cachelib
+    │           ├── cachelib-0.10.2.dist-info
+    │           ├── certifi
+    │           ├── certifi-2022.12.7.dist-info
+    │           ├── cffi
+    │           ├── cffi-1.15.1.dist-info
+    │           ├── _cffi_backend.cpython-311-x86_64-linux-gnu.so
+    │           ├── chardet
+    │           ├── chardet-5.1.0.dist-info
+    │           ├── charset_normalizer
+    │           ├── charset_normalizer-3.1.0.dist-info
+    │           ├── click
+    │           ├── click-8.1.3.dist-info
+    │           ├── cryptography
+    │           ├── cryptography-40.0.1.dist-info
+    │           ├── dateutil
+    │           ├── deprecated
+    │           ├── Deprecated-1.2.13.dist-info
+    │           ├── _distutils_hack
+    │           ├── distutils-precedence.pth
+    │           ├── docutils
+    │           ├── docutils-0.19.dist-info
+    │           ├── flask
+    │           ├── Flask-2.2.3.dist-info
+    │           ├── flask_buzz
+    │           ├── flask_buzz-2.0.1.dist-info
+    │           ├── flask_cors
+    │           ├── Flask_Cors-3.0.10.dist-info
+    │           ├── Flask_Mail-0.9.1-py3.11.egg-info
+    │           ├── flask_mail.py
+    │           ├── flask_praetorian
+    │           ├── flask_praetorian-1.4.0.dist-info
+    │           ├── flask_restful
+    │           ├── Flask_RESTful-0.3.9.dist-info
+    │           ├── flask_session
+    │           ├── Flask_Session-0.4.0.dist-info
+    │           ├── flask_sqlalchemy
+    │           ├── Flask_SQLAlchemy-3.0.3.dist-info
+    │           ├── future
+    │           ├── future-0.18.3-py3.11.egg-info
+    │           ├── greenlet
+    │           ├── greenlet-2.0.2.dist-info
+    │           ├── gunicorn
+    │           ├── gunicorn-20.1.0.dist-info
+    │           ├── idna
+    │           ├── idna-3.4.dist-info
+    │           ├── importlib_metadata
+    │           ├── importlib_metadata-6.1.0.dist-info
+    │           ├── inflection
+    │           ├── inflection-0.5.1.dist-info
+    │           ├── inflection.py
+    │           ├── iniconfig
+    │           ├── iniconfig-2.0.0.dist-info
+    │           ├── itsdangerous
+    │           ├── itsdangerous-2.1.2.dist-info
+    │           ├── jinja2
+    │           ├── Jinja2-3.1.2.dist-info
+    │           ├── jmespath
+    │           ├── jmespath-1.0.1.dist-info
+    │           ├── jsonpickle
+    │           ├── jsonpickle-3.0.1.dist-info
+    │           ├── jwt
+    │           ├── libfuturize
+    │           ├── libpasteurize
+    │           ├── markupsafe
+    │           ├── MarkupSafe-2.1.2.dist-info
+    │           ├── marshmallow
+    │           ├── marshmallow-3.19.0.dist-info
+    │           ├── marshmallow_sqlalchemy
+    │           ├── marshmallow_sqlalchemy-0.29.0.dist-info
+    │           ├── more_itertools
+    │           ├── more_itertools-9.1.0.dist-info
+    │           ├── packaging
+    │           ├── packaging-23.0.dist-info
+    │           ├── passlib
+    │           ├── passlib-1.7.4.dist-info
+    │           ├── past
+    │           ├── pendulum
+    │           ├── pendulum-2.1.2.dist-info
+    │           ├── pip
+    │           ├── pip-23.0.1.dist-info
+    │           ├── pipdeptree
+    │           ├── pipdeptree-2.7.0.dist-info
+    │           ├── pkg_resources
+    │           ├── pluggy
+    │           ├── pluggy-1.0.0.dist-info
+    │           ├── py
+    │           ├── py-1.11.0.dist-info
+    │           ├── py_buzz-2.1.3.dist-info
+    │           ├── __pycache__
+    │           ├── pycparser
+    │           ├── pycparser-2.21.dist-info
+    │           ├── pyhive
+    │           ├── PyHive-0.6.5-py3.11.egg-info
+    │           ├── PyJWT-2.6.0.dist-info
+    │           ├── pymysql
+    │           ├── PyMySQL-1.0.3.dist-info
+    │           ├── pyparsing
+    │           ├── pyparsing-3.0.9.dist-info
+    │           ├── py.py
+    │           ├── _pytest
+    │           ├── pytest
+    │           ├── pytest-7.2.2.dist-info
+    │           ├── python_dateutil-2.8.2.dist-info
+    │           ├── pytz
+    │           ├── pytz-2023.3.dist-info
+    │           ├── pytzdata
+    │           ├── pytzdata-2020.1.dist-info
+    │           ├── requests
+    │           ├── requests-2.28.2.dist-info
+    │           ├── s3transfer
+    │           ├── s3transfer-0.6.0.dist-info
+    │           ├── setuptools
+    │           ├── setuptools-65.5.0.dist-info
+    │           ├── six-1.16.0.dist-info
+    │           ├── six.py
+    │           ├── sqlalchemy
+    │           ├── SQLAlchemy-2.0.8.dist-info
+    │           ├── TCLIService
+    │           ├── typing_extensions-4.5.0.dist-info
+    │           ├── typing_extensions.py
+    │           ├── urllib3
+    │           ├── urllib3-1.26.15.dist-info
+    │           ├── wcwidth
+    │           ├── wcwidth-0.2.6.dist-info
+    │           ├── werkzeug
+    │           ├── Werkzeug-2.2.3.dist-info
+    │           ├── wrapt
+    │           ├── wrapt-1.15.0.dist-info
+    │           ├── zipp
+    │           └── zipp-3.15.0.dist-info
+    ├── lib64 -> lib
+    └── pyvenv.cfg
+
+152 directories, 54 files
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/sbootprojs/prezinfosb$ ls -latr
+total 68
+drwxrwxr-x 21 davidho davidho 4096 Mar 21 06:24 ..
+drwxrwxr-x  5 davidho davidho 4096 Mar 21 06:31 .gradle
+drwxrwxr-x  4 davidho davidho 4096 Mar 21 06:31 tomcat
+-rw-r--r--  1 davidho davidho 1004 Mar 21 06:42 build.gradle
+drwxr-xr-x  4 davidho davidho 4096 Mar 21 10:21 src
+-rw-r--r--  1 davidho davidho   32 Mar 21 10:21 settings.gradle
+-rw-r--r--  1 davidho davidho 2216 Mar 21 10:21 HELP.md
+-rw-r--r--  1 davidho davidho 2838 Mar 21 10:21 gradlew.bat
+-rwxr-xr-x  1 davidho davidho 8188 Mar 21 10:21 gradlew
+drwxr-xr-x  3 davidho davidho 4096 Mar 21 10:21 gradle
+-rw-r--r--  1 davidho davidho  481 Apr  4 07:13 .gitignore
+-rw-rw-r--  1 davidho davidho 3508 Apr  4 07:14 prezdbsb-mysqldump-20230404.sql
+drwxrwxr-x  9 davidho davidho 4096 Apr  5 07:01 build
+drwxr-xr-x  8 davidho davidho 4096 Apr  5 07:12 .
+-rw-rw-r--  1 davidho davidho  203 Apr  5 07:12 prezdbsb-mysqldump-20230405.sql
+drwxrwxr-x  8 davidho davidho 4096 Apr  5 07:46 .git
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+
+davidho@dphxps17:~/sbootprojs/prezinfosb$ mysqldump -u root -p --no-data prezdbsb > prezdbsb-mysqldump-20230405b.sql
+Enter password: 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 25
+Server version: 8.0.32-0ubuntu0.22.04.2 (Ubuntu)
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> 
+mysql> use prezdbsb
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> 
+mysql> show tables;
+Empty set (0.01 sec)
+
+mysql> show tables;
++--------------------+
+| Tables_in_prezdbsb |
++--------------------+
+| election           |
+| election_seq       |
+| president          |
+| president_seq      |
+| term               |
+| term_seq           |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> 
+mysql> DESC `term`;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| id           | bigint      | NO   | PRI | NULL    |       |
+| beg_date     | datetime(6) | YES  |     | NULL    |       |
+| end_date     | datetime(6) | YES  |     | NULL    |       |
+| president_id | bigint      | YES  | MUL | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> DESC `term_seq`;
++----------+--------+------+-----+---------+-------+
+| Field    | Type   | Null | Key | Default | Extra |
++----------+--------+------+-----+---------+-------+
+| next_val | bigint | YES  |     | NULL    |       |
++----------+--------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> DESC `election`;
++-----------------------+-------------+------+-----+---------+-------+
+| Field                 | Type        | Null | Key | Default | Extra |
++-----------------------+-------------+------+-----+---------+-------+
+| id                    | bigint      | NO   | PRI | NULL    |       |
+| election_date         | datetime(6) | YES  |     | NULL    |       |
+| incumb_won_election   | bit(1)      | YES  |     | NULL    |       |
+| total_electoral_vote  | int         | YES  |     | NULL    |       |
+| total_popular_vote    | bigint      | YES  |     | NULL    |       |
+| winner_electoral_vote | int         | YES  |     | NULL    |       |
+| winner_popular_vote   | bigint      | YES  |     | NULL    |       |
+| president_id          | bigint      | YES  | MUL | NULL    |       |
++-----------------------+-------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> DESC `election_seq`;
++----------+--------+------+-----+---------+-------+
+| Field    | Type   | Null | Key | Default | Extra |
++----------+--------+------+-----+---------+-------+
+| next_val | bigint | YES  |     | NULL    |       |
++----------+--------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> DESC `president`;
++---------------------+---------------+------+-----+---------+-------+
+| Field               | Type          | Null | Key | Default | Extra |
++---------------------+---------------+------+-----+---------+-------+
+| id                  | bigint        | NO   | PRI | NULL    |       |
+| first_inaug_address | varchar(4000) | YES  |     | NULL    |       |
+| first_inaug_date    | datetime(6)   | YES  |     | NULL    |       |
+| first_name          | varchar(255)  | YES  |     | NULL    |       |
+| last_name           | varchar(255)  | YES  |     | NULL    |       |
+| middle_name         | varchar(255)  | YES  |     | NULL    |       |
++---------------------+---------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> DESC `president_seq`;
++----------+--------+------+-----+---------+-------+
+| Field    | Type   | Null | Key | Default | Extra |
++----------+--------+------+-----+---------+-------+
+| next_val | bigint | YES  |     | NULL    |       |
++----------+--------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ date
+Wed Apr  5 08:47:07 PM EDT 2023
+davidho@dphxps17:~/sbootprojs/prezinfosb$ pwd -P
+/home/davidho/sbootprojs/prezinfosb
+davidho@dphxps17:~/sbootprojs/prezinfosb$ ls -latr
+total 76
+drwxrwxr-x 21 davidho davidho 4096 Mar 21 06:24 ..
+drwxrwxr-x  5 davidho davidho 4096 Mar 21 06:31 .gradle
+drwxrwxr-x  4 davidho davidho 4096 Mar 21 06:31 tomcat
+-rw-r--r--  1 davidho davidho 1004 Mar 21 06:42 build.gradle
+drwxr-xr-x  4 davidho davidho 4096 Mar 21 10:21 src
+-rw-r--r--  1 davidho davidho   32 Mar 21 10:21 settings.gradle
+-rw-r--r--  1 davidho davidho 2216 Mar 21 10:21 HELP.md
+-rw-r--r--  1 davidho davidho 2838 Mar 21 10:21 gradlew.bat
+-rwxr-xr-x  1 davidho davidho 8188 Mar 21 10:21 gradlew
+drwxr-xr-x  3 davidho davidho 4096 Mar 21 10:21 gradle
+-rw-r--r--  1 davidho davidho  481 Apr  4 07:13 .gitignore
+-rw-rw-r--  1 davidho davidho 3508 Apr  4 07:14 prezdbsb-mysqldump-20230404.sql
+drwxrwxr-x  9 davidho davidho 4096 Apr  5 07:01 build
+-rw-rw-r--  1 davidho davidho  203 Apr  5 07:12 prezdbsb-mysqldump-20230405.sql
+drwxrwxr-x  8 davidho davidho 4096 Apr  5 07:46 .git
+drwxr-xr-x  8 davidho davidho 4096 Apr  5 20:00 .
+-rw-rw-r--  1 davidho davidho 4537 Apr  5 20:19 prezdbsb-mysqldump-20230405b.sql
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ mysqldump -u root -p --no-data prezdbsb > prezdbsb-mysqldump-20230405b.sql
+Enter password: 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 37
+Server version: 8.0.32-0ubuntu0.22.04.2 (Ubuntu)
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use prezdbsb;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++--------------------+
+| Tables_in_prezdbsb |
++--------------------+
+| election           |
+| election_seq       |
+| president          |
+| president_seq      |
+| term               |
+| term_seq           |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> 
+mysql> 
+mysql> DESC `term`;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| id           | bigint      | NO   | PRI | NULL    |       |
+| beg_date     | datetime(6) | YES  |     | NULL    |       |
+| end_date     | datetime(6) | YES  |     | NULL    |       |
+| president_id | bigint      | YES  | MUL | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> DESC `term_seq`;
++----------+--------+------+-----+---------+-------+
+| Field    | Type   | Null | Key | Default | Extra |
++----------+--------+------+-----+---------+-------+
+| next_val | bigint | YES  |     | NULL    |       |
++----------+--------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> DESC `election`;
++-----------------------+-------------+------+-----+---------+-------+
+| Field                 | Type        | Null | Key | Default | Extra |
++-----------------------+-------------+------+-----+---------+-------+
+| id                    | bigint      | NO   | PRI | NULL    |       |
+| election_date         | datetime(6) | YES  |     | NULL    |       |
+| incumb_won_election   | bit(1)      | YES  |     | NULL    |       |
+| total_electoral_vote  | int         | YES  |     | NULL    |       |
+| total_popular_vote    | bigint      | YES  |     | NULL    |       |
+| winner_electoral_vote | int         | YES  |     | NULL    |       |
+| winner_popular_vote   | bigint      | YES  |     | NULL    |       |
+| president_id          | bigint      | YES  | MUL | NULL    |       |
++-----------------------+-------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> DESC `election_seq`;
++----------+--------+------+-----+---------+-------+
+| Field    | Type   | Null | Key | Default | Extra |
++----------+--------+------+-----+---------+-------+
+| next_val | bigint | YES  |     | NULL    |       |
++----------+--------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> DESC `president`;
++---------------------+--------------+------+-----+---------+-------+
+| Field               | Type         | Null | Key | Default | Extra |
++---------------------+--------------+------+-----+---------+-------+
+| id                  | bigint       | NO   | PRI | NULL    |       |
+| first_inaug_address | text         | YES  |     | NULL    |       |
+| first_inaug_date    | datetime(6)  | YES  |     | NULL    |       |
+| first_name          | varchar(255) | YES  |     | NULL    |       |
+| last_name           | varchar(255) | YES  |     | NULL    |       |
+| middle_name         | varchar(255) | YES  |     | NULL    |       |
++---------------------+--------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> DESC `president_seq`;
++----------+--------+------+-----+---------+-------+
+| Field    | Type   | Null | Key | Default | Extra |
++----------+--------+------+-----+---------+-------+
+| next_val | bigint | YES  |     | NULL    |       |
++----------+--------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://www.baeldung.com/jpa-size-length-column-differences
+https://stackoverflow.com/questions/3868096/jpa-how-do-i-persist-a-string-into-a-database-field-type-mysql-text
+
