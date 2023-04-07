@@ -1,0 +1,98 @@
+davidho@dphxps17:~$ date
+Fri Apr  7 07:39:37 AM EDT 2023
+davidho@dphxps17:~$ code stuff-20230407.txt
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:/opt/eclipse-jee-2023-03-R-linux-gtk-x86_64$ date
+Fri Apr  7 07:41:04 AM EDT 2023
+davidho@dphxps17:/opt/eclipse-jee-2023-03-R-linux-gtk-x86_64$ pwd -P
+/opt/eclipse-jee-2023-03-R-linux-gtk-x86_64
+davidho@dphxps17:/opt/eclipse-jee-2023-03-R-linux-gtk-x86_64$ 
+davidho@dphxps17:/opt/eclipse-jee-2023-03-R-linux-gtk-x86_64$ ls -latr
+total 956
+-rw-r--r--   1 1001330000 1001330000     61 Mar  2 03:14 .eclipseproduct
+-rwxr-xr-x   1 1001330000 1001330000 140566 Mar  9 11:15 icon.xpm
+-rwxr-xr-x   1 1001330000 1001330000  89784 Mar  9 11:15 eclipse
+drwxr-xr-x   5 1001330000 1001330000   4096 Mar  9 11:18 p2
+drwxr-xr-x 150 1001330000 1001330000  20480 Mar  9 11:19 features
+drwxr-xr-x  20 1001330000 1001330000  81920 Mar  9 11:19 plugins
+-rw-r--r--   1 1001330000 1001330000 606895 Mar  9 11:19 artifacts.xml
+drwxr-xr-x   2 1001330000 1001330000   4096 Mar  9 11:19 readme
+drwxr-xr-x   2 1001330000 1001330000   4096 Mar  9 11:19 dropins
+-rw-r--r--   1 1001330000 1001330000    726 Mar  9 11:19 eclipse.ini
+drwxr-xr-x   4 1001330000 1001330000   4096 Mar  9 11:19 configuration
+drwxr-xr-x   8 1001330000 1001330000   4096 Mar  9 11:19 .
+drwxr-xr-x  46 root       root         4096 Apr  2 14:47 ..
+davidho@dphxps17:/opt/eclipse-jee-2023-03-R-linux-gtk-x86_64$ 
+davidho@dphxps17:/opt/eclipse-jee-2023-03-R-linux-gtk-x86_64$ ./eclipse 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+used eclipse to generate getters setters hashCode equals and toString
+
+davidho@dphxps17:~$ cd ~/sbootprojs/prezinfosb
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ ls -latr
+total 100
+drwxrwxr-x 21 davidho davidho 4096 Mar 21 06:24 ..
+drwxrwxr-x  5 davidho davidho 4096 Mar 21 06:31 .gradle
+drwxrwxr-x  4 davidho davidho 4096 Mar 21 06:31 tomcat
+-rw-r--r--  1 davidho davidho 1004 Mar 21 06:42 build.gradle
+drwxr-xr-x  4 davidho davidho 4096 Mar 21 10:21 src
+-rw-r--r--  1 davidho davidho   32 Mar 21 10:21 settings.gradle
+-rw-r--r--  1 davidho davidho 2216 Mar 21 10:21 HELP.md
+-rw-r--r--  1 davidho davidho 2838 Mar 21 10:21 gradlew.bat
+-rwxr-xr-x  1 davidho davidho 8188 Mar 21 10:21 gradlew
+drwxr-xr-x  3 davidho davidho 4096 Mar 21 10:21 gradle
+-rw-r--r--  1 davidho davidho  481 Apr  4 07:13 .gitignore
+-rw-rw-r--  1 davidho davidho 3508 Apr  4 07:14 prezdbsb-mysqldump-20230404.sql
+drwxrwxr-x  9 davidho davidho 4096 Apr  5 07:01 build
+-rw-rw-r--  1 davidho davidho  203 Apr  5 07:12 prezdbsb-mysqldump-20230405.sql
+-rw-rw-r--  1 davidho davidho 4515 Apr  5 20:47 prezdbsb-mysqldump-20230405b.sql
+-rw-rw-r--  1 davidho davidho 4562 Apr  6 05:57 prezdbsb-mysqldump-20230406.sql
+drwxrwxr-x  8 davidho davidho 4096 Apr  6 07:27 .git
+drwxrwxr-x  2 davidho davidho 4096 Apr  7 07:44 .settings
+-rw-rw-r--  1 davidho davidho  605 Apr  7 07:44 .project
+-rw-rw-r--  1 davidho davidho 1079 Apr  7 07:44 .classpath
+drwxr-xr-x 10 davidho davidho 4096 Apr  7 07:45 .
+drwxrwxr-x  4 davidho davidho 4096 Apr  7 07:45 bin
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   src/main/java/ashburncode/prezinfosb/Election.java
+	modified:   src/main/java/ashburncode/prezinfosb/President.java
+	modified:   src/main/java/ashburncode/prezinfosb/Term.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ git add .
+davidho@dphxps17:~/sbootprojs/prezinfosb$ git commit -a -m "used eclipse to generate getters setters hashCode equals and toString"
+[main 8222293] used eclipse to generate getters setters hashCode equals and toString
+ 3 files changed, 258 insertions(+), 3 deletions(-)
+davidho@dphxps17:~/sbootprojs/prezinfosb$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+davidho@dphxps17:~/sbootprojs/prezinfosb$ git push
+Enumerating objects: 19, done.
+Counting objects: 100% (19/19), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (10/10), 2.97 KiB | 1.48 MiB/s, done.
+Total 10 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 2 local objects.
+To github.com:ashburndev/prezinfosb.git
+   b633e4e..8222293  main -> main
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+
