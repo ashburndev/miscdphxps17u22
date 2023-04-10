@@ -1,0 +1,457 @@
+davidho@dphxps17:~$ date
+Sat Apr  8 09:54:04 AM EDT 2023
+davidho@dphxps17:~$ code stuff-20230408.txt
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ date
+Sun Apr  9 12:58:24 PM EDT 2023
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://www.baeldung.com/spring-data-jpa-pagination-sorting
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+code /home/davidho/sbootprojs/prezinfosb/
+cd   /home/davidho/sbootprojs/prezinfosb/
+./gradlew clean
+./gradlew bootRun
+
+date
+cd /home/davidho/sbootprojs/prezinfosb
+code .
+pwd -P
+ls -latr
+git status
+tree -L 4 | grep -v .git
+cd /home/davidho/sbootprojs/prezinfosb/src
+ls -latr
+tree -L 6
+
+DROP USER 'prez'@'localhost';
+CREATE USER 'prez'@'localhost' IDENTIFIED BY 'prezpw';
+DROP DATABASE IF EXISTS prezdbsb;
+CREATE DATABASE prezdbsb;
+GRANT ALL PRIVILEGES ON prezdbsb.* TO 'prez'@'localhost' WITH GRANT OPTION;
+
+SHOW DATABASES;
+USE prezdbsb;
+SHOW TABLES;
+
+desc president;
+desc election;
+desc term;
+desc president_seq;
+desc election_seq ;
+desc term_seq;
+
+mysqldump -u root -p --no-data prezdbsb > prezdbsb-mysqldump-20230408.sql
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+mysql> SHOW TABLES;
++--------------------+
+| Tables_in_prezdbsb |
++--------------------+
+| election           |
+| election_seq       |
+| president          |
+| president_seq      |
+| term               |
+| term_seq           |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> desc president;
++---------------------+--------------+------+-----+---------+-------+
+| Field               | Type         | Null | Key | Default | Extra |
++---------------------+--------------+------+-----+---------+-------+
+| id                  | bigint       | NO   | PRI | NULL    |       |
+| first_inaug_address | text         | YES  |     | NULL    |       |
+| first_inaug_date    | datetime(6)  | YES  |     | NULL    |       |
+| first_name          | varchar(255) | YES  |     | NULL    |       |
+| last_name           | varchar(255) | YES  |     | NULL    |       |
+| middle_name         | varchar(255) | YES  |     | NULL    |       |
+| political_party     | varchar(255) | YES  |     | NULL    |       |
++---------------------+--------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> desc election;
++--------------------------------+---------------+------+-----+---------+-------+
+| Field                          | Type          | Null | Key | Default | Extra |
++--------------------------------+---------------+------+-----+---------+-------+
+| id                             | bigint        | NO   | PRI | NULL    |       |
+| election_date                  | datetime(6)   | YES  |     | NULL    |       |
+| incumb_won_election            | bit(1)        | YES  |     | NULL    |       |
+| percent_winner_eclectoral_vote | float         | YES  |     | NULL    |       |
+| percent_winner_popular_vote    | double        | YES  |     | NULL    |       |
+| somebdvalue                    | decimal(38,2) | YES  |     | NULL    |       |
+| somebivalue                    | decimal(38,0) | YES  |     | NULL    |       |
+| total_electoral_vote           | int           | YES  |     | NULL    |       |
+| total_popular_vote             | bigint        | YES  |     | NULL    |       |
+| winner_electoral_vote          | int           | YES  |     | NULL    |       |
+| winner_popular_vote            | bigint        | YES  |     | NULL    |       |
+| president_id                   | bigint        | YES  | MUL | NULL    |       |
++--------------------------------+---------------+------+-----+---------+-------+
+12 rows in set (0.00 sec)
+
+mysql> desc term;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| id           | bigint      | NO   | PRI | NULL    |       |
+| beg_date     | datetime(6) | YES  |     | NULL    |       |
+| end_date     | datetime(6) | YES  |     | NULL    |       |
+| president_id | bigint      | YES  | MUL | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> desc president_seq;
++----------+--------+------+-----+---------+-------+
+| Field    | Type   | Null | Key | Default | Extra |
++----------+--------+------+-----+---------+-------+
+| next_val | bigint | YES  |     | NULL    |       |
++----------+--------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> desc election_seq ;
++----------+--------+------+-----+---------+-------+
+| Field    | Type   | Null | Key | Default | Extra |
++----------+--------+------+-----+---------+-------+
+| next_val | bigint | YES  |     | NULL    |       |
++----------+--------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> desc term_seq;
++----------+--------+------+-----+---------+-------+
+| Field    | Type   | Null | Key | Default | Extra |
++----------+--------+------+-----+---------+-------+
+| next_val | bigint | YES  |     | NULL    |       |
++----------+--------+------+-----+---------+-------+
+1 row in set (0.01 sec)
+
+mysql> 
+mysql> select * from president;
++----+---------------------+------------------+------------+------------+-------------+-----------------------+
+| id | first_inaug_address | first_inaug_date | first_name | last_name  | middle_name | political_party       |
++----+---------------------+------------------+------------+------------+-------------+-----------------------+
+|  1 | NULL                | NULL             | George     | Washington |             | Unaffiliated          |
+|  2 | NULL                | NULL             | John       | Adams      |             | Federalist            |
+|  3 | NULL                | NULL             | Thomas     | Jefferson  |             | Democratic-Republican |
+|  4 | NULL                | NULL             | Richard    | Nixon      |             | Republican            |
+|  5 | NULL                | NULL             | Gerald     | Ford       |             | Republican            |
+|  6 | NULL                | NULL             | Jimmy      | Carter     |             | Democratic            |
+|  7 | NULL                | NULL             | Ronald     | Reagan     |             | Republican            |
+|  8 | NULL                | NULL             | George     | Bush       | H. W.       | Republican            |
+|  9 | NULL                | NULL             | Bill       | Clinton    |             | Democratic            |
+| 10 | NULL                | NULL             | George     | Bush       | W.          | Republican            |
+| 11 | NULL                | NULL             | Barack     | Obama      |             | Democratic            |
+| 12 | NULL                | NULL             | Donald     | Trump      |             | Republican            |
+| 13 | NULL                | NULL             | Joe        | Biden      |             | Democratic            |
++----+---------------------+------------------+------------+------------+-------------+-----------------------+
+13 rows in set (0.00 sec)
+
+mysql> 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+cd /home/davidho/sbootprojs/prezinfosb
+./gradlew clean
+./gradlew bootRun
+
+BUILD SUCCESSFUL in 298ms
+1 actionable task: 1 executed
+
+> Task :bootRun
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.0.4)
+
+2023-04-09T20:57:50.840-04:00  INFO 66827 --- [           main] a.prezinfosb.PrezinfosbApplication       : Starting PrezinfosbApplication using Java 17.0.6 with PID 66827 (/home/davidho/sbootprojs/prezinfosb/build/classes/java/main started by davidho in /home/davidho/sbootprojs/prezinfosb)
+2023-04-09T20:57:50.843-04:00  INFO 66827 --- [           main] a.prezinfosb.PrezinfosbApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-04-09T20:57:51.217-04:00  INFO 66827 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-09T20:57:51.243-04:00  INFO 66827 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 3 JPA repository interfaces.
+2023-04-09T20:57:51.539-04:00  INFO 66827 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-09T20:57:51.544-04:00  INFO 66827 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-09T20:57:51.545-04:00  INFO 66827 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-04-09T20:57:51.592-04:00  INFO 66827 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-09T20:57:51.593-04:00  INFO 66827 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 721 ms
+2023-04-09T20:57:51.717-04:00  INFO 66827 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-09T20:57:51.744-04:00  INFO 66827 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-09T20:57:51.871-04:00  INFO 66827 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-09T20:57:52.034-04:00  INFO 66827 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@b70fa38
+2023-04-09T20:57:52.035-04:00  INFO 66827 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-09T20:57:52.045-04:00  INFO 66827 --- [           main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-04-09T20:57:52.045-04:00  WARN 66827 --- [           main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2023-04-09T20:57:52.334-04:00  INFO 66827 --- [           main] o.h.m.i.EntityInstantiatorPojoStandard   : HHH000182: No default (no-argument) constructor for class: ashburncode.prezinfosb.model.Term (class must be instantiated by Interceptor)
+2023-04-09T20:57:52.355-04:00  INFO 66827 --- [           main] o.h.m.i.EntityInstantiatorPojoStandard   : HHH000182: No default (no-argument) constructor for class: ashburncode.prezinfosb.model.Election (class must be instantiated by Interceptor)
+2023-04-09T20:57:52.364-04:00  INFO 66827 --- [           main] o.h.m.i.EntityInstantiatorPojoStandard   : HHH000182: No default (no-argument) constructor for class: ashburncode.prezinfosb.model.President (class must be instantiated by Interceptor)
+2023-04-09T20:57:52.461-04:00  INFO 66827 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-09T20:57:52.465-04:00  INFO 66827 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-09T20:57:52.483-04:00  WARN 66827 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-09T20:57:52.940-04:00  INFO 66827 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2023-04-09T20:57:52.975-04:00  INFO 66827 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-09T20:57:52.984-04:00  INFO 66827 --- [           main] a.prezinfosb.PrezinfosbApplication       : Started PrezinfosbApplication in 2.341 seconds (process running for 2.49)
+<==========---> 80% EXECUTING [9s]
+> :bootRun
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+  import java.util.ArrayList;
+  import java.util.Date;
+  import java.util.List;
+  import java.util.Objects;
+  
+  import jakarta.persistence.*;
+  import jakarta.persistence.Id;
+  import jakarta.persistence.Entity;
+  import jakarta.persistence.GeneratedValue;
+  import jakarta.persistence.GenerationType;
+  import jakarta.persistence.ManyToMany;
+  import jakarta.persistence.OneToMany;
+  import jakarta.persistence.ManyToOne;
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ cd /home/davidho/sbootprojs/prezinfosb
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ ls -latr
+total 104
+drwxrwxr-x 21 davidho davidho 4096 Mar 21 06:24 ..
+drwxrwxr-x  5 davidho davidho 4096 Mar 21 06:31 .gradle
+drwxrwxr-x  4 davidho davidho 4096 Mar 21 06:31 tomcat
+drwxr-xr-x  4 davidho davidho 4096 Mar 21 10:21 src
+-rw-r--r--  1 davidho davidho   32 Mar 21 10:21 settings.gradle
+-rw-r--r--  1 davidho davidho 2216 Mar 21 10:21 HELP.md
+-rw-r--r--  1 davidho davidho 2838 Mar 21 10:21 gradlew.bat
+-rwxr-xr-x  1 davidho davidho 8188 Mar 21 10:21 gradlew
+drwxr-xr-x  3 davidho davidho 4096 Mar 21 10:21 gradle
+-rw-r--r--  1 davidho davidho  481 Apr  4 07:13 .gitignore
+-rw-rw-r--  1 davidho davidho 3508 Apr  4 07:14 prezdbsb-mysqldump-20230404.sql
+-rw-rw-r--  1 davidho davidho  203 Apr  5 07:12 prezdbsb-mysqldump-20230405.sql
+-rw-rw-r--  1 davidho davidho 4515 Apr  5 20:47 prezdbsb-mysqldump-20230405b.sql
+-rw-rw-r--  1 davidho davidho 4562 Apr  6 05:57 prezdbsb-mysqldump-20230406.sql
+drwxrwxr-x  2 davidho davidho 4096 Apr  7 07:44 .settings
+-rw-rw-r--  1 davidho davidho  605 Apr  7 07:44 .project
+-rw-rw-r--  1 davidho davidho 1079 Apr  7 07:44 .classpath
+drwxrwxr-x  4 davidho davidho 4096 Apr  7 07:45 bin
+drwxrwxr-x  8 davidho davidho 4096 Apr  9 13:37 .git
+-rw-r--r--  1 davidho davidho 1881 Apr  9 15:07 build.gradle
+-rw-rw-r--  1 davidho davidho 4758 Apr  9 16:09 prezdbsb-mysqldump-20230408.sql
+drwxr-xr-x  9 davidho davidho 4096 Apr  9 16:11 .
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ tree -L 6
+.
+├── bin
+│   ├── main
+│   │   ├── application.properties
+│   │   ├── ashburncode
+│   │   │   └── prezinfosb
+│   │   │       ├── ActuatorHttpExchangesConfiguration.class
+│   │   │       ├── controller
+│   │   │       ├── model
+│   │   │       │   ├── Election.class
+│   │   │       │   ├── President.class
+│   │   │       │   └── Term.class
+│   │   │       ├── PrezinfosbApplication.class
+│   │   │       ├── repository
+│   │   │       │   ├── ElectionRepository.class
+│   │   │       │   ├── PresidentRepository.class
+│   │   │       │   └── TermRepository.class
+│   │   │       └── service
+│   │   └── templates
+│   └── test
+│       └── ashburncode
+│           └── prezinfosb
+│               └── PrezinfosbApplicationTests.class
+├── build.gradle
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradlew
+├── gradlew.bat
+├── HELP.md
+├── prezdbsb-mysqldump-20230404.sql
+├── prezdbsb-mysqldump-20230405b.sql
+├── prezdbsb-mysqldump-20230405.sql
+├── prezdbsb-mysqldump-20230406.sql
+├── prezdbsb-mysqldump-20230408.sql
+├── settings.gradle
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── ashburncode
+│   │   │       └── prezinfosb
+│   │   │           ├── ActuatorHttpExchangesConfiguration.java
+│   │   │           ├── controller
+│   │   │           ├── model
+│   │   │           ├── PrezinfosbApplication.java
+│   │   │           ├── repository
+│   │   │           └── service
+│   │   └── resources
+│   │       ├── application.properties
+│   │       ├── static
+│   │       └── templates
+│   └── test
+│       └── java
+│           └── ashburncode
+│               └── prezinfosb
+│                   └── PrezinfosbApplicationTests.java
+└── tomcat
+    ├── logs
+    │   ├── access_log.2023-03-21.log
+    │   ├── access_log.2023-04-03.log
+    │   ├── access_log.2023-04-05.log
+    │   ├── access_log.2023-04-06.log
+    │   └── access_log.2023-04-09.log
+    └── work
+        └── Tomcat
+            └── localhost
+                └── ROOT
+
+36 directories, 31 files
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ cd /home/davidho/sbootprojs/prezinfosb/src
+davidho@dphxps17:~/sbootprojs/prezinfosb/src$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb/src$ tree -L 6
+.
+├── main
+│   ├── java
+│   │   └── ashburncode
+│   │       └── prezinfosb
+│   │           ├── ActuatorHttpExchangesConfiguration.java
+│   │           ├── controller
+│   │           ├── model
+│   │           │   ├── Election.java
+│   │           │   ├── President.java
+│   │           │   └── Term.java
+│   │           ├── PrezinfosbApplication.java
+│   │           ├── repository
+│   │           │   ├── ElectionRepository.java
+│   │           │   ├── PresidentRepository.java
+│   │           │   └── TermRepository.java
+│   │           └── service
+│   └── resources
+│       ├── application.properties
+│       ├── static
+│       └── templates
+└── test
+    └── java
+        └── ashburncode
+            └── prezinfosb
+                └── PrezinfosbApplicationTests.java
+
+15 directories, 10 files
+davidho@dphxps17:~/sbootprojs/prezinfosb/src$ 
+
+
+git commit -a -m "add ApplicationRunner to PrezinfosbApplication"
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	deleted:    src/main/java/ashburncode/prezinfosb/ElectionRepository.java
+	deleted:    src/main/java/ashburncode/prezinfosb/PresidentRepository.java
+	deleted:    src/main/java/ashburncode/prezinfosb/TermRepository.java
+	renamed:    src/main/java/ashburncode/prezinfosb/Election.java -> src/main/java/ashburncode/prezinfosb/model/Election.java
+	renamed:    src/main/java/ashburncode/prezinfosb/President.java -> src/main/java/ashburncode/prezinfosb/model/President.java
+	renamed:    src/main/java/ashburncode/prezinfosb/Term.java -> src/main/java/ashburncode/prezinfosb/model/Term.java
+	new file:   src/main/java/ashburncode/prezinfosb/repository/ElectionRepository.java
+	new file:   src/main/java/ashburncode/prezinfosb/repository/PresidentRepository.java
+	new file:   src/main/java/ashburncode/prezinfosb/repository/TermRepository.java
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   build.gradle
+	modified:   src/main/java/ashburncode/prezinfosb/PrezinfosbApplication.java
+	modified:   src/main/java/ashburncode/prezinfosb/model/Election.java
+	modified:   src/main/java/ashburncode/prezinfosb/model/President.java
+	modified:   src/main/java/ashburncode/prezinfosb/model/Term.java
+	modified:   src/main/java/ashburncode/prezinfosb/repository/ElectionRepository.java
+	modified:   src/main/java/ashburncode/prezinfosb/repository/PresidentRepository.java
+	modified:   src/main/java/ashburncode/prezinfosb/repository/TermRepository.java
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	prezdbsb-mysqldump-20230408.sql
+	prezdbsb-mysqldump-20230408b.sql
+
+davidho@dphxps17:~/sbootprojs/prezinfosb$ git add .
+davidho@dphxps17:~/sbootprojs/prezinfosb$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   build.gradle
+	new file:   prezdbsb-mysqldump-20230408.sql
+	new file:   prezdbsb-mysqldump-20230408b.sql
+	deleted:    src/main/java/ashburncode/prezinfosb/Election.java
+	deleted:    src/main/java/ashburncode/prezinfosb/ElectionRepository.java
+	deleted:    src/main/java/ashburncode/prezinfosb/President.java
+	deleted:    src/main/java/ashburncode/prezinfosb/PresidentRepository.java
+	modified:   src/main/java/ashburncode/prezinfosb/PrezinfosbApplication.java
+	deleted:    src/main/java/ashburncode/prezinfosb/Term.java
+	deleted:    src/main/java/ashburncode/prezinfosb/TermRepository.java
+	new file:   src/main/java/ashburncode/prezinfosb/model/Election.java
+	new file:   src/main/java/ashburncode/prezinfosb/model/President.java
+	new file:   src/main/java/ashburncode/prezinfosb/model/Term.java
+	new file:   src/main/java/ashburncode/prezinfosb/repository/ElectionRepository.java
+	new file:   src/main/java/ashburncode/prezinfosb/repository/PresidentRepository.java
+	new file:   src/main/java/ashburncode/prezinfosb/repository/TermRepository.java
+
+davidho@dphxps17:~/sbootprojs/prezinfosb$ git commit -a -m "add ApplicationRunner to PrezinfosbApplication"
+[main 24f37f2] add ApplicationRunner to PrezinfosbApplication
+ 16 files changed, 822 insertions(+), 414 deletions(-)
+ create mode 100644 prezdbsb-mysqldump-20230408.sql
+ create mode 100644 prezdbsb-mysqldump-20230408b.sql
+ delete mode 100644 src/main/java/ashburncode/prezinfosb/Election.java
+ delete mode 100644 src/main/java/ashburncode/prezinfosb/ElectionRepository.java
+ delete mode 100644 src/main/java/ashburncode/prezinfosb/President.java
+ delete mode 100644 src/main/java/ashburncode/prezinfosb/PresidentRepository.java
+ delete mode 100644 src/main/java/ashburncode/prezinfosb/Term.java
+ delete mode 100644 src/main/java/ashburncode/prezinfosb/TermRepository.java
+ create mode 100644 src/main/java/ashburncode/prezinfosb/model/Election.java
+ create mode 100644 src/main/java/ashburncode/prezinfosb/model/President.java
+ create mode 100644 src/main/java/ashburncode/prezinfosb/model/Term.java
+ create mode 100644 src/main/java/ashburncode/prezinfosb/repository/ElectionRepository.java
+ create mode 100644 src/main/java/ashburncode/prezinfosb/repository/PresidentRepository.java
+ create mode 100644 src/main/java/ashburncode/prezinfosb/repository/TermRepository.java
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ git push
+Enumerating objects: 27, done.
+Counting objects: 100% (27/27), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (17/17), done.
+Writing objects: 100% (19/19), 6.37 KiB | 6.37 MiB/s, done.
+Total 19 (delta 5), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (5/5), completed with 1 local object.
+To github.com:ashburndev/prezinfosb.git
+   8222293..24f37f2  main -> main
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+
