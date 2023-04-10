@@ -1,0 +1,307 @@
+davidho@dphxps17:~$ date
+Mon Apr 10 06:04:21 AM EDT 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ code stuff-20230410.txt
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+mysqldump -u root -p --no-data prezdbsb > prezdbsb-mysqldump-20230410.sql
+mysql     -u root -p           prezdbsb < prezdbsb-mysqldump-20230410.sql
+
+mysqldump -u root -p prezdbsb > prezdbsb-mysqldump-20230410b.sql
+mysql     -u root -p prezdbsb < prezdbsb-mysqldump-20230410b.sql
+
+cp -p prezdbsb-mysqldump-20230410b.sql prezdbsb-mysqldump-20230410c.sql
+sed -i -e 's/bigint/int/g'             prezdbsb-mysqldump-20230410c.sql
+mysql     -u root -p prezdbsb        < prezdbsb-mysqldump-20230410c.sql
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+# Mon Apr 10 06:35:37 AM EDT 2023
+# page 177, "Spring in Action (Sixth Edition)", Manning Press, 2022]
+sprint.data.rest.base-path=/data-api
+
+curl http://localhost:8080/data-api/president_seq
+
+
+davidho@dphxps17:~$ curl http://localhost:8080/data-api/presidents
+{"timestamp":"2023-04-10T11:10:39.657+00:00","status":404,"error":"Not Found","path":"/data-api/presidents"}davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ curl http://localhost:8080/prezinfosb/data-api/presidents
+{"timestamp":"2023-04-10T11:14:00.261+00:00","status":404,"error":"Not Found","path":"/prezinfosb/data-api/presidents"}davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+
+/home/davidho/sbootprojs/prezinfosb/tomcat/logs/access_log.2023-04-10.log
+127.0.0.1 - - [10/Apr/2023:07:10:39 -0400] "GET /data-api/presidents HTTP/1.1" 404 119
+127.0.0.1 - - [10/Apr/2023:07:14:00 -0400] "GET /prezinfosb/data-api/presidents HTTP/1.1" 404 130
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ mysqldump -u root -p --no-data prezdbsb > prezdbsb-mysqldump-20230410.sql
+Enter password: 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ mysqldump -u root -p prezdbsb > prezdbsb-mysqldump-20230410b.sql
+Enter password: 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ mysql     -u root -p           prezdbsb < prezdbsb-mysqldump-20230410.sql
+Enter password: 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ mysql     -u root -p prezdbsb < prezdbsb-mysqldump-20230410b.sql
+Enter password: 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ cp -p prezdbsb-mysqldump-20230410b.sql prezdbsb-mysqldump-20230410c.sql
+davidho@dphxps17:~/sbootprojs/prezinfosb$ sed -i -e 's/bigint/int/g'             prezdbsb-mysqldump-20230410c.sql
+davidho@dphxps17:~/sbootprojs/prezinfosb$ mysql     -u root -p prezdbsb        < prezdbsb-mysqldump-20230410c.sql
+Enter password: 
+ERROR 3780 (HY000) at line 25: Referencing column 'president_id' and referenced column 'id' in foreign key constraint 'FKof13dcj45tg3ts9hbp4hf5tov' are incompatible.
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+
+I dropped the database and created it again ... and the command below worked ...
+
+davidho@dphxps17:~/sbootprojs/prezinfosb$ mysql     -u root -p prezdbsb        < prezdbsb-mysqldump-20230410c.sql
+Enter password: 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+mysql> 
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| db_example         |
+| depot2_development |
+| dphpyapp1          |
+| dphpyapp2          |
+| information_schema |
+| mysql              |
+| performance_schema |
+| prezdb             |
+| prezdbsb           |
+| sbapp2db           |
+| sbapp3db           |
+| sys                |
+| tacocloud          |
+| wire2_development  |
+| wire3_development  |
+| wire4_development  |
+| wire5_development  |
+| wire6_development  |
++--------------------+
+18 rows in set (0.00 sec)
+
+mysql> USE prezdbsb;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> SHOW TABLES;
++--------------------+
+| Tables_in_prezdbsb |
++--------------------+
+| election           |
+| election_seq       |
+| president          |
+| president_seq      |
+| term               |
+| term_seq           |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> select * from president;
++----+---------------------+------------------+------------+--------------+-------------+-----------------------+
+| id | first_inaug_address | first_inaug_date | first_name | last_name    | middle_name | political_party       |
++----+---------------------+------------------+------------+--------------+-------------+-----------------------+
+|  1 | NULL                | NULL             | George     | Washington   |             | Unaffiliated          |
+|  2 | NULL                | NULL             | John       | Adams        |             | Federalist            |
+|  3 | NULL                | NULL             | Thomas     | Jefferson    |             | Democratic-Republican |
+|  4 | NULL                | NULL             | Abraham    | Lincoln      |             | Republican            |
+|  5 | NULL                | NULL             | Theodore   | Roosevelt    |             | Republican            |
+|  6 | NULL                | NULL             | William    | Taft         | Howard      | Republican            |
+|  7 | NULL                | NULL             | Woodrow    | Wilson       |             | Democratic            |
+|  8 | NULL                | NULL             | Warren     | Harding      | G.          | Republican            |
+|  9 | NULL                | NULL             | Calvin     | Coolidge     |             | Republican            |
+| 10 | NULL                | NULL             | Herbert    | Hoover       |             | Republican            |
+| 11 | NULL                | NULL             | Franklin   | Roosevelt    | D.          | Democratic            |
+| 12 | NULL                | NULL             | Harry      | Truman       | S.          | Democratic            |
+| 13 | NULL                | NULL             | Dwight     | Eisenhower   | D.          | Republican            |
+| 14 | NULL                | NULL             | John       | Kennedy      | F.          | Democratic            |
+| 15 | NULL                | NULL             | Lyndon     | yyyyJohnsony | B.          | Democratic            |
+| 16 | NULL                | NULL             | Richard    | Nixon        |             | Republican            |
+| 17 | NULL                | NULL             | Gerald     | Ford         |             | Republican            |
+| 18 | NULL                | NULL             | Jimmy      | Carter       |             | Democratic            |
+| 19 | NULL                | NULL             | Ronald     | Reagan       |             | Republican            |
+| 20 | NULL                | NULL             | George     | Bush         | H. W.       | Republican            |
+| 21 | NULL                | NULL             | Bill       | Clinton      |             | Democratic            |
+| 22 | NULL                | NULL             | George     | Bush         | W.          | Republican            |
+| 23 | NULL                | NULL             | Barack     | Obama        |             | Democratic            |
+| 24 | NULL                | NULL             | Donald     | Trump        |             | Republican            |
+| 25 | NULL                | NULL             | Joe        | Biden        |             | Democratic            |
++----+---------------------+------------------+------------+--------------+-------------+-----------------------+
+25 rows in set (0.00 sec)
+
+mysql> 
+mysql> desc president;
++---------------------+--------------+------+-----+---------+-------+
+| Field               | Type         | Null | Key | Default | Extra |
++---------------------+--------------+------+-----+---------+-------+
+| id                  | bigint       | NO   | PRI | NULL    |       |
+| first_inaug_address | text         | YES  |     | NULL    |       |
+| first_inaug_date    | datetime(6)  | YES  |     | NULL    |       |
+| first_name          | varchar(255) | YES  |     | NULL    |       |
+| last_name           | varchar(255) | YES  |     | NULL    |       |
+| middle_name         | varchar(255) | YES  |     | NULL    |       |
+| political_party     | varchar(255) | YES  |     | NULL    |       |
++---------------------+--------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> desc election;
++--------------------------------+---------------+------+-----+---------+-------+
+| Field                          | Type          | Null | Key | Default | Extra |
++--------------------------------+---------------+------+-----+---------+-------+
+| id                             | bigint        | NO   | PRI | NULL    |       |
+| election_date                  | datetime(6)   | YES  |     | NULL    |       |
+| incumb_won_election            | bit(1)        | YES  |     | NULL    |       |
+| percent_winner_eclectoral_vote | float         | YES  |     | NULL    |       |
+| percent_winner_popular_vote    | double        | YES  |     | NULL    |       |
+| somebdvalue                    | decimal(38,2) | YES  |     | NULL    |       |
+| somebivalue                    | decimal(38,0) | YES  |     | NULL    |       |
+| total_electoral_vote           | int           | YES  |     | NULL    |       |
+| total_popular_vote             | bigint        | YES  |     | NULL    |       |
+| winner_electoral_vote          | int           | YES  |     | NULL    |       |
+| winner_popular_vote            | bigint        | YES  |     | NULL    |       |
+| president_id                   | bigint        | YES  | MUL | NULL    |       |
++--------------------------------+---------------+------+-----+---------+-------+
+12 rows in set (0.01 sec)
+
+mysql> desc term;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| id           | bigint      | NO   | PRI | NULL    |       |
+| beg_date     | datetime(6) | YES  |     | NULL    |       |
+| end_date     | datetime(6) | YES  |     | NULL    |       |
+| president_id | bigint      | YES  | MUL | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> desc president_seq;
++----------+--------+------+-----+---------+-------+
+| Field    | Type   | Null | Key | Default | Extra |
++----------+--------+------+-----+---------+-------+
+| next_val | bigint | YES  |     | NULL    |       |
++----------+--------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> desc election_seq ;
++----------+--------+------+-----+---------+-------+
+| Field    | Type   | Null | Key | Default | Extra |
++----------+--------+------+-----+---------+-------+
+| next_val | bigint | YES  |     | NULL    |       |
++----------+--------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> desc term_seq;
++----------+--------+------+-----+---------+-------+
+| Field    | Type   | Null | Key | Default | Extra |
++----------+--------+------+-----+---------+-------+
+| next_val | bigint | YES  |     | NULL    |       |
++----------+--------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+mysql> use prezdbsb;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++--------------------+
+| Tables_in_prezdbsb |
++--------------------+
+| election           |
+| election_seq       |
+| president          |
+| president_seq      |
+| term               |
+| term_seq           |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> 
+mysql> desc president;
++---------------------+--------------+------+-----+---------+-------+
+| Field               | Type         | Null | Key | Default | Extra |
++---------------------+--------------+------+-----+---------+-------+
+| id                  | int          | NO   | PRI | NULL    |       |
+| first_inaug_address | text         | YES  |     | NULL    |       |
+| first_inaug_date    | datetime(6)  | YES  |     | NULL    |       |
+| first_name          | varchar(255) | YES  |     | NULL    |       |
+| last_name           | varchar(255) | YES  |     | NULL    |       |
+| middle_name         | varchar(255) | YES  |     | NULL    |       |
+| political_party     | varchar(255) | YES  |     | NULL    |       |
++---------------------+--------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> desc election;
++--------------------------------+---------------+------+-----+---------+-------+
+| Field                          | Type          | Null | Key | Default | Extra |
++--------------------------------+---------------+------+-----+---------+-------+
+| id                             | int           | NO   | PRI | NULL    |       |
+| election_date                  | datetime(6)   | YES  |     | NULL    |       |
+| incumb_won_election            | bit(1)        | YES  |     | NULL    |       |
+| percent_winner_eclectoral_vote | float         | YES  |     | NULL    |       |
+| percent_winner_popular_vote    | double        | YES  |     | NULL    |       |
+| somebdvalue                    | decimal(38,2) | YES  |     | NULL    |       |
+| somebivalue                    | decimal(38,0) | YES  |     | NULL    |       |
+| total_electoral_vote           | int           | YES  |     | NULL    |       |
+| total_popular_vote             | int           | YES  |     | NULL    |       |
+| winner_electoral_vote          | int           | YES  |     | NULL    |       |
+| winner_popular_vote            | int           | YES  |     | NULL    |       |
+| president_id                   | int           | YES  | MUL | NULL    |       |
++--------------------------------+---------------+------+-----+---------+-------+
+12 rows in set (0.00 sec)
+
+mysql> desc term;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| id           | int         | NO   | PRI | NULL    |       |
+| beg_date     | datetime(6) | YES  |     | NULL    |       |
+| end_date     | datetime(6) | YES  |     | NULL    |       |
+| president_id | int         | YES  | MUL | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> desc president_seq;
++----------+------+------+-----+---------+-------+
+| Field    | Type | Null | Key | Default | Extra |
++----------+------+------+-----+---------+-------+
+| next_val | int  | YES  |     | NULL    |       |
++----------+------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> desc election_seq ;
++----------+------+------+-----+---------+-------+
+| Field    | Type | Null | Key | Default | Extra |
++----------+------+------+-----+---------+-------+
+| next_val | int  | YES  |     | NULL    |       |
++----------+------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> desc term_seq;
++----------+------+------+-----+---------+-------+
+| Field    | Type | Null | Key | Default | Extra |
++----------+------+------+-----+---------+-------+
+| next_val | int  | YES  |     | NULL    |       |
++----------+------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> 
+
