@@ -1,0 +1,1151 @@
+davidho@dphxps17:~$ date
+Wed Apr 12 06:16:26 AM EDT 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ code stuff-20230412.txt
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+  public Float getPercentWinnerElectoralVote() {
+    // return percentWinnerElectoralVote;
+    if (totalElectoralVote == null || totalElectoralVote == 0L) {
+      return 0.0f;
+    }
+    return (winnerElectoralVote.floatValue()) / (totalElectoralVote.floatValue());
+  }
+
+  public Double getPercentWinnerPopularVote() {
+    // returnpercentWinnerPopularVote ;
+    if (totalPopularVote == null || totalPopularVote == 0L) {
+      return 0.0d;
+    }
+    return (Double) (winnerPopularVote.doubleValue()) / (Double) (totalPopularVote.doubleValue());
+  }
+
+select 
+  id, president_id, election_date, incumb_won_election, 
+  winner_electoral_vote, winner_popular_vote, 
+  total_electoral_vote, total_popular_vote
+from election;
+
+select id, president_id, election_date, incumb_won_election, winner_electoral_vote, winner_popular_vote, total_electoral_vote, total_popular_vote from election;
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+code /home/davidho/sbootprojs/prezinfosb/
+cd   /home/davidho/sbootprojs/prezinfosb/
+./gradlew clean
+./gradlew bootRun
+
+date
+cd /home/davidho/sbootprojs/prezinfosb
+code .
+pwd -P
+ls -latr
+git status
+tree -L 4 
+cd /home/davidho/sbootprojs/prezinfosb/src
+ls -latr
+tree -L 6
+
+DROP USER 'prez'@'localhost';
+CREATE USER 'prez'@'localhost' IDENTIFIED BY 'prezpw';
+DROP DATABASE IF EXISTS prezdbsb;
+CREATE DATABASE prezdbsb;
+GRANT ALL PRIVILEGES ON prezdbsb.* TO 'prez'@'localhost' WITH GRANT OPTION;
+
+SHOW DATABASES;
+USE prezdbsb;
+SHOW TABLES;
+
+desc president;
+desc election;
+desc term;
+desc president_seq;
+desc election_seq ;
+desc term_seq;
+
+mysqldump -u root -p --no-data prezdbsb > prezdbsb-mysqldump-20230412.sql
+mysql     -u root -p           prezdbsb < prezdbsb-mysqldump-20230412.sql
+
+mysqldump -u root -p prezdbsb > prezdbsb-mysqldump-20230412b.sql
+mysql     -u root -p prezdbsb < prezdbsb-mysqldump-20230412b.sql
+
+cp -p prezdbsb-mysqldump-20230411b.sql prezdbsb-mysqldump-20230412c.sql
+sed -i -e 's/bigint/int/g'             prezdbsb-mysqldump-20230412c.sql
+mysql     -u root -p prezdbsb        < prezdbsb-mysqldump-20230412c.sql
+
+# something did not work as expected with the sed command above
+cp -p prezdbsb-mysqldump-20230411b.sql prezdbsb-mysqldump-20230412d.sql
+code prezdbsb-mysqldump-20230412d.sql
+# change bigint to in using vscode
+# drop and create the prezdbsg database
+mysql     -u root -p prezdbsb        < prezdbsb-mysqldump-20230412d.sql
+
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/sbootprojs/prezinfosb$ mysqldump -u root -p --no-data prezdbsb > prezdbsb-mysqldump-20230412.sql
+Enter password: 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ mysqldump -u root -p prezdbsb > prezdbsb-mysqldump-20230412b.sql
+Enter password: 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ cp -p prezdbsb-mysqldump-20230411b.sql prezdbsb-mysqldump-20230412c.sql
+davidho@dphxps17:~/sbootprojs/prezinfosb$ sed -i -e 's/bigint/int/g'             prezdbsb-mysqldump-20230412c.sql
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ ls -latr
+total 188
+drwxrwxr-x 21 davidho davidho 4096 Mar 21 06:24 ..
+drwxrwxr-x  5 davidho davidho 4096 Mar 21 06:31 .gradle
+drwxrwxr-x  4 davidho davidho 4096 Mar 21 06:31 tomcat
+drwxr-xr-x  4 davidho davidho 4096 Mar 21 10:21 src
+-rw-r--r--  1 davidho davidho   32 Mar 21 10:21 settings.gradle
+-rw-r--r--  1 davidho davidho 2216 Mar 21 10:21 HELP.md
+-rw-r--r--  1 davidho davidho 2838 Mar 21 10:21 gradlew.bat
+-rwxr-xr-x  1 davidho davidho 8188 Mar 21 10:21 gradlew
+drwxr-xr-x  3 davidho davidho 4096 Mar 21 10:21 gradle
+-rw-r--r--  1 davidho davidho  481 Apr  4 07:13 .gitignore
+-rw-rw-r--  1 davidho davidho 3508 Apr  4 07:14 prezdbsb-mysqldump-20230404.sql
+-rw-rw-r--  1 davidho davidho  203 Apr  5 07:12 prezdbsb-mysqldump-20230405.sql
+-rw-rw-r--  1 davidho davidho 4515 Apr  5 20:47 prezdbsb-mysqldump-20230405b.sql
+-rw-rw-r--  1 davidho davidho 4562 Apr  6 05:57 prezdbsb-mysqldump-20230406.sql
+-rw-rw-r--  1 davidho davidho  605 Apr  7 07:44 .project
+-rw-rw-r--  1 davidho davidho 1079 Apr  7 07:44 .classpath
+drwxrwxr-x  4 davidho davidho 4096 Apr  7 07:45 bin
+drwxrwxr-x  2 davidho davidho 4096 Apr  9 16:45 .settings
+-rw-r--r--  1 davidho davidho 2155 Apr  9 17:35 build.gradle
+-rw-rw-r--  1 davidho davidho 4758 Apr  9 21:01 prezdbsb-mysqldump-20230408.sql
+-rw-rw-r--  1 davidho davidho 4758 Apr  9 21:02 prezdbsb-mysqldump-20230408b.sql
+drwxrwxr-x  6 davidho davidho 4096 Apr 10 07:02 build
+-rw-rw-r--  1 davidho davidho 4758 Apr 10 07:17 prezdbsb-mysqldump-20230410.sql
+-rw-rw-r--  1 davidho davidho 7320 Apr 10 07:17 prezdbsb-mysqldump-20230410b.sql
+-rw-rw-r--  1 davidho davidho 7290 Apr 10 07:29 prezdbsb-mysqldump-20230410c.sql
+drwxrwxr-x  8 davidho davidho 4096 Apr 10 07:52 .git
+-rw-rw-r--  1 davidho davidho 4757 Apr 11 08:02 prezdbsb-mysqldump-20230411.sql
+-rw-rw-r--  1 davidho davidho 7536 Apr 11 08:02 prezdbsb-mysqldump-20230411b.sql
+-rw-rw-r--  1 davidho davidho 7506 Apr 11 08:23 prezdbsb-mysqldump-20230411c.sql
+-rw-rw-r--  1 davidho davidho 4757 Apr 12 09:40 prezdbsb-mysqldump-20230412.sql
+-rw-rw-r--  1 davidho davidho 7695 Apr 12 09:40 prezdbsb-mysqldump-20230412b.sql
+-rw-rw-r--  1 davidho davidho 7506 Apr 12 09:40 prezdbsb-mysqldump-20230412c.sql
+drwxr-xr-x 10 davidho davidho 4096 Apr 12 09:40 .
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+curl localhost:8080/api
+curl localhost:8080/data-api
+
+curl localhost:8080/api/presidents/18
+curl localhost:8080/api/presidents/18 | jq
+curl localhost:8080/api/presidents/19
+curl localhost:8080/api/presidents/19 | jq
+curl localhost:8080/api/presidents/9999
+
+curl localhost:8080/api/terms/1
+curl localhost:8080/api/terms/1 | jq
+curl localhost:8080/api/terms?recent
+
+curl localhost:8080/api/elections/1
+curl localhost:8080/api/elections/1 | jq
+curl localhost:8080/api/elections?recent
+
+curl http://localhost:8080/data-api/presidents
+curl http://localhost:8080/prezinfosb/data-api/presidents
+curl http://localhost:8080/data-api/presidents
+curl http://localhost:8080/data-api/elections
+curl http://localhost:8080/data-api/presidents
+curl http://localhost:8080/data-api/presidents?page=0&size=3
+curl 'http://localhost:8080/data-api/presidents?page=0&size=3'
+curl 'http://localhost:8080/data-api/presidents?page=1&size=3'
+curl http://localhost:8080/data-api/presidents/19
+curl http://localhost:8080/president/19
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ curl localhost:8080/api
+{"timestamp":"2023-04-12T12:03:52.363+00:00","status":404,"error":"Not Found","path":"/api"}
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ curl localhost:8080/data-api
+{
+  "_links" : {
+    "terms" : {
+      "href" : "http://localhost:8080/data-api/terms{?page,size,sort}",
+      "templated" : true
+    },
+    "presidents" : {
+      "href" : "http://localhost:8080/data-api/presidents{?page,size,sort}",
+      "templated" : true
+    },
+    "elections" : {
+      "href" : "http://localhost:8080/data-api/elections{?page,size,sort}",
+      "templated" : true
+    },
+    "profile" : {
+      "href" : "http://localhost:8080/data-api/profile"
+    }
+  }
+}davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+mysql> 
+mysql> use prezdbsb;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++--------------------+
+| Tables_in_prezdbsb |
++--------------------+
+| election           |
+| election_seq       |
+| president          |
+| president_seq      |
+| term               |
+| term_seq           |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> 
+mysql> 
+mysql> desc president;
++---------------------+--------------+------+-----+---------+-------+
+| Field               | Type         | Null | Key | Default | Extra |
++---------------------+--------------+------+-----+---------+-------+
+| id                  | bigint       | NO   | PRI | NULL    |       |
+| first_inaug_address | text         | YES  |     | NULL    |       |
+| first_inaug_date    | datetime(6)  | YES  |     | NULL    |       |
+| first_name          | varchar(255) | YES  |     | NULL    |       |
+| last_name           | varchar(255) | YES  |     | NULL    |       |
+| middle_name         | varchar(255) | YES  |     | NULL    |       |
+| political_party     | varchar(255) | YES  |     | NULL    |       |
++---------------------+--------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> desc election;
++-------------------------------+---------------+------+-----+---------+-------+
+| Field                         | Type          | Null | Key | Default | Extra |
++-------------------------------+---------------+------+-----+---------+-------+
+| id                            | bigint        | NO   | PRI | NULL    |       |
+| election_date                 | datetime(6)   | YES  |     | NULL    |       |
+| incumb_won_election           | bit(1)        | YES  |     | NULL    |       |
+| percent_winner_electoral_vote | float         | YES  |     | NULL    |       |
+| percent_winner_popular_vote   | double        | YES  |     | NULL    |       |
+| somebdvalue                   | decimal(38,2) | YES  |     | NULL    |       |
+| somebivalue                   | decimal(38,0) | YES  |     | NULL    |       |
+| total_electoral_vote          | int           | YES  |     | NULL    |       |
+| total_popular_vote            | bigint        | YES  |     | NULL    |       |
+| winner_electoral_vote         | int           | YES  |     | NULL    |       |
+| winner_popular_vote           | bigint        | YES  |     | NULL    |       |
+| president_id                  | bigint        | YES  | MUL | NULL    |       |
++-------------------------------+---------------+------+-----+---------+-------+
+12 rows in set (0.00 sec)
+
+mysql> desc term;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| id           | bigint      | NO   | PRI | NULL    |       |
+| beg_date     | datetime(6) | YES  |     | NULL    |       |
+| end_date     | datetime(6) | YES  |     | NULL    |       |
+| president_id | bigint      | YES  | MUL | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> desc president_seq;
++----------+--------+------+-----+---------+-------+
+| Field    | Type   | Null | Key | Default | Extra |
++----------+--------+------+-----+---------+-------+
+| next_val | bigint | YES  |     | NULL    |       |
++----------+--------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> desc election_seq ;
++----------+--------+------+-----+---------+-------+
+| Field    | Type   | Null | Key | Default | Extra |
++----------+--------+------+-----+---------+-------+
+| next_val | bigint | YES  |     | NULL    |       |
++----------+--------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> desc term_seq;
++----------+--------+------+-----+---------+-------+
+| Field    | Type   | Null | Key | Default | Extra |
++----------+--------+------+-----+---------+-------+
+| next_val | bigint | YES  |     | NULL    |       |
++----------+--------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> 
+mysql> select * from president;
++----+---------------------+------------------+------------+------------+-------------+-----------------------+
+| id | first_inaug_address | first_inaug_date | first_name | last_name  | middle_name | political_party       |
++----+---------------------+------------------+------------+------------+-------------+-----------------------+
+|  1 | NULL                | NULL             | George     | Washington |             | Unaffiliated          |
+|  2 | NULL                | NULL             | John       | Adams      |             | Federalist            |
+|  3 | NULL                | NULL             | Thomas     | Jefferson  |             | Democratic-Republican |
+|  4 | NULL                | NULL             | Abraham    | Lincoln    |             | Republican            |
+|  5 | NULL                | NULL             | Theodore   | Roosevelt  |             | Republican            |
+|  6 | NULL                | NULL             | William    | Taft       | Howard      | Republican            |
+|  7 | NULL                | NULL             | Woodrow    | Wilson     |             | Democratic            |
+|  8 | NULL                | NULL             | Warren     | Harding    | G.          | Republican            |
+|  9 | NULL                | NULL             | Calvin     | Coolidge   |             | Republican            |
+| 10 | NULL                | NULL             | Herbert    | Hoover     |             | Republican            |
+| 11 | NULL                | NULL             | Franklin   | Roosevelt  | D.          | Democratic            |
+| 12 | NULL                | NULL             | Harry      | Truman     | S.          | Democratic            |
+| 13 | NULL                | NULL             | Dwight     | Eisenhower | D.          | Republican            |
+| 14 | NULL                | NULL             | John       | Kennedy    | F.          | Democratic            |
+| 15 | NULL                | NULL             | Lyndon     | Johnson    | B.          | Democratic            |
+| 16 | NULL                | NULL             | Richard    | Nixon      |             | Republican            |
+| 17 | NULL                | NULL             | Gerald     | Ford       |             | Republican            |
+| 18 | NULL                | NULL             | Jimmy      | Carter     |             | Democratic            |
+| 19 | NULL                | NULL             | Ronald     | Reagan     |             | Republican            |
+| 20 | NULL                | NULL             | George     | Bush       | H. W.       | Republican            |
+| 21 | NULL                | NULL             | Bill       | Clinton    |             | Democratic            |
+| 22 | NULL                | NULL             | George     | Bush       | W.          | Republican            |
+| 23 | NULL                | NULL             | Barack     | Obama      |             | Democratic            |
+| 24 | NULL                | NULL             | Donald     | Trump      |             | Republican            |
+| 25 | NULL                | NULL             | Joe        | Biden      |             | Democratic            |
++----+---------------------+------------------+------------+------------+-------------+-----------------------+
+25 rows in set (0.00 sec)
+
+mysql> select * from term;
++----+----------------------------+----------------------------+--------------+
+| id | beg_date                   | end_date                   | president_id |
++----+----------------------------+----------------------------+--------------+
+|  1 | 1981-01-20 00:00:00.000000 | 1985-01-20 00:00:00.000000 |           19 |
+|  2 | 1985-01-20 00:00:00.000000 | 1989-01-20 00:00:00.000000 |           19 |
++----+----------------------------+----------------------------+--------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from election;
++----+----------------------------+------------------------------------------+-------------------------------+-----------------------------+-------------+-------------+----------------------+--------------------+-----------------------+---------------------+--------------+
+| id | election_date              | incumb_won_election                      | percent_winner_electoral_vote | percent_winner_popular_vote | somebdvalue | somebivalue | total_electoral_vote | total_popular_vote | winner_electoral_vote | winner_popular_vote | president_id |
++----+----------------------------+------------------------------------------+-------------------------------+-----------------------------+-------------+-------------+----------------------+--------------------+-----------------------+---------------------+--------------+
+|  1 | 1980-11-04 00:00:00.000000 | 0x00                                     |                          NULL |                        NULL |        NULL |        NULL |                  538 |           86509678 |                   489 |            43903230 |           19 |
+|  2 | 1984-11-06 00:00:00.000000 | 0x01                                     |                          NULL |                        NULL |        NULL |        NULL |                  538 |           92653233 |                   525 |            54455472 |           19 |
++----+----------------------------+------------------------------------------+-------------------------------+-----------------------------+-------------+-------------+----------------------+--------------------+-----------------------+---------------------+--------------+
+2 rows in set (0.00 sec)
+
+mysql> 
+mysql> select id, president_id, election_date, incumb_won_election, winner_electoral_vote, winner_popular_vote, total_electoral_vote, total_popular_vote from election;
++----+--------------+----------------------------+------------------------------------------+-----------------------+---------------------+----------------------+--------------------+
+| id | president_id | election_date              | incumb_won_election                      | winner_electoral_vote | winner_popular_vote | total_electoral_vote | total_popular_vote |
++----+--------------+----------------------------+------------------------------------------+-----------------------+---------------------+----------------------+--------------------+
+|  1 |           19 | 1980-11-04 00:00:00.000000 | 0x00                                     |                   489 |            43903230 |                  538 |           86509678 |
+|  2 |           19 | 1984-11-06 00:00:00.000000 | 0x01                                     |                   525 |            54455472 |                  538 |           92653233 |
++----+--------------+----------------------------+------------------------------------------+-----------------------+---------------------+----------------------+--------------------+
+2 rows in set (0.00 sec)
+
+mysql> 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ curl localhost:8080/api/presidents/18 | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   168    0   168    0     0  19917      0 --:--:-- --:--:-- --:--:-- 21000
+{
+  "id": 18,
+  "firstName": "Jimmy",
+  "middleName": "",
+  "lastName": "Carter",
+  "politicalParty": "Democratic",
+  "firstInaugDate": null,
+  "firstInaugAddress": null,
+  "elections": [],
+  "terms": []
+}
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ curl localhost:8080/api/presidents/19 | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   980    0   980    0     0   118k      0 --:--:-- --:--:-- --:--:--  119k
+{
+  "id": 19,
+  "firstName": "Ronald",
+  "middleName": "",
+  "lastName": "Reagan",
+  "politicalParty": "Republican",
+  "firstInaugDate": null,
+  "firstInaugAddress": null,
+  "elections": [
+    {
+      "id": 1,
+      "electionDate": "1980-11-04T05:00:00.000+00:00",
+      "incumbWonElection": false,
+      "winnerElectoralVote": 489,
+      "winnerPopularVote": 43903230,
+      "totalElectoralVote": 538,
+      "totalPopularVote": 86509678,
+      "percentWinnerElectoralVote": 0.90892196,
+      "percentWinnerPopularVote": 0.5074950111362106,
+      "someBIValue": null,
+      "someBDValue": null
+    },
+    {
+      "id": 2,
+      "electionDate": "1984-11-06T05:00:00.000+00:00",
+      "incumbWonElection": true,
+      "winnerElectoralVote": 525,
+      "winnerPopularVote": 54455472,
+      "totalElectoralVote": 538,
+      "totalPopularVote": 92653233,
+      "percentWinnerElectoralVote": 0.97583646,
+      "percentWinnerPopularVote": 0.5877341808461233,
+      "someBIValue": null,
+      "someBDValue": null
+    }
+  ],
+  "terms": [
+    {
+      "id": 1,
+      "begDate": "1981-01-20T05:00:00.000+00:00",
+      "endDate": "1985-01-20T05:00:00.000+00:00"
+    },
+    {
+      "id": 2,
+      "begDate": "1985-01-20T05:00:00.000+00:00",
+      "endDate": "1989-01-20T05:00:00.000+00:00"
+    }
+  ]
+}
+davidho@dphxps17:~$ curl localhost:8080/api/terms
+{"timestamp":"2023-04-12T13:51:33.859+00:00","status":400,"error":"Bad Request","path":"/api/terms"}davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ curl localhost:8080/api/terms/1
+{"id":1,"begDate":"1981-01-20T05:00:00.000+00:00","endDate":"1985-01-20T05:00:00.000+00:00"}davidho@dphxps17:~$ 
+davidho@dphxps17:~$ curl localhost:8080/api/terms/1 | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    92    0    92    0     0  17594      0 --:--:-- --:--:-- --:--:-- 18400
+{
+  "id": 1,
+  "begDate": "1981-01-20T05:00:00.000+00:00",
+  "endDate": "1985-01-20T05:00:00.000+00:00"
+}
+davidho@dphxps17:~$ curl localhost:8080/api/elections/1
+{"id":1,"electionDate":"1980-11-04T05:00:00.000+00:00","incumbWonElection":false,"winnerElectoralVote":489,"winnerPopularVote":43903230,"totalElectoralVote":538,"totalPopularVote":86509678,"percentWinnerElectoralVote":0.90892196,"percentWinnerPopularVote":0.5074950111362106,"someBIValue":null,"someBDValue":null}davidho@dphxps17:~$ 
+davidho@dphxps17:~$ curl localhost:8080/api/elections/1 | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   313    0   313    0     0  33583      0 --:--:-- --:--:-- --:--:-- 34777
+{
+  "id": 1,
+  "electionDate": "1980-11-04T05:00:00.000+00:00",
+  "incumbWonElection": false,
+  "winnerElectoralVote": 489,
+  "winnerPopularVote": 43903230,
+  "totalElectoralVote": 538,
+  "totalPopularVote": 86509678,
+  "percentWinnerElectoralVote": 0.90892196,
+  "percentWinnerPopularVote": 0.5074950111362106,
+  "someBIValue": null,
+  "someBDValue": null
+}
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+
+
+
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+/home/davidho/sbootprojs/prezinfosb/tomcat/logs/access_log.2023-04-11.log
+
+127.0.0.1 - - [12/Apr/2023:06:53:38 -0400] "GET /api/terms?recent HTTP/1.1" 404 109
+127.0.0.1 - - [12/Apr/2023:06:54:07 -0400] "GET /api/elections?recent HTTP/1.1" 500 277377
+127.0.0.1 - - [12/Apr/2023:06:55:12 -0400] "GET /api/elections?recent HTTP/1.1" 200 273692
+127.0.0.1 - - [12/Apr/2023:06:55:55 -0400] "GET /api/terms?recent HTTP/1.1" 404 109
+127.0.0.1 - - [12/Apr/2023:06:58:02 -0400] "GET /api/terms?recent HTTP/1.1" 404 109
+127.0.0.1 - - [12/Apr/2023:06:58:18 -0400] "GET /api/elections?recent HTTP/1.1" 500 273687
+127.0.0.1 - - [12/Apr/2023:07:23:45 -0400] "GET /api/terms?recent HTTP/1.1" 200 577
+127.0.0.1 - - [12/Apr/2023:07:23:52 -0400] "GET /api/terms?recent HTTP/1.1" 200 577
+127.0.0.1 - - [12/Apr/2023:07:24:17 -0400] "GET /api/elections?recent HTTP/1.1" 200 2962
+127.0.0.1 - - [12/Apr/2023:07:24:24 -0400] "GET /api/elections?recent HTTP/1.1" 200 2962
+127.0.0.1 - - [12/Apr/2023:07:29:35 -0400] "GET /api/terms?recent HTTP/1.1" 200 767
+127.0.0.1 - - [12/Apr/2023:07:29:45 -0400] "GET /api/terms?recent HTTP/1.1" 200 767
+127.0.0.1 - - [12/Apr/2023:07:30:02 -0400] "GET /api/elections?recent HTTP/1.1" 200 3553
+127.0.0.1 - - [12/Apr/2023:07:30:16 -0400] "GET /api/terms?recent HTTP/1.1" 200 767
+127.0.0.1 - - [12/Apr/2023:07:31:52 -0400] "GET /api/presidents/1 HTTP/1.1" 200 185
+127.0.0.1 - - [12/Apr/2023:07:32:00 -0400] "GET /api/presidents/1 HTTP/1.1" 200 185
+127.0.0.1 - - [12/Apr/2023:07:32:10 -0400] "GET /api/presidents/9999 HTTP/1.1" 200 14
+127.0.0.1 - - [12/Apr/2023:07:32:34 -0400] "GET /api/presidents/9999 HTTP/1.1" 200 14
+127.0.0.1 - - [12/Apr/2023:07:33:09 -0400] "GET /api/presidents/9999 HTTP/1.1" 200 14
+127.0.0.1 - - [12/Apr/2023:07:33:31 -0400] "GET /api/presidents/1 HTTP/1.1" 200 185
+127.0.0.1 - - [12/Apr/2023:07:33:37 -0400] "GET /api/presidents/1 HTTP/1.1" 200 185
+127.0.0.1 - - [12/Apr/2023:08:03:52 -0400] "GET /api HTTP/1.1" 404 103
+127.0.0.1 - - [12/Apr/2023:08:04:16 -0400] "GET /data-api HTTP/1.1" 200 492
+127.0.0.1 - - [12/Apr/2023:08:06:19 -0400] "GET /api/president/1 HTTP/1.1" 404 115
+127.0.0.1 - - [12/Apr/2023:08:13:31 -0400] "GET /api/president/19 HTTP/1.1" 404 116
+127.0.0.1 - - [12/Apr/2023:08:14:44 -0400] "GET /api/president/320 HTTP/1.1" 404 117
+127.0.0.1 - - [12/Apr/2023:08:15:24 -0400] "GET /api/presidents/320 HTTP/1.1" 200 961
+127.0.0.1 - - [12/Apr/2023:08:15:39 -0400] "GET /api/presidents/320 HTTP/1.1" 200 961
+127.0.0.1 - - [12/Apr/2023:08:15:44 -0400] "GET /api/presidents/320 HTTP/1.1" 200 961
+127.0.0.1 - - [12/Apr/2023:08:30:28 -0400] "GET /api/presidents/320 HTTP/1.1" 200 1001
+127.0.0.1 - - [12/Apr/2023:08:31:14 -0400] "GET /api/presidents/319 HTTP/1.1" 200 180
+127.0.0.1 - - [12/Apr/2023:08:45:37 -0400] "GET /api/presidents/19 HTTP/1.1" 200 992
+127.0.0.1 - - [12/Apr/2023:08:45:59 -0400] "GET /api/presidents/18 HTTP/1.1" 200 179
+127.0.0.1 - - [12/Apr/2023:08:47:34 -0400] "GET /api/terms?recent HTTP/1.1" 200 198
+127.0.0.1 - - [12/Apr/2023:08:48:38 -0400] "GET /api/elections?recent HTTP/1.1" 200 640
+127.0.0.1 - - [12/Apr/2023:08:48:48 -0400] "GET /api/elections?recent HTTP/1.1" 200 640
+127.0.0.1 - - [12/Apr/2023:09:02:00 -0400] "GET /api/presidents/9999 HTTP/1.1" 404 -
+127.0.0.1 - - [12/Apr/2023:09:02:13 -0400] "GET /api/presidents/1 HTTP/1.1" 200 185
+127.0.0.1 - - [12/Apr/2023:09:02:26 -0400] "GET /api/presidents/999 HTTP/1.1" 404 -
+127.0.0.1 - - [12/Apr/2023:09:02:49 -0400] "GET /api/presidents/9999 HTTP/1.1" 404 -
+127.0.0.1 - - [12/Apr/2023:09:06:37 -0400] "GET /api/terms HTTP/1.1" 400 111
+127.0.0.1 - - [12/Apr/2023:09:06:48 -0400] "GET /api/terms/1 HTTP/1.1" 200 103
+127.0.0.1 - - [12/Apr/2023:09:07:04 -0400] "GET /api/terms/9999 HTTP/1.1" 404 -
+127.0.0.1 - - [12/Apr/2023:09:09:54 -0400] "GET /api/terms/9999 HTTP/1.1" 404 -
+127.0.0.1 - - [12/Apr/2023:09:10:05 -0400] "GET /api/presidents/9999 HTTP/1.1" 404 -
+127.0.0.1 - - [12/Apr/2023:09:10:17 -0400] "GET /api/elections/9999 HTTP/1.1" 404 -
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+DROP DATABASE IF EXISTS prezdbsb;
+CREATE DATABASE prezdbsb;
+GRANT ALL PRIVILEGES ON prezdbsb.* TO 'prez'@'localhost' WITH GRANT OPTION;
+
+davidho@dphxps17:~/sbootprojs/prezinfosb$ date
+Wed Apr 12 10:08:06 AM EDT 2023
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ mysql     -u root -p prezdbsb        < prezdbsb-mysqldump-20230412c.sql
+Enter password: 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+
+mysql> 
+mysql> desc president;
++---------------------+--------------+------+-----+---------+-------+
+| Field               | Type         | Null | Key | Default | Extra |
++---------------------+--------------+------+-----+---------+-------+
+| id                  | int          | NO   | PRI | NULL    |       |
+| first_inaug_address | text         | YES  |     | NULL    |       |
+| first_inaug_date    | datetime(6)  | YES  |     | NULL    |       |
+| first_name          | varchar(255) | YES  |     | NULL    |       |
+| last_name           | varchar(255) | YES  |     | NULL    |       |
+| middle_name         | varchar(255) | YES  |     | NULL    |       |
+| political_party     | varchar(255) | YES  |     | NULL    |       |
++---------------------+--------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> desc election;
++-------------------------------+---------------+------+-----+---------+-------+
+| Field                         | Type          | Null | Key | Default | Extra |
++-------------------------------+---------------+------+-----+---------+-------+
+| id                            | int           | NO   | PRI | NULL    |       |
+| election_date                 | datetime(6)   | YES  |     | NULL    |       |
+| incumb_won_election           | bit(1)        | YES  |     | NULL    |       |
+| percent_winner_electoral_vote | float         | YES  |     | NULL    |       |
+| percent_winner_popular_vote   | double        | YES  |     | NULL    |       |
+| somebdvalue                   | decimal(38,2) | YES  |     | NULL    |       |
+| somebivalue                   | decimal(38,0) | YES  |     | NULL    |       |
+| total_electoral_vote          | int           | YES  |     | NULL    |       |
+| total_popular_vote            | int           | YES  |     | NULL    |       |
+| winner_electoral_vote         | int           | YES  |     | NULL    |       |
+| winner_popular_vote           | int           | YES  |     | NULL    |       |
+| president_id                  | int           | YES  | MUL | NULL    |       |
++-------------------------------+---------------+------+-----+---------+-------+
+12 rows in set (0.00 sec)
+
+mysql> desc term;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| id           | int         | NO   | PRI | NULL    |       |
+| beg_date     | datetime(6) | YES  |     | NULL    |       |
+| end_date     | datetime(6) | YES  |     | NULL    |       |
+| president_id | int         | YES  | MUL | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> desc president_seq;
++----------+------+------+-----+---------+-------+
+| Field    | Type | Null | Key | Default | Extra |
++----------+------+------+-----+---------+-------+
+| next_val | int  | YES  |     | NULL    |       |
++----------+------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> desc election_seq ;
++----------+------+------+-----+---------+-------+
+| Field    | Type | Null | Key | Default | Extra |
++----------+------+------+-----+---------+-------+
+| next_val | int  | YES  |     | NULL    |       |
++----------+------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> desc term_seq;
++----------+------+------+-----+---------+-------+
+| Field    | Type | Null | Key | Default | Extra |
++----------+------+------+-----+---------+-------+
+| next_val | int  | YES  |     | NULL    |       |
++----------+------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ curl localhost:8080/api/presidents/19 | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (7) Failed to connect to localhost port 8080 after 0 ms: Connection refused
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ curl localhost:8080/api/presidents/19 | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   795    0   795    0     0   6335      0 --:--:-- --:--:-- --:--:--  6309
+{
+  "id": 19,
+  "firstName": "Ronald",
+  "middleName": "",
+  "lastName": "Reagan",
+  "politicalParty": "Republican",
+  "firstInaugDate": null,
+  "firstInaugAddress": null,
+  "elections": [
+    {
+      "id": 1,
+      "electionDate": "2023-04-11T11:53:23.807+00:00",
+      "incumbWonElection": false,
+      "winnerElectoralVote": 489,
+      "winnerPopularVote": 43903230,
+      "totalElectoralVote": 538,
+      "totalPopularVote": 86509678,
+      "percentWinnerElectoralVote": 0.90892196,
+      "percentWinnerPopularVote": 0.5074950111362106,
+      "someBIValue": null,
+      "someBDValue": null
+    },
+    {
+      "id": 2,
+      "electionDate": "2023-04-11T11:53:23.807+00:00",
+      "incumbWonElection": true,
+      "winnerElectoralVote": 525,
+      "winnerPopularVote": 54455472,
+      "totalElectoralVote": 538,
+      "totalPopularVote": 92653233,
+      "percentWinnerElectoralVote": 0.97583646,
+      "percentWinnerPopularVote": 0.5877341808461233,
+      "someBIValue": null,
+      "someBDValue": null
+    }
+  ],
+  "terms": []
+}
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ curl localhost:8080/api/terms?recent
+[{"id":2,"begDate":"1985-01-20T05:00:00.000+00:00","endDate":"1989-01-20T05:00:00.000+00:00"},{"id":1,"begDate":"1981-01-20T05:00:00.000+00:00","endDate":"1985-01-20T05:00:00.000+00:00"}]davidho@dphxps17:~$ 
+davidho@dphxps17:~$ curl localhost:8080/api/terms?recent | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   187    0   187    0     0  28078      0 --:--:-- --:--:-- --:--:-- 31166
+[
+  {
+    "id": 2,
+    "begDate": "1985-01-20T05:00:00.000+00:00",
+    "endDate": "1989-01-20T05:00:00.000+00:00"
+  },
+  {
+    "id": 1,
+    "begDate": "1981-01-20T05:00:00.000+00:00",
+    "endDate": "1985-01-20T05:00:00.000+00:00"
+  }
+]
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ curl localhost:8080/api/elections?recent
+[{"id":2,"electionDate":"1984-11-06T05:00:00.000+00:00","incumbWonElection":true,"winnerElectoralVote":525,"winnerPopularVote":54455472,"totalElectoralVote":538,"totalPopularVote":92653233,"percentWinnerElectoralVote":0.97583646,"percentWinnerPopularVote":0.5877341808461233,"someBIValue":null,"someBDValue":null},{"id":1,"electionDate":"1980-11-04T05:00:00.000+00:00","incumbWonElection":false,"winnerElectoralVote":489,"winnerPopularVote":43903230,"totalElectoralVote":538,"totalPopularVote":86509678,"percentWinnerElectoralVote":0.90892196,"percentWinnerPopularVote":0.5074950111362106,"someBIValue":null,"someBDValue":null}]davidho@dphxps17:~$ 
+davidho@dphxps17:~$ curl localhost:8080/api/elections?recent | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   628    0   628    0     0  88688      0 --:--:-- --:--:-- --:--:-- 89714
+[
+  {
+    "id": 2,
+    "electionDate": "1984-11-06T05:00:00.000+00:00",
+    "incumbWonElection": true,
+    "winnerElectoralVote": 525,
+    "winnerPopularVote": 54455472,
+    "totalElectoralVote": 538,
+    "totalPopularVote": 92653233,
+    "percentWinnerElectoralVote": 0.97583646,
+    "percentWinnerPopularVote": 0.5877341808461233,
+    "someBIValue": null,
+    "someBDValue": null
+  },
+  {
+    "id": 1,
+    "electionDate": "1980-11-04T05:00:00.000+00:00",
+    "incumbWonElection": false,
+    "winnerElectoralVote": 489,
+    "winnerPopularVote": 43903230,
+    "totalElectoralVote": 538,
+    "totalPopularVote": 86509678,
+    "percentWinnerElectoralVote": 0.90892196,
+    "percentWinnerPopularVote": 0.5074950111362106,
+    "someBIValue": null,
+    "someBDValue": null
+  }
+]
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ curl -v localhost:8080/api/president/9999
+*   Trying 127.0.0.1:8080...
+* Connected to localhost (127.0.0.1) port 8080 (#0)
+> GET /api/president/9999 HTTP/1.1
+> Host: localhost:8080
+> User-Agent: curl/7.81.0
+> Accept: */*
+> 
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 404 
+< Vary: Origin
+< Vary: Access-Control-Request-Method
+< Vary: Access-Control-Request-Headers
+< Content-Type: application/json
+< Transfer-Encoding: chunked
+< Date: Wed, 12 Apr 2023 13:57:12 GMT
+< 
+* Connection #0 to host localhost left intact
+{"timestamp":"2023-04-12T13:57:12.204+00:00","status":404,"error":"Not Found","path":"/api/president/9999"}davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ curl -v localhost:8080/api/election/9999
+*   Trying 127.0.0.1:8080...
+* Connected to localhost (127.0.0.1) port 8080 (#0)
+> GET /api/election/9999 HTTP/1.1
+> Host: localhost:8080
+> User-Agent: curl/7.81.0
+> Accept: */*
+> 
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 404 
+< Vary: Origin
+< Vary: Access-Control-Request-Method
+< Vary: Access-Control-Request-Headers
+< Content-Type: application/json
+< Transfer-Encoding: chunked
+< Date: Wed, 12 Apr 2023 13:57:57 GMT
+< 
+* Connection #0 to host localhost left intact
+{"timestamp":"2023-04-12T13:57:57.758+00:00","status":404,"error":"Not Found","path":"/api/election/9999"}davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ curl -v localhost:8080/api/term/9999
+*   Trying 127.0.0.1:8080...
+* Connected to localhost (127.0.0.1) port 8080 (#0)
+> GET /api/term/9999 HTTP/1.1
+> Host: localhost:8080
+> User-Agent: curl/7.81.0
+> Accept: */*
+> 
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 404 
+< Vary: Origin
+< Vary: Access-Control-Request-Method
+< Vary: Access-Control-Request-Headers
+< Content-Type: application/json
+< Transfer-Encoding: chunked
+< Date: Wed, 12 Apr 2023 13:58:08 GMT
+< 
+* Connection #0 to host localhost left intact
+{"timestamp":"2023-04-12T13:58:08.537+00:00","status":404,"error":"Not Found","path":"/api/term/9999"}davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-20-04-quickstart
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-20-04
+https://www.digitalocean.com/community/tutorials/how-to-create-remove-manage-tables-in-postgresql-on-a-cloud-server
+https://www.digitalocean.com/community/tutorials/sqlite-vs-mysql-vs-postgresql-a-comparison-of-relational-database-management-systems
+
+davidho@dphxps17:~$ date
+Wed Apr 12 01:29:41 PM EDT 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ uname -a
+Linux dphxps17 5.19.0-38-generic #39~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Fri Mar 17 21:16:15 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ systemctl list-units --type=service --state=running
+  UNIT                          LOAD   ACTIVE SUB     DESCRIPTION                                                     
+  accounts-daemon.service       loaded active running Accounts Service
+  acpid.service                 loaded active running ACPI event daemon
+  avahi-daemon.service          loaded active running Avahi mDNS/DNS-SD Stack
+  bluetooth.service             loaded active running Bluetooth service
+  bolt.service                  loaded active running Thunderbolt system service
+  colord.service                loaded active running Manage, Install and Generate Color Profiles
+  cron.service                  loaded active running Regular background program processing daemon
+  cups-browsed.service          loaded active running Make remote CUPS printers available locally
+  cups.service                  loaded active running CUPS Scheduler
+  dbus.service                  loaded active running D-Bus System Message Bus
+  fwupd.service                 loaded active running Firmware update daemon
+  gdm.service                   loaded active running GNOME Display Manager
+  iio-sensor-proxy.service      loaded active running IIO Sensor Proxy service
+  irqbalance.service            loaded active running irqbalance daemon
+  kerneloops.service            loaded active running Tool to automatically collect and submit kernel crash signatures
+  ModemManager.service          loaded active running Modem Manager
+  mysql.service                 loaded active running MySQL Community Server
+  networkd-dispatcher.service   loaded active running Dispatcher daemon for systemd-networkd
+  NetworkManager.service        loaded active running Network Manager
+  packagekit.service            loaded active running PackageKit Daemon
+  polkit.service                loaded active running Authorization Manager
+  power-profiles-daemon.service loaded active running Power Profiles daemon
+  rsyslog.service               loaded active running System Logging Service
+  rtkit-daemon.service          loaded active running RealtimeKit Scheduling Policy Service
+  snapd.service                 loaded active running Snap Daemon
+  switcheroo-control.service    loaded active running Switcheroo Control Proxy service
+  systemd-journald.service      loaded active running Journal Service
+  systemd-logind.service        loaded active running User Login Management
+  systemd-oomd.service          loaded active running Userspace Out-Of-Memory (OOM) Killer
+  systemd-resolved.service      loaded active running Network Name Resolution
+  systemd-timesyncd.service     loaded active running Network Time Synchronization
+  systemd-udevd.service         loaded active running Rule-based Manager for Device Events and Files
+  thermald.service              loaded active running Thermal Daemon Service
+  udisks2.service               loaded active running Disk Manager
+  unattended-upgrades.service   loaded active running Unattended Upgrades Shutdown
+  upower.service                loaded active running Daemon for power management
+  user@1000.service             loaded active running User Manager for UID 1000
+  wpa_supplicant.service        loaded active running WPA supplicant
+
+LOAD   = Reflects whether the unit definition was properly loaded.
+ACTIVE = The high-level unit activation state, i.e. generalization of SUB.
+SUB    = The low-level unit activation state, values depend on unit type.
+38 loaded units listed.
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ cat /etc/passwd | sort
+_apt:x:105:65534::/nonexistent:/usr/sbin/nologin
+avahi-autoipd:x:110:119:Avahi autoip daemon,,,:/var/lib/avahi-autoipd:/usr/sbin/nologin
+avahi:x:114:121:Avahi mDNS daemon,,,:/run/avahi-daemon:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+colord:x:122:129:colord colour management daemon,,,:/var/lib/colord:/usr/sbin/nologin
+cups-pk-helper:x:115:122:user for cups-pk-helper service,,,:/home/cups-pk-helper:/usr/sbin/nologin
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+davidho:x:1000:1000:David Holberton,,,:/home/davidho:/bin/bash
+dnsmasq:x:112:65534:dnsmasq,,,:/var/lib/misc:/usr/sbin/nologin
+fwupd-refresh:x:130:138:fwupd-refresh user,,,:/run/systemd:/usr/sbin/nologin
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+gdm:x:127:133:Gnome Display Manager:/var/lib/gdm3:/bin/false
+geoclue:x:123:130::/var/lib/geoclue:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+gnome-initial-setup:x:125:65534::/run/gnome-initial-setup/:/bin/false
+hplip:x:126:7:HPLIP system user,,,:/run/hplip:/bin/false
+irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
+kernoops:x:113:65534:Kernel Oops Tracking Daemon,,,:/:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+messagebus:x:102:105::/nonexistent:/usr/sbin/nologin
+mysql:x:129:137:MySQL Server,,,:/nonexistent:/bin/false
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+nm-openvpn:x:120:126:NetworkManager OpenVPN,,,:/var/lib/openvpn/chroot:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+nvidia-persistenced:x:128:136:NVIDIA Persistence Daemon,,,:/nonexistent:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+pulse:x:124:131:PulseAudio daemon,,,:/run/pulse:/usr/sbin/nologin
+root:x:0:0:root:/root:/bin/bash
+rtkit:x:116:123:RealtimeKit,,,:/proc:/usr/sbin/nologin
+saned:x:121:128::/var/lib/saned:/usr/sbin/nologin
+speech-dispatcher:x:119:29:Speech Dispatcher,,,:/run/speech-dispatcher:/bin/false
+sssd:x:118:125:SSSD system user,,,:/var/lib/sss:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+syslog:x:104:111::/home/syslog:/usr/sbin/nologin
+systemd-network:x:100:102:systemd Network Management,,,:/run/systemd:/usr/sbin/nologin
+systemd-oom:x:108:116:systemd Userspace OOM Killer,,,:/run/systemd:/usr/sbin/nologin
+systemd-resolve:x:101:103:systemd Resolver,,,:/run/systemd:/usr/sbin/nologin
+systemd-timesync:x:103:106:systemd Time Synchronization,,,:/run/systemd:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+tcpdump:x:109:117::/nonexistent:/usr/sbin/nologin
+tss:x:106:112:TPM software stack,,,:/var/lib/tpm:/bin/false
+usbmux:x:111:46:usbmux daemon,,,:/var/lib/usbmux:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+uuidd:x:107:115::/run/uuidd:/usr/sbin/nologin
+whoopsie:x:117:124::/nonexistent:/bin/false
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+sudo apt update
+sudo apt install postgresql postgresql-contrib
+sudo systemctl start postgresql.service
+
+sudo -i -u postgres
+psql
+\q
+exit
+
+sudo -u postgres psql
+\q
+
+If you are logged in as the postgres account, you can create a new role by running the following command:
+createuser --interactive
+
+If, instead, you prefer to use sudo for each command without switching from your normal account, run:
+sudo -u postgres createuser --interactive
+
+Output
+Enter name of role to add: sammy
+Shall the new role be a superuser? (y/n) y
+
+createdb sammy
+sudo -u postgres createdb sammy
+
+sudo adduser sammy
+
+sudo -i -u sammy
+psql
+
+sudo -u sammy psql
+
+psql -d postgres
+\conninfo
+
+Output
+You are connected to database "sammy" as user "sammy" via socket in "/var/run/postgresql" at port "5432".
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ systemctl list-units --type=service --state=running | grep -i sql
+  mysql.service                 loaded active running MySQL Community Server
+  postgresql@14-main.service    loaded active running PostgreSQL Cluster 14-main
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ cat /etc/passwd | sort | grep -i "mysql\|postgres"
+mysql:x:129:137:MySQL Server,,,:/nonexistent:/bin/false
+postgres:x:131:139:PostgreSQL administrator,,,:/var/lib/postgresql:/bin/bash
+davidho@dphxps17:~$ 
+
+davidho@dphxps17:~$ sudo -i -u postgres
+postgres@dphxps17:~$ createuser --interactive
+Enter name of role to add: sammy
+Shall the new role be a superuser? (y/n) y
+postgres@dphxps17:~$ 
+
+sammyP@$$
+
+davidho@dphxps17:~$ sudo adduser sammy
+Adding user `sammy' ...
+Adding new group `sammy' (1002) ...
+Adding new user `sammy' (1001) with group `sammy' ...
+Creating home directory `/home/sammy' ...
+Copying files from `/etc/skel' ...
+New password: 
+BAD PASSWORD: The password is shorter than 8 characters
+Retype new password: 
+Sorry, passwords do not match.
+New password: 
+BAD PASSWORD: The password contains the user name in some form
+Retype new password: 
+passwd: password updated successfully
+Changing the user information for sammy
+Enter the new value, or press ENTER for the default
+	Full Name []: Samuel Langhorne Clemens
+	Room Number []: 1865
+	Work Phone []: 703.555.1865
+	Home Phone []: 703.555.1910
+	Other []: 
+Is the information correct? [Y/n] Y
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ cat /etc/passwd | grep "mysql\|postgres\|sammy"
+mysql:x:129:137:MySQL Server,,,:/nonexistent:/bin/false
+postgres:x:131:139:PostgreSQL administrator,,,:/var/lib/postgresql:/bin/bash
+sammy:x:1001:1002:Samuel Langhorne Clemens,1865,703.555.1865,703.555.1910:/home/sammy:/bin/bash
+davidho@dphxps17:~$ 
+
+\list
+\l
+\connect sales
+\c sales
+\dt
+\conninfo
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ sudo -u sammy psql
+could not change directory to "/home/davidho": Permission denied
+psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  database "sammy" does not exist
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ sudo -i -u sammy
+sammy@dphxps17:~$ psql
+psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  database "sammy" does not exist
+sammy@dphxps17:~$ exit
+logout
+davidho@dphxps17:~$ sudo -i -u postgres
+postgres@dphxps17:~$ psql
+psql (14.7 (Ubuntu 14.7-0ubuntu0.22.04.1))
+Type "help" for help.
+
+postgres=# \l
+                                  List of databases
+   Name    |  Owner   | Encoding |   Collate   |    Ctype    |   Access privileges   
+-----------+----------+----------+-------------+-------------+-----------------------
+ postgres  | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ template0 | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +
+           |          |          |             |             | postgres=CTc/postgres
+ template1 | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +
+           |          |          |             |             | postgres=CTc/postgres
+(3 rows)
+
+postgres-# \q
+postgres@dphxps17:~$ createdb sammy
+postgres@dphxps17:~$ psql
+psql (14.7 (Ubuntu 14.7-0ubuntu0.22.04.1))
+Type "help" for help.
+
+postgres=# \l
+                                  List of databases
+   Name    |  Owner   | Encoding |   Collate   |    Ctype    |   Access privileges   
+-----------+----------+----------+-------------+-------------+-----------------------
+ postgres  | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ sammy     | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ template0 | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +
+           |          |          |             |             | postgres=CTc/postgres
+ template1 | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +
+           |          |          |             |             | postgres=CTc/postgres
+(4 rows)
+
+postgres=# c sammy
+postgres-# \c sammy
+You are now connected to database "sammy" as user "postgres".
+sammy-# 
+sammy-# \dt
+Did not find any relations.
+sammy-# 
+sammy-# \q
+postgres@dphxps17:~$ exit
+logout
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://www.bezkoder.com/spring-boot-postgresql-example/
+
+spring.datasource.url= jdbc:postgresql://localhost:5432/testdb
+spring.datasource.username= postgres
+spring.datasource.password= 123
+
+spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation= true
+spring.jpa.properties.hibernate.dialect= org.hibernate.dialect.PostgreSQLDialect
+
+# Hibernate ddl auto (create, create-drop, validate, update)
+spring.jpa.hibernate.ddl-auto= update
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   src/main/java/ashburncode/prezinfosb/PrezinfosbApplication.java
+	modified:   src/main/java/ashburncode/prezinfosb/model/Election.java
+	modified:   src/main/java/ashburncode/prezinfosb/model/President.java
+	modified:   src/main/java/ashburncode/prezinfosb/model/Term.java
+	modified:   src/main/resources/application.properties
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	prezdbsb-mysqldump-20230411.sql
+	prezdbsb-mysqldump-20230411b.sql
+	prezdbsb-mysqldump-20230411c.sql
+	prezdbsb-mysqldump-20230412.sql
+	prezdbsb-mysqldump-20230412b.sql
+	prezdbsb-mysqldump-20230412c.sql
+	prezdbsb-mysqldump-20230412d.sql
+	src/main/java/ashburncode/prezinfosb/controller/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+davidho@dphxps17:~/sbootprojs/prezinfosb$ git add .
+davidho@dphxps17:~/sbootprojs/prezinfosb$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   prezdbsb-mysqldump-20230411.sql
+	new file:   prezdbsb-mysqldump-20230411b.sql
+	new file:   prezdbsb-mysqldump-20230411c.sql
+	new file:   prezdbsb-mysqldump-20230412.sql
+	new file:   prezdbsb-mysqldump-20230412b.sql
+	new file:   prezdbsb-mysqldump-20230412c.sql
+	new file:   prezdbsb-mysqldump-20230412d.sql
+	modified:   src/main/java/ashburncode/prezinfosb/PrezinfosbApplication.java
+	new file:   src/main/java/ashburncode/prezinfosb/controller/ElectionController.java
+	new file:   src/main/java/ashburncode/prezinfosb/controller/PresidentController.java
+	new file:   src/main/java/ashburncode/prezinfosb/controller/TermController.java
+	modified:   src/main/java/ashburncode/prezinfosb/model/Election.java
+	modified:   src/main/java/ashburncode/prezinfosb/model/President.java
+	modified:   src/main/java/ashburncode/prezinfosb/model/Term.java
+	modified:   src/main/resources/application.properties
+
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ git commit -a -m "add controller for president, election, term"
+[main e5ad564] add controller for president, election, term
+ 15 files changed, 1428 insertions(+), 16 deletions(-)
+ create mode 100644 prezdbsb-mysqldump-20230411.sql
+ create mode 100644 prezdbsb-mysqldump-20230411b.sql
+ create mode 100644 prezdbsb-mysqldump-20230411c.sql
+ create mode 100644 prezdbsb-mysqldump-20230412.sql
+ create mode 100644 prezdbsb-mysqldump-20230412b.sql
+ create mode 100644 prezdbsb-mysqldump-20230412c.sql
+ create mode 100644 prezdbsb-mysqldump-20230412d.sql
+ create mode 100644 src/main/java/ashburncode/prezinfosb/controller/ElectionController.java
+ create mode 100644 src/main/java/ashburncode/prezinfosb/controller/PresidentController.java
+ create mode 100644 src/main/java/ashburncode/prezinfosb/controller/TermController.java
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ git push
+Enumerating objects: 37, done.
+Counting objects: 100% (37/37), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (22/22), done.
+Writing objects: 100% (24/24), 5.81 KiB | 5.81 MiB/s, done.
+Total 24 (delta 13), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (13/13), completed with 6 local objects.
+To github.com:ashburndev/prezinfosb.git
+   11f805b..e5ad564  main -> main
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ git log --pretty=format:"%h - %an, %ad : %s" -10
+e5ad564 - ashburndev, Wed Apr 12 16:16:44 2023 -0400 : add controller for president, election, term
+11f805b - ashburndev, Mon Apr 10 07:52:54 2023 -0400 : add more presidents to ApplicationRunner
+24f37f2 - ashburndev, Sun Apr 9 22:15:17 2023 -0400 : add ApplicationRunner to PrezinfosbApplication
+8222293 - ashburndev, Fri Apr 7 07:54:48 2023 -0400 : used eclipse to generate getters setters hashCode equals and toString
+b633e4e - ashburndev, Thu Apr 6 07:27:19 2023 -0400 : modify President.java
+fd6b93d - ashburndev, Wed Apr 5 07:46:56 2023 -0400 : add Term.java and TermRepository.java
+e1a1bf4 - ashburndev, Tue Apr 4 07:15:33 2023 -0400 : add prezdbsb-mysqldump-20230404.sql modify application.properties
+6b9a6cc - ashburndev, Tue Mar 21 08:14:29 2023 -0400 : initial commit
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
