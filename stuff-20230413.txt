@@ -1,0 +1,978 @@
+davidho@dphxps17:~$ date
+Thu Apr 13 04:21:35 AM EDT 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ code stuff-20230413.txt
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://jstobigdata.com/jpa/identifiers-overview-primary-key-generation-strategy/
+https://docs.jboss.org/hibernate/orm/5.0/mappingGuide/en-US/html/ch06.html
+https://thorben-janssen.com/jpa-generate-primary-keys/
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.SEQUENCE)
+  private Long id;
+
+  +--------------------+
+  | Tables_in_prezdbsb |
+  +--------------------+
+  | election           |
+  | election_seq       |
+  | president          |
+  | president_seq      |
+  | term               |
+  | term_seq           |
+  +--------------------+
+  6 rows in set (0.00 sec)
+
+https://www.baeldung.com/hibernate-identifiers
+
+@Entity
+public class User {
+    @Id
+    @GeneratedValue(generator = "sequence-generator")
+    @GenericGenerator(
+      name = "sequence-generator",
+      strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator",
+      parameters = {
+        @Parameter(name = "sequence_name", value = "user_sequence"),
+        @Parameter(name = "initial_value", value = "4"),
+        @Parameter(name = "increment_size", value = "1")
+        }
+    )
+    private long userId;
+    
+    // ...
+}
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+/home/davidho/sbootprojs/prezinfosb/src/main/java/ashburncode/prezinfosb/model/President.java
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+
+/home/davidho/sbootprojs/prezinfosb/src/main/java/ashburncode/prezinfosb/model/Election.java
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+
+/home/davidho/sbootprojs/prezinfosb/src/main/java/ashburncode/prezinfosb/model/Term.java
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+
+... try changing all of the above to ...
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.SEQUENCE)
+  private Long id;
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+... that did not give the desired result, so try ...
+
+  @Id
+  @GeneratedValue(generator = "sequence-generator")
+  @GenericGenerator(name = "sequence-generator", strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator")
+
+
+mysql> show tables;
++--------------------+
+| Tables_in_prezdbsb |
++--------------------+
+| election           |
+| president          |
+| sequence-generator |
+| term               |
++--------------------+
+4 rows in set (0.00 sec)
+
+mysql> desc sequence-generator;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-generator' at line 1
+mysql> 
+mysql> desc 'sequence-generator';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''sequence-generator'' at line 1
+mysql> 
+mysql> desc "sequence-generator";
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '"sequence-generator"' at line 1
+mysql> 
+mysql> desc election;
++-------------------------------+---------------+------+-----+---------+-------+
+| Field                         | Type          | Null | Key | Default | Extra |
++-------------------------------+---------------+------+-----+---------+-------+
+| id                            | bigint        | NO   | PRI | NULL    |       |
+| election_date                 | datetime(6)   | YES  |     | NULL    |       |
+| incumb_won_election           | bit(1)        | YES  |     | NULL    |       |
+| percent_winner_electoral_vote | float         | YES  |     | NULL    |       |
+| percent_winner_popular_vote   | double        | YES  |     | NULL    |       |
+| somebdvalue                   | decimal(38,2) | YES  |     | NULL    |       |
+| somebivalue                   | decimal(38,0) | YES  |     | NULL    |       |
+| total_electoral_vote          | int           | YES  |     | NULL    |       |
+| total_popular_vote            | bigint        | YES  |     | NULL    |       |
+| winner_electoral_vote         | int           | YES  |     | NULL    |       |
+| winner_popular_vote           | bigint        | YES  |     | NULL    |       |
+| president_id                  | bigint        | YES  | MUL | NULL    |       |
++-------------------------------+---------------+------+-----+---------+-------+
+12 rows in set (0.01 sec)
+
+mysql> desc president;
++---------------------+--------------+------+-----+---------+-------+
+| Field               | Type         | Null | Key | Default | Extra |
++---------------------+--------------+------+-----+---------+-------+
+| id                  | bigint       | NO   | PRI | NULL    |       |
+| first_inaug_address | text         | YES  |     | NULL    |       |
+| first_inaug_date    | datetime(6)  | YES  |     | NULL    |       |
+| first_name          | varchar(255) | YES  |     | NULL    |       |
+| last_name           | varchar(255) | YES  |     | NULL    |       |
+| middle_name         | varchar(255) | YES  |     | NULL    |       |
+| political_party     | varchar(255) | YES  |     | NULL    |       |
++---------------------+--------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> desc term;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| id           | bigint      | NO   | PRI | NULL    |       |
+| beg_date     | datetime(6) | YES  |     | NULL    |       |
+| end_date     | datetime(6) | YES  |     | NULL    |       |
+| president_id | bigint      | YES  | MUL | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+... the above made a difference (no more individual _seq tables), but the one table is not named hibernate_sequence, and I can not describe it? ...
+... so try the followig ...
+
+  @Id
+  @GeneratedValue(generator = "hibernate_sequence")
+  @GenericGenerator(
+    name = "hibernate_sequence",
+    strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator",
+    parameters = {
+      @Parameter(name = "sequence_name", value = "user_sequence"),
+      @Parameter(name = "initial_value", value = "1"),
+      @Parameter(name = "increment_size", value = "1")
+      }
+  )
+  private Long id;
+
+
+mysql> show tables;
++--------------------+
+| Tables_in_prezdbsb |
++--------------------+
+| election           |
+| president          |
+| term               |
+| user_sequence      |
++--------------------+
+4 rows in set (0.00 sec)
+
+mysql> 
+mysql> desc user_sequence;
++----------+--------+------+-----+---------+-------+
+| Field    | Type   | Null | Key | Default | Extra |
++----------+--------+------+-----+---------+-------+
+| next_val | bigint | YES  |     | NULL    |       |
++----------+--------+------+-----+---------+-------+
+1 row in set (0.01 sec)
+
+mysql> 
+mysql> desc president;
++---------------------+--------------+------+-----+---------+-------+
+| Field               | Type         | Null | Key | Default | Extra |
++---------------------+--------------+------+-----+---------+-------+
+| id                  | bigint       | NO   | PRI | NULL    |       |
+| first_inaug_address | text         | YES  |     | NULL    |       |
+| first_inaug_date    | datetime(6)  | YES  |     | NULL    |       |
+| first_name          | varchar(255) | YES  |     | NULL    |       |
+| last_name           | varchar(255) | YES  |     | NULL    |       |
+| middle_name         | varchar(255) | YES  |     | NULL    |       |
+| political_party     | varchar(255) | YES  |     | NULL    |       |
++---------------------+--------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> desc election;
++-------------------------------+---------------+------+-----+---------+-------+
+| Field                         | Type          | Null | Key | Default | Extra |
++-------------------------------+---------------+------+-----+---------+-------+
+| id                            | bigint        | NO   | PRI | NULL    |       |
+| election_date                 | datetime(6)   | YES  |     | NULL    |       |
+| incumb_won_election           | bit(1)        | YES  |     | NULL    |       |
+| percent_winner_electoral_vote | float         | YES  |     | NULL    |       |
+| percent_winner_popular_vote   | double        | YES  |     | NULL    |       |
+| somebdvalue                   | decimal(38,2) | YES  |     | NULL    |       |
+| somebivalue                   | decimal(38,0) | YES  |     | NULL    |       |
+| total_electoral_vote          | int           | YES  |     | NULL    |       |
+| total_popular_vote            | bigint        | YES  |     | NULL    |       |
+| winner_electoral_vote         | int           | YES  |     | NULL    |       |
+| winner_popular_vote           | bigint        | YES  |     | NULL    |       |
+| president_id                  | bigint        | YES  | MUL | NULL    |       |
++-------------------------------+---------------+------+-----+---------+-------+
+12 rows in set (0.00 sec)
+
+mysql> desc term;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| id           | bigint      | NO   | PRI | NULL    |       |
+| beg_date     | datetime(6) | YES  |     | NULL    |       |
+| end_date     | datetime(6) | YES  |     | NULL    |       |
+| president_id | bigint      | YES  | MUL | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> 
+mysql> select * from president;
++----+---------------------+------------------+------------+------------+-------------+-----------------------+
+| id | first_inaug_address | first_inaug_date | first_name | last_name  | middle_name | political_party       |
++----+---------------------+------------------+------------+------------+-------------+-----------------------+
+|  1 | NULL                | NULL             | George     | Washington |             | Unaffiliated          |
+|  2 | NULL                | NULL             | John       | Adams      |             | Federalist            |
+|  3 | NULL                | NULL             | Thomas     | Jefferson  |             | Democratic-Republican |
+|  4 | NULL                | NULL             | Abraham    | Lincoln    |             | Republican            |
+|  5 | NULL                | NULL             | Theodore   | Roosevelt  |             | Republican            |
+|  6 | NULL                | NULL             | William    | Taft       | Howard      | Republican            |
+|  7 | NULL                | NULL             | Woodrow    | Wilson     |             | Democratic            |
+|  8 | NULL                | NULL             | Warren     | Harding    | G.          | Republican            |
+|  9 | NULL                | NULL             | Calvin     | Coolidge   |             | Republican            |
+| 10 | NULL                | NULL             | Herbert    | Hoover     |             | Republican            |
+| 11 | NULL                | NULL             | Franklin   | Roosevelt  | D.          | Democratic            |
+| 12 | NULL                | NULL             | Harry      | Truman     | S.          | Democratic            |
+| 13 | NULL                | NULL             | Dwight     | Eisenhower | D.          | Republican            |
+| 14 | NULL                | NULL             | John       | Kennedy    | F.          | Democratic            |
+| 15 | NULL                | NULL             | Lyndon     | Johnson    | B.          | Democratic            |
+| 16 | NULL                | NULL             | Richard    | Nixon      |             | Republican            |
+| 17 | NULL                | NULL             | Gerald     | Ford       |             | Republican            |
+| 18 | NULL                | NULL             | Jimmy      | Carter     |             | Democratic            |
+| 19 | NULL                | NULL             | Ronald     | Reagan     |             | Republican            |
+| 24 | NULL                | NULL             | George     | Bush       | H. W.       | Republican            |
+| 25 | NULL                | NULL             | Bill       | Clinton    |             | Democratic            |
+| 26 | NULL                | NULL             | George     | Bush       | W.          | Republican            |
+| 27 | NULL                | NULL             | Barack     | Obama      |             | Democratic            |
+| 28 | NULL                | NULL             | Donald     | Trump      |             | Republican            |
+| 29 | NULL                | NULL             | Joe        | Biden      |             | Democratic            |
++----+---------------------+------------------+------------+------------+-------------+-----------------------+
+25 rows in set (0.00 sec)
+
+mysql> select * from term;
++----+----------------------------+----------------------------+--------------+
+| id | beg_date                   | end_date                   | president_id |
++----+----------------------------+----------------------------+--------------+
+| 22 | 1981-01-20 00:00:00.000000 | 1985-01-20 00:00:00.000000 |           19 |
+| 23 | 1985-01-20 00:00:00.000000 | 1989-01-20 00:00:00.000000 |           19 |
++----+----------------------------+----------------------------+--------------+
+2 rows in set (0.00 sec)
+
+mysql> select id, president_id, election_date, incumb_won_election, winner_electoral_vote, winner_popular_vote, total_electoral_vote, total_popular_vote from election;
++----+--------------+----------------------------+------------------------------------------+-----------------------+---------------------+----------------------+--------------------+
+| id | president_id | election_date              | incumb_won_election                      | winner_electoral_vote | winner_popular_vote | total_electoral_vote | total_popular_vote |
++----+--------------+----------------------------+------------------------------------------+-----------------------+---------------------+----------------------+--------------------+
+| 20 |           19 | 1980-11-04 00:00:00.000000 | 0x00                                     |                   489 |            43903230 |                  538 |           86509678 |
+| 21 |           19 | 1984-11-06 00:00:00.000000 | 0x01                                     |                   525 |            54455472 |                  538 |           92653233 |
++----+--------------+----------------------------+------------------------------------------+-----------------------+---------------------+----------------------+--------------------+
+2 rows in set (0.00 sec)
+
+mysql> 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+... the above made a difference (no more individual _seq tables), but the one sequence table is "user_sequence" and not "hibernate_sequence"
+... so try the followig ...
+
+  @Id
+  @GeneratedValue(generator = "hibernate_sequence")
+  @GenericGenerator(
+    name = "hibernate_sequence",
+    strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator",
+    parameters = {
+      @Parameter(name = "sequence_name", value = "hibernate_sequence"),
+      @Parameter(name = "initial_value", value = "1"),
+      @Parameter(name = "increment_size", value = "1")
+      }
+  )
+  private Long id;
+
+
+mysql> show tables;
++--------------------+
+| Tables_in_prezdbsb |
++--------------------+
+| election           |
+| hibernate_sequence |
+| president          |
+| term               |
++--------------------+
+4 rows in set (0.00 sec)
+
+mysql> desc hibernate_sequence;
++----------+--------+------+-----+---------+-------+
+| Field    | Type   | Null | Key | Default | Extra |
++----------+--------+------+-----+---------+-------+
+| next_val | bigint | YES  |     | NULL    |       |
++----------+--------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> desc election;
++-------------------------------+---------------+------+-----+---------+-------+
+| Field                         | Type          | Null | Key | Default | Extra |
++-------------------------------+---------------+------+-----+---------+-------+
+| id                            | bigint        | NO   | PRI | NULL    |       |
+| election_date                 | datetime(6)   | YES  |     | NULL    |       |
+| incumb_won_election           | bit(1)        | YES  |     | NULL    |       |
+| percent_winner_electoral_vote | float         | YES  |     | NULL    |       |
+| percent_winner_popular_vote   | double        | YES  |     | NULL    |       |
+| somebdvalue                   | decimal(38,2) | YES  |     | NULL    |       |
+| somebivalue                   | decimal(38,0) | YES  |     | NULL    |       |
+| total_electoral_vote          | int           | YES  |     | NULL    |       |
+| total_popular_vote            | bigint        | YES  |     | NULL    |       |
+| winner_electoral_vote         | int           | YES  |     | NULL    |       |
+| winner_popular_vote           | bigint        | YES  |     | NULL    |       |
+| president_id                  | bigint        | YES  | MUL | NULL    |       |
++-------------------------------+---------------+------+-----+---------+-------+
+12 rows in set (0.00 sec)
+
+mysql> desc president;
++---------------------+--------------+------+-----+---------+-------+
+| Field               | Type         | Null | Key | Default | Extra |
++---------------------+--------------+------+-----+---------+-------+
+| id                  | bigint       | NO   | PRI | NULL    |       |
+| first_inaug_address | text         | YES  |     | NULL    |       |
+| first_inaug_date    | datetime(6)  | YES  |     | NULL    |       |
+| first_name          | varchar(255) | YES  |     | NULL    |       |
+| last_name           | varchar(255) | YES  |     | NULL    |       |
+| middle_name         | varchar(255) | YES  |     | NULL    |       |
+| political_party     | varchar(255) | YES  |     | NULL    |       |
++---------------------+--------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> desc term;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| id           | bigint      | NO   | PRI | NULL    |       |
+| beg_date     | datetime(6) | YES  |     | NULL    |       |
+| end_date     | datetime(6) | YES  |     | NULL    |       |
+| president_id | bigint      | YES  | MUL | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+4 rows in set (0.01 sec)
+
+mysql> 
+mysql> select * from hibernate_sequence;
++----------+
+| next_val |
++----------+
+|       30 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> 
+mysql> select * from president where id >= 18;
++----+---------------------+------------------+------------+-----------+-------------+-----------------+
+| id | first_inaug_address | first_inaug_date | first_name | last_name | middle_name | political_party |
++----+---------------------+------------------+------------+-----------+-------------+-----------------+
+| 18 | NULL                | NULL             | Jimmy      | Carter    |             | Democratic      |
+| 19 | NULL                | NULL             | Ronald     | Reagan    |             | Republican      |
+| 24 | NULL                | NULL             | George     | Bush      | H. W.       | Republican      |
+| 25 | NULL                | NULL             | Bill       | Clinton   |             | Democratic      |
+| 26 | NULL                | NULL             | George     | Bush      | W.          | Republican      |
+| 27 | NULL                | NULL             | Barack     | Obama     |             | Democratic      |
+| 28 | NULL                | NULL             | Donald     | Trump     |             | Republican      |
+| 29 | NULL                | NULL             | Joe        | Biden     |             | Democratic      |
++----+---------------------+------------------+------------+-----------+-------------+-----------------+
+8 rows in set (0.00 sec)
+
+mysql> 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+> :bootRun
+^Cdavidho@dphxps17:~/sbootprojs/prezinfosbsystemctl list-units --type=service --state=running | grep -i sqlql
+  mysql.service                 loaded active running MySQL Community Server
+  postgresql@14-main.service    loaded active running PostgreSQL Cluster 14-main
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+
+https://chartio.com/resources/tutorials/how-to-set-the-default-user-password-in-postgresql/
+
+postgres=# ALTER USER postgres PASSWORD 'myPassword';
+ALTER ROLE
+
+davidho@dphxps17:~$ sudo -i -u postgres
+[sudo] password for davidho: 
+postgres@dphxps17:~$ 
+postgres@dphxps17:~$ psql
+psql (14.7 (Ubuntu 14.7-0ubuntu0.22.04.1))
+Type "help" for help.
+
+postgres=# ALTER USER sammy PASSWORD 'sammyP@$$';
+ALTER ROLE
+postgres=# 
+postgres=# \q
+postgres@dphxps17:~$ 
+postgres@dphxps17:~$ psql
+psql (14.7 (Ubuntu 14.7-0ubuntu0.22.04.1))
+Type "help" for help.
+
+postgres=# \list
+                                  List of databases
+   Name    |  Owner   | Encoding |   Collate   |    Ctype    |   Access privileges   
+-----------+----------+----------+-------------+-------------+-----------------------
+ postgres  | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ sammy     | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ template0 | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +
+           |          |          |             |             | postgres=CTc/postgres
+ template1 | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +
+           |          |          |             |             | postgres=CTc/postgres
+(4 rows)
+
+postgres=# \c sammy
+You are now connected to database "sammy" as user "postgres".
+sammy=# \dt
+Did not find any relations.
+sammy=# 
+sammy=# \conninfo
+You are connected to database "sammy" as user "postgres" via socket in "/var/run/postgresql" at port "5432".
+sammy=# 
+sammy=# \dt
+         List of relations
+ Schema |   Name    | Type  | Owner 
+--------+-----------+-------+-------
+ public | election  | table | sammy
+ public | president | table | sammy
+ public | term      | table | sammy
+(3 rows)
+
+sammy=# 
+sammy=# /?
+
+General
+  \copyright             show PostgreSQL usage and distribution terms
+  \crosstabview [COLUMNS] execute query and display results in crosstab
+  \errverbose            show most recent error message at maximum verbosity
+  \g [(OPTIONS)] [FILE]  execute query (and send results to file or |pipe);
+                         \g with no arguments is equivalent to a semicolon
+  \gdesc                 describe result of query, without executing it
+  \gexec                 execute query, then execute each value in its result
+  \gset [PREFIX]         execute query and store results in psql variables
+  \gx [(OPTIONS)] [FILE] as \g, but forces expanded output mode
+  \q                     quit psql
+  \watch [SEC]           execute query every SEC seconds
+
+Help
+  \? [commands]          show help on backslash commands
+  \? options             show help on psql command-line options
+  \? variables           show help on special variables
+  \h [NAME]              help on syntax of SQL commands, * for all commands
+
+Query Buffer
+  \e [FILE] [LINE]       edit the query buffer (or file) with external editor
+  \ef [FUNCNAME [LINE]]  edit function definition with external editor
+  \ev [VIEWNAME [LINE]]  edit view definition with external editor
+  \p                     show the contents of the query buffer
+  \r                     reset (clear) the query buffer
+  \s [FILE]              display history or save it to file
+  \w FILE                write query buffer to file
+
+Input/Output
+  \copy ...              perform SQL COPY with data stream to the client host
+  \echo [-n] [STRING]    write string to standard output (-n for no newline)
+  \i FILE                execute commands from file
+  \ir FILE               as \i, but relative to location of current script
+  \o [FILE]              send all query results to file or |pipe
+  \qecho [-n] [STRING]   write string to \o output stream (-n for no newline)
+  \warn [-n] [STRING]    write string to standard error (-n for no newline)
+
+Conditional
+  \if EXPR               begin conditional block
+  \elif EXPR             alternative within current conditional block
+  \else                  final alternative within current conditional block
+  \endif                 end conditional block
+
+Informational
+  (options: S = show system objects, + = additional detail)
+  \d[S+]                 list tables, views, and sequences
+  \d[S+]  NAME           describe table, view, sequence, or index
+  \da[S]  [PATTERN]      list aggregates
+  \dA[+]  [PATTERN]      list access methods
+  \dAc[+] [AMPTRN [TYPEPTRN]]  list operator classes
+  \dAf[+] [AMPTRN [TYPEPTRN]]  list operator families
+  \dAo[+] [AMPTRN [OPFPTRN]]   list operators of operator families
+  \dAp[+] [AMPTRN [OPFPTRN]]   list support functions of operator families
+  \db[+]  [PATTERN]      list tablespaces
+  \dc[S+] [PATTERN]      list conversions
+  \dC[+]  [PATTERN]      list casts
+  \dd[S]  [PATTERN]      show object descriptions not displayed elsewhere
+  \dD[S+] [PATTERN]      list domains
+  \ddp    [PATTERN]      list default privileges
+  \dE[S+] [PATTERN]      list foreign tables
+  \des[+] [PATTERN]      list foreign servers
+  \det[+] [PATTERN]      list foreign tables
+  \deu[+] [PATTERN]      list user mappings
+  \dew[+] [PATTERN]      list foreign-data wrappers
+  \df[anptw][S+] [FUNCPTRN [TYPEPTRN ...]]
+                         list [only agg/normal/procedure/trigger/window] functions
+  \dF[+]  [PATTERN]      list text search configurations
+  \dFd[+] [PATTERN]      list text search dictionaries
+  \dFp[+] [PATTERN]      list text search parsers
+  \dFt[+] [PATTERN]      list text search templates
+  \dg[S+] [PATTERN]      list roles
+  \di[S+] [PATTERN]      list indexes
+  \dl                    list large objects, same as \lo_list
+  \dL[S+] [PATTERN]      list procedural languages
+  \dm[S+] [PATTERN]      list materialized views
+  \dn[S+] [PATTERN]      list schemas
+  \do[S+] [OPPTRN [TYPEPTRN [TYPEPTRN]]]
+                         list operators
+  \dO[S+] [PATTERN]      list collations
+  \dp     [PATTERN]      list table, view, and sequence access privileges
+  \dP[itn+] [PATTERN]    list [only index/table] partitioned relations [n=nested]
+  \drds [ROLEPTRN [DBPTRN]] list per-database role settings
+  \dRp[+] [PATTERN]      list replication publications
+  \dRs[+] [PATTERN]      list replication subscriptions
+  \ds[S+] [PATTERN]      list sequences
+  \dt[S+] [PATTERN]      list tables
+  \dT[S+] [PATTERN]      list data types
+  \du[S+] [PATTERN]      list roles
+  \dv[S+] [PATTERN]      list views
+  \dx[+]  [PATTERN]      list extensions
+  \dX     [PATTERN]      list extended statistics
+  \dy[+]  [PATTERN]      list event triggers
+  \l[+]   [PATTERN]      list databases
+  \sf[+]  FUNCNAME       show a function's definition
+  \sv[+]  VIEWNAME       show a view's definition
+  \z      [PATTERN]      same as \dp
+
+Formatting
+  \a                     toggle between unaligned and aligned output mode
+  \C [STRING]            set table title, or unset if none
+  \f [STRING]            show or set field separator for unaligned query output
+  \H                     toggle HTML output mode (currently off)
+  \pset [NAME [VALUE]]   set table output option
+                         (border|columns|csv_fieldsep|expanded|fieldsep|
+                         fieldsep_zero|footer|format|linestyle|null|
+                         numericlocale|pager|pager_min_lines|recordsep|
+                         recordsep_zero|tableattr|title|tuples_only|
+                         unicode_border_linestyle|unicode_column_linestyle|
+                         unicode_header_linestyle)
+  \t [on|off]            show only rows (currently off)
+  \T [STRING]            set HTML <table> tag attributes, or unset if none
+  \x [on|off|auto]       toggle expanded output (currently off)
+
+Connection
+  \c[onnect] {[DBNAME|- USER|- HOST|- PORT|-] | conninfo}
+                         connect to new database (currently "sammy")
+  \conninfo              display information about current connection
+  \encoding [ENCODING]   show or set client encoding
+  \password [USERNAME]   securely change the password for a user
+
+Operating System
+  \cd [DIR]              change the current working directory
+  \setenv NAME [VALUE]   set or unset environment variable
+  \timing [on|off]       toggle timing of commands (currently off)
+  \! [COMMAND]           execute command in shell or start interactive shell
+
+Variables
+  \prompt [TEXT] NAME    prompt user to set internal variable
+  \set [NAME [VALUE]]    set internal variable, or list all if no parameters
+  \unset NAME            unset (delete) internal variable
+
+Large Objects
+  \lo_export LOBOID FILE
+  \lo_import FILE [COMMENT]
+  \lo_list
+  \lo_unlink LOBOID      large object operations
+(END)
+
+sammy=# 
+sammy=# select * from president;
+ id | first_inaug_address | first_inaug_date | first_name | last_name  | middle_name |    political_party    
+----+---------------------+------------------+------------+------------+-------------+-----------------------
+  1 |                     |                  | George     | Washington |             | Unaffiliated
+  2 |                     |                  | John       | Adams      |             | Federalist
+  3 |                     |                  | Thomas     | Jefferson  |             | Democratic-Republican
+  4 |                     |                  | Abraham    | Lincoln    |             | Republican
+  5 |                     |                  | Theodore   | Roosevelt  |             | Republican
+  6 |                     |                  | William    | Taft       | Howard      | Republican
+  7 |                     |                  | Woodrow    | Wilson     |             | Democratic
+  8 |                     |                  | Warren     | Harding    | G.          | Republican
+  9 |                     |                  | Calvin     | Coolidge   |             | Republican
+ 10 |                     |                  | Herbert    | Hoover     |             | Republican
+ 11 |                     |                  | Franklin   | Roosevelt  | D.          | Democratic
+ 12 |                     |                  | Harry      | Truman     | S.          | Democratic
+ 13 |                     |                  | Dwight     | Eisenhower | D.          | Republican
+ 14 |                     |                  | John       | Kennedy    | F.          | Democratic
+ 15 |                     |                  | Lyndon     | Johnson    | B.          | Democratic
+ 16 |                     |                  | Richard    | Nixon      |             | Republican
+ 17 |                     |                  | Gerald     | Ford       |             | Republican
+ 18 |                     |                  | Jimmy      | Carter     |             | Democratic
+ 19 |                     |                  | Ronald     | Reagan     |             | Republican
+ 20 |                     |                  | George     | Bush       | H. W.       | Republican
+ 21 |                     |                  | Bill       | Clinton    |             | Democratic
+ 22 |                     |                  | George     | Bush       | W.          | Republican
+ 23 |                     |                  | Barack     | Obama      |             | Democratic
+ 24 |                     |                  | Donald     | Trump      |             | Republican
+ 25 |                     |                  | Joe        | Biden      |             | Democratic
+(25 rows)
+
+sammy=# 
+sammy=# select * from term;
+ id |      beg_date       |      end_date       | president_id 
+----+---------------------+---------------------+--------------
+  1 | 1981-01-20 00:00:00 | 1985-01-20 00:00:00 |           19
+  2 | 1985-01-20 00:00:00 | 1989-01-20 00:00:00 |           19
+(2 rows)
+
+sammy=# select * from election;
+sammy=# 
+sammy=# select id, president_id, election_date, incumb_won_election, winner_electoral_vote, winner_popular_vote, total_electoral_vote, total_popular_vote from election;
+ id | president_id |    election_date    | incumb_won_election | winner_electoral_vote | winner_popular_vote | total_electoral_vote | total_popular_vote 
+----+--------------+---------------------+---------------------+-----------------------+---------------------+----------------------+--------------------
+  1 |           19 | 1980-11-04 00:00:00 | f                   |                   489 |            43903230 |                  538 |           86509678
+  2 |           19 | 1984-11-06 00:00:00 | t                   |                   525 |            54455472 |                  538 |           92653233
+(2 rows)
+
+sammy=# 
+sammy=# 
+
+davidho@dphxps17:~$ curl localhost:8080/api
+{"timestamp":"2023-04-13T10:21:17.560+00:00","status":404,"error":"Not Found","path":"/api"}davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ curl localhost:8080/data-api
+{
+  "_links" : {
+    "elections" : {
+      "href" : "http://localhost:8080/data-api/elections{?page,size,sort}",
+      "templated" : true
+    },
+    "terms" : {
+      "href" : "http://localhost:8080/data-api/terms{?page,size,sort}",
+      "templated" : true
+    },
+    "presidents" : {
+      "href" : "http://localhost:8080/data-api/presidents{?page,size,sort}",
+      "templated" : true
+    },
+    "profile" : {
+      "href" : "http://localhost:8080/data-api/profile"
+    }
+  }
+}davidho@dphxps17:~$curl localhost:8080/api/presidents/18 | jqq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   168    0   168    0     0   4270      0 --:--:-- --:--:-- --:--:--  4307
+{
+  "id": 18,
+  "firstName": "Jimmy",
+  "middleName": "",
+  "lastName": "Carter",
+  "politicalParty": "Democratic",
+  "firstInaugDate": null,
+  "firstInaugAddress": null,
+  "elections": [],
+  "terms": []
+}
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ curl localhost:8080/api/presidents/19 | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   980    0   980    0     0  96238      0 --:--:-- --:--:-- --:--:-- 98000
+{
+  "id": 19,
+  "firstName": "Ronald",
+  "middleName": "",
+  "lastName": "Reagan",
+  "politicalParty": "Republican",
+  "firstInaugDate": null,
+  "firstInaugAddress": null,
+  "elections": [
+    {
+      "id": 1,
+      "electionDate": "1980-11-04T05:00:00.000+00:00",
+      "incumbWonElection": false,
+      "winnerElectoralVote": 489,
+      "winnerPopularVote": 43903230,
+      "totalElectoralVote": 538,
+      "totalPopularVote": 86509678,
+      "percentWinnerElectoralVote": 0.90892196,
+      "percentWinnerPopularVote": 0.5074950111362106,
+      "someBIValue": null,
+      "someBDValue": null
+    },
+    {
+      "id": 2,
+      "electionDate": "1984-11-06T05:00:00.000+00:00",
+      "incumbWonElection": true,
+      "winnerElectoralVote": 525,
+      "winnerPopularVote": 54455472,
+      "totalElectoralVote": 538,
+      "totalPopularVote": 92653233,
+      "percentWinnerElectoralVote": 0.97583646,
+      "percentWinnerPopularVote": 0.5877341808461233,
+      "someBIValue": null,
+      "someBDValue": null
+    }
+  ],
+  "terms": [
+    {
+      "id": 1,
+      "begDate": "1981-01-20T05:00:00.000+00:00",
+      "endDate": "1985-01-20T05:00:00.000+00:00"
+    },
+    {
+      "id": 2,
+      "begDate": "1985-01-20T05:00:00.000+00:00",
+      "endDate": "1989-01-20T05:00:00.000+00:00"
+    }
+  ]
+}
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ curl http://localhost:8080/data-api/presidents/19
+{
+  "firstName" : "Ronald",
+  "middleName" : "",
+  "lastName" : "Reagan",
+  "politicalParty" : "Republican",
+  "firstInaugDate" : null,
+  "firstInaugAddress" : null,
+  "_links" : {
+    "self" : {
+      "href" : "http://localhost:8080/data-api/presidents/19"
+    },
+    "president" : {
+      "href" : "http://localhost:8080/data-api/presidents/19"
+    },
+    "elections" : {
+      "href" : "http://localhost:8080/data-api/presidents/19/elections"
+    },
+    "terms" : {
+      "href" : "http://localhost:8080/data-api/presidents/19/terms"
+    }
+  }
+}davidho@dphxps17:~$ 
+davidho@dphxps17:~$ curl 'http://localhost:8080/data-api/presidents?page=0&size=3'
+{
+  "_embedded" : {
+    "presidents" : [ {
+      "firstName" : "George",
+      "middleName" : "",
+      "lastName" : "Washington",
+      "politicalParty" : "Unaffiliated",
+      "firstInaugDate" : null,
+      "firstInaugAddress" : null,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/data-api/presidents/1"
+        },
+        "president" : {
+          "href" : "http://localhost:8080/data-api/presidents/1"
+        },
+        "elections" : {
+          "href" : "http://localhost:8080/data-api/presidents/1/elections"
+        },
+        "terms" : {
+          "href" : "http://localhost:8080/data-api/presidents/1/terms"
+        }
+      }
+    }, {
+      "firstName" : "John",
+      "middleName" : "",
+      "lastName" : "Adams",
+      "politicalParty" : "Federalist",
+      "firstInaugDate" : null,
+      "firstInaugAddress" : null,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/data-api/presidents/2"
+        },
+        "president" : {
+          "href" : "http://localhost:8080/data-api/presidents/2"
+        },
+        "elections" : {
+          "href" : "http://localhost:8080/data-api/presidents/2/elections"
+        },
+        "terms" : {
+          "href" : "http://localhost:8080/data-api/presidents/2/terms"
+        }
+      }
+    }, {
+      "firstName" : "Thomas",
+      "middleName" : "",
+      "lastName" : "Jefferson",
+      "politicalParty" : "Democratic-Republican",
+      "firstInaugDate" : null,
+      "firstInaugAddress" : null,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/data-api/presidents/3"
+        },
+        "president" : {
+          "href" : "http://localhost:8080/data-api/presidents/3"
+        },
+        "elections" : {
+          "href" : "http://localhost:8080/data-api/presidents/3/elections"
+        },
+        "terms" : {
+          "href" : "http://localhost:8080/data-api/presidents/3/terms"
+        }
+      }
+    } ]
+  },
+  "_links" : {
+    "first" : {
+      "href" : "http://localhost:8080/data-api/presidents?page=0&size=3"
+    },
+    "self" : {
+      "href" : "http://localhost:8080/data-api/presidents?page=0&size=3"
+    },
+    "next" : {
+      "href" : "http://localhost:8080/data-api/presidents?page=1&size=3"
+    },
+    "last" : {
+      "href" : "http://localhost:8080/data-api/presidents?page=8&size=3"
+    },
+    "profile" : {
+      "href" : "http://localhost:8080/data-api/profile/presidents"
+    }
+  },
+  "page" : {
+    "size" : 3,
+    "totalElements" : 25,
+    "totalPages" : 9,
+    "number" : 0
+  }
+}davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+
+davidho@dphxps17:~$ history | tail
+ 1999  cd ~/repositories/miscdphxps17u22/
+ 2000  git status
+ 2001  curl localhost:8080/api
+ 2002  curl localhost:8080/data-api
+ 2003  curl localhost:8080/api/presidents/18 | jq
+ 2004  curl localhost:8080/api/presidents/19 | jq
+ 2005  curl http://localhost:8080/data-api/presidents/19
+ 2006  curl 'http://localhost:8080/data-api/presidents?page=0&size=3'
+ 2007  history
+ 2008  history | tail
+davidho@dphxps17:~$ 
+
+/home/davidho/sbootprojs/prezinfosb/tomcat/logs/access_log.2023-04-13.log
+
+127.0.0.1 - - [13/Apr/2023:06:21:17 -0400] "GET /api HTTP/1.1" 404 103
+127.0.0.1 - - [13/Apr/2023:06:21:38 -0400] "GET /data-api HTTP/1.1" 200 492
+127.0.0.1 - - [13/Apr/2023:06:22:27 -0400] "GET /api/presidents/18 HTTP/1.1" 200 179
+127.0.0.1 - - [13/Apr/2023:06:22:53 -0400] "GET /api/presidents/19 HTTP/1.1" 200 992
+127.0.0.1 - - [13/Apr/2023:06:23:59 -0400] "GET /data-api/presidents/19 HTTP/1.1" 200 560
+127.0.0.1 - - [13/Apr/2023:06:24:39 -0400] "GET /data-api/presidents?page=0&size=3 HTTP/1.1" 200 2557
+
+https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
+
+https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
+$ ssh-keygen -t ed25519 -C "your_email@example.com"
+$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+
+ssh-keygen -t rsa -b 4096 -C "ashburncode@gmail.com"
+
+davidho@dphxps17:~$ ssh-keygen -t rsa -b 4096 -C "ashburncode@gmail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/davidho/.ssh/id_rsa): /home/davidho/.ssh/ashburncode_rsa
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/davidho/.ssh/ashburncode_rsa
+Your public key has been saved in /home/davidho/.ssh/ashburncode_rsa.pub
+The key fingerprint is:
+SHA256:VgRHpXFZGcLSoxiDviQnCRmcRjlVVFUa7GCZf+n+kUo ashburncode@gmail.com
+The key's randomart image is:
++---[RSA 4096]----+
+| oo*.ooooBB==ooo |
+|  O   . Boo*=..  |
+| . o o . B+o o   |
+|    + + ..+ o    |
+|     = .S  o     |
+|      ..    .  . |
+|           .E o  |
+|           ... . |
+|            ...  |
++----[SHA256]-----+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+
+https://github.com/ashburncode/prezinfosb.git
+git remote add origin https://github.com/ashburncode/prezinfosb.git
+git branch -M main
+git push -u origin main
+
+git@github.com:ashburncode/prezinfosb.git
+git remote add origin git@github.com:ashburncode/prezinfosb.git
+git branch -M main
+git push -u origin main
+
+davidho@dphxps17:~/repositories/ashburncode/prezinfosb$ 
+davidho@dphxps17:~/repositories/ashburncode/prezinfosb$ git status
+On branch master
+nothing to commit, working tree clean
+davidho@dphxps17:~/repositories/ashburncode/prezinfosb$ git remote add origin git@github.com:ashburncode/prezinfosb.git
+git branch -M main
+git push -u origin main
+ERROR: Permission to ashburncode/prezinfosb.git denied to ashburndev.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+davidho@dphxps17:~/repositories/ashburncode/prezinfosb$ 
+davidho@dphxps17:~/repositories/ashburncode/prezinfosb$ ls -latr ~/.ssh
+total 44
+-rw-------  1 davidho davidho  806 May 25  2022 known_hosts.old
+drwxrwxr-x  2 davidho davidho 4096 Jun 25  2022 backup
+-rw-r--r--  1 davidho davidho  117 Jun 25  2022 id_ed25519.pub
+-rw-------  1 davidho davidho  432 Jun 25  2022 id_ed25519
+-rw-r--r--  1 davidho davidho  746 Jun 25  2022 id_rsa.pub
+-rw-------  1 davidho davidho 3389 Jun 25  2022 id_rsa
+-rw-------  1 davidho davidho  978 Apr  3 07:40 known_hosts
+drwxr-x--- 56 davidho davidho 4096 Apr 13 04:58 ..
+-rw-r--r--  1 davidho davidho  747 Apr 13 07:24 ashburncode_rsa.pub
+-rw-------  1 davidho davidho 3389 Apr 13 07:24 ashburncode_rsa
+drwxrwxr-x  3 davidho davidho 4096 Apr 13 07:24 .
+davidho@dphxps17:~/repositories/ashburncode/prezinfosb$ 
+davidho@dphxps17:~/repositories/ashburncode/prezinfosb$ 
+
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+
+ssh-add ~/.ssh/ashburncode_rsa
+
+davidho@dphxps17:~/repositories/ashburncode/prezinfosb$ eval "$(ssh-agent -s)"
+Agent pid 34928
+davidho@dphxps17:~/repositories/ashburncode/prezinfosb$ ssh-add ~/.ssh/ashburncode_rsa
+Identity added: /home/davidho/.ssh/ashburncode_rsa (ashburncode@gmail.com)
+davidho@dphxps17:~/repositories/ashburncode/prezinfosb$ 
+davidho@dphxps17:~/repositories/ashburncode/prezinfosb$ git remote add origin git@github.com:ashburncode/prezinfosb.git
+git branch -M main
+git push -u origin main
+error: remote origin already exists.
+Enumerating objects: 53, done.
+Counting objects: 100% (53/53), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (46/46), done.
+Writing objects: 100% (53/53), 73.23 KiB | 18.31 MiB/s, done.
+Total 53 (delta 18), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (18/18), done.
+To github.com:ashburncode/prezinfosb.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+davidho@dphxps17:~/repositories/ashburncode/prezinfosb$ 
+davidho@dphxps17:~/repositories/ashburncode/prezinfosb$ git push
+Everything up-to-date
+davidho@dphxps17:~/repositories/ashburncode/prezinfosb$ 
+
