@@ -1,0 +1,246 @@
+davidho@dphxps17:~$ date
+Thu Apr 13 06:40:08 PM EDT 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ code stuff-20230413b.txt
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+  @Id
+  // @GeneratedValue(strategy = GenerationType.AUTO)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  // @GeneratedValue(generator = "hibernate_sequence")
+  // @GenericGenerator(
+  //   name = "hibernate_sequence",
+  //   strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator",
+  //   parameters = {
+  //     @Parameter(name = "sequence_name", value = "hibernate_sequence"),
+  //     @Parameter(name = "initial_value", value = "1"),
+  //     @Parameter(name = "increment_size", value = "1")
+  //     }
+  // )
+  private Long id;
+  private String firstName;
+  private String middleName;
+  private String lastName;
+  private String politicalParty;
+  private Date firstInaugDate;
+
+
+mysql> show tables;
++--------------------+
+| Tables_in_prezdbsb |
++--------------------+
+| election           |
+| president          |
+| term               |
++--------------------+
+3 rows in set (0.01 sec)
+
+mysql> 
+mysql> desc president;
++---------------------+--------------+------+-----+---------+----------------+
+| Field               | Type         | Null | Key | Default | Extra          |
++---------------------+--------------+------+-----+---------+----------------+
+| id                  | bigint       | NO   | PRI | NULL    | auto_increment |
+| first_inaug_address | text         | YES  |     | NULL    |                |
+| first_inaug_date    | datetime(6)  | YES  |     | NULL    |                |
+| first_name          | varchar(255) | YES  |     | NULL    |                |
+| last_name           | varchar(255) | YES  |     | NULL    |                |
+| middle_name         | varchar(255) | YES  |     | NULL    |                |
+| political_party     | varchar(255) | YES  |     | NULL    |                |
++---------------------+--------------+------+-----+---------+----------------+
+7 rows in set (0.00 sec)
+
+mysql> desc election;
++-------------------------------+---------------+------+-----+---------+----------------+
+| Field                         | Type          | Null | Key | Default | Extra          |
++-------------------------------+---------------+------+-----+---------+----------------+
+| id                            | bigint        | NO   | PRI | NULL    | auto_increment |
+| election_date                 | datetime(6)   | YES  |     | NULL    |                |
+| incumb_won_election           | bit(1)        | YES  |     | NULL    |                |
+| percent_winner_electoral_vote | float         | YES  |     | NULL    |                |
+| percent_winner_popular_vote   | double        | YES  |     | NULL    |                |
+| somebdvalue                   | decimal(38,2) | YES  |     | NULL    |                |
+| somebivalue                   | decimal(38,0) | YES  |     | NULL    |                |
+| total_electoral_vote          | int           | YES  |     | NULL    |                |
+| total_popular_vote            | bigint        | YES  |     | NULL    |                |
+| winner_electoral_vote         | int           | YES  |     | NULL    |                |
+| winner_popular_vote           | bigint        | YES  |     | NULL    |                |
+| president_id                  | bigint        | YES  | MUL | NULL    |                |
++-------------------------------+---------------+------+-----+---------+----------------+
+12 rows in set (0.00 sec)
+
+mysql> desc term;
++--------------+-------------+------+-----+---------+----------------+
+| Field        | Type        | Null | Key | Default | Extra          |
++--------------+-------------+------+-----+---------+----------------+
+| id           | bigint      | NO   | PRI | NULL    | auto_increment |
+| beg_date     | datetime(6) | YES  |     | NULL    |                |
+| end_date     | datetime(6) | YES  |     | NULL    |                |
+| president_id | bigint      | YES  | MUL | NULL    |                |
++--------------+-------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+mysql> 
+mysql> select * from president;
++----+---------------------+------------------+------------+------------+-------------+-----------------------+
+| id | first_inaug_address | first_inaug_date | first_name | last_name  | middle_name | political_party       |
++----+---------------------+------------------+------------+------------+-------------+-----------------------+
+|  1 | NULL                | NULL             | George     | Washington |             | Unaffiliated          |
+|  2 | NULL                | NULL             | John       | Adams      |             | Federalist            |
+|  3 | NULL                | NULL             | Thomas     | Jefferson  |             | Democratic-Republican |
+|  4 | NULL                | NULL             | James      | Madison    |             | Democratic-Republican |
+|  5 | NULL                | NULL             | James      | Monroe     |             | Democratic-Republican |
+|  6 | NULL                | NULL             | John       | Adams      | Quincy      | Democratic-Republican |
+|  7 | NULL                | NULL             | Andrew     | Jackson    |             | Democratic            |
+|  8 | NULL                | NULL             | Martin     | Van Buren  |             | Democratic            |
+|  9 | NULL                | NULL             | William    | Harrison   | Henry       | Democratic            |
+| 10 | NULL                | NULL             | John       | Tyler      |             | Democratic            |
+| 11 | NULL                | NULL             | James      | Polk       | K           | Democratic            |
+| 12 | NULL                | NULL             | Zachary    | Taylor     |             | Whig                  |
+| 13 | NULL                | NULL             | Millard    | Fillmore   |             | Whig                  |
+| 14 | NULL                | NULL             | Franklin   | Pierce     |             | Democratic            |
+| 15 | NULL                | NULL             | James      | Buchanan   |             | Democratic            |
+| 16 | NULL                | NULL             | Abraham    | Lincoln    |             | Republican            |
+| 17 | NULL                | NULL             | Andrew     | Lincoln    |             | Democratic            |
+| 18 | NULL                | NULL             | Ulysses    | Grant      | S.          | Republican            |
+| 19 | NULL                | NULL             | Rutherford | Hayes      | B.          | Republican            |
+| 20 | NULL                | NULL             | James      | Garfield   | A.          | Republican            |
+| 21 | NULL                | NULL             | Chester    | Arthur     | A.          | Republican            |
+| 22 | NULL                | NULL             | Grover     | Cleveland  |             | Democratic            |
+| 23 | NULL                | NULL             | Benjamin   | Harrison   |             | Republican            |
+| 24 | NULL                | NULL             | Grover     | Cleveland  |             | Democratic            |
+| 25 | NULL                | NULL             | William    | McKinley   |             | Democratic            |
+| 26 | NULL                | NULL             | Abraham    | Lincoln    |             | Republican            |
+| 27 | NULL                | NULL             | Theodore   | Roosevelt  |             | Republican            |
+| 28 | NULL                | NULL             | William    | Taft       | Howard      | Republican            |
+| 29 | NULL                | NULL             | Woodrow    | Wilson     |             | Democratic            |
+| 30 | NULL                | NULL             | Warren     | Harding    | G.          | Republican            |
+| 31 | NULL                | NULL             | Calvin     | Coolidge   |             | Republican            |
+| 32 | NULL                | NULL             | Herbert    | Hoover     |             | Republican            |
+| 33 | NULL                | NULL             | Franklin   | Roosevelt  | D.          | Democratic            |
+| 34 | NULL                | NULL             | Harry      | Truman     | S.          | Democratic            |
+| 35 | NULL                | NULL             | Dwight     | Eisenhower | D.          | Republican            |
+| 36 | NULL                | NULL             | John       | Kennedy    | F.          | Democratic            |
+| 37 | NULL                | NULL             | Lyndon     | Johnson    | B.          | Democratic            |
+| 38 | NULL                | NULL             | Richard    | Nixon      |             | Republican            |
+| 39 | NULL                | NULL             | Gerald     | Ford       |             | Republican            |
+| 40 | NULL                | NULL             | Jimmy      | Carter     |             | Democratic            |
+| 41 | NULL                | NULL             | Ronald     | Reagan     |             | Republican            |
+| 42 | NULL                | NULL             | George     | Bush       | H. W.       | Republican            |
+| 43 | NULL                | NULL             | Bill       | Clinton    |             | Democratic            |
+| 44 | NULL                | NULL             | George     | Bush       | W.          | Republican            |
+| 45 | NULL                | NULL             | Barack     | Obama      |             | Democratic            |
+| 46 | NULL                | NULL             | Donald     | Trump      |             | Republican            |
+| 47 | NULL                | NULL             | Joe        | Biden      |             | Democratic            |
++----+---------------------+------------------+------------+------------+-------------+-----------------------+
+47 rows in set (0.00 sec)
+
+mysql> show tables;
++--------------------+
+| Tables_in_prezdbsb |
++--------------------+
+| election           |
+| president          |
+| term               |
++--------------------+
+3 rows in set (0.00 sec)
+
+mysql> 
+mysql> select * from term;
++----+----------------------------+----------------------------+--------------+
+| id | beg_date                   | end_date                   | president_id |
++----+----------------------------+----------------------------+--------------+
+|  1 | 1981-01-20 00:00:00.000000 | 1985-01-20 00:00:00.000000 |           41 |
+|  2 | 1985-01-20 00:00:00.000000 | 1989-01-20 00:00:00.000000 |           41 |
++----+----------------------------+----------------------------+--------------+
+2 rows in set (0.00 sec)
+
+mysql> 
+
+  @Id
+  // @GeneratedValue(strategy = GenerationType.AUTO)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  // @GeneratedValue(generator = "hibernate_sequence")
+  // @GenericGenerator(
+  //   name = "hibernate_sequence",
+  //   strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator",
+  //   parameters = {
+  //     @Parameter(name = "sequence_name", value = "hibernate_sequence"),
+  //     @Parameter(name = "initial_value", value = "1"),
+  //     @Parameter(name = "increment_size", value = "1")
+  //     }
+  // )
+  private Long id;
+  private String firstName;
+  private String middleName;
+  private String lastName;
+  private String politicalParty;
+  private Date firstInaugDate;
+
+
+
+
+
+
+
+
+
+
+mysql> 
+mysql> select * from president;
++----+------------+------------+-------------+-----------------------+
+| id | first_name | last_name  | middle_name | political_party       |
++----+------------+------------+-------------+-----------------------+
+|  1 | George     | Washington |             | Unaffiliated          |
+|  2 | John       | Adams      |             | Federalist            |
+|  3 | Thomas     | Jefferson  |             | Democratic-Republican |
+|  4 | James      | Madison    |             | Democratic-Republican |
+|  5 | James      | Monroe     |             | Democratic-Republican |
+|  6 | John       | Adams      | Quincy      | Democratic-Republican |
+|  7 | Andrew     | Jackson    |             | Democratic            |
+|  8 | Martin     | Van Buren  |             | Democratic            |
+|  9 | William    | Harrison   | Henry       | Democratic            |
+| 10 | John       | Tyler      |             | Democratic            |
+| 11 | James      | Polk       | K           | Democratic            |
+| 12 | Zachary    | Taylor     |             | Whig                  |
+| 13 | Millard    | Fillmore   |             | Whig                  |
+| 14 | Franklin   | Pierce     |             | Democratic            |
+| 15 | James      | Buchanan   |             | Democratic            |
+| 16 | Abraham    | Lincoln    |             | Republican            |
+| 17 | Andrew     | Lincoln    |             | Democratic            |
+| 18 | Ulysses    | Grant      | S.          | Republican            |
+| 19 | Rutherford | Hayes      | B.          | Republican            |
+| 20 | James      | Garfield   | A.          | Republican            |
+| 21 | Chester    | Arthur     | A.          | Republican            |
+| 22 | Grover     | Cleveland  |             | Democratic            |
+| 23 | Benjamin   | Harrison   |             | Republican            |
+| 24 | Grover     | Cleveland  |             | Democratic            |
+| 25 | William    | McKinley   |             | Democratic            |
+| 26 | Abraham    | Lincoln    |             | Republican            |
+| 27 | Theodore   | Roosevelt  |             | Republican            |
+| 28 | William    | Taft       | Howard      | Republican            |
+| 29 | Woodrow    | Wilson     |             | Democratic            |
+| 30 | Warren     | Harding    | G.          | Republican            |
+| 31 | Calvin     | Coolidge   |             | Republican            |
+| 32 | Herbert    | Hoover     |             | Republican            |
+| 33 | Franklin   | Roosevelt  | D.          | Democratic            |
+| 34 | Harry      | Truman     | S.          | Democratic            |
+| 35 | Dwight     | Eisenhower | D.          | Republican            |
+| 36 | John       | Kennedy    | F.          | Democratic            |
+| 37 | Lyndon     | Johnson    | B.          | Democratic            |
+| 38 | Richard    | Nixon      |             | Republican            |
+| 39 | Gerald     | Ford       |             | Republican            |
+| 40 | Jimmy      | Carter     |             | Democratic            |
+| 41 | Ronald     | Reagan     |             | Republican            |
+| 42 | George     | Bush       | H. W.       | Republican            |
+| 43 | Bill       | Clinton    |             | Democratic            |
+| 44 | George     | Bush       | W.          | Republican            |
+| 45 | Barack     | Obama      |             | Democratic            |
+| 46 | Donald     | Trump      |             | Republican            |
+| 47 | Joe        | Biden      |             | Democratic            |
++----+------------+------------+-------------+-----------------------+
+47 rows in set (0.00 sec)
+

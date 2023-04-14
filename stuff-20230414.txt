@@ -1,0 +1,52 @@
+Fri Apr 14 07:04:10 AM EDT 2023
+
+davidho@dphxps17:~$ date
+Fri Apr 14 07:03:40 AM EDT 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date > stuff-20230414.txt
+davidho@dphxps17:~$ code   stuff-20230414.txt 
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+curl localhost:8080/api/presidents/19
+curl localhost:8080/api/presidents/19 | jq
+curl localhost:8080/api/presidents/politicalParty/Republican | jq
+curl localhost:8080/api/presidents/PoliticalParty/Republican | jq
+curl 'http://localhost:8080/api/presidents?page=0'
+curl 'http://localhost:8080/api/presidents?page=0&size=3'
+
+try adding sort to the curl
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+  @Id
+  // @GeneratedValue(strategy = GenerationType.AUTO)
+  // @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(generator = "hibernate_sequence")
+  @GenericGenerator(
+    name = "hibernate_sequence",
+    strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator",
+    parameters = {
+      @Parameter(name = "sequence_name", value = "hibernate_sequence"),
+      @Parameter(name = "initial_value", value = "1"),
+      @Parameter(name = "increment_size", value = "1")
+      }
+  )
+  private Long id;
+
+mysql> show tables;
++--------------------+
+| Tables_in_prezdbsb |
++--------------------+
+| election           |
+| hibernate_sequence |
+| president          |
+| term               |
++--------------------+
+4 rows in set (0.00 sec)
+
+mysql> 
+
