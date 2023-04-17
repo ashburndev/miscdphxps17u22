@@ -1,0 +1,460 @@
+Sun Apr 16 06:54:23 AM EDT 2023
+davidho@dphxps17:~$ date
+Sun Apr 16 06:54:05 AM EDT 2023
+davidho@dphxps17:~$ date > stuff-20230416.txt
+davidho@dphxps17:~$ code   stuff-20230416.txt 
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+mysqldump -u root -p --no-data prezdbsb > prezdbsb-mysqldump-20230416.sql
+mysql     -u root -p           prezdbsb < prezdbsb-mysqldump-20230416.sql
+
+mysqldump -u root -p prezdbsb > prezdbsb-mysqldump-20230416b.sql
+mysql     -u root -p prezdbsb < prezdbsb-mysqldump-20230416b.sql
+
+cp -p prezdbsb-mysqldump-20230416b.sql prezdbsb-mysqldump-20230416c.sql
+sed -i -e 's/bigint/int/g'             prezdbsb-mysqldump-20230416c.sql
+mysql     -u root -p prezdbsb        < prezdbsb-mysqldump-20230416c.sql
+
+# something did not work as expected with the sed command above
+cp -p prezdbsb-mysqldump-20230416b.sql prezdbsb-mysqldump-20230416d.sql
+code prezdbsb-mysqldump-20230416d.sql
+# change bigint to in using vscode
+# drop and create the prezdbsg database
+mysql     -u root -p prezdbsb        < prezdbsb-mysqldump-20230416d.sql
+
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ mysqldump -u root -p --no-data prezdbsb > prezdbsb-mysqldump-20230416.sql
+Enter password: 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ mysqldump -u root -p prezdbsb > prezdbsb-mysqldump-20230416b.sql
+Enter password: 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ cp -p prezdbsb-mysqldump-20230416b.sql prezdbsb-mysqldump-20230416c.sql
+davidho@dphxps17:~/sbootprojs/prezinfosb$ sed -i -e 's/bigint/int/g'             prezdbsb-mysqldump-20230416c.sql
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ cp -p prezdbsb-mysqldump-20230416b.sql prezdbsb-mysqldump-20230416d.sql
+davidho@dphxps17:~/sbootprojs/prezinfosb$ code prezdbsb-mysqldump-20230416d.sql
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ ls -latr | tail
+-rw-rw-r--  1 davidho davidho 7506 Apr 12 09:40 prezdbsb-mysqldump-20230412c.sql
+-rw-rw-r--  1 davidho davidho 7512 Apr 12 13:27 prezdbsb-mysqldump-20230412d.sql
+-rw-rw-r--  1 davidho davidho 7846 Apr 13 06:56 README.md
+-rw-r--r--  1 davidho davidho 2199 Apr 13 19:42 build.gradle
+drwxrwxr-x  8 davidho davidho 4096 Apr 14 08:20 .git
+-rw-rw-r--  1 davidho davidho 4395 Apr 16 08:02 prezdbsb-mysqldump-20230416.sql
+-rw-rw-r--  1 davidho davidho 9654 Apr 16 08:02 prezdbsb-mysqldump-20230416b.sql
+-rw-rw-r--  1 davidho davidho 9630 Apr 16 08:03 prezdbsb-mysqldump-20230416c.sql
+drwxr-xr-x 10 davidho davidho 4096 Apr 16 08:03 .
+-rw-rw-r--  1 davidho davidho 9636 Apr 16 08:05 prezdbsb-mysqldump-20230416d.sql
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://en.wikipedia.org/wiki/Harold_Stassen
+https://en.wikipedia.org/wiki/William_Tecumseh_Sherman
+
+https://reqbin.com/req/c-vdhoummp/curl-get-json-example
+
+curl https://reqbin.com/echo/get/json
+  -H "Accept: application/json" 
+
+curl https://reqbin.com/echo/get/json
+  -H "Accept: application/json"
+
+curl https://reqbin.com/echo/get/xml
+  -H "Accept: application/xml"
+
+curl https://reqbin.com/echo
+  -H "Accept: text/html"
+
+https://reqbin.com/req/c-dwjszac0/curl-post-json-example
+
+curl -X POST https://reqbin.com/echo/post/json
+  -H 'Content-Type: application/json'
+  -d '{"login":"my_login","password":"my_password"}'
+
+curl -X POST https://reqbin.com/echo/post/json -d @filename
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+curl -X POST http://localhost:8080/api/presidents  \
+  -H "Accept: application/json" \
+  -H 'Content-Type: application/json' \
+  -d '{"firstName":"Harold","lastName":"Stassen"}'
+
+curl -X POST http://localhost:8080/api/presidents  \
+  -H "Accept: application/json" \
+  -H 'Content-Type: application/json' \
+  -d '{"firstName":"William","lastName":"Sherman"}'
+
+curl -X DELETE http://localhost:8080/api/presidents/49
+
+curl -X GET /api/presidents/recent?page=0&size=3 -H "Accept: application/json" 
+
+/home/davidho/sbootprojs/prezinfosb/tomcat/logs/access_log.2023-04-16.log
+
+127.0.0.1 - - [16/Apr/2023:08:30:34 -0400] "GET /api/presidents/recent?page=0&size=3 HTTP/1.1" 200 1020
+127.0.0.1 - - [16/Apr/2023:08:32:32 -0400] "POST /presidents HTTP/1.1" 404 110
+127.0.0.1 - - [16/Apr/2023:08:37:24 -0400] "POST /presidents HTTP/1.1" 404 110
+127.0.0.1 - - [16/Apr/2023:08:38:00 -0400] "POST /presidents HTTP/1.1" 404 110
+
+davidho@dphxps17:~/sbootprojs/prezinfosb$ cat stassen.sh 
+curl -X POST http://localhost:8080/presidents  \
+  -H "Accept: application/json" \
+  -H 'Content-Type: application/json' \
+  -d '{"firstName":"Harold","lastName":"Stassen"}'
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ ./stassen.sh 
+{"timestamp":"2023-04-16T12:37:24.491+00:00","status":404,"error":"Not Found","path":"/presidents"}davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ cat sherman.sh 
+curl -X POST http://localhost:8080/presidents  \
+  -H "Accept: application/json" \
+  -H 'Content-Type: application/json' \
+  -d '{"firstName":"William","lastName":"Sherman"}'
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ ./sherman.sh 
+{"timestamp":"2023-04-16T12:38:00.674+00:00","status":404,"error":"Not Found","path":"/presidents"}davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://howtodoinjava.com/spring5/webmvc/controller-getmapping-postmapping/
+
+  @GetMapping("users/{id}")
+  public ResponseEntity<User> getById(@PathVariable long id) {
+
+      Optional<User> user = userService.getById(id);
+      if (user.isPresent()) {
+          return new ResponseEntity<>(user.get(), HttpStatus.OK);
+      } else {
+          throw new RecordNotFoundException();
+      }
+  }
+
+  @PostMapping(path = "users", 
+          consumes = MediaType.APPLICATION_JSON_VALUE, 
+          produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<User> create(@RequestBody User newUser) {
+
+      User user = userService.save(newUser);
+      if (user == null) {
+          throw new ServerException();
+      } else {
+          return new ResponseEntity<>(user, HttpStatus.CREATED);
+      }
+  }
+
+https://www.javaguides.net/2018/11/spring-getmapping-postmapping-putmapping-deletemapping-patchmapping.html
+
+@DeleteMapping("/employees/{id}")
+public Map<String, Boolean> deleteEmployee(@PathVariable(value = "id") Long employeeId)
+  throws ResourceNotFoundException {
+    Employee employee = employeeRepository.findById(employeeId)
+      .orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + employeeId));
+
+    employeeRepository.delete(employee);
+    Map<String, Boolean> response = new HashMap<>();
+    response.put("deleted", Boolean.TRUE);
+    return response;
+}
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+curl -X DELETE http://localhost:8080/api/presidents/49
+curl -X DELETE http://localhost:8080/api/presidents/48
+curl -X GET    http://localhost:8080/api/presidents/recent?page=0&size=3  -H "Accept: application/json" 
+curl -X GET   "http://localhost:8080/api/presidents/recent?page=0&size=3" -H "Accept: application/json" 
+curl -X GET   'http://localhost:8080/api/presidents/recent?page=0&size=3' -H "Accept: application/json" | jq
+
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ curl -X DELETE http://localhost:8080/presidents/49
+{"timestamp":"2023-04-16T12:50:21.614+00:00","status":404,"error":"Not Found","path":"/presidents/49"}davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ curl -X GET    http://localhost:8080/presidents/49
+{"timestamp":"2023-04-16T12:51:36.559+00:00","status":404,"error":"Not Found","path":"/presidents/49"}davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ curl -X DELETE http://localhost:8080/api/presidents/49
+{"timestamp":"2023-04-16T12:53:41.498+00:00","status":500,"error":"Internal Server Error","path":"/api/presidents/49"}davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ curl -X DELETE http://localhost:8080/api/presidents/48
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ cat stassen.sh 
+curl -X POST http://localhost:8080/api/presidents  \
+  -H "Accept: application/json" \
+  -H 'Content-Type: application/json' \
+  -d '{"firstName":"Harold","lastName":"Stassen"}'
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ ./stassen.sh 
+{"id":50,"firstName":"Harold","middleName":null,"lastName":"Stassen","politicalParty":null,"firstInaugDate":null,"createdAt":"2023-04-16T13:13:14.993+00:00","modifiedAt":null,"firstInaugAddress":null,"elections":null,"terms":null}davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ cat sherman.sh 
+curl -X POST http://localhost:8080/api/presidents  \
+  -H "Accept: application/json" \
+  -H 'Content-Type: application/json' \
+  -d '{"firstName":"William","lastName":"Sherman"}'
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ ./sherman.sh 
+{"id":51,"firstName":"William","middleName":null,"lastName":"Sherman","politicalParty":null,"firstInaugDate":null,"createdAt":"2023-04-16T13:13:37.607+00:00","modifiedAt":null,"firstInaugAddress":null,"elections":null,"terms":null}davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ curl -X GET "http://localhost:8080/api/presidents/recent?page=0&size=3" -H "Accept: application/json"  | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1004    0  1004    0     0  66595      0 --:--:-- --:--:-- --:--:-- 66933
+{
+  "content": [
+    {
+      "id": 51,
+      "firstName": "William",
+      "middleName": null,
+      "lastName": "Sherman",
+      "politicalParty": null,
+      "firstInaugDate": null,
+      "createdAt": "2023-04-16T13:13:37.607+00:00",
+      "modifiedAt": null,
+      "firstInaugAddress": null,
+      "elections": [],
+      "terms": []
+    },
+    {
+      "id": 50,
+      "firstName": "Harold",
+      "middleName": null,
+      "lastName": "Stassen",
+      "politicalParty": null,
+      "firstInaugDate": null,
+      "createdAt": "2023-04-16T13:13:14.993+00:00",
+      "modifiedAt": null,
+      "firstInaugAddress": null,
+      "elections": [],
+      "terms": []
+    },
+    {
+      "id": 47,
+      "firstName": "Barack",
+      "middleName": "",
+      "lastName": "Obama",
+      "politicalParty": "Democratic",
+      "firstInaugDate": null,
+      "createdAt": "2023-04-15T21:47:58.620+00:00",
+      "modifiedAt": null,
+      "firstInaugAddress": null,
+      "elections": [],
+      "terms": []
+    }
+  ],
+  "pageable": {
+    "sort": {
+      "empty": false,
+      "sorted": true,
+      "unsorted": false
+    },
+    "offset": 0,
+    "pageNumber": 0,
+    "pageSize": 3,
+    "paged": true,
+    "unpaged": false
+  },
+  "last": false,
+  "totalPages": 15,
+  "totalElements": 45,
+  "size": 3,
+  "number": 0,
+  "sort": {
+    "empty": false,
+    "sorted": true,
+    "unsorted": false
+  },
+  "first": true,
+  "numberOfElements": 3,
+  "empty": false
+}
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+
+
+mysql> select * from president where id >= 39;
++----+----------------------------+---------------------+------------------+------------+-----------+-------------+-------------+-----------------+
+| id | created_at                 | first_inaug_address | first_inaug_date | first_name | last_name | middle_name | modified_at | political_party |
++----+----------------------------+---------------------+------------------+------------+-----------+-------------+-------------+-----------------+
+| 39 | 2023-04-15 17:47:58.583000 | NULL                | NULL             | Ronald     | Reagan    |             | NULL        | Republican      |
+| 44 | 2023-04-15 17:47:58.606000 | NULL                | NULL             | George     | Bush      | H. W.       | NULL        | Republican      |
+| 45 | 2023-04-15 17:47:58.611000 | NULL                | NULL             | Bill       | Clinton   |             | NULL        | Democratic      |
+| 46 | 2023-04-15 17:47:58.615000 | NULL                | NULL             | George     | Bush      | W.          | NULL        | Republican      |
+| 47 | 2023-04-15 17:47:58.620000 | NULL                | NULL             | Barack     | Obama     |             | NULL        | Democratic      |
+| 50 | 2023-04-16 09:13:14.993000 | NULL                | NULL             | Harold     | Stassen   | NULL        | NULL        | NULL            |
+| 51 | 2023-04-16 09:13:37.607000 | NULL                | NULL             | William    | Sherman   | NULL        | NULL        | NULL            |
++----+----------------------------+---------------------+------------------+------------+-----------+-------------+-------------+-----------------+
+7 rows in set (0.00 sec)
+
+mysql> 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+plugins {
+  id 'java'
+  id 'org.springframework.boot' version '3.0.5'
+  id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+configurations {
+  compileOnly {
+    extendsFrom annotationProcessor
+  }
+}
+
+repositories {
+  mavenCentral()
+}
+
+ext {
+  set('springCloudVersion', "2022.0.2")
+}
+
+dependencies {
+  implementation 'org.springframework.boot:spring-boot-starter-actuator'
+  implementation 'org.springframework.boot:spring-boot-starter-amqp'
+  implementation 'org.springframework.boot:spring-boot-starter-artemis'
+  implementation 'org.springframework.boot:spring-boot-starter-data-elasticsearch'
+  implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+  implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+  implementation 'org.springframework.boot:spring-boot-starter-data-ldap'
+  implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+  implementation 'org.springframework.boot:spring-boot-starter-freemarker'
+  implementation 'org.springframework.boot:spring-boot-starter-graphql'
+  implementation 'org.springframework.boot:spring-boot-starter-groovy-templates'
+  implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+  implementation 'org.springframework.boot:spring-boot-starter-jersey'
+  implementation 'org.springframework.boot:spring-boot-starter-mustache'
+  implementation 'org.springframework.boot:spring-boot-starter-quartz'
+  implementation 'org.springframework.boot:spring-boot-starter-security'
+  implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+  implementation 'org.springframework.boot:spring-boot-starter-web'
+  implementation 'org.flywaydb:flyway-core'
+  implementation 'org.flywaydb:flyway-mysql'
+  implementation 'org.flywaydb:flyway-sqlserver'
+  implementation 'org.liquibase:liquibase-core'
+  implementation 'org.springframework.cloud:spring-cloud-starter-zookeeper-config'
+  implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
+  compileOnly 'org.projectlombok:lombok'
+  developmentOnly 'org.springframework.boot:spring-boot-devtools'
+  runtimeOnly 'com.h2database:h2'
+  runtimeOnly 'com.microsoft.sqlserver:mssql-jdbc'
+  runtimeOnly 'com.mysql:mysql-connector-j'
+  runtimeOnly 'com.oracle.database.jdbc:ojdbc8'
+  runtimeOnly 'org.apache.derby:derby'
+  runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+  runtimeOnly 'org.postgresql:postgresql'
+  annotationProcessor 'org.projectlombok:lombok'
+  testImplementation 'org.springframework.boot:spring-boot-starter-test'
+  testImplementation 'org.springframework:spring-webflux'
+  testImplementation 'org.springframework.amqp:spring-rabbit-test'
+  testImplementation 'org.springframework.graphql:spring-graphql-test'
+  testImplementation 'org.springframework.security:spring-security-test'
+}
+
+dependencyManagement {
+  imports {
+    mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+  }
+}
+
+tasks.named('test') {
+  useJUnitPlatform()
+}
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp305g
+Name:          sbapp305grajarj17
+Package name:  ashburncode.sbapp305g
+Description:   spring boot 3.0.5, gradle project, jar packaging, java 17
+Dependencies:
+  Spring Web Web
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp305m
+Name:          sbapp305mvnjarj17
+Package name:  ashburncode.sbapp305m
+Description:   spring boot 3.0.5, maven project, jar packaging, java 17
+Dependencies:
+  Spring Web WEB
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories WEB
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp2710g
+Name:          sbapp2710grajarj17
+Package name:  ashburncode.sbapp2710g
+Description:   spring boot 2.7.10, gradle project, jar packaging, java 17
+Dependencies:
+  Spring Web Web
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp2710m
+Name:          sbapp2710mvnjarj17
+Package name:  ashburncode.sbapp2710m
+Description:   spring boot 2.7.10, maven project, jar packaging, java 17
+Dependencies:
+  Spring Web WEB
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories WEB
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+

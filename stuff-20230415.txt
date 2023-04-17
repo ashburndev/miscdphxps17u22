@@ -1,0 +1,618 @@
+Sat Apr 15 08:38:34 AM EDT 2023
+
+davidho@dphxps17:~$ date
+Sat Apr 15 08:38:18 AM EDT 2023
+davidho@dphxps17:~$ date > stuff-20230415.txt
+davidho@dphxps17:~$ code   stuff-20230415.txt 
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://www.baeldung.com/spring-data-jpa-pagination-sorting
+https://www.baeldung.com/spring-data-annotations
+https://www.baeldung.com/spring-boot-data-sql-and-schema-sql
+https://www.baeldung.com/spring-data-jpa-generate-db-schema
+https://www.baeldung.com/spring-request-param
+https://www.baeldung.com/spring-pathvariable
+
+javax.persistence.schema-generation.scripts.action
+  We can choose from four different options:
+    none – doesn't generate any DDL commands
+    create – generates only database create commands
+    drop – generates only database drop commands
+    drop-and-create – generates database drop commands followed by create commands
+
+javax.persistence.schema-generation.scripts.create-target
+javax.persistence.schema-generation.scripts.drop-target
+javax.persistence.schema-generation.create-source=metadata
+javax.persistence.schema-generation.drop-source=metadata
+
+spring.jpa.properties.javax.persistence.schema-generation.scripts.action=create
+spring.jpa.properties.javax.persistence.schema-generation.scripts.create-target=create.sql
+spring.jpa.properties.javax.persistence.schema-generation.scripts.create-source=metadata
+
+MetadataSources metadataSources = new MetadataSources(serviceRegistry);
+metadataSources.addAnnotatedClass(Account.class);
+metadataSources.addAnnotatedClass(AccountSettings.class);
+Metadata metadata = metadataSources.buildMetadata();
+
+SchemaExport schemaExport = new SchemaExport();
+schemaExport.setFormat(true);
+schemaExport.setOutputFile("create.sql");
+schemaExport.createOnly(EnumSet.of(TargetType.SCRIPT), metadata);
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:/opt$ pwd -P
+/opt
+davidho@dphxps17:/opt$ date
+Sat Apr 15 09:40:29 AM EDT 2023
+davidho@dphxps17:/opt$ 
+davidho@dphxps17:/opt$ ls -latr | tail
+drwxr-xr-x  5 davidho    davidho    4096 Dec  5 11:47 VSCode-linux-x64-1.74.0
+drwxr-xr-x  5 davidho    davidho    4096 Jan  9 11:58 VSCode-linux-x64-1.74.3
+drwxr-xr-x  9 davidho    davidho    4096 Jan 31 02:27 sts-4.17.2.RELEASE
+drwxr-xr-x  8 1001330000 1001330000 4096 Mar  9 11:07 eclipse-java-2023-03-R-linux-gtk-x86_64
+drwxr-xr-x  8 1001330000 1001330000 4096 Mar  9 11:19 eclipse-jee-2023-03-R-linux-gtk-x86_64
+drwxr-xr-x  9        502 root       4096 Mar 13 11:16 sts-4.18.0.RELEASE
+drwxr-xr-x  5 davidho    davidho    4096 Mar 14 13:57 VSCode-linux-x64-1.76.2
+drwxr-xr-x  5 davidho    davidho    4096 Mar 29 06:05 VSCode-linux-x64-1.77.0
+drwxr-xr-x  8 root       root       4096 Apr  2 14:41 ideaIU-2023.1
+drwxr-xr-x 46 root       root       4096 Apr  2 14:47 .
+davidho@dphxps17:/opt$ 
+davidho@dphxps17:/opt$ sudo chown -R davidho eclipse-java-2023-03-R-linux-gtk-x86_64
+[sudo] password for davidho: 
+davidho@dphxps17:/opt$ sudo chown -R davidho eclipse-jee-2023-03-R-linux-gtk-x86_64
+davidho@dphxps17:/opt$ 
+davidho@dphxps17:/opt$ ls -latr | tail
+drwxr-xr-x  5 davidho davidho    4096 Dec  5 11:47 VSCode-linux-x64-1.74.0
+drwxr-xr-x  5 davidho davidho    4096 Jan  9 11:58 VSCode-linux-x64-1.74.3
+drwxr-xr-x  9 davidho davidho    4096 Jan 31 02:27 sts-4.17.2.RELEASE
+drwxr-xr-x  8 davidho 1001330000 4096 Mar  9 11:07 eclipse-java-2023-03-R-linux-gtk-x86_64
+drwxr-xr-x  8 davidho 1001330000 4096 Mar  9 11:19 eclipse-jee-2023-03-R-linux-gtk-x86_64
+drwxr-xr-x  9     502 root       4096 Mar 13 11:16 sts-4.18.0.RELEASE
+drwxr-xr-x  5 davidho davidho    4096 Mar 14 13:57 VSCode-linux-x64-1.76.2
+drwxr-xr-x  5 davidho davidho    4096 Mar 29 06:05 VSCode-linux-x64-1.77.0
+drwxr-xr-x  8 root    root       4096 Apr  2 14:41 ideaIU-2023.1
+drwxr-xr-x 46 root    root       4096 Apr  2 14:47 .
+davidho@dphxps17:/opt$ 
+davidho@dphxps17:/opt$ 
+
+davidho@dphxps17:/opt$ 
+davidho@dphxps17:/opt$ chgrp -R davidho eclipse-java-2023-03-R-linux-gtk-x86_64
+davidho@dphxps17:/opt$ chgrp -R davidho eclipse-jee-2023-03-R-linux-gtk-x86_64
+davidho@dphxps17:/opt$ 
+davidho@dphxps17:/opt$ sudo chown -R davidho sts-4.18.0.RELEASE
+davidho@dphxps17:/opt$ sudo chgrp -R davidho sts-4.18.0.RELEASE
+davidho@dphxps17:/opt$ 
+davidho@dphxps17:/opt$ ls -latr | tail
+drwxr-xr-x  5 davidho davidho 4096 Dec  5 11:47 VSCode-linux-x64-1.74.0
+drwxr-xr-x  5 davidho davidho 4096 Jan  9 11:58 VSCode-linux-x64-1.74.3
+drwxr-xr-x  9 davidho davidho 4096 Jan 31 02:27 sts-4.17.2.RELEASE
+drwxr-xr-x  8 davidho davidho 4096 Mar  9 11:07 eclipse-java-2023-03-R-linux-gtk-x86_64
+drwxr-xr-x  8 davidho davidho 4096 Mar  9 11:19 eclipse-jee-2023-03-R-linux-gtk-x86_64
+drwxr-xr-x  9 davidho davidho 4096 Mar 13 11:16 sts-4.18.0.RELEASE
+drwxr-xr-x  5 davidho davidho 4096 Mar 14 13:57 VSCode-linux-x64-1.76.2
+drwxr-xr-x  5 davidho davidho 4096 Mar 29 06:05 VSCode-linux-x64-1.77.0
+drwxr-xr-x  8 root    root    4096 Apr  2 14:41 ideaIU-2023.1
+drwxr-xr-x 46 root    root    4096 Apr  2 14:47 .
+davidho@dphxps17:/opt$ 
+davidho@dphxps17:/opt$ cd eclipse-jee-2023-03-R-linux-gtk-x86_64
+davidho@dphxps17:/opt/eclipse-jee-2023-03-R-linux-gtk-x86_64$ 
+davidho@dphxps17:/opt/eclipse-jee-2023-03-R-linux-gtk-x86_64$ ./eclipse
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+  public Float getPercentWinnerElectoralVote() {
+    // return percentWinnerElectoralVote;
+    if (totalElectoralVote == null || totalElectoralVote == 0L) {
+      return 0.0f;
+    }
+    return (winnerElectoralVote.floatValue()) / (totalElectoralVote.floatValue());
+  }
+
+  public Double getPercentWinnerPopularVote() {
+    // returnpercentWinnerPopularVote ;
+    if (totalPopularVote == null || totalPopularVote == 0L) {
+      return 0.0d;
+    }
+    return (Double) (winnerPopularVote.doubleValue()) / (Double) (totalPopularVote.doubleValue());
+  }
+
+  @Id
+  // @GeneratedValue(strategy = GenerationType.AUTO)
+  // @GeneratedValue(strategy = GenerationType.IDENTITY)
+  // @GeneratedValue(strategy = GenerationType.SEQUENCE)
+  // @GeneratedValue(strategy = GenerationType.TABLE)
+  // @GeneratedValue(strategy = GenerationType.UUID)
+  @GeneratedValue(generator = "hibernate_sequence")
+  @GenericGenerator(
+    name = "hibernate_sequence", 
+    strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator", 
+    parameters = {
+      @Parameter(name = "sequence_name", value = "hibernate_sequence"), 
+      @Parameter(name = "initial_value", value = "1"),
+      @Parameter(name = "increment_size", value = "1") 
+    })
+  private Long id;
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/sbootprojs/prezinfosb$ ./gradlew bootRun
+
+> Task :bootRun
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.0.4)
+
+2023-04-15T17:47:56.095-04:00  INFO 98932 --- [           main] a.prezinfosb.PrezinfosbApplication       : Starting PrezinfosbApplication using Java 17.0.6 with PID 98932 (/home/davidho/sbootprojs/prezinfosb/build/classes/java/main started by davidho in /home/davidho/sbootprojs/prezinfosb)
+2023-04-15T17:47:56.096-04:00  INFO 98932 --- [           main] a.prezinfosb.PrezinfosbApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-04-15T17:47:56.471-04:00  INFO 98932 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-15T17:47:56.495-04:00  INFO 98932 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 3 JPA repository interfaces.
+2023-04-15T17:47:56.763-04:00  INFO 98932 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-15T17:47:56.769-04:00  INFO 98932 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-15T17:47:56.769-04:00  INFO 98932 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-04-15T17:47:56.811-04:00  INFO 98932 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-15T17:47:56.812-04:00  INFO 98932 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 692 ms
+2023-04-15T17:47:56.928-04:00  INFO 98932 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-15T17:47:56.952-04:00  INFO 98932 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-15T17:47:57.071-04:00  INFO 98932 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-15T17:47:57.219-04:00  INFO 98932 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@42211e04
+2023-04-15T17:47:57.220-04:00  INFO 98932 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-15T17:47:57.229-04:00  INFO 98932 --- [           main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-04-15T17:47:57.230-04:00  WARN 98932 --- [           main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2023-04-15T17:47:57.741-04:00  INFO 98932 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-15T17:47:57.746-04:00  INFO 98932 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-15T17:47:57.943-04:00  WARN 98932 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-15T17:47:58.292-04:00  INFO 98932 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2023-04-15T17:47:58.329-04:00  INFO 98932 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-15T17:47:58.338-04:00  INFO 98932 --- [           main] a.prezinfosb.PrezinfosbApplication       : Started PrezinfosbApplication in 2.413 seconds (process running for 2.543)
+<==========---> 80% EXECUTING [11m 26s]
+> :bootRun
+^Cdavidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ curl "http://localhost:8080/api/presidents/politicalParty/Republican"
+{"timestamp":"2023-04-15T15:49:29.530+00:00","status":500,"error":"Internal Server Error","path":"/api/presidents/politicalParty/Republican"}davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ curl "http://localhost:8080/api/presidents/1"
+{"id":1,"firstName":"George","middleName":"","lastName":"Washington","politicalParty":"Unaffiliated","firstInaugDate":null,"createdAt":null,"modifiedAt":null,"firstInaugAddress":null,"elections":[],"terms":[]}davidho@dphxps17:~$ curl "http://localhost:8080/api/presidents/1" | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   209    0   209    0     0  10121      0 --:--:-- --:--:-- --:--:-- 10450
+{
+  "id": 1,
+  "firstName": "George",
+  "middleName": "",
+  "lastName": "Washington",
+  "politicalParty": "Unaffiliated",
+  "firstInaugDate": null,
+  "createdAt": null,
+  "modifiedAt": null,
+  "firstInaugAddress": null,
+  "elections": [],
+  "terms": []
+}
+davidho@dphxps17:~$ curl "http://localhost:8080/api/presidents/19" | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   209    0   209    0     0  25812      0 --:--:-- --:--:-- --:--:-- 26125
+{
+  "id": 19,
+  "firstName": "Rutherford",
+  "middleName": "B.",
+  "lastName": "Hayes",
+  "politicalParty": "Republican",
+  "firstInaugDate": null,
+  "createdAt": null,
+  "modifiedAt": null,
+  "firstInaugAddress": null,
+  "elections": [],
+  "terms": []
+}
+davidho@dphxps17:~$ curl "http://localhost:8080/api/presidents/40"
+{"id":40,"firstName":"Ronald","middleName":"","lastName":"Reagan","politicalParty":"Republican","firstInaugDate":null,"createdAt":null,"modifiedAt":null,"firstInaugAddress":null,"elections":[{"id":41,"electionDate":"1980-11-04T05:00:00.000+00:00","incumbWonElection":false,"winnerElectoralVote":489,"winnerPopularVote":43903230,"totalElectoralVote":538,"totalPopularVote":86509678,"percentWinnerElectoralVote":0.90892196,"percentWinnerPopularVote":0.5074950111362106,"createdAt":null,"modifiedAt":null},{"id":42,"electionDate":"1984-11-06T05:00:00.000+00:00","incumbWonElection":true,"winnerElectoralVote":525,"winnerPopularVote":54455472,"totalElectoralVote":538,"totalPopularVote":92653233,"percentWinnerElectoralVote":0.97583646,"percentWinnerPopularVote":0.5877341808461233,"createdAt":null,"modifiedAt":null}],"terms":[{"id":43,"begDate":"1981-01-20T05:00:00.000+00:00","endDate":"1985-01-20T05:00:00.000+00:00","createdAt":null,"modifiedAt":null},{"id":44,"begDate":"1985-01-20T05:00:00.000+00:00","endDate":"1989-01-20T05:00:00.000+00:00","createdAt":null,"modifiedAt":null}]}davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ curl "http://localhost:8080/api/presidents/40" | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1083    0  1083    0     0   129k      0 --:--:-- --:--:-- --:--:--  132k
+{
+  "id": 40,
+  "firstName": "Ronald",
+  "middleName": "",
+  "lastName": "Reagan",
+  "politicalParty": "Republican",
+  "firstInaugDate": null,
+  "createdAt": null,
+  "modifiedAt": null,
+  "firstInaugAddress": null,
+  "elections": [
+    {
+      "id": 41,
+      "electionDate": "1980-11-04T05:00:00.000+00:00",
+      "incumbWonElection": false,
+      "winnerElectoralVote": 489,
+      "winnerPopularVote": 43903230,
+      "totalElectoralVote": 538,
+      "totalPopularVote": 86509678,
+      "percentWinnerElectoralVote": 0.90892196,
+      "percentWinnerPopularVote": 0.5074950111362106,
+      "createdAt": null,
+      "modifiedAt": null
+    },
+    {
+      "id": 42,
+      "electionDate": "1984-11-06T05:00:00.000+00:00",
+      "incumbWonElection": true,
+      "winnerElectoralVote": 525,
+      "winnerPopularVote": 54455472,
+      "totalElectoralVote": 538,
+      "totalPopularVote": 92653233,
+      "percentWinnerElectoralVote": 0.97583646,
+      "percentWinnerPopularVote": 0.5877341808461233,
+      "createdAt": null,
+      "modifiedAt": null
+    }
+  ],
+  "terms": [
+    {
+      "id": 43,
+      "begDate": "1981-01-20T05:00:00.000+00:00",
+      "endDate": "1985-01-20T05:00:00.000+00:00",
+      "createdAt": null,
+      "modifiedAt": null
+    },
+    {
+      "id": 44,
+      "begDate": "1985-01-20T05:00:00.000+00:00",
+      "endDate": "1989-01-20T05:00:00.000+00:00",
+      "createdAt": null,
+      "modifiedAt": null
+    }
+  ]
+}
+davidho@dphxps17:~$ 
+
+/home/davidho/sbootprojs/prezinfosb/tomcat/logs/access_log.2023-04-15.log
+
+127.0.0.1 - - [15/Apr/2023:11:49:02 -0400] "GET /api/presidents/politicalParty/Republican HTTP/1.1" 500 152
+127.0.0.1 - - [15/Apr/2023:11:49:29 -0400] "GET /api/presidents/politicalParty/Republican HTTP/1.1" 500 152
+127.0.0.1 - - [15/Apr/2023:11:49:57 -0400] "GET /api/presidents/1 HTTP/1.1" 200 220
+127.0.0.1 - - [15/Apr/2023:11:50:08 -0400] "GET /api/presidents/1 HTTP/1.1" 200 220
+127.0.0.1 - - [15/Apr/2023:11:51:34 -0400] "GET /api/presidents/19 HTTP/1.1" 200 220
+127.0.0.1 - - [15/Apr/2023:11:51:46 -0400] "GET /api/presidents/40 HTTP/1.1" 200 1095
+127.0.0.1 - - [15/Apr/2023:11:51:56 -0400] "GET /api/presidents/40 HTTP/1.1" 200 1095
+127.0.0.1 - - [15/Apr/2023:12:03:20 -0400] "GET /api/presidents/politicalParty/Republican HTTP/1.1" 500 152
+
+davidho@dphxps17:~$ curl "http://localhost:8080/api/presidents/politicalParty/Republican"
+{"timestamp":"2023-04-15T16:03:20.715+00:00","status":500,"error":"Internal Server Error","path":"/api/presidents/politicalParty/Republican"}davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+
+davidho@dphxps17:~$ curl "http://localhost:8080/api/presidents/republicans" | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   625    0   625    0     0  46596      0 --:--:-- --:--:-- --:--:-- 48076
+[
+  {
+    "id": 16,
+    "firstName": "Abraham",
+    "middleName": "",
+    "lastName": "Lincoln",
+    "politicalParty": "Republican",
+    "firstInaugDate": null,
+    "createdAt": null,
+    "modifiedAt": null,
+    "firstInaugAddress": null,
+    "elections": [],
+    "terms": []
+  },
+  {
+    "id": 18,
+    "firstName": "Ulysses",
+    "middleName": "S.",
+    "lastName": "Grant",
+    "politicalParty": "Republican",
+    "firstInaugDate": null,
+    "createdAt": null,
+    "modifiedAt": null,
+    "firstInaugAddress": null,
+    "elections": [],
+    "terms": []
+  },
+  {
+    "id": 19,
+    "firstName": "Rutherford",
+    "middleName": "B.",
+    "lastName": "Hayes",
+    "politicalParty": "Republican",
+    "firstInaugDate": null,
+    "createdAt": null,
+    "modifiedAt": null,
+    "firstInaugAddress": null,
+    "elections": [],
+    "terms": []
+  }
+]
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ curl http://localhost:8080/api/presidents/politicalParty/Republican
+{"timestamp":"2023-04-15T16:25:08.980+00:00","status":500,"error":"Internal Server Error","path":"/api/presidents/politicalParty/Republican"}davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ curl http://localhost:8080/api/presidents/politicalParty/Republican/
+{"timestamp":"2023-04-15T16:25:31.896+00:00","status":404,"error":"Not Found","path":"/api/presidents/politicalParty/Republican/"}davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ curl "http://localhost:8080/api/presidents/politicalParty/Republican"
+{"timestamp":"2023-04-15T16:30:07.714+00:00","status":500,"error":"Internal Server Error","path":"/api/presidents/politicalParty/Republican"}davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ curl "http://localhost:8080/api/presidents/politicalParty/Republican/"
+{"timestamp":"2023-04-15T16:30:39.733+00:00","status":404,"error":"Not Found","path":"/api/presidents/politicalParty/Republican/"}davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ curl "http://localhost:8080/api/presidents/politicalParty?politicalParty=Republican"
+{"timestamp":"2023-04-15T16:31:36.153+00:00","status":400,"error":"Bad Request","path":"/api/presidents/politicalParty"}davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+  public Integer getWinnerElectoralVote() {
+    return winnerElectoralVote;
+  }
+
+  public void setWinnerElectoralVote(Integer winnerElectoralVote) {
+    this.winnerElectoralVote = winnerElectoralVote;
+    if (this.winnerElectoralVote == null || this.totalElectoralVote == null || this.totalElectoralVote == 0L) {
+      setPercentWinnerElectoralVote(Float.valueOf(0.0f));
+    } else {
+      setPercentWinnerElectoralVote(Float.valueOf(this.winnerElectoralVote.floatValue() / (this.totalElectoralVote.floatValue())));
+    }
+  }
+
+  public Long getWinnerPopularVote() {
+    return winnerPopularVote;
+  }
+
+  public void setWinnerPopularVote(Long winnerPopularVote) {
+    this.winnerPopularVote = winnerPopularVote;
+    if (this.winnerPopularVote == null || this.totalPopularVote == null || this.totalPopularVote == 0L) {
+      this.percentWinnerPopularVote = Double.valueOf(0.0d);
+    } else {
+      this.percentWinnerPopularVote = Double.valueOf(this.winnerPopularVote.floatValue() / (this.totalPopularVote.floatValue()));
+    }
+  }
+
+  public Integer getTotalElectoralVote() {
+    return totalElectoralVote;
+  }
+
+  public void setTotalElectoralVote(Integer totalElectoralVote) {
+    this.totalElectoralVote = totalElectoralVote;
+    if (this.winnerElectoralVote == null || this.totalElectoralVote == null || this.totalElectoralVote == 0L) {
+      setPercentWinnerElectoralVote(Float.valueOf(0.0f));
+    } else {
+      setPercentWinnerElectoralVote(Float.valueOf(this.winnerElectoralVote.floatValue() / (this.totalElectoralVote.floatValue())));
+    }
+  }
+
+  public Long getTotalPopularVote() {
+    return totalPopularVote;
+  }
+
+  public void setTotalPopularVote(Long totalPopularVote) {
+    this.totalPopularVote = totalPopularVote;
+    if (this.winnerPopularVote == null || this.totalPopularVote == null || this.totalPopularVote == 0L) {
+      this.percentWinnerPopularVote = Double.valueOf(0.0d);
+    } else {
+      this.percentWinnerPopularVote = Double.valueOf(this.winnerPopularVote.floatValue() / (this.totalPopularVote.floatValue()));
+    }
+  }
+
+  public Float getPercentWinnerElectoralVote() {
+    return percentWinnerElectoralVote;
+  }
+  
+  public void setPercentWinnerElectoralVote(Float percentWinnerElectoralVote) {
+    this.percentWinnerElectoralVote = percentWinnerElectoralVote;
+  }
+
+  public Double getPercentWinnerPopularVote() {
+    return percentWinnerPopularVote ;
+  }
+
+  public void setPercentWinnerPopularVote(Double percentWinnerPopularVote) {
+    this.percentWinnerPopularVote = percentWinnerPopularVote;
+  }
+
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+use prezdbsb;
+show tables;
+desc president;
+desc election;
+desc term;
+desc hibernate_sequence;
+select * from hibernate_sequence;
+select * from president;
+select * from term;
+select id, president_id, election_date, incumb_won_election, winner_electoral_vote, winner_popular_vote, total_electoral_vote, total_popular_vote from election;
+select id, president_id, election_date, percent_winner_electoral_vote, percent_winner_popular_vote from election;
+
+mysql> 
+mysql> use prezdbsb;
+Database changed
+mysql> show tables;
++--------------------+
+| Tables_in_prezdbsb |
++--------------------+
+| election           |
+| hibernate_sequence |
+| president          |
+| term               |
++--------------------+
+4 rows in set (0.00 sec)
+
+mysql> desc president;
++---------------------+--------------+------+-----+---------+-------+
+| Field               | Type         | Null | Key | Default | Extra |
++---------------------+--------------+------+-----+---------+-------+
+| id                  | bigint       | NO   | PRI | NULL    |       |
+| created_at          | datetime(6)  | NO   |     | NULL    |       |
+| first_inaug_address | text         | YES  |     | NULL    |       |
+| first_inaug_date    | datetime(6)  | YES  |     | NULL    |       |
+| first_name          | varchar(255) | YES  |     | NULL    |       |
+| last_name           | varchar(255) | YES  |     | NULL    |       |
+| middle_name         | varchar(255) | YES  |     | NULL    |       |
+| modified_at         | datetime(6)  | YES  |     | NULL    |       |
+| political_party     | varchar(255) | YES  |     | NULL    |       |
++---------------------+--------------+------+-----+---------+-------+
+9 rows in set (0.00 sec)
+
+mysql> desc election;
++-------------------------------+---------------+------+-----+---------+-------+
+| Field                         | Type          | Null | Key | Default | Extra |
++-------------------------------+---------------+------+-----+---------+-------+
+| id                            | bigint        | NO   | PRI | NULL    |       |
+| created_at                    | datetime(6)   | NO   |     | NULL    |       |
+| election_date                 | datetime(6)   | YES  |     | NULL    |       |
+| incumb_won_election           | bit(1)        | YES  |     | NULL    |       |
+| modified_at                   | datetime(6)   | YES  |     | NULL    |       |
+| percent_winner_electoral_vote | float         | YES  |     | NULL    |       |
+| percent_winner_popular_vote   | double        | YES  |     | NULL    |       |
+| total_electoral_vote          | int           | YES  |     | NULL    |       |
+| total_popular_vote            | bigint        | YES  |     | NULL    |       |
+| winner_electoral_vote         | int           | YES  |     | NULL    |       |
+| winner_popular_vote           | bigint        | YES  |     | NULL    |       |
+| zzz_big_decimal_value         | decimal(38,2) | YES  |     | NULL    |       |
+| zzz_big_integer_value         | decimal(38,0) | YES  |     | NULL    |       |
+| zzz_byte_value                | tinyint       | YES  |     | NULL    |       |
+| zzz_character_value           | char(1)       | YES  |     | NULL    |       |
+| zzz_short_value               | smallint      | YES  |     | NULL    |       |
+| president_id                  | bigint        | YES  | MUL | NULL    |       |
++-------------------------------+---------------+------+-----+---------+-------+
+17 rows in set (0.00 sec)
+
+mysql> desc term;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| id           | bigint      | NO   | PRI | NULL    |       |
+| beg_date     | datetime(6) | YES  |     | NULL    |       |
+| created_at   | datetime(6) | NO   |     | NULL    |       |
+| end_date     | datetime(6) | YES  |     | NULL    |       |
+| modified_at  | datetime(6) | YES  |     | NULL    |       |
+| president_id | bigint      | YES  | MUL | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+6 rows in set (0.01 sec)
+
+mysql> desc hibernate_sequence;
++----------+--------+------+-----+---------+-------+
+| Field    | Type   | Null | Key | Default | Extra |
++----------+--------+------+-----+---------+-------+
+| next_val | bigint | YES  |     | NULL    |       |
++----------+--------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> select * from hibernate_sequence;
++----------+
+| next_val |
++----------+
+|       50 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select * from president;
++----+----------------------------+---------------------+------------------+------------+------------+-------------+-------------+-----------------------+
+| id | created_at                 | first_inaug_address | first_inaug_date | first_name | last_name  | middle_name | modified_at | political_party       |
++----+----------------------------+---------------------+------------------+------------+------------+-------------+-------------+-----------------------+
+|  1 | 2023-04-15 17:47:58.364000 | NULL                | NULL             | George     | Washington |             | NULL        | Unaffiliated          |
+|  2 | 2023-04-15 17:47:58.400000 | NULL                | NULL             | John       | Adams      |             | NULL        | Federalist            |
+|  3 | 2023-04-15 17:47:58.406000 | NULL                | NULL             | Thomas     | Jefferson  |             | NULL        | Democratic-Republican |
+|  4 | 2023-04-15 17:47:58.411000 | NULL                | NULL             | James      | Madison    |             | NULL        | Democratic-Republican |
+|  5 | 2023-04-15 17:47:58.419000 | NULL                | NULL             | James      | Monroe     |             | NULL        | Democratic-Republican |
+|  6 | 2023-04-15 17:47:58.424000 | NULL                | NULL             | John       | Adams      | Quincy      | NULL        | Democratic-Republican |
+|  7 | 2023-04-15 17:47:58.429000 | NULL                | NULL             | Andrew     | Jackson    |             | NULL        | Democratic            |
+|  8 | 2023-04-15 17:47:58.434000 | NULL                | NULL             | Martin     | Van Buren  |             | NULL        | Democratic            |
+|  9 | 2023-04-15 17:47:58.439000 | NULL                | NULL             | William    | Harrison   | Henry       | NULL        | Whig                  |
+| 10 | 2023-04-15 17:47:58.443000 | NULL                | NULL             | John       | Tyler      |             | NULL        | Whig                  |
+| 11 | 2023-04-15 17:47:58.447000 | NULL                | NULL             | James      | Polk       | K           | NULL        | Democratic            |
+| 12 | 2023-04-15 17:47:58.452000 | NULL                | NULL             | Zachary    | Taylor     |             | NULL        | Whig                  |
+| 13 | 2023-04-15 17:47:58.457000 | NULL                | NULL             | Millard    | Fillmore   |             | NULL        | Whig                  |
+| 14 | 2023-04-15 17:47:58.462000 | NULL                | NULL             | Franklin   | Pierce     |             | NULL        | Democratic            |
+| 15 | 2023-04-15 17:47:58.467000 | NULL                | NULL             | James      | Buchanan   |             | NULL        | Democratic            |
+| 16 | 2023-04-15 17:47:58.473000 | NULL                | NULL             | Abraham    | Lincoln    |             | NULL        | Republican            |
+| 17 | 2023-04-15 17:47:58.479000 | NULL                | NULL             | Andrew     | Johnson    |             | NULL        | Democratic            |
+| 18 | 2023-04-15 17:47:58.483000 | NULL                | NULL             | Ulysses    | Grant      | S.          | NULL        | Republican            |
+| 19 | 2023-04-15 17:47:58.487000 | NULL                | NULL             | Rutherford | Hayes      | B.          | NULL        | Republican            |
+| 20 | 2023-04-15 17:47:58.492000 | NULL                | NULL             | James      | Garfield   | A.          | NULL        | Republican            |
+| 21 | 2023-04-15 17:47:58.496000 | NULL                | NULL             | Chester    | Arthur     | A.          | NULL        | Republican            |
+| 22 | 2023-04-15 17:47:58.501000 | NULL                | NULL             | Grover     | Cleveland  |             | NULL        | Democratic            |
+| 23 | 2023-04-15 17:47:58.505000 | NULL                | NULL             | Benjamin   | Harrison   |             | NULL        | Republican            |
+| 24 | 2023-04-15 17:47:58.509000 | NULL                | NULL             | William    | McKinley   |             | NULL        | Republican            |
+| 25 | 2023-04-15 17:47:58.514000 | NULL                | NULL             | Theodore   | Roosevelt  |             | NULL        | Republican            |
+| 26 | 2023-04-15 17:47:58.520000 | NULL                | NULL             | William    | Taft       | Howard      | NULL        | Republican            |
+| 27 | 2023-04-15 17:47:58.528000 | NULL                | NULL             | Woodrow    | Wilson     |             | NULL        | Democratic            |
+| 28 | 2023-04-15 17:47:58.531000 | NULL                | NULL             | Warren     | Harding    | G.          | NULL        | Republican            |
+| 29 | 2023-04-15 17:47:58.536000 | NULL                | NULL             | Calvin     | Coolidge   |             | NULL        | Republican            |
+| 30 | 2023-04-15 17:47:58.541000 | NULL                | NULL             | Herbert    | Hoover     |             | NULL        | Republican            |
+| 31 | 2023-04-15 17:47:58.546000 | NULL                | NULL             | Franklin   | Roosevelt  | D.          | NULL        | Democratic            |
+| 32 | 2023-04-15 17:47:58.550000 | NULL                | NULL             | Harry      | Truman     | S.          | NULL        | Democratic            |
+| 33 | 2023-04-15 17:47:58.555000 | NULL                | NULL             | Dwight     | Eisenhower | D.          | NULL        | Republican            |
+| 34 | 2023-04-15 17:47:58.560000 | NULL                | NULL             | John       | Kennedy    | F.          | NULL        | Democratic            |
+| 35 | 2023-04-15 17:47:58.564000 | NULL                | NULL             | Lyndon     | Johnson    | B.          | NULL        | Democratic            |
+| 36 | 2023-04-15 17:47:58.569000 | NULL                | NULL             | Richard    | Nixon      |             | NULL        | Republican            |
+| 37 | 2023-04-15 17:47:58.574000 | NULL                | NULL             | Gerald     | Ford       |             | NULL        | Republican            |
+| 38 | 2023-04-15 17:47:58.579000 | NULL                | NULL             | Jimmy      | Carter     |             | NULL        | Democratic            |
+| 39 | 2023-04-15 17:47:58.583000 | NULL                | NULL             | Ronald     | Reagan     |             | NULL        | Republican            |
+| 44 | 2023-04-15 17:47:58.606000 | NULL                | NULL             | George     | Bush       | H. W.       | NULL        | Republican            |
+| 45 | 2023-04-15 17:47:58.611000 | NULL                | NULL             | Bill       | Clinton    |             | NULL        | Democratic            |
+| 46 | 2023-04-15 17:47:58.615000 | NULL                | NULL             | George     | Bush       | W.          | NULL        | Republican            |
+| 47 | 2023-04-15 17:47:58.620000 | NULL                | NULL             | Barack     | Obama      |             | NULL        | Democratic            |
+| 48 | 2023-04-15 17:47:58.626000 | NULL                | NULL             | Donald     | Trump      |             | NULL        | Republican            |
+| 49 | 2023-04-15 17:47:58.634000 | NULL                | NULL             | Joe        | Biden      |             | NULL        | Democratic            |
++----+----------------------------+---------------------+------------------+------------+------------+-------------+-------------+-----------------------+
+45 rows in set (0.00 sec)
+
+mysql> select * from term;
++----+----------------------------+----------------------------+----------------------------+-------------+--------------+
+| id | beg_date                   | created_at                 | end_date                   | modified_at | president_id |
++----+----------------------------+----------------------------+----------------------------+-------------+--------------+
+| 42 | 1981-01-20 00:00:00.000000 | 2023-04-15 17:47:58.584000 | 1985-01-20 00:00:00.000000 | NULL        |           39 |
+| 43 | 1985-01-20 00:00:00.000000 | 2023-04-15 17:47:58.584000 | 1989-01-20 00:00:00.000000 | NULL        |           39 |
++----+----------------------------+----------------------------+----------------------------+-------------+--------------+
+2 rows in set (0.00 sec)
+
+mysql> select id, president_id, election_date, incumb_won_election, winner_electoral_vote, winner_popular_vote, total_electoral_vote, total_popular_vote from election;
++----+--------------+----------------------------+------------------------------------------+-----------------------+---------------------+----------------------+--------------------+
+| id | president_id | election_date              | incumb_won_election                      | winner_electoral_vote | winner_popular_vote | total_electoral_vote | total_popular_vote |
++----+--------------+----------------------------+------------------------------------------+-----------------------+---------------------+----------------------+--------------------+
+| 40 |           39 | 1980-11-04 00:00:00.000000 | 0x00                                     |                   489 |            43903230 |                  538 |           86509678 |
+| 41 |           39 | 1984-11-06 00:00:00.000000 | 0x01                                     |                   525 |            54455472 |                  538 |           92653233 |
++----+--------------+----------------------------+------------------------------------------+-----------------------+---------------------+----------------------+--------------------+
+2 rows in set (0.00 sec)
+
+mysql> select id, president_id, election_date, percent_winner_electoral_vote, percent_winner_popular_vote from election;
++----+--------------+----------------------------+-------------------------------+-----------------------------+
+| id | president_id | election_date              | percent_winner_electoral_vote | percent_winner_popular_vote |
++----+--------------+----------------------------+-------------------------------+-----------------------------+
+| 40 |           39 | 1980-11-04 00:00:00.000000 |                      0.908922 |          0.5074950456619263 |
+| 41 |           39 | 1984-11-06 00:00:00.000000 |                      0.975836 |          0.5877341628074646 |
++----+--------------+----------------------------+-------------------------------+-----------------------------+
+2 rows in set (0.00 sec)
+
+mysql> 
+
