@@ -1,0 +1,349 @@
+Thu Apr 20 06:15:09 AM EDT 2023
+
+davidho@dphxps17:~$ date
+Thu Apr 20 06:15:12 AM EDT 2023
+davidho@dphxps17:~$ date > stuff-20230420.txt
+davidho@dphxps17:~$ code   stuff-20230420.txt 
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+cd /opt/eclipse-jee-2023-03-R-linux-gtk-x86_64
+./eclipse
+
+cd ~/sbootprojs/prezinfosb/
+./gradlew bootRun
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://start.spring.io/
+
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr *.zip | tail
+-rw-rw-r-- 1 davidho davidho     65167 Mar 14 06:26 sbapp304g.zip
+-rw-rw-r-- 1 davidho davidho     65069 Mar 14 06:29 sbapp304m.zip
+-rw-rw-r-- 1 davidho davidho   1093284 Mar 15 07:56 prezinfogaf.zip
+-rw-rw-r-- 1 davidho davidho     65157 Mar 15 17:23 prezsb304.zip
+-rw-rw-r-- 1 davidho davidho 168632360 Mar 17 06:40 keycloak-21.0.1.zip
+-rw-rw-r-- 1 davidho davidho     65395 Mar 21 06:21 prezinfosb.zip
+-rw-rw-r-- 1 davidho davidho     67715 Apr 17 06:26 sbapp305g.zip
+-rw-rw-r-- 1 davidho davidho     67519 Apr 17 06:27 sbapp305m.zip
+-rw-rw-r-- 1 davidho davidho     67792 Apr 17 06:28 sbapp2710g.zip
+-rw-rw-r-- 1 davidho davidho     67585 Apr 17 06:31 sbapp2710m.zip
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ 
+
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ 7z l prezinfosb.zip
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,16 CPUs 11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz (806D1),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 65395 bytes (64 KiB)
+
+Listing archive: prezinfosb.zip
+
+--
+Path = prezinfosb.zip
+Type = zip
+Physical Size = 65395
+
+   Date      Time    Attr         Size   Compressed  Name
+------------------- ----- ------------ ------------  ------------------------
+2023-03-21 10:21:36 D....            0            2  prezinfosb
+2023-03-21 10:21:36 .....         2216          711  prezinfosb/HELP.md
+2023-03-21 10:21:36 .....           32           34  prezinfosb/settings.gradle
+2023-03-21 10:21:36 .....         2838         1195  prezinfosb/gradlew.bat
+2023-03-21 10:21:36 .....          995          389  prezinfosb/build.gradle
+2023-03-21 10:21:36 D....            0            2  prezinfosb/gradle
+2023-03-21 10:21:36 D....            0            2  prezinfosb/gradle/wrapper
+2023-03-21 10:21:36 .....          202          124  prezinfosb/gradle/wrapper/gradle-wrapper.properties
+2023-03-21 10:21:36 .....        60756        54679  prezinfosb/gradle/wrapper/gradle-wrapper.jar
+2023-03-21 10:21:36 .....          444          242  prezinfosb/.gitignore
+2023-03-21 10:21:36 D....            0            2  prezinfosb/src
+2023-03-21 10:21:36 D....            0            2  prezinfosb/src/main
+2023-03-21 10:21:36 D....            0            2  prezinfosb/src/main/java
+2023-03-21 10:21:36 D....            0            2  prezinfosb/src/main/java/ashburncode
+2023-03-21 10:21:36 D....            0            2  prezinfosb/src/main/java/ashburncode/prezinfosb
+2023-03-21 10:21:36 .....          323          172  prezinfosb/src/main/java/ashburncode/prezinfosb/PrezinfosbApplication.java
+2023-03-21 10:21:36 D....            0            2  prezinfosb/src/main/resources
+2023-03-21 10:21:36 D....            0            2  prezinfosb/src/main/resources/static
+2023-03-21 10:21:36 D....            0            2  prezinfosb/src/main/resources/templates
+2023-03-21 10:21:36 .....            1            3  prezinfosb/src/main/resources/application.properties
+2023-03-21 10:21:36 D....            0            2  prezinfosb/src/test
+2023-03-21 10:21:36 D....            0            2  prezinfosb/src/test/java
+2023-03-21 10:21:36 D....            0            2  prezinfosb/src/test/java/ashburncode
+2023-03-21 10:21:36 D....            0            2  prezinfosb/src/test/java/ashburncode/prezinfosb
+2023-03-21 10:21:36 .....          218          153  prezinfosb/src/test/java/ashburncode/prezinfosb/PrezinfosbApplicationTests.java
+2023-03-21 10:21:36 .....         8188         3519  prezinfosb/gradlew
+------------------- ----- ------------ ------------  ------------------------
+2023-03-21 10:21:36              76213        61251  11 files, 15 folders
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ cd ~/sbootprojs/prezinfosb/
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ ./gradlew --version
+
+------------------------------------------------------------
+Gradle 7.6.1
+------------------------------------------------------------
+
+Build time:   2023-02-24 13:54:42 UTC
+Revision:     3905fe8ac072bbd925c70ddbddddf4463341f4b4
+
+Kotlin:       1.7.10
+Groovy:       3.0.13
+Ant:          Apache Ant(TM) version 1.10.11 compiled on July 10 2021
+JVM:          17.0.6 (Azul Systems, Inc. 17.0.6+10-LTS)
+OS:           Linux 5.19.0-38-generic amd64
+
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+DROP DATABASE IF EXISTS prezdbsb;
+CREATE DATABASE prezdbsb;
+GRANT ALL PRIVILEGES ON prezdbsb.* TO 'prez'@'localhost' WITH GRANT OPTION;
+
+select * from president;
+select * from election;
+select * from term;
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+## @GeneratedValue(strategy = GenerationType.AUTO)
+
+use prezdbsb;
+show tables;
+desc president;
+desc election;
+desc term;
+desc president_seq;
+desc election_seq;
+desc term_seq;
+select id, created_at, first_name, last_name, middle_name, political_party from president;
+select id, created_at, president_id, election_date, incumb_won_election from election;
+select id, created_at, president_id, beg_date, end_date from term;
+select * from president_seq;
+select * from election_seq;
+select * from term_seq;
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+## @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+use prezdbsb;
+show tables;
+desc president;
+desc election;
+desc term;
+select id, created_at, first_name, last_name, middle_name, political_party from president;
+select id, created_at, president_id, election_date, incumb_won_election from election;
+select id, created_at, president_id, beg_date, end_date from term;
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+## @GeneratedValue(strategy = GenerationType.SEQUENCE)
+
+use prezdbsb;
+show tables;
+desc president;
+desc election;
+desc term;
+desc president_seq;
+desc election_seq;
+desc term_seq;
+select id, created_at, first_name, last_name, middle_name, political_party from president;
+select id, created_at, president_id, election_date, incumb_won_election from election;
+select id, created_at, president_id, beg_date, end_date from term;
+select * from president_seq;
+select * from election_seq;
+select * from term_seq;
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+## @GeneratedValue(strategy = GenerationType.TABLE)
+
+use prezdbsb;
+show tables;
+desc president;
+desc election;
+desc term;
+desc hibernate_sequences;
+select id, created_at, first_name, last_name, middle_name, political_party from president;
+select id, created_at, president_id, election_date, incumb_won_election from election;
+select id, created_at, president_id, beg_date, end_date from term;
+select * from hibernate_sequences;
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+## @GeneratedValue(strategy = GenerationType.UUID)
+
+use prezdbsb;
+show tables;
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+## @GenericGenerator(name = "hibernate_sequence", strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator",
+
+use prezdbsb;
+show tables;
+desc president;
+desc election;
+desc term;
+desc hibernate_sequence;
+select id, created_at, first_name, last_name, middle_name, political_party from president;
+select id, created_at, president_id, election_date, incumb_won_election from election;
+select id, created_at, president_id, beg_date, end_date from term;
+select * from hibernate_sequence;
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+mysql> 
+mysql> use prezdbsb;
+Database changed
+mysql> show tables;
++--------------------+
+| Tables_in_prezdbsb |
++--------------------+
+| election           |
+| president          |
+| term               |
++--------------------+
+3 rows in set (0.00 sec)
+
+mysql> desc president;
++---------------------+--------------+------+-----+---------+----------------+
+| Field               | Type         | Null | Key | Default | Extra          |
++---------------------+--------------+------+-----+---------+----------------+
+| id                  | bigint       | NO   | PRI | NULL    | auto_increment |
+| created_at          | datetime(6)  | NO   |     | NULL    |                |
+| first_inaug_address | text         | YES  |     | NULL    |                |
+| first_inaug_date    | datetime(6)  | YES  |     | NULL    |                |
+| first_name          | varchar(255) | YES  |     | NULL    |                |
+| last_name           | varchar(255) | YES  |     | NULL    |                |
+| middle_name         | varchar(255) | YES  |     | NULL    |                |
+| modified_at         | datetime(6)  | YES  |     | NULL    |                |
+| political_party     | varchar(255) | YES  |     | NULL    |                |
++---------------------+--------------+------+-----+---------+----------------+
+9 rows in set (0.00 sec)
+
+mysql> desc election;
++-------------------------------+---------------+------+-----+---------+----------------+
+| Field                         | Type          | Null | Key | Default | Extra          |
++-------------------------------+---------------+------+-----+---------+----------------+
+| id                            | bigint        | NO   | PRI | NULL    | auto_increment |
+| created_at                    | datetime(6)   | NO   |     | NULL    |                |
+| election_date                 | datetime(6)   | YES  |     | NULL    |                |
+| incumb_won_election           | bit(1)        | YES  |     | NULL    |                |
+| modified_at                   | datetime(6)   | YES  |     | NULL    |                |
+| percent_winner_electoral_vote | float         | YES  |     | NULL    |                |
+| percent_winner_popular_vote   | double        | YES  |     | NULL    |                |
+| total_electoral_vote          | int           | YES  |     | NULL    |                |
+| total_popular_vote            | bigint        | YES  |     | NULL    |                |
+| winner_electoral_vote         | int           | YES  |     | NULL    |                |
+| winner_popular_vote           | bigint        | YES  |     | NULL    |                |
+| zzz_big_decimal_value         | decimal(38,2) | YES  |     | NULL    |                |
+| zzz_big_integer_value         | decimal(38,0) | YES  |     | NULL    |                |
+| zzz_byte_value                | tinyint       | YES  |     | NULL    |                |
+| zzz_character_value           | char(1)       | YES  |     | NULL    |                |
+| zzz_short_value               | smallint      | YES  |     | NULL    |                |
+| president_id                  | bigint        | YES  | MUL | NULL    |                |
++-------------------------------+---------------+------+-----+---------+----------------+
+17 rows in set (0.00 sec)
+
+mysql> desc term;
++--------------+-------------+------+-----+---------+----------------+
+| Field        | Type        | Null | Key | Default | Extra          |
++--------------+-------------+------+-----+---------+----------------+
+| id           | bigint      | NO   | PRI | NULL    | auto_increment |
+| beg_date     | datetime(6) | YES  |     | NULL    |                |
+| created_at   | datetime(6) | NO   |     | NULL    |                |
+| end_date     | datetime(6) | YES  |     | NULL    |                |
+| modified_at  | datetime(6) | YES  |     | NULL    |                |
+| president_id | bigint      | YES  | MUL | NULL    |                |
++--------------+-------------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
+
+mysql> select id, created_at, first_name, last_name, middle_name, political_party from president;
++----+----------------------------+------------+------------+-------------+-----------------------+
+| id | created_at                 | first_name | last_name  | middle_name | political_party       |
++----+----------------------------+------------+------------+-------------+-----------------------+
+|  1 | 2023-04-17 08:03:04.758000 | George     | Washington |             | Unaffiliated          |
+|  2 | 2023-04-17 08:03:04.792000 | John       | Adams      |             | Federalist            |
+|  3 | 2023-04-17 08:03:04.798000 | Thomas     | Jefferson  |             | Democratic-Republican |
+|  4 | 2023-04-17 08:03:04.804000 | James      | Madison    |             | Democratic-Republican |
+|  5 | 2023-04-17 08:03:04.809000 | James      | Monroe     |             | Democratic-Republican |
+|  6 | 2023-04-17 08:03:04.812000 | John       | Adams      | Quincy      | Democratic-Republican |
+|  7 | 2023-04-17 08:03:04.815000 | Andrew     | Jackson    |             | Democratic            |
+|  8 | 2023-04-17 08:03:04.818000 | Martin     | Van Buren  |             | Democratic            |
+|  9 | 2023-04-17 08:03:04.820000 | William    | Harrison   | Henry       | Whig                  |
+| 10 | 2023-04-17 08:03:04.822000 | John       | Tyler      |             | Whig                  |
+| 11 | 2023-04-17 08:03:04.825000 | James      | Polk       | K           | Democratic            |
+| 12 | 2023-04-17 08:03:04.827000 | Zachary    | Taylor     |             | Whig                  |
+| 13 | 2023-04-17 08:03:04.830000 | Millard    | Fillmore   |             | Whig                  |
+| 14 | 2023-04-17 08:03:04.832000 | Franklin   | Pierce     |             | Democratic            |
+| 15 | 2023-04-17 08:03:04.834000 | James      | Buchanan   |             | Democratic            |
+| 16 | 2023-04-17 08:03:04.837000 | Abraham    | Lincoln    |             | Republican            |
+| 17 | 2023-04-17 08:03:04.840000 | Andrew     | Johnson    |             | Democratic            |
+| 18 | 2023-04-17 08:03:04.843000 | Ulysses    | Grant      | S.          | Republican            |
+| 19 | 2023-04-17 08:03:04.845000 | Rutherford | Hayes      | B.          | Republican            |
+| 20 | 2023-04-17 08:03:04.847000 | James      | Garfield   | A.          | Republican            |
+| 21 | 2023-04-17 08:03:04.850000 | Chester    | Arthur     | A.          | Republican            |
+| 22 | 2023-04-17 08:03:04.853000 | Grover     | Cleveland  |             | Democratic            |
+| 23 | 2023-04-17 08:03:04.855000 | Benjamin   | Harrison   |             | Republican            |
+| 24 | 2023-04-17 08:03:04.858000 | William    | McKinley   |             | Republican            |
+| 25 | 2023-04-17 08:03:04.860000 | Theodore   | Roosevelt  |             | Republican            |
+| 26 | 2023-04-17 08:03:04.863000 | William    | Taft       | Howard      | Republican            |
+| 27 | 2023-04-17 08:03:04.865000 | Woodrow    | Wilson     |             | Democratic            |
+| 28 | 2023-04-17 08:03:04.868000 | Warren     | Harding    | G.          | Republican            |
+| 29 | 2023-04-17 08:03:04.870000 | Calvin     | Coolidge   |             | Republican            |
+| 30 | 2023-04-17 08:03:04.873000 | Herbert    | Hoover     |             | Republican            |
+| 31 | 2023-04-17 08:03:04.875000 | Franklin   | Roosevelt  | D.          | Democratic            |
+| 32 | 2023-04-17 08:03:04.878000 | Harry      | Truman     | S.          | Democratic            |
+| 33 | 2023-04-17 08:03:04.880000 | Dwight     | Eisenhower | D.          | Republican            |
+| 34 | 2023-04-17 08:03:04.882000 | John       | Kennedy    | F.          | Democratic            |
+| 35 | 2023-04-17 08:03:04.885000 | Lyndon     | Johnson    | B.          | Democratic            |
+| 36 | 2023-04-17 08:03:04.887000 | Richard    | Nixon      |             | Republican            |
+| 37 | 2023-04-17 08:03:04.890000 | Gerald     | Ford       |             | Republican            |
+| 38 | 2023-04-17 08:03:04.892000 | Jimmy      | Carter     |             | Democratic            |
+| 39 | 2023-04-17 08:03:04.894000 | Ronald     | Reagan     |             | Republican            |
+| 40 | 2023-04-17 08:03:04.906000 | George     | Bush       | H. W.       | Republican            |
+| 41 | 2023-04-17 08:03:04.909000 | Bill       | Clinton    |             | Democratic            |
+| 42 | 2023-04-17 08:03:04.913000 | George     | Bush       | W.          | Republican            |
+| 43 | 2023-04-17 08:03:04.917000 | Barack     | Obama      |             | Democratic            |
+| 44 | 2023-04-17 08:03:04.920000 | Donald     | Trump      |             | Republican            |
+| 45 | 2023-04-17 08:03:04.922000 | Joe        | Biden      |             | Democratic            |
++----+----------------------------+------------+------------+-------------+-----------------------+
+45 rows in set (0.01 sec)
+
+mysql> select id, created_at, president_id, election_date, incumb_won_election from election;
++----+----------------------------+--------------+----------------------------+------------------------------------------+
+| id | created_at                 | president_id | election_date              | incumb_won_election                      |
++----+----------------------------+--------------+----------------------------+------------------------------------------+
+|  1 | 2023-04-17 08:03:04.894000 |           39 | 1980-11-04 00:00:00.000000 | 0x00                                     |
+|  2 | 2023-04-17 08:03:04.894000 |           39 | 1984-11-06 00:00:00.000000 | 0x01                                     |
++----+----------------------------+--------------+----------------------------+------------------------------------------+
+2 rows in set (0.00 sec)
+
+mysql> select id, created_at, president_id, beg_date, end_date from term;
++----+----------------------------+--------------+----------------------------+----------------------------+
+| id | created_at                 | president_id | beg_date                   | end_date                   |
++----+----------------------------+--------------+----------------------------+----------------------------+
+|  1 | 2023-04-17 08:03:04.894000 |           39 | 1981-01-20 00:00:00.000000 | 1985-01-20 00:00:00.000000 |
+|  2 | 2023-04-17 08:03:04.895000 |           39 | 1985-01-20 00:00:00.000000 | 1989-01-20 00:00:00.000000 |
++----+----------------------------+--------------+----------------------------+----------------------------+
+2 rows in set (0.00 sec)
+
+mysql> 
+mysql> 
+
+
+
+
+
