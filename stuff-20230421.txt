@@ -1,0 +1,241 @@
+Fri Apr 21 04:42:58 AM EDT 2023
+
+davidho@dphxps17:~$ date
+Fri Apr 21 04:43:06 AM EDT 2023
+davidho@dphxps17:~$ date > stuff-20230421.txt
+davidho@dphxps17:~$ code   stuff-20230421.txt 
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+prezinfosb goals:
+
+create mysqldump sql file(s) of database created yesterday morning
+create a new markdonw file name "initial-setup.md" and link to it from README.md
+make corrections / additions to the other markdown files
+commit project to ashburndev and ashburncode repositories
+additional testing of actuator
+additional testing of Spring Boot actuator
+additional testing of Spring Data REST endpoints
+try importing into eclipse, sts, and intellij idea
+try running and debuggoing in each ide above
+add the import needed to extend each repository from "Repository"
+additional investigation of the model/entity/domain class primary key annotations
+try using ONLY the @Id annotation and see what happens
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+mysqldump -u root -p --no-data prezdbsb > prezdbsb-mysqldump-20230421.sql
+mysql     -u root -p           prezdbsb < prezdbsb-mysqldump-20230421.sql
+
+mysqldump -u root -p prezdbsb > prezdbsb-mysqldump-20230421b.sql
+mysql     -u root -p prezdbsb < prezdbsb-mysqldump-20230421b.sql
+
+cp -p prezdbsb-mysqldump-20230421b.sql prezdbsb-mysqldump-20230421c.sql
+sed -i -e 's/bigint/int/g'             prezdbsb-mysqldump-20230421c.sql
+mysql     -u root -p prezdbsb        < prezdbsb-mysqldump-20230421c.sql
+
+# something did not work as expected with the sed command above
+cp -p prezdbsb-mysqldump-20230421b.sql prezdbsb-mysqldump-20230421d.sql
+code prezdbsb-mysqldump-20230421d.sql
+# change bigint to in using vscode
+# drop and create the prezdbsg database
+mysql     -u root -p prezdbsb        < prezdbsb-mysqldump-20230421d.sql
+
+change each: `id` bigint NOT NULL,
+to:          `id`    int NOT NULL,
+or maybe:    `id` int(10) unsigned NOT NULL auto_increment,
+or maybe:    `id`    int NOT NULL auto_increment,
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ mysqldump -u root -p --no-data prezdbsb > prezdbsb-mysqldump-20230421.sql
+Enter password: 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ mysqldump -u root -p prezdbsb > prezdbsb-mysqldump-20230421b.sql
+Enter password: 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ cp -p prezdbsb-mysqldump-20230421b.sql prezdbsb-mysqldump-20230421c.sql
+davidho@dphxps17:~/sbootprojs/prezinfosb$ sed -i -e 's/bigint/int/g'             prezdbsb-mysqldump-20230421c.sql
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ cp -p prezdbsb-mysqldump-20230421b.sql prezdbsb-mysqldump-20230421d.sql
+davidho@dphxps17:~/sbootprojs/prezinfosb$ code prezdbsb-mysqldump-20230421d.sql
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ ls -latr
+total 304
+drwxrwxr-x 21 davidho davidho 4096 Mar 21 06:24 ..
+drwxrwxr-x  5 davidho davidho 4096 Mar 21 06:31 .gradle
+drwxrwxr-x  4 davidho davidho 4096 Mar 21 06:31 tomcat
+drwxr-xr-x  4 davidho davidho 4096 Mar 21 10:21 src
+-rw-r--r--  1 davidho davidho   32 Mar 21 10:21 settings.gradle
+-rw-r--r--  1 davidho davidho 2216 Mar 21 10:21 HELP.md
+-rw-r--r--  1 davidho davidho 2838 Mar 21 10:21 gradlew.bat
+-rwxr-xr-x  1 davidho davidho 8188 Mar 21 10:21 gradlew
+drwxr-xr-x  3 davidho davidho 4096 Mar 21 10:21 gradle
+-rw-r--r--  1 davidho davidho  481 Apr  4 07:13 .gitignore
+-rw-rw-r--  1 davidho davidho 3508 Apr  4 07:14 prezdbsb-mysqldump-20230404.sql
+-rw-rw-r--  1 davidho davidho  203 Apr  5 07:12 prezdbsb-mysqldump-20230405.sql
+-rw-rw-r--  1 davidho davidho 4515 Apr  5 20:47 prezdbsb-mysqldump-20230405b.sql
+-rw-rw-r--  1 davidho davidho 4562 Apr  6 05:57 prezdbsb-mysqldump-20230406.sql
+-rw-rw-r--  1 davidho davidho  605 Apr  7 07:44 .project
+-rw-rw-r--  1 davidho davidho 1079 Apr  7 07:44 .classpath
+drwxrwxr-x  4 davidho davidho 4096 Apr  7 07:45 bin
+drwxrwxr-x  2 davidho davidho 4096 Apr  9 16:45 .settings
+-rw-rw-r--  1 davidho davidho 4758 Apr  9 21:01 prezdbsb-mysqldump-20230408.sql
+-rw-rw-r--  1 davidho davidho 4758 Apr  9 21:02 prezdbsb-mysqldump-20230408b.sql
+-rw-rw-r--  1 davidho davidho 4758 Apr 10 07:17 prezdbsb-mysqldump-20230410.sql
+-rw-rw-r--  1 davidho davidho 7320 Apr 10 07:17 prezdbsb-mysqldump-20230410b.sql
+-rw-rw-r--  1 davidho davidho 7290 Apr 10 07:29 prezdbsb-mysqldump-20230410c.sql
+-rw-rw-r--  1 davidho davidho 4757 Apr 11 08:02 prezdbsb-mysqldump-20230411.sql
+-rw-rw-r--  1 davidho davidho 7536 Apr 11 08:02 prezdbsb-mysqldump-20230411b.sql
+-rw-rw-r--  1 davidho davidho 7506 Apr 11 08:23 prezdbsb-mysqldump-20230411c.sql
+-rw-rw-r--  1 davidho davidho 4757 Apr 12 09:40 prezdbsb-mysqldump-20230412.sql
+-rw-rw-r--  1 davidho davidho 7695 Apr 12 09:40 prezdbsb-mysqldump-20230412b.sql
+-rw-rw-r--  1 davidho davidho 7506 Apr 12 09:40 prezdbsb-mysqldump-20230412c.sql
+-rw-rw-r--  1 davidho davidho 7512 Apr 12 13:27 prezdbsb-mysqldump-20230412d.sql
+-rw-r--r--  1 davidho davidho 2199 Apr 13 19:42 build.gradle
+-rw-rw-r--  1 davidho davidho 4395 Apr 16 08:02 prezdbsb-mysqldump-20230416.sql
+-rw-rw-r--  1 davidho davidho 9654 Apr 16 08:02 prezdbsb-mysqldump-20230416b.sql
+-rw-rw-r--  1 davidho davidho 9630 Apr 16 08:03 prezdbsb-mysqldump-20230416c.sql
+-rw-rw-r--  1 davidho davidho 9636 Apr 16 08:05 prezdbsb-mysqldump-20230416d.sql
+-rwxrwxr-x  1 davidho davidho  179 Apr 16 08:58 sherman.sh
+-rwxrwxr-x  1 davidho davidho  178 Apr 16 08:59 stassen.sh
+drwxrwxr-x  6 davidho davidho 4096 Apr 16 09:03 build
+drwxrwxr-x  8 davidho davidho 4096 Apr 20 08:28 .git
+drwxrwxr-x  2 davidho davidho 4096 Apr 21 04:56 doc
+-rw-rw-r--  1 davidho davidho 4547 Apr 21 05:50 README.md
+-rw-rw-r--  1 davidho davidho 4395 Apr 21 05:56 prezdbsb-mysqldump-20230421.sql
+-rw-rw-r--  1 davidho davidho 9654 Apr 21 05:56 prezdbsb-mysqldump-20230421b.sql
+-rw-rw-r--  1 davidho davidho 9630 Apr 21 05:57 prezdbsb-mysqldump-20230421c.sql
+drwxr-xr-x 11 davidho davidho 4096 Apr 21 05:57 .
+-rw-rw-r--  1 davidho davidho 9654 Apr 21 06:03 prezdbsb-mysqldump-20230421d.sql
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+
+davidho@dphxps17:~/sbootprojs/prezinfosb$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   README.md
+	modified:   src/main/java/ashburncode/prezinfosb/repository/ElectionRepository.java
+	modified:   src/main/java/ashburncode/prezinfosb/repository/PresidentRepository.java
+	modified:   src/main/java/ashburncode/prezinfosb/repository/TermRepository.java
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	doc/springboot-proj-initial-setup.md
+	prezdbsb-mysqldump-20230421.sql
+	prezdbsb-mysqldump-20230421b.sql
+	prezdbsb-mysqldump-20230421c.sql
+	prezdbsb-mysqldump-20230421d.sql
+
+no changes added to commit (use "git add" and/or "git commit -a")
+davidho@dphxps17:~/sbootprojs/prezinfosb$ git add .
+davidho@dphxps17:~/sbootprojs/prezinfosb$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   README.md
+	new file:   doc/springboot-proj-initial-setup.md
+	new file:   prezdbsb-mysqldump-20230421.sql
+	new file:   prezdbsb-mysqldump-20230421b.sql
+	new file:   prezdbsb-mysqldump-20230421c.sql
+	new file:   prezdbsb-mysqldump-20230421d.sql
+	modified:   src/main/java/ashburncode/prezinfosb/repository/ElectionRepository.java
+	modified:   src/main/java/ashburncode/prezinfosb/repository/PresidentRepository.java
+	modified:   src/main/java/ashburncode/prezinfosb/repository/TermRepository.java
+
+davidho@dphxps17:~/sbootprojs/prezinfosb$ git commit -a -m "update markdown files, add mysqldump files"
+[main 522611b] update markdown files, add mysqldump files
+ 9 files changed, 756 insertions(+), 17 deletions(-)
+ create mode 100644 doc/springboot-proj-initial-setup.md
+ create mode 100644 prezdbsb-mysqldump-20230421.sql
+ create mode 100644 prezdbsb-mysqldump-20230421b.sql
+ create mode 100644 prezdbsb-mysqldump-20230421c.sql
+ create mode 100644 prezdbsb-mysqldump-20230421d.sql
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+davidho@dphxps17:~/sbootprojs/prezinfosb$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+davidho@dphxps17:~/sbootprojs/prezinfosb$ git push
+Enumerating objects: 28, done.
+Counting objects: 100% (28/28), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (16/16), done.
+Writing objects: 100% (18/18), 6.82 KiB | 6.82 MiB/s, done.
+Total 18 (delta 9), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (9/9), completed with 4 local objects.
+To github.com:ashburndev/prezinfosb.git
+   913fee6..522611b  main -> main
+davidho@dphxps17:~/sbootprojs/prezinfosb$ 
+
+
+
+=================================
+
+
+ 2032  cd ~/repositories/ashburncode/
+ 2033  ls -latr
+ 2034  rm -rf prezinfosb/
+ 2035  cp -pr ~/sbootprojs/prezinfosb .
+ 2036  ls -latr
+ 2037  cd prezinfosb/
+ 2038  ls -latr
+ 2039  rm -rf .git
+ 2040  git init
+ 2041  git status
+ 2042  git add .
+ 2043  git status
+ 2044  git add -a -m "first commit"
+ 2045  git commit -a -m "first commit"
+ 2046  history
+
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/ashburncode_rsa
+
+davidho@dphxps17:~/repositories/ashburncode/prezinfosb$ 
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/ashburncode_rsa
+Agent pid 22894
+Identity added: /home/davidho/.ssh/ashburncode_rsa (ashburncode@gmail.com)
+davidho@dphxps17:~/repositories/ashburncode/prezinfosb$ 
+davidho@dphxps17:~/repositories/ashburncode/prezinfosb$ 
+
+on github, delete and create prezinfosb repository (ashburncode account)
+
+https://github.com/ashburncode/
+https://github.com/ashburncode/prezinfosb
+Spring Boot 3.0.4 web application
+
+git remote add origin git@github.com:ashburncode/prezinfosb.git
+git branch -M main
+git push -u origin main
+
+davidho@dphxps17:~/repositories/ashburncode/prezinfosb$ 
+davidho@dphxps17:~/repositories/ashburncode/prezinfosb$ 
+git remote add origin git@github.com:ashburncode/prezinfosb.git
+git branch -M main
+git push -u origin main
+
+Enumerating objects: 72, done.
+Counting objects: 100% (72/72), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (65/65), done.
+Writing objects: 100% (72/72), 94.26 KiB | 15.71 MiB/s, done.
+Total 72 (delta 31), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (31/31), done.
+To github.com:ashburncode/prezinfosb.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+davidho@dphxps17:~/repositories/ashburncode/prezinfosb$ 
+
+
