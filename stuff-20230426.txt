@@ -1,0 +1,887 @@
+Wed Apr 26 05:55:56 AM EDT 2023
+
+davidho@dphxps17:~$ date
+Wed Apr 26 05:55:42 AM EDT 2023
+davidho@dphxps17:~$ date > stuff-20230426.txt
+davidho@dphxps17:~$ code   stuff-20230426.txt
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://nodejs.org/en
+
+Node.js® is an open-source, cross-platform JavaScript runtime environment.
+18.16.0  LTS      Recommended For Most Users
+20.0.0   Current  Latest Features
+
+https://nodejs.org/en/download/releases
+
+Version           LTS       Date        V8            npm      NODE_MODULE_VERSION
+----------------  --------  ----------  ------------  -------  -------------------
+Node.js 20.0.0              2023-04-17  11.3.244.4    9.6.4    115  
+Node.js 19.9.0              2023-04-10  10.8.168.25   9.6.3    111  
+Node.js 18.16.0   Hydrogen  2023-04-12  10.2.154.26   9.5.1    108  
+Node.js 17.9.1              2022-06-01  9.6.180.15    8.11.0   102  
+Node.js 16.20.0   Gallium   2023-03-28  9.4.146.26    8.19.4    93  
+Node.js 15.14.0             2021-04-06  8.6.395.17    7.7.6     88  
+Node.js 14.21.3   Fermium   2023-02-16  8.4.371.23    6.14.18   83  
+Node.js 13.14.0             2020-04-29  7.9.317.25    6.14.4    79  
+Node.js 12.22.12  Erbium    2022-04-05  7.8.279.23    6.14.16   72  
+Node.js 11.15.0             2019-04-30  7.0.276.38    6.7.0     67  
+Node.js 10.24.1   Dubnium   2021-04-06  6.8.275.32    6.14.12   64  
+Node.js 9.11.2              2018-06-12  6.2.414.46    5.6.0     59  
+Node.js 8.17.0    Carbon    2019-12-17  6.2.414.78    6.13.4    57  
+Node.js 7.10.1              2017-07-11  5.5.372.43    4.2.0     51  
+Node.js 6.17.1    Boron     2019-04-03  5.1.281.111   3.10.10   48  
+Node.js 5.12.0              2016-06-23  4.6.85.32     3.8.6     47  
+Node.js 4.9.1     Argon     2018-03-29  4.5.103.53    2.15.11   46  
+Node.js 0.12.18             2017-02-22  3.28.71.20    2.15.11   14  
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://github.com/nvm-sh/nvm
+
+davidho@dphxps17:~$ node -v
+v19.6.0
+davidho@dphxps17:~$ npm -v
+9.4.0
+davidho@dphxps17:~$ nvm -v
+0.39.1
+davidho@dphxps17:~$ nvm ls
+        v18.2.0
+       v18.14.0
+->      v19.6.0
+         system
+default -> node (-> v19.6.0)
+iojs -> N/A (default)
+unstable -> N/A (default)
+node -> stable (-> v19.6.0) (default)
+stable -> 19.6 (-> v19.6.0) (default)
+lts/* -> lts/hydrogen (-> v18.14.0)
+lts/argon -> v4.9.1 (-> N/A)
+lts/boron -> v6.17.1 (-> N/A)
+lts/carbon -> v8.17.0 (-> N/A)
+lts/dubnium -> v10.24.1 (-> N/A)
+lts/erbium -> v12.22.12 (-> N/A)
+lts/fermium -> v14.21.2 (-> N/A)
+lts/gallium -> v16.19.0 (-> N/A)
+lts/hydrogen -> v18.14.0
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ nvm ls-remote | head
+        v0.1.14
+        v0.1.15
+        v0.1.16
+        v0.1.17
+        v0.1.18
+        v0.1.19
+        v0.1.20
+        v0.1.21
+        v0.1.22
+        v0.1.23
+davidho@dphxps17:~$ nvm ls-remote | tail
+        v19.3.0
+        v19.4.0
+        v19.5.0
+->      v19.6.0
+        v19.6.1
+        v19.7.0
+        v19.8.0
+        v19.8.1
+        v19.9.0
+        v20.0.0
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ nvm install lts
+Version 'lts' not found - try `nvm ls-remote` to browse available versions.
+davidho@dphxps17:~$ nvm install 18.16.0 
+Downloading and installing node v18.16.0...
+Downloading https://nodejs.org/dist/v18.16.0/node-v18.16.0-linux-x64.tar.xz...
+#################################################################################################################################################################################################### 100.0%
+Computing checksum with sha256sum
+Checksums matched!
+Now using node v18.16.0 (npm v9.5.1)
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ node -v
+v18.16.0
+davidho@dphxps17:~$ npm -v
+9.5.1
+davidho@dphxps17:~$ npm version
+{
+  npm: '9.5.1',
+  node: '18.16.0',
+  acorn: '8.8.2',
+  ada: '1.0.4',
+  ares: '1.19.0',
+  brotli: '1.0.9',
+  cldr: '42.0',
+  icu: '72.1',
+  llhttp: '6.0.10',
+  modules: '108',
+  napi: '8',
+  nghttp2: '1.52.0',
+  nghttp3: '0.7.0',
+  ngtcp2: '0.8.1',
+  openssl: '3.0.8+quic',
+  simdutf: '3.2.2',
+  tz: '2022g',
+  undici: '5.21.0',
+  unicode: '15.0',
+  uv: '1.44.2',
+  uvwasi: '0.0.15',
+  v8: '10.2.154.26-node.26',
+  zlib: '1.2.13'
+}
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ nvm ls
+        v18.2.0
+       v18.14.0
+->     v18.16.0
+        v19.6.0
+         system
+default -> node (-> v19.6.0)
+iojs -> N/A (default)
+unstable -> N/A (default)
+node -> stable (-> v19.6.0) (default)
+stable -> 19.6 (-> v19.6.0) (default)
+lts/* -> lts/hydrogen (-> v18.16.0)
+lts/argon -> v4.9.1 (-> N/A)
+lts/boron -> v6.17.1 (-> N/A)
+lts/carbon -> v8.17.0 (-> N/A)
+lts/dubnium -> v10.24.1 (-> N/A)
+lts/erbium -> v12.22.12 (-> N/A)
+lts/fermium -> v14.21.3 (-> N/A)
+lts/gallium -> v16.20.0 (-> N/A)
+lts/hydrogen -> v18.16.0
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-22-04
+https://www.digitalocean.com/community/tutorials/how-to-use-node-js-modules-with-npm-and-package-json
+
+npm install axios --save
+npm i eslint@8.0.0 --save-dev
+npm i
+
+npm will check for a package-lock.json file to install the modules. If no lock file is available, it would read from the package.json file to determine the installations. It is usually quicker to install from package-lock.json, since the lock file contains the exact version of modules and their dependencies, meaning npm does not have to spend time figuring out a suitable version to install.
+
+npm ls
+npm ls --depth 2
+npm ls --all
+npm outdated
+npm up eslint
+npm ls eslint
+npm up
+npm un axios
+npm i request@2.60.0
+npm audit
+npm audit fix
+npm audit fix --force
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://create-react-app.dev/
+
+npx create-react-app my-app
+npm install react-scripts@latest
+
+https://create-react-app.dev/docs/getting-started
+
+npx create-react-app my-app
+cd my-app
+npm start
+
+If you've previously installed create-react-app globally via npm install -g create-react-app, we recommend you uninstall the package using npm uninstall -g create-react-app or yarn global remove create-react-app to ensure that npx always uses the latest version.
+
+(npx comes with npm 5.2+ and higher, see instructions for older npm versions)
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/jsproj$ npm uninstall -g create-react-app
+
+up to date in 38ms
+davidho@dphxps17:~/jsproj$ npx create-react-app dphcra1
+
+Creating a new React app in /home/davidho/jsproj/dphcra1.
+
+Installing packages. This might take a couple of minutes.
+Installing react, react-dom, and react-scripts with cra-template...
+
+
+added 1422 packages in 18s
+
+235 packages are looking for funding
+  run `npm fund` for details
+
+Initialized a git repository.
+
+Installing template dependencies using npm...
+
+added 62 packages, and changed 1 package in 2s
+
+235 packages are looking for funding
+  run `npm fund` for details
+Removing template package using npm...
+
+
+removed 1 package, and audited 1484 packages in 1s
+
+235 packages are looking for funding
+  run `npm fund` for details
+
+6 high severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+Created git commit.
+
+Success! Created dphcra1 at /home/davidho/jsproj/dphcra1
+Inside that directory, you can run several commands:
+
+  npm start
+    Starts the development server.
+
+  npm run build
+    Bundles the app into static files for production.
+
+  npm test
+    Starts the test runner.
+
+  npm run eject
+    Removes this tool and copies build dependencies, configuration files
+    and scripts into the app directory. If you do this, you can’t go back!
+
+We suggest that you begin by typing:
+
+  cd dphcra1
+  npm start
+
+Happy hacking!
+npm notice 
+npm notice New minor version of npm available! 9.5.1 -> 9.6.5
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v9.6.5
+npm notice Run npm install -g npm@9.6.5 to update!
+npm notice 
+davidho@dphxps17:~/jsproj$ 
+davidho@dphxps17:~/jsproj$ cd dphcra1
+davidho@dphxps17:~/jsproj/dphcra1$ 
+davidho@dphxps17:~/jsproj/dphcra1$ ls -latr
+total 732
+drwxrwxr-x   5 davidho davidho   4096 Apr 26 06:36 ..
+drwxrwxr-x   2 davidho davidho   4096 Apr 26 06:36 src
+-rw-rw-r--   1 davidho davidho   3359 Apr 26 06:36 README.md
+drwxrwxr-x   2 davidho davidho   4096 Apr 26 06:36 public
+-rw-rw-r--   1 davidho davidho    310 Apr 26 06:36 .gitignore
+drwxrwxr-x   6 davidho davidho   4096 Apr 26 06:36 .
+drwxrwxr-x 828 davidho davidho  36864 Apr 26 06:36 node_modules
+-rw-rw-r--   1 davidho davidho    810 Apr 26 06:36 package.json
+-rw-rw-r--   1 davidho davidho 675388 Apr 26 06:36 package-lock.json
+drwxrwxr-x   8 davidho davidho   4096 Apr 26 06:36 .git
+davidho@dphxps17:~/jsproj/dphcra1$ 
+davidho@dphxps17:~/jsproj/dphcra1$ cat package.json
+{
+  "name": "dphcra1",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
+davidho@dphxps17:~/jsproj/dphcra1$ 
+davidho@dphxps17:~/jsproj/dphcra1$ npm ls
+dphcra1@0.1.0 /home/davidho/jsproj/dphcra1
+├── @testing-library/jest-dom@5.16.5
+├── @testing-library/react@13.4.0
+├── @testing-library/user-event@13.5.0
+├── react-dom@18.2.0
+├── react-scripts@5.0.1
+├── react@18.2.0
+└── web-vitals@2.1.4
+
+davidho@dphxps17:~/jsproj/dphcra1$ npm ls --depth 1
+dphcra1@0.1.0 /home/davidho/jsproj/dphcra1
+├─┬ @testing-library/jest-dom@5.16.5
+│ ├── @adobe/css-tools@4.2.0
+│ ├── @babel/runtime@7.21.0
+│ ├── @types/testing-library__jest-dom@5.14.5
+│ ├── aria-query@5.1.3
+│ ├── chalk@3.0.0
+│ ├── css.escape@1.5.1
+│ ├── dom-accessibility-api@0.5.16
+│ ├── lodash@4.17.21
+│ └── redent@3.0.0
+├─┬ @testing-library/react@13.4.0
+│ ├── @babel/runtime@7.21.0 deduped
+│ ├── @testing-library/dom@8.20.0
+│ ├── @types/react-dom@18.2.1
+│ ├── react-dom@18.2.0 deduped
+│ └── react@18.2.0 deduped
+├─┬ @testing-library/user-event@13.5.0
+│ ├── @babel/runtime@7.21.0 deduped
+│ └── @testing-library/dom@9.2.0
+├─┬ react-dom@18.2.0
+│ ├── loose-envify@1.4.0
+│ ├── react@18.2.0 deduped
+│ └── scheduler@0.23.0
+├─┬ react-scripts@5.0.1
+│ ├── @babel/core@7.21.4
+│ ├── @pmmmwh/react-refresh-webpack-plugin@0.5.10
+│ ├── @svgr/webpack@5.5.0
+│ ├── babel-jest@27.5.1
+│ ├── babel-loader@8.3.0
+│ ├── babel-plugin-named-asset-import@0.3.8
+│ ├── babel-preset-react-app@10.0.1
+│ ├── bfj@7.0.2
+│ ├── browserslist@4.21.5
+│ ├── camelcase@6.3.0
+│ ├── case-sensitive-paths-webpack-plugin@2.4.0
+│ ├── css-loader@6.7.3
+│ ├── css-minimizer-webpack-plugin@3.4.1
+│ ├── dotenv-expand@5.1.0
+│ ├── dotenv@10.0.0
+│ ├── eslint-config-react-app@7.0.1
+│ ├── eslint-webpack-plugin@3.2.0
+│ ├── eslint@8.39.0
+│ ├── file-loader@6.2.0
+│ ├── fs-extra@10.1.0
+│ ├── UNMET OPTIONAL DEPENDENCY fsevents@^2.3.2
+│ ├── html-webpack-plugin@5.5.1
+│ ├── identity-obj-proxy@3.0.0
+│ ├── jest-resolve@27.5.1
+│ ├── jest-watch-typeahead@1.1.0
+│ ├── jest@27.5.1
+│ ├── mini-css-extract-plugin@2.7.5
+│ ├── postcss-flexbugs-fixes@5.0.2
+│ ├── postcss-loader@6.2.1
+│ ├── postcss-normalize@10.0.1
+│ ├── postcss-preset-env@7.8.3
+│ ├── postcss@8.4.23
+│ ├── prompts@2.4.2
+│ ├── react-app-polyfill@3.0.0
+│ ├── react-dev-utils@12.0.1
+│ ├── react-refresh@0.11.0
+│ ├── react@18.2.0 deduped
+│ ├── resolve-url-loader@4.0.0
+│ ├── resolve@1.22.2
+│ ├── sass-loader@12.6.0
+│ ├── semver@7.5.0
+│ ├── source-map-loader@3.0.2
+│ ├── style-loader@3.3.2
+│ ├── tailwindcss@3.3.2
+│ ├── terser-webpack-plugin@5.3.7
+│ ├── typescript@4.9.5
+│ ├── webpack-dev-server@4.13.3
+│ ├── webpack-manifest-plugin@4.1.1
+│ ├── webpack@5.80.0
+│ └── workbox-webpack-plugin@6.5.4
+├─┬ react@18.2.0
+│ └── loose-envify@1.4.0 deduped
+└── web-vitals@2.1.4
+
+davidho@dphxps17:~/jsproj/dphcra1$ npm ls | wc
+      9      16     279
+davidho@dphxps17:~/jsproj/dphcra1$ npm ls --depth 1 | wc
+     79     236    2863
+davidho@dphxps17:~/jsproj/dphcra1$ npm ls --all | wc
+   3109   18542  157994
+davidho@dphxps17:~/jsproj/dphcra1$ 
+davidho@dphxps17:~/jsproj/dphcra1$ npm ls --all > dphcra1-npm-ls-all.txt
+davidho@dphxps17:~/jsproj/dphcra1$ 
+
+sed -e "s~^[│├─┬└─ ]*~~g" dphcra1-npm-ls-all.txt
+sed -e "s~^[│├─┬└─ ]*~~g" dphcra1-npm-ls-all.txt | sort -u
+sed -e "s~^[│├─┬└─ ]*~~g" dphcra1-npm-ls-all.txt | grep -v " deduped" | sort -u
+
+davidho@dphxps17:~/jsproj/dphcra1$ 
+davidho@dphxps17:~/jsproj/dphcra1$ sed -e "s~^[│├─┬└─ ]*~~g" dphcra1-npm-ls-all.txt | grep -v " deduped" | sort -u | wc
+   1229    1301   29620
+davidho@dphxps17:~/jsproj/dphcra1$ 
+davidho@dphxps17:~/jsproj/dphcra1$ sed -e "s~^[│├─┬└─ ]*~~g" dphcra1-npm-ls-all.txt | grep -v " deduped" | sort -u | head
+
+abab@2.0.6
+accepts@1.3.8
+acorn@7.4.1
+acorn@8.8.2
+acorn-globals@6.0.0
+acorn-import-assertions@1.8.0
+acorn-jsx@5.3.2
+acorn-walk@7.2.0
+address@1.2.2
+davidho@dphxps17:~/jsproj/dphcra1$ 
+davidho@dphxps17:~/jsproj/dphcra1$ sed -e "s~^[│├─┬└─ ]*~~g" dphcra1-npm-ls-all.txt | grep -v " deduped" | sort -u | tail
+@xtuc/ieee754@1.2.0
+@xtuc/long@4.2.2
+y18n@5.0.8
+yallist@3.1.1
+yallist@4.0.0
+yaml@1.10.2
+yaml@2.2.2
+yargs@16.2.0
+yargs-parser@20.2.9
+yocto-queue@0.1.0
+davidho@dphxps17:~/jsproj/dphcra1$ 
+
+davidho@dphxps17:~/jsproj/dphcra1$ ls -la node_modules/ | wc
+    830    7463   53990
+davidho@dphxps17:~/jsproj/dphcra1$ ls -la node_modules/ | head
+total 4032
+drwxrwxr-x 828 davidho davidho  36864 Apr 26 06:36 .
+drwxrwxr-x   6 davidho davidho   4096 Apr 26 06:58 ..
+drwxrwxr-x   3 davidho davidho   4096 Apr 26 06:36 abab
+drwxrwxr-x   2 davidho davidho   4096 Apr 26 06:36 accepts
+drwxrwxr-x   4 davidho davidho   4096 Apr 26 06:36 acorn
+drwxrwxr-x   3 davidho davidho   4096 Apr 26 06:36 acorn-globals
+drwxrwxr-x   4 davidho davidho   4096 Apr 26 06:36 acorn-import-assertions
+drwxrwxr-x   2 davidho davidho   4096 Apr 26 06:36 acorn-jsx
+drwxrwxr-x   3 davidho davidho   4096 Apr 26 06:36 acorn-walk
+davidho@dphxps17:~/jsproj/dphcra1$ 
+davidho@dphxps17:~/jsproj/dphcra1$ ls -la node_modules/ | tail
+drwxrwxr-x   3 davidho davidho   4096 Apr 26 06:36 ws
+drwxrwxr-x   4 davidho davidho   4096 Apr 26 06:36 xmlchars
+drwxrwxr-x   3 davidho davidho   4096 Apr 26 06:36 xml-name-validator
+drwxrwxr-x   4 davidho davidho   4096 Apr 26 06:36 @xtuc
+drwxrwxr-x   3 davidho davidho   4096 Apr 26 06:36 y18n
+drwxrwxr-x   2 davidho davidho   4096 Apr 26 06:36 yallist
+drwxrwxr-x   5 davidho davidho   4096 Apr 26 06:36 yaml
+drwxrwxr-x   6 davidho davidho   4096 Apr 26 06:36 yargs
+drwxrwxr-x   3 davidho davidho   4096 Apr 26 06:36 yargs-parser
+drwxrwxr-x   2 davidho davidho   4096 Apr 26 06:36 yocto-queue
+davidho@dphxps17:~/jsproj/dphcra1$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/jsproj/dphcra1$ npm outdated
+Package                      Current  Wanted  Latest  Location                                  Depended by
+@testing-library/react        13.4.0  13.4.0  14.0.0  node_modules/@testing-library/react       dphcra1
+@testing-library/user-event   13.5.0  13.5.0  14.4.3  node_modules/@testing-library/user-event  dphcra1
+web-vitals                     2.1.4   2.1.4   3.3.1  node_modules/web-vitals                   dphcra1
+davidho@dphxps17:~/jsproj/dphcra1$ 
+davidho@dphxps17:~/jsproj/dphcra1$ npm audit
+# npm audit report
+
+nth-check  <2.0.1
+Severity: high
+Inefficient Regular Expression Complexity in nth-check - https://github.com/advisories/GHSA-rp65-9cf3-cjxr
+fix available via `npm audit fix --force`
+Will install react-scripts@2.1.3, which is a breaking change
+node_modules/svgo/node_modules/nth-check
+  css-select  <=3.1.0
+  Depends on vulnerable versions of nth-check
+  node_modules/svgo/node_modules/css-select
+    svgo  1.0.0 - 1.3.2
+    Depends on vulnerable versions of css-select
+    node_modules/svgo
+      @svgr/plugin-svgo  <=5.5.0
+      Depends on vulnerable versions of svgo
+      node_modules/@svgr/plugin-svgo
+        @svgr/webpack  4.0.0 - 5.5.0
+        Depends on vulnerable versions of @svgr/plugin-svgo
+        node_modules/@svgr/webpack
+          react-scripts  >=2.1.4
+          Depends on vulnerable versions of @svgr/webpack
+          node_modules/react-scripts
+
+6 high severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+davidho@dphxps17:~/jsproj/dphcra1$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+ajv
+axios
+better-react-spinkit
+bootstrap
+chart.js
+client-oauth2
+dotenv
+font-awesome
+fuse.js
+lodash
+moment
+query-string
+react
+react-chartjs-2
+react-dom
+react-html-parser
+react-redux
+react-router-dom
+react-scripts
+react-textarea-counter
+react-tooltip
+reactstrap
+readable-stream
+redux
+redux-form
+redux-thunk
+sass
+semantic-ui-calendar-react
+semantic-ui-offline
+semantic-ui-react
+universal-cookie
+vis-network
+react-datepicker
+cronstrue
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+npm install --save ajv
+npm install --save axios
+npm install --save better-react-spinkit
+npm install --save bootstrap
+npm install --save chart.js
+npm install --save client-oauth2
+npm install --save dotenv
+npm install --save font-awesome
+npm install --save fuse.js
+npm install --save lodash
+npm install --save moment
+npm install --save query-string
+npm install --save react
+npm install --save react-chartjs-2
+npm install --save react-dom
+npm install --save react-html-parser
+npm install --save react-redux
+npm install --save react-router-dom
+npm install --save react-scripts
+npm install --save react-textarea-counter
+npm install --save react-tooltip
+npm install --save reactstrap
+npm install --save readable-stream
+npm install --save redux
+npm install --save redux-form
+npm install --save redux-thunk
+npm install --save sass
+npm install --save semantic-ui-calendar-react
+npm install --save semantic-ui-offline
+npm install --save semantic-ui-react
+npm install --save universal-cookie
+npm install --save vis-network
+npm install --save react-datepicker
+npm install --save cronstrue
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+
+npm install --save ajv
+npm install --save axios
+npm install --save better-react-spinkit
+npm install --save bootstrap
+npm install --save chart.js
+npm install --save client-oauth2
+npm install --save dotenv
+npm install --save font-awesome
+npm install --save fuse.js
+npm install --save lodash
+npm install --save moment
+npm install --save query-string
+npm install --save react-chartjs-2
+npm install --save react-html-parser
+npm install --save react-redux
+npm install --save react-router-dom
+npm install --save react-scripts
+npm install --save react-textarea-counter
+npm install --save react-tooltip
+npm install --save reactstrap
+npm install --save readable-stream
+npm install --save redux
+npm install --save redux-form
+npm install --save redux-thunk
+npm install --save sass
+npm install --save semantic-ui-calendar-react
+npm install --save semantic-ui-offline
+npm install --save semantic-ui-react
+npm install --save universal-cookie
+npm install --save vis-network
+npm install --save react-datepicker
+npm install --save cronstrue
+
+davidho@dphxps17:~/jsproj/dphcra1$ npm ls
+dphcra1@0.1.0 /home/davidho/jsproj/dphcra1
+├── @testing-library/jest-dom@5.16.5
+├── @testing-library/react@13.4.0
+├── @testing-library/user-event@13.5.0
+├── ajv@8.12.0
+├── axios@1.3.6
+├── bootstrap@5.2.3
+├── chart.js@4.2.1
+├── client-oauth2@4.3.3
+├── cronstrue@2.26.0
+├── dotenv@16.0.3
+├── font-awesome@4.7.0
+├── fuse.js@6.6.2
+├── lodash@4.17.21
+├── moment@2.29.4
+├── query-string@8.1.0
+├── react-chartjs-2@5.2.0
+├── react-datepicker@4.11.0
+├── react-dom@18.2.0
+├── react-redux@8.0.5
+├── react-router-dom@6.10.0
+├── react-scripts@5.0.1
+├── react-tooltip@5.11.1
+├── react@18.2.0
+├── reactstrap@9.1.9
+├── readable-stream@4.3.0
+├── redux-form@8.3.10
+├── redux-thunk@2.4.2
+├── redux@4.2.1
+├── sass@1.62.1
+├── semantic-ui-offline@2.5.0
+├── semantic-ui-react@2.1.4
+├── universal-cookie@4.0.4
+├── vis-network@9.1.6
+└── web-vitals@2.1.4
+
+davidho@dphxps17:~/jsproj/dphcra1$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+npm install --save better-react-spinkit
+npm install --save react-html-parser
+npm install --save react-textarea-counter
+npm install --save semantic-ui-calendar-react
+
+npm install --save --force better-react-spinkit
+npm install --save --force react-html-parser
+npm install --save --force react-textarea-counter
+npm install --save --force semantic-ui-calendar-react
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://www.npmjs.com/package/better-react-spinkit
+https://github.com/bentatum/better-react-spinkit
+http://better-react-spinkit.benjamintatum.com/
+npm i better-react-spinkit --save
+
+davidho@dphxps17:~/jsproj/dphcra1$ 
+davidho@dphxps17:~/jsproj/dphcra1$ npm i better-react-spinkit --save
+npm ERR! code ERESOLVE
+npm ERR! ERESOLVE unable to resolve dependency tree
+npm ERR! 
+npm ERR! While resolving: dphcra1@0.1.0
+npm ERR! Found: react@18.2.0
+npm ERR! node_modules/react
+npm ERR!   react@"^18.2.0" from the root project
+npm ERR! 
+npm ERR! Could not resolve dependency:
+npm ERR! peer react@"^16.2.0" from better-react-spinkit@2.0.4
+npm ERR! node_modules/better-react-spinkit
+npm ERR!   better-react-spinkit@"*" from the root project
+npm ERR! 
+npm ERR! Fix the upstream dependency conflict, or retry
+npm ERR! this command with --force or --legacy-peer-deps
+npm ERR! to accept an incorrect (and potentially broken) dependency resolution.
+npm ERR! 
+npm ERR! 
+npm ERR! For a full report see:
+npm ERR! /home/davidho/.npm/_logs/2023-04-26T12_09_25_611Z-eresolve-report.txt
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/davidho/.npm/_logs/2023-04-26T12_09_25_611Z-debug-0.log
+davidho@dphxps17:~/jsproj/dphcra1$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://www.npmjs.com/package/react-html-parser
+https://github.com/peternewnham/react-html-parser
+npm install --save react-html-parser
+
+davidho@dphxps17:~/jsproj/dphcra1$ npm install --save react-html-parser
+npm ERR! code ERESOLVE
+npm ERR! ERESOLVE unable to resolve dependency tree
+npm ERR! 
+npm ERR! While resolving: dphcra1@0.1.0
+npm ERR! Found: react@18.2.0
+npm ERR! node_modules/react
+npm ERR!   react@"^18.2.0" from the root project
+npm ERR! 
+npm ERR! Could not resolve dependency:
+npm ERR! peer react@"^0.14.0 || ^15.0.0 || ^16.0.0-0" from react-html-parser@2.0.2
+npm ERR! node_modules/react-html-parser
+npm ERR!   react-html-parser@"*" from the root project
+npm ERR! 
+npm ERR! Fix the upstream dependency conflict, or retry
+npm ERR! this command with --force or --legacy-peer-deps
+npm ERR! to accept an incorrect (and potentially broken) dependency resolution.
+npm ERR! 
+npm ERR! 
+npm ERR! For a full report see:
+npm ERR! /home/davidho/.npm/_logs/2023-04-26T12_23_52_720Z-eresolve-report.txt
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/davidho/.npm/_logs/2023-04-26T12_23_52_720Z-debug-0.log
+davidho@dphxps17:~/jsproj/dphcra1$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://www.npmjs.com/package/react-textarea-count
+https://github.com/fakiolinho/react-textarea-count
+npm install --save react-textarea-counter
+
+davidho@dphxps17:~/jsproj/dphcra1$ 
+davidho@dphxps17:~/jsproj/dphcra1$ npm install --save react-textarea-counter
+npm ERR! code ERESOLVE
+npm ERR! ERESOLVE unable to resolve dependency tree
+npm ERR! 
+npm ERR! While resolving: dphcra1@0.1.0
+npm ERR! Found: react@18.2.0
+npm ERR! node_modules/react
+npm ERR!   react@"^18.2.0" from the root project
+npm ERR! 
+npm ERR! Could not resolve dependency:
+npm ERR! peer react@"^16.13.1" from react-textarea-counter@1.0.3
+npm ERR! node_modules/react-textarea-counter
+npm ERR!   react-textarea-counter@"*" from the root project
+npm ERR! 
+npm ERR! Fix the upstream dependency conflict, or retry
+npm ERR! this command with --force or --legacy-peer-deps
+npm ERR! to accept an incorrect (and potentially broken) dependency resolution.
+npm ERR! 
+npm ERR! 
+npm ERR! For a full report see:
+npm ERR! /home/davidho/.npm/_logs/2023-04-26T12_33_31_797Z-eresolve-report.txt
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/davidho/.npm/_logs/2023-04-26T12_33_31_797Z-debug-0.log
+davidho@dphxps17:~/jsproj/dphcra1$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://www.npmjs.com/package/semantic-ui-calendar-react
+https://github.com/arfedulov/semantic-ui-calendar-react
+npm install --save semantic-ui-calendar-react
+
+davidho@dphxps17:~/jsproj/dphcra1$ npm install --save semantic-ui-calendar-react
+npm ERR! code ERESOLVE
+npm ERR! ERESOLVE unable to resolve dependency tree
+npm ERR! 
+npm ERR! While resolving: dphcra1@0.1.0
+npm ERR! Found: react@18.2.0
+npm ERR! node_modules/react
+npm ERR!   react@"^18.2.0" from the root project
+npm ERR! 
+npm ERR! Could not resolve dependency:
+npm ERR! peer react@"^16.6.0" from semantic-ui-calendar-react@0.15.3
+npm ERR! node_modules/semantic-ui-calendar-react
+npm ERR!   semantic-ui-calendar-react@"*" from the root project
+npm ERR! 
+npm ERR! Fix the upstream dependency conflict, or retry
+npm ERR! this command with --force or --legacy-peer-deps
+npm ERR! to accept an incorrect (and potentially broken) dependency resolution.
+npm ERR! 
+npm ERR! 
+npm ERR! For a full report see:
+npm ERR! /home/davidho/.npm/_logs/2023-04-26T12_38_42_186Z-eresolve-report.txt
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/davidho/.npm/_logs/2023-04-26T12_38_42_186Z-debug-0.log
+davidho@dphxps17:~/jsproj/dphcra1$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/jsproj/dphcra1$ npm outdated
+Package                      Current  Wanted  Latest  Location                                  Depended by
+@testing-library/react        13.4.0  13.4.0  14.0.0  node_modules/@testing-library/react       dphcra1
+@testing-library/user-event   13.5.0  13.5.0  14.4.3  node_modules/@testing-library/user-event  dphcra1
+web-vitals                     2.1.4   2.1.4   3.3.1  node_modules/web-vitals                   dphcra1
+davidho@dphxps17:~/jsproj/dphcra1$ 
+davidho@dphxps17:~/jsproj/dphcra1$ npm audit
+# npm audit report
+
+nth-check  <2.0.1
+Severity: high
+Inefficient Regular Expression Complexity in nth-check - https://github.com/advisories/GHSA-rp65-9cf3-cjxr
+fix available via `npm audit fix --force`
+Will install react-scripts@2.1.3, which is a breaking change
+node_modules/svgo/node_modules/nth-check
+  css-select  <=3.1.0
+  Depends on vulnerable versions of nth-check
+  node_modules/svgo/node_modules/css-select
+    svgo  1.0.0 - 1.3.2
+    Depends on vulnerable versions of css-select
+    node_modules/svgo
+      @svgr/plugin-svgo  <=5.5.0
+      Depends on vulnerable versions of svgo
+      node_modules/@svgr/plugin-svgo
+        @svgr/webpack  4.0.0 - 5.5.0
+        Depends on vulnerable versions of @svgr/plugin-svgo
+        node_modules/@svgr/webpack
+          react-scripts  >=2.1.4
+          Depends on vulnerable versions of @svgr/webpack
+          node_modules/react-scripts
+
+6 high severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+davidho@dphxps17:~/jsproj/dphcra1$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+I wrote a groovy program to compare 2 (or more) python application requirements.txt files
+(to show the difference in the version numbers).  I think I can adapt that code to compare
+two (or more) node application package.json files.
+
+
+
+
