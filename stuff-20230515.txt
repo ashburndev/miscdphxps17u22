@@ -1,0 +1,113 @@
+Mon May 15 06:35:18 AM EDT 2023
+
+davidho@dphxps17:~$ date
+Mon May 15 06:34:53 AM EDT 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date > stuff-20230615.txt
+davidho@dphxps17:~$ code   stuff-20230615.txt
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp306g
+Name:          sbapp306grajarj17
+Package name:  ashburncode.sbapp306g
+Description:   spring boot 3.0.6, gradle project, jar packaging, java 17
+
+
+Dependencies
+  Spring Web Web
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp306m
+Name:          sbapp306mvnjarj17
+Package name:  ashburncode.sbapp306m
+Description:   spring boot 3.0.6, maven project, jar packaging, java 17
+Dependencies:
+  Spring Web Web
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.    
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp2711g
+Name:          sbapp2711grajarj17
+Package name:  ashburncode.sbapp2711g
+Description:   spring boot 2.7.11, gradle project, jar packaging, java 17
+Dependencies:
+  Spring Web Web
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.    
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp2711m
+Name:          sbapp2711mvnjarj17
+Package name:  ashburncode.sbapp2711m
+Description:   spring boot 2.7.11, maven project, jar packaging, java 17
+Dependencies:
+  Spring Web Web
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.    
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr | tail -15
+-rw-rw-r--  1 davidho davidho  163059820 Apr  3 06:02 jdk-20_linux-x64_bin.deb
+-rw-rw-r--  1 davidho davidho         64 Apr  3 06:02 jdk-20_linux-x64_bin.deb.sha256
+-rw-rw-r--  1 davidho davidho      67715 Apr 17 06:26 sbapp305g.zip
+-rw-rw-r--  1 davidho davidho      67519 Apr 17 06:27 sbapp305m.zip
+-rw-rw-r--  1 davidho davidho      67792 Apr 17 06:28 sbapp2710g.zip
+-rw-rw-r--  1 davidho davidho      67585 Apr 17 06:31 sbapp2710m.zip
+-rw-rw-r--  1 davidho davidho      67715 May 15 06:45 sbapp306g.zip
+-rw-rw-r--  1 davidho davidho      67519 May 15 06:47 sbapp306m.zip
+-rw-rw-r--  1 davidho davidho      67791 May 15 06:49 sbapp2711g.zip
+-rw-rw-r--  1 davidho davidho      67583 May 15 06:50 sbapp2711m.zip
+-rw-rw-r--  1 davidho davidho   95468324 May 15 06:51 code_1.78.2-1683731010_amd64.deb
+-rw-rw-r--  1 davidho davidho  135352847 May 15 06:52 code-1.78.2-1683731087.el7.x86_64.rpm
+-rw-rw-r--  1 davidho davidho  134674196 May 15 06:52 code-stable-x64-1683731267.tar.gz
+drwxr-xr-x  5 davidho davidho      20480 May 15 06:52 .
+drwxr-x--- 57 davidho davidho       4096 May 15 06:52 ..
+davidho@dphxps17:~/Downloads$ 
+

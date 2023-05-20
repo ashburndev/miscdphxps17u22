@@ -1,0 +1,198 @@
+davidho@dphxps17:~$ date
+Sat May 20 09:09:20 AM EDT 2023
+davidho@dphxps17:~$ code stuff-20230520.txt
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp307g
+Name:          sbapp307grajarj17
+Package name:  ashburncode.sbapp307g
+Description:   spring boot 3.0.7, gradle project, jar packaging, java 17
+Dependencies
+  Spring Web WEB
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories WEB
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp307m
+Name:          sbapp307mvnjarj17
+Package name:  ashburncode.sbapp307m
+Description:   spring boot 3.0.7, maven project, jar packaging, java 17
+Dependencies:
+  Spring Web Web
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.    
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp2712g
+Name:          sbapp2712grajarj17
+Package name:  ashburncode.sbapp2712g
+Description:   spring boot 2.7.12, gradle project, jar packaging, java 17
+Dependencies:
+  Spring Web Web
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.    
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp2712m
+Name:          sbapp2712mvnjarj17
+Package name:  ashburncode.sbapp2712m
+Description:   spring boot 2.7.12, maven project, jar packaging, java 17
+Dependencies:
+  Spring Web Web
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.    
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp310g
+Name:          sbapp310grajarj17
+Package name:  ashburncode.sbapp310g
+Description:   spring boot 3.1.0, gradle project, jar packaging, java 17
+Dependencies
+  Spring Web WEB
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories WEB
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp310m
+Name:          sbapp310mvnjarj17
+Package name:  ashburncode.sbapp310m
+Description:   spring boot 3.1.0, maven project, jar packaging, java 17
+Dependencies:
+  Spring Web Web
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.    
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/Downloads$ ls -latr | tail -30
+-rw-rw-r--  1 davidho davidho  588135374 Apr  2 13:10 WebStorm-2023.1.tar.gz
+-rw-rw-r--  1 davidho davidho         89 Apr  2 13:10 WebStorm-2023.1.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  566269074 Apr  2 13:15 datagrip-2023.1.tar.gz
+-rw-rw-r--  1 davidho davidho         89 Apr  2 13:15 datagrip-2023.1.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho   88562884 Apr  2 13:31 code_1.77.0-1680085573_amd64.deb
+-rw-rw-r--  1 davidho davidho  125008638 Apr  2 13:32 code-stable-x64-1680085833.tar.gz
+-rw-rw-r--  1 davidho davidho    6875626 Apr  2 13:32 vscode_cli_alpine_x64_cli(3).tar.gz
+-rw-rw-r--  1 davidho davidho  191554581 Apr  3 06:01 jdk-20_linux-x64_bin.tar.gz
+-rw-rw-r--  1 davidho davidho         64 Apr  3 06:02 jdk-20_linux-x64_bin.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  163059820 Apr  3 06:02 jdk-20_linux-x64_bin.deb
+-rw-rw-r--  1 davidho davidho         64 Apr  3 06:02 jdk-20_linux-x64_bin.deb.sha256
+-rw-rw-r--  1 davidho davidho      67715 Apr 17 06:26 sbapp305g.zip
+-rw-rw-r--  1 davidho davidho      67519 Apr 17 06:27 sbapp305m.zip
+-rw-rw-r--  1 davidho davidho      67792 Apr 17 06:28 sbapp2710g.zip
+-rw-rw-r--  1 davidho davidho      67585 Apr 17 06:31 sbapp2710m.zip
+-rw-rw-r--  1 davidho davidho      67715 May 15 06:45 sbapp306g.zip
+-rw-rw-r--  1 davidho davidho      67519 May 15 06:47 sbapp306m.zip
+-rw-rw-r--  1 davidho davidho      67791 May 15 06:49 sbapp2711g.zip
+-rw-rw-r--  1 davidho davidho      67583 May 15 06:50 sbapp2711m.zip
+-rw-rw-r--  1 davidho davidho   95468324 May 15 06:51 code_1.78.2-1683731010_amd64.deb
+-rw-rw-r--  1 davidho davidho  135352847 May 15 06:52 code-1.78.2-1683731087.el7.x86_64.rpm
+-rw-rw-r--  1 davidho davidho  134674196 May 15 06:52 code-stable-x64-1683731267.tar.gz
+drwxr-x--- 57 davidho davidho       4096 May 20 09:13 ..
+-rw-rw-r--  1 davidho davidho      67715 May 20 09:43 sbapp307g.zip
+-rw-rw-r--  1 davidho davidho      67519 May 20 09:46 sbapp307m.zip
+-rw-rw-r--  1 davidho davidho      67792 May 20 09:48 sbapp2712g.zip
+-rw-rw-r--  1 davidho davidho      67584 May 20 09:50 sbapp2712m.zip
+-rw-rw-r--  1 davidho davidho      67711 May 20 10:04 sbapp310g.zip
+-rw-rw-r--  1 davidho davidho      70628 May 20 10:08 sbapp310m.zip
+drwxr-xr-x  5 davidho davidho      20480 May 20 10:08 .
+davidho@dphxps17:~/Downloads$ 
+
+davidho@dphxps17:~/Downloads$ ls -latr sbapp*zip
+-rw-rw-r-- 1 davidho davidho 64423 Oct 21  2022 sbapp1grajarj11.zip
+-rw-rw-r-- 1 davidho davidho 64993 Nov  8  2022 sbapp2.zip
+-rw-rw-r-- 1 davidho davidho 65324 Nov 25 05:17 sbapp3.zip
+-rw-rw-r-- 1 davidho davidho 65161 Jan 10 15:25 sbapp277g-orig.zip
+-rw-rw-r-- 1 davidho davidho 63568 Jan 10 15:28 sbapp277m-orig.zip
+-rw-rw-r-- 1 davidho davidho 65150 Jan 10 15:33 sbapp301g-orig.zip
+-rw-rw-r-- 1 davidho davidho 63570 Jan 10 15:40 sbapp301m-orig.zip
+-rw-rw-r-- 1 davidho davidho 65173 Jan 13 04:45 sbapp277g.zip
+-rw-rw-r-- 1 davidho davidho 63571 Jan 13 04:52 sbapp277m.zip
+-rw-rw-r-- 1 davidho davidho 65163 Jan 13 04:54 sbapp301g.zip
+-rw-rw-r-- 1 davidho davidho 63572 Jan 13 04:55 sbapp301m.zip
+-rw-rw-r-- 1 davidho davidho 65174 Jan 24 07:26 sbapp278g.zip
+-rw-rw-r-- 1 davidho davidho 63573 Jan 24 07:28 sbapp278m.zip
+-rw-rw-r-- 1 davidho davidho 65164 Jan 24 07:32 sbapp302g.zip
+-rw-rw-r-- 1 davidho davidho 63572 Jan 24 07:34 sbapp302m.zip
+-rw-rw-r-- 1 davidho davidho 65216 Mar  2 14:28 sbapp279g.zip
+-rw-rw-r-- 1 davidho davidho 64975 Mar  2 14:31 sbapp279m.zip
+-rw-rw-r-- 1 davidho davidho 65207 Mar  2 14:34 sbapp303g.zip
+-rw-rw-r-- 1 davidho davidho 65069 Mar  2 14:36 sbapp303m.zip
+-rw-rw-r-- 1 davidho davidho 65167 Mar 14 06:26 sbapp304g.zip
+-rw-rw-r-- 1 davidho davidho 65069 Mar 14 06:29 sbapp304m.zip
+-rw-rw-r-- 1 davidho davidho 67715 Apr 17 06:26 sbapp305g.zip
+-rw-rw-r-- 1 davidho davidho 67519 Apr 17 06:27 sbapp305m.zip
+-rw-rw-r-- 1 davidho davidho 67792 Apr 17 06:28 sbapp2710g.zip
+-rw-rw-r-- 1 davidho davidho 67585 Apr 17 06:31 sbapp2710m.zip
+-rw-rw-r-- 1 davidho davidho 67715 May 15 06:45 sbapp306g.zip
+-rw-rw-r-- 1 davidho davidho 67519 May 15 06:47 sbapp306m.zip
+-rw-rw-r-- 1 davidho davidho 67791 May 15 06:49 sbapp2711g.zip
+-rw-rw-r-- 1 davidho davidho 67583 May 15 06:50 sbapp2711m.zip
+-rw-rw-r-- 1 davidho davidho 67715 May 20 09:43 sbapp307g.zip
+-rw-rw-r-- 1 davidho davidho 67519 May 20 09:46 sbapp307m.zip
+-rw-rw-r-- 1 davidho davidho 67792 May 20 09:48 sbapp2712g.zip
+-rw-rw-r-- 1 davidho davidho 67584 May 20 09:50 sbapp2712m.zip
+-rw-rw-r-- 1 davidho davidho 67711 May 20 10:04 sbapp310g.zip
+-rw-rw-r-- 1 davidho davidho 70628 May 20 10:08 sbapp310m.zip
+davidho@dphxps17:~/Downloads$ 
+
