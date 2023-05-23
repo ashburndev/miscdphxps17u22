@@ -1,0 +1,352 @@
+Tue May 23 06:24:41 AM EDT 2023
+
+davidho@dphxps17:~$ date
+Tue May 23 06:24:27 AM EDT 2023
+davidho@dphxps17:~$ date > stuff-20230523.txt
+davidho@dphxps17:~$ code   stuff-20230523.txt
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://start.spring.io/
+
+
+https://docs.gradle.org/current/userguide/userguide.html
+https://docs.gradle.org/current/samples/index.html
+https://docs.gradle.org/current/userguide/getting_started.html
+
+https://docs.gradle.org/current/samples/sample_building_java_applications.html
+https://docs.gradle.org/current/samples/sample_building_groovy_applications.html
+
+$ mkdir demo
+$ cd demo
+$ gradle init
+
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date
+Tue May 23 06:31:26 AM EDT 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ gradle --version
+
+------------------------------------------------------------
+Gradle 8.1.1
+------------------------------------------------------------
+
+Build time:   2023-04-21 12:31:26 UTC
+Revision:     1cf537a851c635c364a4214885f8b9798051175b
+
+Kotlin:       1.8.10
+Groovy:       3.0.15
+Ant:          Apache Ant(TM) version 1.10.11 compiled on July 10 2021
+JVM:          17.0.7 (Azul Systems, Inc. 17.0.7+7-LTS)
+OS:           Linux 5.19.0-41-generic amd64
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ java -version
+openjdk version "17.0.7" 2023-04-18 LTS
+OpenJDK Runtime Environment Zulu17.42+19-CA (build 17.0.7+7-LTS)
+OpenJDK 64-Bit Server VM Zulu17.42+19-CA (build 17.0.7+7-LTS, mixed mode, sharing)
+davidho@dphxps17:~$ 
+
+davidho@dphxps17:~$ cd groovyprojs/
+davidho@dphxps17:~/groovyprojs$ mkdir myurlstool2
+davidho@dphxps17:~/groovyprojs$ cd myurlstool2
+davidho@dphxps17:~/groovyprojs/myurlstool2$ 
+davidho@dphxps17:~/groovyprojs/myurlstool2$ gradle init
+
+Select type of project to generate:
+  1: basic
+  2: application
+  3: library
+  4: Gradle plugin
+Enter selection (default: basic) [1..4] 2
+
+Select implementation language:
+  1: C++
+  2: Groovy
+  3: Java
+  4: Kotlin
+  5: Scala
+  6: Swift
+Enter selection (default: Java) [1..6] 2
+
+Generate multiple subprojects for application? (default: no) [yes, no] no
+Select build script DSL:
+  1: Groovy
+  2: Kotlin
+Enter selection (default: Groovy) [1..2] 1
+
+Project name (default: myurlstool2): 
+Source package (default: myurlstool2): ashburndev
+Enter target version of Java (min. 7) (default: 17): 
+Generate build using new APIs and behavior (some features may change in the next minor release)? (default: no) [yes, no] yes
+
+> Task :init
+Get more help with your project: https://docs.gradle.org/8.1.1/samples/sample_building_groovy_applications.html
+
+BUILD SUCCESSFUL in 1m 8s
+2 actionable tasks: 2 executed
+davidho@dphxps17:~/groovyprojs/myurlstool2$ 
+davidho@dphxps17:~/groovyprojs/myurlstool2$ tree
+.
+├── app
+│   ├── build.gradle
+│   └── src
+│       ├── main
+│       │   ├── groovy
+│       │   │   └── ashburndev
+│       │   │       └── App.groovy
+│       │   └── resources
+│       └── test
+│           ├── groovy
+│           │   └── ashburndev
+│           │       └── AppTest.groovy
+│           └── resources
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradle.properties
+├── gradlew
+├── gradlew.bat
+└── settings.gradle
+
+12 directories, 9 files
+davidho@dphxps17:~/groovyprojs/myurlstool2$ 
+davidho@dphxps17:~/groovyprojs/myurlstool2$ code .
+davidho@dphxps17:~/groovyprojs/myurlstool2$ gradle run
+
+> Task :app:run
+Hello World!
+
+BUILD SUCCESSFUL in 6s
+2 actionable tasks: 2 executed
+davidho@dphxps17:~/groovyprojs/myurlstool2$ 
+davidho@dphxps17:~/groovyprojs/myurlstool2$ gradle tasks
+
+> Task :tasks
+
+------------------------------------------------------------
+Tasks runnable from root project 'myurlstool2'
+------------------------------------------------------------
+
+Application tasks
+-----------------
+run - Runs this project as a JVM application
+
+Build tasks
+-----------
+assemble - Assembles the outputs of this project.
+build - Assembles and tests this project.
+buildDependents - Assembles and tests this project and all projects that depend on it.
+buildNeeded - Assembles and tests this project and all projects it depends on.
+classes - Assembles main classes.
+clean - Deletes the build directory.
+jar - Assembles a jar archive containing the main classes.
+testClasses - Assembles test classes.
+
+Build Setup tasks
+-----------------
+init - Initializes a new Gradle build.
+wrapper - Generates Gradle wrapper files.
+
+Distribution tasks
+------------------
+assembleDist - Assembles the main distributions
+distTar - Bundles the project as a distribution.
+distZip - Bundles the project as a distribution.
+installDist - Installs the project as a distribution as-is.
+
+Documentation tasks
+-------------------
+groovydoc - Generates Groovydoc API documentation for the main source code.
+javadoc - Generates Javadoc API documentation for the main source code.
+
+Help tasks
+----------
+buildEnvironment - Displays all buildscript dependencies declared in root project 'myurlstool2'.
+dependencies - Displays all dependencies declared in root project 'myurlstool2'.
+dependencyInsight - Displays the insight into a specific dependency in root project 'myurlstool2'.
+help - Displays a help message.
+javaToolchains - Displays the detected java toolchains.
+outgoingVariants - Displays the outgoing variants of root project 'myurlstool2'.
+projects - Displays the sub-projects of root project 'myurlstool2'.
+properties - Displays the properties of root project 'myurlstool2'.
+resolvableConfigurations - Displays the configurations that can be resolved in root project 'myurlstool2'.
+tasks - Displays the tasks runnable from root project 'myurlstool2' (some of the displayed tasks may belong to subprojects).
+
+Verification tasks
+------------------
+check - Runs all checks.
+test - Runs the test suite.
+
+To see all tasks and more detail, run gradle tasks --all
+
+To see more detail about a task, run gradle help --task <task>
+
+BUILD SUCCESSFUL in 380ms
+1 actionable task: 1 executed
+davidho@dphxps17:~/groovyprojs/myurlstool2$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/groovyprojs$ mkdir myurlstool3
+davidho@dphxps17:~/groovyprojs$ cd myurlstool3
+davidho@dphxps17:~/groovyprojs/myurlstool3$ gradle init
+
+Select type of project to generate:
+  1: basic
+  2: application
+  3: library
+  4: Gradle plugin
+Enter selection (default: basic) [1..4] 1
+
+Select build script DSL:
+  1: Groovy
+  2: Kotlin
+Enter selection (default: Groovy) [1..2] 1
+
+Project name (default: myurlstool3): 
+Generate build using new APIs and behavior (some features may change in the next minor release)? (default: no) [yes, no] yes
+
+> Task :init
+Get more help with your project: Learn more about Gradle by exploring our samples at https://docs.gradle.org/8.1.1/samples
+
+BUILD SUCCESSFUL in 20s
+2 actionable tasks: 2 executed
+davidho@dphxps17:~/groovyprojs/myurlstool3$ 
+davidho@dphxps17:~/groovyprojs/myurlstool3$ tree
+.
+├── build.gradle
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradle.properties
+├── gradlew
+├── gradlew.bat
+└── settings.gradle
+
+2 directories, 7 files
+davidho@dphxps17:~/groovyprojs/myurlstool3$ code .
+davidho@dphxps17:~/groovyprojs/myurlstool3$ gradle run
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Task 'run' not found in root project 'myurlstool3'.
+
+* Try:
+> Run gradle tasks to get a list of available tasks.
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 319ms
+davidho@dphxps17:~/groovyprojs/myurlstool3$ 
+davidho@dphxps17:~/groovyprojs/myurlstool3$ gradle tasks
+
+> Task :tasks
+
+------------------------------------------------------------
+Tasks runnable from root project 'myurlstool3'
+------------------------------------------------------------
+
+Build Setup tasks
+-----------------
+init - Initializes a new Gradle build.
+wrapper - Generates Gradle wrapper files.
+
+Help tasks
+----------
+buildEnvironment - Displays all buildscript dependencies declared in root project 'myurlstool3'.
+dependencies - Displays all dependencies declared in root project 'myurlstool3'.
+dependencyInsight - Displays the insight into a specific dependency in root project 'myurlstool3'.
+help - Displays a help message.
+javaToolchains - Displays the detected java toolchains.
+outgoingVariants - Displays the outgoing variants of root project 'myurlstool3'.
+projects - Displays the sub-projects of root project 'myurlstool3'.
+properties - Displays the properties of root project 'myurlstool3'.
+resolvableConfigurations - Displays the configurations that can be resolved in root project 'myurlstool3'.
+tasks - Displays the tasks runnable from root project 'myurlstool3'.
+
+To see all tasks and more detail, run gradle tasks --all
+
+To see more detail about a task, run gradle help --task <task>
+
+BUILD SUCCESSFUL in 342ms
+1 actionable task: 1 executed
+davidho@dphxps17:~/groovyprojs/myurlstool3$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/groovyprojs/myurltool/myurlstool$ pwd
+/home/davidho/groovyprojs/myurltool/myurlstool
+davidho@dphxps17:~/groovyprojs/myurltool/myurlstool$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/davidho/groovyprojs/myurltool/myurlstool/.git/
+davidho@dphxps17:~/groovyprojs/myurltool/myurlstool$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.gitattributes
+	.gitignore
+	MyUrls-20230226-raw.txt
+	MyUrls-20230226-usort.txt
+	README.md
+	app/
+	gradle.properties
+	gradle/
+	gradlew
+	gradlew.bat
+	myurltool.groovy
+	myurltool.md
+	settings.gradle
+
+nothing added to commit but untracked files present (use "git add" to track)
+davidho@dphxps17:~/groovyprojs/myurltool/myurlstool$ git add .
+davidho@dphxps17:~/groovyprojs/myurltool/myurlstool$ git commit -a -m "first commit"
+[master (root-commit) cf4b56f] first commit
+ 16 files changed, 923 insertions(+)
+ create mode 100644 .gitattributes
+ create mode 100644 .gitignore
+ create mode 100644 MyUrls-20230226-raw.txt
+ create mode 100644 MyUrls-20230226-usort.txt
+ create mode 100644 README.md
+ create mode 100644 app/build.gradle
+ create mode 100644 app/src/main/groovy/ashburndev/App.groovy
+ create mode 100644 app/src/test/groovy/ashburndev/AppTest.groovy
+ create mode 100644 gradle.properties
+ create mode 100644 gradle/wrapper/gradle-wrapper.jar
+ create mode 100644 gradle/wrapper/gradle-wrapper.properties
+ create mode 100755 gradlew
+ create mode 100644 gradlew.bat
+ create mode 100644 myurltool.groovy
+ create mode 100644 myurltool.md
+ create mode 100644 settings.gradle
+davidho@dphxps17:~/groovyprojs/myurltool/myurlstool$ 
+
+git remote add origin git@github.com:ashburndev/myurlstool.git
+git branch -M main
+git push -u origin main
+
+
