@@ -1,0 +1,264 @@
+Thu Jul  6 06:29:50 AM EDT 2023
+
+davidho@dphxps17:~$ date
+Thu Jul  6 06:29:08 AM EDT 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date > stuff-20230706.txt
+davidho@dphxps17:~$ uname -a
+Linux dphxps17 5.19.0-42-generic #43~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Fri Apr 21 16:51:08 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://code.visualstudio.com/download
+https://code.visualstudio.com/updates/v1_79
+  May 2023 (version 1.79)
+  Update 1.79.1: The update addresses this security issue.
+  Update 1.79.2: The update addresses these issues.
+
+-rw-rw-r--  1 davidho davidho   95938824 Jul  6 06:33  code_1.79.2-1686734195_amd64.deb
+-rw-rw-r--  1 davidho davidho  134757908 Jul  6 06:33  code-stable-x64-1686734446.tar.gz
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://www.eclipse.org/downloads/
+https://www.eclipse.org/downloads/packages/
+
+-rw-rw-r--  1 davidho davidho  559041312 Jul  6 06:40  eclipse-jee-2023-06-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        176 Jul  6 06:43  eclipse-jee-2023-06-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  341810791 Jul  6 06:43  eclipse-java-2023-06-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        177 Jul  6 06:45  eclipse-java-2023-06-R-linux-gtk-x86_64.tar.gz.sha512
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://spring.io/tools
+
+davidho@dphxps17:~/Downloads$ ls -latr spring*
+-rw-rw-r-- 1 davidho davidho 607778592 Sep 22  2022  spring-tool-suite-4-4.16.0.RELEASE-e4.25.0-linux.gtk.x86_64.tar.gz
+-rw-rw-r-- 1 davidho davidho 607778592 Oct 16  2022 'spring-tool-suite-4-4.16.0.RELEASE-e4.25.0-linux.gtk.x86_64(1).tar.gz'
+-rw-rw-r-- 1 davidho davidho 637138600 Dec  8  2022  spring-tool-suite-4-4.17.0.RELEASE-e4.26.0-linux.gtk.x86_64.tar.gz
+-rw-rw-r-- 1 davidho davidho  14403441 Jan  5 17:46  spring-in-action-6-samples-main.zip
+-rw-rw-r-- 1 davidho davidho 625754715 Feb  1 07:29  spring-tool-suite-4-4.17.2.RELEASE-e4.26.0-linux.gtk.x86_64.tar.gz
+-rw-rw-r-- 1 davidho davidho 565545792 Mar 17 06:01  spring-tool-suite-4-4.18.0.RELEASE-e4.27.0-linux.gtk.x86_64.tar.gz
+-rw-rw-r-- 1 davidho davidho 622334058 Jul  6 06:47  spring-tool-suite-4-4.19.0.RELEASE-e4.28.0-linux.gtk.x86_64.tar.gz
+davidho@dphxps17:~/Downloads$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://www.jetbrains.com/idea/download/?section=linux
+https://www.jetbrains.com/pycharm/download/?section=linux
+
+-rw-rw-r--  1 davidho davidho 1115915778 Jul  6 06:51  ideaIU-2023.1.3.tar.gz
+-rw-rw-r--  1 davidho davidho         89 Jul  6 06:51  ideaIU-2023.1.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  938144163 Jul  6 06:52  ideaIC-2023.1.3.tar.gz
+-rw-rw-r--  1 davidho davidho         89 Jul  6 06:52  ideaIC-2023.1.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  733761636 Jul  6 06:53  pycharm-professional-2023.1.3.tar.gz
+-rw-rw-r--  1 davidho davidho        103 Jul  6 06:54  pycharm-professional-2023.1.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  577483560 Jul  6 06:56  pycharm-community-2023.1.3.tar.gz
+-rw-rw-r--  1 davidho davidho        100 Jul  6 06:56  pycharm-community-2023.1.3.tar.gz.sha256
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Dependencies
+  Spring Web Web
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp308g
+Name:          sbapp308grajarj17
+Package name:  ashburncode.sbapp308g
+Description:   spring boot 3.0.8, gradle project, jar packaging, java 17
+Dependencies
+  Spring Web WEB
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories WEB
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp308m
+Name:          sbapp308mvnjarj17
+Package name:  ashburncode.sbapp308m
+Description:   spring boot 3.0.8, maven project, jar packaging, java 17
+Dependencies:
+  Spring Web Web
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.    
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp2713g
+Name:          sbapp2713grajarj17
+Package name:  ashburncode.sbapp2713g
+Description:   spring boot 2.7.13, gradle project, jar packaging, java 17
+Dependencies:
+  Spring Web Web
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.    
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp2713m
+Name:          sbapp2713mvnjarj17
+Package name:  ashburncode.sbapp2713m
+Description:   spring boot 2.7.13, maven project, jar packaging, java 17
+Dependencies:
+  Spring Web Web
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.    
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp311g
+Name:          sbapp311grajarj17
+Package name:  ashburncode.sbapp311g
+Description:   spring boot 3.1.1, gradle project, jar packaging, java 17
+Dependencies
+  Spring Web WEB
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories WEB
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp311m
+Name:          sbapp311mvnjarj17
+Package name:  ashburncode.sbapp311m
+Description:   spring boot 3.1.1, maven project, jar packaging, java 17
+Dependencies:
+  Spring Web Web
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.    
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/Downloads$ ls -latr sbapp*.zip
+-rw-rw-r-- 1 davidho davidho 64423 Oct 21  2022 sbapp1grajarj11.zip
+-rw-rw-r-- 1 davidho davidho 64993 Nov  8  2022 sbapp2.zip
+-rw-rw-r-- 1 davidho davidho 65324 Nov 25  2022 sbapp3.zip
+-rw-rw-r-- 1 davidho davidho 65161 Jan 10 15:25 sbapp277g-orig.zip
+-rw-rw-r-- 1 davidho davidho 63568 Jan 10 15:28 sbapp277m-orig.zip
+-rw-rw-r-- 1 davidho davidho 65150 Jan 10 15:33 sbapp301g-orig.zip
+-rw-rw-r-- 1 davidho davidho 63570 Jan 10 15:40 sbapp301m-orig.zip
+-rw-rw-r-- 1 davidho davidho 65173 Jan 13 04:45 sbapp277g.zip
+-rw-rw-r-- 1 davidho davidho 63571 Jan 13 04:52 sbapp277m.zip
+-rw-rw-r-- 1 davidho davidho 65163 Jan 13 04:54 sbapp301g.zip
+-rw-rw-r-- 1 davidho davidho 63572 Jan 13 04:55 sbapp301m.zip
+-rw-rw-r-- 1 davidho davidho 65174 Jan 24 07:26 sbapp278g.zip
+-rw-rw-r-- 1 davidho davidho 63573 Jan 24 07:28 sbapp278m.zip
+-rw-rw-r-- 1 davidho davidho 65164 Jan 24 07:32 sbapp302g.zip
+-rw-rw-r-- 1 davidho davidho 63572 Jan 24 07:34 sbapp302m.zip
+-rw-rw-r-- 1 davidho davidho 65216 Mar  2 14:28 sbapp279g.zip
+-rw-rw-r-- 1 davidho davidho 64975 Mar  2 14:31 sbapp279m.zip
+-rw-rw-r-- 1 davidho davidho 65207 Mar  2 14:34 sbapp303g.zip
+-rw-rw-r-- 1 davidho davidho 65069 Mar  2 14:36 sbapp303m.zip
+-rw-rw-r-- 1 davidho davidho 65167 Mar 14 06:26 sbapp304g.zip
+-rw-rw-r-- 1 davidho davidho 65069 Mar 14 06:29 sbapp304m.zip
+-rw-rw-r-- 1 davidho davidho 67715 Apr 17 06:26 sbapp305g.zip
+-rw-rw-r-- 1 davidho davidho 67519 Apr 17 06:27 sbapp305m.zip
+-rw-rw-r-- 1 davidho davidho 67792 Apr 17 06:28 sbapp2710g.zip
+-rw-rw-r-- 1 davidho davidho 67585 Apr 17 06:31 sbapp2710m.zip
+-rw-rw-r-- 1 davidho davidho 67715 May 15 06:45 sbapp306g.zip
+-rw-rw-r-- 1 davidho davidho 67519 May 15 06:47 sbapp306m.zip
+-rw-rw-r-- 1 davidho davidho 67791 May 15 06:49 sbapp2711g.zip
+-rw-rw-r-- 1 davidho davidho 67583 May 15 06:50 sbapp2711m.zip
+-rw-rw-r-- 1 davidho davidho 67715 May 20 09:43 sbapp307g.zip
+-rw-rw-r-- 1 davidho davidho 67519 May 20 09:46 sbapp307m.zip
+-rw-rw-r-- 1 davidho davidho 67792 May 20 09:48 sbapp2712g.zip
+-rw-rw-r-- 1 davidho davidho 67584 May 20 09:50 sbapp2712m.zip
+-rw-rw-r-- 1 davidho davidho 67711 May 20 10:04 sbapp310g.zip
+-rw-rw-r-- 1 davidho davidho 70628 May 20 10:08 sbapp310m.zip
+-rw-rw-r-- 1 davidho davidho 69293 Jul  6 07:10 sbapp2713g.zip
+-rw-rw-r-- 1 davidho davidho 67585 Jul  6 07:11 sbapp2713m.zip
+-rw-rw-r-- 1 davidho davidho 69214 Jul  6 07:13 sbapp308g.zip
+-rw-rw-r-- 1 davidho davidho 67519 Jul  6 07:14 sbapp308m.zip
+-rw-rw-r-- 1 davidho davidho 69214 Jul  6 07:16 sbapp311g.zip
+-rw-rw-r-- 1 davidho davidho 70206 Jul  6 07:17 sbapp311m.zip
+davidho@dphxps17:~/Downloads$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://docs.docker.com/engine/install/ubuntu/
+https://itsfoss.com/remove-software-repositories-ubuntu/
+
+apt-add-repository --list
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ apt-add-repository --list
+deb http://us.archive.ubuntu.com/ubuntu/ jammy universe main restricted multiverse
+deb http://us.archive.ubuntu.com/ubuntu/ jammy-updates universe main restricted multiverse
+deb http://us.archive.ubuntu.com/ubuntu/ jammy-backports universe main restricted multiverse
+deb http://security.ubuntu.com/ubuntu jammy-security universe main restricted multiverse
+deb https://dl.yarnpkg.com/debian/ stable main
+deb [arch=amd64,arm64,armhf] http://packages.microsoft.com/repos/code stable main
+deb http://repo.mysql.com/apt/ubuntu/ jammy mysql-apt-config mysql-tools
+deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main
+davidho@dphxps17:~$ 
+
+
