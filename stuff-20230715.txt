@@ -1,0 +1,82 @@
+Sat Jul 15 09:41:20 AM EDT 2023
+
+
+davidho@dphxps17:~$ date
+Sat Jul 15 09:41:01 AM EDT 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date > stuff-20230715.txt
+davidho@dphxps17:~$ code  stuff-20230715.txt
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ uname -a
+Linux dphxps17 5.19.0-46-generic #47~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Wed Jun 21 15:35:31 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ date
+Sat Jul 15 09:44:53 AM EDT 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ pwd -P
+/home/davidho
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ mysql --version
+mysql  Ver 8.0.33-0ubuntu0.22.04.2 for Linux on x86_64 ((Ubuntu))
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.33-0ubuntu0.22.04.2 (Ubuntu)
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://www.jetbrains.com/idea/download/?section=linux
+  Version: 2023.1.4
+  Build: 231.9225.16
+  11 July 2023
+
+https://www.jetbrains.com/pycharm/download/?section=linux
+  Version: 2023.1.4
+  Build: 231.9225.15
+  12 July 2023
+
+https://www.jetbrains.com/datagrip/download/#section=linux
+  Version: 2023.1.2
+  Build: 231.9011.35
+  16 May 2023
+
+-rw-rw-r--  1 davidho davidho 1115953421 Jul 15 09:52  ideaIU-2023.1.4.tar.gz
+-rw-rw-r--  1 davidho davidho         89 Jul 15 09:52  ideaIU-2023.1.4.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  938207113 Jul 15 09:53  ideaIC-2023.1.4.tar.gz
+-rw-rw-r--  1 davidho davidho         89 Jul 15 09:53  ideaIC-2023.1.4.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  733759740 Jul 15 09:56  pycharm-professional-2023.1.4.tar.gz
+-rw-rw-r--  1 davidho davidho        103 Jul 15 09:56  pycharm-professional-2023.1.4.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  577477377 Jul 15 09:56  pycharm-community-2023.1.4.tar.gz
+-rw-rw-r--  1 davidho davidho        100 Jul 15 09:56  pycharm-community-2023.1.4.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  568353216 Jul 15 09:58  datagrip-2023.1.2.tar.gz
+-rw-rw-r--  1 davidho davidho         91 Jul 15 09:58  datagrip-2023.1.2.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  589250153 Jul 15 09:59  WebStorm-2023.1.4.tar.gz
+-rw-rw-r--  1 davidho davidho         91 Jul 15 09:59  WebStorm-2023.1.4.tar.gz.sha256
+drwxr-xr-x  5 davidho davidho      28672 Jul 15 10:01  .
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://code.visualstudio.com/download
+https://code.visualstudio.com/updates/v1_80
+
+-rw-rw-r--  1 davidho davidho   96126384 Jul 15 10:04  code_1.80.1-1689183569_amd64.deb
+-rw-rw-r--  1 davidho davidho  135332845 Jul 15 10:04  code-stable-x64-1689183979.tar.gz
+
