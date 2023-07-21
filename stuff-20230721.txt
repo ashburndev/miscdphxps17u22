@@ -1,0 +1,403 @@
+Fri Jul 21 07:36:55 AM EDT 2023
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ date
+Fri Jul 21 07:36:31 AM EDT 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date > stuff-20230721.txt
+davidho@dphxps17:~$ 
+
+davidho@dphxps17:~$ date
+Fri Jul 21 07:36:31 AM EDT 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date > stuff-20230721.txt
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ uname -a
+Linux dphxps17 5.19.0-46-generic #47~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Wed Jun 21 15:35:31 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ cd /etc
+
+davidho@dphxps17:/etc$ ls -latr | grep -i ver
+-rw-r--r--   1 root     root        13 Aug 22  2021 debian_version
+davidho@dphxps17:/etc$ 
+davidho@dphxps17:/etc$ ls -latr | grep -i rel
+lrwxrwxrwx   1 root     root        21 Jul 28  2022 os-release -> ../usr/lib/os-release
+-rw-r--r--   1 root     root       104 Jul 28  2022 lsb-release
+davidho@dphxps17:/etc$ 
+
+davidho@dphxps17:/etc$ cat debian_version 
+bookworm/sid
+davidho@dphxps17:/etc$ 
+
+davidho@dphxps17:/etc$ cat lsb-release 
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=22.04
+DISTRIB_CODENAME=jammy
+DISTRIB_DESCRIPTION="Ubuntu 22.04.1 LTS"
+davidho@dphxps17:/etc$ 
+davidho@dphxps17:/etc$ cat os-release 
+PRETTY_NAME="Ubuntu 22.04.1 LTS"
+NAME="Ubuntu"
+VERSION_ID="22.04"
+VERSION="22.04.1 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=jammy
+davidho@dphxps17:/etc$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Dependencies
+  Spring Web Web
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp2714g
+Name:          sbapp2714grajarj17
+Package name:  ashburncode.sbapp2714g
+Description:   spring boot 2.7.14, gradle project, jar packaging, java 17
+Dependencies:
+  Spring Web Web
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.    
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp2714m
+Name:          sbapp2714mvnjarj17
+Package name:  ashburncode.sbapp2714m
+Description:   spring boot 2.7.14, maven project, jar packaging, java 17
+Dependencies:
+  Spring Web Web
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.    
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp312g
+Name:          sbapp312grajarj17
+Package name:  ashburncode.sbapp312g
+Description:   spring boot 3.1.2, gradle project, jar packaging, java 17
+Dependencies
+  Spring Web WEB
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories WEB
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp312m
+Name:          sbapp312mvnjarj17
+Package name:  ashburncode.sbapp312m
+Description:   spring boot 3.1.2, maven project, jar packaging, java 17
+Dependencies:
+  Spring Web Web
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.    
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/Downloads$ 7z l sbapp312g.zip
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,16 CPUs 11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz (806D1),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 69212 bytes (68 KiB)
+
+Listing archive: sbapp312g.zip
+
+--
+Path = sbapp312g.zip
+Type = zip
+Physical Size = 69212
+
+   Date      Time    Attr         Size   Compressed  Name
+------------------- ----- ------------ ------------  ------------------------
+2023-07-21 08:07:01 D....            0            2  sbapp312g
+2023-07-21 08:07:01 .....         1689          598  sbapp312g/HELP.md
+2023-07-21 08:07:01 .....           31           33  sbapp312g/settings.gradle
+2023-07-21 08:07:01 .....         2868         1211  sbapp312g/gradlew.bat
+2023-07-21 08:07:01 .....          636          294  sbapp312g/build.gradle
+2023-07-21 08:07:01 .....          444          242  sbapp312g/.gitignore
+2023-07-21 08:07:01 .....         8496         3611  sbapp312g/gradlew
+2023-07-21 08:07:01 D....            0            2  sbapp312g/src
+2023-07-21 08:07:01 D....            0            2  sbapp312g/src/test
+2023-07-21 08:07:01 D....            0            2  sbapp312g/src/test/java
+2023-07-21 08:07:01 D....            0            2  sbapp312g/src/test/java/ashburncode
+2023-07-21 08:07:01 D....            0            2  sbapp312g/src/test/java/ashburncode/sbapp312g
+2023-07-21 08:07:01 .....          224          160  sbapp312g/src/test/java/ashburncode/sbapp312g/Sbapp312grajarj17ApplicationTests.java
+2023-07-21 08:07:01 D....            0            2  sbapp312g/src/main
+2023-07-21 08:07:01 D....            0            2  sbapp312g/src/main/resources
+2023-07-21 08:07:01 .....            1            3  sbapp312g/src/main/resources/application.properties
+2023-07-21 08:07:01 D....            0            2  sbapp312g/src/main/resources/templates
+2023-07-21 08:07:01 D....            0            2  sbapp312g/src/main/resources/static
+2023-07-21 08:07:01 D....            0            2  sbapp312g/src/main/java
+2023-07-21 08:07:01 D....            0            2  sbapp312g/src/main/java/ashburncode
+2023-07-21 08:07:01 D....            0            2  sbapp312g/src/main/java/ashburncode/sbapp312g
+2023-07-21 08:07:01 .....          336          180  sbapp312g/src/main/java/ashburncode/sbapp312g/Sbapp312grajarj17Application.java
+2023-07-21 08:07:01 D....            0            2  sbapp312g/gradle
+2023-07-21 08:07:01 D....            0            2  sbapp312g/gradle/wrapper
+2023-07-21 08:07:01 .....        62076        56050  sbapp312g/gradle/wrapper/gradle-wrapper.jar
+2023-07-21 08:07:01 .....          223          140  sbapp312g/gradle/wrapper/gradle-wrapper.properties
+------------------- ----- ------------ ------------  ------------------------
+2023-07-21 08:07:01              77024        62552  11 files, 15 folders
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ 7z l sbapp312m.zip 
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,16 CPUs 11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz (806D1),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 70209 bytes (69 KiB)
+
+Listing archive: sbapp312m.zip
+
+--
+Path = sbapp312m.zip
+Type = zip
+Physical Size = 70209
+
+   Date      Time    Attr         Size   Compressed  Name
+------------------- ----- ------------ ------------  ------------------------
+2023-07-21 08:08:34 D....            0            2  sbapp312m
+2023-07-21 08:08:34 .....         1544          523  sbapp312m/HELP.md
+2023-07-21 08:08:34 .....         7592         2810  sbapp312m/mvnw.cmd
+2023-07-21 08:08:34 .....          395          233  sbapp312m/.gitignore
+2023-07-21 08:08:34 .....        11290         3674  sbapp312m/mvnw
+2023-07-21 08:08:34 D....            0            2  sbapp312m/src
+2023-07-21 08:08:34 D....            0            2  sbapp312m/src/test
+2023-07-21 08:08:34 D....            0            2  sbapp312m/src/test/java
+2023-07-21 08:08:34 D....            0            2  sbapp312m/src/test/java/ashburncode
+2023-07-21 08:08:34 D....            0            2  sbapp312m/src/test/java/ashburncode/sbapp312m
+2023-07-21 08:08:34 .....          224          161  sbapp312m/src/test/java/ashburncode/sbapp312m/Sbapp312mvnjarj17ApplicationTests.java
+2023-07-21 08:08:34 D....            0            2  sbapp312m/src/main
+2023-07-21 08:08:34 D....            0            2  sbapp312m/src/main/resources
+2023-07-21 08:08:34 .....            1            3  sbapp312m/src/main/resources/application.properties
+2023-07-21 08:08:34 D....            0            2  sbapp312m/src/main/resources/templates
+2023-07-21 08:08:34 D....            0            2  sbapp312m/src/main/resources/static
+2023-07-21 08:08:34 D....            0            2  sbapp312m/src/main/java
+2023-07-21 08:08:34 D....            0            2  sbapp312m/src/main/java/ashburncode
+2023-07-21 08:08:34 D....            0            2  sbapp312m/src/main/java/ashburncode/sbapp312m
+2023-07-21 08:08:34 .....          336          181  sbapp312m/src/main/java/ashburncode/sbapp312m/Sbapp312mvnjarj17Application.java
+2023-07-21 08:08:34 .....         1678          549  sbapp312m/pom.xml
+2023-07-21 08:08:34 D....            0            2  sbapp312m/.mvn
+2023-07-21 08:08:34 D....            0            2  sbapp312m/.mvn/wrapper
+2023-07-21 08:08:34 .....          233          109  sbapp312m/.mvn/wrapper/maven-wrapper.properties
+2023-07-21 08:08:34 .....        62547        55558  sbapp312m/.mvn/wrapper/maven-wrapper.jar
+------------------- ----- ------------ ------------  ------------------------
+2023-07-21 08:08:34              85840        63831  10 files, 15 folders
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ 7z l sbapp2714g.zip
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,16 CPUs 11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz (806D1),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 69249 bytes (68 KiB)
+
+Listing archive: sbapp2714g.zip
+
+--
+Path = sbapp2714g.zip
+Type = zip
+Physical Size = 69249
+
+   Date      Time    Attr         Size   Compressed  Name
+------------------- ----- ------------ ------------  ------------------------
+2023-07-21 08:03:27 D....            0            2  sbapp2714g
+2023-07-21 08:03:27 .....         1694          600  sbapp2714g/HELP.md
+2023-07-21 08:03:27 .....           32           34  sbapp2714g/settings.gradle
+2023-07-21 08:03:27 .....         2868         1211  sbapp2714g/gradlew.bat
+2023-07-21 08:03:27 .....          646          306  sbapp2714g/build.gradle
+2023-07-21 08:03:27 .....          444          242  sbapp2714g/.gitignore
+2023-07-21 08:03:27 .....         8496         3611  sbapp2714g/gradlew
+2023-07-21 08:03:27 D....            0            2  sbapp2714g/src
+2023-07-21 08:03:27 D....            0            2  sbapp2714g/src/test
+2023-07-21 08:03:27 D....            0            2  sbapp2714g/src/test/java
+2023-07-21 08:03:27 D....            0            2  sbapp2714g/src/test/java/ashburncode
+2023-07-21 08:03:27 D....            0            2  sbapp2714g/src/test/java/ashburncode/sbapp2714g
+2023-07-21 08:03:27 .....          218          155  sbapp2714g/src/test/java/ashburncode/sbapp2714g/Sbapp2714gApplicationTests.java
+2023-07-21 08:03:27 D....            0            2  sbapp2714g/src/main
+2023-07-21 08:03:27 D....            0            2  sbapp2714g/src/main/resources
+2023-07-21 08:03:27 .....            1            3  sbapp2714g/src/main/resources/application.properties
+2023-07-21 08:03:27 D....            0            2  sbapp2714g/src/main/resources/templates
+2023-07-21 08:03:27 D....            0            2  sbapp2714g/src/main/resources/static
+2023-07-21 08:03:27 D....            0            2  sbapp2714g/src/main/java
+2023-07-21 08:03:27 D....            0            2  sbapp2714g/src/main/java/ashburncode
+2023-07-21 08:03:27 D....            0            2  sbapp2714g/src/main/java/ashburncode/sbapp2714g
+2023-07-21 08:03:27 .....          323          175  sbapp2714g/src/main/java/ashburncode/sbapp2714g/Sbapp2714gApplication.java
+2023-07-21 08:03:27 D....            0            2  sbapp2714g/gradle
+2023-07-21 08:03:27 D....            0            2  sbapp2714g/gradle/wrapper
+2023-07-21 08:03:27 .....        62076        56050  sbapp2714g/gradle/wrapper/gradle-wrapper.jar
+2023-07-21 08:03:27 .....          223          140  sbapp2714g/gradle/wrapper/gradle-wrapper.properties
+------------------- ----- ------------ ------------  ------------------------
+2023-07-21 08:03:27              77021        62557  11 files, 15 folders
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ 7z l sbapp2714m.zip
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,16 CPUs 11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz (806D1),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 67585 bytes (67 KiB)
+
+Listing archive: sbapp2714m.zip
+
+--
+Path = sbapp2714m.zip
+Type = zip
+Physical Size = 67585
+
+   Date      Time    Attr         Size   Compressed  Name
+------------------- ----- ------------ ------------  ------------------------
+2023-07-21 08:04:38 D....            0            2  sbapp2714m
+2023-07-21 08:04:38 .....         1549          525  sbapp2714m/HELP.md
+2023-07-21 08:04:38 .....         6734         2550  sbapp2714m/mvnw.cmd
+2023-07-21 08:04:38 .....          395          233  sbapp2714m/.gitignore
+2023-07-21 08:04:38 .....        10284         3287  sbapp2714m/mvnw
+2023-07-21 08:04:38 D....            0            2  sbapp2714m/src
+2023-07-21 08:04:38 D....            0            2  sbapp2714m/src/test
+2023-07-21 08:04:38 D....            0            2  sbapp2714m/src/test/java
+2023-07-21 08:04:38 D....            0            2  sbapp2714m/src/test/java/ashburncode
+2023-07-21 08:04:38 D....            0            2  sbapp2714m/src/test/java/ashburncode/sbapp2714m
+2023-07-21 08:04:38 .....          226          162  sbapp2714m/src/test/java/ashburncode/sbapp2714m/Sbapp2714mvnjarj17ApplicationTests.java
+2023-07-21 08:04:38 D....            0            2  sbapp2714m/src/main
+2023-07-21 08:04:38 D....            0            2  sbapp2714m/src/main/resources
+2023-07-21 08:04:38 .....            1            3  sbapp2714m/src/main/resources/application.properties
+2023-07-21 08:04:38 D....            0            2  sbapp2714m/src/main/resources/templates
+2023-07-21 08:04:38 D....            0            2  sbapp2714m/src/main/resources/static
+2023-07-21 08:04:38 D....            0            2  sbapp2714m/src/main/java
+2023-07-21 08:04:38 D....            0            2  sbapp2714m/src/main/java/ashburncode
+2023-07-21 08:04:38 D....            0            2  sbapp2714m/src/main/java/ashburncode/sbapp2714m
+2023-07-21 08:04:38 .....          339          182  sbapp2714m/src/main/java/ashburncode/sbapp2714m/Sbapp2714mvnjarj17Application.java
+2023-07-21 08:04:38 .....         1682          550  sbapp2714m/pom.xml
+2023-07-21 08:04:38 D....            0            2  sbapp2714m/.mvn
+2023-07-21 08:04:38 D....            0            2  sbapp2714m/.mvn/wrapper
+2023-07-21 08:04:38 .....         1019          531  sbapp2714m/.mvn/wrapper/maven-wrapper.properties
+2023-07-21 08:04:38 .....        59925        53092  sbapp2714m/.mvn/wrapper/maven-wrapper.jar
+------------------- ----- ------------ ------------  ------------------------
+2023-07-21 08:04:38              82154        61145  10 files, 15 folders
+davidho@dphxps17:~/Downloads$ 
+
+davidho@dphxps17:~/sbootprojs/sbapp312g$ pwd -P
+/home/davidho/sbootprojs/sbapp312g
+davidho@dphxps17:~/sbootprojs/sbapp312g$ ls -latr
+total 48
+drwxr-xr-x  4 davidho davidho 4096 Jul 21 08:07 src
+-rw-r--r--  1 davidho davidho   31 Jul 21 08:07 settings.gradle
+-rw-r--r--  1 davidho davidho 1689 Jul 21 08:07 HELP.md
+-rw-r--r--  1 davidho davidho 2868 Jul 21 08:07 gradlew.bat
+-rwxr-xr-x  1 davidho davidho 8496 Jul 21 08:07 gradlew
+drwxr-xr-x  3 davidho davidho 4096 Jul 21 08:07 gradle
+-rw-r--r--  1 davidho davidho  444 Jul 21 08:07 .gitignore
+-rw-r--r--  1 davidho davidho  636 Jul 21 08:07 build.gradle
+drwxr-xr-x  4 davidho davidho 4096 Jul 21 08:07 .
+drwxrwxr-x 22 davidho davidho 4096 Jul 21 08:16 ..
+davidho@dphxps17:~/sbootprojs/sbapp312g$ 
+davidho@dphxps17:~/sbootprojs/sbapp312g$ ./gradlew --version
+Downloading https://services.gradle.org/distributions/gradle-8.1.1-bin.zip
+...........10%............20%............30%............40%............50%............60%............70%............80%...........90%............100%
+
+------------------------------------------------------------
+Gradle 8.1.1
+------------------------------------------------------------
+
+Build time:   2023-04-21 12:31:26 UTC
+Revision:     1cf537a851c635c364a4214885f8b9798051175b
+
+Kotlin:       1.8.10
+Groovy:       3.0.15
+Ant:          Apache Ant(TM) version 1.10.11 compiled on July 10 2021
+JVM:          17.0.7 (Azul Systems, Inc. 17.0.7+7-LTS)
+OS:           Linux 5.19.0-46-generic amd64
+
+davidho@dphxps17:~/sbootprojs/sbapp312g$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr | tail -30
+-rw-rw-r--  1 davidho davidho  733761636 Jul  6 06:53 pycharm-professional-2023.1.3.tar.gz
+-rw-rw-r--  1 davidho davidho        103 Jul  6 06:54 pycharm-professional-2023.1.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  577483560 Jul  6 06:56 pycharm-community-2023.1.3.tar.gz
+-rw-rw-r--  1 davidho davidho        100 Jul  6 06:56 pycharm-community-2023.1.3.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho      69293 Jul  6 07:10 sbapp2713g.zip
+-rw-rw-r--  1 davidho davidho      67585 Jul  6 07:11 sbapp2713m.zip
+-rw-rw-r--  1 davidho davidho      69214 Jul  6 07:13 sbapp308g.zip
+-rw-rw-r--  1 davidho davidho      67519 Jul  6 07:14 sbapp308m.zip
+-rw-rw-r--  1 davidho davidho      69214 Jul  6 07:16 sbapp311g.zip
+-rw-rw-r--  1 davidho davidho      70206 Jul  6 07:17 sbapp311m.zip
+-rw-rw-r--  1 davidho davidho 1115953421 Jul 15 09:52 ideaIU-2023.1.4.tar.gz
+-rw-rw-r--  1 davidho davidho         89 Jul 15 09:52 ideaIU-2023.1.4.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  938207113 Jul 15 09:53 ideaIC-2023.1.4.tar.gz
+-rw-rw-r--  1 davidho davidho         89 Jul 15 09:53 ideaIC-2023.1.4.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  733759740 Jul 15 09:56 pycharm-professional-2023.1.4.tar.gz
+-rw-rw-r--  1 davidho davidho        103 Jul 15 09:56 pycharm-professional-2023.1.4.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  577477377 Jul 15 09:56 pycharm-community-2023.1.4.tar.gz
+-rw-rw-r--  1 davidho davidho        100 Jul 15 09:56 pycharm-community-2023.1.4.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  568353216 Jul 15 09:58 datagrip-2023.1.2.tar.gz
+-rw-rw-r--  1 davidho davidho         91 Jul 15 09:58 datagrip-2023.1.2.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  589250153 Jul 15 09:59 WebStorm-2023.1.4.tar.gz
+-rw-rw-r--  1 davidho davidho         91 Jul 15 09:59 WebStorm-2023.1.4.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho   96126384 Jul 15 10:04 code_1.80.1-1689183569_amd64.deb
+-rw-rw-r--  1 davidho davidho  135332845 Jul 15 10:04 code-stable-x64-1689183979.tar.gz
+drwxr-x--- 58 davidho davidho       4096 Jul 21 07:37 ..
+-rw-rw-r--  1 davidho davidho      69249 Jul 21 08:03 sbapp2714g.zip
+-rw-rw-r--  1 davidho davidho      67585 Jul 21 08:04 sbapp2714m.zip
+-rw-rw-r--  1 davidho davidho      69212 Jul 21 08:07 sbapp312g.zip
+-rw-rw-r--  1 davidho davidho      70209 Jul 21 08:08 sbapp312m.zip
+drwxr-xr-x  5 davidho davidho      28672 Jul 21 08:22 .
+davidho@dphxps17:~/Downloads$ 
+
+
