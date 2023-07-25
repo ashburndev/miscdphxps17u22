@@ -1,0 +1,649 @@
+Tue Jul 25 07:04:32 AM EDT 2023
+
+davidho@dphxps17:~$ date
+Tue Jul 25 07:04:04 AM EDT 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date > stuff-20230725.txt
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ code   stuff-20230725.txt
+davidho@dphxps17:~$ 
+
+davidho@dphxps17:~$ sdk current
+We periodically need to update the local cache. Please run:
+
+  $ sdk update
+
+
+Using:
+
+ant: 1.10.13
+asciidoctorj: 2.5.8
+gradle: 8.1.1
+grails: 5.3.2
+groovy: 4.0.9
+java: 17.0.7-zulu
+maven: 3.9.2
+springboot: 3.1.0
+davidho@dphxps17:~$ 
+
+davidho@dphxps17:~$ sdk list java | grep 20
+ Corretto      |     | 20.0.2       | amzn    |            | 20.0.2-amzn         
+               |     | 20.0.1       | amzn    |            | 20.0.1-amzn         
+               |     | 11.0.20      | amzn    |            | 11.0.20-amzn        
+ GraalVM CE    |     | 20.0.1       | graalce |            | 20.0.1-graalce      
+ GraalVM Oracle|     | 20.0.2       | graal   |            | 20.0.2-graal        
+               |     | 20.0.1       | graal   |            | 20.0.1-graal        
+               |     | 20.0.2       | open    |            | 20.0.2-open         
+ Liberica      |     | 20.0.2.fx    | librca  |            | 20.0.2.fx-librca    
+               |     | 20.0.2       | librca  |            | 20.0.2-librca       
+               |     | 20.0.1.fx    | librca  |            | 20.0.1.fx-librca    
+               |     | 20.0.1       | librca  |            | 20.0.1-librca       
+               |     | 11.0.20.fx   | librca  |            | 11.0.20.fx-librca   
+               |     | 11.0.20      | librca  |            | 11.0.20-librca      
+ Liberica NIK  |     | 23.r20       | nik     |            | 23.r20-nik          
+ Mandrel       |     | 23.r20       | mandrel |            | 23.r20-mandrel      
+               |     | 11.0.20      | ms      |            | 11.0.20-ms          
+ Oracle        |     | 20.0.2       | oracle  |            | 20.0.2-oracle       
+               |     | 20.0.1       | oracle  |            | 20.0.1-oracle       
+ SapMachine    |     | 20.0.2       | sapmchn |            | 20.0.2-sapmchn      
+               |     | 20.0.1       | sapmchn |            | 20.0.1-sapmchn      
+               |     | 11.0.20      | sapmchn |            | 11.0.20-sapmchn     
+ Semeru        |     | 20.0.1       | sem     |            | 20.0.1-sem          
+ Temurin       |     | 20.0.2       | tem     |            | 20.0.2-tem          
+               |     | 20.0.1       | tem     |            | 20.0.1-tem          
+               |     | 11.0.20      | tem     |            | 11.0.20-tem         
+ Zulu          |     | 20.0.2       | zulu    |            | 20.0.2-zulu         
+               |     | 20.0.2.fx    | zulu    |            | 20.0.2.fx-zulu      
+               |     | 20.0.1       | zulu    |            | 20.0.1-zulu         
+               |     | 20.0.1.fx    | zulu    |            | 20.0.1.fx-zulu      
+               |     | 11.0.20      | zulu    |            | 11.0.20-zulu        
+               |     | 11.0.20.fx   | zulu    |            | 11.0.20.fx-zulu     
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ sdk list java | grep "17.0"
+               |     | 17.0.8       | amzn    |            | 17.0.8-amzn         
+               |     | 17.0.7       | amzn    | installed  | 17.0.7-amzn         
+               |     | 17.0.3.6.1   | amzn    | local only | 17.0.3.6.1-amzn     
+ Dragonwell    |     | 17.0.7       | albba   |            | 17.0.7-albba        
+               |     | 17.0.7       | graalce |            | 17.0.7-graalce      
+               |     | 17.0.8       | graal   |            | 17.0.8-graal        
+               |     | 17.0.7       | graal   |            | 17.0.7-graal        
+ JetBrains     |     | 17.0.7       | jbr     |            | 17.0.7-jbr          
+               |     | 17.0.8.fx    | librca  |            | 17.0.8.fx-librca    
+               |     | 17.0.8       | librca  |            | 17.0.8-librca       
+               |     | 17.0.7.fx    | librca  |            | 17.0.7.fx-librca    
+               |     | 17.0.7       | librca  |            | 17.0.7-librca       
+ Microsoft     |     | 17.0.8       | ms      |            | 17.0.8-ms           
+               |     | 17.0.7       | ms      |            | 17.0.7-ms           
+               |     | 17.0.8       | oracle  |            | 17.0.8-oracle       
+               |     | 17.0.7       | oracle  |            | 17.0.7-oracle       
+               |     | 17.0.3       | oracle  | local only | 17.0.3-oracle       
+               |     | 17.0.8       | sapmchn |            | 17.0.8-sapmchn      
+               |     | 17.0.7       | sapmchn |            | 17.0.7-sapmchn      
+               |     | 17.0.7       | sem     |            | 17.0.7-sem          
+               |     | 17.0.8       | tem     |            | 17.0.8-tem          
+               |     | 17.0.7       | tem     | installed  | 17.0.7-tem          
+               |     | 17.0.3       | tem     | local only | 17.0.3-tem          
+ Tencent       |     | 17.0.7       | kona    |            | 17.0.7-kona         
+               |     | 17.0.8       | zulu    |            | 17.0.8-zulu         
+               |     | 17.0.8.crac  | zulu    |            | 17.0.8.crac-zulu    
+               |     | 17.0.8.fx    | zulu    |            | 17.0.8.fx-zulu      
+               | >>> | 17.0.7       | zulu    | installed  | 17.0.7-zulu         
+               |     | 17.0.7.crac  | zulu    |            | 17.0.7.crac-zulu    
+               |     | 17.0.7.fx    | zulu    |            | 17.0.7.fx-zulu      
+               |     | 17.0.6       | zulu    | local only | 17.0.6-zulu         
+               |     | 17.0.5       | zulu    | local only | 17.0.5-zulu         
+               |     | 17.0.3       | zulu    | local only | 17.0.3-zulu         
+               |     | 17.0.3.fx    | zulu    | local only | 17.0.3.fx-zulu      
+Omit Identifier to install default version 17.0.8-tem:
+    $ sdk install java 17.0.8-tem
+davidho@dphxps17:~$ 
+
+sdk install java 17.0.8-amzn  
+sdk install java 17.0.8-tem   
+sdk install java 17.0.8-zulu  
+
+sdk install java 20.0.2-amzn  
+sdk install java 20.0.2-tem   
+sdk install java 20.0.2-zulu  
+
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ sdk version
+We periodically need to update the local cache. Please run:
+
+  $ sdk update
+
+
+SDKMAN!
+script: 5.18.2
+native: 0.1.3
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ sdk update
+
+Adding new candidates(s): detekt gcn
+
+Please open a new terminal now...
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ date
+Tue Jul 25 07:26:35 AM EDT 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ sdk current
+
+Using:
+
+ant: 1.10.13
+asciidoctorj: 2.5.8
+gradle: 8.1.1
+grails: 5.3.2
+groovy: 4.0.9
+java: 17.0.7-zulu
+maven: 3.9.2
+springboot: 3.1.0
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ sdk upgrade
+
+Available defaults:
+asciidoctorj (local: 2.5.8, 2.5.4; default: 2.5.10)
+gradle (local: 7.6.1, 7.4.2, 8.0.2, 8.1.1; default: 8.2.1)
+grails (local: 5.2.5, 5.3.2, 5.1.8, 4.1.2; default: 6.0.0)
+groovy (local: 3.0.15, 4.0.3, 4.0.9, 4.0.12; default: 4.0.13)
+java (local: 17.0.6-zulu, 17.0.3.fx-zulu, 17.0.7-zulu, 17.0.3-zulu, 17.0.3-tem, 17.0.3-oracle, 17.0.3.6.1-amzn, 17.0.7-amzn, 17.0.5-zulu, 17.0.7-tem; default: 17.0.8-tem)
+jbang (local: 0.95.0; default: 0.110.0)
+jmeter (local: 5.4.3; default: 5.6)
+maven (local: 3.8.5, 3.9.2, 3.9.0; default: 3.9.3)
+springboot (local: 3.1.0, 3.0.7; default: 3.1.2)
+tomcat (local: 10.0.14, 9.0.56; default: 10.1.10)
+vertx (local: 4.3.1; default: 4.4.4)
+visualvm (local: 2.1.3; default: 2.1.6)
+
+Use prescribed default version(s)? (Y/n): 
+
+Downloading: asciidoctorj 2.5.10
+
+In progress...
+
+#################################################################################################################################################################################################### 100.0%
+
+Installing: asciidoctorj 2.5.10
+Done installing!
+
+
+Setting asciidoctorj 2.5.10 as default.
+
+Downloading: gradle 8.2.1
+
+In progress...
+
+#################################################################################################################################################################################################### 100.0%
+
+Installing: gradle 8.2.1
+Done installing!
+
+
+Setting gradle 8.2.1 as default.
+
+Downloading: grails 6.0.0
+
+In progress...
+
+#################################################################################################################################################################################################### 100.0%
+
+Installing: grails 6.0.0
+Done installing!
+
+
+Setting grails 6.0.0 as default.
+
+Downloading: groovy 4.0.13
+
+In progress...
+
+#################################################################################################################################################################################################### 100.0%
+
+Installing: groovy 4.0.13
+Done installing!
+
+
+Setting groovy 4.0.13 as default.
+
+Downloading: java 17.0.8-tem
+
+In progress...
+
+#################################################################################################################################################################################################### 100.0%
+
+Repackaging Java 17.0.8-tem...
+
+Done repackaging...
+
+Installing: java 17.0.8-tem
+Done installing!
+
+
+Setting java 17.0.8-tem as default.
+
+Downloading: jbang 0.110.0
+
+In progress...
+
+#################################################################################################################################################################################################### 100.0%
+
+Installing: jbang 0.110.0
+Done installing!
+
+
+Setting jbang 0.110.0 as default.
+
+Downloading: jmeter 5.6
+
+In progress...
+
+#################################################################################################################################################################################################### 100.0%
+
+Installing: jmeter 5.6
+Done installing!
+
+
+Setting jmeter 5.6 as default.
+
+Downloading: maven 3.9.3
+
+In progress...
+
+#################################################################################################################################################################################################### 100.0%
+
+Installing: maven 3.9.3
+Done installing!
+
+
+Setting maven 3.9.3 as default.
+
+Downloading: springboot 3.1.2
+
+In progress...
+
+#################################################################################################################################################################################################### 100.0%
+
+Installing: springboot 3.1.2
+Done installing!
+
+
+Setting springboot 3.1.2 as default.
+
+Downloading: tomcat 10.1.10
+
+In progress...
+
+#################################################################################################################################################################################################### 100.0%
+
+Installing: tomcat 10.1.10
+Done installing!
+
+
+Setting tomcat 10.1.10 as default.
+
+Downloading: vertx 4.4.4
+
+In progress...
+
+#################################################################################################################################################################################################### 100.0%
+
+Installing: vertx 4.4.4
+Done installing!
+
+
+Setting vertx 4.4.4 as default.
+
+Downloading: visualvm 2.1.6
+
+In progress...
+
+#################################################################################################################################################################################################### 100.0%
+
+Installing: visualvm 2.1.6
+Done installing!
+
+
+Setting visualvm 2.1.6 as default.
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ sdk current
+
+Using:
+
+ant: 1.10.13
+asciidoctorj: 2.5.10
+gradle: 8.2.1
+grails: 6.0.0
+groovy: 4.0.13
+java: 17.0.8-tem
+jbang: 0.110.0
+jmeter: 5.6
+maven: 3.9.3
+springboot: 3.1.2
+tomcat: 10.1.10
+vertx: 4.4.4
+visualvm: 2.1.6
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp312grajarj20
+Name:          sbapp312grajarj20
+Package name:  ashburncode.sbapp312g
+Description:   spring boot 3.1.2, gradle project, jar packaging, java 20
+Dependencies
+  Spring Web WEB
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories WEB
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp312mvnjarj20
+Name:          sbapp312mvnjarj20
+Package name:  ashburncode.sbapp312m
+Description:   spring boot 3.1.2, maven project, jar packaging, java 20
+Dependencies:
+  Spring Web Web
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.   
+
+
+
+Dependencies
+  Spring Web Web
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.
+  Spring Boot Actuator Ops
+    Supports built in (or custom) endpoints that let you monitor and manage your application - such as application health, metrics, sessions, etc.
+  Lombok Developer Tools
+    Java annotation library which helps to reduce boilerplate code.
+  PostgreSQL Driver SQL
+    A JDBC and R2DBC driver that allows Java programs to connect to a PostgreSQL database using standard, database independent Java code.
+  H2 Database SQL
+    Provides a fast in-memory database that supports JDBC API and R2DBC access, with a small (2mb) footprint. Supports embedded and server modes as well as a browser based console application.
+
+
+
+davidho@dphxps17:~$ history | tail -30
+ 1981  mv stuff*.txt Documents/
+ 1982  cd Documents/
+ 1983  code .
+ 1984  cd
+ 1985  sdk current
+ 1986  cd Documents/
+ 1987  ls -latr
+ 1988  mv stuff-20220725.txt stuff-20230725.txt
+ 1989  cd ~/repositories/miscdphxps17u22/
+ 1990  ls -latr
+ 1991  cd
+ 1992  sdk current
+ 1993  sdk list
+ 1994  sdk list java | grep 20
+ 1995  sdk list java | grep "17.0"
+ 1996  sdk list java | grep "19.0"
+ 1997  sdk list java | grep "19"
+ 1998  sdk list java | grep 19
+ 1999  sdk version
+ 2000  sdk update
+ 2001  date
+ 2002  sdk current
+ 2003  sdk upgrade
+ 2004  sdk current
+ 2005  java -version
+ 2006  sdk install java 20.0.2-amzn  
+ 2007  sdk install java 20.0.2-tem   
+ 2008  sdk install java 20.0.2-zulu  
+ 2009  history -20
+ 2010  history | tail -30
+davidho@dphxps17:~$ 
+
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ ls -latr | tail
+-rw-rw-r--  1 davidho davidho   96126384 Jul 15 10:04 code_1.80.1-1689183569_amd64.deb
+-rw-rw-r--  1 davidho davidho  135332845 Jul 15 10:04 code-stable-x64-1689183979.tar.gz
+-rw-rw-r--  1 davidho davidho      69249 Jul 21 08:03 sbapp2714g.zip
+-rw-rw-r--  1 davidho davidho      67585 Jul 21 08:04 sbapp2714m.zip
+-rw-rw-r--  1 davidho davidho      69212 Jul 21 08:07 sbapp312g.zip
+-rw-rw-r--  1 davidho davidho      70209 Jul 21 08:08 sbapp312m.zip
+drwxr-x--- 58 davidho davidho       4096 Jul 25 07:26 ..
+-rw-rw-r--  1 davidho davidho      69820 Jul 25 07:39 sbapp312grajarj20.zip
+-rw-rw-r--  1 davidho davidho      70807 Jul 25 07:48 sbapp312mvnjarj20.zip
+drwxr-xr-x  5 davidho davidho      28672 Jul 25 07:48 .
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ cp -p sbapp312*.zip ~/sbootprojs/
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ cd ~/sbootprojs/
+davidho@dphxps17:~/sbootprojs$ 
+davidho@dphxps17:~/sbootprojs$ ls -latr | tail
+drwxr-xr-x 11 davidho davidho   4096 Apr 21 05:57 prezinfosb
+-rw-rw-r--  1 davidho davidho  69249 Jul 21 08:03 sbapp2714g.zip
+-rw-rw-r--  1 davidho davidho  67585 Jul 21 08:04 sbapp2714m.zip
+drwxr-xr-x  4 davidho davidho   4096 Jul 21 08:07 sbapp312g
+-rw-rw-r--  1 davidho davidho  69212 Jul 21 08:07 sbapp312g.zip
+-rw-rw-r--  1 davidho davidho  70209 Jul 21 08:08 sbapp312m.zip
+drwxr-x--- 58 davidho davidho   4096 Jul 25 07:26 ..
+-rw-rw-r--  1 davidho davidho  69820 Jul 25 07:39 sbapp312grajarj20.zip
+drwxrwxr-x 22 davidho davidho   4096 Jul 25 07:46 .
+-rw-rw-r--  1 davidho davidho  70807 Jul 25 07:48 sbapp312mvnjarj20.zip
+davidho@dphxps17:~/sbootprojs$ 
+davidho@dphxps17:~/sbootprojs$ 
+davidho@dphxps17:~/sbootprojs$ 7z l sbapp312grajarj20.zip
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,16 CPUs 11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz (806D1),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 69820 bytes (69 KiB)
+
+Listing archive: sbapp312grajarj20.zip
+
+--
+Path = sbapp312grajarj20.zip
+Type = zip
+Physical Size = 69820
+
+   Date      Time    Attr         Size   Compressed  Name
+------------------- ----- ------------ ------------  ------------------------
+2023-07-25 07:39:47 D....            0            2  sbapp312grajarj20
+2023-07-25 07:39:47 .....         1900          628  sbapp312grajarj20/HELP.md
+2023-07-25 07:39:47 .....           39           41  sbapp312grajarj20/settings.gradle
+2023-07-25 07:39:47 .....         2868         1211  sbapp312grajarj20/gradlew.bat
+2023-07-25 07:39:47 .....          942          386  sbapp312grajarj20/build.gradle
+2023-07-25 07:39:47 .....          444          242  sbapp312grajarj20/.gitignore
+2023-07-25 07:39:47 .....         8496         3611  sbapp312grajarj20/gradlew
+2023-07-25 07:39:47 D....            0            2  sbapp312grajarj20/src
+2023-07-25 07:39:47 D....            0            2  sbapp312grajarj20/src/test
+2023-07-25 07:39:47 D....            0            2  sbapp312grajarj20/src/test/java
+2023-07-25 07:39:47 D....            0            2  sbapp312grajarj20/src/test/java/ashburncode
+2023-07-25 07:39:47 D....            0            2  sbapp312grajarj20/src/test/java/ashburncode/sbapp312grajarj20
+2023-07-25 07:39:47 .....          232          159  sbapp312grajarj20/src/test/java/ashburncode/sbapp312grajarj20/Sbapp312grajarj20ApplicationTests.java
+2023-07-25 07:39:47 D....            0            2  sbapp312grajarj20/src/main
+2023-07-25 07:39:47 D....            0            2  sbapp312grajarj20/src/main/resources
+2023-07-25 07:39:47 .....            1            3  sbapp312grajarj20/src/main/resources/application.properties
+2023-07-25 07:39:47 D....            0            2  sbapp312grajarj20/src/main/resources/templates
+2023-07-25 07:39:47 D....            0            2  sbapp312grajarj20/src/main/resources/static
+2023-07-25 07:39:47 D....            0            2  sbapp312grajarj20/src/main/java
+2023-07-25 07:39:47 D....            0            2  sbapp312grajarj20/src/main/java/ashburncode
+2023-07-25 07:39:47 D....            0            2  sbapp312grajarj20/src/main/java/ashburncode/sbapp312grajarj20
+2023-07-25 07:39:47 .....          344          179  sbapp312grajarj20/src/main/java/ashburncode/sbapp312grajarj20/Sbapp312grajarj20Application.java
+2023-07-25 07:39:47 D....            0            2  sbapp312grajarj20/gradle
+2023-07-25 07:39:47 D....            0            2  sbapp312grajarj20/gradle/wrapper
+2023-07-25 07:39:47 .....        62076        56050  sbapp312grajarj20/gradle/wrapper/gradle-wrapper.jar
+2023-07-25 07:39:47 .....          223          140  sbapp312grajarj20/gradle/wrapper/gradle-wrapper.properties
+------------------- ----- ------------ ------------  ------------------------
+2023-07-25 07:39:47              77565        62680  11 files, 15 folders
+davidho@dphxps17:~/sbootprojs$ 
+davidho@dphxps17:~/sbootprojs$ 7z l sbapp312mvnjarj20.zip
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,16 CPUs 11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz (806D1),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 70807 bytes (70 KiB)
+
+Listing archive: sbapp312mvnjarj20.zip
+
+--
+Path = sbapp312mvnjarj20.zip
+Type = zip
+Physical Size = 70807
+
+   Date      Time    Attr         Size   Compressed  Name
+------------------- ----- ------------ ------------  ------------------------
+2023-07-25 07:48:43 D....            0            2  sbapp312mvnjarj20
+2023-07-25 07:48:43 .....         1755          553  sbapp312mvnjarj20/HELP.md
+2023-07-25 07:48:43 .....         7592         2810  sbapp312mvnjarj20/mvnw.cmd
+2023-07-25 07:48:43 .....          395          233  sbapp312mvnjarj20/.gitignore
+2023-07-25 07:48:43 .....        11290         3674  sbapp312mvnjarj20/mvnw
+2023-07-25 07:48:43 D....            0            2  sbapp312mvnjarj20/src
+2023-07-25 07:48:43 D....            0            2  sbapp312mvnjarj20/src/test
+2023-07-25 07:48:43 D....            0            2  sbapp312mvnjarj20/src/test/java
+2023-07-25 07:48:43 D....            0            2  sbapp312mvnjarj20/src/test/java/ashburncode
+2023-07-25 07:48:43 D....            0            2  sbapp312mvnjarj20/src/test/java/ashburncode/sbapp312mvnjarj20
+2023-07-25 07:48:43 .....          232          160  sbapp312mvnjarj20/src/test/java/ashburncode/sbapp312mvnjarj20/Sbapp312mvnjarj20ApplicationTests.java
+2023-07-25 07:48:43 D....            0            2  sbapp312mvnjarj20/src/main
+2023-07-25 07:48:43 D....            0            2  sbapp312mvnjarj20/src/main/resources
+2023-07-25 07:48:43 .....            1            3  sbapp312mvnjarj20/src/main/resources/application.properties
+2023-07-25 07:48:43 D....            0            2  sbapp312mvnjarj20/src/main/resources/templates
+2023-07-25 07:48:43 D....            0            2  sbapp312mvnjarj20/src/main/resources/static
+2023-07-25 07:48:43 D....            0            2  sbapp312mvnjarj20/src/main/java
+2023-07-25 07:48:43 D....            0            2  sbapp312mvnjarj20/src/main/java/ashburncode
+2023-07-25 07:48:43 D....            0            2  sbapp312mvnjarj20/src/main/java/ashburncode/sbapp312mvnjarj20
+2023-07-25 07:48:43 .....          344          179  sbapp312mvnjarj20/src/main/java/ashburncode/sbapp312mvnjarj20/Sbapp312mvnjarj20Application.java
+2023-07-25 07:48:43 .....         2404          656  sbapp312mvnjarj20/pom.xml
+2023-07-25 07:48:43 D....            0            2  sbapp312mvnjarj20/.mvn
+2023-07-25 07:48:43 D....            0            2  sbapp312mvnjarj20/.mvn/wrapper
+2023-07-25 07:48:43 .....          233          109  sbapp312mvnjarj20/.mvn/wrapper/maven-wrapper.properties
+2023-07-25 07:48:43 .....        62547        55558  sbapp312mvnjarj20/.mvn/wrapper/maven-wrapper.jar
+------------------- ----- ------------ ------------  ------------------------
+2023-07-25 07:48:43              86793        63965  10 files, 15 folders
+davidho@dphxps17:~/sbootprojs$ 
+
+davidho@dphxps17:~/sbootprojs$ cd sbapp312grajarj20
+davidho@dphxps17:~/sbootprojs/sbapp312grajarj20$ 
+davidho@dphxps17:~/sbootprojs/sbapp312grajarj20$ java -version
+openjdk version "20.0.2" 2023-07-18
+OpenJDK Runtime Environment Zulu20.32+11-CA (build 20.0.2+9)
+OpenJDK 64-Bit Server VM Zulu20.32+11-CA (build 20.0.2+9, mixed mode, sharing)
+davidho@dphxps17:~/sbootprojs/sbapp312grajarj20$ 
+davidho@dphxps17:~/sbootprojs/sbapp312grajarj20$ ./gradlew --version
+
+------------------------------------------------------------
+Gradle 8.1.1
+------------------------------------------------------------
+
+Build time:   2023-04-21 12:31:26 UTC
+Revision:     1cf537a851c635c364a4214885f8b9798051175b
+
+Kotlin:       1.8.10
+Groovy:       3.0.15
+Ant:          Apache Ant(TM) version 1.10.11 compiled on July 10 2021
+JVM:          20.0.2 (Azul Systems, Inc. 20.0.2+9)
+OS:           Linux 5.19.0-46-generic amd64
+
+davidho@dphxps17:~/sbootprojs/sbapp312grajarj20$ 
+
+davidho@dphxps17:~/sbootprojs/sbapp312grajarj20$ code .
+davidho@dphxps17:~/sbootprojs/sbapp312grajarj20$ cat build.gradle 
+plugins {
+        id 'java'
+        id 'org.springframework.boot' version '3.1.2'
+	id 'io.spring.dependency-management' version '1.1.2'
+}
+
+group = 'ashburncode'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '20'
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	// implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	// implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	// compileOnly 'org.projectlombok:lombok'
+	// runtimeOnly 'com.h2database:h2'
+	// runtimeOnly 'com.mysql:mysql-connector-j'
+	// runtimeOnly 'org.postgresql:postgresql'
+	// annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+davidho@dphxps17:~/sbootprojs/sbapp312grajarj20$ 
+davidho@dphxps17:~/sbootprojs/sbapp312grajarj20$ ./gradlew bootRun
+
+> Task :bootRun
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.2)
+
+2023-07-25T07:59:08.394-04:00  INFO 36287 --- [           main] a.s.Sbapp312grajarj20Application         : Starting Sbapp312grajarj20Application using Java 20.0.2 with PID 36287 (/home/davidho/sbootprojs/sbapp312grajarj20/build/classes/java/main started by davidho in /home/davidho/sbootprojs/sbapp312grajarj20)
+2023-07-25T07:59:08.396-04:00  INFO 36287 --- [           main] a.s.Sbapp312grajarj20Application         : No active profile set, falling back to 1 default profile: "default"
+2023-07-25T07:59:08.845-04:00  INFO 36287 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-07-25T07:59:08.850-04:00  INFO 36287 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-07-25T07:59:08.850-04:00  INFO 36287 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-07-25T07:59:08.890-04:00  INFO 36287 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-07-25T07:59:08.890-04:00  INFO 36287 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 474 ms
+2023-07-25T07:59:09.110-04:00  INFO 36287 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-07-25T07:59:09.134-04:00  INFO 36287 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-07-25T07:59:09.142-04:00  INFO 36287 --- [           main] a.s.Sbapp312grajarj20Application         : Started Sbapp312grajarj20Application in 0.891 seconds (process running for 1.011)
+<==========---> 80% EXECUTING [24s]
+> IDLE
+> IDLE
+> :bootRun
+> IDLE
+^Cdavidho@dphxps17:~/sbootprojs/sbapp312grajarj20$ 
+
+
