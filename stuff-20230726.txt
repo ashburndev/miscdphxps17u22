@@ -1,0 +1,259 @@
+Wed Jul 26 07:36:23 AM EDT 2023
+
+davidho@dphxps17:~$ date > stuff-20230726.txt
+davidho@dphxps17:~$ mv stuff*.txt Documents/
+davidho@dphxps17:~$ code Documents/
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+-rw-rw-r--  1 davidho davidho  181577323 Feb 15 11:42 jdk-17.0.6_linux-x64_bin.tar.gz
+-rw-rw-r--  1 davidho davidho         64 Feb 15 11:42 jdk-17.0.6_linux-x64_bin.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  155967886 Feb 15 11:42 jdk-17.0.6_linux-x64_bin.deb
+-rw-rw-r--  1 davidho davidho         64 Feb 15 11:43 jdk-17.0.6_linux-x64_bin.deb.sha256
+-rw-rw-r--  1 davidho davidho  169328243 Feb 15 11:59 jdk-11.0.18_linux-x64_bin.tar.gz
+-rw-rw-r--  1 davidho davidho  145609416 Feb 15 12:00 jdk-11.0.18_linux-x64_bin.deb
+-rw-rw-r--  1 davidho davidho  138762230 Feb 15 12:08 jdk-8u361-linux-x64.tar.gz
+-rw-rw-r--  1 davidho davidho  141952037 Feb 15 12:09 jdk-8u361-linux-i586.tar.gz
+-rw-rw-r--  1 davidho davidho  125174504 Feb 15 12:10 jdk-8u361-docs-all.zip
+-rw-rw-r--  1 davidho davidho   54787171 Feb 15 12:34 jdk-8-linux-i586-demos.tar.gz
+-rw-rw-r--  1 davidho davidho   54881447 Feb 15 12:35 jdk-8-linux-x64-demos.tar.gz
+-rw-rw-r--  1 davidho davidho  191554581 Apr  3 06:01 jdk-20_linux-x64_bin.tar.gz
+-rw-rw-r--  1 davidho davidho         64 Apr  3 06:02 jdk-20_linux-x64_bin.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  163059820 Apr  3 06:02 jdk-20_linux-x64_bin.deb
+-rw-rw-r--  1 davidho davidho         64 Apr  3 06:02 jdk-20_linux-x64_bin.deb.sha256
+
+https://www.oracle.com/java/technologies/downloads/
+
+JDK Development Kit 20.0.2 downloads
+JDK Development Kit 17.0.8 downloads
+Java SE Development Kit 11.0.20
+Java SE Development Kit 8u381
+
+-rw-rw-r--  1 davidho davidho      69212 Jul 21 08:07  sbapp312g.zip
+-rw-rw-r--  1 davidho davidho      70209 Jul 21 08:08  sbapp312m.zip
+-rw-rw-r--  1 davidho davidho      69820 Jul 25 07:39  sbapp312grajarj20.zip
+-rw-rw-r--  1 davidho davidho      70807 Jul 25 07:48  sbapp312mvnjarj20.zip
+drwxr-x--- 58 davidho davidho       4096 Jul 26 07:36  ..
+-rw-rw-r--  1 davidho davidho  190371285 Jul 26 07:44  jdk-20.0.2_linux-aarch64_bin.tar.gz
+-rw-rw-r--  1 davidho davidho         64 Jul 26 07:46  jdk-20.0.2_linux-aarch64_bin.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  192003505 Jul 26 07:48  jdk-20.0.2_linux-x64_bin.tar.gz
+-rw-rw-r--  1 davidho davidho         64 Jul 26 07:48  jdk-20.0.2_linux-x64_bin.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  182376116 Jul 26 07:51  jdk-17.0.8_linux-x64_bin.tar.gz
+-rw-rw-r--  1 davidho davidho         64 Jul 26 07:51  jdk-17.0.8_linux-x64_bin.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  169934047 Jul 26 07:54  jdk-11.0.20_linux-x64_bin.tar.gz
+-rw-rw-r--  1 davidho davidho       7493 Jul 26 07:55  11-0-20-checksum.html
+-rw-rw-r--  1 davidho davidho  139273048 Jul 26 07:56  jdk-8u381-linux-x64.tar.gz
+-rw-rw-r--  1 davidho davidho      12563 Jul 26 07:57  8u381checksum.html
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/sbootprojs/sbapp312grajarj20$ ./gradlew bootRun
+Starting a Gradle Daemon, 2 incompatible and 1 stopped Daemons could not be reused, use --status for details
+
+> Task :bootRun
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.2)
+
+2023-07-26T08:02:37.928-04:00  INFO 15756 --- [           main] a.s.Sbapp312grajarj20Application         : Starting Sbapp312grajarj20Application using Java 20.0.2 with PID 15756 (/home/davidho/sbootprojs/sbapp312grajarj20/build/classes/java/main started by davidho in /home/davidho/sbootprojs/sbapp312grajarj20)
+2023-07-26T08:02:37.929-04:00  INFO 15756 --- [           main] a.s.Sbapp312grajarj20Application         : No active profile set, falling back to 1 default profile: "default"
+2023-07-26T08:02:38.382-04:00  INFO 15756 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-07-26T08:02:38.387-04:00  INFO 15756 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-07-26T08:02:38.387-04:00  INFO 15756 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-07-26T08:02:38.430-04:00  INFO 15756 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-07-26T08:02:38.431-04:00  INFO 15756 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 481 ms
+2023-07-26T08:02:38.644-04:00  INFO 15756 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-07-26T08:02:38.669-04:00  INFO 15756 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-07-26T08:02:38.676-04:00  INFO 15756 --- [           main] a.s.Sbapp312grajarj20Application         : Started Sbapp312grajarj20Application in 0.913 seconds (process running for 1.048)
+<==========---> 80% EXECUTING [1m 33s]s]
+> :bootRun
+^Cdavidho@dphxps17:~/sbootprojs/sbapp312grajarj20$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ curl -k -v http://localhost:8080/actuator | jq
+*   Trying 127.0.0.1:8080...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Connected to localhost (127.0.0.1) port 8080 (#0)
+> GET /actuator HTTP/1.1
+> Host: localhost:8080
+> User-Agent: curl/7.81.0
+> Accept: */*
+> 
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 
+< Content-Type: application/vnd.spring-boot.actuator.v3+json
+< Transfer-Encoding: chunked
+< Date: Wed, 26 Jul 2023 12:06:57 GMT
+< 
+{ [249 bytes data]
+100   243    0   243    0     0  55530      0 --:--:-- --:--:-- --:--:-- 60750
+* Connection #0 to host localhost left intact
+{
+  "_links": {
+    "self": {
+      "href": "http://localhost:8080/actuator",
+      "templated": false
+    },
+    "health": {
+      "href": "http://localhost:8080/actuator/health",
+      "templated": false
+    },
+    "health-path": {
+      "href": "http://localhost:8080/actuator/health/{*path}",
+      "templated": true
+    }
+  }
+}
+davidho@dphxps17:~$ 
+
+davidho@dphxps17:~/sbootprojs/sbapp312grajarj20$ find . -name *properties
+./gradle/wrapper/gradle-wrapper.properties
+./.gradle/buildOutputCleanup/cache.properties
+./.gradle/vcs-1/gc.properties
+./.gradle/8.1.1/dependencies-accessors/gc.properties
+./.gradle/8.1.1/gc.properties
+./build/resources/main/application.properties
+./src/main/resources/application.properties
+davidho@dphxps17:~/sbootprojs/sbapp312grajarj20$ 
+
+https://www.baeldung.com/spring-boot-actuator-enable-endpoints
+
+  Now, let's expose all endpoints except /shutdown by modifying our application.properties file:
+
+  management.endpoints.web.exposure.include=*
+
+  Exposing 1 endpoint(s) beneath base path '/actuator'
+  Exposing 13 endpoint(s) beneath base path '/actuator'
+
+davidho@dphxps17:~/sbootprojs/sbapp312grajarj20$ curl -k -v http://localhost:8080/actuator | jq
+*   Trying 127.0.0.1:8080...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Connected to localhost (127.0.0.1) port 8080 (#0)
+> GET /actuator HTTP/1.1
+> Host: localhost:8080
+> User-Agent: curl/7.81.0
+> Accept: */*
+> 
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 
+< Content-Type: application/vnd.spring-boot.actuator.v3+json
+< Transfer-Encoding: chunked
+< Date: Wed, 26 Jul 2023 12:16:13 GMT
+< 
+{ [1687 bytes data]
+100  1680    0  1680    0     0  22292      0 --:--:-- --:--:-- --:--:-- 22400
+* Connection #0 to host localhost left intact
+{
+  "_links": {
+    "self": {
+      "href": "http://localhost:8080/actuator",
+      "templated": false
+    },
+    "beans": {
+      "href": "http://localhost:8080/actuator/beans",
+      "templated": false
+    },
+    "caches-cache": {
+      "href": "http://localhost:8080/actuator/caches/{cache}",
+      "templated": true
+    },
+    "caches": {
+      "href": "http://localhost:8080/actuator/caches",
+      "templated": false
+    },
+    "health": {
+      "href": "http://localhost:8080/actuator/health",
+      "templated": false
+    },
+    "health-path": {
+      "href": "http://localhost:8080/actuator/health/{*path}",
+      "templated": true
+    },
+    "info": {
+      "href": "http://localhost:8080/actuator/info",
+      "templated": false
+    },
+    "conditions": {
+      "href": "http://localhost:8080/actuator/conditions",
+      "templated": false
+    },
+    "configprops": {
+      "href": "http://localhost:8080/actuator/configprops",
+      "templated": false
+    },
+    "configprops-prefix": {
+      "href": "http://localhost:8080/actuator/configprops/{prefix}",
+      "templated": true
+    },
+    "env": {
+      "href": "http://localhost:8080/actuator/env",
+      "templated": false
+    },
+    "env-toMatch": {
+      "href": "http://localhost:8080/actuator/env/{toMatch}",
+      "templated": true
+    },
+    "loggers": {
+      "href": "http://localhost:8080/actuator/loggers",
+      "templated": false
+    },
+    "loggers-name": {
+      "href": "http://localhost:8080/actuator/loggers/{name}",
+      "templated": true
+    },
+    "heapdump": {
+      "href": "http://localhost:8080/actuator/heapdump",
+      "templated": false
+    },
+    "threaddump": {
+      "href": "http://localhost:8080/actuator/threaddump",
+      "templated": false
+    },
+    "metrics-requiredMetricName": {
+      "href": "http://localhost:8080/actuator/metrics/{requiredMetricName}",
+      "templated": true
+    },
+    "metrics": {
+      "href": "http://localhost:8080/actuator/metrics",
+      "templated": false
+    },
+    "scheduledtasks": {
+      "href": "http://localhost:8080/actuator/scheduledtasks",
+      "templated": false
+    },
+    "mappings": {
+      "href": "http://localhost:8080/actuator/mappings",
+      "templated": false
+    }
+  }
+}
+davidho@dphxps17:~/sbootprojs/sbapp312grajarj20$ 
+
+davidho@dphxps17:~/sbootprojs/sbapp312grajarj20$ curl -k http://localhost:8080/actuator/health | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    15    0    15    0     0    919      0 --:--:-- --:--:-- --:--:--   937
+{
+  "status": "UP"
+}
+davidho@dphxps17:~/sbootprojs/sbapp312grajarj20$ curl -k http://localhost:8080/actuator/info | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     2    0     2    0     0    619      0 --:--:-- --:--:-- --:--:--   666
+{}
+davidho@dphxps17:~/sbootprojs/sbapp312grajarj20$ 
+
+
