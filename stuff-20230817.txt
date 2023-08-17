@@ -1,0 +1,174 @@
+Thu Aug 17 07:49:19 AM EDT 2023
+
+davidho@dphxps17:~$ date
+Thu Aug 17 07:48:08 AM EDT 2023
+davidho@dphxps17:~$ date > stuff-20230817.txt
+davidho@dphxps17:~$ code   stuff-20230817.txt
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+DROP DATABASE IF EXISTS nebdb2;
+CREATE DATABASE nebdb2;
+GRANT ALL PRIVILEGES ON nebdb2.* TO 'nebuser'@'localhost' WITH GRANT OPTION;
+
+use nebdb2;
+show tables;
+desc access_control     ;
+desc collections        ;
+desc hibernate_sequence ;
+desc person             ;
+desc profile            ;
+desc search             ;
+
+mysql> use nebdb2;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++--------------------+
+| Tables_in_nebdb2   |
++--------------------+
+| access_control     |
+| collections        |
+| hibernate_sequence |
+| person             |
+| profile            |
+| search             |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> 
+mysql> desc access_control     ;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| id        | bigint       | NO   | PRI | NULL    |       |
+| assignee  | varchar(255) | YES  |     | NULL    |       |
+| search_id | varchar(255) | YES  | MUL | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+mysql> desc collections        ;
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| profile_id | varchar(255) | NO   | MUL | NULL    |       |
+| collection | varchar(255) | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> desc hibernate_sequence ;
++----------+--------+------+-----+---------+-------+
+| Field    | Type   | Null | Key | Default | Extra |
++----------+--------+------+-----+---------+-------+
+| next_val | bigint | YES  |     | NULL    |       |
++----------+--------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> desc person             ;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| id           | varchar(255) | NO   | PRI | NULL    |       |
+| cn           | varchar(255) | YES  |     | NULL    |       |
+| display_name | varchar(255) | YES  |     | NULL    |       |
+| dn           | varchar(255) | YES  |     | NULL    |       |
+| legacy_id    | varchar(255) | YES  |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> desc profile            ;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| search_id | varchar(255) | NO   | PRI | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> desc search             ;
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| id         | varchar(255) | NO   | PRI | NULL    |       |
+| accessed   | datetime(6)  | YES  |     | NULL    |       |
+| created    | datetime(6)  | YES  |     | NULL    |       |
+| created_by | varchar(255) | YES  |     | NULL    |       |
+| name       | varchar(255) | YES  |     | NULL    |       |
+| query      | varchar(255) | YES  |     | NULL    |       |
+| updated    | datetime(6)  | YES  |     | NULL    |       |
+| updated_by | varchar(255) | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> 
+
+davidho@dphxps17:~/sbootprojs/nebula2$ 
+davidho@dphxps17:~/sbootprojs/nebula2$ tree
+.
+├── bin
+│   ├── main
+│   │   ├── application.properties
+│   │   ├── com
+│   │   │   └── ashburndev
+│   │   │       └── nebula2
+│   │   │           ├── controllers
+│   │   │           ├── domain
+│   │   │           │   ├── AccessControl.class
+│   │   │           │   ├── Person.class
+│   │   │           │   ├── Profile.class
+│   │   │           │   └── Search.class
+│   │   │           ├── Nebula2Application.class
+│   │   │           └── repositories
+│   │   └── templates
+│   └── test
+│       └── com
+│           └── ashburndev
+│               └── nebula2
+│                   └── Nebula2ApplicationTests.class
+├── build.gradle
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradlew
+├── gradlew.bat
+├── HELP.md
+├── settings.gradle
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── com
+│   │   │       └── ashburndev
+│   │   │           └── nebula2
+│   │   │               ├── controllers
+│   │   │               ├── domain
+│   │   │               │   ├── AccessControl.java
+│   │   │               │   ├── Person.java
+│   │   │               │   ├── Profile.java
+│   │   │               │   └── Search.java
+│   │   │               ├── Nebula2Application.java
+│   │   │               └── repositories
+│   │   └── resources
+│   │       ├── application.properties
+│   │       ├── static
+│   │       └── templates
+│   └── test
+│       └── java
+│           └── com
+│               └── ashburndev
+│                   └── nebula2
+│                       └── Nebula2ApplicationTests.java
+└── tomcat
+    ├── logs
+    │   ├── access_log.2023-08-16.log
+    │   └── access_log.2023-08-17.log
+    └── work
+        └── Tomcat
+            └── localhost
+                └── ROOT
+
+38 directories, 23 files
+davidho@dphxps17:~/sbootprojs/nebula2$ 
