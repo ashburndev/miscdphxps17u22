@@ -1,0 +1,304 @@
+Tue Aug 22 05:17:43 AM EDT 2023
+
+davidho@dphxps17:~$ date
+Tue Aug 22 05:17:29 AM EDT 2023
+davidho@dphxps17:~$ date > stuff-20230822.txt
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ uname -a
+Linux dphxps17 6.2.0-26-generic #26~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Jul 13 16:27:29 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+
+private UUID id;
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Profile
+Search
+BLPerson
+Buddy
+Group
+Person
+TeamMembership
+Team
+Label
+Annotation
+AnnotationHistory
+Context
+ContextHistory
+SharedAnnotation
+SharedAnnotationHistory
+MinhashSegment
+
+Annotation
+AnnotationHistory
+BLPerson
+Buddy
+Context
+ContextHistory
+Group
+Label
+MinhashSegment
+Person
+Profile
+Search 
+SharedAnnotation
+SharedAnnotationHistory
+Team
+TeamMembership
+
+private Long id;
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+AccessControl
+ProfilePreferences
+Verb
+
+private String id;
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Action
+Application
+ObjectType
+Person2
+Resource
+MinhashMetadata
+
+
+
+def listLong = []
+def listString = []
+def listUuid = []
+
+def namesUuid = """Profile
+Search 
+BLPerson
+Buddy
+Group
+Person
+TeamMembership
+Team
+Label
+Annotation
+AnnotationHistory
+Context
+ContextHistory
+SharedAnnotation
+SharedAnnotationHistory
+MinhashSegment
+"""
+
+// println namesUuid
+def saUuid = namesUuid.split("\n")
+//saUuid.each {println "$it"}
+//listUuid = Arrays.asList(saUuid)
+saUuid.each {listUuid.add(it.trim())}
+Collections.sort(listUuid)
+println listUuid
+listUuid.each {println "$it"}
+
+
+def namesLong = """AccessControl
+ProfilePreferences
+Verb
+"""
+// println namesLong
+def saLong = namesLong.split("\n")
+//saLong.each {println "$it"}
+// listLong = Arrays.asList(saLong)
+saLong.each {listLong.add(it.trim())}
+Collections.sort(listLong)
+println listLong
+listLong.each {println "$it"}
+
+def namesString = """Action
+Application
+ObjectType
+Person2
+Resource
+MinhashMetadata
+"""
+// println namesString
+def saString = namesString.split("\n")
+//saString.each {println "$it"}
+//listString = Arrays.asList(saString)
+saString.each {listString.add(it.trim())}
+Collections.sort(listString)
+println listString
+listString.each {println "$it"}
+
+println "listUuid.size() = ${listUuid.size()}"
+println "listLong.size() = ${listLong.size()}"
+println "listString.size() = ${listString.size()}"
+
+listUuid.each {name ->
+  println "cp DemoUuidEntity.java ${name}.java"
+  println "sed -i -e s/DemoUuidEntity/${name}/g ${name}.java"
+}
+listLong.each {name ->
+  println "cp DemoLongEntity.java ${name}.java"
+  println "sed -i -e s/DemoLongEntity/${name}/g ${name}.java"
+}
+listString.each {name ->
+  println "cp DemoStringEntity.java ${name}.java"
+  println "sed -i -e s/DemoStringEntity/${name}/g ${name}.java"
+}
+
+println "done"
+
+
+listUuid.size() = 16
+listLong.size() = 3
+listString.size() = 6
+cp DemoUuidEntity.java Annotation.java
+cp DemoUuidEntity.java AnnotationHistory.java
+cp DemoUuidEntity.java BLPerson.java
+cp DemoUuidEntity.java Buddy.java
+cp DemoUuidEntity.java Context.java
+cp DemoUuidEntity.java ContextHistory.java
+cp DemoUuidEntity.java Group.java
+cp DemoUuidEntity.java Label.java
+cp DemoUuidEntity.java MinhashSegment.java
+cp DemoUuidEntity.java Person.java
+cp DemoUuidEntity.java Profile.java
+cp DemoUuidEntity.java Search .java
+cp DemoUuidEntity.java SharedAnnotation.java
+cp DemoUuidEntity.java SharedAnnotationHistory.java
+cp DemoUuidEntity.java Team.java
+cp DemoUuidEntity.java TeamMembership.java
+cp DemoLongEntity.java AccessControl.java
+cp DemoLongEntity.java ProfilePreferences.java
+cp DemoLongEntity.java Verb.java
+cp DemoStringEntity.java Action.java
+cp DemoStringEntity.java Application.java
+cp DemoStringEntity.java MinhashMetadata.java
+cp DemoStringEntity.java ObjectType.java
+cp DemoStringEntity.java Person2.java
+cp DemoStringEntity.java Resource.java
+
+
+listUuid.size() = 16
+listLong.size() = 3
+listString.size() = 6
+cp DemoUuidEntity.java Annotation.java
+sed -i -e s/DemoUuidEntity/Annotation/g Annotation.java
+cp DemoUuidEntity.java AnnotationHistory.java
+sed -i -e s/DemoUuidEntity/AnnotationHistory/g AnnotationHistory.java
+cp DemoUuidEntity.java BLPerson.java
+sed -i -e s/DemoUuidEntity/BLPerson/g BLPerson.java
+cp DemoUuidEntity.java Buddy.java
+sed -i -e s/DemoUuidEntity/Buddy/g Buddy.java
+cp DemoUuidEntity.java Context.java
+sed -i -e s/DemoUuidEntity/Context/g Context.java
+cp DemoUuidEntity.java ContextHistory.java
+sed -i -e s/DemoUuidEntity/ContextHistory/g ContextHistory.java
+cp DemoUuidEntity.java Group.java
+sed -i -e s/DemoUuidEntity/Group/g Group.java
+cp DemoUuidEntity.java Label.java
+sed -i -e s/DemoUuidEntity/Label/g Label.java
+cp DemoUuidEntity.java MinhashSegment.java
+sed -i -e s/DemoUuidEntity/MinhashSegment/g MinhashSegment.java
+cp DemoUuidEntity.java Person.java
+sed -i -e s/DemoUuidEntity/Person/g Person.java
+cp DemoUuidEntity.java Profile.java
+sed -i -e s/DemoUuidEntity/Profile/g Profile.java
+cp DemoUuidEntity.java Search.java
+sed -i -e s/DemoUuidEntity/Search/g Search.java
+cp DemoUuidEntity.java SharedAnnotation.java
+sed -i -e s/DemoUuidEntity/SharedAnnotation/g SharedAnnotation.java
+cp DemoUuidEntity.java SharedAnnotationHistory.java
+sed -i -e s/DemoUuidEntity/SharedAnnotationHistory/g SharedAnnotationHistory.java
+cp DemoUuidEntity.java Team.java
+sed -i -e s/DemoUuidEntity/Team/g Team.java
+cp DemoUuidEntity.java TeamMembership.java
+sed -i -e s/DemoUuidEntity/TeamMembership/g TeamMembership.java
+cp DemoLongEntity.java AccessControl.java
+sed -i -e s/DemoLongEntity/AccessControl/g AccessControl.java
+cp DemoLongEntity.java ProfilePreferences.java
+sed -i -e s/DemoLongEntity/ProfilePreferences/g ProfilePreferences.java
+cp DemoLongEntity.java Verb.java
+sed -i -e s/DemoLongEntity/Verb/g Verb.java
+cp DemoStringEntity.java Action.java
+sed -i -e s/DemoStringEntity/Action/g Action.java
+cp DemoStringEntity.java Application.java
+sed -i -e s/DemoStringEntity/Application/g Application.java
+cp DemoStringEntity.java MinhashMetadata.java
+sed -i -e s/DemoStringEntity/MinhashMetadata/g MinhashMetadata.java
+cp DemoStringEntity.java ObjectType.java
+sed -i -e s/DemoStringEntity/ObjectType/g ObjectType.java
+cp DemoStringEntity.java Person2.java
+sed -i -e s/DemoStringEntity/Person2/g Person2.java
+cp DemoStringEntity.java Resource.java
+sed -i -e s/DemoStringEntity/Resource/g Resource.java
+done
+
+cd /home/davidho/sbootprojs/nebula2/src/main/java/com/ashburndev/nebula2/domain
+
+sed -i -e s/DemoUuidEntity/Profile/g Profile.java
+
+cd ~/sbootprojs/nebula2
+
+./gradlew clean
+./gradlew bootRun
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 89
+Server version: 8.0.34-0ubuntu0.22.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use nebdb2;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++---------------------------+
+| Tables_in_nebdb2          |
++---------------------------+
+| access_control            |
+| action                    |
+| annotation                |
+| annotation_history        |
+| application               |
+| blperson                  |
+| buddy                     |
+| collections               |
+| context                   |
+| context_history           |
+| demo_long_entity          |
+| demo_string_entity        |
+| demo_uuid_entity          |
+| groupie                   |
+| hibernate_sequence        |
+| label                     |
+| minhash_metadata          |
+| minhash_segment           |
+| object_type               |
+| person                    |
+| person2                   |
+| profile                   |
+| profile_preferences       |
+| resource                  |
+| search                    |
+| shared_annotation         |
+| shared_annotation_history |
+| team                      |
+| team_membership           |
+| verb                      |
++---------------------------+
+30 rows in set (0.00 sec)
+
+mysql> 
+

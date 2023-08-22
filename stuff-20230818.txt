@@ -1,0 +1,40 @@
+Fri Aug 18 07:22:19 AM EDT 2023
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ date
+Fri Aug 18 07:22:00 AM EDT 2023
+davidho@dphxps17:~$ date > stuff-20230818.txt
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ uname -a
+Linux dphxps17 6.2.0-26-generic #26~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Jul 13 16:27:29 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ history | tail
+ 2001  date
+ 2002  date > stuff-20230818.txt
+ 2003  uname -a
+ 2004  mv stuff*.txt Documents/
+ 2005  code Documents/
+ 2006  sudo apt update
+ 2007  sudo apt upgrade
+ 2008  sudo apt-get update
+ 2009  sudo apt-get upgrade
+ 2010  history | tail
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ uname -a
+Linux dphxps17 6.2.0-26-generic #26~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Jul 13 16:27:29 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
+davidho@dphxps17:~$ 
+
+https://stackoverflow.com/questions/66648980/how-to-solve-eer-diagram-visual-error-in-worbench-and-ubuntu-20-04
+
+

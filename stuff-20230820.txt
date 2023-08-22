@@ -1,0 +1,81 @@
+Sun Aug 20 11:29:11 AM EDT 2023
+
+davidho@dphxps17:~$ date
+Sun Aug 20 11:28:59 AM EDT 2023
+davidho@dphxps17:~$ date > stuff-20230820.txt
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ uname -a
+Linux dphxps17 6.2.0-26-generic #26~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Jul 13 16:27:29 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ lsb_release -a
+No LSB modules are available.
+Distributor ID:	Ubuntu
+Description:	Ubuntu 22.04.3 LTS
+Release:	22.04
+Codename:	jammy
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ neofetch --off
+davidho@dphxps17 
+---------------- 
+OS: Ubuntu 22.04.3 LTS x86_64 
+Host: XPS 17 9710 
+Kernel: 6.2.0-26-generic 
+Uptime: 6 mins 
+Packages: 2101 (dpkg), 4 (mine), 13 (snap) 
+Shell: bash 5.1.16 
+Resolution: 3840x2400 
+DE: GNOME 42.9 
+WM: Mutter 
+WM Theme: Adwaita 
+Theme: Yaru [GTK2/3] 
+Icons: Yaru [GTK2/3] 
+Terminal: gnome-terminal 
+CPU: 11th Gen Intel i7-11800H (16) @ 4.600GHz 
+GPU: Intel TigerLake-H GT1 [UHD Graphics] 
+GPU: NVIDIA GeForce RTX 3060 Mobile / Max-Q 
+Memory: 3032MiB / 31811MiB 
+
+davidho@dphxps17:~$ 
+
+
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date
+Sun Aug 20 11:38:53 AM EDT 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ cd /etc
+davidho@dphxps17:/etc$ 
+davidho@dphxps17:/etc$ 
+
+
+
+davidho@dphxps17:/etc$ cat debian_version 
+bookworm/sid
+
+davidho@dphxps17:/etc$ cat lsb-release 
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=22.04
+DISTRIB_CODENAME=jammy
+DISTRIB_DESCRIPTION="Ubuntu 22.04.3 LTS"
+davidho@dphxps17:/etc$ 
+
+davidho@dphxps17:/etc$ cat os-release 
+PRETTY_NAME="Ubuntu 22.04.3 LTS"
+NAME="Ubuntu"
+VERSION_ID="22.04"
+VERSION="22.04.3 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=jammy
+
+
+
+
