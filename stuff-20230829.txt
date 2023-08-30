@@ -1,0 +1,48 @@
+Tue Aug 29 06:27:07 PM EDT 2023
+
+davidho@dphxps17:~$ date
+Tue Aug 29 06:26:38 PM EDT 2023
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ date > stuff-20230829.txt
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ uname -a
+Linux dphxps17 6.2.0-26-generic #26~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Jul 13 16:27:29 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ mv stuff*.txt Documents/
+davidho@dphxps17:~$ code Documents/
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ which curl
+/usr/bin/curl
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ git --version
+git version 2.34.1
+davidho@dphxps17:~$ openssl version
+OpenSSL 3.0.2 15 Mar 2022 (Library: OpenSSL 3.0.2 15 Mar 2022)
+davidho@dphxps17:~$ 
+davidho@dphxps17:~$ curl --version
+curl 7.81.0 (x86_64-pc-linux-gnu) libcurl/7.81.0 OpenSSL/3.0.2 zlib/1.2.11 brotli/1.0.9 zstd/1.4.8 libidn2/2.3.2 libpsl/0.21.0 (+libidn2/2.3.2) libssh/0.9.6/openssl/zlib nghttp2/1.43.0 librtmp/2.3 OpenLDAP/2.5.16
+Release-Date: 2022-01-05
+Protocols: dict file ftp ftps gopher gophers http https imap imaps ldap ldaps mqtt pop3 pop3s rtmp rtsp scp sftp smb smbs smtp smtps telnet tftp 
+Features: alt-svc AsynchDNS brotli GSS-API HSTS HTTP2 HTTPS-proxy IDN IPv6 Kerberos Largefile libz NTLM NTLM_WB PSL SPNEGO SSL TLS-SRP UnixSockets zstd
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://www.docker.com/
+
+https://www.youtube.com/watch?v=pg19Z8LL06w
+Docker Crash Course for Absolute Beginners [NEW] - YouTube
+
+https://www.youtube.com/watch?v=3c-iBn73dDE
+Docker Tutorial for Beginners [FULL COURSE in 3 Hours]
+
+davidho@dphxps17:~$ docker --version
+Docker version 24.0.5, build ced0996
+davidho@dphxps17:~$ 
+
+
