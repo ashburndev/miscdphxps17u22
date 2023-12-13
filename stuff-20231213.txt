@@ -1,0 +1,182 @@
+Wed Dec 13 07:18:22 AM EST 2023
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+sudo tar -xzf code-stable-x64-1673285154.tar.gz -C /opt
+sudo mv /opt/VSCode-linux-x64 /opt/VSCode-linux-x64-1.74.3
+
+sudo tar -xzf ideaIU-2022.3.2.tar.gz -C /opt
+sudo tar -xzf ideaIC-2022.3.2.tar.gz -C /opt
+sudo tar -xzf WebStorm-2022.3.2.tar.gz -C /opt
+sudo tar -xzf pycharm-professional-2022.3.2.tar.gz -C /opt
+sudo tar -xzf pycharm-community-2022.3.2.tar.gz -C /opt
+sudo tar -xzf RubyMine-2022.3.2.tar.gz -C /opt
+sudo tar -xzf datagrip-2022.3.3.tar.gz -C /opt
+
+-rw-rw-r--  1 davidho davidho   95652786 Oct 13 08:53 code_1.83.1-1696982868_amd64.deb
+-rw-rw-r--  1 davidho davidho  136461719 Oct 13 08:53 code-1.83.1-1696982959.el7.x86_64.rpm
+-rw-rw-r--  1 davidho davidho  135810621 Oct 13 08:54 code-stable-x64-1696981541.tar.gz
+-rw-rw-r--  1 davidho davidho   95652786 Oct 31 17:40 code_1.83.1-1696982868_amd64(1).deb
+-rw-rw-r--  1 davidho davidho  135810621 Oct 31 17:40 code-stable-x64-1696981541(1).tar.gz
+-rw-rw-r--  1 davidho davidho   95602006 Nov 23 11:33 code_1.84.2-1699528352_amd64.deb
+-rw-rw-r--  1 davidho davidho  135719194 Nov 23 11:34 code-stable-x64-1699527057.tar.gz
+-rw-rw-r--  1 davidho davidho   95978278 Dec 12 18:03 code_1.85.0-1701902998_amd64.deb
+-rw-rw-r--  1 davidho davidho  135089424 Dec 12 18:03 code-stable-x64-1701901635.tar.gz
+
+cd ~/Downloads
+tar tvf code-stable-x64-1701901635.tar.gz
+sudo tar -xzf code-stable-x64-1701901635.tar.gz -C /opt
+cd /opt
+sudo mv /opt/VSCode-linux-x64 /opt/VSCode-linux-x64-1.85.0
+
+davidho@dphxps17:/opt$ ls -latr | grep -i code
+drwxr-xr-x  5 davidho davidho 4096 Nov  1  2022 VSCode-linux-x64-1.73.0
+drwxr-xr-x  5 davidho davidho 4096 Nov  8  2022 VSCode-linux-x64-1.73.1
+drwxr-xr-x  5 davidho davidho 4096 Dec  5  2022 VSCode-linux-x64-1.74.0
+drwxr-xr-x  5 davidho davidho 4096 Jan  9  2023 VSCode-linux-x64-1.74.3
+drwxr-xr-x  5 davidho davidho 4096 Mar 14  2023 VSCode-linux-x64-1.76.2
+drwxr-xr-x  5 davidho davidho 4096 Mar 29  2023 VSCode-linux-x64-1.77.0
+drwxr-xr-x  5 davidho davidho 4096 Oct  3 12:11 VSCode-linux-x64-1.83.0
+drwxr-xr-x  5 davidho davidho 4096 Oct 10 19:45 VSCode-linux-x64-1.83.1
+drwxr-xr-x  5 davidho davidho 4096 Nov  9 05:50 VSCode-linux-x64-1.83.2
+drwxr-xr-x  5 davidho davidho 4096 Dec  6 17:27 VSCode-linux-x64-1.85.0
+davidho@dphxps17:/opt$ 
+
+Version: 1.84.2
+Commit: 1a5daa3a0231a0fbba4f14db7ec463cf99d7768e
+Date: 2023-11-09T10:50:47.800Z
+Electron: 25.9.2
+ElectronBuildId: 24603566
+Chromium: 114.0.5735.289
+Node.js: 18.15.0
+V8: 11.4.183.29-electron.0
+OS: Linux x64 6.2.0-37-generic
+
+Version: 1.85.0
+Commit: af28b32d7e553898b2a91af498b1fb666fdebe0c
+Date: 2023-12-06T22:27:05.695Z
+Electron: 25.9.7
+ElectronBuildId: 25551756
+Chromium: 114.0.5735.289
+Node.js: 18.15.0
+V8: 11.4.183.29-electron.0
+OS: Linux x64 6.2.0-37-generic
+
+davidho@dphxps17:~$ code --version
+1.85.0
+af28b32d7e553898b2a91af498b1fb666fdebe0c
+x64
+davidho@dphxps17:~$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+EJ Extension Pack for Java
+RH Language Support for Java by Red Hat
+SB Spring Boot Extension Pack
+JG Java General (profile template)
+JS Java Spring (profile template)
+
+code --version
+code --profile "JG Java General (profile template)" --list-extensions --show-versions
+code --profile "JS Java Spring (profile template)" --list-extensions --show-versions
+
+code --profile "EJ Extension Pack for Java" --list-extensions --show-versions
+code --profile "SB Spring Boot Extension Pack" --list-extensions --show-versions
+code --profile "RH Language Support for Java by Red Hat" --list-extensions --show-versions
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/Documents$ code --version
+1.85.0
+af28b32d7e553898b2a91af498b1fb666fdebe0c
+x64
+davidho@dphxps17:~/Documents$ 
+
+davidho@dphxps17:~/Documents$ code --profile "JG Java General (profile template)" --list-extensions --show-versions
+redhat.java@1.26.2023121208
+VisualStudioExptTeam.intellicode-api-usage-examples@0.2.8
+VisualStudioExptTeam.vscodeintellicode@1.2.30
+vscjava.vscode-java-debug@0.55.2023121302
+vscjava.vscode-java-dependency@0.23.2023120100
+vscjava.vscode-java-pack@0.25.2023110908
+vscjava.vscode-java-test@0.40.1
+vscjava.vscode-maven@0.43.0
+davidho@dphxps17:~/Documents$ 
+
+davidho@dphxps17:~/Documents$ code --profile "JS Java Spring (profile template)" --list-extensions --show-versions
+redhat.java@1.26.2023121208
+VisualStudioExptTeam.intellicode-api-usage-examples@0.2.8
+VisualStudioExptTeam.vscodeintellicode@1.2.30
+vmware.vscode-boot-dev-pack@0.2.1
+vmware.vscode-spring-boot@1.51.0
+vscjava.vscode-java-debug@0.55.2023121302
+vscjava.vscode-java-dependency@0.23.2023120100
+vscjava.vscode-java-pack@0.25.2023110908
+vscjava.vscode-java-test@0.40.1
+vscjava.vscode-maven@0.43.0
+vscjava.vscode-spring-boot-dashboard@0.13.1
+vscjava.vscode-spring-initializr@0.11.2
+davidho@dphxps17:~/Documents$ 
+
+davidho@dphxps17:~/Documents$ code --profile "EJ Extension Pack for Java" --list-extensions --show-versions
+redhat.java@1.25.1
+VisualStudioExptTeam.intellicode-api-usage-examples@0.2.8
+VisualStudioExptTeam.vscodeintellicode@1.2.30
+vscjava.vscode-java-debug@0.55.0
+vscjava.vscode-java-dependency@0.23.3
+vscjava.vscode-java-pack@0.25.15
+vscjava.vscode-java-test@0.40.1
+vscjava.vscode-maven@0.43.0
+davidho@dphxps17:~/Documents$ 
+
+davidho@dphxps17:~/Documents$ code --profile "SB Spring Boot Extension Pack" --list-extensions --show-versions
+redhat.java@1.25.1
+vmware.vscode-boot-dev-pack@0.2.1
+vmware.vscode-spring-boot@1.51.0
+vscjava.vscode-java-debug@0.55.0
+vscjava.vscode-spring-boot-dashboard@0.13.1
+vscjava.vscode-spring-initializr@0.11.2
+davidho@dphxps17:~/Documents$ 
+
+davidho@dphxps17:~/Documents$ code --profile "RH Language Support for Java by Red Hat" --list-extensions --show-versions
+redhat.java@1.25.1
+davidho@dphxps17:~/Documents$ 
+
+davidho@dphxps17:~/Documents$ code --profile "RH Language Support for Java by Red Hat" --list-extensions --show-versions
+redhat.java@1.25.1
+vscjava.vscode-gradle@3.13.5
+vscjava.vscode-java-debug@0.55.0
+vscjava.vscode-java-dependency@0.23.3
+vscjava.vscode-java-test@0.40.1
+vscjava.vscode-maven@0.43.0
+davidho@dphxps17:~/Documents$ 
+
+davidho@dphxps17:~/Documents$ code --profile "RH Language Support for Java by Red Hat" --list-extensions --show-versions
+redhat.java@1.25.1
+vmware.vscode-spring-boot@1.52.2023121205
+vscjava.vscode-gradle@3.13.5
+vscjava.vscode-java-debug@0.55.0
+vscjava.vscode-java-dependency@0.23.3
+vscjava.vscode-java-test@0.40.1
+vscjava.vscode-lombok@1.1.0
+vscjava.vscode-maven@0.43.0
+vscjava.vscode-spring-boot-dashboard@0.13.1
+vscjava.vscode-spring-initializr@0.11.2
+davidho@dphxps17:~/Documents$ 
+
+davidho@dphxps17:~/Documents$ code --profile "RH Language Support for Java by Red Hat" --list-extensions --show-versions
+ms-azuretools.vscode-docker@1.28.0
+redhat.java@1.25.1
+vmware.vscode-spring-boot@1.52.2023121205
+vscjava.vscode-gradle@3.13.5
+vscjava.vscode-java-debug@0.55.0
+vscjava.vscode-java-dependency@0.23.3
+vscjava.vscode-java-test@0.40.1
+vscjava.vscode-lombok@1.1.0
+vscjava.vscode-maven@0.43.0
+vscjava.vscode-spring-boot-dashboard@0.13.1
+vscjava.vscode-spring-initializr@0.11.2
+davidho@dphxps17:~/Documents$ 

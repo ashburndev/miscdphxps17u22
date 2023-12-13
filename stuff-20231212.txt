@@ -1,0 +1,272 @@
+Tue Dec 12 06:00:52 PM EST 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://code.visualstudio.com/download
+https://code.visualstudio.com/docs/?dv=linux64_deb
+https://code.visualstudio.com/docs/?dv=linux64
+
+https://code.visualstudio.com/updates/v1_85   Nov 2023
+https://code.visualstudio.com/updates/v1_84   Oct 2023
+https://code.visualstudio.com/updates/v1_83   Sep 2023
+https://code.visualstudio.com/updates/v1_82   Aug 2023
+https://code.visualstudio.com/updates/v1_81   Jul 2023
+https://code.visualstudio.com/updates/v1_80   Jun 2023
+https://code.visualstudio.com/updates/v1_79   May 2023
+https://code.visualstudio.com/updates/v1_78   Apr 2023
+https://code.visualstudio.com/updates/v1_77   Mar 2023
+https://code.visualstudio.com/updates/v1_76   Feb 2023
+https://code.visualstudio.com/updates/v1_75   Jan 2023
+
+November 2023 (version 1.85)
+
+Downloads: Windows: x64 Arm64 | Mac: Universal Intel silicon | Linux: deb rpm tarball Arm snap
+
+Welcome to the November 2023 release of Visual Studio Code. There are many updates in this version that we hope you'll like, some of the key highlights include:
+
+    Floating editor windows - Drag and drop editors onto your desktop.
+    Accessible View workflow - Smoother transitions to and from the Accessible View.
+    Finer extension update control - Choose which extensions to auto update.
+    Source Control incoming and outgoing view - Easily review pending repository changes.
+    JavaScript heap snapshots - Visualize heap snapshots including memory object graphs.
+    TypeScript Go to Definition from inlay hints - Jump to definition from inlay hint hovers.
+    Python type hierarchy display - Quickly review and navigate complex type relationships.
+    GitHub Copilot updates - Inline chat improvements, Rust code explanation.
+    Preview: expanded Sticky Scroll support - Sticky Scroll in tree views and the terminal.
+
+    If you'd like to read these release notes online, go to Updates on code.visualstudio.com.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack
+
+Extension Pack for Java
+
+Extension Pack for Java is a collection of popular extensions that can help write, test and debug Java applications in Visual Studio Code. Check out Java in VS Code to get started.
+Extensions Included
+
+By installing Extension Pack for Java, the following extensions are installed:
+
+    Language Support for Java™ by Red Hat
+        Code Navigation
+        Auto Completion
+        Refactoring
+        Code Snippets
+    Debugger for Java
+        Debugging
+    Test Runner for Java
+        Run & Debug JUnit/TestNG Test Cases
+    Maven for Java
+        Project Scaffolding
+        Custom Goals
+    Project Manager for Java
+        Manage Java projects, referenced libraries, resource files, packages, classes, and class members
+    Visual Studio IntelliCode
+        AI-assisted development
+        Completion list ranked by AI
+
+Other Recommendations
+
+You can do more with VS Code. Here are some more recommendations that could help.
+Spring
+
+Spring Tools 4 (ST4) is also available in Visual Studio Code. It understands Spring so you can navigate Spring code at the level of beans, routes, etc. It can also show live information of the running Spring Boot applications. Check out the ST4 website to see a complete list of its features.
+
+To use ST4, install Spring Boot Extension Pack. Please also check out the User Guide to make the most of it.
+Eclipse MicroProfile
+
+The Extension Pack for MicroProfile is a collection of extensions that can help develop your Java microservices using Eclipse MicroProfile. You can quickly generate a MicroProfile project and utilize development tools for runtimes such as Open Liberty and Quarkus.
+Quarkus
+
+Quarkus Tools for Visual Studio Code is a feature-packed extension tailored for Quarkus application development within Visual Studio Code. You can quickly get started by using the extension's project generation and project debugging feature. The extension also provides amazing language features (completion, hover, validation etc.) for your project's application.properties file.
+Containers and Microservices
+
+You can use Docker extension to build docker images and work with image registries.
+
+Kubernetes extension provides an explorer view to manage clusters and the nodes inside. It also provides advanced syntax support for editing Kubernetes manifest files.
+Tomcat and Jetty
+
+Both Tomcat and Jetty extension are available. They provide dedicated views to help work with your favorite web servers.
+Linting
+
+The SonarLint extension lets you detect bugs and vulnerabilities as you write code in VS Code. The extension will simply run in the background and highlight code that poses a quality or security concern.
+
+At the same time, CheckStyle is also available.
+Questions & Issues
+
+Each extension mentioned above is a separate open-source project and has its own repository. To make things easier, simply 🙋 open an issue in this repository. The new issue will be triaged and redirected.
+Telemetry
+
+This extension collects telemetry data to help us build a better experience for building Java applications with VS Code. We only collect data on which commands are executed. We do not collect any information about names, addresses, paths, etc. The extension respects the telemetry.enableTelemetry setting which you can learn more about in our FAQ.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://marketplace.visualstudio.com/items?itemName=vmware.vscode-boot-dev-pack
+
+VS Code Spring Boot Application Development Extension Pack
+
+(also known as Spring Tools 4 for Visual Studio Code)
+Collection of extensions for developing and deploying Spring Boot Application
+
+Spring Boot
+
+The Spring Boot Tools extension provides:
+
+  IDE Java tooling for developing and troubleshooting Spring Boot applications.
+  Support for editing Spring Boot Application configuration properties files (.properties and .yml)
+
+Spring Initializr Java
+
+The Spring Initializr Java Support extension provides support for generating quickstart Spring Boot Java projects with Spring Initiailizr API.
+
+Spring Boot Dashboard
+
+The Spring Boot Dashboard extension provides an explorer in the side bar where you can view all of a workspace's spring boot projects conveniently in one place. You can also quickly start, stop or debug a project.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://marketplace.visualstudio.com/vscode
+https://marketplace.visualstudio.com/search?term=java&target=VSCode&category=All%20categories&sortBy=Relevance
+
+https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack              Extension Pack for Java
+https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debug             Debugger for Java
+https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-test              Test Runner for Java
+https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-dependency        Project Manager for Java
+https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-maven                  Maven for Java
+https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-spring-initializr      Spring Initializr Java Support
+https://marketplace.visualstudio.com/items?itemName=redhat.java                           Language Support for Java(TM) by Red Hat
+https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-gradle                 Gradle for Java
+
+https://marketplace.visualstudio.com/items?itemName=vmware.vscode-boot-dev-pack           Spring Boot Extension Pack
+https://marketplace.visualstudio.com/items?itemName=vmware.vscode-spring-boot             Spring Boot Tools
+https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-spring-initializr      Spring Initializr Java Support
+https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-spring-boot-dashboard  Spring Boot Dashboard
+
+My VS Code profiles
+
+EJ Extension Pack for Java
+RH Language Support for Java by Red Hat
+SB Spring Boot Extension Pack
+JG Java General (copy from)
+JS Java Spring (copy from)
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://marketplace.visualstudio.com/items?itemName=vmware.vscode-boot-dev-pack
+
+VS Code Spring Boot Application Development Extension Pack
+
+(also known as Spring Tools 4 for Visual Studio Code)
+Collection of extensions for developing and deploying Spring Boot Application
+
+Spring Boot
+
+The Spring Boot Tools extension provides:
+
+  IDE Java tooling for developing and troubleshooting Spring Boot applications.
+  Support for editing Spring Boot Application configuration properties files (.properties and .yml)
+
+Spring Initializr Java
+
+The Spring Initializr Java Support extension provides support for generating quickstart Spring Boot Java projects with Spring Initiailizr API.
+
+Spring Boot Dashboard
+
+The Spring Boot Dashboard extension provides an explorer in the side bar where you can view all of a workspace's spring boot projects conveniently in one place. You can also quickly start, stop or debug a project.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://www.eclipse.org/downloads/packages/
+https://www.eclipse.org/downloads/packages/release/2023-12/r/eclipse-ide-enterprise-java-and-web-developers
+https://www.eclipse.org/downloads/packages/release/2023-12/r/eclipse-ide-java-developers
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://spring.io/tools
+https://spring.io/guides/gs/sts/
+https://marketplace.visualstudio.com/items?itemName=vmware.vscode-boot-dev-pack
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://www.jetbrains.com/ides/
+
+https://www.jetbrains.com/idea/download/?section=linux
+  Version: 2023.3.1
+  Build: 233.11799.300
+  11 December 2023
+
+https://www.jetbrains.com/pycharm/download/?section=linux
+  Version: 2023.3.1
+  Build: 233.11799.298
+  11 December 2023
+
+https://www.jetbrains.com/ruby/download/#section=linux
+  Version: 2023.3.1
+  Build: 233.11799.290
+  11 December 2022
+
+https://www.jetbrains.com/datagrip/download/#section=linux
+  Version: 2023.3.1
+  Build: 233.11799.296
+  11 December 2023
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+-rw-rw-r--  1 davidho davidho   95978278 Dec 12 18:03  code_1.85.0-1701902998_amd64.deb
+-rw-rw-r--  1 davidho davidho  135089424 Dec 12 18:03  code-stable-x64-1701901635.tar.gz
+-rw-rw-r--  1 davidho davidho  550529561 Dec 12 19:19  eclipse-jee-2023-12-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        176 Dec 12 19:22  eclipse-jee-2023-12-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  333720082 Dec 12 19:26  eclipse-java-2023-12-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        177 Dec 12 19:28  eclipse-java-2023-12-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  658730322 Dec 12 19:33  spring-tool-suite-4-4.21.0.RELEASE-e4.30.0-linux.gtk.x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho 1007763694 Dec 12 19:40  ideaIU-2023.3.1.tar.gz
+-rw-rw-r--  1 davidho davidho         89 Dec 12 19:41  ideaIU-2023.3.1.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  803881760 Dec 12 19:48  ideaIC-2023.3.1.tar.gz
+-rw-rw-r--  1 davidho davidho         89 Dec 12 19:48  ideaIC-2023.3.1.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  812714134 Dec 12 19:51  pycharm-professional-2023.3.1.tar.gz
+-rw-rw-r--  1 davidho davidho        103 Dec 12 19:51  pycharm-professional-2023.3.1.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  609977560 Dec 12 19:51  pycharm-community-2023.3.1.tar.gz
+-rw-rw-r--  1 davidho davidho        100 Dec 12 19:52  pycharm-community-2023.3.1.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  627663344 Dec 12 19:56  WebStorm-2023.3.1.tar.gz
+-rw-rw-r--  1 davidho davidho         91 Dec 12 19:56  WebStorm-2023.3.1.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  665539803 Dec 12 19:58  RubyMine-2023.3.1.tar.gz
+-rw-rw-r--  1 davidho davidho         91 Dec 12 19:58  RubyMine-2023.3.1.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  588309740 Dec 12 20:05  datagrip-2023.3.1.tar.gz
+-rw-rw-r--  1 davidho davidho         91 Dec 12 20:05  datagrip-2023.3.1.tar.gz.sha256
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+cat eclipse-jee-2023-12-R-linux-gtk-x86_64.tar.gz.sha512
+cat eclipse-java-2023-12-R-linux-gtk-x86_64.tar.gz.sha512
+cat ideaIU-2023.3.1.tar.gz.sha256
+cat ideaIC-2023.3.1.tar.gz.sha256
+cat pycharm-professional-2023.3.1.tar.gz.sha256
+cat pycharm-community-2023.3.1.tar.gz.sha256
+cat WebStorm-2023.3.1.tar.gz.sha256
+cat RubyMine-2023.3.1.tar.gz.sha256
+cat datagrip-2023.3.1.tar.gz.sha256
+
+684e54d44e3ea815a9da75f4688cbcd0696bf02c542518483c61259350c6da5159d6e40eb56779aff170027b5714592789825d7a7f76cae10def5ea5fe98699b  eclipse-jee-2023-12-R-linux-gtk-x86_64.tar.gz
+058f8374a59f764ef2840448cc6a2a7a1f2a3f2da2f1e086aab2cd4fa73959b5d426f3e5d8538ab5c2a9a7a46369ec802dc6ee02c430c7107a56c5bccb57d688  eclipse-java-2023-12-R-linux-gtk-x86_64.tar.gz
+0a80d971e430786492acfd04e4ba73eda2e4ee60f752e3f9494a4476c6cad761 *ideaIU-2023.3.1.tar.gz
+7afd70b71e1fcb8280393d59ec58ab72f2ccf369f5d6e0035e6b265600531e4a *ideaIC-2023.3.1.tar.gz
+f3a09cd2aebd2ffbc42f927467a613e55430d3ff76d57c263d31ccee3c1de110 *pycharm-professional-2023.3.1.tar.gz
+95a03ad8abf2400e9691bb10b13d47407abfcbc25192cf3773e1a2dab42c0499 *pycharm-community-2023.3.1.tar.gz
+26a3acc9864c2c7715d377059d3b52b1085b90b708b254ec2d52b80f625eb442 *WebStorm-2023.3.1.tar.gz
+35cd23c7a0f73add6ba05f246707e2f2550185033172f5d42a6b02e750253115 *RubyMine-2023.3.1.tar.gz
+4177882deb0380fba9b426c2580baea7dc4297bddefdd7bfb094433ff4cbb7b8 *datagrip-2023.3.1.tar.gz
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+
