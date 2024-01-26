@@ -1,0 +1,625 @@
+Fri Jan 26 04:58:25 AM EST 2024
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp318g
+Name:          sbapp318grajarj17
+Package name:  ashburncode.sbapp318g
+Description:   spring boot 3.1.8, gradle project, jar packaging, java 17
+Dependencies:
+  Spring Web Web
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp318m
+Name:          sbapp318mvnjarj17
+Package name:  ashburncode.sbapp318m
+Description:   spring boot 3.1.8, maven project, jar packaging, java 17
+Dependencies:
+  Spring Web Web
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp322g
+Name:          sbapp322grajarj17
+Package name:  ashburncode.sbapp322g
+Description:   spring boot 3.2.2, gradle project, jar packaging, java 17
+Dependencies:
+  Spring Web Web
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp322m
+Name:          sbapp322mvnjarj17
+Package name:  ashburncode.sbapp322m
+Description:   spring boot 3.2.2, maven project, jar packaging, java 17
+Dependencies:
+  Spring Web Web
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  MySQL Driver SQL
+    MySQL JDBC driver.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+I waited too long and missed the opportunity to generate zip files for Spring Boot 3.1.7 and 3.2.1
+
+davidho@dphxps17:~/Downloads$ ls -latr sbapp* | tail
+-rw-rw-r-- 1 davidho davidho 70861 Nov 17 08:23 sbapp315g.zip
+-rw-rw-r-- 1 davidho davidho 70270 Nov 17 08:24 sbapp315m.zip
+-rw-rw-r-- 1 davidho davidho 70862 Nov 30 08:14 sbapp316g.zip
+-rw-rw-r-- 1 davidho davidho 70271 Nov 30 08:15 sbapp316m.zip
+-rw-rw-r-- 1 davidho davidho 70816 Nov 30 08:16 sbapp320g.zip
+-rw-rw-r-- 1 davidho davidho 70208 Nov 30 08:17 sbapp320m.zip
+-rw-rw-r-- 1 davidho davidho 52020 Jan 26 05:27 sbapp318g.zip
+-rw-rw-r-- 1 davidho davidho 70270 Jan 26 05:28 sbapp318m.zip
+-rw-rw-r-- 1 davidho davidho 52023 Jan 26 05:30 sbapp322g.zip
+-rw-rw-r-- 1 davidho davidho 70213 Jan 26 05:31 sbapp322m.zip
+davidho@dphxps17:~/Downloads$ 
+
+cp -p /home/davidho/Downloads/sbapp322g.zip /home/davidho/sbootprojs
+cd /home/davidho/sbootprojs
+jar tvf sbapp322g.zip
+7z l sbapp322g.zip
+7z x sbapp322g.zip
+cd sbapp322g
+tree
+ls -latr
+
+sdk use java 21-tem
+sdk default java 21-tem
+
+sdk use java 17.0.8.1-zulu
+sdk default java 17.0.8.1-zulu
+
+java -version
+javac -version
+./gradlew --version
+./gradlew bootJar
+find . -name *.jar -print
+find . -name *.jar -print -exec ls -latr {} \;
+jar tvf ./build/libs/sbapp322g-0.0.1-SNAPSHOT.jar
+jar tvf ./build/libs/sbapp322g-0.0.1-SNAPSHOT.jar | grep -i mysql
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+/home/davidho/sbootprojs/sbapp322g/build.gradle
+
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.2.2'
+	id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'ashburncode'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	runtimeOnly 'com.mysql:mysql-connector-j'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+/home/davidho/sbootprojs/sbapp322g/gradle/wrapper/gradle-wrapper.properties
+
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+distributionUrl=https\://services.gradle.org/distributions/gradle-8.5-bin.zip
+networkTimeout=10000
+validateDistributionUrl=true
+zipStoreBase=GRADLE_USER_HOME
+zipStorePath=wrapper/dists
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/sbootprojs$ jar tvf sbapp322g.zip
+     0 Fri Jan 26 05:30:32 EST 2024 sbapp322g/
+  1719 Fri Jan 26 05:30:32 EST 2024 sbapp322g/HELP.md
+  2868 Fri Jan 26 05:30:32 EST 2024 sbapp322g/gradlew.bat
+   444 Fri Jan 26 05:30:32 EST 2024 sbapp322g/.gitignore
+     0 Fri Jan 26 05:30:32 EST 2024 sbapp322g/src/
+     0 Fri Jan 26 05:30:32 EST 2024 sbapp322g/src/main/
+     0 Fri Jan 26 05:30:32 EST 2024 sbapp322g/src/main/java/
+     0 Fri Jan 26 05:30:32 EST 2024 sbapp322g/src/main/java/ashburncode/
+     0 Fri Jan 26 05:30:32 EST 2024 sbapp322g/src/main/java/ashburncode/sbapp322g/
+   336 Fri Jan 26 05:30:32 EST 2024 sbapp322g/src/main/java/ashburncode/sbapp322g/Sbapp322grajarj17Application.java
+     0 Fri Jan 26 05:30:32 EST 2024 sbapp322g/src/main/resources/
+     0 Fri Jan 26 05:30:32 EST 2024 sbapp322g/src/main/resources/templates/
+     0 Fri Jan 26 05:30:32 EST 2024 sbapp322g/src/main/resources/static/
+     1 Fri Jan 26 05:30:32 EST 2024 sbapp322g/src/main/resources/application.properties
+     0 Fri Jan 26 05:30:32 EST 2024 sbapp322g/src/test/
+     0 Fri Jan 26 05:30:32 EST 2024 sbapp322g/src/test/java/
+     0 Fri Jan 26 05:30:32 EST 2024 sbapp322g/src/test/java/ashburncode/
+     0 Fri Jan 26 05:30:32 EST 2024 sbapp322g/src/test/java/ashburncode/sbapp322g/
+   224 Fri Jan 26 05:30:32 EST 2024 sbapp322g/src/test/java/ashburncode/sbapp322g/Sbapp322grajarj17ApplicationTests.java
+     0 Fri Jan 26 05:30:32 EST 2024 sbapp322g/gradle/
+     0 Fri Jan 26 05:30:32 EST 2024 sbapp322g/gradle/wrapper/
+   250 Fri Jan 26 05:30:32 EST 2024 sbapp322g/gradle/wrapper/gradle-wrapper.properties
+ 43462 Fri Jan 26 05:30:32 EST 2024 sbapp322g/gradle/wrapper/gradle-wrapper.jar
+    31 Fri Jan 26 05:30:32 EST 2024 sbapp322g/settings.gradle
+   636 Fri Jan 26 05:30:32 EST 2024 sbapp322g/build.gradle
+  8692 Fri Jan 26 05:30:32 EST 2024 sbapp322g/gradlew
+davidho@dphxps17:~/sbootprojs$ 7z l sbapp322g.zip
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,16 CPUs 11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz (806D1),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 52023 bytes (51 KiB)
+
+Listing archive: sbapp322g.zip
+
+--
+Path = sbapp322g.zip
+Type = zip
+Physical Size = 52023
+
+   Date      Time    Attr         Size   Compressed  Name
+------------------- ----- ------------ ------------  ------------------------
+2024-01-26 05:30:32 D....            0            2  sbapp322g
+2024-01-26 05:30:32 .....         1719          605  sbapp322g/HELP.md
+2024-01-26 05:30:32 .....         2868         1211  sbapp322g/gradlew.bat
+2024-01-26 05:30:32 .....          444          242  sbapp322g/.gitignore
+2024-01-26 05:30:32 D....            0            2  sbapp322g/src
+2024-01-26 05:30:32 D....            0            2  sbapp322g/src/main
+2024-01-26 05:30:32 D....            0            2  sbapp322g/src/main/java
+2024-01-26 05:30:32 D....            0            2  sbapp322g/src/main/java/ashburncode
+2024-01-26 05:30:32 D....            0            2  sbapp322g/src/main/java/ashburncode/sbapp322g
+2024-01-26 05:30:32 .....          336          180  sbapp322g/src/main/java/ashburncode/sbapp322g/Sbapp322grajarj17Application.java
+2024-01-26 05:30:32 D....            0            2  sbapp322g/src/main/resources
+2024-01-26 05:30:32 D....            0            2  sbapp322g/src/main/resources/templates
+2024-01-26 05:30:32 D....            0            2  sbapp322g/src/main/resources/static
+2024-01-26 05:30:32 .....            1            3  sbapp322g/src/main/resources/application.properties
+2024-01-26 05:30:32 D....            0            2  sbapp322g/src/test
+2024-01-26 05:30:32 D....            0            2  sbapp322g/src/test/java
+2024-01-26 05:30:32 D....            0            2  sbapp322g/src/test/java/ashburncode
+2024-01-26 05:30:32 D....            0            2  sbapp322g/src/test/java/ashburncode/sbapp322g
+2024-01-26 05:30:32 .....          224          160  sbapp322g/src/test/java/ashburncode/sbapp322g/Sbapp322grajarj17ApplicationTests.java
+2024-01-26 05:30:32 D....            0            2  sbapp322g/gradle
+2024-01-26 05:30:32 D....            0            2  sbapp322g/gradle/wrapper
+2024-01-26 05:30:32 .....          250          152  sbapp322g/gradle/wrapper/gradle-wrapper.properties
+2024-01-26 05:30:32 .....        43462        38761  sbapp322g/gradle/wrapper/gradle-wrapper.jar
+2024-01-26 05:30:32 .....           31           33  sbapp322g/settings.gradle
+2024-01-26 05:30:32 .....          636          298  sbapp322g/build.gradle
+2024-01-26 05:30:32 .....         8692         3688  sbapp322g/gradlew
+------------------- ----- ------------ ------------  ------------------------
+2024-01-26 05:30:32              58663        45363  11 files, 15 folders
+davidho@dphxps17:~/sbootprojs$ 
+davidho@dphxps17:~/sbootprojs$ cd sbapp322g
+davidho@dphxps17:~/sbootprojs/sbapp322g$ 
+davidho@dphxps17:~/sbootprojs/sbapp322g$ tree
+.
+├── build.gradle
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradlew
+├── gradlew.bat
+├── HELP.md
+├── settings.gradle
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── ashburncode
+    │   │       └── sbapp322g
+    │   │           └── Sbapp322grajarj17Application.java
+    │   └── resources
+    │       ├── application.properties
+    │       ├── static
+    │       └── templates
+    └── test
+        └── java
+            └── ashburncode
+                └── sbapp322g
+                    └── Sbapp322grajarj17ApplicationTests.java
+
+14 directories, 10 files
+davidho@dphxps17:~/sbootprojs/sbapp322g$ ls -latr
+total 48
+drwxr-xr-x  4 davidho davidho 4096 Jan 26 05:30 src
+-rw-r--r--  1 davidho davidho   31 Jan 26 05:30 settings.gradle
+-rw-r--r--  1 davidho davidho 1719 Jan 26 05:30 HELP.md
+-rw-r--r--  1 davidho davidho 2868 Jan 26 05:30 gradlew.bat
+-rwxr-xr-x  1 davidho davidho 8692 Jan 26 05:30 gradlew
+drwxr-xr-x  3 davidho davidho 4096 Jan 26 05:30 gradle
+-rw-r--r--  1 davidho davidho  444 Jan 26 05:30 .gitignore
+-rw-r--r--  1 davidho davidho  636 Jan 26 05:30 build.gradle
+drwxr-xr-x  4 davidho davidho 4096 Jan 26 05:30 .
+drwxrwxr-x 30 davidho davidho 4096 Jan 26 05:41 ..
+davidho@dphxps17:~/sbootprojs/sbapp322g$ 
+
+davidho@dphxps17:~/sbootprojs/sbapp322g$ java -version
+openjdk version "21" 2023-09-19 LTS
+OpenJDK Runtime Environment Temurin-21+35 (build 21+35-LTS)
+OpenJDK 64-Bit Server VM Temurin-21+35 (build 21+35-LTS, mixed mode, sharing)
+davidho@dphxps17:~/sbootprojs/sbapp322g$ javac -version
+javac 21
+davidho@dphxps17:~/sbootprojs/sbapp322g$ 
+
+davidho@dphxps17:~/sbootprojs/sbapp322g$ java -version
+openjdk version "21" 2023-09-19 LTS
+OpenJDK Runtime Environment Temurin-21+35 (build 21+35-LTS)
+OpenJDK 64-Bit Server VM Temurin-21+35 (build 21+35-LTS, mixed mode, sharing)
+davidho@dphxps17:~/sbootprojs/sbapp322g$ javac -version
+javac 21
+davidho@dphxps17:~/sbootprojs/sbapp322g$ sdk use java 17.0.8.1-zulu
+
+Using java version 17.0.8.1-zulu in this shell.
+davidho@dphxps17:~/sbootprojs/sbapp322g$ sdk default java 17.0.8.1-zulu
+setting java 17.0.8.1-zulu as the default version for all shells.
+davidho@dphxps17:~/sbootprojs/sbapp322g$ 
+
+davidho@dphxps17:~/sbootprojs/sbapp322g$ java -version
+openjdk version "17.0.8.1" 2023-08-24 LTS
+OpenJDK Runtime Environment Zulu17.44+53-CA (build 17.0.8.1+1-LTS)
+OpenJDK 64-Bit Server VM Zulu17.44+53-CA (build 17.0.8.1+1-LTS, mixed mode, sharing)
+davidho@dphxps17:~/sbootprojs/sbapp322g$ 
+davidho@dphxps17:~/sbootprojs/sbapp322g$ javac -version
+javac 17.0.8.1
+davidho@dphxps17:~/sbootprojs/sbapp322g$ 
+davidho@dphxps17:~/sbootprojs/sbapp322g$ ./gradlew --version
+
+------------------------------------------------------------
+Gradle 8.5
+------------------------------------------------------------
+
+Build time:   2023-11-29 14:08:57 UTC
+Revision:     28aca86a7180baa17117e0e5ba01d8ea9feca598
+
+Kotlin:       1.9.20
+Groovy:       3.0.17
+Ant:          Apache Ant(TM) version 1.10.13 compiled on January 4 2023
+JVM:          17.0.8.1 (Azul Systems, Inc. 17.0.8.1+1-LTS)
+OS:           Linux 6.2.0-37-generic amd64
+
+davidho@dphxps17:~/sbootprojs/sbapp322g$ 
+davidho@dphxps17:~/sbootprojs/sbapp322g$ ./gradlew bootJar
+Starting a Gradle Daemon (subsequent builds will be faster)
+
+BUILD SUCCESSFUL in 12s
+4 actionable tasks: 4 executed
+davidho@dphxps17:~/sbootprojs/sbapp322g$ 
+davidho@dphxps17:~/sbootprojs/sbapp322g$ find . -name *.jar -print
+./gradle/wrapper/gradle-wrapper.jar
+./build/libs/sbapp322g-0.0.1-SNAPSHOT.jar
+davidho@dphxps17:~/sbootprojs/sbapp322g$ find . -name *.jar -print -exec ls -latr {} \;
+./gradle/wrapper/gradle-wrapper.jar
+-rw-r--r-- 1 davidho davidho 43462 Jan 26 05:30 ./gradle/wrapper/gradle-wrapper.jar
+./build/libs/sbapp322g-0.0.1-SNAPSHOT.jar
+-rw-rw-r-- 1 davidho davidho 48397347 Jan 26 06:03 ./build/libs/sbapp322g-0.0.1-SNAPSHOT.jar
+davidho@dphxps17:~/sbootprojs/sbapp322g$ 
+davidho@dphxps17:~/sbootprojs/sbapp322g$ jar tvf ./build/libs/sbapp322g-0.0.1-SNAPSHOT.jar
+     0 Fri Jan 26 11:03:18 EST 2024 META-INF/
+   447 Fri Jan 26 11:03:18 EST 2024 META-INF/MANIFEST.MF
+     0 Fri Feb 01 00:00:00 EST 1980 META-INF/services/
+    66 Fri Feb 01 00:00:00 EST 1980 META-INF/services/java.nio.file.spi.FileSystemProvider
+     0 Fri Feb 01 00:00:00 EST 1980 org/
+     0 Fri Feb 01 00:00:00 EST 1980 org/springframework/
+     0 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/
+     0 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/
+     0 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/
+  1617 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/ManifestInfo.class
+  5115 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/MetaInfVersionsInfo.class
+  2025 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/NestedJarFile$JarEntriesEnumeration.class
+  2584 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/NestedJarFile$JarEntryInflaterInputStream.class
+  3611 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/NestedJarFile$JarEntryInputStream.class
+  7108 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/NestedJarFile$NestedJarEntry.class
+  1197 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/NestedJarFile$RawZipDataInputStream.class
+  2138 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/NestedJarFile$ZipContentEntriesSpliterator.class
+ 15710 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/NestedJarFile.class
+  6568 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/NestedJarFileResources.class
+  3801 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/SecurityInfo.class
+  1659 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jar/ZipInflaterInputStream.class
+     0 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jarmode/
+   293 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/jarmode/JarMode.class
+     0 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/launch/
+   316 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/launch/Archive$Entry.class
+  4612 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/launch/Archive.class
+  4781 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/launch/ClassPathIndexFile.class
+  5558 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/launch/ExecutableArchiveLauncher.class
+  2134 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/launch/ExplodedArchive$FileArchiveEntry.class
+  5794 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/launch/ExplodedArchive.class
+  2088 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/launch/JarFileArchive$JarArchiveEntry.class
+ 10046 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/launch/JarFileArchive.class
+  1768 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/launch/JarLauncher.class
+  2440 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/launch/JarModeRunner.class
+  1586 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/launch/LaunchedClassLoader$DefinePackageCallType.class
+  8388 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/launch/LaunchedClassLoader.class
+  3894 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/launch/Launcher.class
+  3688 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/launch/PropertiesLauncher$Instantiator$Using.class
+  3650 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/launch/PropertiesLauncher$Instantiator.class
+ 21516 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/launch/PropertiesLauncher.class
+  5277 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/launch/SystemPropertyUtils.class
+  1813 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/launch/WarLauncher.class
+     0 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/log/
+  1408 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/log/DebugLogger$DisabledDebugLogger.class
+  2610 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/log/DebugLogger$SystemErrDebugLogger.class
+  1823 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/log/DebugLogger.class
+     0 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/net/
+     0 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/net/protocol/
+  1676 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/net/protocol/Handlers.class
+     0 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/net/protocol/jar/
+  2604 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/net/protocol/jar/Canonicalizer.class
+  6492 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/net/protocol/jar/Handler.class
+  3049 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/net/protocol/jar/JarFileUrlKey.class
+  2774 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/net/protocol/jar/JarUrl.class
+  1542 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/net/protocol/jar/JarUrlClassLoader$OptimizedEnumeration.class
+  8273 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/net/protocol/jar/JarUrlClassLoader.class
+  1469 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/net/protocol/jar/JarUrlConnection$ConnectionInputStream.class
+   750 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/net/protocol/jar/JarUrlConnection$EmptyUrlStreamHandler.class
+ 12176 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/net/protocol/jar/JarUrlConnection.class
+  2075 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/net/protocol/jar/LazyDelegatingInputStream.class
+  1168 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/net/protocol/jar/Optimizations.class
+  1325 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/net/protocol/jar/UrlJarEntry.class
+  3261 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/net/protocol/jar/UrlJarFile.class
+  5756 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/net/protocol/jar/UrlJarFileFactory.class
+  2467 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/net/protocol/jar/UrlJarFiles$Cache.class
+  3857 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/net/protocol/jar/UrlJarFiles.class
+   486 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/net/protocol/jar/UrlJarManifest$ManifestSupplier.class
+  3388 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/net/protocol/jar/UrlJarManifest.class
+  3181 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/net/protocol/jar/UrlNestedJarFile.class
+     0 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/net/protocol/nested/
+  1468 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/net/protocol/nested/Handler.class
+  5284 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/net/protocol/nested/NestedLocation.class
+  1590 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/net/protocol/nested/NestedUrlConnection$ConnectionInputStream.class
+  7697 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/net/protocol/nested/NestedUrlConnection.class
+  3892 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/net/protocol/nested/NestedUrlConnectionResources.class
+     0 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/net/util/
+  3506 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/net/util/UrlDecoder.class
+     0 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/nio/
+     0 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/nio/file/
+  1918 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/nio/file/NestedByteChannel$Resources.class
+  3487 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/nio/file/NestedByteChannel.class
+  2797 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/nio/file/NestedFileStore.class
+  8447 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/nio/file/NestedFileSystem.class
+  9693 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/nio/file/NestedFileSystemProvider.class
+  7355 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/nio/file/NestedPath.class
+     0 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/ref/
+   667 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/ref/Cleaner.class
+  1375 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/ref/DefaultCleaner.class
+     0 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/zip/
+  1459 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/zip/ByteArrayDataBlock.class
+   231 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/zip/CloseableDataBlock.class
+  1042 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/zip/DataBlock.class
+  2444 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/zip/DataBlockInputStream.class
+  5605 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/zip/FileChannelDataBlock$ManagedFileChannel.class
+   470 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/zip/FileChannelDataBlock$Tracker.class
+  4385 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/zip/FileChannelDataBlock.class
+  1678 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/zip/NameOffsetLookups.class
+  2229 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/zip/VirtualDataBlock.class
+  1631 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/zip/VirtualZipDataBlock$DataPart.class
+  6496 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/zip/VirtualZipDataBlock.class
+  4033 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/zip/Zip64EndOfCentralDirectoryLocator.class
+  5724 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/zip/Zip64EndOfCentralDirectoryRecord.class
+  9832 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/zip/ZipCentralDirectoryFileHeaderRecord.class
+  6377 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/zip/ZipContent$Entry.class
+  1432 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/zip/ZipContent$Kind.class
+ 13008 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/zip/ZipContent$Loader.class
+  2295 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/zip/ZipContent$Source.class
+ 12632 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/zip/ZipContent.class
+  4841 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/zip/ZipDataDescriptorRecord.class
+  2105 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/zip/ZipEndOfCentralDirectoryRecord$Located.class
+  6496 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/zip/ZipEndOfCentralDirectoryRecord.class
+  5545 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/zip/ZipLocalFileHeaderRecord.class
+  1474 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/zip/ZipString$CompareType.class
+  7973 Fri Feb 01 00:00:00 EST 1980 org/springframework/boot/loader/zip/ZipString.class
+     0 Fri Jan 26 11:03:18 EST 2024 BOOT-INF/
+     0 Fri Jan 26 11:03:18 EST 2024 BOOT-INF/classes/
+     0 Fri Jan 26 11:03:14 EST 2024 BOOT-INF/classes/ashburncode/
+     0 Fri Jan 26 11:03:14 EST 2024 BOOT-INF/classes/ashburncode/sbapp322g/
+   782 Fri Jan 26 11:03:14 EST 2024 BOOT-INF/classes/ashburncode/sbapp322g/Sbapp322grajarj17Application.class
+     1 Fri Jan 26 11:03:16 EST 2024 BOOT-INF/classes/application.properties
+     0 Fri Jan 26 11:03:18 EST 2024 BOOT-INF/lib/
+2495536 Fri Jan 26 11:03:16 EST 2024 BOOT-INF/lib/mysql-connector-j-8.3.0.jar
+11559853 Fri Jan 26 11:03:14 EST 2024 BOOT-INF/lib/hibernate-core-6.4.1.Final.jar
+1516048 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/spring-data-jpa-3.2.2.jar
+ 49771 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/spring-aspects-6.1.3.jar
+376401 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/spring-data-rest-webmvc-4.2.2.jar
+1036107 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/spring-webmvc-6.1.3.jar
+151897 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/spring-data-rest-core-4.2.2.jar
+621349 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/spring-hateoas-2.2.0.jar
+1872520 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/spring-web-6.1.3.jar
+1930165 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/spring-boot-autoconfigure-3.2.2.jar
+1611802 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/spring-boot-3.2.2.jar
+ 30797 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/spring-plugin-core-3.0.0.jar
+1302781 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/spring-context-6.1.3.jar
+415142 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/spring-aop-6.1.3.jar
+2099477 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/aspectjweaver-1.9.21.jar
+161902 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/HikariCP-5.0.1.jar
+233426 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/spring-orm-6.1.3.jar
+460578 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/spring-jdbc-6.1.3.jar
+165250 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/jakarta.persistence-api-3.1.0.jar
+ 28607 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/jakarta.transaction-api-2.0.1.jar
+ 59207 Fri Jan 26 11:03:16 EST 2024 BOOT-INF/lib/jboss-logging-3.5.3.Final.jar
+ 67807 Fri Jan 26 11:03:16 EST 2024 BOOT-INF/lib/hibernate-commons-annotations-6.0.6.Final.jar
+327493 Fri Jan 26 11:03:16 EST 2024 BOOT-INF/lib/jandex-3.1.2.jar
+ 68930 Fri Jan 26 11:03:16 EST 2024 BOOT-INF/lib/classmate-1.6.0.jar
+4212623 Fri Jan 26 11:03:16 EST 2024 BOOT-INF/lib/byte-buddy-1.14.11.jar
+920213 Fri Jan 26 11:03:16 EST 2024 BOOT-INF/lib/jaxb-runtime-4.0.4.jar
+138686 Fri Jan 26 11:03:16 EST 2024 BOOT-INF/lib/jaxb-core-4.0.4.jar
+130002 Fri Jan 26 11:03:16 EST 2024 BOOT-INF/lib/jakarta.xml.bind-api-4.0.1.jar
+ 10681 Fri Jan 26 11:03:16 EST 2024 BOOT-INF/lib/jakarta.inject-api-2.0.1.jar
+326307 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/antlr4-runtime-4.13.0.jar
+1435416 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/spring-data-commons-3.2.2.jar
+284337 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/spring-tx-6.1.3.jar
+857109 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/spring-beans-6.1.3.jar
+301171 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/spring-expression-6.1.3.jar
+1879554 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/spring-core-6.1.3.jar
+ 26141 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/jakarta.annotation-api-2.1.1.jar
+283517 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/logback-classic-1.4.14.jar
+ 22978 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/log4j-to-slf4j-2.21.1.jar
+  6350 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/jul-to-slf4j-2.0.11.jar
+277582 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/json-path-2.8.0.jar
+ 67831 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/slf4j-api-2.0.11.jar
+122937 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/jackson-datatype-jsr310-2.15.3.jar
+ 75565 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/jackson-annotations-2.15.3.jar
+ 10346 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/jackson-module-parameter-names-2.15.3.jar
+549233 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/jackson-core-2.15.3.jar
+ 36110 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/jackson-datatype-jdk8-2.15.3.jar
+1620120 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/jackson-databind-2.15.3.jar
+334352 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/snakeyaml-2.2.jar
+280876 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/tomcat-embed-websocket-10.1.18.jar
+3512643 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/tomcat-embed-core-10.1.18.jar
+261049 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/tomcat-embed-el-10.1.18.jar
+ 71751 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/micrometer-observation-1.12.2.jar
+ 27370 Fri Jan 26 11:03:16 EST 2024 BOOT-INF/lib/angus-activation-2.0.1.jar
+ 66096 Fri Jan 26 11:03:16 EST 2024 BOOT-INF/lib/jakarta.activation-api-2.1.2.jar
+ 24539 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/spring-jcl-6.1.3.jar
+ 11986 Wed Aug 16 12:36:16 EDT 2023 BOOT-INF/lib/evo-inflector-1.3.jar
+ 47343 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/micrometer-commons-1.12.2.jar
+ 73270 Fri Jan 26 11:03:16 EST 2024 BOOT-INF/lib/txw2-4.0.4.jar
+ 25788 Fri Jan 26 11:03:16 EST 2024 BOOT-INF/lib/istack-commons-runtime-4.1.2.jar
+597229 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/logback-core-1.4.14.jar
+317479 Fri Jan 26 11:03:12 EST 2024 BOOT-INF/lib/log4j-api-2.21.1.jar
+120233 Fri Jan 26 11:03:16 EST 2024 BOOT-INF/lib/json-smart-2.5.0.jar
+ 29901 Fri Jan 26 11:03:16 EST 2024 BOOT-INF/lib/accessors-smart-2.5.0.jar
+122176 Wed Aug 16 12:36:16 EDT 2023 BOOT-INF/lib/asm-9.3.jar
+     0 Fri Jan 26 11:03:16 EST 2024 BOOT-INF/classes/static/
+     0 Fri Jan 26 11:03:16 EST 2024 BOOT-INF/classes/templates/
+ 29902 Fri Jan 26 06:03:18 EST 2024 BOOT-INF/lib/spring-boot-jarmode-layertools-3.2.2.jar
+  2784 Fri Jan 26 06:03:18 EST 2024 BOOT-INF/classpath.idx
+   212 Fri Jan 26 06:03:18 EST 2024 BOOT-INF/layers.idx
+davidho@dphxps17:~/sbootprojs/sbapp322g$ 
+davidho@dphxps17:~/sbootprojs/sbapp322g$ jar tvf ./build/libs/sbapp322g-0.0.1-SNAPSHOT.jar | grep -i mysql
+2495536 Fri Jan 26 11:03:16 EST 2024 BOOT-INF/lib/mysql-connector-j-8.3.0.jar
+davidho@dphxps17:~/sbootprojs/sbapp322g$ 
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://mvnrepository.com/artifact/mysql/mysql-connector-java
+
+MySQL Connector Java
+
+MySQL Connector/J is a JDBC Type 4 driver, which means that it is pure Java implementation of the MySQL protocol and does not rely on the MySQL client libraries. This driver supports auto-registration with the Driver Manager, standardized validity checks, categorized SQLExceptions, support for large update counts, support for local and offset date-time variants from the java.time package, support for JDBC-4.x XML processing, support for per connection client information and support for the NCHAR, NVARCHAR ...
+
+Categories	JDBC Drivers
+Tags	databasesqljdbcdriverconnectorrdbmsmysqlconnection
+Ranking	#69 in MvnRepository (See Top Artifacts)
+#1 in JDBC Drivers
+Used By	7,432 artifacts
+
+This artifact was moved to:
+
+com.mysql » mysql-connector-j
+
+MySQL Connector/J artifacts moved to reverse-DNS compliant Maven 2+ coordinates.
+
+    Central (92)
+    Jahia (1)
+    Redhat GA (8)
+    Redhat EA (4)
+    EmergyaPub (2)
+    Imcode (1)
+    ICM (9)
+
+	Version	Vulnerabilities	Repository	Usages	Date
+8.0.x 	
+8.0.33		                  Central	 166 	Apr 18, 2023
+8.0.32		                  Central	 135 	Jan 19, 2023
+8.0.31		                  Central	 166 	Oct 18, 2022
+8.0.30		                  Central	 338 	Jul 25, 2022
+8.0.29		                  Central	 341 	Apr 25, 2022
+8.0.28		                  Central	 484 	Jan 17, 2022
+8.0.27	1 vulnerability 	  Central	 321 	Oct 18, 2021
+8.0.26	2 vulnerabilities 	Central	 242 	Jul 19, 2021
+8.0.25	2 vulnerabilities 	Central	 255 	May 10, 2021
+8.0.24	2 vulnerabilities 	Central	  61 	Apr 19, 2021
+8.0.23	2 vulnerabilities 	Central	 243 	Jan 17, 2021
+8.0.22	2 vulnerabilities 	Central	 334 	Oct 17, 2020
+8.0.21	2 vulnerabilities 	Central	 323 	Jul 12, 2020
+8.0.20	2 vulnerabilities 	Central	 222 	Apr 26, 2020
+8.0.19	2 vulnerabilities 	Central	 255 	Dec 04, 2019
+8.0.18	2 vulnerabilities 	Central	 229 	Sep 08, 2019
+8.0.17	2 vulnerabilities 	Central	 188 	Jul 21, 2019
+8.0.16	2 vulnerabilities 	Central	 416 	Apr 25, 2019
+8.0.15	3 vulnerabilities 	Central	 247 	Jan 28, 2019
+8.0.14	3 vulnerabilities 	Central	  20  Jan 21, 2019
+8.0.13	3 vulnerabilities 	Central	 191 	Sep 27, 2018
+
+https://mvnrepository.com/artifact/mysql/mysql-connector-java/8.0.33
+
+// https://mvnrepository.com/artifact/mysql/mysql-connector-java
+implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.33'
+
+// https://mvnrepository.com/artifact/mysql/mysql-connector-java
+implementation 'mysql:mysql-connector-java:8.0.33'
+
+https://mvnrepository.com/artifact/com.mysql/mysql-connector-j
+
+	Version	Vulnerabilities	Repository	Usages	Date
+8.3.x  	8.3.0		  Central	  12 	Jan 16, 2024
+8.2.x 	8.2.0		  Central	  90 	Oct 25, 2023
+8.1.x 	8.1.0		  Central	 147 	Jul 18, 2023
+8.0.x 	8.0.33		Central	 227 	Apr 18, 2023
+        8.0.32		Central	 136 	Jan 18, 2023
+        8.0.31		Central	 105 	Oct 14, 2022
+
+https://mvnrepository.com/artifact/com.mysql/mysql-connector-j/8.3.0
+
+// https://mvnrepository.com/artifact/com.mysql/mysql-connector-j
+implementation group: 'com.mysql', name: 'mysql-connector-j', version: '8.3.0'
+
+// https://mvnrepository.com/artifact/com.mysql/mysql-connector-j
+implementation 'com.mysql:mysql-connector-j:8.3.0'
+
+
