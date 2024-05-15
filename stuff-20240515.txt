@@ -1,0 +1,118 @@
+Wed May 15 09:21:35 AM EDT 2024
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/Documents$ date
+Wed May 15 09:21:16 AM EDT 2024
+davidho@dphxps17:~/Documents$ date > stuff-20240515.txt
+davidho@dphxps17:~/Documents$ code --version
+1.85.0
+af28b32d7e553898b2a91af498b1fb666fdebe0c
+x64
+davidho@dphxps17:~/Documents$ code .
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+
+
+
+
+
+8:45 AM 5/15/2024
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Microsoft Windows [Version 10.0.22631.3527]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\DavidHolberton>cd Documents\dir-stuff
+
+C:\Users\DavidHolberton\Documents\dir-stuff>notepad stuff-20240515.txt
+
+C:\Users\DavidHolberton\Documents\dir-stuff>code --version
+1.88.0
+5c3e652f63e798a5ac2f31ffd0d863669328dc4c
+x64
+
+C:\Users\DavidHolberton\Documents\dir-stuff>code .
+
+C:\Users\DavidHolberton\Documents\dir-stuff>
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Does the presence (or absence) of quotes impact any of the following? And which kind of quotes?
+And does it make any difference if java is invoked on the commandd line or in a .bat or .sh file?
+
+java -Dorg.asynchttpclient.enabledProtocols="TLSv1.3,TLSV1.2" ShowAhcSysProps
+java -Dorg.asynchttpclient.enabledProtocols='TLSv1.3,TLSV1.2' ShowAhcSysProps
+java -Dorg.asynchttpclient.enabledProtocols=TLSv1.3,TLSV1.2 ShowAhcSysProps
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~/javaprojs/ahcsysprops$ 
+davidho@dphxps17:~/javaprojs/ahcsysprops$ pwd -P
+/home/davidho/javaprojs/ahcsysprops
+davidho@dphxps17:~/javaprojs/ahcsysprops$ 
+davidho@dphxps17:~/javaprojs/ahcsysprops$ ls -latr
+total 16
+drwxrwxr-x 8 davidho davidho 4096 May 15 09:25 ..
+-rw-rw-r-- 1 davidho davidho  276 May 15 09:27 ShowAhcSysProps.java
+-rwxrwxrwx 1 davidho davidho  675 May 15 09:38 ShowAhcSysProps.sh
+drwxrwxr-x 2 davidho davidho 4096 May 15 09:38 .
+davidho@dphxps17:~/javaprojs/ahcsysprops$ 
+davidho@dphxps17:~/javaprojs/ahcsysprops$ cat ShowAhcSysProps.java
+class ShowAhcSysProps {
+    public static void main(String[] args) {
+        String sysPropName = "org.asynchttpclient.enabledProtocols";
+        System.out.println(" system property " + sysPropName + " =>>" +
+                System.getProperty(sysPropName) + "<<");
+
+    }
+}
+davidho@dphxps17:~/javaprojs/ahcsysprops$ cat ShowAhcSysProps.sh
+java -Dorg.asynchttpclient.enabledProtocols="TLSv1.3,TLSv1.2" ShowAhcSysProps
+java -Dorg.asynchttpclient.enabledProtocols='TLSv1.3,TLSv1.2' ShowAhcSysProps
+java -Dorg.asynchttpclient.enabledProtocols=TLSv1.3,TLSv1.2 ShowAhcSysProps
+
+AHCENABLEDPROTOCOLS="TLSv1.3,TLSv1.2"
+echo AHCENABLEDPROTOCOLS
+java -Dorg.asynchttpclient.enabledProtocols=${AHCENABLEDPROTOCOLS} ShowAhcSysProps
+
+AHCENABLEDPROTOCOLS='TLSv1.3,TLSv1.2'
+echo AHCENABLEDPROTOCOLS
+java -Dorg.asynchttpclient.enabledProtocols=${AHCENABLEDPROTOCOLS} ShowAhcSysProps
+
+AHCENABLEDPROTOCOLS=TLSv1.3,TLSv1.2
+echo AHCENABLEDPROTOCOLS
+java -Dorg.asynchttpclient.enabledProtocols=${AHCENABLEDPROTOCOLS} ShowAhcSysProps
+
+davidho@dphxps17:~/javaprojs/ahcsysprops$ 
+davidho@dphxps17:~/javaprojs/ahcsysprops$ javac ShowAhcSysProps.java 
+davidho@dphxps17:~/javaprojs/ahcsysprops$ 
+davidho@dphxps17:~/javaprojs/ahcsysprops$ java -Dorg.asynchttpclient.enabledProtocols="TLSv1.3,TLSv1.2" ShowAhcSysProps
+ system property org.asynchttpclient.enabledProtocols =>>TLSv1.3,TLSv1.2<<
+davidho@dphxps17:~/javaprojs/ahcsysprops$ 
+davidho@dphxps17:~/javaprojs/ahcsysprops$ java -Dorg.asynchttpclient.enabledProtocols='TLSv1.3,TLSv1.2' ShowAhcSysProps
+ system property org.asynchttpclient.enabledProtocols =>>TLSv1.3,TLSv1.2<<
+davidho@dphxps17:~/javaprojs/ahcsysprops$ 
+davidho@dphxps17:~/javaprojs/ahcsysprops$ java -Dorg.asynchttpclient.enabledProtocols=TLSv1.3,TLSv1.2 ShowAhcSysProps
+ system property org.asynchttpclient.enabledProtocols =>>TLSv1.3,TLSv1.2<<
+davidho@dphxps17:~/javaprojs/ahcsysprops$ 
+davidho@dphxps17:~/javaprojs/ahcsysprops$ ./ShowAhcSysProps.sh 
+ system property org.asynchttpclient.enabledProtocols =>>TLSv1.3,TLSv1.2<<
+ system property org.asynchttpclient.enabledProtocols =>>TLSv1.3,TLSv1.2<<
+ system property org.asynchttpclient.enabledProtocols =>>TLSv1.3,TLSv1.2<<
+AHCENABLEDPROTOCOLS
+ system property org.asynchttpclient.enabledProtocols =>>TLSv1.3,TLSv1.2<<
+AHCENABLEDPROTOCOLS
+ system property org.asynchttpclient.enabledProtocols =>>TLSv1.3,TLSv1.2<<
+AHCENABLEDPROTOCOLS
+ system property org.asynchttpclient.enabledProtocols =>>TLSv1.3,TLSv1.2<<
+davidho@dphxps17:~/javaprojs/ahcsysprops$ 
+
+
