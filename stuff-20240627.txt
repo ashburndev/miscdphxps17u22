@@ -1,0 +1,154 @@
+Thu Jun 27 09:25:26 PM EDT 2024
+
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+327  331   now
+331  327
+
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp327g
+Name:          sbapp327grajarj17
+Package name:  ashburncode.sbapp327g
+Description:   spring boot 3.2.7, gradle project, jar packaging, java 17
+Dependencies:
+  Spring Web Web
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Boot Actuator Ops
+    Supports built in (or custom) endpoints that let you monitor and manage your application - such as application health, metrics, sessions, etc.
+  Spring Boot DevTools Developer Tools
+    Provides fast application restarts, LiveReload, and configurations for enhanced development experience.
+  Spring Security Security
+    Highly customizable authentication and access-control framework for Spring applications.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  H2 Database SQL
+    Provides a fast in-memory database that supports JDBC API and R2DBC access, with a small (2mb) footprint. Supports embedded and server modes as well as a browser based console application.
+  MySQL Driver SQL
+    MySQL JDBC driver.
+  PostgreSQL Driver SQL
+    A JDBC and R2DBC driver that allows Java programs to connect to a PostgreSQL database using standard, database independent Java code.    
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp327m
+Name:          sbapp327mvnjarj17
+Package name:  ashburncode.sbapp327m
+Description:   spring boot 3.2.7, maven project, jar packaging, java 17
+Dependencies:
+  Spring Web Web
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Boot Actuator Ops
+    Supports built in (or custom) endpoints that let you monitor and manage your application - such as application health, metrics, sessions, etc.
+  Spring Boot DevTools Developer Tools
+    Provides fast application restarts, LiveReload, and configurations for enhanced development experience.
+  Spring Security Security
+    Highly customizable authentication and access-control framework for Spring applications.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  H2 Database SQL
+    Provides a fast in-memory database that supports JDBC API and R2DBC access, with a small (2mb) footprint. Supports embedded and server modes as well as a browser based console application.
+  MySQL Driver SQL
+    MySQL JDBC driver.
+  PostgreSQL Driver SQL
+    A JDBC and R2DBC driver that allows Java programs to connect to a PostgreSQL database using standard, database independent Java code.    
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp331g
+Name:          sbapp331grajarj17
+Package name:  ashburncode.sbapp331g
+Description:   spring boot 3.3.1, gradle project, jar packaging, java 17
+Dependencies:
+  Spring Web Web
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Boot Actuator Ops
+    Supports built in (or custom) endpoints that let you monitor and manage your application - such as application health, metrics, sessions, etc.
+  Spring Boot DevTools Developer Tools
+    Provides fast application restarts, LiveReload, and configurations for enhanced development experience.
+  Spring Security Security
+    Highly customizable authentication and access-control framework for Spring applications.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  H2 Database SQL
+    Provides a fast in-memory database that supports JDBC API and R2DBC access, with a small (2mb) footprint. Supports embedded and server modes as well as a browser based console application.
+  MySQL Driver SQL
+    MySQL JDBC driver.
+  PostgreSQL Driver SQL
+    A JDBC and R2DBC driver that allows Java programs to connect to a PostgreSQL database using standard, database independent Java code.    
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Spring Initializr
+https://start.spring.io/
+
+Group:         ashburncode
+Artifact:      sbapp331m
+Name:          sbapp331mvnjarj17
+Package name:  ashburncode.sbapp331m
+Description:   spring boot 3.3.1, maven project, jar packaging, java 17
+Dependencies:
+  Spring Web Web
+    Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+  Spring Boot Actuator Ops
+    Supports built in (or custom) endpoints that let you monitor and manage your application - such as application health, metrics, sessions, etc.
+  Spring Boot DevTools Developer Tools
+    Provides fast application restarts, LiveReload, and configurations for enhanced development experience.
+  Spring Security Security
+    Highly customizable authentication and access-control framework for Spring applications.
+  Spring Data JPA SQL
+    Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+  Rest Repositories Web
+    Exposing Spring Data repositories over REST via Spring Data REST.
+  H2 Database SQL
+    Provides a fast in-memory database that supports JDBC API and R2DBC access, with a small (2mb) footprint. Supports embedded and server modes as well as a browser based console application.
+  MySQL Driver SQL
+    MySQL JDBC driver.
+  PostgreSQL Driver SQL
+    A JDBC and R2DBC driver that allows Java programs to connect to a PostgreSQL database using standard, database independent Java code.    
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ pwd
+/home/davidho
+davidho@dphxps17:~$ df
+Filesystem     1K-blocks      Used Available Use% Mounted on
+tmpfs            3257412      2668   3254744   1% /run
+/dev/nvme0n1p5 256920004 238046660   5749760  98% /
+tmpfs           16287052     10108  16276944   1% /dev/shm
+tmpfs               5120         4      5116   1% /run/lock
+efivarfs             374       211       159  58% /sys/firmware/efi/efivars
+/dev/nvme0n1p1    149504    123028     26476  83% /boot/efi
+tmpfs            3257408       132   3257276   1% /run/user/1000
+/dev/sda1      125280416      6720 125273696   1% /media/davidho/Samsung USB
+davidho@dphxps17:~$ cd "/media/davidho/Samsung USB"
+davidho@dphxps17:/media/davidho/Samsung USB$ ls -latr
+total 68
+drwxr-xr-x  3 davidho davidho 32768 Dec 31  1969 .
+drwxr-x---+ 3 root    root     4096 Jun 27 22:11 ..
+drwxr-xr-x  2 davidho davidho 32768 Jun 27 22:12 linux-sbapp
+davidho@dphxps17:/media/davidho/Samsung USB$ 
+davidho@dphxps17:/media/davidho/Samsung USB$ 
