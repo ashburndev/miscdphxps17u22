@@ -1,0 +1,269 @@
+Tue Jul  2 07:00:29 AM EDT 2024
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+davidho@dphxps17:~$ uname -a
+Linux dphxps17 6.5.0-41-generic #41~22.04.2-Ubuntu SMP PREEMPT_DYNAMIC Mon Jun  3 11:32:55 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
+davidho@dphxps17:~$ cd Documents/
+davidho@dphxps17:~/Documents$ ls -latr | tail
+-rw-rw-r--  1 davidho davidho   7228 Dec 13  2023 stuff-20231130b.txt
+-rw-rw-r--  1 davidho davidho   7393 Dec 13  2023 stuff-20231213.txt
+-rw-rw-r--  1 davidho davidho  35322 Jan 26 06:47 stuff-20240126.txt
+-rw-rw-r--  1 davidho davidho  10067 Feb  8 06:53 stuff-20240208.txt
+-rw-rw-r--  1 davidho davidho  10857 Feb 19 18:57 stuff-20240219.txt
+-rw-rw-r--  1 davidho davidho   4955 May 15 09:43 stuff-20240515.txt
+-rw-rw-r--  1 davidho davidho   7524 Jun 27 22:15 stuff-20240627.txt
+drwxr-xr-x  5 davidho davidho  12288 Jun 27 22:19 .
+-rw-rw-r--  1 davidho davidho  48946 Jun 27 22:19 downloads-dphxps17u22-20240627.txt
+drwxr-x--- 59 davidho davidho   4096 Jun 27 22:33 ..
+davidho@dphxps17:~/Documents$ date > stuff-20240702.txt
+davidho@dphxps17:~/Documents$ code --version
+1.85.0
+af28b32d7e553898b2a91af498b1fb666fdebe0c
+x64
+davidho@dphxps17:~/Documents$ code .
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+https://code.visualstudio.com/download
+https://code.visualstudio.com/docs/?dv=linux64_deb
+https://code.visualstudio.com/docs/?dv=linux64
+https://code.visualstudio.com/updates/v1_90
+
+  May 2024 (version 1.90)
+  Update 1.90.2: The update addresses these issues.
+  Update 1.90.1: The update addresses these issues.
+  Downloads: Windows: x64 Arm64 | Mac: Universal Intel silicon | Linux: deb rpm tarball Arm snap
+
+davidho@dphxps17:~/Downloads$ ls -latr | tail
+-rw-rw-r--  1 davidho davidho  148162542 Feb 19 18:22 jdk-8u341-linux-x64.tar.gz
+-rw-rw-r--  1 davidho davidho  140413911 Feb 19 19:24 code-stable-x64-1707853307(1).tar.gz
+-rw-rw-r--  1 davidho davidho      52191 Jun 27 22:02 sbapp327g.zip
+-rw-rw-r--  1 davidho davidho      15090 Jun 27 22:03 sbapp327m.zip
+-rw-rw-r--  1 davidho davidho      52275 Jun 27 22:06 sbapp331g.zip
+-rw-rw-r--  1 davidho davidho      15088 Jun 27 22:08 sbapp331m.zip
+drwxr-x--- 59 davidho davidho       4096 Jun 27 22:33 ..
+-rw-rw-r--  1 davidho davidho  102297590 Jul  2 07:03 code_1.90.2-1718751586_amd64.deb
+-rw-rw-r--  1 davidho davidho  143925020 Jul  2 07:03 code-stable-x64-1718750038.tar.gz
+drwxr-xr-x  5 davidho davidho      36864 Jul  2 07:03 .
+davidho@dphxps17:~/Downloads$ 
+davidho@dphxps17:~/Downloads$ 
+
+https://www.eclipse.org/downloads/
+https://www.eclipse.org/downloads/packages/
+https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/2024-06/R/eclipse-jee-2024-06-R-linux-gtk-x86_64.tar.gz
+https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/2024-06/R/eclipse-java-2024-06-R-linux-gtk-x86_64.tar.gz
+
+davidho@dphxps17:~/Downloads$ ls -latr | tail
+-rw-rw-r--  1 davidho davidho      52275 Jun 27 22:06 sbapp331g.zip
+-rw-rw-r--  1 davidho davidho      15088 Jun 27 22:08 sbapp331m.zip
+drwxr-x--- 59 davidho davidho       4096 Jun 27 22:33 ..
+-rw-rw-r--  1 davidho davidho  102297590 Jul  2 07:03 code_1.90.2-1718751586_amd64.deb
+-rw-rw-r--  1 davidho davidho  143925020 Jul  2 07:03 code-stable-x64-1718750038.tar.gz
+-rw-rw-r--  1 davidho davidho  570136705 Jul  2 07:09 eclipse-jee-2024-06-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        176 Jul  2 07:12 eclipse-jee-2024-06-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  344990648 Jul  2 07:13 eclipse-java-2024-06-R-linux-gtk-x86_64.tar.gz
+drwxr-xr-x  5 davidho davidho      36864 Jul  2 07:14 .
+-rw-rw-r--  1 davidho davidho        177 Jul  2 07:16 eclipse-java-2024-06-R-linux-gtk-x86_64.tar.gz.sha512
+davidho@dphxps17:~/Downloads$ 
+
+https://spring.io/tools
+
+davidho@dphxps17:~/Downloads$ ls -latr | tail
+-rw-rw-r--  1 davidho davidho      15088 Jun 27 22:08 sbapp331m.zip
+drwxr-x--- 59 davidho davidho       4096 Jun 27 22:33 ..
+-rw-rw-r--  1 davidho davidho  102297590 Jul  2 07:03 code_1.90.2-1718751586_amd64.deb
+-rw-rw-r--  1 davidho davidho  143925020 Jul  2 07:03 code-stable-x64-1718750038.tar.gz
+-rw-rw-r--  1 davidho davidho  570136705 Jul  2 07:09 eclipse-jee-2024-06-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        176 Jul  2 07:12 eclipse-jee-2024-06-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  344990648 Jul  2 07:13 eclipse-java-2024-06-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        177 Jul  2 07:16 eclipse-java-2024-06-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  698035480 Jul  2 07:20 spring-tool-suite-4-4.23.1.RELEASE-e4.32.0-linux.gtk.x86_64.tar.gz
+drwxr-xr-x  5 davidho davidho      36864 Jul  2 07:20 .
+davidho@dphxps17:~/Downloads$ 
+
+davidho@dphxps17:~/Downloads$ ls -latr | grep -i eclipse
+-rw-rw-r--  1 davidho davidho  530568735 Sep 22  2022 eclipse-jee-2022-09-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        176 Sep 22  2022 eclipse-jee-2022-09-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  310380717 Sep 22  2022 eclipse-java-2022-09-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        177 Sep 22  2022 eclipse-java-2022-09-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  552970589 Dec  8  2022 eclipse-jee-2022-12-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        178 Dec  8  2022 eclipse-jee-2022-12-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  317456405 Dec  8  2022 eclipse-java-2022-12-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        179 Dec  8  2022 eclipse-java-2022-12-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  555719346 Mar 17  2023 eclipse-jee-2023-03-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        176 Mar 17  2023 eclipse-jee-2023-03-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  321261795 Mar 17  2023 eclipse-java-2023-03-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        177 Mar 17  2023 eclipse-java-2023-03-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  559041312 Jul  6  2023 eclipse-jee-2023-06-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        176 Jul  6  2023 eclipse-jee-2023-06-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  341810791 Jul  6  2023 eclipse-java-2023-06-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        177 Jul  6  2023 eclipse-java-2023-06-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  559041312 Aug 27  2023 eclipse-jee-2023-06-R-linux-gtk-x86_64(1).tar.gz
+-rw-rw-r--  1 davidho davidho  341810791 Aug 27  2023 eclipse-java-2023-06-R-linux-gtk-x86_64(1).tar.gz
+-rw-rw-r--  1 davidho davidho  553217263 Oct 13  2023 eclipse-jee-2023-09-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        176 Oct 13  2023 eclipse-jee-2023-09-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  334695158 Oct 13  2023 eclipse-java-2023-09-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        177 Oct 13  2023 eclipse-java-2023-09-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  550529561 Dec 12  2023 eclipse-jee-2023-12-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        176 Dec 12  2023 eclipse-jee-2023-12-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  333720082 Dec 12  2023 eclipse-java-2023-12-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        177 Dec 12  2023 eclipse-java-2023-12-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  570136705 Jul  2 07:09 eclipse-jee-2024-06-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        176 Jul  2 07:12 eclipse-jee-2024-06-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  344990648 Jul  2 07:13 eclipse-java-2024-06-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        177 Jul  2 07:16 eclipse-java-2024-06-R-linux-gtk-x86_64.tar.gz.sha512
+davidho@dphxps17:~/Downloads$ 
+
+davidho@dphxps17:~/Downloads$ ls -latr | grep -i tool-suite
+-rw-rw-r--  1 davidho davidho  607778592 Sep 22  2022 spring-tool-suite-4-4.16.0.RELEASE-e4.25.0-linux.gtk.x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho  607778592 Oct 16  2022 spring-tool-suite-4-4.16.0.RELEASE-e4.25.0-linux.gtk.x86_64(1).tar.gz
+-rw-rw-r--  1 davidho davidho  637138600 Dec  8  2022 spring-tool-suite-4-4.17.0.RELEASE-e4.26.0-linux.gtk.x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho  625754715 Feb  1  2023 spring-tool-suite-4-4.17.2.RELEASE-e4.26.0-linux.gtk.x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho  565545792 Mar 17  2023 spring-tool-suite-4-4.18.0.RELEASE-e4.27.0-linux.gtk.x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho  622334058 Jul  6  2023 spring-tool-suite-4-4.19.0.RELEASE-e4.28.0-linux.gtk.x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho  614494453 Aug 27  2023 spring-tool-suite-4-4.19.1.RELEASE-e4.28.0-linux.gtk.x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho  604012337 Oct 13  2023 spring-tool-suite-4-4.20.0.RELEASE-e4.29.0-linux.gtk.x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho  604012337 Oct 31  2023 spring-tool-suite-4-4.20.0.RELEASE-e4.29.0-linux.gtk.x86_64(1).tar.gz
+-rw-rw-r--  1 davidho davidho  607457523 Nov 30  2023 spring-tool-suite-4-4.20.1.RELEASE-e4.29.0-linux.gtk.x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho  658730322 Dec 12  2023 spring-tool-suite-4-4.21.0.RELEASE-e4.30.0-linux.gtk.x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho  698035480 Jul  2 07:20 spring-tool-suite-4-4.23.1.RELEASE-e4.32.0-linux.gtk.x86_64.tar.gz
+davidho@dphxps17:~/Downloads$ 
+
+davidho@dphxps17:~/Downloads$ ls -latr idea* | tail
+-rw-rw-r-- 1 davidho davidho  974143871 Oct 31  2023 ideaIC-2023.2.4.tar.gz
+-rw-rw-r-- 1 davidho davidho         89 Oct 31  2023 ideaIC-2023.2.4.tar.gz.sha256
+-rw-rw-r-- 1 davidho davidho 1154262269 Nov 23  2023 ideaIU-2023.2.5.tar.gz
+-rw-rw-r-- 1 davidho davidho         89 Nov 23  2023 ideaIU-2023.2.5.tar.gz.sha256
+-rw-rw-r-- 1 davidho davidho  974169852 Nov 23  2023 ideaIC-2023.2.5.tar.gz
+-rw-rw-r-- 1 davidho davidho         89 Nov 23  2023 ideaIC-2023.2.5.tar.gz.sha256
+-rw-rw-r-- 1 davidho davidho 1007763694 Dec 12  2023 ideaIU-2023.3.1.tar.gz
+-rw-rw-r-- 1 davidho davidho         89 Dec 12  2023 ideaIU-2023.3.1.tar.gz.sha256
+-rw-rw-r-- 1 davidho davidho  803881760 Dec 12  2023 ideaIC-2023.3.1.tar.gz
+-rw-rw-r-- 1 davidho davidho         89 Dec 12  2023 ideaIC-2023.3.1.tar.gz.sha256
+davidho@dphxps17:~/Downloads$ 
+
+https://www.jetbrains.com/idea/download/?section=linux
+
+davidho@dphxps17:~/Downloads$ ls -latr | tail -20
+-rw-rw-r--  1 davidho davidho  148003999 Feb 19 18:22 jdk-8u331-linux-x64.tar.gz
+-rw-rw-r--  1 davidho davidho  148162542 Feb 19 18:22 jdk-8u341-linux-x64.tar.gz
+-rw-rw-r--  1 davidho davidho  140413911 Feb 19 19:24 code-stable-x64-1707853307(1).tar.gz
+-rw-rw-r--  1 davidho davidho      52191 Jun 27 22:02 sbapp327g.zip
+-rw-rw-r--  1 davidho davidho      15090 Jun 27 22:03 sbapp327m.zip
+-rw-rw-r--  1 davidho davidho      52275 Jun 27 22:06 sbapp331g.zip
+-rw-rw-r--  1 davidho davidho      15088 Jun 27 22:08 sbapp331m.zip
+drwxr-x--- 59 davidho davidho       4096 Jun 27 22:33 ..
+-rw-rw-r--  1 davidho davidho  102297590 Jul  2 07:03 code_1.90.2-1718751586_amd64.deb
+-rw-rw-r--  1 davidho davidho  143925020 Jul  2 07:03 code-stable-x64-1718750038.tar.gz
+-rw-rw-r--  1 davidho davidho  570136705 Jul  2 07:09 eclipse-jee-2024-06-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        176 Jul  2 07:12 eclipse-jee-2024-06-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  344990648 Jul  2 07:13 eclipse-java-2024-06-R-linux-gtk-x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho        177 Jul  2 07:16 eclipse-java-2024-06-R-linux-gtk-x86_64.tar.gz.sha512
+-rw-rw-r--  1 davidho davidho  698035480 Jul  2 07:20 spring-tool-suite-4-4.23.1.RELEASE-e4.32.0-linux.gtk.x86_64.tar.gz
+-rw-rw-r--  1 davidho davidho 1328359856 Jul  2 07:26 ideaIU-2024.1.4.tar.gz
+-rw-rw-r--  1 davidho davidho         89 Jul  2 07:26 ideaIU-2024.1.4.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  819330505 Jul  2 07:27 ideaIC-2024.1.4.tar.gz
+-rw-rw-r--  1 davidho davidho         89 Jul  2 07:27 ideaIC-2024.1.4.tar.gz.sha256
+drwxr-xr-x  5 davidho davidho      36864 Jul  2 07:27 .
+davidho@dphxps17:~/Downloads$ 
+
+https://www.oracle.com/java/technologies/downloads/
+https://www.oracle.com/java/technologies/downloads/#java22
+https://docs.oracle.com/en/java/javase/22/
+https://www.oracle.com/java/technologies/downloads/#java21
+https://docs.oracle.com/en/java/javase/21/
+https://www.oracle.com/java/technologies/downloads/#java17
+https://docs.oracle.com/en/java/javase/17/
+https://www.oracle.com/java/technologies/downloads/#java11
+https://docs.oracle.com/en/java/javase/11/
+https://www.oracle.com/java/technologies/downloads/#java8
+https://docs.oracle.com/javase/8/
+
+JDK Development Kit 22.0.1 downloads
+JDK Development Kit 21.0.3 downloads
+JDK Development Kit 17.0.11 downloads
+Java SE Development Kit 11.0.23
+Java SE Development Kit 8u411
+
+davidho@dphxps17:~/Downloads$ ls -latr | tail -20
+-rw-rw-r--  1 davidho davidho  819330505 Jul  2 07:27 ideaIC-2024.1.4.tar.gz
+-rw-rw-r--  1 davidho davidho         89 Jul  2 07:27 ideaIC-2024.1.4.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  195501499 Jul  2 07:32 jdk-22.0.1_linux-x64_bin.tar.gz
+-rw-rw-r--  1 davidho davidho         64 Jul  2 07:33 jdk-22.0.1_linux-x64_bin.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  167613956 Jul  2 07:33 jdk-22.0.1_linux-x64_bin.deb
+-rw-rw-r--  1 davidho davidho         64 Jul  2 07:33 jdk-22.0.1_linux-x64_bin.deb.sha256
+-rw-rw-r--  1 davidho davidho  197465993 Jul  2 07:38 jdk-21.0.3_linux-x64_bin.tar.gz
+-rw-rw-r--  1 davidho davidho         64 Jul  2 07:38 jdk-21.0.3_linux-x64_bin.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  167889048 Jul  2 07:39 jdk-21.0.3_linux-x64_bin.deb
+-rw-rw-r--  1 davidho davidho         64 Jul  2 07:39 jdk-21.0.3_linux-x64_bin.deb.sha256
+-rw-rw-r--  1 davidho davidho  182753781 Jul  2 07:43 jdk-17.0.11_linux-x64_bin.tar.gz
+-rw-rw-r--  1 davidho davidho         64 Jul  2 07:44 jdk-17.0.11_linux-x64_bin.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  156940496 Jul  2 07:44 jdk-17.0.11_linux-x64_bin.deb
+-rw-rw-r--  1 davidho davidho         64 Jul  2 07:44 jdk-17.0.11_linux-x64_bin.deb.sha256
+-rw-rw-r--  1 davidho davidho  145373820 Jul  2 07:50 jdk-11.0.23_linux-x64_bin.deb
+-rw-rw-r--  1 davidho davidho  168929917 Jul  2 07:52 jdk-11.0.23_linux-x64_bin.tar.gz
+-rw-rw-r--  1 davidho davidho       7441 Jul  2 07:52 11-0-23-checksum.html
+-rw-rw-r--  1 davidho davidho  146902735 Jul  2 08:01 jdk-8u411-linux-x64.tar.gz
+-rw-rw-r--  1 davidho davidho      12367 Jul  2 08:03 8u411checksum.html
+drwxr-xr-x  5 davidho davidho      36864 Jul  2 08:03 .
+davidho@dphxps17:~/Downloads$ 
+
+davidho@dphxps17:~/Downloads$ ls -latr | tail -20
+-rw-rw-r--  1 davidho davidho  819330505 Jul  2 07:27 ideaIC-2024.1.4.tar.gz
+-rw-rw-r--  1 davidho davidho         89 Jul  2 07:27 ideaIC-2024.1.4.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  195501499 Jul  2 07:32 jdk-22.0.1_linux-x64_bin.tar.gz
+-rw-rw-r--  1 davidho davidho         64 Jul  2 07:33 jdk-22.0.1_linux-x64_bin.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  167613956 Jul  2 07:33 jdk-22.0.1_linux-x64_bin.deb
+-rw-rw-r--  1 davidho davidho         64 Jul  2 07:33 jdk-22.0.1_linux-x64_bin.deb.sha256
+-rw-rw-r--  1 davidho davidho  197465993 Jul  2 07:38 jdk-21.0.3_linux-x64_bin.tar.gz
+-rw-rw-r--  1 davidho davidho         64 Jul  2 07:38 jdk-21.0.3_linux-x64_bin.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  167889048 Jul  2 07:39 jdk-21.0.3_linux-x64_bin.deb
+-rw-rw-r--  1 davidho davidho         64 Jul  2 07:39 jdk-21.0.3_linux-x64_bin.deb.sha256
+-rw-rw-r--  1 davidho davidho  182753781 Jul  2 07:43 jdk-17.0.11_linux-x64_bin.tar.gz
+-rw-rw-r--  1 davidho davidho         64 Jul  2 07:44 jdk-17.0.11_linux-x64_bin.tar.gz.sha256
+-rw-rw-r--  1 davidho davidho  156940496 Jul  2 07:44 jdk-17.0.11_linux-x64_bin.deb
+-rw-rw-r--  1 davidho davidho         64 Jul  2 07:44 jdk-17.0.11_linux-x64_bin.deb.sha256
+-rw-rw-r--  1 davidho davidho  145373820 Jul  2 07:50 jdk-11.0.23_linux-x64_bin.deb
+-rw-rw-r--  1 davidho davidho  168929917 Jul  2 07:52 jdk-11.0.23_linux-x64_bin.tar.gz
+-rw-rw-r--  1 davidho davidho       7441 Jul  2 07:52 jdk-11.0.23_linux-x64_checksum.html
+-rw-rw-r--  1 davidho davidho  146902735 Jul  2 08:01 jdk-8u411-linux-x64.tar.gz
+-rw-rw-r--  1 davidho davidho      12367 Jul  2 08:03 jdk-8u411-linux-x64_checksum.html
+drwxr-xr-x  5 davidho davidho      36864 Jul  2 08:08 .
+davidho@dphxps17:~/Downloads$ 
+
+davidho@dphxps17:~/Downloads$ ls -latr jdk* | tail -30
+-rw-rw-r-- 1 davidho davidho        64 Apr  3  2023 jdk-20_linux-x64_bin.deb.sha256
+-rw-rw-r-- 1 davidho davidho 190371285 Jul 26  2023 jdk-20.0.2_linux-aarch64_bin.tar.gz
+-rw-rw-r-- 1 davidho davidho        64 Jul 26  2023 jdk-20.0.2_linux-aarch64_bin.tar.gz.sha256
+-rw-rw-r-- 1 davidho davidho 192003505 Jul 26  2023 jdk-20.0.2_linux-x64_bin.tar.gz
+-rw-rw-r-- 1 davidho davidho        64 Jul 26  2023 jdk-20.0.2_linux-x64_bin.tar.gz.sha256
+-rw-rw-r-- 1 davidho davidho 182376116 Jul 26  2023 jdk-17.0.8_linux-x64_bin.tar.gz
+-rw-rw-r-- 1 davidho davidho        64 Jul 26  2023 jdk-17.0.8_linux-x64_bin.tar.gz.sha256
+-rw-rw-r-- 1 davidho davidho 169934047 Jul 26  2023 jdk-11.0.20_linux-x64_bin.tar.gz
+-rw-rw-r-- 1 davidho davidho 139273048 Jul 26  2023 jdk-8u381-linux-x64.tar.gz
+-rw-rw-r-- 1 davidho davidho 146799982 Feb 19 18:22 jdk-8u311-linux-x64.tar.gz
+-rw-rw-r-- 1 davidho davidho 146815279 Feb 19 18:22 jdk-8u321-linux-x64.tar.gz
+-rw-rw-r-- 1 davidho davidho 148003999 Feb 19 18:22 jdk-8u331-linux-x64.tar.gz
+-rw-rw-r-- 1 davidho davidho 148162542 Feb 19 18:22 jdk-8u341-linux-x64.tar.gz
+-rw-rw-r-- 1 davidho davidho 195501499 Jul  2 07:32 jdk-22.0.1_linux-x64_bin.tar.gz
+-rw-rw-r-- 1 davidho davidho        64 Jul  2 07:33 jdk-22.0.1_linux-x64_bin.tar.gz.sha256
+-rw-rw-r-- 1 davidho davidho 167613956 Jul  2 07:33 jdk-22.0.1_linux-x64_bin.deb
+-rw-rw-r-- 1 davidho davidho        64 Jul  2 07:33 jdk-22.0.1_linux-x64_bin.deb.sha256
+-rw-rw-r-- 1 davidho davidho 197465993 Jul  2 07:38 jdk-21.0.3_linux-x64_bin.tar.gz
+-rw-rw-r-- 1 davidho davidho        64 Jul  2 07:38 jdk-21.0.3_linux-x64_bin.tar.gz.sha256
+-rw-rw-r-- 1 davidho davidho 167889048 Jul  2 07:39 jdk-21.0.3_linux-x64_bin.deb
+-rw-rw-r-- 1 davidho davidho        64 Jul  2 07:39 jdk-21.0.3_linux-x64_bin.deb.sha256
+-rw-rw-r-- 1 davidho davidho 182753781 Jul  2 07:43 jdk-17.0.11_linux-x64_bin.tar.gz
+-rw-rw-r-- 1 davidho davidho        64 Jul  2 07:44 jdk-17.0.11_linux-x64_bin.tar.gz.sha256
+-rw-rw-r-- 1 davidho davidho 156940496 Jul  2 07:44 jdk-17.0.11_linux-x64_bin.deb
+-rw-rw-r-- 1 davidho davidho        64 Jul  2 07:44 jdk-17.0.11_linux-x64_bin.deb.sha256
+-rw-rw-r-- 1 davidho davidho 145373820 Jul  2 07:50 jdk-11.0.23_linux-x64_bin.deb
+-rw-rw-r-- 1 davidho davidho 168929917 Jul  2 07:52 jdk-11.0.23_linux-x64_bin.tar.gz
+-rw-rw-r-- 1 davidho davidho      7441 Jul  2 07:52 jdk-11.0.23_linux-x64_checksum.html
+-rw-rw-r-- 1 davidho davidho 146902735 Jul  2 08:01 jdk-8u411-linux-x64.tar.gz
+-rw-rw-r-- 1 davidho davidho     12367 Jul  2 08:03 jdk-8u411-linux-x64_checksum.html
+davidho@dphxps17:~/Downloads$ 
+
